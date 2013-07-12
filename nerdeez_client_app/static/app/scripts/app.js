@@ -13,8 +13,8 @@ var Nerdeez = window.Nerdeez = Ember.Application.create({
 // require('scripts/models/*');
 // require('scripts/views/*');
 
-require('scripts/views/nerdeez-view.js');
-require('scripts/views/header-view.js');
+require('scripts/views/nerdeez-view');
+require('scripts/views/header-view');
 
 Nerdeez.Router.map(function () {
   // put your routes here
