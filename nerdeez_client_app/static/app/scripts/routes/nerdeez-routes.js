@@ -4,7 +4,6 @@
 * @copyright: nerdeez.com Ltd.
 * @version: 1.0
 * @author: Yariv Katz
-* @copyright: nerdeez.com Ltd.
 */
 
 /**
@@ -18,18 +17,20 @@ Nerdeez.Router.map(function () {
 });
 
 /**
- * the application route
+ * the route for the university search, grab the initial data
  */
-Nerdeez.IndexRoute = Ember.Route.extend({
-
-	/**
-	 * render the header and the footer
-	 */
-	renderTemplate : function() {
-		this._super();
-		this.render('header', {
-			into : 'application',
-			outlet : 'header'
-		});
+Nerdeez.SearchUniversityRoute = Ember.Route.extend({
+	model: function(param){
+		return Nerdeez.University.find({limit: 20, order_by: 'title'});
 	}
-}); 
+});
+
+/**
+ * the route for the course search, grab the initial data
+ */
+Nerdeez.SearchCourseRoute = Ember.Route.extend({
+	model: function(param){
+		return Nerdeez.Course.find({limit: 20, order_by: 'title'});
+	}
+});
+
