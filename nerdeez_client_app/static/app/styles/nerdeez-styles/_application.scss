@@ -1,0 +1,21 @@
+/**
+* styles for the entire application and also common classes in all my scss files
+* @version: 1.0
+* @copyright: nerdeez.com Ltd
+* @author: Yariv Katz
+*/
+
+
+html, body {
+    height: 100%;
+}
+
+#push, #footer {
+    height: 60px;
+}
+
+#wrap {
+    height: auto !important;
+    margin: 0 auto -60px;
+    min-height: 100%;
+}

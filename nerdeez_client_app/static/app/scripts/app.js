@@ -1,6 +1,11 @@
 /*global Ember, DS */
 
-var App = window.App = Ember.Application.create();
+var Nerdeez = window.Nerdeez = Ember.Application.create({
+
+	//@member {string} constant holds the dom element which the application be injected to
+    rootElement: '#wrap'
+    
+});
 
 /* Order and include as you please. */
 // require('scripts/routes/*');
@@ -8,15 +13,28 @@ var App = window.App = Ember.Application.create();
 // require('scripts/models/*');
 // require('scripts/views/*');
 
-App.Router.map(function () {
+require('scripts/views/nerdeez-view.js');
+require('scripts/views/header-view.js');
+
+Nerdeez.Router.map(function () {
   // put your routes here
 });
 
-App.Store = DS.Store.extend({
+Nerdeez.Store = DS.Store.extend({
 });
 
-App.IndexRoute = Ember.Route.extend({
-  model: function () {
-    return ['red', 'yellow', 'blue'];
-  }
-});
+
+Nerdeez.IndexRoute = Ember.Route.extend({
+
+	/**
+	 * render the header and the footer
+	 */
+	renderTemplate : function() {
+		this._super();
+		this.render('header', {
+			into : 'application',
+			outlet : 'header'
+		});
+	}
+}); 
+
