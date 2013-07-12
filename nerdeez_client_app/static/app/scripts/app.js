@@ -13,28 +13,20 @@ var Nerdeez = window.Nerdeez = Ember.Application.create({
 // require('scripts/models/*');
 // require('scripts/views/*');
 
+//application files
 require('scripts/views/nerdeez-view');
 require('scripts/views/header-view');
 
-Nerdeez.Router.map(function () {
-  // put your routes here
-});
-
-Nerdeez.Store = DS.Store.extend({
-});
+//routes
+require('scripts/routes/nerdeez-routes');
 
 
-Nerdeez.IndexRoute = Ember.Route.extend({
+//store
+require('scripts/store/nerdeez-store');
 
-	/**
-	 * render the header and the footer
-	 */
-	renderTemplate : function() {
-		this._super();
-		this.render('header', {
-			into : 'application',
-			outlet : 'header'
-		});
-	}
-}); 
+
+
+
+
+
 
