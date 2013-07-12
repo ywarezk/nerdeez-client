@@ -1,0 +1,14 @@
+
+/**
+* holds the styles of the header
+* @copyright: nerdeez.com Ltd.
+* @version: 1.0
+* @author: Yariv Katz
+*
+*/
+
+
+.left-sidebar{
+    width: 100%;
+    @include background-image(linear-gradient(#231f20, #3d3c3e));
+}

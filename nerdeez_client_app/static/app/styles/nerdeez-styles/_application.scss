@@ -19,3 +19,10 @@ html, body {
     margin: 0 auto -60px;
     min-height: 100%;
 }
+
+/**
+ *   top margins between rows and elements
+ */
+.top-buffer{
+    margin-top: 20px;
+}

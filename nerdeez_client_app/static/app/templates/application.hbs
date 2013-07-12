@@ -1,5 +1,14 @@
 <div class="container">
     {{outlet "header"}}
-    {{outlet}}
+    <div class="container top-buffer">
+	    <div class="row">
+		    <div class="span2">
+			    {{partial "left-sidebar"}}
+		    </div>
+		    <div class="span10">
+			    {{outlet}}
+			</div>
+		</div>
+	</div>
 </div>
 <div id="push"></div>
