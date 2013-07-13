@@ -11,10 +11,10 @@ holds the search
 	<div class="search-form">
 		<div class="row">
 			<div class="span6 offset2">
-				<form class="row">
+				<form class="row" {{action "search" on="submit"}}>
 					<div class="input-prepend">
 						<span class="add-on nerdeez-add-on"><i class="icon-search"></i></span>
-						<input type="text" placeholder="Search for university" class="nerdeez-text-input span6">
+						{{view Ember.TextField valueBinding="searchQuery" placeholder="Search for university" class="nerdeez-text-input span6"}}
 					</div>
 				</form>
 			</div>
