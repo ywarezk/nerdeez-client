@@ -26,6 +26,7 @@ require('scripts/routes/nerdeez-routes');
 //store
 require('scripts/nerdeez-ember/tastypie_serializer');
 require('scripts/nerdeez-ember/tastypie_adapter');
+require('scripts/nerdeez-ember/porthole.min');
 require('scripts/nerdeez-ember/wormhole');
 require('scripts/store/nerdeez-store');
 
