@@ -7,5 +7,29 @@
 */
 
 ._search{
-    
+    .result{
+        .single-schoolgroup{
+            .border{
+                border: 1px solid;
+                height: 90px;
+                .image-wrapper{
+                    @include box-sizing(border-box);
+                    padding-left: 3px;
+                    padding-right: 3px;
+                    padding-top: 3px;
+                    .thumbnail{
+                        height: 73px;
+                        img{
+                            height: 100%;
+                        } 
+                        i.icon-picture{
+                            font-size: 74px;
+                            position: relative;
+                            left: 37px;
+                        }                     
+                    }
+                }
+            }
+        }
+    }
 }

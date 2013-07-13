@@ -26,4 +26,5 @@ Nerdeez.University = Nerdeez.SchoolGroup.extend({
  * course model
  */
 Nerdeez.Course = Nerdeez.SchoolGroup.extend({
+	university: DS.belongsTo('Nerdeez.University')
 });
