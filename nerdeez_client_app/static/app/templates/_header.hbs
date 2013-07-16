@@ -7,14 +7,16 @@ version: 1.0
 
 -->
 
-<header class="header">
+<header class="_header">
 	<div class="container">
 		<div class="row">
 			<div class="span2">
-				<img {{bindAttr src="view.logoUrl"}} />
+				<div class="logo">
+					<img src="{{unbound view.staticUrl}}img/logo.png" />
+				</div>
 			</div>
-			<div class="span5">
-				<ul class="nav nav-pills">
+			<div class="span5 pull-right">
+				<ul class="nav nav-pills pull-right tobottom">
 					<li class="active">
 						<a href="/#">Home</a>
 					</li>

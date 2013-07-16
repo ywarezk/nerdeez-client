@@ -7,10 +7,5 @@
 */
 
 Nerdeez.ApplicationView = Nerdeez.NerdeezView.extend({
- 
- templateName: 'application',
- 
- logoUrl: 'http://nerdeez.com/img/newlogoblack.png',
-
 });
 
