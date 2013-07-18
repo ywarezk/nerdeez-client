@@ -8,27 +8,39 @@
 
 html, body {
     height: 100%;
-
-a:link {color: #000000; text-decoration: underline; }
-a:active {color: #0000ff; text-decoration: underline; }
-a:visited {color: #008000; text-decoration: underline; }
-a:hover {color: #ff0000; text-decoration: none; }
+    a:link {
+        color: red;
+        text-decoration: none;
+    }
+    a:visited {
+        color: red;
+        text-decoration: none;
+    }
+    a:hover {
+        color: red;
+        text-decoration: underline;
+    }
+    a:active {
+        color: red;
+        text-decoration: underline;
+    }
 }
 
 .push {
-    height: 50px;
+    height: 55px;
 }
 
 .footer {
-    height: 50px;
-    .background {
-        @include background-image(linear-gradient(#231f20, #3d3c3e));
+    height: 55px;
+    .container {
+        background: linear-gradient(to bottom, #3D3D3D, #5C5C5C);
+        height: 55px;
+    }
+    .row {
+        height: 55px;
     }
     .font-color {
         color:white;
-    }
-    .wrapper {
-        margin: 0 auto -20px;
     }
 
     /* the left area of the footer (logo) */
@@ -47,30 +59,27 @@ a:hover {color: #ff0000; text-decoration: none; }
 
     /* the middle area of the footer (links) */
     .nerdeez-links {
-        width: 190px;
-        padding-left: 5px;
-        padding-top: 15px;
-        .left-link {
-            float: left;
-        }
-        .right-link {
-            float: left;
-            margin-left: 20px;
+        height: 45px;
+        width: 220px;
+        padding-top: 10px;
+        .nav, .nav-pills {
+            margin-bottom: 0px;
         }
     }
 
     /* the right area of the footer (copyright) */
     .nerdeez-copyright {
         max-width: 115px;
-        padding-top: 15px;
+        padding-top: 17+px;
         padding-right: 10px;
     }
 }
 
 #wrap {
-    height: auto !important;
-    margin: 0 auto -50px;
     min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -55px; /* the bottom margin is the negative value of the footer's height */
 }
 
 /**

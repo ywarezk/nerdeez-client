@@ -7,6 +7,8 @@
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="styles/style.css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="bower_components/bootstrap-sass/bootstrap-2.3.2.css" media="all" />
+        <link rel="stylesheet" href="bower_components/bootstrap-sass/bootstrap-responsive-2.3.2.css" media="all" />
         <!-- endbuild -->
 </head>
     <body>
@@ -14,35 +16,31 @@
 		<script type="text/javascript">
 			var STATIC_URL = '../';
 			var SERVER_URL = 'https://nerdeez-server-dev.herokuapp.com/';
-		</script>
-		    
+		</script>   
 		<div id="wrap">
 		</div>
-		        
-		<div class="footer">
+        <div class="footer">
             <div class="container">
-                <div class="background font-color">
-                    <div class="row">
-                        <div class="span2 nerdeez-logo">
-                            <div class="logo-textarea"> Created by: </div>
-                            <img src="img/logo.png">
-                        </div>
-                        <div class="nerdeez-links span3 offset3">
-                            <ul class="nav">
-                                <li class="left-link">    
-                                    <a href="#/privacy">Privacy</a>
-                                </li>
-                                <li class="right-link">
-                                    <a href="#/terms">Terms &amp; Conditions</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="nerdeez-copyright span2 offset3 pull-right">
-                            Nerdeez &#169; 2013
-                        </div>
-                    </div>              
-                </div>
-    		</div>
+                <div class="row font-color">
+                    <div class="span2 nerdeez-logo">
+                        <div class="logo-textarea"> Created by: </div>
+                        <img src="img/logo.png">
+                    </div>
+                    <div class="nerdeez-links span3 offset3">
+                        <ul class="nav nav-pills tocenter">
+                            <li>    
+                                <a href="#/privacy">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#/terms">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nerdeez-copyright span2 offset3 pull-right">
+                        Nerdeez &#169; 2013
+                    </div>
+                </div>              
+            </div>
         </div>
 
         <!-- build:js scripts/components.js -->
