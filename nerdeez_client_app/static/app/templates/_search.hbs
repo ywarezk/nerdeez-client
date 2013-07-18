@@ -1,0 +1,63 @@
+<!-- 
+
+holds the search
+	
+-->
+
+
+<div class="_search top-buffer">
+	
+	<!-- begin search input -->
+	<div class="search-form">
+		<div class="row">
+			<div class="span6 offset2">
+				<form class="row" {{action "search" on="submit"}}>
+					<div class="input-prepend">
+						<span class="add-on nerdeez-add-on"><i class="icon-search"></i></span>
+						{{view Ember.TextField valueBinding="searchQuery" placeholder="Search for university" class="nerdeez-text-input span6"}}
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- end search input -->
+	
+	<!-- begin result list -->
+	<div class="top-buffer result">
+		<div class="row">
+			<div class="span6 offset2">
+				{{#each controller}}
+				<div class="single-schoolgroup row top-buffer">
+					<div class="border">
+						<div class="row">
+							<div class="span2 image-wrapper">
+								<div class="thumbnail">
+									{{#if image}}
+										<img {{bindAttr src="image"}} />
+									{{else}}
+										<i class="icon-picture"></i>
+									{{/if}}
+								</div>
+							</div>
+							<div class="details span4">
+								<h5>
+									{{title}}
+								</h5>
+								<p>
+									{{description}}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{else}}
+				<div class="alert alert-info">
+	              <strong>No results found</strong>
+	            </div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	<!-- end result list -->
+	
+</div>

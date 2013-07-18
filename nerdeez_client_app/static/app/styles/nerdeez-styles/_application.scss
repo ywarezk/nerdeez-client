@@ -26,3 +26,21 @@ html, body {
 .top-buffer{
     margin-top: 20px;
 }
+
+/**
+ *   text input height
+ */
+.nerdeez-text-input{
+    height: 30px !important;
+    font-size: 20px !important;
+}
+
+.nerdeez-add-on{
+    height: 30px !important;
+    width: 30px !important;
+    i{
+        font-size: 22px;
+        position: relative;
+        top: 4px;
+    }
+}
