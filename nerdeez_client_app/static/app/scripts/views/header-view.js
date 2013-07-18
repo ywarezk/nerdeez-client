@@ -9,5 +9,5 @@
 
 
 Nerdeez.HeaderView = Nerdeez.NerdeezView.extend({
-	staticUrl : 'asfasdf'
+	staticUrl : STATIC_URL
 }); 
