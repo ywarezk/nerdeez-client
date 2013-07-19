@@ -18,6 +18,7 @@ require('scripts/views/nerdeez-view');
 require('scripts/views/application-view');
 require('scripts/views/search-view');
 require('scripts/models/schoolgroup-model');
+require('scripts/models/flatpage-model');
 require('scripts/controllers/search-controller');
 
 //routes
@@ -30,10 +31,4 @@ require('scripts/nerdeez-ember/tastypie_adapter');
 require('scripts/nerdeez-ember/porthole.min');
 require('scripts/nerdeez-ember/wormhole');
 require('scripts/store/nerdeez-store');
-
-
-
-
-
-
 

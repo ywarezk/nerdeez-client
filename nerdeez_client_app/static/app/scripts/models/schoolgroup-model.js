@@ -10,6 +10,7 @@
 /**
  * abstract class for all the school group models
  */
+
 Nerdeez.SchoolGroup = DS.Model.extend({
 	title: DS.attr('string'),
 	description: DS.attr('string'),
