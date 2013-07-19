@@ -13,6 +13,7 @@ nerdeez client views will be defined here
 import os
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+import settings
 
 #=============================
 # end imports
@@ -30,7 +31,7 @@ def spa(request):
     
     return render_to_response(
         'base.html',
-        {},
+        {'SERVER_URL': settings.SERVER_URL},
         context_instance=RequestContext(request)
         )
     

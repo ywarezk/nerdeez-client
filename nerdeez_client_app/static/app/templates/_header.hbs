@@ -18,10 +18,16 @@ version: 1.0
 			<div class="span5 pull-right">
 				<ul class="nav nav-pills pull-right tobottom">
 					<li class="active">
-						<a href="/#">Home</a>
+						{{#linkTo index}}Home{{/linkTo}}
 					</li>
 					<li>
-						<a href="/#/about">About</a>
+						{{#linkTo about}}About{{/linkTo}}
+					</li>
+					<li>
+						{{#linkTo privacy}}Privacy{{/linkTo}}
+					</li>
+					<li>
+						{{#linkTo terms}}Terms{{/linkTo}}
 					</li>
 				</ul>
 			</div>
