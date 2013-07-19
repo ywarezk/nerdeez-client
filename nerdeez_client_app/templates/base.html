@@ -5,15 +5,15 @@
         <title>Nerdeez - Community Collage</title>
 
         <!-- build:css styles/main.css -->
-        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}.tmp/styles/style.css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <!-- endbuild -->
 </head>
     <body>
     	
 		<script type="text/javascript">
-			var STATIC_URL = '../';
-			var SERVER_URL = 'https://nerdeez-server-dev.herokuapp.com/';
+			var STATIC_URL = '{{STATIC_URL}}app/';
+			var SERVER_URL = '{{SERVER_URL}}';
 		</script>
 		    
 		<div id="wrap">
@@ -26,34 +26,34 @@
 		</div>
 
         <!-- build:js scripts/components.js -->
-        <script src="bower_components/jquery/jquery.js"></script>
-        <script src="bower_components/handlebars/handlebars.runtime.js"></script>
-        <script src="bower_components/ember/ember.js"></script>
-        <script src="bower_components/ember-data-shim/ember-data.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/jquery/jquery.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/handlebars/handlebars.runtime.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/ember/ember.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/ember-data-shim/ember-data.js"></script>
         <!-- endbuild -->
 
         <!-- build:js(.tmp) scripts/templates.js -->
-        <script src="scripts/compiled-templates.js"></script>
+        <script src="{{STATIC_URL}}.tmp/scripts/compiled-templates.js"></script>
         <!-- endbuild -->
 
         <!-- build:js(.tmp) scripts/main.js -->
-        <script src="scripts/combined-scripts.js"></script>
+        <script src="{{STATIC_URL}}.tmp/scripts/combined-scripts.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/plugins.js -->
-        <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-modal.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-transition.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-button.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-popover.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-modal.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-transition.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-button.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-popover.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
         <!-- endbuild -->
 </body>
 </html>
