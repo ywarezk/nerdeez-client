@@ -3,3 +3,4 @@ temp
 dist
 .sass-cache
 .tmp
+Gruntfile.js
