@@ -8,21 +8,23 @@
 
 html, body {
     height: 100%;
+    a {
+        color: #F54D70;
+    }
     a:link {
-        color: red;
-        text-decoration: none;
+        color: white;
     }
     a:visited {
-        color: red;
-        text-decoration: none;
+        color: white;
     }
     a:hover {
-        color: red;
-        text-decoration: underline;
+        color: black;
     }
     a:active {
-        color: red;
-        text-decoration: underline;
+        color: black;
+    }
+    a:focus {
+        color: black;
     }
 }
 
@@ -70,7 +72,7 @@ html, body {
     /* the right area of the footer (copyright) */
     .nerdeez-copyright {
         max-width: 115px;
-        padding-top: 17+px;
+        padding-top: 17px;
         padding-right: 10px;
     }
 }

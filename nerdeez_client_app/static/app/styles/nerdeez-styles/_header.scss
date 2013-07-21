@@ -6,7 +6,7 @@
 *
 */
 
-._header{
+._header {
 	height: 80px;
     width: 100%;
     /*@include background-image(linear-gradient(#231f20, #3d3c3e));*/
@@ -15,16 +15,22 @@
     	padding-top: 15px;
 		padding-left: 10px;
     }
-    .active {
-    	a.link {background-color: red;}
-    	a.hover {background-color: red;}
-
-    }
     .tobottom{
 	    position: relative;
 	    right: 20px;
 	    top: 40px;
 	}
+    a {
+        color: #F54D70;
+    }
+    .active {
+        a {
+            background-color: #F54D70;
+        }
+        a:visited {
+            background-color: #F54D70;
+        }
+    }
 }
 
 
