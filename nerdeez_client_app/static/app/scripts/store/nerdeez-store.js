@@ -30,7 +30,16 @@ Nerdeez.Store = DS.Store.extend({
 	    /**
 	     * our serializer
 	     */
-	    serializer: Nerdeez.DjangoTastypieSerializer.extend({})
+	    serializer: Nerdeez.DjangoTastypieSerializer.extend({
+            
+            /**
+             * constructor for the serializer, set the mapping for the relations 
+             */
+            init: function(){
+                this._super();
+                this.mappings.set( 'Nerdeez.Course', { university: { embedded: 'load' } } );
+            }
+	    })
 	})
 	
 });

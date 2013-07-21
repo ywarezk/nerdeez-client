@@ -8,24 +8,7 @@
 
 html, body {
     height: 100%;
-    a {
-        color: #F54D70;
-    }
-    a:link {
-        color: white;
-    }
-    a:visited {
-        color: white;
-    }
-    a:hover {
-        color: black;
-    }
-    a:active {
-        color: black;
-    }
-    a:focus {
-        color: black;
-    }
+    background: url('/static/app/img/bg.png');
 }
 
 .push {
