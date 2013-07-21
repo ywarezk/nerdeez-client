@@ -19,7 +19,6 @@ require('scripts/views/application-view');
 require('scripts/views/search-view');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
-require('scripts/controllers/application-controller');
 require('scripts/controllers/search-controller');
 
 //routes
