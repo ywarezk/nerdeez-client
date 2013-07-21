@@ -156,4 +156,12 @@ LOGGING = {
 }
 INSTALLED_APPS = INSTALLED_APPS + ('nerdeez_client_app',)
 import os.path
-TEMPLATE_DIRS = TEMPLATE_DIRS + (os.path.join(os.path.dirname(__file__), 'templates').replace('\','/'),)
+TEMPLATE_DIRS = TEMPLATE_DIRS + (os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),)
+
+#my enviroment variables
+if 'NERDEEZ_ENV_DEBUG' in os.environ:
+    DEBUG = os.environ['NERDEEZ_ENV_DEBUG'] == 'TRUE'
+else:
+    DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+SERVER_URL = os.getenv('SERVER_URL', 'https://nerdeez-server-dev.herokuapp.com')

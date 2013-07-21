@@ -1,17 +1,37 @@
-from django.conf.urls import patterns, include, url
+'''
+nerdeez application urls will be defined here
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+@copyright: nerdeez.com Ltd.
+@author: Yariv Katz
+@version: 1.0
+
+'''
+
+#========================
+# begin imports
+#========================
+
+from django.conf.urls import patterns
+import nerdeez_client_app.views
+from django.conf import settings
+
+#========================
+# end imports
+#========================
+
+
+#========================
+# begin urls
+#========================
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'nerdeez_client_app.views.home', name='home'),
-    # url(r'^nerdeez_client_app/', include('nerdeez_client_app.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    (r'^$', nerdeez_client_app.views.spa),
 )
+
+urlpatterns += patterns('',
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+)
+
+#========================
+# end urls
+#========================
