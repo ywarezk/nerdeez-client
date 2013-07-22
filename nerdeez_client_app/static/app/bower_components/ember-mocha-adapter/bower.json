@@ -1,0 +1,23 @@
+{
+  "name": "ember-mocha-adapter",
+  "version": "0.1.1",
+  "main": "adapter.js",
+  "description": "An adapter that makes ember-testing with Mocha easier",
+  "keywords": [
+    "ember",
+    "ember.js",
+    "emberjs",
+    "testing",
+    "mocha"
+  ],
+  "ignore": [],
+  "dependencies": {},
+  "gitHead": "53995413be9168c22813dfa88ec3e49517938dec",
+  "readme": "Ember Mocha Adapter\n-------------------\n\nA mocha adapter for ember-testing.\n\nThis adapter makes async testing ember apps with mocha\neasier.\n\nIt gets rid of the `done()` callback and lets\nyou test without worrying whether your tests\nare sync or async.\n\n\n### Setup\n\nInclude the `adapter.js` file in your test.  Then:\n\n```javascript\nEmber.Test.adapter = Ember.Test.MochaAdapter.create();\n```\n\n### Example:\n\n```javascript\n\ndescribe(\"Adding a post\", function() {\n\n  beforeEach(function() {\n    visit('posts/new');\n  });\n\n  afterEach(function() {\n    App.reset();\n  });\n\n  it(\"should take me to a form\", function() {\n    find('form').should.exist;\n  });\n\n  it(\"should not submit with an empty title\", function() {\n    click('.submit').then(function() {\n      find('.error').text().should.equal('Title is required.');\n    });\n  });\n\n  it(\"should create a post on submit\", function() {\n    fillIn('.title', 'Test Post')\n    .fillIn('.body', 'This is the body')\n    .click('.submit')\n    .then(function() {\n      find('.post').should.exist;\n      find('.post-title').text().should.equal('Test Post');\n    });\n  });\n\n\n});\n\n```\n",
+  "readmeFilename": "README.md",
+  "_id": "ember-mocha-adapter@0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/teddyzeenny/ember-mocha-adapter.git"
+  }
+}
