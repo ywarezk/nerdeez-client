@@ -39,18 +39,18 @@ Nerdeez.SearchCourseRoute = Ember.Route.extend({
 
 Nerdeez.AboutRoute = Ember.Route.extend({
 	model: function(param){
-		return Nerdeez.Flatpage.find({'title' : 'about'});
+		return Nerdeez.Flatpage.find({'title' : 'about'}).objectAt(0);
 	}
 });
 
 Nerdeez.PrivacyRoute = Ember.Route.extend({
 	model: function(param){
-		return Nerdeez.Flatpage.find({'title' : 'privacy'});
+		return Nerdeez.Flatpage.find({'title' : 'privacy'}).objectAt(0);
 	}
 });
 
 Nerdeez.TermsRoute = Ember.Route.extend({
 	model: function(param){
-		return Nerdeez.Flatpage.find({'title' : 'terms'});
+		return Nerdeez.Flatpage.find({'title' : 'terms'}).objectAt(0);
 	}
 });

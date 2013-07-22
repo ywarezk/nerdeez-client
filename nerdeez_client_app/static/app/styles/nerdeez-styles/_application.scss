@@ -19,51 +19,6 @@ html, body {
     height: 55px;
 }
 
-.footer {
-    height: 55px;
-    .container {
-        background: linear-gradient(to bottom, #3D3D3D, #5C5C5C);
-        height: 55px;
-    }
-    .row {
-        height: 55px;
-    }
-    .font-color {
-        color:white;
-    }
-
-    /* the left area of the footer (logo) */
-    .nerdeez-logo {
-        max-height: 50px;
-        width: 120px;
-        padding-left: 10px;
-        .logo-textarea {
-            max-height: 19px;
-        }
-        img {
-            height: 31px;
-            width: auto;
-        }
-    }
-
-    /* the middle area of the footer (links) */
-    .nerdeez-links {
-        height: 45px;
-        width: 220px;
-        padding-top: 10px;
-        .nav, .nav-pills {
-            margin-bottom: 0px;
-        }
-    }
-
-    /* the right area of the footer (copyright) */
-    .nerdeez-copyright {
-        max-width: 115px;
-        padding-top: 17px;
-        padding-right: 10px;
-    }
-}
-
 #wrap {
     min-height: 100%;
     height: auto !important;

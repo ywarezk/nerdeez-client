@@ -9,8 +9,7 @@
 ._header {
 	height: 80px;
     width: 100%;
-    /*@include background-image(linear-gradient(#231f20, #3d3c3e));*/
-    background: linear-gradient(to bottom, #3D3D3D, #454545);
+    @include background(linear-gradient(to bottom, #3D3D3D, #454545));
     .logo{
     	padding-top: 15px;
 		padding-left: 10px;
@@ -27,9 +26,19 @@
         a {
             background-color: #F54D70;
         }
+        a:link {
+            background-color: #F54D70;
+        }
         a:visited {
             background-color: #F54D70;
         }
+        a:hover {
+            background-color: #F54D70;
+        }
+        a:active {
+            background-color: #F54D70;
+        }
+
     }
 }
 
