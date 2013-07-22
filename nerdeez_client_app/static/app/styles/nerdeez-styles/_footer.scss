@@ -1,3 +1,11 @@
+/**
+* holds the styles of the header
+* @copyright: nerdeez.com Ltd.
+* @version: 1.0
+* @author: Doron Nachshon
+*
+*/
+
 .footer {
     .container {
         @include background(linear-gradient(to bottom, #3D3D3D, #5C5C5C)); /* !!!!!!*/
@@ -6,9 +14,6 @@
     }
     .row {
         height: 55px;
-    }
-    .font-color {
-         /* not here */
     }
 
     /* the left area of the footer (logo) */
@@ -21,7 +26,7 @@
             height: 31px;
         }
     }
-
+    
     /* the middle area of the footer (links) */
     .nerdeez-links {
         padding-top: 10px;

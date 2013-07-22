@@ -9,10 +9,30 @@
 html, body {
     height: 100%;
     background: url('/static/app/img/bg.png');
-    a:link {color:white;}      /* unvisited link */
-    a:visited {color:white;}  /* visited link */
-    a:hover {color:black;}  /* mouse over link */
-    a:active {color:white;}  /* selected link */
+    /* unvisited link */
+}
+
+ul.nav.nav-pills li {
+    a:link {
+        color: white;
+    }
+    a:visited {
+        color: white;
+        background-color: none;
+    }
+    a:hover {
+        color: black;
+    }
+    a:active {
+        background-color: none;
+    }
+    a.active {
+        color: white;
+        background-color: #F54D70;
+        &:hover {
+            background-color: #F54D70;
+        }
+    }
 }
 
 .push {
