@@ -9,6 +9,10 @@
 html, body {
     height: 100%;
     background: url('/static/app/img/bg.png');
+    a:link {color:white;}      /* unvisited link */
+    a:visited {color:white;}  /* visited link */
+    a:hover {color:black;}  /* mouse over link */
+    a:active {color:white;}  /* selected link */
 }
 
 .push {
@@ -25,7 +29,7 @@ html, body {
         height: 55px;
     }
     .font-color {
-        color:red;
+        color:white;
     }
 
     /* the left area of the footer (logo) */
