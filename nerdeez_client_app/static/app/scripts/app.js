@@ -16,6 +16,7 @@ var Nerdeez = window.Nerdeez = Ember.Application.create({
 //application files
 require('scripts/views/nerdeez-view');
 require('scripts/views/application-view');
+require('scripts/views/flatpage-view');
 require('scripts/views/search-view');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');

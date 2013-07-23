@@ -6,10 +6,10 @@
 *
 */
 
-._header{
+._header {
 	height: 80px;
     width: 100%;
-    @include background-image(linear-gradient(#231f20, #3d3c3e));
+    @include background(linear-gradient(to bottom, #3D3D3D, #454545));
     .logo{
     	padding-top: 15px;
 		padding-left: 10px;
