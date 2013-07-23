@@ -14,6 +14,9 @@ Nerdeez.Router.map(function () {
 	    this.route('university');
 	    this.route('course');
 	});
+	this.route('about');
+	this.route('terms');
+	this.route('privacy');
 });
 
 /**
@@ -34,3 +37,20 @@ Nerdeez.SearchCourseRoute = Ember.Route.extend({
 	}
 });
 
+Nerdeez.AboutRoute = Ember.Route.extend({
+	model: function(param){
+		return Nerdeez.Flatpage.find({'title' : 'about'});
+	}
+});
+
+Nerdeez.PrivacyRoute = Ember.Route.extend({
+	model: function(param){
+		return Nerdeez.Flatpage.find({'title' : 'privacy'});
+	}
+});
+
+Nerdeez.TermsRoute = Ember.Route.extend({
+	model: function(param){
+		return Nerdeez.Flatpage.find({'title' : 'terms'});
+	}
+});
