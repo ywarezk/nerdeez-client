@@ -1,7 +1,9 @@
 <div class="flatpage">
 	<div class="row">
 		<div class="span10">
-			<div>{{{controller.html}}}</div>
+			{{#each controller}}
+				<div>{{{html}}}</div>
+			{{/each}}
 		</div>
 	</div>
 </div>
