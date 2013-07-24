@@ -8,9 +8,9 @@
 
 .footer {
     .container {
-        @include background(linear-gradient(to bottom, #3D3D3D, #5C5C5C)); /* !!!!!!*/
+        @include background(linear-gradient(to bottom, #3D3D3D, #5C5C5C)); 
         color:white;
-        /*height: 55px;*/
+        @include border-radius(10px 10px 0 0);
     }
     .row {
         height: 55px;

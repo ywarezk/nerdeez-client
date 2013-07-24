@@ -11,4 +11,5 @@
 .left-sidebar{
     width: 100%;
     @include background-image(linear-gradient(#231f20, #3d3c3e));
+    @include border-radius(0 10px 10px 0);
 }
