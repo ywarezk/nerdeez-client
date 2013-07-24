@@ -14,6 +14,7 @@ import os
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 import settings
+from django.views.decorators.cache import cache_page
 
 #=============================
 # end imports
@@ -26,12 +27,23 @@ import settings
 def spa(request):
     '''
     main nerdeez client application
-    @param request: the request object
     '''
     
     return render_to_response(
         'base.html',
         {'SERVER_URL': settings.SERVER_URL},
+        context_instance=RequestContext(request)
+        )
+
+@cache_page(60*60*24*365)
+def channel(request):
+    '''
+    channel file to load facebook
+    '''
+    
+    return render_to_response(
+        'channel.html',
+        {},
         context_instance=RequestContext(request)
         )
     
