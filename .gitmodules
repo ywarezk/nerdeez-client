@@ -1,3 +1,0 @@
-[submodule "nerdeez_client_app/static/app/scripts/nerdeez-ember"]
-	path = nerdeez_client_app/static/app/scripts/nerdeez-ember
-	url = https://github.com/ywarezk/nerdeez-ember.git
