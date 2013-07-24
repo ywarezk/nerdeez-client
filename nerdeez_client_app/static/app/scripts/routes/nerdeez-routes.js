@@ -17,6 +17,7 @@ Nerdeez.Router.map(function () {
 		this.route('about');
 		this.route('terms');
 		this.route('privacy');
+		this.route('contactus');
 });
 
 /**

@@ -1,0 +1,34 @@
+<!--
+
+Holds the html of the contact page
+author: Doron Nachshon
+copyright: nerdeez.com
+version: 1.0
+
+-->
+
+<div class="contactus">
+	<div class="row">
+		<div class="span10">
+			<h1>Contact Us</h1>
+			<div class="row">
+				<label>Email Address</label>
+				{{
+		  			view Ember.TextField
+		  			placeholder = "Enter your Email address here"
+		  			valueBinding="view.email"
+		  		}}
+		  	</div>
+		  	<div class="row">
+		  		<label>Message</label>
+		  		{{
+		  			view Ember.TextArea
+		  			placeholder = "Enter your message here"
+	  				valueBinding="view.message"
+	  			}}
+	  		</div>
+	  		<div class="row">
+	  			<button type="submit" class="btn" {{action submitContactUs target="view"}}>Send Email</button>
+		</div>
+	</div>
+</div>
