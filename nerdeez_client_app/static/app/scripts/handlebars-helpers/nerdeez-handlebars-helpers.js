@@ -23,5 +23,5 @@
  * @return {Handlebars.SafeString}
  */
 Ember.Handlebars.registerBoundHelper('loading', function() {
-    return new Ember.Handlebars.SafeString('<div class="laoding"><i class="icon-refresh icon-spin"></i></div>');
+    return new Ember.Handlebars.SafeString('<div class="loading"><i class="icon-refresh icon-spin"></i></div>');
 });

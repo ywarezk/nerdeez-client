@@ -28,7 +28,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
      * global variable called last page will have the last page to redirect
      * @type {Boolean}
      */
-    isRedirect: Nerdeez.get('lastPage') != null,
+    isRedirect: false,
     
     isFacebookLoginBinding: 'Nerdeez.isFBLoaded',
     
@@ -37,14 +37,11 @@ Nerdeez.LoginController = Ember.Controller.extend({
      */
     initController: function(){
         self = this;
-        FB.Event.subscribe('auth.authResponseChange', function(response) {
-            self.set('isLoading', false);
-            self.set('isConnected', response.status === 'connected');
-        });
-        
         FB.getLoginStatus(function(response) {
-            self.set('isConnected' , response.status === 'connected');
-        });        
+            Ember.run(function(){
+                self.set('isConnected' , response.status === 'connected');    
+            });
+        });      
     },
     
     /**
@@ -52,6 +49,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
      */
     init: function(){
         this._super();
+        this.set('isRedirect', Nerdeez.get('lastPage') != null);
         if(Nerdeez.get('isFBLoaded')){
             this.initController();
         }
@@ -62,24 +60,39 @@ Nerdeez.LoginController = Ember.Controller.extend({
      */
     login: function(){
         this.set('isLoading', true);
+        self = this;
         FB.login(function(response) {
+            
             if (response.authResponse) {
-                console.log('Welcome!  Fetching your information.... ');
-                FB.api('/me', function(response) {
-                    console.log('Good to see you, ' + response.name + '.');
+                Ember.run(function(){
+                    self.set('isLoading', false);
+                    self.set('isConnected', true);
                 });
+                
+                
+                if(self.get('isRedirect')){
+                    Ember.run(function(){
+                        self.set('isLoading', true);
+                    });
+                    setTimeout(function() {
+                        self.transitionTo(Nerdeez.get('lastPage'),Nerdeez.get('lastModel'));
+                    }, 3000);
+                }
             } else {
-                console.log('User cancelled login or did not fully authorize.');
+                Ember.run(function(){
+                    self.set('isLoading', false);
+                    self.set('isConnected', false);
+                });
             }
         });
     },
     
     /**
-     * 
+     * will be called when the facebook api is loaded
      */
     waitForFB: function(){
         if(Nerdeez.get('isFBLoaded')){
             this.initController();
         } 
-    }.property('isFacebookLoginBinding')
+    }.observes('Nerdeez.isFBLoaded')
 });

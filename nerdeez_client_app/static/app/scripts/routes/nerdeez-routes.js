@@ -29,7 +29,7 @@ Nerdeez.Router.map(function () {
  * Usage: just extend this class instead of the regular Ember.Route
  */
 Nerdeez.LoginRequired = Ember.Route.extend({
-    enter: function(){
+    redirect: function(){
         self = this;
         FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
@@ -41,6 +41,8 @@ Nerdeez.LoginRequired = Ember.Route.extend({
                 var uid = response.authResponse.userID;
                 var accessToken = response.authResponse.accessToken;
             } else{
+                Nerdeez.set('lastPage', self.routeName);
+                Nerdeez.set('lastModel', self.model());
                 self.transitionTo('login');
             }
         });
@@ -90,7 +92,7 @@ Nerdeez.TermsRoute = Ember.Route.extend({
 /**
  * the route to a course page
  */
-Nerdeez.CourseRoute = Nerdeez.LoginRequired.extend({
+Nerdeez.CourseRoute = Ember.Route.extend({
     model: function(param){
         return Nerdeez.Course.find(param.course_id);
     }
@@ -99,7 +101,7 @@ Nerdeez.CourseRoute = Nerdeez.LoginRequired.extend({
 /**
  * the route to a course wall page
  */
-Nerdeez.CourseWallRoute = Ember.Route.extend({
+Nerdeez.CourseWallRoute = Nerdeez.LoginRequired.extend({
     model: function(){
         return this.modelFor('course');
     }
@@ -108,7 +110,7 @@ Nerdeez.CourseWallRoute = Ember.Route.extend({
 /**
  * the route to a course files page
  */
-Nerdeez.CourseFilesRoute = Ember.Route.extend({
+Nerdeez.CourseFilesRoute = Nerdeez.LoginRequired.extend({
     model: function(){
         return this.modelFor('course');
     }
