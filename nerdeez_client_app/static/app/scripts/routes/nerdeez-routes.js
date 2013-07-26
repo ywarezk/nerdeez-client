@@ -30,6 +30,7 @@ Nerdeez.Router.map(function () {
  */
 Nerdeez.LoginRequired = Ember.Route.extend({
     enter: function(){
+        self = this;
         FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
                 // the user is logged in and has authenticated your
@@ -39,11 +40,8 @@ Nerdeez.LoginRequired = Ember.Route.extend({
                 // and signed request each expire
                 var uid = response.authResponse.userID;
                 var accessToken = response.authResponse.accessToken;
-            } else if (response.status === 'not_authorized') {
-                // the user is logged in to Facebook, 
-                // but has not authenticated your app
-            } else {
-                // the user isn't logged in to Facebook.
+            } else{
+                self.transitionTo('login');
             }
         });
     }
