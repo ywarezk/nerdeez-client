@@ -17,6 +17,8 @@ Nerdeez.Router.map(function () {
 	this.route('about');
 	this.route('terms');
 	this.route('privacy');
+<<<<<<< HEAD
+=======
     this.resource('course', { path: '/course/:course_id' }, function(){
         this.route('wall');
         this.route('files');
@@ -47,6 +49,7 @@ Nerdeez.LoginRequired = Ember.Route.extend({
             }
         });
     }
+>>>>>>> facebook
 });
 
 /**
