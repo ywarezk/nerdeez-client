@@ -18,11 +18,31 @@ version: 1.0
 			<div class="span5 pull-right">
 				<ul class="nav nav-pills pull-right tobottom">
 					<li>
-						{{#linkTo index}}Home{{/linkTo}}
+						{{#linkTo about}}
+                        <i class="icon-info"></i>
+                        About
+                        {{/linkTo}}
 					</li>
+                    {{#if Nerdeez.isConnected}}
+                    <li>
+    					{{#linkTo logout}}
+                        <i class="icon-power-off"></i>
+                        Logout
+                        {{/linkTo}}
+					</li>
+                    {{else}}
 					<li>
-						{{#linkTo about}}About{{/linkTo}}
-					</li>.
+						{{#linkTo login}}
+                        <i class="icon-lock"></i>
+                        Login
+                        {{/linkTo}}
+					</li>
+                    {{/if}}
+                    <li>
+    					{{#linkTo index}}
+                        <i class="icon-home"></i>
+                        Home{{/linkTo}}
+					</li>
 				</ul>
 			</div>
 		</div>

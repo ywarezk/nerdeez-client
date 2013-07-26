@@ -22,6 +22,7 @@ Nerdeez.Router.map(function () {
         this.route('files');
     });
     this.route('login');
+    this.route('logout');
 });
 
 /**
@@ -45,6 +46,18 @@ Nerdeez.LoginRequired = Ember.Route.extend({
                 Nerdeez.set('lastModel', self.model());
                 self.transitionTo('login');
             }
+        });
+    }
+});
+
+Nerdeez.LogoutRoute = Ember.Route.extend({
+    redirect: function(){
+        self = this;
+        FB.logout(function(response) {
+            Ember.run(function(){
+                Nerdeez.set('isConnected' , false);    
+            });
+            self.transitionTo('index');
         });
     }
 });

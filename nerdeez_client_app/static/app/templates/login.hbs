@@ -1,9 +1,9 @@
-<div class="login">
+<div class="login span3 offset1">
     <h1>Login page</h1>
     <div class="modal">
         <div class="modal-body">You need to login to continue</div>
         <div class="modal-footer">
-            {{#if isConnected}}
+            {{#if Nerdeez.isConnected}}
             <div class="alert alert-success pull-left">
                 <i class="icon-check-sign"></i>
                 <span>You are logged in</span>
@@ -20,7 +20,7 @@
             {{#if isLoading}}
             {{loading}}
             {{/if}}
-            {{#unless isConnected}}
+            {{#unless Nerdeez.isConnected}}
             <div class="pull-right">
                 <a class="btn primary" {{action "login"}}>
                     <span>

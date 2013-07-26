@@ -12,12 +12,6 @@
 Nerdeez.LoginController = Ember.Controller.extend({
     
     /**
-     * connected flag
-     * @type {Boolean}
-     */
-    isConnected: false,
-    
-    /**
      * loading flag
      * @type {Boolean}
      */
@@ -39,7 +33,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
         self = this;
         FB.getLoginStatus(function(response) {
             Ember.run(function(){
-                self.set('isConnected' , response.status === 'connected');    
+                Nerdeez.set('isConnected' , response.status === 'connected');    
             });
         });      
     },
@@ -66,7 +60,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
             if (response.authResponse) {
                 Ember.run(function(){
                     self.set('isLoading', false);
-                    self.set('isConnected', true);
+                    Nerdeez.set('isConnected', true);
                 });
                 
                 
@@ -81,7 +75,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
             } else {
                 Ember.run(function(){
                     self.set('isLoading', false);
-                    self.set('isConnected', false);
+                    Nerdeez.set('isConnected', false);
                 });
             }
         });

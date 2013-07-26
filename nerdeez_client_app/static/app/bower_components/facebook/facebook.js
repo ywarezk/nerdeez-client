@@ -18,8 +18,13 @@ window.fbAsyncInit = function() {
       xfbml      : true                                  // Look for social plugins on the page
     });
 
-    //Nerdeez.set('auth.isFBLoaded', true);    
-    Nerdeez.set('isFBLoaded', true);    
+    Nerdeez.set('isFBLoaded', true); 
+    
+    FB.getLoginStatus(function(response) {
+        Ember.run(function(){
+            Nerdeez.set('isConnected' , response.status === 'connected');    
+        });
+    });  
     
 };
 

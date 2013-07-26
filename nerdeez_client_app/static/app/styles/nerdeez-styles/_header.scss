@@ -20,6 +20,25 @@
 	    right: 20px;
 	    top: 40px;
 	}
+    .nav{
+        li{
+            a{                
+                i{
+                    color: white; font-size: 22px; float: left; margin-right: 9px; position: relative; top: -2px;
+                }
+                &:hover{
+                    i{
+                        color: $nerdeezPink;
+                    }
+                }
+                &.active:hover{
+                    i{
+                        color: white !important;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
