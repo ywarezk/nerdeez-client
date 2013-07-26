@@ -1,0 +1,18 @@
+/**
+ * stylesheet for the login page
+ * 
+ * Created: July 26th 2013
+ * @author: Yariv Katz
+ * @copyright: nerdeez Ltd.
+ * @version: 1.0
+ *
+ */
+ 
+ .login{
+    .modal{
+        top: 40%;
+    }
+    .primary{
+        @include background(linear-gradient(to bottom, #637BAD, #5872A7));
+    }
+ }
