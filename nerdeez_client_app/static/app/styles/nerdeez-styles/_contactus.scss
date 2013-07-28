@@ -1,0 +1,28 @@
+/**
+* styles for the entire application and also common classes in all my scss files
+* @version: 1.0
+* @copyright: nerdeez.com Ltd
+* @author: Yariv Katz
+*/
+
+.contactus {
+	.container {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	h1 {
+		font-size: 50px;
+		font-weight: lighter;
+	}
+
+	#contactusForm {
+		textarea[name="msginput"] {
+			width: 600px;
+			height: 200px;
+			resize: none;
+		}
+		input[name="emailinput"] {
+			width: 300px;
+		}
+	}
+}

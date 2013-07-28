@@ -17,7 +17,10 @@ Nerdeez.ContactusView = Nerdeez.NerdeezView.extend({
      * when the user submits the contact us form
      */
     submitContactUs: function(){
-        if(!$('.js-validation-form').valid()){
+        $("#contactusForm").validate();
+    }
+
+    /*    if(!$('.js-validation-form').valid()){
             return;
         }
         
@@ -40,6 +43,5 @@ Nerdeez.ContactusView = Nerdeez.NerdeezView.extend({
         }
         
         this.controller.submitContactUs(this.message, this.email, onSuccess, onError);
-    }
-
-})
+    }, */
+});
