@@ -7,8 +7,6 @@ var Nerdeez = window.Nerdeez = Ember.Application.create({
     
 });
 
-Nerdeez.set('isFBLoaded', false);
-
 
 //vendor files
 require('bower_components/facebook/facebook');
