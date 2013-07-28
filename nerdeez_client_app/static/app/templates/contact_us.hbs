@@ -28,10 +28,8 @@ version: 1.0
 			  		<div class="span4">
 			  			<label>Message (required)</label>
 			  		</div>
-			  		<div class="sidenote span6">
-			  			Characters remaining: 
-			  			<div id="charsRemaining">{{view.textLimit}}</div>
-			  		</div>
+			  	</div>
+			  	<div class="row">
 			  		<div class="span">
 				  		{{
 				  			view Ember.TextArea
@@ -43,6 +41,14 @@ version: 1.0
 			  			}}
 			  		</div>
 		  		</div>
+		  		<div class="row">
+		  			<div class="sidenote span6 offset4">
+			  			Characters remaining: 
+			  			<div id="charsRemaining">
+			  				{{view.textLimit}}
+			  			</div>
+			  		</div>
+			  	</div>
 		  		<div class="row">
 		  			<div class="span">
 		  				<button type="submit" class="btn">Send Email</button>

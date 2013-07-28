@@ -23,9 +23,10 @@
 
 	#contactusForm {
 		textarea[name="msginput"] {
-			width: 600px;
+			width: 560px;
 			height: 200px;
 			resize: none;
+			margin-bottom: 0px;
 		}
 		input[name="emailinput"] {
 			width: 300px;
