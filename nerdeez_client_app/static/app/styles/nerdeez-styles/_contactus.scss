@@ -14,6 +14,12 @@
 		font-size: 50px;
 		font-weight: lighter;
 	}
+	.sidenote {
+		color:#ccc;
+		#charsRemaining {
+			display : inline;
+		}
+	}
 
 	#contactusForm {
 		textarea[name="msginput"] {

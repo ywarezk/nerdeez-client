@@ -12,13 +12,19 @@ Nerdeez.ContactusView = Nerdeez.NerdeezView.extend({
 	//@member {string}fullTitle
 	message: null,
 	email: null,
+    textLimit: 100,
 
 	 /**
      * when the user submits the contact us form
      */
     submitContactUs: function(){
         $("#contactusForm").validate();
-    }
+    },
+
+    countChars: function(){
+        var elem = $("#charsRemaining");
+        $('textarea[name=msginput]').limiter(this.get('textLimit'), elem);
+    }.observes('message')
 
     /*    if(!$('.js-validation-form').valid()){
             return;

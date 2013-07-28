@@ -37,4 +37,5 @@ require('scripts/store/nerdeez-store');
 
 //jquery
 require("bower_components/jquery plugins/jquery.validate.min");
+require("bower_components/jquery plugins/jquery.tinylimiter");
 

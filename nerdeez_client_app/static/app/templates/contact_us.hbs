@@ -25,8 +25,14 @@ version: 1.0
 			  		</div>
 			  	</div>
 			  	<div class="row">
-			  		<div class="span">
+			  		<div class="span4">
 			  			<label>Message (required)</label>
+			  		</div>
+			  		<div class="sidenote span6">
+			  			Characters remaining: 
+			  			<div id="charsRemaining">{{view.textLimit}}</div>
+			  		</div>
+			  		<div class="span">
 				  		{{
 				  			view Ember.TextArea
 				  			placeholder = "Enter your message here"
@@ -35,7 +41,6 @@ version: 1.0
 			  				type="text"
 			  				required="true"
 			  			}}
-			  			<p>{{controller.msglength}} letters left</p>
 			  		</div>
 		  		</div>
 		  		<div class="row">

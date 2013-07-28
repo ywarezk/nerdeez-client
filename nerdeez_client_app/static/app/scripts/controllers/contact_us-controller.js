@@ -1,7 +1,7 @@
 Nerdeez.ContactusController = Ember.Controller.extend({
-    msglength: 1000,
     isSuccess: false,
     message: '',
+
     
     /**
      * when the user submits the contact us form
@@ -21,5 +21,4 @@ Nerdeez.ContactusController = Ember.Controller.extend({
 	        	}
 	    );
     }
-
 });
