@@ -14,25 +14,31 @@ Nerdeez.ContactusView = Nerdeez.NerdeezView.extend({
 	email: null,
     textLimit: 100,
 
+/**
+* JQuery plugin for form validation
+* CURRENTLY NOT IN USE
+* Somehow form validation is already in place
+*/
+
+//    didInsertElement: function() {
+//        $("#contactusForm").validate();
+//    },
+
 	 /**
      * when the user submits the contact us form
      */
     submitContactUs: function() {
-        console.log("submitcontactusview")
-        $("#contactusForm").validate();
-        
-        if (!$("#contactusForm").valid()) {
-            return;
-        }
+
+//        if (!$("#contactusForm").valid()) {
+//            return;
+//        }
 
         onSuccess = function(json){
             if('error' in json) {
                  $('#contact-message').text(json['error']);
-                 $('#contact-error').fadeIn('normal');
              }
              else {
                  $('#contact-message').text(json['success']);
-                 $('#contact-success').fadeIn('normal');
              }
              $('.info').css('display','block');
         }

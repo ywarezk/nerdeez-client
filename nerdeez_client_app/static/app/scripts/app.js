@@ -37,6 +37,6 @@ require('scripts/controllers/contact_us-controller');
 require('scripts/routes/nerdeez-routes');
 
 //jquery
-require("bower_components/jquery plugins/jquery.validate");
+//require("bower_components/jquery plugins/jquery.validate");
 require("bower_components/jquery plugins/jquery.tinylimiter");
 
