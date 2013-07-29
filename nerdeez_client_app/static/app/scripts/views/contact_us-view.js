@@ -22,7 +22,7 @@ Nerdeez.ContactusView = Nerdeez.NerdeezView.extend({
     },
 
     countChars: function(){
-        var elem = $("#charsRemaining");
+        var elem = $(".charsRemaining");
         $('textarea[name=msginput]').limiter(this.get('textLimit'), elem);
     }.observes('message')
 

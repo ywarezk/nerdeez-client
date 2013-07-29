@@ -13,7 +13,7 @@ version: 1.0
 			<h1>Contact Us</h1>
 			<form class="form" id="contactusForm" {{action submitContactUs target="view" on="submit"}}>
 				<div class="row top-buffer">
-					<div class="span">
+					<div class="span6">
 						<label>Email Address (not required)</label> 
 						{{
 			  				view Ember.TextField
@@ -25,12 +25,12 @@ version: 1.0
 			  		</div>
 			  	</div>
 			  	<div class="row">
-			  		<div class="span4">
+			  		<div class="span6">
 			  			<label>Message (required)</label>
 			  		</div>
 			  	</div>
 			  	<div class="row">
-			  		<div class="span">
+			  		<div class="span6">
 				  		{{
 				  			view Ember.TextArea
 				  			placeholder = "Enter your message here"
@@ -44,13 +44,13 @@ version: 1.0
 		  		<div class="row">
 		  			<div class="sidenote span6 offset4">
 			  			Characters remaining: 
-			  			<div id="charsRemaining">
+			  			<div class="charsRemaining">
 			  				{{view.textLimit}}
 			  			</div>
 			  		</div>
 			  	</div>
 		  		<div class="row">
-		  			<div class="span">
+		  			<div class="span6">
 		  				<button type="submit" class="btn">Send Email</button>
 		  			</div>
 				</div>
