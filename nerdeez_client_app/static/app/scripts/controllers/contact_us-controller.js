@@ -12,7 +12,7 @@ Nerdeez.ContactusController = Ember.Controller.extend({
      */
     submitContactUs: function(message, mail, success, error){
         Nerdeez.get('store.adapter').ajax(
-	        	Nerdeez.server_url + '/api/v1/contactus/',
+	        	Nerdeez.server_url + '/api/v1/utilities/contact/',
 	        	'POST',
 	        	{
 	        		data: {message: message, mail: mail},

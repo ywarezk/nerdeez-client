@@ -3,7 +3,9 @@
 var Nerdeez = window.Nerdeez = Ember.Application.create({
 
 	//@member {string} constant holds the dom element which the application be injected to
-    rootElement: '#wrap'
+    rootElement: '#wrap',
+
+    server_url: SERVER_URL
     
 });
 
@@ -12,6 +14,13 @@ var Nerdeez = window.Nerdeez = Ember.Application.create({
 // require('scripts/controllers/*');
 // require('scripts/models/*');
 // require('scripts/views/*');
+
+//store
+require('scripts/nerdeez-ember/tastypie_serializer');
+require('scripts/nerdeez-ember/tastypie_adapter');
+require('scripts/nerdeez-ember/porthole.min');
+require('scripts/nerdeez-ember/wormhole');
+require('scripts/store/nerdeez-store');
 
 //application files
 require('scripts/views/nerdeez-view');
@@ -27,15 +36,7 @@ require('scripts/controllers/contact_us-controller');
 //routes
 require('scripts/routes/nerdeez-routes');
 
-
-//store
-require('scripts/nerdeez-ember/tastypie_serializer');
-require('scripts/nerdeez-ember/tastypie_adapter');
-require('scripts/nerdeez-ember/porthole.min');
-require('scripts/nerdeez-ember/wormhole');
-require('scripts/store/nerdeez-store');
-
 //jquery
-require("bower_components/jquery plugins/jquery.validate.min");
+require("bower_components/jquery plugins/jquery.validate");
 require("bower_components/jquery plugins/jquery.tinylimiter");
 
