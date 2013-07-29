@@ -2,11 +2,20 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
         <title>Nerdeez - Community Collage</title>
 
         <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
         <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/compiled_app/styles/style.css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{STATIC_URL}}theme/css/ui-lightness/jquery-ui-1.8.21.custom.css">    
+        <link rel="stylesheet" href="{{STATIC_URL}}theme/css/application-black-orange.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}theme/css/pages/dashboard.css">
+        <script src="{{STATIC_URL}}theme/js/libs/modernizr-2.5.3.min.js"></script>
         <!-- endbuild -->
     </head>
     <body>
@@ -80,5 +89,34 @@
         <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
         <!-- endbuild -->
+        
+        <script src="{{STATIC_URL}}theme/js/libs/jquery-ui-1.8.21.custom.min.js"></script>
+        <script src="{{STATIC_URL}}theme/js/libs/jquery.ui.touch-punch.min.js"></script>
+        
+        <script src="{{STATIC_URL}}theme/js/libs/bootstrap/bootstrap.min.js"></script>
+        
+        <script src="{{STATIC_URL}}theme/js/Theme.js"></script>
+        <script src="{{STATIC_URL}}theme/js/Charts.js"></script>
+        
+        <script src="{{STATIC_URL}}theme/js/plugins/excanvas/excanvas.min.js"></script>
+        <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.js"></script>
+        <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.pie.js"></script>
+        <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.orderBars.js"></script>
+        <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+        <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.resize.js"></script>
+        
+        <script src="{{STATIC_URL}}theme/js/demos/charts/line.js"></script>
+        <script src="{{STATIC_URL}}theme/js/demos/charts/donut.js"></script>
+        
+        <script>
+        
+        $(function () {
+            
+        	Theme.init ();
+        	
+        });
+        
+        </script>
+        
     </body>
 </html>
