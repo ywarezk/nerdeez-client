@@ -26,6 +26,12 @@ function program5(depth0,data) {
   data.buffer.push("\n                            <i class=\"icon-info\"></i>\n                            About\n                            ");
   }
 
+function program7(depth0,data) {
+  
+  
+  data.buffer.push("\n                            <i class=\"icon-dollar\"></i>\n                            Bank application\n                            ");
+  }
+
   data.buffer.push("<!--\n\nHolds the html of the application header\nauthor: Yariv Katz\ncopyright: nerdeez.com\nversion: 1.0\n\n-->\n\n<div id=\"header\" class=\"_header\">\n	<div class=\"container\">\n		<div class=\"row\">\n            <div class=\"logo span2\">\n                ");
   hashTypes = {};
   hashContexts = {};
@@ -43,6 +49,12 @@ function program5(depth0,data) {
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "about", options) : helperMissing.call(depth0, "linkTo", "about", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n    				    </li>\n    				    <li>\n        					");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "banks", options) : helperMissing.call(depth0, "linkTo", "banks", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n    				    </li>\n    				\n    			    </ul>\n    			\n    		    </div> <!-- /.nav-collapse -->\n            </div>\n        </div>\n        \n\n	</div> <!-- /.container -->\n	\n</div>\n");
   return buffer;
@@ -239,16 +251,98 @@ helpers = helpers || Ember.Handlebars.helpers; data = data || {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.partial),stack1 ? stack1.call(depth0, "masthead", options) : helperMissing.call(depth0, "partial", "masthead", options))));
-  data.buffer.push("\n<div id=\"content\">\n    <div class=\"container\">\n        <div class=\"row\">\n    	    <div class=\"span2\">\n			    ");
-  hashTypes = {};
-  hashContexts = {};
-  options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  data.buffer.push(escapeExpression(((stack1 = helpers.partial),stack1 ? stack1.call(depth0, "left-sidebar", options) : helperMissing.call(depth0, "partial", "left-sidebar", options))));
-  data.buffer.push("\n		    </div>\n		    <div class=\"span10\">\n			    ");
+  data.buffer.push("\n<div id=\"content\">\n    <div class=\"container\">\n        <div class=\"row\">\n		    <div class=\"span12\">\n			    ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n			</div>\n		</div>\n    </div>\n</div>\n<div class=\"push\"></div>");
+  return buffer;
+  
+});
+
+Ember.TEMPLATES["banks"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [3,'>= 1.0.0-rc.4'];
+helpers = helpers || Ember.Handlebars.helpers; data = data || {};
+  var buffer = '', hashContexts, hashTypes, escapeExpression=this.escapeExpression;
+
+
+  data.buffer.push("<div class=\"banks\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"span12\">\n                <h1>אפליקציית השוואות בנקים</h1>\n            </div>                \n        </div>\n        <div class=\"row\">\n            <form ");
+  hashContexts = {'on': depth0};
+  hashTypes = {'on': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "search", {hash:{
+    'on': ("submit")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n                <div class=\"faq-container\">\n                    <ol class=\"faqList faq-list\">\n                        <li class=\"span4 pull-right\">\n                            <div class=\"faq-icon\">\n                                <div class=\"faq-number\">1</div>\n                            </div>\n                            <div class=\"faq-text\">\n                                <div class=\"details register\">\n                                    <h4>הכנס פרטים אישיים</h4>\n                                    <p>הפרטים שלך נותרים חסויים ומטרתם לאמת אז זהותך</p>\n                                    <div class=\"login-fields\">\n                                    \n                        				<div class=\"field\">\n                        					<label for=\"name\">שם:</label>\n                                            ");
+  hashContexts = {'class': depth0,'placeholder': depth0,'valueBinding': depth0,'required': depth0,'name': depth0};
+  hashTypes = {'class': "STRING",'placeholder': "STRING",'valueBinding': "STRING",'required': "STRING",'name': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'class': ("login"),
+    'placeholder': ("שם"),
+    'valueBinding': ("name"),
+    'required': ("true"),
+    'name': ("name")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n                        				</div> <!-- /field -->\n                        				\n                        				<div class=\"field\">\n                        					<label for=\"id\">ת.ז:</label>	\n                        					");
+  hashContexts = {'class': depth0,'placeholder': depth0,'valueBinding': depth0,'required': depth0,'name': depth0};
+  hashTypes = {'class': "STRING",'placeholder': "STRING",'valueBinding': "STRING",'required': "STRING",'name': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'class': ("login"),
+    'placeholder': ("ת.ז"),
+    'valueBinding': ("id"),
+    'required': ("true"),
+    'name': ("id")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n                        				</div> <!-- /field -->\n                                        \n                        				<div class=\"field\">\n                        					<label for=\"phone\">טלפון:</label>	\n                        					");
+  hashContexts = {'class': depth0,'placeholder': depth0,'valueBinding': depth0,'required': depth0,'name': depth0};
+  hashTypes = {'class': "STRING",'placeholder': "STRING",'valueBinding': "STRING",'required': "STRING",'name': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'class': ("login"),
+    'placeholder': ("טלפון"),
+    'valueBinding': ("phone"),
+    'required': ("true"),
+    'name': ("phone")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n                        				</div> <!-- /field -->\n                                        \n                        			</div>\n                                </div>\n                            </div>\n                        </li>\n                        \n                        <li class=\"span4 pull-right\">\n                            <div class=\"faq-icon\">\n                                <div class=\"faq-number\">2</div>\n                            </div>\n                            <div class=\"faq-text\">\n                                <div class=\"details register\">\n                                    <h4>הכנס פרטי הוצאות\\הכנסות</h4>\n                                    <p>הפרטים נותרים חסויים ומטרתם לאפשר לבנקים להתאים לך הצעות לתוכניות אפשריות</p>\n                                    <div class=\"login-fields\">\n                                    \n                        				<div class=\"field\">\n                        					<label for=\"savings\">חסכונות:</label>\n                                            ");
+  hashContexts = {'class': depth0,'placeholder': depth0,'valueBinding': depth0,'required': depth0,'name': depth0};
+  hashTypes = {'class': "STRING",'placeholder': "STRING",'valueBinding': "STRING",'required': "STRING",'name': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'class': ("login"),
+    'placeholder': ("חסכונות"),
+    'valueBinding': ("savings"),
+    'required': ("true"),
+    'name': ("savings")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n                        				</div> <!-- /field -->\n                        				\n                        				<div class=\"field\">\n                        					<label for=\"salary\">משכורת:</label>	\n                        					");
+  hashContexts = {'class': depth0,'placeholder': depth0,'valueBinding': depth0,'required': depth0,'name': depth0};
+  hashTypes = {'class': "STRING",'placeholder': "STRING",'valueBinding': "STRING",'required': "STRING",'name': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'class': ("login"),
+    'placeholder': ("משכורת"),
+    'valueBinding': ("salary"),
+    'required': ("true"),
+    'name': ("salary")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n                        				</div> <!-- /field -->\n                                        \n                        				<div class=\"field\">\n                        					<label for=\"loans\">הלוואות:</label>	\n                        					");
+  hashContexts = {'class': depth0,'placeholder': depth0,'valueBinding': depth0,'required': depth0,'name': depth0};
+  hashTypes = {'class': "STRING",'placeholder': "STRING",'valueBinding': "STRING",'required': "STRING",'name': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'class': ("login"),
+    'placeholder': ("הלוואות"),
+    'valueBinding': ("loans"),
+    'required': ("true"),
+    'name': ("loans")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n                        				</div> <!-- /field -->\n                                        \n                        				<div class=\"credit\">\n                        					<label for=\"loans\">הלוואות:</label>	\n                        					");
+  hashContexts = {'class': depth0,'placeholder': depth0,'valueBinding': depth0,'required': depth0,'name': depth0};
+  hashTypes = {'class': "STRING",'placeholder': "STRING",'valueBinding': "STRING",'required': "STRING",'name': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'class': ("login"),
+    'placeholder': ("מסגרת אשראי"),
+    'valueBinding': ("credit"),
+    'required': ("true"),
+    'name': ("loans")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n                        				</div> <!-- /field -->\n                                        \n                        			</div>\n                                </div>\n                            </div>\n                        </li>\n                        \n                        <li class=\"span3 pull-right\">\n                            <div class=\"faq-icon\">\n                                <div class=\"faq-number\">3</div>\n                            </div>\n                            <div class=\"faq-text\">\n                                <div class=\"details register\">\n                                    <h4>לחץ  לחיפוש</h4>\n                                    <div class=\"login-fields\">\n                        				<button type=\"submit\" class=\"button btn btn-primary btn-large\">\n                                            <i class=\"icon-search\"></i>\n                                            חפש תוכניות\n                                        </button>\n                        			</div>\n                                </div>\n                            </div>\n                        </li>\n                    </ol>\n                </div>\n            </form>\n        </div>\n        \n        <div class=\"row results\">\n            <div class=\"container\">    		\n        	<div class=\"row\">			\n        	    <div class=\"span12\">				\n        		    <div class=\"pricing-plans plans-4\">						\n        		        <div class=\"plan-container best-value\">\n        		            <div class=\"plan\">\n        			            <div class=\"plan-header\">				                \n        			                <div class=\"plan-title\">\n        					        	בנק הפועלים	        		\n        				            </div> <!-- /plan-title -->				                \n        		                    <div class=\"plan-price\">\n                                        <div class=\"thumbnail\">\n        				                    <img src=\"http://www.myavne.co.il/sites/yavne/UserContent/images/Yavne%20Irya/2013/12.06.13/poalim.jpg\">       	\n                                        </div>\n        				            </div> <!-- /plan-price -->\n        								\n        					    </div> <!-- /plan-header -->       \n        					        \n        					<div class=\"plan-features\">\n        						<ul>\n									<li>\n                                    <strong>\n                                    דמי ניהול\n                                    <strong>\n                                    12\n                                    &#8362;\n                                    /\n                                    חודש\n                                    </li>\n									<li>\n                                    <strong>\n                                    ריבית בפיקדון\n                                    </strong>\n                                    3%\n                                    </li>\n									<li>\n                                    <strong>מסגרת משכורת</strong>\n                                    חינם\n                                    </li>\n									<li><strong>ריבית הלוואה</strong>\n                                    3%\n                                    </li>\n									<li>\n                                        מבצע למצטרפים מהאפליקצייה.\n                                        המבצע תקף בהתאם\n                                        \n                                        \n                                    </li>\n        								</ul>\n        							</div> <!-- /plan-features -->\n        							\n        							<div class=\"plan-actions\">				\n        								<a class=\"btn\" href=\"javascript:;\">Purchase Now</a>				\n        							</div> <!-- /plan-actions -->\n        				\n        						</div> <!-- /plan -->\n        				    </div> <!-- /plan-container -->\n        				    \n        				    <div class=\"plan-container\">\n        				        <div class=\"plan\">\n        					        <div class=\"plan-header\">\n        				                \n        					        	<div class=\"plan-title\">\n        					        		Starter	        		\n        				        		</div> <!-- /plan-title -->\n        				                \n        					            <div class=\"plan-price\">\n        				                	<span class=\"note\">$</span>35<span class=\"term\">Per Month</span>\n        								</div> <!-- /plan-price -->\n        								\n        					        </div> <!-- /plan-header -->       \n        					        \n        					        <div class=\"plan-features\">\n        								<ul>\n        									<li><strong>Free</strong> setup</li>\n        									<li><strong>5</strong> Website</li>\n        									<li><strong>10</strong> Projects</li>\n        									<li><strong>5GB</strong> Storage</li>\n        									<li><strong>$35</strong> Google Adwords Credit</li>\n        								</ul>\n        							</div> <!-- /plan-features -->\n        							\n        							<div class=\"plan-actions\">				\n        								<a class=\"btn\" href=\"javascript:;\">Purchase Now</a>				\n        							</div> <!-- /plan-actions -->\n        				\n        						</div> <!-- /plan -->\n        				    </div> <!-- /plan-container -->\n        				    \n        				    <div class=\"plan-container best-value\">\n        				        <div class=\"plan\">\n        					        <div class=\"plan-header\">\n        				                \n        					        	<div class=\"plan-title\">\n        					        		Business	        		\n        				        		</div> <!-- /plan-title -->\n        				                \n        					            <div class=\"plan-price\">\n        				                	<span class=\"note\">$</span>75<span class=\"term\">Per Month</span>\n        								</div> <!-- /plan-price -->\n        								\n        					        </div> <!-- /plan-header -->	          \n        					        \n        					        <div class=\"plan-features\">\n        								<ul>					\n        									<li><strong>Free</strong> setup</li>\n        									<li><strong>20</strong> Website</li>\n        									<li><strong>35</strong> Projects</li>\n        									<li><strong>Unlimited</strong> Storage</li>\n        									<li><strong>$150</strong> Google Adwords Credit</li>\n        								</ul>\n        							</div> <!-- /plan-features -->\n        							\n        							<div class=\"plan-actions\">				\n        								<a class=\"btn\" href=\"javascript:;\">Purchase Now</a>				\n        							</div> <!-- /plan-actions -->\n        				\n        						</div> <!-- /plan -->\n        				    </div> <!-- /plan-container -->\n        				    \n        				    <div class=\"plan-container\">\n        				        <div class=\"plan\">\n        					        <div class=\"plan-header\">\n        				                \n        					        	<div class=\"plan-title\">\n        					        		Enterprise	        		\n        				        		</div> <!-- /plan-title -->\n        				                \n        					            <div class=\"plan-price\">\n        				                	<span class=\"note\">$</span>125<span class=\"term\">Per Month</span>\n        								</div> <!-- /plan-price -->\n        								\n        					        </div> <!-- /plan-header -->	       \n        					        \n        					        <div class=\"plan-features\">\n        								<ul>\n        									<li><strong>Free</strong> setup</li>\n        									<li><strong>Unlimited</strong> Website</li>\n        									<li><strong>Unlimited</strong> Projects</li>\n        									<li><strong>Unlimited</strong> Storage</li>\n        									<li><strong>$250</strong> Google Adwords Credit</li>\n        								</ul>\n        							</div> <!-- /plan-features -->\n        							\n        							<div class=\"plan-actions\">				\n        								<a class=\"btn\" href=\"javascript:;\">Purchase Now</a>				\n        							</div> <!-- /plan-actions -->\n        				\n        						</div> <!-- /plan -->\n        						\n        				    </div> <!-- /plan-container -->\n        				    \n        				</div>\n        				\n        			</div> <!-- /.span12 -->\n        			\n        		</div> <!-- /.row -->\n        		\n        		\n        	</div>\n        </div>\n    </div>\n</div>");
   return buffer;
   
 });

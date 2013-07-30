@@ -1,0 +1,49 @@
+/**
+ * the stylesheet for the banks application
+ * @copyright: nerdeez Ltd.
+ * @version: 1.0
+ * @author: Yariv Katz
+ */
+ 
+.banks{
+    text-align: right;
+    .faq-container{
+        direction: rtl;
+        .details{
+            margin-right: 20px;
+            p{
+                margin-right: 40px;
+            }
+            .login-fields{
+                margin-right: 40px;
+                input{
+                    font-size: 18px;
+                    height: 43px;
+                    padding: 3px 18px 2px 0 !important;
+                }
+            }
+        }
+    }
+    .row{
+        margin-top:0 !important;
+    }
+    form{
+        button[type="submit"]{
+            i.icon-search{
+                left: 4px;
+                position: relative;
+                top: 5px;
+            }
+        }
+    }
+    .results{
+        .plan{
+            .plan-price{
+                padding-top: 10px;
+                .thumbnail{
+                    width: 94%; margin: 0px auto;
+                }
+            }
+        }
+    }
+}

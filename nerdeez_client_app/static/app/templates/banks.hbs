@@ -1,0 +1,281 @@
+<div class="banks">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h1>אפליקציית השוואות בנקים</h1>
+            </div>                
+        </div>
+        <div class="row">
+            <form {{action "search" on="submit"}}>
+                <div class="faq-container">
+                    <ol class="faqList faq-list">
+                        <li class="span4 pull-right">
+                            <div class="faq-icon">
+                                <div class="faq-number">1</div>
+                            </div>
+                            <div class="faq-text">
+                                <div class="details register">
+                                    <h4>הכנס פרטים אישיים</h4>
+                                    <p>הפרטים שלך נותרים חסויים ומטרתם לאמת אז זהותך</p>
+                                    <div class="login-fields">
+                                    
+                        				<div class="field">
+                        					<label for="name">שם:</label>
+                                            {{view Ember.TextField class="login" placeholder="שם" valueBinding="name" required="true" name="name"}}
+                        				</div> <!-- /field -->
+                        				
+                        				<div class="field">
+                        					<label for="id">ת.ז:</label>	
+                        					{{view Ember.TextField class="login" placeholder="ת.ז" valueBinding="id" required="true" name="id"}}
+                        				</div> <!-- /field -->
+                                        
+                        				<div class="field">
+                        					<label for="phone">טלפון:</label>	
+                        					{{view Ember.TextField class="login" placeholder="טלפון" valueBinding="phone" required="true" name="phone"}}
+                        				</div> <!-- /field -->
+                                        
+                        			</div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="span4 pull-right">
+                            <div class="faq-icon">
+                                <div class="faq-number">2</div>
+                            </div>
+                            <div class="faq-text">
+                                <div class="details register">
+                                    <h4>הכנס פרטי הוצאות\הכנסות</h4>
+                                    <p>הפרטים נותרים חסויים ומטרתם לאפשר לבנקים להתאים לך הצעות לתוכניות אפשריות</p>
+                                    <div class="login-fields">
+                                    
+                        				<div class="field">
+                        					<label for="savings">חסכונות:</label>
+                                            {{view Ember.TextField class="login" placeholder="חסכונות" valueBinding="savings" required="true" name="savings"}}
+                        				</div> <!-- /field -->
+                        				
+                        				<div class="field">
+                        					<label for="salary">משכורת:</label>	
+                        					{{view Ember.TextField class="login" placeholder="משכורת" valueBinding="salary" required="true" name="salary"}}
+                        				</div> <!-- /field -->
+                                        
+                        				<div class="field">
+                        					<label for="loans">הלוואות:</label>	
+                        					{{view Ember.TextField class="login" placeholder="הלוואות" valueBinding="loans" required="true" name="loans"}}
+                        				</div> <!-- /field -->
+                                        
+                        				<div class="credit">
+                        					<label for="loans">הלוואות:</label>	
+                        					{{view Ember.TextField class="login" placeholder="מסגרת אשראי" valueBinding="credit" required="true" name="loans"}}
+                        				</div> <!-- /field -->
+                                        
+                        			</div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="span3 pull-right">
+                            <div class="faq-icon">
+                                <div class="faq-number">3</div>
+                            </div>
+                            <div class="faq-text">
+                                <div class="details register">
+                                    <h4>לחץ  לחיפוש</h4>
+                                    <div class="login-fields">
+                        				<button type="submit" class="button btn btn-primary btn-large">
+                                            <i class="icon-search"></i>
+                                            חפש תוכניות
+                                        </button>
+                        			</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </form>
+        </div>
+        
+        <div class="row results">
+            <div class="container">    		
+        	<div class="row">			
+        	    <div class="span12">				
+        		    <div class="pricing-plans plans-4">						
+        		        <div class="plan-container best-value">
+        		            <div class="plan">
+        			            <div class="plan-header">				                
+        			                <div class="plan-title">
+        					        	בנק הפועלים	        		
+        				            </div> <!-- /plan-title -->				                
+        		                    <div class="plan-price">
+                                        <div class="thumbnail">
+        				                    <img src="http://www.myavne.co.il/sites/yavne/UserContent/images/Yavne%20Irya/2013/12.06.13/poalim.jpg">       	
+                                        </div>
+        				            </div> <!-- /plan-price -->
+        								
+        					    </div> <!-- /plan-header -->       
+        					        
+        					<div class="plan-features">
+        						<ul>
+									<li>
+                                    <strong>
+                                    דמי ניהול
+                                    <strong>
+                                    12
+                                    &#8362;
+                                    /
+                                    חודש
+                                    </li>
+									<li>
+                                    <strong>
+                                    ריבית בפיקדון
+                                    </strong>
+                                    3%
+                                    </li>
+									<li>
+                                    <strong>מסגרת משכורת</strong>
+                                    חינם
+                                    </li>
+									<li><strong>ריבית הלוואה</strong>
+                                    3%
+                                    </li>
+									<li>
+                                        מבצע למצטרפים מהאפליקצייה.
+                                        המבצע תקף בהתאם
+                                        <a class="btn btn-tertiary msgbox-info" href="javascript:;">
+                                        תנאים
+                                        </a>
+                                        
+                                    </li>
+        						</ul>
+        					</div> <!-- /plan-features -->
+        							
+        					<div class="plan-actions">				
+        						<a class="btn" href="javascript:;">
+                                    הצטרף לתוכנית
+                                </a>				
+        					</div> <!-- /plan-actions -->
+        				
+        				</div> <!-- /plan -->
+        			</div> <!-- /plan-container -->
+        				    
+        			<div class="plan-container">
+        				<div class="plan">
+        					 <div class="plan-header">
+        					    <div class="plan-title">
+        					        		בנק אוצר החייל	        		
+        				        </div> <!-- /plan-title -->
+        					    <div class="plan-price">
+                                    <div class="thumbnail">
+        				                <img src="http://www.ispot.co.il/admin/uploads/mzl.kiggnttd.175x175-75.49130933907036.jpg" />
+                                    </div>
+        						</div> <!-- /plan-price -->
+        					 </div> <!-- /plan-header -->       
+        				     <div class="plan-features">
+        						<ul>
+        							<li>
+                                    <strong>
+                                    דמי ניהול
+                                    <strong>
+                                    12
+                                    &#8362;
+                                    /
+                                    חודש
+                                    </li>
+    								<li>
+                                    <strong>
+                                    ריבית בפיקדון
+                                    </strong>
+                                    3%
+                                    </li>
+									<li>
+                                    <strong>מסגרת משכורת</strong>
+                                    חינם
+                                    </li>
+									<li><strong>ריבית הלוואה</strong>
+                                    3%
+                                    </li>
+        						</ul>
+        					</div> <!-- /plan-features -->
+        							
+        				<div class="plan-actions">				
+        					<a class="btn" href="javascript:;">הצטרף לתוכנית</a>				
+        				</div> <!-- /plan-actions -->
+        				
+        			</div> <!-- /plan -->
+        		</div> <!-- /plan-container -->
+        				    
+        		<div class="plan-container">
+        			<div class="plan">
+        			    <div class="plan-header">
+        					<div class="plan-title">
+        					        		בנק דיסקונט
+        				    </div> <!-- /plan-title -->
+        				                
+        					<div class="plan-price">
+                                <div class="thumbnail">
+                                    <img src=""
+                                </div>
+        					</div> <!-- /plan-price -->
+        								
+        					        </div> <!-- /plan-header -->	          
+        					        
+        					        <div class="plan-features">
+        								<ul>					
+        									<li><strong>Free</strong> setup</li>
+        									<li><strong>20</strong> Website</li>
+        									<li><strong>35</strong> Projects</li>
+        									<li><strong>Unlimited</strong> Storage</li>
+        									<li><strong>$150</strong> Google Adwords Credit</li>
+        								</ul>
+        							</div> <!-- /plan-features -->
+        							
+        							<div class="plan-actions">				
+        								<a class="btn" href="javascript:;">Purchase Now</a>				
+        							</div> <!-- /plan-actions -->
+        				
+        						</div> <!-- /plan -->
+        				    </div> <!-- /plan-container -->
+        				    
+        				    <div class="plan-container">
+        				        <div class="plan">
+        					        <div class="plan-header">
+        				                
+        					        	<div class="plan-title">
+        					        		Enterprise	        		
+        				        		</div> <!-- /plan-title -->
+        				                
+        					            <div class="plan-price">
+        				                	<span class="note">$</span>125<span class="term">Per Month</span>
+        								</div> <!-- /plan-price -->
+        								
+        					        </div> <!-- /plan-header -->	       
+        					        
+        					        <div class="plan-features">
+        								<ul>
+        									<li><strong>Free</strong> setup</li>
+        									<li><strong>Unlimited</strong> Website</li>
+        									<li><strong>Unlimited</strong> Projects</li>
+        									<li><strong>Unlimited</strong> Storage</li>
+        									<li><strong>$250</strong> Google Adwords Credit</li>
+        								</ul>
+        							</div> <!-- /plan-features -->
+        							
+        							<div class="plan-actions">				
+        								<a class="btn" href="javascript:;">Purchase Now</a>				
+        							</div> <!-- /plan-actions -->
+        				
+        						</div> <!-- /plan -->
+        						
+        				    </div> <!-- /plan-container -->
+        				    
+        				</div>
+        				
+        			</div> <!-- /.span12 -->
+        			
+        		</div> <!-- /.row -->
+        		
+        		
+        	</div>
+        </div>
+    </div>
+</div>
