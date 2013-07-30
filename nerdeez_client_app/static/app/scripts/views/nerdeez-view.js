@@ -15,12 +15,21 @@ Nerdeez.NerdeezView = Ember.View.extend({
 	*/
 	staticUrl: STATIC_URL,
 
+	viewId : this.elementId,
+
+    onSuccess : function(json){
+	    $("#" + viewId + " .alert-success").text("Success! " + json['message']);
+	},
+
+	onError : function(json) {
+        $("#" + viewId + " .alert-error").text("Error: " + json['message']);
+	}
 });
 
 
 /*
 * added the required attribute for text inputs
-* for the JQuery validation plugin
+* for the form validation
 */
 
 Ember.TextSupport.reopen({
