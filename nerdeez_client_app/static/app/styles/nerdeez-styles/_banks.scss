@@ -28,7 +28,7 @@
         margin-top:0 !important;
     }
     form{
-        button[type="submit"]{
+        button{
             i.icon-search{
                 left: 4px;
                 position: relative;
@@ -37,13 +37,56 @@
         }
     }
     .results{
+        display: none;
         .plan{
             .plan-price{
                 padding-top: 10px;
                 .thumbnail{
                     width: 94%; margin: 0px auto;
+                    img{
+                        height: 100px;
+                    }
                 }
             }
+            .plan-features{
+                height: 254px;
+                li{
+                    direction: rtl;
+                }
+            }
+            .plan-actions{
+                i{
+                    float: right;
+                    font-size: 27px;
+                    position: relative;
+                    right: 30px;
+                    top: 5px;
+                }
+            }
+        }
+    }
+    #windowTitleDialog{
+        
+        i.icon-ok{
+            color: green;
+        }
+    }
+    #windowTermsDialog{
+        i.icon-info{
+            color: blue;
+        }
+        ul{
+            direction: rtl; margin-right: 28px; float: right;
+        }
+    }
+    .modal-header{
+        a.close{
+            position: relative; top: 16px; font-size: 30px;
+        }
+    }
+    .modal{
+        i{
+            font-size: 44px;
         }
     }
 }

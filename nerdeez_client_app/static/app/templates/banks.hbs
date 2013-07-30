@@ -6,7 +6,7 @@
             </div>                
         </div>
         <div class="row">
-            <form {{action "search" on="submit"}}>
+            <form>
                 <div class="faq-container">
                     <ol class="faqList faq-list">
                         <li class="span4 pull-right">
@@ -82,7 +82,7 @@
                                 <div class="details register">
                                     <h4>לחץ  לחיפוש</h4>
                                     <div class="login-fields">
-                        				<button type="submit" class="button btn btn-primary btn-large">
+                        				<button onclick="$('.results').fadeIn('slow');" class="button btn btn-primary btn-large">
                                             <i class="icon-search"></i>
                                             חפש תוכניות
                                         </button>
@@ -94,7 +94,57 @@
                 </div>
             </form>
         </div>
+        <hr/>
         
+        
+        <div style="display: block;" aria-hidden="true" aria-labelledby="windowTitleLabel" role="dialog" tabindex="-1" class="modal hide fade" id="windowTitleDialog">
+        		<div class="modal-header">
+					    <a data-dismiss="modal" class="close pull-left" href="#">×</a>
+					    <h3>
+                                            הצטרפות לתוכנית
+                        </h3>
+					</div>
+				    <div class="modal-body">
+					    <div class="divDialogElements">
+.						נציג שירות יפנה אליך בדקות הקרוב
+
+<br>
+.מודים לך על השימוש באפליקציית השוואת בנקים
+                            <i style="" class="icon-ok pull-left"></i>
+						</div>
+					</div>
+				    <div class="modal-footer">
+					    <a onclick="$('#windowTitleDialog').modal('hide')" class="btn btn-primary pull-left">אישור</a>
+					</div>
+				</div>
+                
+        <div style="display: block;" aria-hidden="true" aria-labelledby="windowTitleLabel" role="dialog" tabindex="-1" class="modal hide fade" id="windowTermsDialog">
+            	<div class="modal-header">
+					    <a data-dismiss="modal" class="close pull-left" href="#">×</a>
+				    <h3>
+                                            תנאי הצטרפות
+                    </h3>
+				</div>
+		    <div class="modal-body">
+			    <div class="divDialogElements">
+						<p>
+:    					המבצע כפוף לתנאים הבאים
+<p>
+                        <ul>
+                            <li>
+                            בתוקף שנה מיום הכניסה
+                            </li>
+                            <li>
+                            למבצעים 5 פעולות בחודש
+                            </li>
+                        </ul>
+				</div>
+			</div>
+		    <div class="modal-footer">
+			    <a onclick="$('#windowTermsDialog').modal('hide')" class="btn btn-primary pull-left">אישור</a>
+			</div>
+		</div>
+                
         <div class="row results">
             <div class="container">    		
         	<div class="row">			
@@ -138,20 +188,21 @@
 									<li><strong>ריבית הלוואה</strong>
                                     3%
                                     </li>
-									<li>
+									<li class="alert alert-success">
                                         מבצע למצטרפים מהאפליקצייה.
                                         המבצע תקף בהתאם
-                                        <a class="btn btn-tertiary msgbox-info" href="javascript:;">
-                                        תנאים
+                                        <a class="btn btn-tertiary msgbox-info" onclick="$('#windowTermsDialog').modal('show');">
+                                        לתנאים
                                         </a>
-                                        
+                                        <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
                                     </li>
         						</ul>
         					</div> <!-- /plan-features -->
         							
         					<div class="plan-actions">				
-        						<a class="btn" href="javascript:;">
+        						<a class="btn" onclick="$('#windowTitleDialog').modal('show')">
                                     הצטרף לתוכנית
+                                    <i class="icon-phone"></i>
                                 </a>				
         					</div> <!-- /plan-actions -->
         				
@@ -198,7 +249,10 @@
         					</div> <!-- /plan-features -->
         							
         				<div class="plan-actions">				
-        					<a class="btn" href="javascript:;">הצטרף לתוכנית</a>				
+        					<a class="btn" onclick="$('#windowTitleDialog').modal('show')">
+                            הצטרף לתוכנית
+                            <i class="icon-phone"></i>
+                            </a>				
         				</div> <!-- /plan-actions -->
         				
         			</div> <!-- /plan -->
@@ -213,66 +267,104 @@
         				                
         					<div class="plan-price">
                                 <div class="thumbnail">
-                                    <img src=""
+                                    <img src="http://www.greatinsurance.co.il/images/discount.jpg" />
                                 </div>
         					</div> <!-- /plan-price -->
         								
-        					        </div> <!-- /plan-header -->	          
+        				</div> <!-- /plan-header -->	          
         					        
-        					        <div class="plan-features">
-        								<ul>					
-        									<li><strong>Free</strong> setup</li>
-        									<li><strong>20</strong> Website</li>
-        									<li><strong>35</strong> Projects</li>
-        									<li><strong>Unlimited</strong> Storage</li>
-        									<li><strong>$150</strong> Google Adwords Credit</li>
-        								</ul>
-        							</div> <!-- /plan-features -->
+        			    <div class="plan-features">
+        					<ul>					
+        									<li>
+                                    <strong>
+                                    דמי ניהול
+                                    <strong>
+                                    12
+                                    &#8362;
+                                    /
+                                    חודש
+                                    </li>
+        							<li>
+                                    <strong>
+                                    ריבית בפיקדון
+                                    </strong>
+                                    3%
+                                    </li>
+									<li>
+                                    <strong>מסגרת משכורת</strong>
+                                    חינם
+                                    </li>
+									<li><strong>ריבית הלוואה</strong>
+                                    3%
+                                    </li>
+							</ul>
+						</div> <!-- /plan-features -->
         							
-        							<div class="plan-actions">				
-        								<a class="btn" href="javascript:;">Purchase Now</a>				
-        							</div> <!-- /plan-actions -->
+						<div class="plan-actions">				
+								<a class="btn" onclick="$('#windowTitleDialog').modal('show')">
+                                הצטרף לתוכנית
+                                <i class="icon-phone"></i>
+                                </a>				
+						</div> <!-- /plan-actions -->
         				
-        						</div> <!-- /plan -->
-        				    </div> <!-- /plan-container -->
+					</div> <!-- /plan -->
+			    </div> <!-- /plan-container -->
         				    
-        				    <div class="plan-container">
-        				        <div class="plan">
-        					        <div class="plan-header">
-        				                
-        					        	<div class="plan-title">
-        					        		Enterprise	        		
-        				        		</div> <!-- /plan-title -->
-        				                
-        					            <div class="plan-price">
-        				                	<span class="note">$</span>125<span class="term">Per Month</span>
-        								</div> <!-- /plan-price -->
-        								
-        					        </div> <!-- /plan-header -->	       
-        					        
-        					        <div class="plan-features">
-        								<ul>
-        									<li><strong>Free</strong> setup</li>
-        									<li><strong>Unlimited</strong> Website</li>
-        									<li><strong>Unlimited</strong> Projects</li>
-        									<li><strong>Unlimited</strong> Storage</li>
-        									<li><strong>$250</strong> Google Adwords Credit</li>
-        								</ul>
-        							</div> <!-- /plan-features -->
+		    <div class="plan-container">
+		        <div class="plan">
+			        <div class="plan-header">
+			        	<div class="plan-title">
+        					   בנק יהב
+        				</div> <!-- /plan-title -->
+        			    <div class="plan-price">
+                            <div class="thumbnail">
+                                <img src="http://images.globes.co.il/Images/NewGlobes/big_image/2012/yahav-575.20121031T160301.jpg" />
+                            </div>
+        				</div> <!-- /plan-price -->
+        			</div> <!-- /plan-header -->	       
+        			<div class="plan-features">
+						<ul>
+							<li>
+                                    <strong>
+                                    דמי ניהול
+                                    <strong>
+                                    12
+                                    &#8362;
+                                    /
+                                    חודש
+                                    </li>
+            						<li>
+                                    <strong>
+                                    ריבית בפיקדון
+                                    </strong>
+                                    3%
+                                    </li>
+									<li>
+                                    <strong>מסגרת משכורת</strong>
+                                    חינם
+                                    </li>
+									<li><strong>ריבית הלוואה</strong>
+                                    3%
+                                    </li>
+						</ul>
+        			</div> <!-- /plan-features -->
         							
-        							<div class="plan-actions">				
-        								<a class="btn" href="javascript:;">Purchase Now</a>				
-        							</div> <!-- /plan-actions -->
+					<div class="plan-actions">				
+						<a class="btn" onclick="$('#windowTitleDialog').modal('show')">
+                        הצטרף לתוכנית
+                        <i class="icon-phone"></i>
+                        </a>				
+					</div> <!-- /plan-actions -->
         				
-        						</div> <!-- /plan -->
+        		</div> <!-- /plan -->
         						
-        				    </div> <!-- /plan-container -->
+        	</div> <!-- /plan-container -->
         				    
-        				</div>
+        </div>
         				
-        			</div> <!-- /.span12 -->
+    </div> <!-- /.span12 -->
         			
-        		</div> <!-- /.row -->
+</div> <!-- /.row -->
         		
         		
         	</div>

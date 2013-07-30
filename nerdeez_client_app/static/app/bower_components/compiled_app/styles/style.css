@@ -362,8 +362,65 @@ input.nerdeez-search {
   margin-top: 0 !important;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000332}}
-.banks form button[type="submit"] i.icon-search {
+.banks form button i.icon-search {
   left: 4px;
   position: relative;
   top: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000339}}
+.banks .results {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000342}}
+.banks .results .plan .plan-price {
+  padding-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000344}}
+.banks .results .plan .plan-price .thumbnail {
+  width: 94%;
+  margin: 0px auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000346}}
+.banks .results .plan .plan-price .thumbnail img {
+  height: 100px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000351}}
+.banks .results .plan .plan-features {
+  height: 254px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000353}}
+.banks .results .plan .plan-features li {
+  direction: rtl;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000358}}
+.banks .results .plan .plan-actions i {
+  float: right;
+  font-size: 27px;
+  position: relative;
+  right: 30px;
+  top: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000370}}
+.banks #windowTitleDialog i.icon-ok {
+  color: green;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000375}}
+.banks #windowTermsDialog i.icon-info {
+  color: blue;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000378}}
+.banks #windowTermsDialog ul {
+  direction: rtl;
+  margin-right: 28px;
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000383}}
+.banks .modal-header a.close {
+  position: relative;
+  top: 16px;
+  font-size: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_banks\.scss}line{font-family:\0000388}}
+.banks .modal i {
+  font-size: 44px;
 }
