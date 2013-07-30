@@ -6,35 +6,30 @@
 *
 */
 
-._header {
-	height: 80px;
-    width: 100%;
-    @include background(linear-gradient(to bottom, #3D3D3D, #454545));
-    @include border-radius(0 0 10px 10px);
+#header{
     .logo{
-    	padding-top: 15px;
-		padding-left: 10px;
+        position: relative;
+        top: 14px;
     }
-    .tobottom{
-	    position: relative;
-	    right: 20px;
-	    top: 40px;
-	}
-    .nav{
-        li{
-            a{                
+    .menu{
+        position: relative;
+        top: 32px;
+        a.active{
+            background: none repeat scroll 0 0 #FFFFFF;
+            border-bottom-color: #FFFFFF;
+            box-shadow: none;
+            color: #303030;
+            filter: none !important;
+            text-shadow: none;
+            text-decoration: none;
+        }
+        .home{
+            height: 20px;
+            a{
+                height: 20px;
                 i{
-                    color: white; font-size: 22px; float: left; margin-right: 9px; position: relative; top: -2px;
-                }
-                &:hover{
-                    i{
-                        color: $nerdeezPink;
-                    }
-                }
-                &.active:hover{
-                    i{
-                        color: white !important;
-                    }
+                    position: relative;
+                    top: 4px;
                 }
             }
         }

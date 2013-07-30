@@ -1,7 +1,10 @@
 <div class="login span3 offset1">
     <h1>Login page</h1>
     <div class="modal">
-        <div class="modal-body">You need to login to continue</div>
+        <div class="modal-body">
+        You need to login to continue.
+        By clicking login you agree to our {{#linkTo terms}}Terms & Conditions{{/linkTo}}
+        </div>
         <div class="modal-footer">
             {{#if Nerdeez.isConnected}}
             <div class="alert alert-success pull-left">

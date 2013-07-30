@@ -7,44 +7,39 @@ version: 1.0
 
 -->
 
-<header class="_header">
+<div id="header" class="_header">
 	<div class="container">
 		<div class="row">
-			<div class="span2">
-				<div class="logo">
-					<img src="{{unbound view.staticUrl}}img/logo.png" />
-				</div>
-			</div>
-			<div class="span5 pull-right">
-				<ul class="nav nav-pills pull-right tobottom">
-					<li>
-						{{#linkTo about}}
-                        <i class="icon-info"></i>
-                        About
-                        {{/linkTo}}
-					</li>
-                    {{#if Nerdeez.isConnected}}
-                    <li>
-    					{{#linkTo logout}}
-                        <i class="icon-power-off"></i>
-                        Logout
-                        {{/linkTo}}
-					</li>
-                    {{else}}
-					<li>
-						{{#linkTo login}}
-                        <i class="icon-lock"></i>
-                        Login
-                        {{/linkTo}}
-					</li>
-                    {{/if}}
-                    <li>
-    					{{#linkTo index}}
-                        <i class="icon-home"></i>
-                        Home{{/linkTo}}
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</header>
+            <div class="logo span2">
+                {{#linkTo index}}
+                <img src="{{unbound view.staticUrl}}img/logo.png" />
+                {{/linkTo}}
+            </div>
+		
+	        <div class="span3 menu pull-right">
+    		    <div class="nav-collapse">
+    			    <ul class="nav pull-right" id="main-nav">
+    				    <li class="nav-icon home">
+    					    {{#linkTo index}}
+    						<i class="icon-home"></i>
+    						<span>Home</span>        					
+    					    {{/linkTo}}
+    			    	</li>
+    				
+    				    <li>
+        					{{#linkTo about}}
+                            <i class="icon-info"></i>
+                            About
+                            {{/linkTo}}
+    				    </li>
+    				
+    			    </ul>
+    			
+    		    </div> <!-- /.nav-collapse -->
+            </div>
+        </div>
+        
+
+	</div> <!-- /.container -->
+	
+</div>

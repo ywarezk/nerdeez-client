@@ -10,10 +10,16 @@
 
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
-        <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/compiled_app/styles/style.css">
+        
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{STATIC_URL}}theme/css/ui-lightness/jquery-ui-1.8.21.custom.css">    
+        <link rel="stylesheet" href="{{STATIC_URL}}theme/css/ui-lightness/jquery-ui-1.8.21.custom.css">  
+        
+        <link rel="stylesheet" href="{{STATIC_URL}}theme/css/bootstrap.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}theme/css/bootstrap-responsive.css">
+        
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/application-black-orange.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/compiled_app/styles/style.css">
+        
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/pages/dashboard.css">
         <script src="{{STATIC_URL}}theme/js/libs/modernizr-2.5.3.min.js"></script>
         <!-- endbuild -->
@@ -35,7 +41,7 @@
 		<div id="wrap">
 		</div>
 		        
-        <div class="footer">
+        <!--<div class="footer">
             <div class="container">
                 <div class="row font-color">
                     <div class="span2 nerdeez-logo">
@@ -57,6 +63,37 @@
                     </div>
                 </div>              
             </div>
+        </div>-->
+        
+        <div id="footer">
+    	
+        	<div class="container">
+        		
+        		<div class="row">
+        			
+        			<div class="span3">
+        				&copy; 2013 <a href="http://company.nerdeez.com">Nerdeez Ltd.</a>, all rights reserved.
+        			</div> <!-- /span6 -->
+                    
+                    <div class="nerdeez-links span3 offset2">
+                        <ul class="nav">
+                            <li>    
+                                <a href="#/privacy">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#/terms">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+        			
+        			<div class="span2 pull-right" id="builtby">
+        				<a href="http://company.nerdeez.com">Built by Nerdeez.</a>				
+        			</div> <!-- /.span6 -->
+        			
+        		</div> <!-- /row -->
+        		
+        	</div> <!-- /container -->
+        	
         </div>
 
         <!-- build:js scripts/components.js -->

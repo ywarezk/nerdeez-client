@@ -6,39 +6,19 @@
 *
 */
 
-.footer {
-    .container {
-        @include background(linear-gradient(to bottom, #3D3D3D, #5C5C5C)); 
-        color:white;
-        @include border-radius(10px 10px 0 0);
-    }
-    .row {
-        height: 55px;
-    }
-
-    /* the left area of the footer (logo) */
-    .nerdeez-logo {
-        padding-left: 10px;
-        @include box-sizing(border-box);
-        .logo-textarea {
+#footer{
+    .nerdeez-links{
+        li{
+            float: left;
+            a{
+                color: white !important;
+            }
+            a:hover,a:focus{
+                background-color:transparent !important;
+            }
         }
-        img {
-            height: 31px;
+        li:nth-of-type(2){
+            margin-left: 17px;
         }
-    }
-    
-    /* the middle area of the footer (links) */
-    .nerdeez-links {
-        padding-top: 10px;
-        .nav, .nav-pills {
-            margin-bottom: 0px;
-        }
-    }
-
-    /* the right area of the footer (copyright) */
-    .nerdeez-copyright {
-        padding-top: 17px;
-        padding-right: 10px;
-        @include box-sizing(border-box);
     }
 }
