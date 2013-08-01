@@ -18,11 +18,12 @@ Nerdeez.NerdeezView = Ember.View.extend({
 	viewId : this.elementId,
 
     onSuccess : function(json){
-	    $("#" + viewId + " .alert-success").text("Success! " + json['message']);
+	    return $("#" + this.elementId + " .successTrigger").show();
 	},
 
 	onError : function(json) {
-        $("#" + viewId + " .alert-error").text("Error: " + json['message']);
+        $("#" + this.elementId + " .errorTrigger").text(json[error]);
+        $("#" + this.elementId + " .errorTrigger").show();
 	}
 });
 

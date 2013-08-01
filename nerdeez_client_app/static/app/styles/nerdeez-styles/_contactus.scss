@@ -32,4 +32,15 @@
 			width: 300px;
 		}
 	}
+
+	.successTrigger {
+		display:none;
+	}
+
+	.errorTrigger {
+		.close {
+			display : inline;
+		}
+		display:none;
+	}
 }
