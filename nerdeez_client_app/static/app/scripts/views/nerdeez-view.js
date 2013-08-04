@@ -6,7 +6,7 @@
 * @version: 1.0
 */
 
-Nerdeez.NerdeezView = Ember.View.extend(Nerdeez.LoadingMixin, {
+Nerdeez.NerdeezView = Ember.View.extend({
 	 
 	/**
 	* holds the static url

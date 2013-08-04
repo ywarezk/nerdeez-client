@@ -1,0 +1,66 @@
+<!--
+
+Holds the html of the contact page
+author: Doron Nachshon
+copyright: nerdeez.com
+version: 1.0
+
+-->
+
+<div class="contact">
+	<div class="row">
+		<div class="span10">
+			<h1>Contact Us</h1>
+			<form class="form" id="contactusForm" {{action submitForm target="controller" on="submit"}}>
+				<div class="row top-buffer">
+					<div class="span6">
+						<label>Email Address (not required)</label> 
+						{{
+			  				view Ember.TextField
+			  				placeholder = "Enter your Email address here"
+			  				valueBinding="controller.mailAddress"
+			  				type="email"
+			  				name="emailinput"
+			  			}}
+			  		</div>
+			  	</div>
+			  	<div class="row">
+			  		<div class="span6">
+			  			<label>Message (required)</label>
+			  		</div>
+			  	</div>
+			  	<div class="row">
+			  		<div class="span6">
+				  		{{
+				  			view Ember.TextArea
+				  			placeholder = "Enter your message here"
+			  				valueBinding="controller.mailContent"
+			  				name="msginput"
+			  				type="text"
+			  				required="true"
+			  			}}
+			  		</div>
+		  		</div>
+		  		<div class="row">
+		  			<div class="sidenote span6 offset4">
+			  			Characters remaining: 
+			  			<div class="charsRemaining">
+			  				{{controller.textLimit}}
+			  			</div>
+			  		</div>
+			  	</div>
+		  		<div class="row">
+		  			<div class="span6">
+		  				<button type="submit" class="btn">Send Email</button>
+		  				{{loading controller isLoadingBinding="isLoading"}}
+		  			</div>
+				</div>
+				<div class="row">
+					<div class="span6">
+						{{status controller messageBinding="statusMessage" isSuccessBinding="isSuccess" isShowBinding="isShowStatus"}}
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
