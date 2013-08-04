@@ -3,13 +3,27 @@
 var Nerdeez = window.Nerdeez = Ember.Application.create({
 
 	//@member {string} constant holds the dom element which the application be injected to
-    rootElement: '#wrap'
+    rootElement: '#wrap',
+
+    server_url: SERVER_URL
     
 });
 
 
 //vendor files
 require('bower_components/facebook/facebook');
+//store
+require('scripts/nerdeez-ember/tastypie_serializer');
+require('scripts/nerdeez-ember/tastypie_adapter');
+require('scripts/nerdeez-ember/porthole.min');
+require('scripts/nerdeez-ember/wormhole');
+require('scripts/store/nerdeez-store');
+
+//routes
+require('scripts/routes/nerdeez-routes');
+
+//handlebars-helpers
+require('scripts/nerdeez-ember/handlebars_helpers');
 
 //application files
 require('scripts/views/nerdeez-view');
@@ -22,15 +36,9 @@ require('scripts/models/flatpage-model');
 require('scripts/controllers/search-controller');
 require('scripts/controllers/login-controller');
 require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
+require('scripts/controllers/contact-controller');
 
-//routes
-require('scripts/routes/nerdeez-routes');
-
-
-//store
-require('scripts/nerdeez-ember/tastypie_serializer');
-require('scripts/nerdeez-ember/tastypie_adapter');
-require('scripts/nerdeez-ember/porthole.min');
-require('scripts/nerdeez-ember/wormhole');
-require('scripts/store/nerdeez-store');
+//jquery
+//require("bower_components/jquery plugins/jquery.validate");
+require("bower_components/jquery plugins/jquery.tinylimiter");
 

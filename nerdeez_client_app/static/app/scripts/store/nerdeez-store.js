@@ -7,39 +7,39 @@
 * @copyright: nerdeez.com Ltd.
 */
 
+/**
+ * create the adapter type class
+ */
+Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
+    /**
+     * adapter hook to set the server url
+     */
+    serverDomain : SERVER_URL,
+   
+    /**
+     * hook if we want to use cross domain communication
+     */
+    wormhole: Nerdeez.Wormhole,
+   
+    /**
+     * our serializer
+     */
+    serializer: Nerdeez.DjangoTastypieSerializer.extend({})
+})
+
+/**
+ * create instance of adapter
+ */
+adapter = Nerdeez.Adapter.create();
+
 
 /**
  * handles backend communication
  */
-Nerdeez.Store = DS.Store.extend({
-	
-	/**
-	 * our adapter
-	 */
-	adapter: Nerdeez.DjangoTastypieAdapter.extend({
-	    /**
-	     * adapter hook to set the server url
-	     */
-	    serverDomain : SERVER_URL,
-	    
-	    /**
-	     * hook if we want to use cross domain communication
-	     */
-	    wormhole: Nerdeez.Wormhole,
-	    
-	    /**
-	     * our serializer
-	     */
-	    serializer: Nerdeez.DjangoTastypieSerializer.extend({
-            
-            /**
-             * constructor for the serializer, set the mapping for the relations 
-             */
-            init: function(){
-                this._super();
-                this.mappings.set( 'Nerdeez.Course', { university: { embedded: 'load' } } );
-            }
-	    })
-	})
-	
+Nerdeez.store = DS.Store.create({
+   
+    /**
+     * our adapter
+     */
+    adapter: adapter
 });

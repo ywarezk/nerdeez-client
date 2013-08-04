@@ -2,13 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    	<meta name="apple-mobile-web-app-capable" content="yes">
         <title>Nerdeez - Community College</title>
 
         <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="styles/style.css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <!-- endbuild -->
 </head>
@@ -18,27 +15,17 @@
 			var STATIC_URL = '../';
 			var SERVER_URL = 'https://nerdeez-server-dev.herokuapp.com/';
 		</script>   
-    
-        <!-- begin facebook -->
-        <div id="fb-root"></div>
-        <!-- end facebook -->
-        
 		<div id="wrap">
 		</div>    
-        
-        
-        <div id="footer">
-        
-        	<div class="container">
-        		
-        		<div class="row">
-        			
-        			<div class="span3">
-        				&copy; 2013 <a href="http://company.nerdeez.com">Nerdeez Ltd.</a>, all rights reserved.
-        			</div> <!-- /span6 -->
-                    
-                    <div class="nerdeez-links span3 offset2">
-                        <ul class="nav">
+        <div class="footer">
+            <div class="container">
+                <div class="row font-color">
+                    <div class="span2 nerdeez-logo">
+                        <div class="logo-textarea"> Created by: </div>
+                        <img src="img/logo.png">
+                    </div>
+                    <div class="nerdeez-links span3 offset3">
+                        <ul class="nav nav-pills">
                             <li>    
                                 <a href="#/privacy">Privacy</a>
                             </li>
@@ -47,15 +34,11 @@
                             </li>
                         </ul>
                     </div>
-        			
-        			<div class="span2 pull-right" id="builtby">
-        				<a href="http://company.nerdeez.com">Built by Nerdeez.</a>				
-        			</div> <!-- /.span6 -->
-        			
-        		</div> <!-- /row -->
-        		
-        	</div> <!-- /container -->
-        	
+                    <div class="nerdeez-copyright span2 offset2 pull-right">
+                        Nerdeez &#169; 2013
+                    </div>
+                </div>              
+            </div>
         </div>
 
         <!-- build:js scripts/components.js -->
@@ -88,34 +71,5 @@
         <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
         <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
         <!-- endbuild -->
-        
-        
-        <script src="../theme/js/libs/jquery-ui-1.8.21.custom.min.js"></script>
-        <script src="../theme/js/libs/jquery.ui.touch-punch.min.js"></script>
-        
-        <script src="../theme/js/libs/bootstrap/bootstrap.min.js"></script>
-        
-        <script src="../theme/js/Theme.js"></script>
-        <script src="../theme/js/Charts.js"></script>
-        
-        <script src="../theme/js/plugins/excanvas/excanvas.min.js"></script>
-        <script src="../theme/js/plugins/flot/jquery.flot.js"></script>
-        <script src="../theme/js/plugins/flot/jquery.flot.pie.js"></script>
-        <script src="../theme/js/plugins/flot/jquery.flot.orderBars.js"></script>
-        <script src="../theme/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-        <script src="../theme/js/plugins/flot/jquery.flot.resize.js"></script>
-        
-        <script src="../theme/js/demos/charts/line.js"></script>
-        <script src="../theme/js/demos/charts/donut.js"></script>
-        
-        <script>
-        
-        $(function () {
-            
-            Theme.init ();
-        	
-        });
-        
-        </script>
 </body>
 </html>

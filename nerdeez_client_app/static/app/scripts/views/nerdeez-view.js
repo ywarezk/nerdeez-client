@@ -22,5 +22,6 @@ Nerdeez.NerdeezView = Ember.View.extend({
         FB.XFBML.parse();
     }
 
+Ember.TextSupport.reopen({
+	attributeBindings: ["required"]
 });
-
