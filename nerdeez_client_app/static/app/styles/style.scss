@@ -1,8 +1,13 @@
-@import "bootstrap-sass/lib/bootstrap";
-@import "bootstrap-sass/lib/responsive";
+/*@import "bootstrap-sass/lib/bootstrap";
+@import "bootstrap-sass/lib/responsive";*/
+@import "compass/css3/box-sizing";
 @import "compass/css3/images";
+@import "compass/css3/border-radius";
+
 @import "nerdeez-styles/application";
 @import "nerdeez-styles/header";
 @import "nerdeez-styles/footer";
 @import "nerdeez-styles/left-sidebar";
 @import "nerdeez-styles/search";
+@import "nerdeez-styles/flatpage";
+@import "nerdeez-styles/login";

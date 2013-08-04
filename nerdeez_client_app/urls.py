@@ -26,6 +26,7 @@ from django.conf import settings
 
 urlpatterns = patterns('',
     (r'^$', nerdeez_client_app.views.spa),
+    ('^channel/', nerdeez_client_app.views.channel),
 )
 
 urlpatterns += patterns('',

@@ -5,11 +5,15 @@
 * @author: Yariv Katz
 */
 
+$nerdeezPink: #F54D70;
 
 html, body {
     height: 100%;
-    background: url('/static/app/img/bg.png');
     /* unvisited link */
+}
+
+#content{
+    margin-bottom: 1em !important;
 }
 
 ul.nav.nav-pills li {
@@ -43,7 +47,7 @@ ul.nav.nav-pills li {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -55px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto -61px; /* the bottom margin is the negative value of the footer's height */
 }
 
 /**
@@ -69,4 +73,17 @@ ul.nav.nav-pills li {
         position: relative;
         top: 4px;
     }
+}
+
+i.nerdeez-search{
+    float: left; height: 38px; left: 34px; position: relative; top: 14px; font-size: 24px; width: 39px;
+}
+
+input.nerdeez-search{
+    padding-left: 44px !important;
+    width: 85% !important;
+}
+
+.center{
+    margin: 0px auto; clear: both; float: none;
 }

@@ -6,19 +6,34 @@
 *
 */
 
-._header {
-	height: 80px;
-    width: 100%;
-    @include background(linear-gradient(to bottom, #3D3D3D, #454545));
+#header{
     .logo{
-    	padding-top: 15px;
-		padding-left: 10px;
+        position: relative;
+        top: 14px;
     }
-    .tobottom{
-	    position: relative;
-	    right: 20px;
-	    top: 40px;
-	}
+    .menu{
+        position: relative;
+        top: 32px;
+        a.active{
+            background: none repeat scroll 0 0 #FFFFFF;
+            border-bottom-color: #FFFFFF;
+            box-shadow: none;
+            color: #303030;
+            filter: none !important;
+            text-shadow: none;
+            text-decoration: none;
+        }
+        .home{
+            height: 20px;
+            a{
+                height: 20px;
+                i{
+                    position: relative;
+                    top: 4px;
+                }
+            }
+        }
+    }
 }
 
 

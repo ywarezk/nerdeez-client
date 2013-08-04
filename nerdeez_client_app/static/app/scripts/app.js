@@ -7,20 +7,21 @@ var Nerdeez = window.Nerdeez = Ember.Application.create({
     
 });
 
-/* Order and include as you please. */
-// require('scripts/routes/*');
-// require('scripts/controllers/*');
-// require('scripts/models/*');
-// require('scripts/views/*');
+
+//vendor files
+require('bower_components/facebook/facebook');
 
 //application files
 require('scripts/views/nerdeez-view');
 require('scripts/views/application-view');
 require('scripts/views/flatpage-view');
-require('scripts/views/search-view');
+require('scripts/views/search-course-view');
+require('scripts/views/search-uni-view');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/controllers/search-controller');
+require('scripts/controllers/login-controller');
+require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
 
 //routes
 require('scripts/routes/nerdeez-routes');
