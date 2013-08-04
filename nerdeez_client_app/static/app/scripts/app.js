@@ -22,6 +22,12 @@ require('scripts/nerdeez-ember/porthole.min');
 require('scripts/nerdeez-ember/wormhole');
 require('scripts/store/nerdeez-store');
 
+//routes
+require('scripts/routes/nerdeez-routes');
+
+//mixins
+require('scripts/mixins/nerdeez-mixins');
+
 //application files
 require('scripts/views/nerdeez-view');
 require('scripts/views/application-view');
@@ -32,9 +38,6 @@ require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/controllers/search-controller');
 require('scripts/controllers/contact_us-controller');
-
-//routes
-require('scripts/routes/nerdeez-routes');
 
 //jquery
 //require("bower_components/jquery plugins/jquery.validate");
