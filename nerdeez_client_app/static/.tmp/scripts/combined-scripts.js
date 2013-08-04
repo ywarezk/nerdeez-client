@@ -5,7 +5,9 @@
 var Nerdeez = window.Nerdeez = Ember.Application.create({
 
 	//@member {string} constant holds the dom element which the application be injected to
-    rootElement: '#wrap'
+    rootElement: '#wrap',
+
+    server_url: SERVER_URL
     
 });
 
@@ -56,471 +58,6 @@ window.fbAsyncInit = function() {
     fjs.parentNode.insertBefore(js, fjs);
     
 }(document, 'script', 'facebook-jssdk'));
-
-})();
-
-(function() {
-
-//application files
-
-
-})();
-
-(function() {
-
-/**
-* all views in the application will extend this master view
-*
-* @copyright: nerdeez.com Ltd.
-* @author: Yariv Katz
-* @version: 1.0
-*/
-
-Nerdeez.NerdeezView = Ember.View.extend({
- 
-    /**
-    * holds the static url
-    * @type {{string}}
-    * @public
-    */
-    staticUrl: STATIC_URL,
-    
-    /**
-     * common actions when view finish reloading
-     */
-    didInsertElement: function(){
-        FB.XFBML.parse();
-    }
-
-});
-
-
-
-})();
-
-(function() {
-
-/**
-* Main view for the application
-*
-* @copyright: nerdeez.com Ltd.
-* @author: Yariv Katz
-* @version: 1.0
-*/
-
-Nerdeez.ApplicationView = Nerdeez.NerdeezView.extend({
-});
-
-
-
-})();
-
-(function() {
-
-
-Nerdeez.NerdeezFlatpage = Nerdeez.NerdeezView.extend({
-	templateName: 'flatpage'
-});
-
-Nerdeez.AboutView = Nerdeez.NerdeezFlatpage.extend({
-});
-
-Nerdeez.PrivacyView = Nerdeez.NerdeezFlatpage.extend({
-});
-
-Nerdeez.TermsView = Nerdeez.NerdeezFlatpage.extend({
-});
-
-})();
-
-(function() {
-
-/**
- * holds the model for the university resource
- * 
- * @author: Yariv Katz
- * @copyright: nerdeez.com Ltd.
- * @version: 1.0
- * 
- */
-
-/**
- * abstract class for all the school group models
- */
-
-Nerdeez.SchoolGroup = DS.Model.extend({
-	title: DS.attr('string'),
-	description: DS.attr('string'),
-	image: DS.attr('string')
-});
-
-/**
- * uni model
- */
-Nerdeez.University = Nerdeez.SchoolGroup.extend({
-});
-
-/**
- * course model
- */
-Nerdeez.Course = Nerdeez.SchoolGroup.extend({
-	university: DS.belongsTo('Nerdeez.University')
-});
-
-})();
-
-(function() {
-
-/**
- * holds the model for the flatpage resource
- * 
- * @author: Yariv Katz
- * @copyright: nerdeez.com Ltd.
- * @version: 1.0
- * 
- */
-
-/**
- * the flatpage model
- */
-Nerdeez.Flatpage = DS.Model.extend({
-	title:DS.attr('string'),
-	html: DS.attr('string'),
-})
-
-})();
-
-(function() {
-
-/**
-* the controller for the search university and search course will be here
-*
-* @copyright: nerdeez.com Ltd.
-* @author: Yariv Katz
-* @version: 1.0
-*/
-
-/**
- * abstract controller for the search course and search university
- */
-Nerdeez.NerdeezSearchController = Ember.ArrayController.extend({
-	
-	/**
-	 * the search query
-	 * @property
-	 * @public
-	 * @type {string}
-	 */
-	searchQuery: null,
-	
-	/**
-	 * the model for the search
-	 * @property
-	 * @private
-	 * @type {subclass of DS.Model}
-	 */
-	_model: null,
-	
-	/**
-	 * when the user submits the search form
-	 */
-	search: function(){
-		if(this.get('_model') != null)
-			this.set('content', this.get('_model').find({search: this.get('searchQuery')}));
-	}.observes('searchQuery')
-});
-
-/**
- * the controller for the search university
- */
-Nerdeez.SearchUniversityController = Nerdeez.NerdeezSearchController.extend({
-	_model: Nerdeez.University
-});
-
-/**
- * the controller for the search course
- */
-Nerdeez.SearchCourseController = Nerdeez.NerdeezSearchController.extend({
-	_model: Nerdeez.Course
-});
-
-
-})();
-
-(function() {
-
-/**
-* the controller for the login with facebook page
-*
-* @copyright: nerdeez.com Ltd.
-* @author: Yariv Katz
-* @version: 1.0
-*/
-
-/**
- * controller that handles 
- */
-Nerdeez.LoginController = Ember.Controller.extend({
-    
-    /**
-     * loading flag
-     * @type {Boolean}
-     */
-    isLoading: false,
-    
-    /**
-     * should i redirect the user after login?
-     * global variable called last page will have the last page to redirect
-     * @type {Boolean}
-     */
-    isRedirect: false,
-    
-    isFacebookLoginBinding: 'Nerdeez.isFBLoaded',
-    
-    /**
-     * init the controller variables
-     */
-    initController: function(){
-        self = this;
-        FB.getLoginStatus(function(response) {
-            Ember.run(function(){
-                Nerdeez.set('isConnected' , response.status === 'connected');    
-            });
-        });      
-    },
-    
-    /**
-     * subscribe to the facebook logged in change event
-     */
-    init: function(){
-        this._super();
-        this.set('isRedirect', Nerdeez.get('lastPage') != null);
-        if(Nerdeez.get('isFBLoaded')){
-            this.initController();
-        }
-    },
-    
-    /**
-     * whne the user clicks the login button
-     */
-    login: function(){
-        this.set('isLoading', true);
-        self = this;
-        FB.login(function(response) {
-            
-            if (response.authResponse) {
-                Ember.run(function(){
-                    self.set('isLoading', false);
-                    Nerdeez.set('isConnected', true);
-                });
-                
-                
-                if(self.get('isRedirect')){
-                    Ember.run(function(){
-                        self.set('isLoading', true);
-                    });
-                    setTimeout(function() {
-                        self.transitionTo(Nerdeez.get('lastPage'),Nerdeez.get('lastModel'));
-                    }, 3000);
-                }
-            } else {
-                Ember.run(function(){
-                    self.set('isLoading', false);
-                    Nerdeez.set('isConnected', false);
-                });
-            }
-        });
-    },
-    
-    /**
-     * will be called when the facebook api is loaded
-     */
-    waitForFB: function(){
-        if(Nerdeez.get('isFBLoaded')){
-            this.initController();
-        } 
-    }.observes('Nerdeez.isFBLoaded')
-});
-
-})();
-
-(function() {
-
-/**
- * nerdeez handlebars helper. 
- * register common handlebars that are used alot. 
- * Important note to whomever edits this file: All the programmers are going to use this code throughout the entire application. 
- * this code should be documented like a motherfucker
- * 
- * Created July 26t, 2013
- * @author: Yariv Katz
- * @copyright: Nerdeez Ltd.
- * @verison: 1.0
- * 
- */
- 
- /**
- * put this every place you want a loading sign
- * 
- * usage
- * 
- * ```handlebar
- *    {{loading}}
- * ```
- * 
- * @return {Handlebars.SafeString}
- */
-Ember.Handlebars.registerBoundHelper('loading', function() {
-    return new Ember.Handlebars.SafeString('<div class="loading"><i class="icon-refresh icon-spin"></i></div>');
-});
-
-})();
-
-(function() {
-
-//routes
-
-
-})();
-
-(function() {
-
-/**
-* this file will hold nerdeez application routes
-*
-* @copyright: nerdeez.com Ltd.
-* @version: 1.0
-* @author: Yariv Katz
-*/
-
-/**
- * define the routes urls here
- */
-Nerdeez.Router.map(function () {
-	this.resource('search', function() {
-	    this.route('university');
-	    this.route('course');
-	});
-	this.route('about');
-	this.route('terms');
-	this.route('privacy');
-    this.resource('course', { path: '/course/:course_id' }, function(){
-        this.route('wall');
-        this.route('files');
-    });
-    this.route('login');
-    this.route('logout');
-});
-
-/**
- * all the routes that require login will extend this
- * Usage: just extend this class instead of the regular Ember.Route
- */
-Nerdeez.LoginRequired = Ember.Route.extend({
-    redirect: function(){
-        self = this;
-        FB.getLoginStatus(function(response) {
-            if (response.status === 'connected') {
-                // the user is logged in and has authenticated your
-                // app, and response.authResponse supplies
-                // the user's ID, a valid access token, a signed
-                // request, and the time the access token 
-                // and signed request each expire
-                var uid = response.authResponse.userID;
-                var accessToken = response.authResponse.accessToken;
-            } else{
-                Nerdeez.set('lastPage', self.routeName);
-                Nerdeez.set('lastModel', self.model());
-                self.transitionTo('login');
-            }
-        });
-    }
-});
-
-Nerdeez.LogoutRoute = Ember.Route.extend({
-    redirect: function(){
-        self = this;
-        FB.logout(function(response) {
-            Ember.run(function(){
-                Nerdeez.set('isConnected' , false);    
-            });
-            self.transitionTo('index');
-        });
-    }
-});
-
-/**
- * the route for the university search, grab the initial data
- */
-Nerdeez.SearchUniversityRoute = Ember.Route.extend({
-	model: function(param){
-		return Nerdeez.University.find({limit: 20, order_by: 'title'});
-	}
-});
-
-/**
- * the route for the course search, grab the initial data
- */
-Nerdeez.SearchCourseRoute = Ember.Route.extend({
-	model: function(param){
-		return Nerdeez.Course.find({limit: 20, order_by: 'title'});
-	}
-});
-
-/**
- * route to about page
- */
-Nerdeez.AboutRoute = Ember.Route.extend({
-	model: function(param){
-		return Nerdeez.Flatpage.find({'title' : 'about'});
-	}
-});
-
-/**
- * route to privacy page
- */
-Nerdeez.PrivacyRoute = Ember.Route.extend({
-	model: function(param){
-		return Nerdeez.Flatpage.find({'title' : 'privacy'});
-	}
-});
-
-/**
- * route to terms page
- */
-Nerdeez.TermsRoute = Ember.Route.extend({
-	model: function(param){
-		return Nerdeez.Flatpage.find({'title': 'terms'});
-	}
-});
-
-/**
- * the route to a course page
- */
-Nerdeez.CourseRoute = Ember.Route.extend({
-    model: function(param){
-        return Nerdeez.Course.find(param.course_id);
-    }
-});
-
-/**
- * the route to a course wall page
- */
-Nerdeez.CourseWallRoute = Nerdeez.LoginRequired.extend({
-    model: function(){
-        return this.modelFor('course');
-    }
-});
-
-/**
- * the route to a course files page
- */
-Nerdeez.CourseFilesRoute = Nerdeez.LoginRequired.extend({
-    model: function(){
-        return this.modelFor('course');
-    }
-});
-
 
 })();
 
@@ -779,7 +316,7 @@ var get = Ember.get, set = Ember.set;
 
 //create the namespace if the namespace doesnt exist
 if (typeof window.Nerdeez === "undefined"){
-	var Nerdeez = window.Nerdeez = Ember.Namespace.create();
+	var Nerdeez = Ember.Namespace.create();
 }
 else{
 	var Nerdeez = window.Nerdeez;
@@ -1441,41 +978,899 @@ Nerdeez.Wormhole = Ember.Object.extend({
 * @copyright: nerdeez.com Ltd.
 */
 
+/**
+ * create the adapter type class
+ */
+Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
+    /**
+     * adapter hook to set the server url
+     */
+    serverDomain : SERVER_URL,
+   
+    /**
+     * hook if we want to use cross domain communication
+     */
+    wormhole: Nerdeez.Wormhole,
+   
+    /**
+     * our serializer
+     */
+    serializer: Nerdeez.DjangoTastypieSerializer.extend({})
+})
+
+/**
+ * create instance of adapter
+ */
+adapter = Nerdeez.Adapter.create();
+
 
 /**
  * handles backend communication
  */
-Nerdeez.Store = DS.Store.extend({
+Nerdeez.store = DS.Store.create({
+   
+    /**
+     * our adapter
+     */
+    adapter: adapter
+});
+
+})();
+
+(function() {
+
+//routes
+
+
+})();
+
+(function() {
+
+/**
+* this file will hold nerdeez application routes
+*
+* @copyright: nerdeez.com Ltd.
+* @version: 1.0
+* @author: Yariv Katz
+*/
+
+/**
+ * define the routes urls here
+ */
+Nerdeez.Router.map(function () {
+	this.resource('search', function() {
+	    this.route('university');
+	    this.route('course');
+	});
+	this.route('about');
+	this.route('terms');
+	this.route('privacy');
+    this.resource('course', { path: '/course/:course_id' }, function(){
+        this.route('wall');
+        this.route('files');
+    });
+    this.route('login');
+    this.route('logout');
+});
+
+/**
+ * all the routes that require login will extend this
+ * Usage: just extend this class instead of the regular Ember.Route
+ */
+Nerdeez.LoginRequired = Ember.Route.extend({
+    redirect: function(){
+        self = this;
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                // the user is logged in and has authenticated your
+                // app, and response.authResponse supplies
+                // the user's ID, a valid access token, a signed
+                // request, and the time the access token 
+                // and signed request each expire
+                var uid = response.authResponse.userID;
+                var accessToken = response.authResponse.accessToken;
+            } else{
+                Nerdeez.set('lastPage', self.routeName);
+                Nerdeez.set('lastModel', self.model());
+                self.transitionTo('login');
+            }
+        });
+    }
+});
+
+Nerdeez.LogoutRoute = Ember.Route.extend({
+    redirect: function(){
+        self = this;
+        FB.logout(function(response) {
+            Ember.run(function(){
+                Nerdeez.set('isConnected' , false);    
+            });
+            self.transitionTo('index');
+        });
+    }
+});
+
+/**
+ * the route for the university search, grab the initial data
+ */
+Nerdeez.SearchUniversityRoute = Ember.Route.extend({
+	model: function(param){
+		return Nerdeez.University.find({limit: 20, order_by: 'title'});
+	}
+});
+
+/**
+ * the route for the course search, grab the initial data
+ */
+Nerdeez.SearchCourseRoute = Ember.Route.extend({
+	model: function(param){
+		return Nerdeez.Course.find({limit: 20, order_by: 'title'});
+	}
+});
+
+/**
+ * route to about page
+ */
+Nerdeez.AboutRoute = Ember.Route.extend({
+	model: function(param){
+		return Nerdeez.Flatpage.find({'title' : 'about'});
+	}
+});
+
+/**
+ * route to privacy page
+ */
+Nerdeez.PrivacyRoute = Ember.Route.extend({
+	model: function(param){
+		return Nerdeez.Flatpage.find({'title' : 'privacy'});
+	}
+});
+
+/**
+ * route to terms page
+ */
+Nerdeez.TermsRoute = Ember.Route.extend({
+	model: function(param){
+		return Nerdeez.Flatpage.find({'title': 'terms'});
+	}
+});
+
+/**
+ * the route to a course page
+ */
+Nerdeez.CourseRoute = Ember.Route.extend({
+    model: function(param){
+        return Nerdeez.Course.find(param.course_id);
+    }
+});
+
+/**
+ * the route to a course wall page
+ */
+Nerdeez.CourseWallRoute = Nerdeez.LoginRequired.extend({
+    model: function(){
+        return this.modelFor('course');
+    }
+});
+
+/**
+ * the route to a course files page
+ */
+Nerdeez.CourseFilesRoute = Nerdeez.LoginRequired.extend({
+    model: function(){
+        return this.modelFor('course');
+    }
+});
+
+
+})();
+
+(function() {
+
+//handlebars-helpers
+
+
+})();
+
+(function() {
+
+/**
+ * put this in each handlebar block to see if this is not the first item of the array
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{#each controller}}
+ *    {{notFirst this controller.content html="<div>Not the fist item in array</div>"}}
+ * {{/each}}
+ * ```
+ * 
+ * @param {DS.Model} item teh object to check in the each
+ * @param {DS.RecordArray} array - the arrays of objects to check from
+ * @param {Object} options {html: "the html if this is true"}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('notFirst', function(item, array, options) {
+  firstObject = array.objectAt(0);
+  if(item != firstObject){
+      	//console.log('notFirst');
+	  	return new Ember.Handlebars.SafeString(options.hash.html);
+  }
+  return '';
+});
+
+/**
+ * put this in each handlebar block to check every time you reached the nth item 
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{#each controller}}
+ *    {{modZero this controller.content mod="4" html='<div class="row-fluid">'}}
+ * {{/each}}
+ * ```
+ * 
+ * @param {DS.Model} item teh object to check in the each
+ * @param {DS.RecordArray} array - the arrays of objects to check from
+ * @param {Object} options {html: "the html if this is true", mod: "4"}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('modZero', function(item, array, options) {
+	var whichItem = 0;
+	mod = options.hash.mod;
+	for(var i=0; i<array.get('length'); i++){
+		currentObject = array.objectAt(i);
+		if(item == currentObject){
+			whichItem = i;
+		}
+	}
+	if(whichItem%mod == 0){
+		//console.log('modZero');
+		return new Ember.Handlebars.SafeString(options.hash.html);
+	}
+	return '';
+});
+
+/**
+ * put this in each handlebar block to check every time you reached the nth item but if zero then ignore
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{#each controller}}
+ *    {{modZero this controller.content mod="4" html='<div class="row-fluid">'}}
+ * {{/each}}
+ * ```
+ * 
+ * @param {DS.Model} item teh object to check in the each
+ * @param {DS.RecordArray} array - the arrays of objects to check from
+ * @param {Object} options {html: "the html if this is true", mod: "4"}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('modZeroExcludeFirst', function(item, array, options) {
+	var whichItem = 0;
+	mod = options.hash.mod;
+	for(var i=0; i<array.get('length'); i++){
+		currentObject = array.objectAt(i);
+		if(item == currentObject){
+			whichItem = i;
+		}
+	}
+	if(whichItem%mod == 0 && whichItem != 0){
+		//console.log('modZeroExcludeFirst');
+		return new Ember.Handlebars.SafeString(options.hash.html);
+	}
+	return '';
+});
+
+/**
+ * put this in each handlebar block to check every time you reached the last item 
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{#each controller}}
+ *    {{isLast this controller.content html="</div>"}}
+ * {{/each}}
+ * ```
+ * 
+ * @param {DS.Model} item teh object to check in the each
+ * @param {DS.RecordArray} array - the arrays of objects to check from
+ * @param {Object} options {html: "the html if this is true"}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('isLast', function(item, array, options) {
+	if(item == array.objectAt(array.get('length') - 1) && array.get('isUpdating') == false){
+		//console.log('isLast');
+		return new Ember.Handlebars.SafeString(options.hash.html);
+	}
+	return '';	
+});
+
+/**
+ * put this in each handlebar block to check every time you're in the first item 
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{#each controller}}
+ *    {{isFirst this controller.content html="<div>The first item of an array</div>"}}
+ * {{/each}}
+ * ```
+ * 
+ * @param {DS.Model} item teh object to check in the each
+ * @param {DS.RecordArray} array - the arrays of objects to check from
+ * @param {Object} options {html: "the html if this is true"}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('isFirst', function(item, array, options) {
+	firstObject = array.objectAt(0);
+	if(item == firstObject){
+		//console.log('isFirst');
+		return new Ember.Handlebars.SafeString(options.hash.html);
+	}
+	return '';
+});
+
+/**
+ * put this in each handlebar block usually before the end of the form element
+ * to return the status from the form submition
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{status controller messageBinding="message" isSuccessBinding="isSuccess" isShowBinding="isShowStatus"}}
+ * ```
+ * 
+ * the above will create a status info bind it to the controller and in the controller bind the properties: message, isSuccess, isShowStatus
+ * 
+ * @param {Ember.Object} the item which is bounded to the status paramaters
+ * @param {Object} options inside the hash we have {isShow: "true if need to show the status", isSuccess: "true if its a success status", message: 'the message to display'}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('status', function(item, options) {
+    var isShow = options.hash.isShow;
+    var isSuccess = options.hash.isSuccess;
+    var message = options.hash.message;
+    var html = '';
+    if(isShow){
+        var html = '<div class="info">';
+        if(isSuccess){
+            html+='<div class="alert alert-success"><i class="icon-ok"></i>' + message + '<a class="close" data-dismiss="alert">x</a></div>';
+        }
+        else{
+            html+='<div class="alert alert-danger"><i class="icon-remove"></i>' + message + '<a class="close" data-dismiss="alert">x</a></div>';
+        }
+        html+='</div>';
+    }
+    return new Handlebars.SafeString(html);
+});
+
+/**
+ * 
+ * will put a loading roller and bind it to what is sent to the handlebar
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{loading controller isLoadingBinding="isLoading"}}
+ * ```
+ * 
+ * the above will bind the loading screen to the controller isLoading property
+ * 
+ * @param {Ember.Object} the item which is bounded to the status paramaters
+ * @param {Object} options inside the hash we have {isLoading: "true if need to show the loading"}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('loading', function(item, options) {
+    var isLoading = options.hash.isLoading;
+    var html = '';
+    if(isLoading){
+        var html = '<div class="loading"><i class="icon-spin icon-spinner"></i></div>';
+    }
+    return new Handlebars.SafeString(html);
+});
+
+
+})();
+
+(function() {
+
+//application files
+
+
+})();
+
+(function() {
+
+/**
+* all views in the application will extend this master view
+*
+* @copyright: nerdeez.com Ltd.
+* @author: Yariv Katz
+* @version: 1.0
+*/
+
+Nerdeez.NerdeezView = Ember.View.extend({
+ 
+    /**
+    * holds the static url
+    * @type {{string}}
+    * @public
+    */
+    staticUrl: STATIC_URL,
+    
+    /**
+     * common actions when view finish reloading
+     */
+    didInsertElement: function(){
+        FB.XFBML.parse();
+    }
+
+Ember.TextSupport.reopen({
+	attributeBindings: ["required"]
+});
+
+
+})();
+
+(function() {
+
+/**
+* Main view for the application
+*
+* @copyright: nerdeez.com Ltd.
+* @author: Yariv Katz
+* @version: 1.0
+*/
+
+Nerdeez.ApplicationView = Nerdeez.NerdeezView.extend({
+});
+
+
+
+})();
+
+(function() {
+
+/**
+* Flatpage view for the application
+*
+* @copyright: nerdeez.com Ltd.
+* @author: Doron Nachshon
+* @version: 1.0
+*/
+
+Nerdeez.NerdeezFlatpage = Nerdeez.NerdeezView.extend({
+	templateName: 'flatpage'
+});
+
+Nerdeez.AboutView = Nerdeez.NerdeezFlatpage.extend({
+});
+
+Nerdeez.PrivacyView = Nerdeez.NerdeezFlatpage.extend({
+});
+
+Nerdeez.TermsView = Nerdeez.NerdeezFlatpage.extend({
+});
+
+})();
+
+(function() {
+
+/**
+ * the view for the search course page
+ * /#/search/course
+ */
+ 
+Nerdeez.SearchCourseView = Nerdeez.NerdeezView.extend({
+    searchMessage: 'Search course by title/number',
+    didInsertElement: function(){
+        $('.left-sidebar li').removeClass('active');
+        $('.left-sidebar li:nth-of-type(2)').addClass('active');
+        $('#' + this.elementId + ' input[type="search"]').attr('placeholder', 'Search course by title/number');
+    }
+});
+
+})();
+
+(function() {
+
+/**
+ * the view for the search uni page
+ * /#/search/university
+ */
+ 
+Nerdeez.SearchUniversityView = Nerdeez.NerdeezView.extend({
+    searchMessage: 'Search university',
+    didInsertElement: function(){
+        $('.left-sidebar li').removeClass('active');
+        $('.left-sidebar li:nth-of-type(1)').addClass('active');
+        $('#' + this.elementId + ' input[type="search"]').attr('placeholder', 'Search university');
+    }
+});
+
+})();
+
+(function() {
+
+/**
+ * holds the model for the university resource
+ * 
+ * @author: Yariv Katz
+ * @copyright: nerdeez.com Ltd.
+ * @version: 1.0
+ * 
+ */
+
+/**
+ * abstract class for all the school group models
+ */
+
+Nerdeez.SchoolGroup = DS.Model.extend({
+	title: DS.attr('string'),
+	description: DS.attr('string'),
+	image: DS.attr('string')
+});
+
+/**
+ * uni model
+ */
+Nerdeez.University = Nerdeez.SchoolGroup.extend({
+});
+
+/**
+ * course model
+ */
+Nerdeez.Course = Nerdeez.SchoolGroup.extend({
+	university: DS.belongsTo('Nerdeez.University')
+});
+
+})();
+
+(function() {
+
+/**
+ * holds the model for the flatpage resource
+ * 
+ * @author: Yariv Katz
+ * @copyright: nerdeez.com Ltd.
+ * @version: 1.0
+ * 
+ */
+
+/**
+ * the flatpage model
+ */
+Nerdeez.Flatpage = DS.Model.extend({
+	title:DS.attr('string'),
+	html: DS.attr('string'),
+})
+
+})();
+
+(function() {
+
+/**
+* the controller for the search university and search course will be here
+*
+* @copyright: nerdeez.com Ltd.
+* @author: Yariv Katz
+* @version: 1.0
+*/
+
+/**
+ * abstract controller for the search course and search university
+ */
+Nerdeez.NerdeezSearchController = Ember.ArrayController.extend({
 	
 	/**
-	 * our adapter
+	 * the search query
+	 * @property
+	 * @public
+	 * @type {string}
 	 */
-	adapter: Nerdeez.DjangoTastypieAdapter.extend({
-	    /**
-	     * adapter hook to set the server url
-	     */
-	    serverDomain : SERVER_URL,
-	    
-	    /**
-	     * hook if we want to use cross domain communication
-	     */
-	    wormhole: Nerdeez.Wormhole,
-	    
-	    /**
-	     * our serializer
-	     */
-	    serializer: Nerdeez.DjangoTastypieSerializer.extend({
-            
-            /**
-             * constructor for the serializer, set the mapping for the relations 
-             */
-            init: function(){
-                this._super();
-                this.mappings.set( 'Nerdeez.Course', { university: { embedded: 'load' } } );
-            }
-	    })
-	})
+	searchQuery: null,
 	
+	/**
+	 * the model for the search
+	 * @property
+	 * @private
+	 * @type {subclass of DS.Model}
+	 */
+	_model: null,
+	
+	/**
+	 * when the user submits the search form
+	 */
+	search: function(){
+		if(this.get('_model') != null)
+			this.set('content', this.get('_model').find({search: this.get('searchQuery')}));
+	}.observes('searchQuery')
 });
+
+/**
+ * the controller for the search university
+ */
+Nerdeez.SearchUniversityController = Nerdeez.NerdeezSearchController.extend({
+	_model: Nerdeez.University
+});
+
+/**
+ * the controller for the search course
+ */
+Nerdeez.SearchCourseController = Nerdeez.NerdeezSearchController.extend({
+	_model: Nerdeez.Course
+});
+
+
+})();
+
+(function() {
+
+/**
+* the controller for the login with facebook page
+*
+* @copyright: nerdeez.com Ltd.
+* @author: Yariv Katz
+* @version: 1.0
+*/
+
+/**
+ * controller that handles 
+ */
+Nerdeez.LoginController = Ember.Controller.extend({
+    
+    /**
+     * loading flag
+     * @type {Boolean}
+     */
+    isLoading: false,
+    
+    /**
+     * should i redirect the user after login?
+     * global variable called last page will have the last page to redirect
+     * @type {Boolean}
+     */
+    isRedirect: false,
+    
+    isFacebookLoginBinding: 'Nerdeez.isFBLoaded',
+    
+    /**
+     * init the controller variables
+     */
+    initController: function(){
+        self = this;
+        FB.getLoginStatus(function(response) {
+            Ember.run(function(){
+                Nerdeez.set('isConnected' , response.status === 'connected');    
+            });
+        });      
+    },
+    
+    /**
+     * subscribe to the facebook logged in change event
+     */
+    init: function(){
+        this._super();
+        this.set('isRedirect', Nerdeez.get('lastPage') != null);
+        if(Nerdeez.get('isFBLoaded')){
+            this.initController();
+        }
+    },
+    
+    /**
+     * whne the user clicks the login button
+     */
+    login: function(){
+        this.set('isLoading', true);
+        self = this;
+        FB.login(function(response) {
+            
+            if (response.authResponse) {
+                Ember.run(function(){
+                    self.set('isLoading', false);
+                    Nerdeez.set('isConnected', true);
+                });
+                
+                
+                if(self.get('isRedirect')){
+                    Ember.run(function(){
+                        self.set('isLoading', true);
+                    });
+                    setTimeout(function() {
+                        self.transitionTo(Nerdeez.get('lastPage'),Nerdeez.get('lastModel'));
+                    }, 3000);
+                }
+            } else {
+                Ember.run(function(){
+                    self.set('isLoading', false);
+                    Nerdeez.set('isConnected', false);
+                });
+            }
+        });
+    },
+    
+    /**
+     * will be called when the facebook api is loaded
+     */
+    waitForFB: function(){
+        if(Nerdeez.get('isFBLoaded')){
+            this.initController();
+        } 
+    }.observes('Nerdeez.isFBLoaded')
+});
+
+})();
+
+(function() {
+
+/**
+ * nerdeez handlebars helper. 
+ * register common handlebars that are used alot. 
+ * Important note to whomever edits this file: All the programmers are going to use this code throughout the entire application. 
+ * this code should be documented like a motherfucker
+ * 
+ * Created July 26t, 2013
+ * @author: Yariv Katz
+ * @copyright: Nerdeez Ltd.
+ * @verison: 1.0
+ * 
+ */
+ 
+ /**
+ * put this every place you want a loading sign
+ * 
+ * usage
+ * 
+ * ```handlebar
+ *    {{loading}}
+ * ```
+ * 
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('loading', function() {
+    return new Ember.Handlebars.SafeString('<div class="loading"><i class="icon-refresh icon-spin"></i></div>');
+});
+
+})();
+
+(function() {
+
+/**
+* Contact us controller for the application
+*
+* @copyright: nerdeez.com Ltd.
+* @author: Yariv Katz
+* @version: 1.0
+*/
+
+Nerdeez.ContactController = Ember.Controller.extend({
+    
+    /**
+    * used to inform on success transaction
+    * @property
+    * @private
+    * @type {boolean}
+    */
+    isSuccess: true,
+
+    
+    /**
+    * set to true if we are moving to the loading state
+    * @property
+    * @private
+    * @type {boolean}
+    */
+    isLoading: false,
+
+    /**
+    * used to pass message from server transaction
+    * @property
+    * @private
+    * @type {string}
+    */
+    statusMessage: 'test',
+
+    /**
+    * should i show the transaction status
+    * @property
+    * @private
+    * @type {boolean}
+    */
+    isShowStatus: false,
+
+
+    mailContent: null,
+    mailAddress: null,
+
+    textLimit: 100,
+
+
+    
+    /**
+     * when the user submits the contact us form
+     * @params string message the message to send
+     * @params string name the name of the user sending the message
+     * @params string mail the mail of the user
+     * @params string the user phone number
+     */
+    submitForm: function(success, error){
+        this.set('isLoading', true);
+        message = this.get('mailContent');
+        mail = this.get('mailAddress');
+        xthis = this;
+        
+        var success = function(json){
+            xthis.set('isSuccess', json['success']);
+            xthis.set('isShowStatus', true);
+            xthis.set('isLoading', false);
+            xthis.set('statusMessage', json['message']);
+        }
+
+        var error = function(json){
+            if (json.hasOwnProperty('message')){
+                xthis.set('statusMessage', json['message']);
+            }
+            else{
+                xthis.set('statusMessage', 'Server communication error');
+            }
+            xthis.set('isSuccess', false);
+            xthis.set('isShowStatus', true);
+            xthis.set('isLoading', false);
+        }
+
+        Nerdeez.get('store.adapter').ajax(
+	        	Nerdeez.server_url + '/api/v1/utilities/contact/',
+	        	'POST',
+	        	{
+	        		data: {message: message, mail: mail},
+	        		success: success,
+	        		error: error
+	        	}
+	    );
+    },
+
+    countChars: function() {
+        var elem = $(".charsRemaining");
+        $('textarea[name=msginput]').limiter(this.get('textLimit'), elem);
+    }.observes('mailContent')
+});
+
+})();
+
+(function() {
+
+//jquery
+//require("bower_components/jquery plugins/jquery.validate");
+
+
+})();
+
+(function() {
+
+/**
+* TinyLimiter - scriptiny.com/tinylimiter
+* License: GNU GPL v3.0 - scriptiny.com/license
+*/ 
+
+(function($) {
+    $.fn.extend( {
+        limiter: function(limit, elem) {
+            $(this).on("keyup focus", function() {
+                setCount(this, elem);
+            });
+            function setCount(src, elem) {
+                var chars = src.value.length;
+                if (chars > limit) {
+                    src.value = src.value.substr(0, limit);
+                    chars = limit;
+                }
+                elem.html( limit - chars );
+            }
+            setCount($(this)[0], elem);
+        }
+    });
+})(jQuery);
 
 })();
