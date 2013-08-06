@@ -7,17 +7,20 @@ version: 1.0
 
 -->
 
-<div class="container">
-    {{partial "header"}}
-    <div class="container top-buffer">
-	    <div class="row">
-		    <div class="span2">
-			    {{partial "left-sidebar"}}
-		    </div>
-		    <div class="span10">
-			    {{outlet}}
-			</div>
-		</div>
+{{partial "topbar"}}
+{{partial "header"}}
+{{partial "masthead"}}
+<div id="content">
+    <div class="container">
+        <div class="row">
+     <div class="span2">
+{{partial "left-sidebar"}}
+</div>
+<div class="span10">
+{{outlet}}
+</div>
+</div>
     </div>
 </div>
+
 <div class="push"></div>

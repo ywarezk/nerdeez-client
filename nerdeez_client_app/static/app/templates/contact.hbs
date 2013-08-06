@@ -8,13 +8,13 @@ version: 1.0
 -->
 
 <div class="contact">
-	<div class="row">
-		<div class="span10">
-			<h1>Contact Us</h1>
-			<form class="form" id="contactusForm" {{action submitForm target="controller" on="submit"}}>
-				<div class="row top-buffer">
-					<div class="span6">
-						<label>Email Address (not required)</label> 
+	<div class="account-container login stacked">
+		<div class="content clearfix">
+			<form class="nerdeez-validation" id="contactusForm" {{action submitForm target="controller" on="submit"}}>
+				<h1>Contact Us</h1>		
+    			<div class="login-fields">
+    				<div class="field">
+						<label for="emailinput">Email Address (not required)</label> 
 						{{
 			  				view Ember.TextField
 			  				placeholder = "Enter your Email address here"
@@ -22,15 +22,9 @@ version: 1.0
 			  				type="email"
 			  				name="emailinput"
 			  			}}
-			  		</div>
-			  	</div>
-			  	<div class="row">
-			  		<div class="span6">
-			  			<label>Message (required)</label>
-			  		</div>
-			  	</div>
-			  	<div class="row">
-			  		<div class="span6">
+			  		</div> <!-- /field -->
+			  		<div class="field">
+			  			<label for="msginput">Message (required)</label>
 				  		{{
 				  			view Ember.TextArea
 				  			placeholder = "Enter your message here"
@@ -39,28 +33,23 @@ version: 1.0
 			  				type="text"
 			  				required="true"
 			  			}}
-			  		</div>
-		  		</div>
-		  		<div class="row">
-		  			<div class="sidenote span6 offset4">
-			  			Characters remaining: 
-			  			<div class="charsRemaining">
-			  				{{controller.textLimit}}
-			  			</div>
-			  		</div>
-			  	</div>
-		  		<div class="row">
-		  			<div class="span6">
-		  				<button type="submit" class="btn">Send Email</button>
-		  				{{loading controller isLoadingBinding="isLoading"}}
-		  			</div>
-				</div>
-				<div class="row">
-					<div class="span6">
-						{{status controller messageBinding="statusMessage" isSuccessBinding="isSuccess" isShowBinding="isShowStatus"}}
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
+			  			<div class="charCounter"> 
+	  						Characters remaining:
+							<div class="charsRemaining">
+							{{controller.textLimit}}
+							</div>
+						</div>
+			  		</div> <!-- /field -->
+			  	</div> <!-- /login fields -->
+		  		<div class="login-actions">
+		  			{{loading controller isLoadingBinding="isLoading"}}
+		  			<button type="submit" class="button btn btn-primary btn-large">
+		  				<i class="icon-envelope"></i>
+                    	Send
+                    </button>
+                </div> <!-- .login-actions -->
+                {{status controller messageBinding="statusMessage" isSuccessBinding="isSuccess" isShowBinding="isShowStatus"}}
+            </form>
+        </div>
+    </div>
 </div>

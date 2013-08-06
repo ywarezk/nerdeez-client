@@ -1045,6 +1045,7 @@ Nerdeez.Router.map(function () {
 	this.route('about');
 	this.route('terms');
 	this.route('privacy');
+    this.route('contact');
     this.resource('course', { path: '/course/:course_id' }, function(){
         this.route('wall');
         this.route('files');
@@ -1391,7 +1392,12 @@ Ember.Handlebars.registerBoundHelper('loading', function(item, options) {
 * @version: 1.0
 */
 
-Nerdeez.NerdeezView = Ember.View.extend({
+Ember.View.reopen({
+
+    /**
+     * hook for the view for 
+     */
+    textLimit: null,
  
     /**
     * holds the static url
@@ -1406,27 +1412,11 @@ Nerdeez.NerdeezView = Ember.View.extend({
     didInsertElement: function(){
         FB.XFBML.parse();
     }
+});
 
 Ember.TextSupport.reopen({
-	attributeBindings: ["required"]
+   attributeBindings: ["required"]
 });
-
-
-})();
-
-(function() {
-
-/**
-* Main view for the application
-*
-* @copyright: nerdeez.com Ltd.
-* @author: Yariv Katz
-* @version: 1.0
-*/
-
-Nerdeez.ApplicationView = Nerdeez.NerdeezView.extend({
-});
-
 
 
 })();
@@ -1441,7 +1431,7 @@ Nerdeez.ApplicationView = Nerdeez.NerdeezView.extend({
 * @version: 1.0
 */
 
-Nerdeez.NerdeezFlatpage = Nerdeez.NerdeezView.extend({
+Nerdeez.NerdeezFlatpage = Ember.View.extend({
 	templateName: 'flatpage'
 });
 
@@ -1463,7 +1453,7 @@ Nerdeez.TermsView = Nerdeez.NerdeezFlatpage.extend({
  * /#/search/course
  */
  
-Nerdeez.SearchCourseView = Nerdeez.NerdeezView.extend({
+Nerdeez.SearchCourseView = Ember.View.extend({
     searchMessage: 'Search course by title/number',
     didInsertElement: function(){
         $('.left-sidebar li').removeClass('active');
@@ -1481,7 +1471,7 @@ Nerdeez.SearchCourseView = Nerdeez.NerdeezView.extend({
  * /#/search/university
  */
  
-Nerdeez.SearchUniversityView = Nerdeez.NerdeezView.extend({
+Nerdeez.SearchUniversityView = Ember.View.extend({
     searchMessage: 'Search university',
     didInsertElement: function(){
         $('.left-sidebar li').removeClass('active');
@@ -1706,38 +1696,6 @@ Nerdeez.LoginController = Ember.Controller.extend({
 (function() {
 
 /**
- * nerdeez handlebars helper. 
- * register common handlebars that are used alot. 
- * Important note to whomever edits this file: All the programmers are going to use this code throughout the entire application. 
- * this code should be documented like a motherfucker
- * 
- * Created July 26t, 2013
- * @author: Yariv Katz
- * @copyright: Nerdeez Ltd.
- * @verison: 1.0
- * 
- */
- 
- /**
- * put this every place you want a loading sign
- * 
- * usage
- * 
- * ```handlebar
- *    {{loading}}
- * ```
- * 
- * @return {Handlebars.SafeString}
- */
-Ember.Handlebars.registerBoundHelper('loading', function() {
-    return new Ember.Handlebars.SafeString('<div class="loading"><i class="icon-refresh icon-spin"></i></div>');
-});
-
-})();
-
-(function() {
-
-/**
 * Contact us controller for the application
 *
 * @copyright: nerdeez.com Ltd.
@@ -1785,8 +1743,6 @@ Nerdeez.ContactController = Ember.Controller.extend({
     mailAddress: null,
 
     textLimit: 100,
-
-
     
     /**
      * when the user submits the contact us form

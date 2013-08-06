@@ -6,30 +6,52 @@
 */
 
 .contact {
-	.container {
-		margin-left: auto;
-		margin-right: auto;
-	}
-	h1 {
-		font-size: 50px;
-		font-weight: lighter;
-	}
-	.sidenote {
-		color:#ccc;
+    .field {
+        label{
+            display: block !important;
+        }
+        input[name="emailinput"]{
+            padding-left: 12px;
+            width: 91%;
+        }
+        textarea[name="msginput"]{
+            margin-bottom: 0px;
+            padding-left: 12px;
+            width: 94%;
+            resize:none;
+            color: rgb(142, 141, 141);
+            font-family:'Open Sans';
+            font-size:13px;
+            font-weight:400;
+            font-style:normal;
+            font-size-adjust:none;
+            color:#8E8D8D;
+            line-height:18px;
+        }
+    }
+    .account-container{
+        margin-top: 36px !important;
+    }
+    .login-actions{
+        float: none !important;
+        text-align: right;
+        button{
+            float: none !important;
+        }
+        .loading{
+            float: left; margin-top: 20px;
+            i.icon-spinner{
+                font-size: 31px;;
+            }
+        }
+    }
+    form {
+        margin-bottom: 0 !important;
+    }
+    .charCounter {
+		color: #BABABA;
 		.charsRemaining {
 			display : inline;
 		}
 	}
-
-	#contactusForm {
-		textarea[name="msginput"] {
-			width: 560px;
-			height: 200px;
-			resize: none;
-			margin-bottom: 0px;
-		}
-		input[name="emailinput"] {
-			width: 300px;
-		}
-	}
-}
+ }

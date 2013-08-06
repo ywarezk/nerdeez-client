@@ -6,7 +6,12 @@
 * @version: 1.0
 */
 
-Nerdeez.NerdeezView = Ember.View.extend({
+Ember.View.reopen({
+
+    /**
+     * hook for the view for 
+     */
+    textLimit: null,
  
     /**
     * holds the static url
@@ -21,7 +26,8 @@ Nerdeez.NerdeezView = Ember.View.extend({
     didInsertElement: function(){
         FB.XFBML.parse();
     }
+});
 
 Ember.TextSupport.reopen({
-	attributeBindings: ["required"]
+   attributeBindings: ["required"]
 });

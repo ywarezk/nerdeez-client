@@ -46,8 +46,6 @@ Nerdeez.ContactController = Ember.Controller.extend({
     mailAddress: null,
 
     textLimit: 100,
-
-
     
     /**
      * when the user submits the contact us form

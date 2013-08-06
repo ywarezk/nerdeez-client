@@ -3,7 +3,7 @@
  * /#/search/university
  */
  
-Nerdeez.SearchUniversityView = Nerdeez.NerdeezView.extend({
+Nerdeez.SearchUniversityView = Ember.View.extend({
     searchMessage: 'Search university',
     didInsertElement: function(){
         $('.left-sidebar li').removeClass('active');

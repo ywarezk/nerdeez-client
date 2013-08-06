@@ -35,7 +35,6 @@ require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/controllers/search-controller');
 require('scripts/controllers/login-controller');
-require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
 require('scripts/controllers/contact-controller');
 
 //jquery

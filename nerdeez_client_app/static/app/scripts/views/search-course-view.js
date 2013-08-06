@@ -3,7 +3,7 @@
  * /#/search/course
  */
  
-Nerdeez.SearchCourseView = Nerdeez.NerdeezView.extend({
+Nerdeez.SearchCourseView = Ember.View.extend({
     searchMessage: 'Search course by title/number',
     didInsertElement: function(){
         $('.left-sidebar li').removeClass('active');
