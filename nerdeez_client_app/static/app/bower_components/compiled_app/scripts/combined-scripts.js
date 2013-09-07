@@ -172,7 +172,7 @@ Nerdeez.SearchUniversityView = Nerdeez.NerdeezView.extend({
 (function() {
 
 /**
- * holds the model for the university resource
+ * holds the model for the schoolgroups
  * 
  * @author: Yariv Katz
  * @copyright: nerdeez.com Ltd.
@@ -184,24 +184,14 @@ Nerdeez.SearchUniversityView = Nerdeez.NerdeezView.extend({
  * abstract class for all the school group models
  */
 
-Nerdeez.SchoolGroup = DS.Model.extend({
+Nerdeez.Schoolgroup = DS.Model.extend({
 	title: DS.attr('string'),
 	description: DS.attr('string'),
-	image: DS.attr('string')
+	image: DS.attr('string'),
+	school_type: DS.attr('number'),
+	parent: DS.belongsTo('Nerdeez.Schoolgroup')
 });
 
-/**
- * uni model
- */
-Nerdeez.University = Nerdeez.SchoolGroup.extend({
-});
-
-/**
- * course model
- */
-Nerdeez.Course = Nerdeez.SchoolGroup.extend({
-	university: DS.belongsTo('Nerdeez.University')
-});
 
 })();
 
@@ -239,7 +229,7 @@ Nerdeez.Flatpage = DS.Model.extend({
 /**
  * abstract controller for the search course and search university
  */
-Nerdeez.NerdeezSearchController = Ember.ArrayController.extend({
+Nerdeez.SearchController = Ember.ArrayController.extend({
 	
 	/**
 	 * the search query
@@ -249,36 +239,15 @@ Nerdeez.NerdeezSearchController = Ember.ArrayController.extend({
 	 */
 	searchQuery: null,
 	
-	/**
-	 * the model for the search
-	 * @property
-	 * @private
-	 * @type {subclass of DS.Model}
-	 */
-	_model: null,
 	
 	/**
 	 * when the user submits the search form
 	 */
 	search: function(){
-		if(this.get('_model') != null)
-			this.set('content', this.get('_model').find({search: this.get('searchQuery')}));
+		this.set('content', Nerdeez.Schoolgroup.find({search: this.get('searchQuery')}));
 	}.observes('searchQuery')
 });
 
-/**
- * the controller for the search university
- */
-Nerdeez.SearchUniversityController = Nerdeez.NerdeezSearchController.extend({
-	_model: Nerdeez.University
-});
-
-/**
- * the controller for the search course
- */
-Nerdeez.SearchCourseController = Nerdeez.NerdeezSearchController.extend({
-	_model: Nerdeez.Course
-});
 
 
 })();
@@ -433,18 +402,11 @@ Ember.Handlebars.registerBoundHelper('loading', function() {
  * define the routes urls here
  */
 Nerdeez.Router.map(function () {
-	this.resource('search', function() {
-	    this.route('university');
-	    this.route('course');
-	});
+	this.route('search');
 	this.route('about');
 	this.route('terms');
 	this.route('privacy');
-    this.resource('course', { path: '/course/:course_id' }, function(){
-        this.route('wall');
-        this.route('files');
-    });
-    this.resource('school-group', { path: '/school-group/:type/:course_id' }, function(){
+    this.resource('schoolgroup', { path: '/schoolgroup/:schoolgroup_id' }, function(){
         this.route('wall');
         this.route('files');
     });
@@ -492,20 +454,12 @@ Nerdeez.LogoutRoute = Ember.Route.extend({
 /**
  * the route for the university search, grab the initial data
  */
-Nerdeez.SearchUniversityRoute = Ember.Route.extend({
+Nerdeez.SearchRoute = Ember.Route.extend({
 	model: function(param){
-		return Nerdeez.University.find({limit: 20, order_by: 'title'});
+		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title'});
 	}
 });
 
-/**
- * the route for the course search, grab the initial data
- */
-Nerdeez.SearchCourseRoute = Ember.Route.extend({
-	model: function(param){
-		return Nerdeez.Course.find({limit: 20, order_by: 'title'});
-	}
-});
 
 /**
  * route to about page
@@ -537,27 +491,27 @@ Nerdeez.TermsRoute = Ember.Route.extend({
 /**
  * the route to a course page
  */
-Nerdeez.CourseRoute = Ember.Route.extend({
+Nerdeez.SchoolgroupRoute = Ember.Route.extend({
     model: function(param){
-        return Nerdeez.Course.find(param.course_id);
+        return Nerdeez.Schoolgroup.find(param.schoolgroup_id);
     }
 });
 
 /**
  * the route to a course wall page
  */
-Nerdeez.CourseWallRoute = Nerdeez.LoginRequired.extend({
+Nerdeez.SchoolgroupWallRoute = Nerdeez.LoginRequired.extend({
     model: function(){
-        return this.modelFor('course');
+        return this.modelFor('schoolgroup');
     }
 });
 
 /**
  * the route to a course files page
  */
-Nerdeez.CourseFilesRoute = Nerdeez.LoginRequired.extend({
+Nerdeez.SchoolgroupFilesRoute = Nerdeez.LoginRequired.extend({
     model: function(){
-        return this.modelFor('course');
+        return this.modelFor('schoolgroup');
     }
 });
 

@@ -10,18 +10,11 @@
  * define the routes urls here
  */
 Nerdeez.Router.map(function () {
-	this.resource('search', function() {
-	    this.route('university');
-	    this.route('course');
-	});
+	this.route('search');
 	this.route('about');
 	this.route('terms');
 	this.route('privacy');
-    this.resource('course', { path: '/course/:course_id' }, function(){
-        this.route('wall');
-        this.route('files');
-    });
-    this.resource('school-group', { path: '/school-group/:type/:course_id' }, function(){
+    this.resource('schoolgroup', { path: '/schoolgroup/:schoolgroup_id' }, function(){
         this.route('wall');
         this.route('files');
     });
@@ -69,20 +62,12 @@ Nerdeez.LogoutRoute = Ember.Route.extend({
 /**
  * the route for the university search, grab the initial data
  */
-Nerdeez.SearchUniversityRoute = Ember.Route.extend({
+Nerdeez.SearchRoute = Ember.Route.extend({
 	model: function(param){
-		return Nerdeez.University.find({limit: 20, order_by: 'title'});
+		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title'});
 	}
 });
 
-/**
- * the route for the course search, grab the initial data
- */
-Nerdeez.SearchCourseRoute = Ember.Route.extend({
-	model: function(param){
-		return Nerdeez.Course.find({limit: 20, order_by: 'title'});
-	}
-});
 
 /**
  * route to about page
@@ -114,26 +99,26 @@ Nerdeez.TermsRoute = Ember.Route.extend({
 /**
  * the route to a course page
  */
-Nerdeez.CourseRoute = Ember.Route.extend({
+Nerdeez.SchoolgroupRoute = Ember.Route.extend({
     model: function(param){
-        return Nerdeez.Course.find(param.course_id);
+        return Nerdeez.Schoolgroup.find(param.schoolgroup_id);
     }
 });
 
 /**
  * the route to a course wall page
  */
-Nerdeez.CourseWallRoute = Nerdeez.LoginRequired.extend({
+Nerdeez.SchoolgroupWallRoute = Nerdeez.LoginRequired.extend({
     model: function(){
-        return this.modelFor('course');
+        return this.modelFor('schoolgroup');
     }
 });
 
 /**
  * the route to a course files page
  */
-Nerdeez.CourseFilesRoute = Nerdeez.LoginRequired.extend({
+Nerdeez.SchoolgroupFilesRoute = Nerdeez.LoginRequired.extend({
     model: function(){
-        return this.modelFor('course');
+        return this.modelFor('schoolgroup');
     }
 });
