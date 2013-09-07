@@ -7,6 +7,15 @@
  * @version: 1.0
  * 
  */
+
+/**
+ * the view for the wall
+ */
+Nerdeez.CourseWallView = Nerdeez.NerdeezView.extend({
+    didInsertElement: function(){
+        FB.XFBML.parse();
+    }
+});
  
  
 

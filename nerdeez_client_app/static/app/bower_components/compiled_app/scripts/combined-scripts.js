@@ -444,6 +444,10 @@ Nerdeez.Router.map(function () {
         this.route('wall');
         this.route('files');
     });
+    this.resource('school-group', { path: '/school-group/:type/:course_id' }, function(){
+        this.route('wall');
+        this.route('files');
+    });
     this.route('login');
     this.route('logout');
 });
