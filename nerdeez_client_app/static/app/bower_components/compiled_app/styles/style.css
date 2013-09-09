@@ -206,61 +206,13 @@ input.nerdeez-search {
 
 /**
 * holds the styles of the search university and search course content area
+* this stylesheet is for the file: search.hbs
+* make sure to keep the styles nested inside search and every class nested inside another
 * @copyright: nerdeez.com Ltd.
 * @version: 1.0
 * @author: Yariv Katz
 *
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000310}}
-._search .result {
-  margin-bottom: 20px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000312}}
-._search .result .single-schoolgroup {
-  float: right;
-  margin-right: 3px;
-  margin-top: 20px !important;
-  width: 94%;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000317}}
-._search .result .single-schoolgroup .border {
-  border: 1px solid;
-  height: 90px;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  -moz-border-radius: 5px 5px 5px 5px;
-  -ms-border-radius: 5px 5px 5px 5px;
-  -o-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000321}}
-._search .result .single-schoolgroup .border .image-wrapper {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding-left: 3px;
-  padding-right: 3px;
-  padding-top: 3px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000326}}
-._search .result .single-schoolgroup .border .image-wrapper .thumbnail {
-  height: 73px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000328}}
-._search .result .single-schoolgroup .border .image-wrapper .thumbnail img {
-  height: 100%;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000331}}
-._search .result .single-schoolgroup .border .image-wrapper .thumbnail i.icon-picture {
-  font-size: 74px;
-  position: relative;
-  left: 37px;
-  top: 30px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000340}}
-._search .result .single-schoolgroup .details {
-  margin-top: 8px;
-}
-
 /**
  * styles define for the falt pages: about, terms, privacy ... 
  * 

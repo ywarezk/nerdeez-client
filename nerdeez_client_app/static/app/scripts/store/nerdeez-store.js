@@ -8,6 +8,8 @@
 */
 
 
+Nerdeez.DjangoTastypieAdapter.configure('Nerdeez.Schoolgroup', {alias: 'parent'});
+
 /**
  * handles backend communication
  */
@@ -31,15 +33,16 @@ Nerdeez.Store = DS.Store.extend({
 	     * our serializer
 	     */
 	    serializer: Nerdeez.DjangoTastypieSerializer.extend({
-            
-            /**
-             * constructor for the serializer, set the mapping for the relations 
-             */
-            init: function(){
+	        init: function(){
                 this._super();
-                this.mappings.set( 'Nerdeez.Course', { university: { embedded: 'load' } } );
-            }
+                this.mappings.set( 'Nerdeez.Schoolgroup', { 
+                    parent: { embedded: 'load' }
+                });
+	        }
 	    })
 	})
 	
 });
+
+
+

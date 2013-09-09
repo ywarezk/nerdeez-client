@@ -1,45 +1,13 @@
 /**
 * holds the styles of the search university and search course content area
+* this stylesheet is for the file: search.hbs
+* make sure to keep the styles nested inside search and every class nested inside another
 * @copyright: nerdeez.com Ltd.
 * @version: 1.0
 * @author: Yariv Katz
 *
 */
 
-._search{
-    .result{
-        margin-bottom: 20px;
-        .single-schoolgroup{
-            float: right;
-            margin-right: 3px;
-            margin-top: 20px !important;
-            width: 94%;
-            .border{
-                border: 1px solid;
-                height: 90px;
-                @include border-radius(5px 5px 5px 5px);
-                .image-wrapper{
-                    @include box-sizing(border-box);
-                    padding-left: 3px;
-                    padding-right: 3px;
-                    padding-top: 3px;
-                    .thumbnail{
-                        height: 73px;
-                        img{
-                            height: 100%;
-                        } 
-                        i.icon-picture{
-                            font-size: 74px;
-                            position: relative;
-                            left: 37px;
-                            top: 30px;
-                        }                     
-                    }
-                }
-            }
-            .details{
-                margin-top: 8px;
-            }
-        }
-    }
+.search{
+    
 }
