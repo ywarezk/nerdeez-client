@@ -1,0 +1,37 @@
+<div class="login span3 offset1">
+    <h1>Login page</h1>
+    <div class="modal">
+        <div class="modal-body">
+        You need to login to continue.
+        By clicking login you agree to our {{#linkTo terms}}Terms & Conditions{{/linkTo}}
+        </div>
+        <div class="modal-footer">
+            {{#if Nerdeez.isConnected}}
+            <div class="alert alert-success pull-left">
+                <i class="icon-check-sign"></i>
+                <span>You are logged in</span>
+                {{#if isRedirect}}
+                <span>You are being redirected...</span>
+                {{/if}}
+            </div>
+            {{else}}
+            <div class="alert alert-error pull-left">
+                <i class="icon-remove-sign"></i>
+                <span>You are not logged in</span>
+            </div>
+            {{/if}}
+            {{#if isLoading}}
+            {{loading}}
+            {{/if}}
+            {{#unless Nerdeez.isConnected}}
+            <div class="pull-right">
+                <a class="btn primary" {{action "login"}}>
+                    <span>
+                        Login with Facebook
+                    </span>
+                </a>
+            </div>
+            {{/unless}}
+        </div>
+    </div>
+</div>

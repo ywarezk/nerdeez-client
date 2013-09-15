@@ -7,3 +7,15 @@
  * @version: 1.0
  */
  
+ .flatpage{
+    .account-container.login.stacked{
+        width: 100%;
+        margin-top: 0;
+        padding: 20px;
+        @include box-sizing(border-box);
+        margin-bottom: 20px;
+    }
+ }
+ 
+ 
+ 

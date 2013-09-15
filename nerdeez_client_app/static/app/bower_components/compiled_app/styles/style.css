@@ -112,6 +112,12 @@ input.nerdeez-search {
   float: none;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000392}}
+.nerdeez-inputs {
+  height: 41px !important;
+  width: 100% !important;
+}
+
 /**
 * holds the styles of the header
 * @copyright: nerdeez.com Ltd.
@@ -221,6 +227,17 @@ input.nerdeez-search {
  * @copyright: nerdeez Ltd.
  * @version: 1.0
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_flatpage\.scss}line{font-family:\0000311}}
+.flatpage .account-container.login.stacked {
+  width: 100%;
+  margin-top: 0;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
 /**
  * stylesheet for the login page
  * 
@@ -231,50 +248,9 @@ input.nerdeez-search {
  *
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_login\.scss}line{font-family:\0000312}}
-.login .modal {
-  top: 291px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_login\.scss}line{font-family:\0000316}}
-.login .modal-footer .alert {
-  margin-bottom: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_login\.scss}line{font-family:\0000318}}
-.login .modal-footer .alert i.icon-remove-sign {
-  color: red;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_login\.scss}line{font-family:\0000321}}
-.login .modal-footer .alert i.icon-check-sign {
-  color: green;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_login\.scss}line{font-family:\0000325}}
-.login .modal-footer .primary {
-  background: -webkit-gradient(linear, to bottom, to top, color-stop(0%, #637bad), color-stop(100%, #5872a7));
-  background: -webkit-linear-gradient(to bottom, #637bad, #5872a7);
-  background: -moz-linear-gradient(to bottom, #637bad, #5872a7);
-  background: -o-linear-gradient(to bottom, #637bad, #5872a7);
-  background: linear-gradient(to bottom, #637bad, #5872a7);
-  -webkit-border-radius: 0 0 0 0;
-  -moz-border-radius: 0 0 0 0;
-  -ms-border-radius: 0 0 0 0;
-  -o-border-radius: 0 0 0 0;
-  border-radius: 0 0 0 0;
-  color: white;
-  height: 30px;
-  text-decoration: none;
-  text-shadow: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_login\.scss}line{font-family:\0000332}}
-.login .modal-footer .primary span {
-  position: relative;
-  top: 5px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_login\.scss}line{font-family:\0000337}}
-.login .modal-footer .loading {
-  float: left;
-  font-size: 25px;
-  left: 15px;
-  position: relative;
-  top: 6px;
+.login .account-container.login.stacked {
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 /**

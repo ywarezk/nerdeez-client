@@ -9,37 +9,8 @@
  */
  
  .login{
-    .modal{
-        top: 291px;
-    }
-    .modal-footer{
-        .alert{
-            margin-bottom: 0;
-            i.icon-remove-sign{
-                color: red;
-            }
-            i.icon-check-sign{
-                color: green;
-            }
-        }
-        .primary{
-            @include background(linear-gradient(to bottom, #637BAD, #5872A7));
-            @include border-radius(0 0 0 0);
-            color: white;
-            height: 30px;
-            text-decoration: none;
-            text-shadow: none;
-            span{
-                position: relative;
-                top: 5px;
-            }
-        }
-        .loading{
-            float: left;
-            font-size: 25px;
-            left: 15px;
-            position: relative;
-            top: 6px;
-        }
+    .account-container.login.stacked{
+        margin-top: 0;
+        margin-bottom: 20px;
     }
  }

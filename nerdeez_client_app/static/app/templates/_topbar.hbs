@@ -7,12 +7,12 @@
 			<ul class="pull-right">
                 {{#if Nerdeez.isConnected}}
 				<li><a href="javascript:;"><i class="icon-user"></i> Logged in as John Doe</a></li>
-                <li>{{#linkTo logout}}
+                <li>{{#linkTo "logout"}}
                 <i class="icon-power-off"></i>
                 Logout{{/linkTo}}</li>
                 {{else}}
                 <li>
-					{{#linkTo login}}
+					{{#linkTo "login"}}
                     <i class="icon-lock"></i>
                     Login
                     {{/linkTo}}
