@@ -6,8 +6,8 @@
 * @version: 1.0
 */
 
-Nerdeez.NerdeezView = Ember.View.extend({
- 
+
+Ember.View.reopen({
     /**
     * holds the static url
     * @type {{string}}
@@ -19,8 +19,10 @@ Nerdeez.NerdeezView = Ember.View.extend({
      * common actions when view finish reloading
      */
     didInsertElement: function(){
+        this._super();
         FB.XFBML.parse();
+        $('.js-validation').validationEngine();
+        
     }
-
 });
 

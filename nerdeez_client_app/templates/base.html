@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/compiled_app/styles/style.css">
         
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/pages/dashboard.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/validation/validationEngine.jquery.css" type="text/css"/>
         <script src="{{STATIC_URL}}theme/js/libs/modernizr-2.5.3.min.js"></script>
         <!-- endbuild -->
     </head>
@@ -77,7 +78,7 @@
         <script src="{{STATIC_URL}}app/bower_components/jquery/jquery.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/handlebars/handlebars-1.0.0.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/ember/ember-1.0.0.js"></script>
-        <script src="http://builds.emberjs.com/tags/v0.14/ember-data.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/ember-data-shim/ember-data.js"></script>
         <!-- endbuild -->
 
         <!-- build:js(.tmp) scripts/templates.js -->
@@ -121,6 +122,11 @@
         
         <script src="{{STATIC_URL}}theme/js/demos/charts/line.js"></script>
         <script src="{{STATIC_URL}}theme/js/demos/charts/donut.js"></script>
+        
+        <!-- jquery plugins -->
+        <script src="{{STATIC_URL}}app/bower_components/validation/jquery.validationEngine-en.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/validation/jquery.validationEngine.js"></script>
+        <!-- -->
         
         <script>
         

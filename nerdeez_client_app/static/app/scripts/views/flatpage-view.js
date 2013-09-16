@@ -1,5 +1,5 @@
 
-Nerdeez.NerdeezFlatpage = Nerdeez.NerdeezView.extend({
+Nerdeez.NerdeezFlatpage = Ember.View.extend({
 	templateName: 'flatpage'
 });
 

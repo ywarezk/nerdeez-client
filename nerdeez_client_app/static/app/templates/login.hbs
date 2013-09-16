@@ -3,7 +3,7 @@
 	
     	<div class="content clearfix">
     		
-    		<form action="./index.html" method="post">
+    		<form class="js-validation" {{action "login" on="submit"}}>
     		
     			<h1>Sign In</h1>		
     			
@@ -12,13 +12,28 @@
     				<p>Sign in using your registered account:</p>
     				
     				<div class="field">
-    					<label for="username">Username:</label>
-    					<input type="email" id="username" name="username" value="" placeholder="Username" class="login username-field nerdeez-inputs">
+    					<label for="username">Email:</label>
+    					<!--<input type="email" id="username" name="username" value="" placeholder="Username" class="login username-field nerdeez-inputs">-->
+    					{{
+    					view Ember.TextField
+    					valueBinding="email"
+    					class="validate[required,custom[email]] login username-field nerdeez-inputs"
+    					placeholder="Email"
+    					required="true"
+    					}}
     				</div> <!-- /field -->
     				
     				<div class="field">
     					<label for="password">Password:</label>
-    					<input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field nerdeez-inputs">
+    					<!--<input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field nerdeez-inputs">-->
+    					{{
+    					view Ember.TextField
+    					valueBinding="password"
+    					class="validate[required,minSize[6]] login password-field nerdeez-inputs"
+    					placeholder="Password"
+    					required="true"
+    					type="password"
+    					}}
     				</div> <!-- /password -->
     				
     			</div> <!-- /login-fields -->
@@ -26,7 +41,14 @@
     			<div class="login-actions">
     				
     				<span class="login-checkbox">
-    					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4">
+    					<!--<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4">-->
+    					{{
+    					view
+    					Ember.Checkbox 
+    					checkedBinding="isRememberMe" 
+    					class="field login-checkbox"
+    					tabindex="4"
+    					}}
     					<label class="choice" for="Field">Keep me signed in</label>
     				</span>
     									
@@ -38,11 +60,11 @@
     				<p>Sign in using social network:</p>
     				
     				<div class="twitter">
-    					<a href="#" class="btn_1">Login with Twitter</a>				
+    					<a {{action "twitterLogin"}} class="btn_1">Login with Twitter</a>
     				</div>
     				
     				<div class="fb">
-    					<a href="#" class="btn_2">Login with Facebook</a>				
+    					<a  {{action "fbLogin"}} class="btn_2">Login with Facebook</a>
     				</div>
     			</div>
     			
