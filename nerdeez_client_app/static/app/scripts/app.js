@@ -18,6 +18,7 @@ require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/controllers/search-controller');
 require('scripts/controllers/login-controller');
+require('scripts/controllers/register-controller');
 require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
 
 //routes

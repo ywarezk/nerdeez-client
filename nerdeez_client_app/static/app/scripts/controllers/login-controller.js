@@ -118,6 +118,9 @@ Nerdeez.LoginController = Ember.Controller.extend({
          * when the user submits the registration form
          */
         login: function(){
+            //if js validation fails then return
+            if (!$(".js-validation").validationEngine('validate')) return;
+            
             console.log('Submitting the login form');
             
             //get the user params
