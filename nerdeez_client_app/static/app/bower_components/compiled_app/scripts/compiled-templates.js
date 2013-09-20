@@ -439,6 +439,39 @@ function program1(depth0,data) {
   data.buffer.push("Terms of Use.");
   }
 
+function program3(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\r\n            ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "loading", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\r\n        ");
+  return buffer;
+  }
+
+function program5(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\r\n            <div class=\"alert alert-danger\">\r\n              ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "message", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\r\n            </div>\r\n        ");
+  return buffer;
+  }
+
+function program7(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\r\n            <div class=\"alert alert-success\">\r\n              ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "message", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\r\n            </div>\r\n        ");
+  return buffer;
+  }
+
   data.buffer.push("<!--\r\n\r\nHolds the html of the registration page\r\n\r\nauthor: Yariv Katz\r\ncopyright: nerdeez.com\r\nversion: 1.0\r\n\r\n-->\r\n\r\n<div class=\"register\">\r\n    <div class=\"account-container register stacked\">\r\n    	\r\n    	<div class=\"content clearfix\">\r\n    		\r\n    		<form class=\"js-validation\">\r\n    		\r\n    			<h1>Create Your Account</h1>			\r\n    			\r\n    			<div class=\"login-social\">\r\n    				<p>Sign in using social network:</p>\r\n    				\r\n    				<div class=\"twitter\">\r\n    					<a ");
   hashContexts = {'target': depth0};
   hashTypes = {'target': "STRING"};
@@ -500,7 +533,22 @@ function program1(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "register", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">Register</button>\r\n    				\r\n    			</div> <!-- .actions -->\r\n    			\r\n    		</form>\r\n    		\r\n    	</div> <!-- /content -->\r\n    	\r\n    </div>\r\n</div>");
+  data.buffer.push(">Register</button>\r\n    				\r\n    			</div> <!-- .actions -->\r\n    			\r\n    		</form>\r\n    		\r\n    	</div> <!-- /content -->\r\n    	\r\n    	");
+  hashTypes = {};
+  hashContexts = {};
+  stack2 = helpers['if'].call(depth0, "isLoading", {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\r\n        \r\n        ");
+  hashTypes = {};
+  hashContexts = {};
+  stack2 = helpers['if'].call(depth0, "isError", {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\r\n        \r\n        ");
+  hashTypes = {};
+  hashContexts = {};
+  stack2 = helpers['if'].call(depth0, "isSuccess", {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\r\n    	\r\n    </div>\r\n</div>");
   return buffer;
   
 });

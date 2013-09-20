@@ -386,6 +386,32 @@ Nerdeez.RegisterController = Ember.Controller.extend({
      */
     password: null,
     
+    /**
+     * if true then the loading sign is show
+     * @type {Boolean}
+     */
+    isLoading: false,
+    
+    /**
+     * will display success message to the user
+     * @type {Boolean}
+     */
+    isSuccess: false,
+    
+    /**
+     * will display an error message to the user
+     * @type {Boolean}
+     */
+    isError: false,
+    
+    /**
+     * will display a message to the user
+     * @type {String}
+     */
+    message: null,
+    
+    
+    
     actions: {
         
         /**
@@ -397,6 +423,38 @@ Nerdeez.RegisterController = Ember.Controller.extend({
             if (!$(".js-validation").validationEngine('validate')) return;
             
             console.log('user is registrating');
+            
+            //put the loading screen on
+            this.set('isLoading', true);
+            
+            //get the params
+            var email = this.get('email');
+            var password = this.get('password');
+            
+            //make the ajax request
+            var xthis = this;
+            adapter = this.get('store.adapter');
+            adapter.ajax(
+                SERVER_URL + '/api/v1/utilities/register/',
+	        	'POST',
+	        	{
+		        	success: function(json){
+		        	    xthis.set('isSuccess', true);
+		        	    xthis.set('message', json['message']);
+		        	    this.set('isLoading', false);
+		        	},
+		        	error: function(){
+		        	    xthis.set('isSuccess', false);
+		        	    xthis.set('message', json['message']);
+		        	    this.set('isLoading', false);
+		        	},
+		        	data:{
+		        		email: email,
+		        		password: password
+		        	}
+	        	}    
+            );
+            
             
         }
         
@@ -1493,8 +1551,37 @@ Nerdeez.Wormhole = Ember.Object.extend({
 * @copyright: nerdeez.com Ltd.
 */
 
+var Nerdeez = window.Nerdeez;
+var SERVER_URL = window.SERVER_URL;
+var DS = window.DS;
 
-Nerdeez.DjangoTastypieAdapter.configure('Nerdeez.Schoolgroup', {alias: 'parent'});
+/**
+ * configure our adapter
+ */
+var Adapter = Nerdeez.DjangoTastypieAdapter.extend({
+    /**
+     * adapter hook to set the server url
+     */
+    serverDomain : SERVER_URL,
+    
+    /**
+     * hook if we want to use cross domain communication
+     */
+    wormhole: Nerdeez.Wormhole,
+    
+    /**
+     * our serializer
+     */
+    serializer: Nerdeez.DjangoTastypieSerializer.extend({
+        init: function(){
+            this._super();
+            this.mappings.set( 'Nerdeez.Schoolgroup', { 
+                parent: { embedded: 'load' }
+            });
+        }
+    })
+    
+})
 
 /**
  * handles backend communication
@@ -1504,29 +1591,7 @@ Nerdeez.Store = DS.Store.extend({
 	/**
 	 * our adapter
 	 */
-	adapter: Nerdeez.DjangoTastypieAdapter.extend({
-	    /**
-	     * adapter hook to set the server url
-	     */
-	    serverDomain : SERVER_URL,
-	    
-	    /**
-	     * hook if we want to use cross domain communication
-	     */
-	    wormhole: Nerdeez.Wormhole,
-	    
-	    /**
-	     * our serializer
-	     */
-	    serializer: Nerdeez.DjangoTastypieSerializer.extend({
-	        init: function(){
-                this._super();
-                this.mappings.set( 'Nerdeez.Schoolgroup', { 
-                    parent: { embedded: 'load' }
-                });
-	        }
-	    })
-	})
+	adapter: Adapter.create()
 	
 });
 

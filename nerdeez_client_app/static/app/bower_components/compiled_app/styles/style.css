@@ -270,6 +270,22 @@ input.nerdeez-search {
 .register .account-container.register.stacked {
   margin-top: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_register\.scss}line{font-family:\0000315}}
+.register .account-container.register.stacked .loading {
+  height: 30px;
+  text-align: center;
+  font-size: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_register\.scss}line{font-family:\0000319}}
+.register .account-container.register.stacked .loading i {
+  width: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_register\.scss}line{font-family:\0000323}}
+.register .account-container.register.stacked .alert {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
 
 /**
  * styles for the wall oof the university
