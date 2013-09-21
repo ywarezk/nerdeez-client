@@ -81,13 +81,16 @@ Nerdeez.RegisterController = Ember.Controller.extend({
 	        	{
 		        	success: function(json){
 		        	    xthis.set('isSuccess', true);
+		        	    xthis.set('isError', false);
 		        	    xthis.set('message', json['message']);
-		        	    this.set('isLoading', false);
+		        	    xthis.set('isLoading', false);
 		        	},
-		        	error: function(){
+		        	error: function(json){
+		        	    var message = $.parseJSON(json.responseText).message;
+		        	    xthis.set('isError', true);
 		        	    xthis.set('isSuccess', false);
-		        	    xthis.set('message', json['message']);
-		        	    this.set('isLoading', false);
+		        	    xthis.set('message', message);
+		        	    xthis.set('isLoading', false);
 		        	},
 		        	data:{
 		        		email: email,

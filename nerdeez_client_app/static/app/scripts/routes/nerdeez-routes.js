@@ -6,6 +6,9 @@
 * @author: Yariv Katz
 */
 
+var Nerdeez = window.Nerdeez;
+var Ember = window.Ember;
+
 /**
  * define the routes urls here
  */
@@ -21,6 +24,33 @@ Nerdeez.Router.map(function () {
     this.route('login');
     this.route('logout');
     this.route('register');
+    this.route('verifyEmail', {path: '/verify-email/:hash'});
+});
+
+/**
+ * all nerdeez routes will extend this object
+ * it will contain common route functions
+ */
+Nerdeez.NerdeezRoute = Ember.Route.extend({
+    
+    /**
+     * wiil extract the url params
+     * @param name String the name of the param to extract
+     */
+    getURLParameter: function(name){
+        return decodeURI(
+            (RegExp(name + '=' + '(.+?)(&|$)').exec(window.location.href)||[,null])[1]
+        );
+    },
+    
+    /**
+     * will grab the get params from the url and return a dictionary with the data
+     * @returns {Object} dictionary object from the url
+     */
+    getUrlParamsAsDisctionary: function(){
+	    	var search = location.search.substring(1);
+	    	return JSON.parse('{"' + decodeURI(search.replace(/&/g, "\",\"").replace(/=/g,"\":\"")) + '"}');
+    }
 });
 
 /**
@@ -69,11 +99,19 @@ Nerdeez.SearchRoute = Ember.Route.extend({
 	}
 });
 
+/**
+ * all the flat pages will extend this route
+ */
+Nerdeez.FlatPageRoute = Ember.Route.extend({
+    renderTemplate: function() {
+        this.render('flatpage');
+    }
+});
 
 /**
  * route to about page
  */
-Nerdeez.AboutRoute = Ember.Route.extend({
+Nerdeez.AboutRoute = Nerdeez.FlatPageRoute.extend({
 	model: function(param){
 		return Nerdeez.Flatpage.find({'title' : 'about'});
 	}
@@ -82,7 +120,7 @@ Nerdeez.AboutRoute = Ember.Route.extend({
 /**
  * route to privacy page
  */
-Nerdeez.PrivacyRoute = Ember.Route.extend({
+Nerdeez.PrivacyRoute = Nerdeez.FlatPageRoute.extend({
 	model: function(param){
 		return Nerdeez.Flatpage.find({'title' : 'privacy'});
 	}
@@ -91,7 +129,7 @@ Nerdeez.PrivacyRoute = Ember.Route.extend({
 /**
  * route to terms page
  */
-Nerdeez.TermsRoute = Ember.Route.extend({
+Nerdeez.TermsRoute = Nerdeez.FlatPageRoute.extend({
 	model: function(param){
 		return Nerdeez.Flatpage.find({'title': 'terms'});
 	}
@@ -121,5 +159,56 @@ Nerdeez.SchoolgroupWallRoute = Nerdeez.LoginRequired.extend({
 Nerdeez.SchoolgroupFilesRoute = Nerdeez.LoginRequired.extend({
     model: function(){
         return this.modelFor('schoolgroup');
+    }
+});
+
+/**
+ * when the user clicks the mail verification link this will lead to this url
+ * will redirect to login if all is success
+ */
+Nerdeez.VerifyEmailRoute = Nerdeez.NerdeezRoute.extend({
+    
+    /**
+     * grab the response from the server to the verification
+     */
+    model: function(param){
+        
+        //grab the params
+        var email = this.getURLParameter('email');
+        var hash = this.getURLParameter('hash');
+        
+        //query the server
+        var adapter = this.get('store.adapter');
+        return adapter.ajax(
+            SERVER_URL + '/api/v1/utilities/verify-email/',
+        	'POST',
+        	{
+	        	success: function(json){
+	        	    
+	        	},
+	        	error: function(json){
+	        	    
+	        	},
+	        	data:{
+	        		email: email,
+	        		hash: hash
+	        	}
+        	}
+        ).then(null, function(json){
+            return {'success': false, 'message': 'Email verification failed'};
+        });
+        
+    },
+    
+    /**
+     * success verification now redirect to the login controller
+     */
+    setupController: function(controller, model){
+        if (model.success){
+            var loginController = this.controllerFor('login');
+            loginController.set('isSuccess', true);
+            loginController.set('message', 'Account is now activated, You can now login');
+            this.redirect('login');
+        }
     }
 });

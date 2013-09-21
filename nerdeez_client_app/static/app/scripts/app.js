@@ -13,7 +13,6 @@ require('bower_components/facebook/facebook');
 
 //application files
 require('scripts/views/nerdeez-view');
-require('scripts/views/flatpage-view');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/controllers/search-controller');

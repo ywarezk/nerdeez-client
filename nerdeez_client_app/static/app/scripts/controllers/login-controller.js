@@ -128,6 +128,28 @@ Nerdeez.LoginController = Ember.Controller.extend({
             var email = this.get('email');
             var isRememberMe = this.get('isRememberMe');
             
+            //make the ajax request
+            var adapter = this.get('store.adapter');
+            adapter.ajax(
+                SERVER_URL + '/api/v1/utilities/login/',
+	        	'POST',
+	        	{
+		        	success: function(json){
+		        	    console.log('redirecting to page');
+		        	},
+		        	error: function(){
+		        	    xthis.set('isSuccess', false);
+		        	    xthis.set('message', json['message']);
+		        	    this.set('isLoading', false);
+		        	},
+		        	data:{
+		        		email: email,
+		        		password: password,
+		        		remember_me: isRememberMe
+		        	}
+	        	}    
+            );
+            
             
         },
         

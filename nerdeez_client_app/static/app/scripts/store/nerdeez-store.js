@@ -25,6 +25,14 @@ var Adapter = Nerdeez.DjangoTastypieAdapter.extend({
      */
     wormhole: Nerdeez.Wormhole,
     
+    loadingFunction: function(){
+        
+    },
+    
+    stopLoadingFunction: function(){
+        
+    },
+    
     /**
      * our serializer
      */
