@@ -99,20 +99,20 @@ version: 1.0
     	</div> <!-- /content -->
     	
     	{{#if isLoading}}
-            {{loading}}
-        {{/if}}
-        
-        {{#if isError}}
-            <div class="alert alert-danger">
-              {{message}}
-            </div>
-        {{/if}}
-        
-        {{#if isSuccess}}
-            <div class="alert alert-success">
-              {{message}}
-            </div>
-        {{/if}}
+        {{loading}}
+    {{/if}}
+    
+    {{#if isError}}
+        <div class="alert alert-danger">
+          {{message}}
+        </div>
+    {{/if}}
+    
+    {{#if isSuccess}}
+        <div class="alert alert-success">
+          {{message}}
+        </div>
+    {{/if}}
     	
     </div>
 </div>

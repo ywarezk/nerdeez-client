@@ -181,22 +181,20 @@ Nerdeez.VerifyEmailRoute = Nerdeez.NerdeezRoute.extend({
         var adapter = this.get('store.adapter');
         return adapter.ajax(
             SERVER_URL + '/api/v1/utilities/verify-email/',
-        	'POST',
-        	{
-	        	success: function(json){
-	        	    
-	        	},
-	        	error: function(json){
-	        	    
-	        	},
-	        	data:{
-	        		email: email,
-	        		hash: hash
+	        	'POST',
+	        	{
+		        	success: function(json){
+		        	    
+		        	},
+		        	error: function(json){
+		        	    
+		        	},
+		        	data:{
+		        		email: email,
+		        		hash: hash
+		        	}
 	        	}
-        	}
-        ).then(null, function(json){
-            return {'success': false, 'message': 'Email verification failed'};
-        });
+        );
         
     },
     
@@ -204,11 +202,23 @@ Nerdeez.VerifyEmailRoute = Nerdeez.NerdeezRoute.extend({
      * success verification now redirect to the login controller
      */
     setupController: function(controller, model){
-        if (model.success){
-            var loginController = this.controllerFor('login');
-            loginController.set('isSuccess', true);
-            loginController.set('message', 'Account is now activated, You can now login');
-            this.redirect('login');
-        }
+        this.transitionTo('login');
+        var loginController = this.controllerFor('login');
+        loginController.set('isSuccess', true);
+        loginController.set('message', model.message);
+    },
+    
+    actions: {
+	    	
+	    	/**
+	    	 * when the user fails to activate the account
+		 * @param {Object} reason
+	    	 */
+	    	error: function(reason){
+		    	this.transitionTo('register');
+		    	var registerController = this.controllerFor('register');
+		    	registerController.set('isError', true);
+		    	registerController.set('message', 'Account activation failed');
+	    	}
     }
 });

@@ -6,51 +6,51 @@
 * @copyright: nerdeez.com Ltd
 * @author: Yariv Katz
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000310}}
 html, body {
   height: 100%;
   /* unvisited link */
   background-image: url("/static/theme/img/signin/login-bg.png");
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000316}}
 #content {
   margin-bottom: 1em !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000321}}
 ul.nav.nav-pills li a:link {
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000324}}
 ul.nav.nav-pills li a:visited {
   color: white;
   background-color: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000328}}
 ul.nav.nav-pills li a:hover {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000331}}
 ul.nav.nav-pills li a:active {
   background-color: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000334}}
 ul.nav.nav-pills li a.active {
   color: white;
   background-color: #F54D70;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000337}}
 ul.nav.nav-pills li a.active:hover {
   background-color: #F54D70;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000343}}
 .push {
   height: 55px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000347}}
 #wrap {
   min-height: 100%;
   height: auto !important;
@@ -62,7 +62,7 @@ ul.nav.nav-pills li a.active:hover {
 /**
  *   top margins between rows and elements
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000357}}
 .top-buffer {
   margin-top: 20px;
 }
@@ -70,25 +70,25 @@ ul.nav.nav-pills li a.active:hover {
 /**
  *   text input height
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000364}}
 .nerdeez-text-input {
   height: 30px !important;
   font-size: 20px !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000369}}
 .nerdeez-add-on {
   height: 30px !important;
   width: 30px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000372}}
 .nerdeez-add-on i {
   font-size: 22px;
   position: relative;
   top: 4px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000379}}
 i.nerdeez-search {
   float: left;
   height: 38px;
@@ -99,23 +99,43 @@ i.nerdeez-search {
   width: 39px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000383}}
 input.nerdeez-search {
   padding-left: 44px !important;
   width: 85% !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000388}}
 .center {
   margin: 0px auto;
   clear: both;
   float: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\0000392}}
 .nerdeez-inputs {
   height: 41px !important;
   width: 100% !important;
+}
+
+/**
+ *  the loading sign on the forms
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003108}}
+.account-container .loading {
+  height: 30px;
+  text-align: center;
+  font-size: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003112}}
+.account-container .loading i {
+  width: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003116}}
+.account-container .alert {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 /**
@@ -125,17 +145,17 @@ input.nerdeez-search {
 * @author: Yariv Katz
 *
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000310}}
 #header .logo {
   position: relative;
   top: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000314}}
 #header .menu {
   position: relative;
   top: 32px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000317}}
 #header .menu a.active {
   background: none repeat scroll 0 0 #FFFFFF;
   border-bottom-color: #FFFFFF;
@@ -145,15 +165,15 @@ input.nerdeez-search {
   text-shadow: none;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000326}}
 #header .menu .home {
   height: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000328}}
 #header .menu .home a {
   height: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000330}}
 #header .menu .home a i {
   position: relative;
   top: 4px;
@@ -166,19 +186,19 @@ input.nerdeez-search {
 * @author: Doron Nachshon
 *
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_footer\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_footer\.scss}line{font-family:\0000311}}
 #footer .nerdeez-links li {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_footer\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_footer\.scss}line{font-family:\0000313}}
 #footer .nerdeez-links li a {
   color: white !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_footer\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_footer\.scss}line{font-family:\0000316}}
 #footer .nerdeez-links li a:hover, #footer .nerdeez-links li a:focus {
   background-color: transparent !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_footer\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_footer\.scss}line{font-family:\0000320}}
 #footer .nerdeez-links li:nth-of-type(2) {
   margin-left: 17px;
 }
@@ -190,7 +210,7 @@ input.nerdeez-search {
 * @author: Yariv Katz
 *
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000311}}
 .left-sidebar {
   width: 100%;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #231f20), color-stop(100%, #3d3c3e));
@@ -204,7 +224,7 @@ input.nerdeez-search {
   -o-border-radius: 0 10px 10px 0;
   border-radius: 0 10px 10px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000316}}
 .left-sidebar li a:focus {
   background-color: #FFA31A !important;
   color: white !important;
@@ -227,7 +247,7 @@ input.nerdeez-search {
  * @copyright: nerdeez Ltd.
  * @version: 1.0
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_flatpage\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_flatpage\.scss}line{font-family:\0000311}}
 .flatpage .account-container.login.stacked {
   width: 100%;
   margin-top: 0;
@@ -247,7 +267,7 @@ input.nerdeez-search {
  * @version: 1.0
  *
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_login\.scss}line{font-family:\0000312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_login\.scss}line{font-family:\0000312}}
 .login .account-container.login.stacked {
   margin-top: 0;
   margin-bottom: 20px;
@@ -262,29 +282,13 @@ input.nerdeez-search {
  * @version: 1.0
  *
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_register\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_register\.scss}line{font-family:\0000311}}
 .register {
   margin-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_register\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_register\.scss}line{font-family:\0000313}}
 .register .account-container.register.stacked {
   margin-top: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_register\.scss}line{font-family:\0000315}}
-.register .account-container.register.stacked .loading {
-  height: 30px;
-  text-align: center;
-  font-size: 30px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_register\.scss}line{font-family:\0000319}}
-.register .account-container.register.stacked .loading i {
-  width: 30px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_register\.scss}line{font-family:\0000323}}
-.register .account-container.register.stacked .alert {
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 20px;
 }
 
 /**
@@ -293,7 +297,7 @@ input.nerdeez-search {
  * @version: 1.0
  * @author: Yariv Katz
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/stickshift\/51ecf0515004469398000497\/app-root\/data\/565416\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_wall\.scss}line{font-family:\000038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_wall\.scss}line{font-family:\000038}}
 .wall {
   text-align: center;
 }

@@ -112,6 +112,30 @@ Nerdeez.LoginController = Ember.Controller.extend({
      */
     isRememberMe: false,
     
+    /**
+     * if true will show the error box
+     * @type {Boolean}
+     */
+    isError: false,
+    
+    /**
+     * if true will show the success box with the message
+     * @type {Boolean}
+     */
+    isSuccess: false,
+    
+    /**
+     * a string containing a message displayed to the user
+     * @type {String}
+     */
+    message: null,
+    
+    /**
+     * should i display the loading sign
+     * @type {Boolean}
+     */
+    isLoading: false,
+    
     actions: {
         
         /**
@@ -128,29 +152,33 @@ Nerdeez.LoginController = Ember.Controller.extend({
             var email = this.get('email');
             var isRememberMe = this.get('isRememberMe');
             
+            //loading
+            this.set('isLoading', true);
+            
             //make the ajax request
             var adapter = this.get('store.adapter');
+            var xthis = this;
             adapter.ajax(
                 SERVER_URL + '/api/v1/utilities/login/',
-	        	'POST',
-	        	{
-		        	success: function(json){
-		        	    console.log('redirecting to page');
-		        	},
-		        	error: function(){
-		        	    xthis.set('isSuccess', false);
-		        	    xthis.set('message', json['message']);
-		        	    this.set('isLoading', false);
-		        	},
-		        	data:{
-		        		email: email,
-		        		password: password,
-		        		remember_me: isRememberMe
-		        	}
-	        	}    
+		        	'POST',
+		        	{
+			        	success: function(json){
+			        	    console.log('redirecting to page');
+			        	},
+			        	error: function(json){
+			        		var message = $.parseJSON(json.responseText).message;
+			        	    xthis.set('isError', true);
+			        	    xthis.set('isSuccess', false);
+			        	    xthis.set('message', message);
+			        	    xthis.set('isLoading', false);
+			        	},
+			        	data:{
+			        		email: email,
+			        		password: password,
+			        		remember_me: isRememberMe
+			        	}
+		        	}    
             );
-            
-            
         },
         
         /**
