@@ -165,3 +165,5 @@ else:
     DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 SERVER_URL = os.getenv('SERVER_URL', 'https://nerdeez-server-dev.herokuapp.com')
+
+FACEBOOK_APP_ID = os.getenv('FACEBOOK_APP_ID', '410003599108568')

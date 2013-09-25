@@ -31,7 +31,7 @@ def spa(request):
     
     return render_to_response(
         'base.html',
-        {'SERVER_URL': settings.SERVER_URL},
+        {'SERVER_URL': settings.SERVER_URL, 'FACEBOOK_APP_ID': settings.FACEBOOK_APP_ID},
         context_instance=RequestContext(request)
         )
 
