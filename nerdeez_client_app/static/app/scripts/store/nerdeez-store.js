@@ -12,9 +12,9 @@ var SERVER_URL = window.SERVER_URL;
 var DS = window.DS;
 
 /**
- * configure our adapter
+ * configure our adapter as a singleton
  */
-var Adapter = Nerdeez.DjangoTastypieAdapter.extend({
+Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
     /**
      * adapter hook to set the server url
      */
@@ -46,6 +46,7 @@ var Adapter = Nerdeez.DjangoTastypieAdapter.extend({
     })
     
 })
+Nerdeez.Adapter.reopenClass(Nerdeez.Singleton);
 
 /**
  * handles backend communication
@@ -55,7 +56,7 @@ Nerdeez.Store = DS.Store.extend({
 	/**
 	 * our adapter
 	 */
-	adapter: Adapter.create()
+	adapter: Nerdeez.Adapter.current()
 	
 });
 

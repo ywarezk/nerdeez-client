@@ -80,13 +80,33 @@ Nerdeez.LoginRequired = Ember.Route.extend({
 
 Nerdeez.LogoutRoute = Ember.Route.extend({
     redirect: function(){
-        self = this;
-        FB.logout(function(response) {
-            Ember.run(function(){
-                Nerdeez.set('isConnected' , false);    
-            });
-            self.transitionTo('index');
-        });
+        // self = this;
+        // FB.logout(function(response) {
+            // Ember.run(function(){
+                // Nerdeez.set('isConnected' , false);    
+            // });
+            // self.transitionTo('index');
+        // });
+        var adapter = Nerdeez.Adapter.current();
+        adapter.ajax(
+	        SERVER_URL + '/api/v1/utilities/logout/',
+	        	'POST',
+	        	{
+		        	success: function(json){
+		        		var auth = Nerdeez.Auth.current();
+		        		auth.set('isLoggedIn', json['is_logged_in']);
+		        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+		        	},
+		        	error: function(json){
+		        	    var auth = Nerdeez.Auth.current();
+		        		auth.set('isLoggedIn', false);
+		        		Nerdeez.set('isLoggedIn', false);
+		        	},
+		        	data:{}
+	        	}    
+	    );
+	    FB.logout();
+        this.transitionTo('index');
     }
 });
 

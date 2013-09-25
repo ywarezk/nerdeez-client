@@ -5,8 +5,7 @@
 		<div id="top-nav">
 			
 			<ul class="pull-right">
-                {{#if Nerdeez.isConnected}}
-				<li><a href="javascript:;"><i class="icon-user"></i> Logged in as John Doe</a></li>
+                {{#if Nerdeez.isLoggedIn}}
                 <li>{{#linkTo "logout"}}
                 <i class="icon-power-off"></i>
                 Logout{{/linkTo}}</li>

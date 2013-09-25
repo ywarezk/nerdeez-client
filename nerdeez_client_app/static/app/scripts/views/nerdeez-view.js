@@ -20,7 +20,7 @@ Ember.View.reopen({
      */
     didInsertElement: function(){
         this._super();
-        FB.XFBML.parse();
+        //FB.XFBML.parse();
         $('.js-validation').validationEngine();
         
     }

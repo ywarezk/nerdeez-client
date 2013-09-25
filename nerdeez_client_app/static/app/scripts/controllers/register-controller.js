@@ -77,28 +77,27 @@ Nerdeez.RegisterController = Ember.Controller.extend({
             adapter = this.get('store.adapter');
             adapter.ajax(
                 SERVER_URL + '/api/v1/utilities/register/',
-	        	'POST',
-	        	{
-		        	success: function(json){
-		        	    xthis.set('isSuccess', true);
-		        	    xthis.set('isError', false);
-		        	    xthis.set('message', json['message']);
-		        	    xthis.set('isLoading', false);
-		        	},
-		        	error: function(json){
-		        	    var message = $.parseJSON(json.responseText).message;
-		        	    xthis.set('isError', true);
-		        	    xthis.set('isSuccess', false);
-		        	    xthis.set('message', message);
-		        	    xthis.set('isLoading', false);
-		        	},
-		        	data:{
-		        		email: email,
-		        		password: password
-		        	}
-	        	}    
+		        	'POST',
+		        	{
+			        	success: function(json){
+			        	    xthis.set('isSuccess', true);
+			        	    xthis.set('isError', false);
+			        	    xthis.set('message', json['message']);
+			        	    xthis.set('isLoading', false);
+			        	},
+			        	error: function(json){
+			        	    var message = $.parseJSON(json.responseText).message;
+			        	    xthis.set('isError', true);
+			        	    xthis.set('isSuccess', false);
+			        	    xthis.set('message', message);
+			        	    xthis.set('isLoading', false);
+			        	},
+			        	data:{
+			        		email: email,
+			        		password: password
+			        	}
+		        	}    
             );
-            
             
         }
         

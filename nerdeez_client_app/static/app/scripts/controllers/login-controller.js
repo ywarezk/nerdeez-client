@@ -164,6 +164,10 @@ Nerdeez.LoginController = Ember.Controller.extend({
 		        	{
 			        	success: function(json){
 			        	    console.log('redirecting to page');
+			        	    var auth = Nerdeez.Auth.current();
+			        		auth.set('isLoggedIn', json['success']);
+			        		Nerdeez.set('isLoggedIn', json['success']);
+			        		xthis.set('isLoading', false);
 			        	},
 			        	error: function(json){
 			        		var message = $.parseJSON(json.responseText).message;
@@ -193,6 +197,39 @@ Nerdeez.LoginController = Ember.Controller.extend({
          */
         fbLogin: function(){
             console.log('login using facebook');
+            this.set('isLoading', true);
+            var xthis = this;
+            FB.login(function(response) {
+	            if (response.authResponse) {
+	                 console.log('inspect auth response');
+	                 var accessToken = response.authResponse.accessToken;
+	                 var signedRequest = response.authResponse.signedRequest;
+					 var adapter = Nerdeez.Adapter.current();
+			         adapter.ajax(
+		                SERVER_URL + '/api/v1/utilities/fb-login/',
+				        	'POST',
+				        	{
+					        	success: function(json){
+					        	    var auth = Nerdeez.Auth.current();
+					        		auth.set('isLoggedIn', json['is_logged_in']);
+					        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+					        		xthis.set('isLoading', false);
+					        		xthis.transitionTo('index');
+					        	},
+					        	error: function(json){
+					        		xthis.set('isError', true);
+					        		xthis.set('message', 'Failed to login via facebook');
+					        	},
+					        	data:{
+					        		access_token: response.authResponse.accessToken,
+					        		signed_request: response.authResponse.signedRequest
+					        	}
+				        	}    
+		            );
+	             } else {
+		             
+	             }
+	         }, {scope: 'email'});
         }
         
     }

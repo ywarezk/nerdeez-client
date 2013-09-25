@@ -9,6 +9,33 @@ var Nerdeez = window.Nerdeez = Ember.Application.create({
     
 });
 
+/**
+* application init function
+* will check if the user is logged in upon application start
+*/
+var readyFunction = function(temp1, temp2, temp3){
+	var adapter = Nerdeez.Adapter.current();
+	adapter.ajax(
+        SERVER_URL + '/api/v1/utilities/is-login/',
+        	'POST',
+        	{
+	        	success: function(json){
+	        		var auth = Nerdeez.Auth.current();
+	        		auth.set('isLoggedIn', json['is_logged_in']);
+	        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+	        	},
+	        	error: function(json){
+	        	    var auth = Nerdeez.Auth.current();
+	        		auth.set('isLoggedIn', false);
+	        		Nerdeez.set('isLoggedIn', false);
+	        	},
+	        	data:{}
+        	}    
+    );
+}
+Nerdeez.set('ready', readyFunction);
+
+
 
 //vendor files
 
@@ -37,12 +64,33 @@ window.fbAsyncInit = function() {
       xfbml      : true                                  // Look for social plugins on the page
     });
 
-    Nerdeez.set('isFBLoaded', true); 
+    //Nerdeez.set('isFBLoaded', true); 
     
     FB.getLoginStatus(function(response) {
-        Ember.run(function(){
-            Nerdeez.set('isConnected' , response.status === 'connected');    
-        });
+        // Ember.run(function(){
+            // Nerdeez.set('isConnected' , response.status === 'connected');    
+        // });
+        if(response.status === 'connected'){
+	        	var adapter = Nerdeez.Adapter.current();
+	        	adapter.ajax(
+                SERVER_URL + '/api/v1/utilities/fb-login/',
+		        	'POST',
+		        	{
+			        	success: function(json){
+			        	    var auth = Nerdeez.Auth.current();
+			        		auth.set('isLoggedIn', json['is_logged_in']);
+			        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+			        	},
+			        	error: function(json){
+			        	},
+			        	data:{
+			        		access_token: response.authResponse.accessToken,
+			        		signed_request: response.authResponse.signedRequest
+			        	}
+		        	}    
+            );
+	        	
+        }
     });  
     
 };
@@ -62,6 +110,127 @@ window.fbAsyncInit = function() {
 (function() {
 
 //application files
+
+
+})();
+
+(function() {
+
+/**
+  This mixin allows a class to return a singleton, as well as a method to quickly
+  read/write attributes on the singleton.
+
+
+  Example usage:
+
+  ```javascript
+
+    // Define your class and apply the Mixin
+    User = Ember.Object.extend({});
+    User.reopenClass(Discourse.Singleton);
+
+    // Retrieve the current instance:
+    var instance = User.current();
+
+  ```
+
+  Commonly you want to read or write a property on the singleton. There's a
+  helper method which is a little nicer than `.current().get()`:
+
+  ```javascript
+
+    // Sets the age to 34
+    User.currentProp('age', 34);
+
+    console.log(User.currentProp('age')); // 34
+
+  ```
+
+  If you want to customize how the singleton is created, redefine the `createCurrent`
+  method:
+
+  ```javascript
+
+    // Define your class and apply the Mixin
+    Foot = Ember.Object.extend({});
+    Foot.reopenClass(Discourse.Singleton, {
+      createCurrent: function() {
+        return Foot.create({toes: 5});
+      }
+    });
+
+    console.log(Foot.currentProp('toes')); // 5
+
+  ```
+**/
+
+//create the namespace if the namespace doesnt exist
+if (typeof window.Nerdeez === "undefined"){
+	var Nerdeez = Ember.Namespace.create();
+}
+else{
+	var Nerdeez = window.Nerdeez;
+}
+
+/**
+  @class Discourse.Singleton
+  @extends Ember.Mixin
+  @namespace Discourse
+  @module Discourse
+**/
+Nerdeez.Singleton = Ember.Mixin.create({
+
+  /**
+    Returns the current singleton instance of the class.
+
+    @method current
+    @returns {Ember.Object} the instance of the singleton
+  **/
+  current: function() {
+    if (!this._current) {
+      this._current = this.createCurrent();
+    }
+
+    return this._current;
+  },
+
+
+  /**
+    How the singleton instance is created. This can be overridden
+    with logic for creating (or even returning null) your instance.
+
+    By default it just calls `create` with an empty object.
+
+    @method createCurrent
+    @returns {Ember.Object} the instance that will be your singleton
+  **/
+  createCurrent: function() {
+    return this.create({});
+  },
+
+  /**
+    Returns or sets a property on the singleton instance.
+
+    @method currentProp
+    @param {String} property the property we want to get or set
+    @param {String} value the optional value to set the property to
+    @returns the value of the property
+  **/
+  currentProp: function(property, value) {
+    var instance = this.current();
+    if (!instance) { return; }
+
+    if (typeof(value) !== "undefined") {
+      instance.set(property, value);
+      return value;
+    } else {
+      return instance.get(property);
+    }
+  }
+
+});
+
+
 
 
 })();
@@ -90,7 +259,7 @@ Ember.View.reopen({
      */
     didInsertElement: function(){
         this._super();
-        FB.XFBML.parse();
+        //FB.XFBML.parse();
         $('.js-validation').validationEngine();
         
     }
@@ -144,6 +313,26 @@ Nerdeez.Flatpage = DS.Model.extend({
 	title:DS.attr('string'),
 	html: DS.attr('string'),
 })
+
+})();
+
+(function() {
+
+/**
+ * holds the model for the auth as a singleton
+ * 
+ * @author: Yariv Katz
+ * @copyright: nerdeez.com Ltd.
+ * @version: 1.0
+ * 
+ */
+
+Nerdeez.Auth = Ember.Object.extend({
+	isLoggedIn: false
+});
+Nerdeez.Auth.reopenClass(Nerdeez.Singleton);
+Nerdeez.set('auth', Nerdeez.Auth.current());
+
 
 })();
 
@@ -351,6 +540,10 @@ Nerdeez.LoginController = Ember.Controller.extend({
 		        	{
 			        	success: function(json){
 			        	    console.log('redirecting to page');
+			        	    var auth = Nerdeez.Auth.current();
+			        		auth.set('isLoggedIn', json['success']);
+			        		Nerdeez.set('isLoggedIn', json['success']);
+			        		xthis.set('isLoading', false);
 			        	},
 			        	error: function(json){
 			        		var message = $.parseJSON(json.responseText).message;
@@ -380,6 +573,39 @@ Nerdeez.LoginController = Ember.Controller.extend({
          */
         fbLogin: function(){
             console.log('login using facebook');
+            this.set('isLoading', true);
+            var xthis = this;
+            FB.login(function(response) {
+	            if (response.authResponse) {
+	                 console.log('inspect auth response');
+	                 var accessToken = response.authResponse.accessToken;
+	                 var signedRequest = response.authResponse.signedRequest;
+					 var adapter = Nerdeez.Adapter.current();
+			         adapter.ajax(
+		                SERVER_URL + '/api/v1/utilities/fb-login/',
+				        	'POST',
+				        	{
+					        	success: function(json){
+					        	    var auth = Nerdeez.Auth.current();
+					        		auth.set('isLoggedIn', json['is_logged_in']);
+					        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+					        		xthis.set('isLoading', false);
+					        		xthis.transitionTo('index');
+					        	},
+					        	error: function(json){
+					        		xthis.set('isError', true);
+					        		xthis.set('message', 'Failed to login via facebook');
+					        	},
+					        	data:{
+					        		access_token: response.authResponse.accessToken,
+					        		signed_request: response.authResponse.signedRequest
+					        	}
+				        	}    
+		            );
+	             } else {
+		             
+	             }
+	         }, {scope: 'email'});
         }
         
     }
@@ -468,28 +694,27 @@ Nerdeez.RegisterController = Ember.Controller.extend({
             adapter = this.get('store.adapter');
             adapter.ajax(
                 SERVER_URL + '/api/v1/utilities/register/',
-	        	'POST',
-	        	{
-		        	success: function(json){
-		        	    xthis.set('isSuccess', true);
-		        	    xthis.set('isError', false);
-		        	    xthis.set('message', json['message']);
-		        	    xthis.set('isLoading', false);
-		        	},
-		        	error: function(json){
-		        	    var message = $.parseJSON(json.responseText).message;
-		        	    xthis.set('isError', true);
-		        	    xthis.set('isSuccess', false);
-		        	    xthis.set('message', message);
-		        	    xthis.set('isLoading', false);
-		        	},
-		        	data:{
-		        		email: email,
-		        		password: password
-		        	}
-	        	}    
+		        	'POST',
+		        	{
+			        	success: function(json){
+			        	    xthis.set('isSuccess', true);
+			        	    xthis.set('isError', false);
+			        	    xthis.set('message', json['message']);
+			        	    xthis.set('isLoading', false);
+			        	},
+			        	error: function(json){
+			        	    var message = $.parseJSON(json.responseText).message;
+			        	    xthis.set('isError', true);
+			        	    xthis.set('isSuccess', false);
+			        	    xthis.set('message', message);
+			        	    xthis.set('isLoading', false);
+			        	},
+			        	data:{
+			        		email: email,
+			        		password: password
+			        	}
+		        	}    
             );
-            
             
         }
         
@@ -622,13 +847,33 @@ Nerdeez.LoginRequired = Ember.Route.extend({
 
 Nerdeez.LogoutRoute = Ember.Route.extend({
     redirect: function(){
-        self = this;
-        FB.logout(function(response) {
-            Ember.run(function(){
-                Nerdeez.set('isConnected' , false);    
-            });
-            self.transitionTo('index');
-        });
+        // self = this;
+        // FB.logout(function(response) {
+            // Ember.run(function(){
+                // Nerdeez.set('isConnected' , false);    
+            // });
+            // self.transitionTo('index');
+        // });
+        var adapter = Nerdeez.Adapter.current();
+        adapter.ajax(
+	        SERVER_URL + '/api/v1/utilities/logout/',
+	        	'POST',
+	        	{
+		        	success: function(json){
+		        		var auth = Nerdeez.Auth.current();
+		        		auth.set('isLoggedIn', json['is_logged_in']);
+		        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+		        	},
+		        	error: function(json){
+		        	    var auth = Nerdeez.Auth.current();
+		        		auth.set('isLoggedIn', false);
+		        		Nerdeez.set('isLoggedIn', false);
+		        	},
+		        	data:{}
+	        	}    
+	    );
+	    FB.logout();
+        this.transitionTo('index');
     }
 });
 
@@ -1690,9 +1935,9 @@ var SERVER_URL = window.SERVER_URL;
 var DS = window.DS;
 
 /**
- * configure our adapter
+ * configure our adapter as a singleton
  */
-var Adapter = Nerdeez.DjangoTastypieAdapter.extend({
+Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
     /**
      * adapter hook to set the server url
      */
@@ -1724,6 +1969,7 @@ var Adapter = Nerdeez.DjangoTastypieAdapter.extend({
     })
     
 })
+Nerdeez.Adapter.reopenClass(Nerdeez.Singleton);
 
 /**
  * handles backend communication
@@ -1733,7 +1979,7 @@ Nerdeez.Store = DS.Store.extend({
 	/**
 	 * our adapter
 	 */
-	adapter: Adapter.create()
+	adapter: Nerdeez.Adapter.current()
 	
 });
 

@@ -18,12 +18,33 @@ window.fbAsyncInit = function() {
       xfbml      : true                                  // Look for social plugins on the page
     });
 
-    Nerdeez.set('isFBLoaded', true); 
+    //Nerdeez.set('isFBLoaded', true); 
     
     FB.getLoginStatus(function(response) {
-        Ember.run(function(){
-            Nerdeez.set('isConnected' , response.status === 'connected');    
-        });
+        // Ember.run(function(){
+            // Nerdeez.set('isConnected' , response.status === 'connected');    
+        // });
+        if(response.status === 'connected'){
+	        	var adapter = Nerdeez.Adapter.current();
+	        	adapter.ajax(
+                SERVER_URL + '/api/v1/utilities/fb-login/',
+		        	'POST',
+		        	{
+			        	success: function(json){
+			        	    var auth = Nerdeez.Auth.current();
+			        		auth.set('isLoggedIn', json['is_logged_in']);
+			        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+			        	},
+			        	error: function(json){
+			        	},
+			        	data:{
+			        		access_token: response.authResponse.accessToken,
+			        		signed_request: response.authResponse.signedRequest
+			        	}
+		        	}    
+            );
+	        	
+        }
     });  
     
 };

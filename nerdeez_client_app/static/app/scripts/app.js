@@ -7,14 +7,43 @@ var Nerdeez = window.Nerdeez = Ember.Application.create({
     
 });
 
+/**
+* application init function
+* will check if the user is logged in upon application start
+*/
+var readyFunction = function(temp1, temp2, temp3){
+	var adapter = Nerdeez.Adapter.current();
+	adapter.ajax(
+        SERVER_URL + '/api/v1/utilities/is-login/',
+        	'POST',
+        	{
+	        	success: function(json){
+	        		var auth = Nerdeez.Auth.current();
+	        		auth.set('isLoggedIn', json['is_logged_in']);
+	        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+	        	},
+	        	error: function(json){
+	        	    var auth = Nerdeez.Auth.current();
+	        		auth.set('isLoggedIn', false);
+	        		Nerdeez.set('isLoggedIn', false);
+	        	},
+	        	data:{}
+        	}    
+    );
+}
+Nerdeez.set('ready', readyFunction);
+
+
 
 //vendor files
 require('bower_components/facebook/facebook');
 
 //application files
+require('scripts/nerdeez-ember/singleton');
 require('scripts/views/nerdeez-view');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
+require('scripts/models/auth-model');
 require('scripts/controllers/search-controller');
 require('scripts/controllers/login-controller');
 require('scripts/controllers/register-controller');
