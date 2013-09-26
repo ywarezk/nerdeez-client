@@ -6,91 +6,6 @@
 * @version: 1.0
 */
 
-/**
- * controller that handles 
- */
-// Nerdeez.LoginController = Ember.Controller.extend({
-    
-//     /**
-//      * loading flag
-//      * @type {Boolean}
-//      */
-//     isLoading: false,
-    
-//     /**
-//      * should i redirect the user after login?
-//      * global variable called last page will have the last page to redirect
-//      * @type {Boolean}
-//      */
-//     isRedirect: false,
-    
-//     isFacebookLoginBinding: 'Nerdeez.isFBLoaded',
-    
-//     /**
-//      * init the controller variables
-//      */
-//     initController: function(){
-//         self = this;
-//         FB.getLoginStatus(function(response) {
-//             Ember.run(function(){
-//                 Nerdeez.set('isConnected' , response.status === 'connected');    
-//             });
-//         });      
-//     },
-    
-//     /**
-//      * subscribe to the facebook logged in change event
-//      */
-//     init: function(){
-//         this._super();
-//         this.set('isRedirect', Nerdeez.get('lastPage') != null);
-//         if(Nerdeez.get('isFBLoaded')){
-//             this.initController();
-//         }
-//     },
-    
-//     /**
-//      * whne the user clicks the login button
-//      */
-//     login: function(){
-//         this.set('isLoading', true);
-//         self = this;
-//         FB.login(function(response) {
-            
-//             if (response.authResponse) {
-//                 Ember.run(function(){
-//                     self.set('isLoading', false);
-//                     Nerdeez.set('isConnected', true);
-//                 });
-                
-                
-//                 if(self.get('isRedirect')){
-//                     Ember.run(function(){
-//                         self.set('isLoading', true);
-//                     });
-//                     setTimeout(function() {
-//                         self.transitionTo(Nerdeez.get('lastPage'),Nerdeez.get('lastModel'));
-//                     }, 3000);
-//                 }
-//             } else {
-//                 Ember.run(function(){
-//                     self.set('isLoading', false);
-//                     Nerdeez.set('isConnected', false);
-//                 });
-//             }
-//         });
-//     },
-    
-//     /**
-//      * will be called when the facebook api is loaded
-//      */
-//     waitForFB: function(){
-//         if(Nerdeez.get('isFBLoaded')){
-//             this.initController();
-//         } 
-//     }.observes('Nerdeez.isFBLoaded')
-// });
-
 var Nerdeez = window.Nerdeez;
 Nerdeez.LoginController = Ember.Controller.extend({
     
@@ -189,7 +104,26 @@ Nerdeez.LoginController = Ember.Controller.extend({
          * when the user wants to connect using twitter
          */
         twitterLogin: function(){
-            console.log('login using twitter');
+            this.set('isLoading', true);
+            var xthis = this;
+            var adapter = Nerdeez.Adapter.current();
+            adapter.ajax(
+	            	SERVER_URL + '/api/v1/utilities/twitter-login/',
+	            	'POST',
+	            	{
+	            		success: function(json){
+	            			xthis.set('isLoading', false);
+	            			xthis.set('isSuccess', true);
+	            			xthis.set('message', 'Please authorize the app with your twitter account');
+	            			var win=window.open(json['auth_url'], '_blank');
+						win.focus();
+	            		},
+	            		error: function(){
+	            			
+	            		},
+	            		data:{}
+	            	}
+            );
         },
         
         /**

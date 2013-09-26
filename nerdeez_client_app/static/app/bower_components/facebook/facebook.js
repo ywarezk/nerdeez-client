@@ -36,6 +36,7 @@ window.fbAsyncInit = function() {
 			        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
 			        	},
 			        	error: function(json){
+			        		console.log('error login to facebook');
 			        	},
 			        	data:{
 			        		access_token: response.authResponse.accessToken,
