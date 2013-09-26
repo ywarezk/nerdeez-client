@@ -864,6 +864,201 @@ Nerdeez.ChangePasswordController = Ember.Controller.extend({
 (function() {
 
 /**
+ * controller for the forget password page
+ * 
+ * Created September 26th, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: nerdeez Ltd.
+ */
+
+Nerdeez.ForgetPasswordController = Ember.Controller.extend({
+	/**
+	 * form param will hold the user's email
+	 * @type {String}
+	 */
+	email: null,
+	
+	/**
+	 * will determine if the loading thingie is displayed
+	 * @type {Boolean}
+	 */
+	isLoading: false,
+	
+	/**
+	 * will determine if the success box is displayed
+	 * @type {Boolean}
+	 */
+	isSuccess: false,
+	
+	/**
+	 * will determine if the error box is displayed
+	 * @type {Boolean}
+	 */
+	isError: false,
+	
+	/**
+	 * will determine the messages in the boxes
+	 * @type {String}
+	 */
+	message: false,
+	
+	actions: {
+		
+		/**
+		 * when the user submits the form to change the password
+		 */
+		forgotPassword: function(){
+			//js validation
+			if (!$(".js-validation").validationEngine('validate')) return;
+			
+			//get the param
+			var email = this.get('email');
+			
+			//loading screen
+			this.set('isLoading', true);
+			
+			//send the request to the server
+			var adapter = Nerdeez.Adapter.current();
+			var xthis = this;
+			adapter.ajax(
+				SERVER_URL + '/api/v1/utilities/forget-password/',
+				'POST',
+				{
+					success: function(json){
+						xthis.set('isSuccess', true);
+			        	    xthis.set('isError', false);
+			        	    xthis.set('message', json['message']);
+			        	    xthis.set('isLoading', false);
+					},
+					error: function(json){
+						var message = $.parseJSON(json.responseText).message;
+			        	    xthis.set('isError', true);
+			        	    xthis.set('isSuccess', false);
+			        	    xthis.set('message', message);
+			        	    xthis.set('isLoading', false);
+					},
+					data: {
+						email: email
+					}
+				}
+			);
+		}
+	}
+});
+
+
+})();
+
+(function() {
+
+/**
+ * controller for the user to change his password if he forgot it
+ * 
+ * Created September 26th, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: nerdeez Ltd.
+ */
+
+Nerdeez.ResetPasswordController = Ember.Controller.extend({
+	/**
+	 * holds the email from the get params
+	 * @type {String}
+	 */
+	email: null,
+	
+	/**
+	 * holds the hash from the get params
+	 * @type {String}
+	 */
+	hash: null,
+	
+	/**
+	 * holds the password from the submitted form
+	 * @type {String}
+	 */
+	password: null,
+	
+	/**
+	 * will determine if the loading thingie is displayed
+	 * @type {Boolean}
+	 */
+	isLoading: false,
+	
+	/**
+	 * will determine if the success box is displayed
+	 * @type {Boolean}
+	 */
+	isSuccess: false,
+	
+	/**
+	 * will determine if the error box is displayed
+	 * @type {Boolean}
+	 */
+	isError: false,
+	
+	/**
+	 * will determine the messages in the boxes
+	 * @type {String}
+	 */
+	message: false,
+	
+	actions: {
+		
+		/**
+		 * when the user submits the change password form
+		 */
+		changePassword: function(){
+			//js validation
+			if (!$(".js-validation").validationEngine('validate')) return;
+			
+			//get the param
+			var password = this.get('password');
+			var email = this.get('email');
+			var hash = this.get('hash');
+			
+			//loading screen
+			this.set('isLoading', true);
+			
+			//send the request to the server
+			var adapter = Nerdeez.Adapter.current();
+			var xthis = this;
+			adapter.ajax(
+				SERVER_URL + '/api/v1/utilities/reset-password/',
+				'POST',
+				{
+					success: function(json){
+						xthis.set('isSuccess', true);
+			        	    xthis.set('isError', false);
+			        	    xthis.set('message', json['message']);
+			        	    xthis.set('isLoading', false);
+					},
+					error: function(json){
+						var message = $.parseJSON(json.responseText).message;
+			        	    xthis.set('isError', true);
+			        	    xthis.set('isSuccess', false);
+			        	    xthis.set('message', message);
+			        	    xthis.set('isLoading', false);
+					},
+					data: {
+						password: password,
+						email: email,
+						hash: hash
+					}
+				}
+			);
+		}
+		
+	}
+});
+
+
+})();
+
+(function() {
+
+/**
  * nerdeez handlebars helper. 
  * register common handlebars that are used alot. 
  * Important note to whomever edits this file: All the programmers are going to use this code throughout the entire application. 
@@ -931,6 +1126,8 @@ Nerdeez.Router.map(function () {
     this.route('contact');
     this.route('verifyEmail', {path: '/verify-email/:hash'});
     this.route('changePassword', {path: '/change-password'});
+    this.route('forgetPassword', {path: '/forget-password'})
+    this.route('resetPassword', {path: '/reset-password/:hash'})
 });
 
 /**
@@ -1005,6 +1202,17 @@ Nerdeez.LogoutRoute = Ember.Route.extend({
 });
 
 Nerdeez.ChangePasswordRoute = Nerdeez.LoginRequired.extend({});
+
+Nerdeez.ResetPasswordRoute = Nerdeez.NerdeezRoute.extend({
+	
+	/**
+	 * will grab the params from the url and set them in the controller 
+	 */
+	setupController: function(controller, model){
+		controller.set('email', this.getURLParameter('email'));
+		controller.set('hash',this.getURLParameter('hash'));
+	}
+});
 
 Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 	enter: function(){

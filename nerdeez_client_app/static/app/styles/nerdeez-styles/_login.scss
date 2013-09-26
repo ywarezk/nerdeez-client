@@ -12,5 +12,11 @@
     .account-container.login.stacked{
         margin-top: 0;
         margin-bottom: 20px;
+        .forget-password{
+            clear: both;
+            p{
+                margin-bottom: 0px;
+            }
+        }
     }
  }

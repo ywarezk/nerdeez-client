@@ -286,6 +286,14 @@ textarea {
   margin-top: 0;
   margin-bottom: 20px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_login\.scss}line{font-family:\0000315}}
+.login .account-container.login.stacked .forget-password {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_login\.scss}line{font-family:\0000317}}
+.login .account-container.login.stacked .forget-password p {
+  margin-bottom: 0px;
+}
 
 /**
  * stylesheet for the registration page

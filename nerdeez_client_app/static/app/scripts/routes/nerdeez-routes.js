@@ -27,6 +27,8 @@ Nerdeez.Router.map(function () {
     this.route('contact');
     this.route('verifyEmail', {path: '/verify-email/:hash'});
     this.route('changePassword', {path: '/change-password'});
+    this.route('forgetPassword', {path: '/forget-password'})
+    this.route('resetPassword', {path: '/reset-password/:hash'})
 });
 
 /**
@@ -101,6 +103,17 @@ Nerdeez.LogoutRoute = Ember.Route.extend({
 });
 
 Nerdeez.ChangePasswordRoute = Nerdeez.LoginRequired.extend({});
+
+Nerdeez.ResetPasswordRoute = Nerdeez.NerdeezRoute.extend({
+	
+	/**
+	 * will grab the params from the url and set them in the controller 
+	 */
+	setupController: function(controller, model){
+		controller.set('email', this.getURLParameter('email'));
+		controller.set('hash',this.getURLParameter('hash'));
+	}
+});
 
 Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 	enter: function(){
