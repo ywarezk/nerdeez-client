@@ -1,0 +1,21 @@
+/**
+ * stylesheet for the top bar where the logout and settings
+ * 
+ * Created 26th September 2013
+ * @author: Yariv Katz
+ * @copyright: nerdeez
+ * @version: 1.0
+ */
+
+#topbar{
+    #top-nav{
+        ul{
+            li{
+                b.caret{
+                    position: relative;
+                    top: 8px;
+                }
+            }
+        }
+    }
+}

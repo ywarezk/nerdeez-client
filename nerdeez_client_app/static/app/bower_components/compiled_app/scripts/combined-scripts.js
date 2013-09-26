@@ -766,6 +766,104 @@ Nerdeez.ContactController = Ember.Controller.extend({
 (function() {
 
 /**
+ * controller for the change password page
+ * 
+ * Created September 26th, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: nerdeez Ltd.
+ */
+
+Nerdeez.ChangePasswordController = Ember.Controller.extend({
+	
+	/**
+	 * form param will hold the old password
+	 * @type {String}
+	 */
+	currentPassword: null,
+	
+	/**
+	 * form param will hold the new password
+	 * @type {String}
+	 */
+	newPassword: null,
+	
+	/**
+	 * will determine if the loading thingie is displayed
+	 * @type {Boolean}
+	 */
+	isLoading: false,
+	
+	/**
+	 * will determine if the success box is displayed
+	 * @type {Boolean}
+	 */
+	isSuccess: false,
+	
+	/**
+	 * will determine if the error box is displayed
+	 * @type {Boolean}
+	 */
+	isError: false,
+	
+	/**
+	 * will determine the messages in the boxes
+	 * @type {String}
+	 */
+	message: false,
+	
+	actions: {
+		
+		/**
+		 * when the user submits the form
+		 */
+		changePassword: function(){
+			//js validation
+			if (!$(".js-validation").validationEngine('validate')) return;
+			
+			//get the params
+			var currentPassword = this.get('currentPassword');
+			var newPassword = this.get('newPassword');
+			
+			//put the loading screen on
+			this.set('isLoading', true);
+			
+			//submit the request to the server
+			var adapter = Nerdeez.Adapter.current();
+			var xthis = this;
+			adapter.ajax(
+				SERVER_URL + '/api/v1/utilities/change-password/',
+				'POST',
+				{
+					success: function(json){
+						xthis.set('isSuccess', true);
+			        	    xthis.set('isError', false);
+			        	    xthis.set('message', json['message']);
+			        	    xthis.set('isLoading', false);
+					},
+					error: function(json){
+						var message = $.parseJSON(json.responseText).message;
+			        	    xthis.set('isError', true);
+			        	    xthis.set('isSuccess', false);
+			        	    xthis.set('message', message);
+			        	    xthis.set('isLoading', false);
+					},
+					data: {
+						old_password: currentPassword,
+						new_password: newPassword
+					}
+				}
+			);
+		}
+	}
+});
+
+
+})();
+
+(function() {
+
+/**
  * nerdeez handlebars helper. 
  * register common handlebars that are used alot. 
  * Important note to whomever edits this file: All the programmers are going to use this code throughout the entire application. 
@@ -832,6 +930,7 @@ Nerdeez.Router.map(function () {
     this.route('register');
     this.route('contact');
     this.route('verifyEmail', {path: '/verify-email/:hash'});
+    this.route('changePassword', {path: '/change-password'});
 });
 
 /**
@@ -866,22 +965,10 @@ Nerdeez.NerdeezRoute = Ember.Route.extend({
  */
 Nerdeez.LoginRequired = Ember.Route.extend({
     redirect: function(){
-        self = this;
-        FB.getLoginStatus(function(response) {
-            if (response.status === 'connected') {
-                // the user is logged in and has authenticated your
-                // app, and response.authResponse supplies
-                // the user's ID, a valid access token, a signed
-                // request, and the time the access token 
-                // and signed request each expire
-                var uid = response.authResponse.userID;
-                var accessToken = response.authResponse.accessToken;
-            } else{
-                Nerdeez.set('lastPage', self.routeName);
-                Nerdeez.set('lastModel', self.model());
-                self.transitionTo('login');
-            }
-        });
+        isLoggedIn = Nerdeez.get('isLoggedIn');
+        if(!isLoggedIn){
+	        	this.transitionTo('login');
+        }
     }
 });
 
@@ -916,6 +1003,8 @@ Nerdeez.LogoutRoute = Ember.Route.extend({
         this.transitionTo('index');
     }
 });
+
+Nerdeez.ChangePasswordRoute = Nerdeez.LoginRequired.extend({});
 
 Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 	enter: function(){

@@ -26,6 +26,7 @@ Nerdeez.Router.map(function () {
     this.route('register');
     this.route('contact');
     this.route('verifyEmail', {path: '/verify-email/:hash'});
+    this.route('changePassword', {path: '/change-password'});
 });
 
 /**
@@ -60,22 +61,10 @@ Nerdeez.NerdeezRoute = Ember.Route.extend({
  */
 Nerdeez.LoginRequired = Ember.Route.extend({
     redirect: function(){
-        self = this;
-        FB.getLoginStatus(function(response) {
-            if (response.status === 'connected') {
-                // the user is logged in and has authenticated your
-                // app, and response.authResponse supplies
-                // the user's ID, a valid access token, a signed
-                // request, and the time the access token 
-                // and signed request each expire
-                var uid = response.authResponse.userID;
-                var accessToken = response.authResponse.accessToken;
-            } else{
-                Nerdeez.set('lastPage', self.routeName);
-                Nerdeez.set('lastModel', self.model());
-                self.transitionTo('login');
-            }
-        });
+        isLoggedIn = Nerdeez.get('isLoggedIn');
+        if(!isLoggedIn){
+	        	this.transitionTo('login');
+        }
     }
 });
 
@@ -110,6 +99,8 @@ Nerdeez.LogoutRoute = Ember.Route.extend({
         this.transitionTo('index');
     }
 });
+
+Nerdeez.ChangePasswordRoute = Nerdeez.LoginRequired.extend({});
 
 Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 	enter: function(){

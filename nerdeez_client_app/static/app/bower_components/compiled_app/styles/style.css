@@ -335,3 +335,17 @@ textarea {
 .contact .account-container.register.stacked label {
   display: block !important;
 }
+
+/**
+ * stylesheet for the top bar where the logout and settings
+ * 
+ * Created 26th September 2013
+ * @author: Yariv Katz
+ * @copyright: nerdeez
+ * @version: 1.0
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_topbar\.scss}line{font-family:\0000314}}
+#topbar #top-nav ul li b.caret {
+  position: relative;
+  top: 8px;
+}

@@ -6,9 +6,27 @@
 			
 			<ul class="pull-right">
                 {{#if Nerdeez.isLoggedIn}}
-                <li>{{#linkTo "logout"}}
-                <i class="icon-power-off"></i>
-                Logout{{/linkTo}}</li>
+                <li>
+	                {{#linkTo "logout"}}
+		                <i class="icon-power-off"></i>
+		                Logout
+		            {{/linkTo}}
+		        </li>
+                <li>
+	                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+		                <i class="icon-cog"></i>
+						Settings
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+                          <li>
+	                          {{#linkTo "changePassword"}}
+		                          Change Password
+	                          {{/linkTo}}
+	                      </li>
+                    </ul>
+		        </li>
+		        
                 {{else}}
                 <li>
 					{{#linkTo "login"}}
