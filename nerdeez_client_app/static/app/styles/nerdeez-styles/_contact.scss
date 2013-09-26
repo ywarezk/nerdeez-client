@@ -1,0 +1,19 @@
+/**
+ * stylesheet for the contact page
+ * 
+ * @version: 1.0
+ * @author: Yariv Katz
+ * @copyright: nerdeez.com Ltd.
+ */
+
+.contact{
+    .account-container.register.stacked{
+        margin-top: 0;
+        textarea{
+            min-height: 110px;
+        }  
+        label{
+          display: block !important;
+        }    
+    }
+}

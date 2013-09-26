@@ -119,3 +119,15 @@ input.nerdeez-search{
       margin-bottom: 20px;
   }
 }
+
+textarea{
+  resize: none;
+  width: 100%;
+  
+  background-color: #FDFDFD;
+  @include box-shadow(#F1F1F1 2px 2px 4px inset);
+  color: #8E8D8D;
+  display: block;
+  font-family: 'Open Sans';
+  font-size: 13px;
+}

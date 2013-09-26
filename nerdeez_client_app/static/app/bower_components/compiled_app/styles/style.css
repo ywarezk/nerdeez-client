@@ -138,6 +138,20 @@ input.nerdeez-search {
   margin-bottom: 20px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003123}}
+textarea {
+  resize: none;
+  width: 100%;
+  background-color: #FDFDFD;
+  -webkit-box-shadow: #f1f1f1 2px 2px 4px inset;
+  -moz-box-shadow: #f1f1f1 2px 2px 4px inset;
+  box-shadow: #f1f1f1 2px 2px 4px inset;
+  color: #8E8D8D;
+  display: block;
+  font-family: 'Open Sans';
+  font-size: 13px;
+}
+
 /**
 * holds the styles of the header
 * @copyright: nerdeez.com Ltd.
@@ -300,4 +314,24 @@ input.nerdeez-search {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_wall\.scss}line{font-family:\000038}}
 .wall {
   text-align: center;
+}
+
+/**
+ * stylesheet for the contact page
+ * 
+ * @version: 1.0
+ * @author: Yariv Katz
+ * @copyright: nerdeez.com Ltd.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_contact\.scss}line{font-family:\0000310}}
+.contact .account-container.register.stacked {
+  margin-top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_contact\.scss}line{font-family:\0000312}}
+.contact .account-container.register.stacked textarea {
+  min-height: 110px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_contact\.scss}line{font-family:\0000315}}
+.contact .account-container.register.stacked label {
+  display: block !important;
 }

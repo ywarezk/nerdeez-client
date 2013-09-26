@@ -1,0 +1,79 @@
+<!--
+
+Holds the html of the contact page
+author: Doron Nachshon
+copyright: nerdeez.com
+version: 1.0
+
+-->
+
+<div class="contact">
+    <div class="account-container register stacked">
+	
+    	<div class="content clearfix">
+    		
+    		<form class="js-validation" >
+    		
+    			<h1>Contact</h1>		
+    			
+    			<div class="login-fields">
+    				
+    				<p>Let us know your opinion about the site</p>
+    				
+    				<div class="field">
+    					<label>Email Address (not required)</label>
+						{{
+						view Ember.TextField
+						placeholder = "Email"
+						valueBinding="mailAddress"
+						type="email"
+						name="emailinput"
+						class="validate[custom[email]] nerdeez-inputs"
+						}}
+    				</div> <!-- /field -->
+    				
+    				<div class="field">
+    					<label>Message (required)</label>
+    					{{
+						view Ember.TextArea
+						placeholder = "Enter your message here"
+						valueBinding="mailContent"
+						name="msginput"
+						type="text"
+						required="true"
+						class="validate[required]"
+					}}
+    				</div> <!-- /password -->
+    				
+    			</div> <!-- /login-fields -->
+    			
+    			<div class="login-actions">
+    				
+    									
+    				<button class="button btn btn-primary btn-large" {{action "submitForm"}}>Send</button>
+    				
+    			</div> <!-- .actions -->
+    			
+    		</form>
+    		
+    	</div> <!-- /content -->
+    	
+    	{{#if isLoading}}
+        {{loading}}
+    {{/if}}
+    
+    {{#if isError}}
+        <div class="alert alert-danger">
+          {{statusMessage}}
+        </div>
+    {{/if}}
+    
+    {{#if isSuccess}}
+        <div class="alert alert-success">
+          {{statusMessage}}
+        </div>
+    {{/if}}
+    	
+    </div>
+</div>
+

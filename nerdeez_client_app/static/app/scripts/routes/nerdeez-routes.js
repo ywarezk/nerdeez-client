@@ -24,6 +24,7 @@ Nerdeez.Router.map(function () {
     this.route('login');
     this.route('logout');
     this.route('register');
+    this.route('contact');
     this.route('verifyEmail', {path: '/verify-email/:hash'});
 });
 

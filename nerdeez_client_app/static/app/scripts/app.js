@@ -47,6 +47,7 @@ require('scripts/models/auth-model');
 require('scripts/controllers/search-controller');
 require('scripts/controllers/login-controller');
 require('scripts/controllers/register-controller');
+require('scripts/controllers/contact-controller');
 require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
 
 //routes
