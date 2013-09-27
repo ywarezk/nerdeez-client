@@ -1128,6 +1128,7 @@ Nerdeez.Router.map(function () {
     this.route('changePassword', {path: '/change-password'});
     this.route('forgetPassword', {path: '/forget-password'})
     this.route('resetPassword', {path: '/reset-password/:hash'})
+    this.route('addSchoolGroup', {path: '/add-school-group'})
 });
 
 /**

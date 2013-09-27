@@ -1,10 +1,18 @@
 <div class="left-sidebar">
 	<ul class="nav nav-tabs nav-stacked">
 	    <li>
-		    	{{#linkTo 'search'}}
+		    	{{#link-to 'search'}}
 		    		Search
                     <i class="icon-search pull-right"></i>
-		    	{{/linkTo}}
+		    	{{/link-to}}
 	    </li>
+	    {{#if Nerdeez.isLoggedIn}}
+	    <li>
+		    	{{#link-to 'addSchoolGroup'}}
+		    		Add course
+                    <i class="icon-plus pull-right"></i>
+		    	{{/link-to}}
+	    </li>
+	    {{/if}}
     </ul>
 </div>
