@@ -7,6 +7,74 @@
 	@version: 1.0
 -->
 
-<h1>
-Add course
-</h1>
+<div class="add_school_group contact">
+	<div class="account-container register stacked">
+	
+    	<div class="content clearfix">
+    		
+    		<form class="js-validation" >
+    			<div class="faq-container">
+					<ol class="faqList faq-list">
+						
+						<!-- begin school type -->
+						<li id="faq-1">
+							<div class="description">
+								<div class="faq-icon">
+									<div class="faq-number">1</div>
+								</div>
+								<div class="faq-text">
+									<h4>School Group type?</h4>
+									<p>
+										Select the school group type you want to add.
+									</p>	
+								</div>
+							</div>
+							<div class="actions type">
+								{{#each Nerdeez.SCHOOLGROUP_TYPE}}
+									<button class="button btn btn-primary btn-large" {{action schoolgroupTypeClicked this target="view"}}>
+										{{title}}
+									</button>
+								{{/each}}
+							</div>
+						</li>
+						<!-- end school type -->
+						
+						<li id="faq-2-course">
+							<div class="description">
+								<div class="faq-icon">
+									<div class="faq-number">2</div>
+								</div>
+								<div class="faq-text">
+									<h4>Choose University &amp; Faculty</h4>
+									<p>
+										Choose the university and faculty that this course is part of.
+									</p>	
+								</div>
+							</div>
+							<div class="actions type">
+								<label for="university">University:</label>
+								{{
+									view
+									Ember.Select
+									contentBinding="controller.content"
+									selectionBinding="university"
+									optionLabelPath="content.title"
+									name="university"
+									class="nerdeez-select"
+								}}
+							</div>
+						</li>
+						
+						
+						
+					</ol>		
+				</div>
+    			
+    			
+    		</form>
+    		
+    	</div> <!-- /content -->
+    	
+    	
+    </div>
+</div>

@@ -7,6 +7,12 @@
  * @copyright nerdeez Ltd.
  */
 
-Nerdeez.AddSchoolGroupController = Ember.Controller.extend({
+Nerdeez.AddSchoolGroupController = Ember.ArrayController.extend({
+	
+	/**
+	 * will hold the school group type (1) course (2) faculty (3) uni
+	 * @type {int}
+	 */
+	schoolType: null,
 	
 });

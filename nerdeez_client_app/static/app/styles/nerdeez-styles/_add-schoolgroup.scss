@@ -1,0 +1,47 @@
+/**
+ * 	stylesheet for the add course page
+ * 
+ * Created September 28th, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez Ltd.
+ * 
+ */
+
+.add_school_group{
+	.account-container{
+		width: 514px;
+		.faqList.faq-list{
+			li{
+				display: none;
+				margin: 0 auto;
+				.description{
+					clear: both;
+				    display: table;
+				    float: none;
+				    margin: 0 auto;
+				    text-align: center;
+				}
+				.actions{
+					text-align: center;
+					button{
+						float: none;
+						clear: both;
+					}
+				}
+				.actions.type{
+					button:nth-of-type(1){
+						margin-right: 10px;
+					}
+					button:nth-of-type(2){
+						margin-right: 10px;
+					}
+					
+				}
+			}
+			#faq-1{
+				display: block;
+			}
+		}
+	}
+}

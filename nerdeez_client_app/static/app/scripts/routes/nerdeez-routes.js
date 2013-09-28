@@ -222,6 +222,33 @@ Nerdeez.SchoolgroupFilesRoute = Nerdeez.LoginRequired.extend({
 });
 
 /**
+ * the route for the add school group page
+ */
+Nerdeez.AddSchoolGroupRoute = Nerdeez.NerdeezRoute.extend({
+	model: function(param){
+		
+		//find the id of the university
+		var universityId = 0;
+		for(var i=0; i < Nerdeez.SCHOOLGROUP_TYPE.length; i++){
+			if(Nerdeez.SCHOOLGROUP_TYPE[i].title === 'University'){
+				universityId = Nerdeez.SCHOOLGROUP_TYPE[i].id;
+			}
+		}
+		
+		//return all the universities
+		return Nerdeez.Schoolgroup.find({school_type: universityId});
+	},
+	
+	setupController: function(controller, model){
+		otherUni = Nerdeez.Schoolgroup.createRecord();
+		otherUni.set('title', 'Other');
+		otherUni.set('school_type', 0);
+		model.addObject(otherUni);
+		this.controller.set('universities', model);
+	}
+});
+
+/**
  * when the user clicks the mail verification link this will lead to this url
  * will redirect to login if all is success
  */

@@ -152,6 +152,109 @@ textarea {
   font-size: 13px;
 }
 
+/*.nerdeez-select{
+    z-index: 10; opacity: 0;
+    height: 26px !important;
+    line-height: 26px;
+    position: relative;
+    width: 166px !important;
+    
+}
+
+span.select{
+    background: url("/static/app/img/bg_select.gif") no-repeat scroll 0 0 transparent;
+    bottom: 0;
+    cursor: default;
+    float: left;
+    height: 26px;
+    left: 0;
+    line-height: 26px;
+    position: absolute;
+    text-indent: 10px;
+    width: 166px;
+    z-index: 1;
+}*/
+/*.nerdeez-select{
+    padding-left: 6px;
+    background: none repeat scroll 0 0 transparent !important;
+    border: 0 none;
+    @include border-radius(0 0 0 0);
+    color: #62717A;
+    font-size: 12px;
+    height: 28px;
+    line-height: 14px;
+    margin: 0;
+    padding: 6px 8px 6px 10px;
+    position: relative;
+    text-shadow: 0 1px white;
+    @include text-shadow(white 0 1px 0);
+    width: 130%;
+}
+
+.dropdown:before {
+    border-bottom-style: solid;
+    border-top: medium none;
+}
+
+.dropdown:before, .dropdown:after {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #888888 transparent;
+    border-image: none;
+    border-style: dashed;
+    border-width: 4px;
+    content: "";
+    height: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    width: 0;
+    z-index: 2;
+}
+
+.dropdown:after {
+    border-bottom: medium none;
+    border-top-style: solid;
+    margin-top: 7px;
+}
+
+.dropdown:before, .dropdown:after {
+    content: '';
+position: absolute;
+z-index: 2;
+top: 9px;
+right: 10px;
+width: 0;
+height: 0;
+border: 4px dashed;
+border-color: #888 transparent;
+pointer-events: none;
+}
+
+.dropdown {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: repeat scroll 0 0 #F2F2F2;
+    @include background(
+                      linear-gradient(top bottom, transparent, rgba(0, 0, 0, 0.06))
+                      );
+    border-color: white #F7F7F7 #F5F5F5;
+    border-image: none;
+    @include border-radius(3px 3px 3px 3px);
+    border-style: solid;
+    border-width: 1px;
+    @include box-shadow(rgba(0, 0, 0, 0.08) 0 1px 1px);
+    display: inline-block;
+    height: 28px;
+    overflow: hidden;
+    position: relative;
+    width: 150px;
+}*/
 /**
 * holds the styles of the header
 * @copyright: nerdeez.com Ltd.
@@ -356,4 +459,52 @@ textarea {
 #topbar #top-nav ul li b.caret {
   position: relative;
   top: 8px;
+}
+
+/**
+ * 	stylesheet for the add course page
+ * 
+ * Created September 28th, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez Ltd.
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000312}}
+.add_school_group .account-container {
+  width: 514px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000315}}
+.add_school_group .account-container .faqList.faq-list li {
+  display: none;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000318}}
+.add_school_group .account-container .faqList.faq-list li .description {
+  clear: both;
+  display: table;
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000325}}
+.add_school_group .account-container .faqList.faq-list li .actions {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000327}}
+.add_school_group .account-container .faqList.faq-list li .actions button {
+  float: none;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000333}}
+.add_school_group .account-container .faqList.faq-list li .actions.type button:nth-of-type(1) {
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000336}}
+.add_school_group .account-container .faqList.faq-list li .actions.type button:nth-of-type(2) {
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000342}}
+.add_school_group .account-container .faqList.faq-list #faq-1 {
+  display: block;
 }
