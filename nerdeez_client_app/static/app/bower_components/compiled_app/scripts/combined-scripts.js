@@ -386,10 +386,10 @@ Nerdeez.set('auth', Nerdeez.Auth.current());
 (function() {
 
 /**
-* the controller for the search university and search course will be here
+* the controller for the search page
 *
-* @copyright: nerdeez.com Ltd.
-* @author: Yariv Katz
+* @copyright: Nerdeez Ltd.
+* @author: Doron Nachshon
 * @version: 1.0
 */
 
