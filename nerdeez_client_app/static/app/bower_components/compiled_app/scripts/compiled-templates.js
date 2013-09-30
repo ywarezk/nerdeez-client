@@ -965,9 +965,42 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 Ember.TEMPLATES["search"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, hashContexts, hashTypes, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
   
+  var buffer = '', stack1, hashContexts, hashTypes, options;
+  data.buffer.push("\n						<li>\n							<div class=\"span5 resultbox\">\n								<div class=\"result-action\">\n									<div class=\"pic-container buffer-left\">\n										<i ");
+  hashContexts = {'class': depth0};
+  hashTypes = {'class': "STRING"};
+  options = {hash:{
+    'class': ("getIconClass")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || depth0['bind-attr']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
+  data.buffer.push("></i>\n									</div>\n									<div class=\"result-text buffer-left\">\n											<h5> Course Number: </h5>\n											<span>");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</span>\n									</div>\n									<div class=\"result-text buffer-left\">\n											<h5> Description: </h5>\n											<span>");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "description", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</span>\n									</div>\n								</div>\n								<div class=\"result-footer\">\n									<ul class=\"rating buffer-left\">\n										<li>\n											<i class=\"icon-star\"></i>\n										</li>\n										<li>\n											<i class=\"icon-star\"></i>\n										</li>\n										<li>\n											<i class=\"icon-star\"></i>\n										</li>\n										<li>\n											<i class=\"icon-star\"></i>\n										</li>\n										<li>\n											<i class=\"icon-star\"></i>\n										</li>\n									</ul>\n									<div class=\"result-user\">\n										<i class=\"icon-user\"></i>\n									</div>\n								</div>\n							</div>\n						</li>\n					");
+  return buffer;
+  }
 
-
-  data.buffer.push("<!--\n\nHolds the html of the search page\nmake sure to keep bootstrap grid system\n\nauthor: Doron Nechshon\ncopyright: Nerdeez Ltd.\nversion: 1.0\n\n-->\n\n<div class=\"search\">\n	<h1>\n		Search page\n	</h1>	\n</div>\n");
+  data.buffer.push("<!--\n\nHolds the html of the search page\nmake sure to keep bootstrap grid system\n\nauthor: Doron Nechshon\ncopyright: Nerdeez Ltd.\nversion: 1.0\n\n-->\n\n<div class=\"search\">\n	<div class=\"searchtab\">\n		<div class=\"row\">\n			<div class=\"span8\">\n				");
+  hashContexts = {'placeholder': depth0};
+  hashTypes = {'placeholder': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'placeholder': ("Search")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n			</div>\n			<div class=\"span2 sortby\">\n				Sort By ....\n			</div>\n		</div>\n		<hr />\n	</div>\n	<div class=\"row\">\n		<div class=\"span10\">\n			<div class=\"row\">\n				<ol class=\"results\">\n					");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers.each.call(depth0, "controller", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n				</ol>\n			</div>\n		</div>\n	</div>\n</div>");
+  return buffer;
   
 });

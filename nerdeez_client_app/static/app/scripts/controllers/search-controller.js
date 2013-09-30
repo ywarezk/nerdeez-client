@@ -18,8 +18,18 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 	 * @type {string}
 	 */
 	searchQuery: null,
+
+	iconClass: null,
 	
-	
+	setIconClass: function() {
+		a = this.get('content').school_type;
+		if (a == 0)
+			iconClass = "faculty-icon";
+		else if (a == 1)
+			iconClass = "university-icon";
+		else
+			iconClass = "course-icon";
+	},
 	/**
 	 * when the user submits the search form
 	 */
@@ -27,4 +37,3 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 		this.set('content', Nerdeez.Schoolgroup.find({search: this.get('searchQuery')}));
 	}.observes('searchQuery')
 });
-

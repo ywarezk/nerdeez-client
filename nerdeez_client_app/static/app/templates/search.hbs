@@ -10,7 +10,67 @@ version: 1.0
 -->
 
 <div class="search">
-	<h1>
-		Search page
-	</h1>	
+	<div class="searchtab">
+		<div class="row">
+			<div class="span8">
+				{{
+					view Ember.TextField
+					placeholder="Search"
+				}}
+			</div>
+			<div class="span2 sortby">
+				Sort By ....
+			</div>
+		</div>
+		<hr />
+	</div>
+	<div class="row">
+		<div class="span10">
+			<div class="row">
+				<ol class="results">
+					{{#each controller}}
+						<li>
+							<div class="span5 resultbox">
+								<div class="result-action">
+									<div class="pic-container buffer-left">
+										<i {{bind-attr class="getIconClass"}}></i>
+									</div>
+									<div class="result-text buffer-left">
+											<h5> Course Number: </h5>
+											<span>{{title}}</span>
+									</div>
+									<div class="result-text buffer-left">
+											<h5> Description: </h5>
+											<span>{{description}}</span>
+									</div>
+								</div>
+								<div class="result-footer">
+									<ul class="rating buffer-left">
+										<li>
+											<i class="icon-star"></i>
+										</li>
+										<li>
+											<i class="icon-star"></i>
+										</li>
+										<li>
+											<i class="icon-star"></i>
+										</li>
+										<li>
+											<i class="icon-star"></i>
+										</li>
+										<li>
+											<i class="icon-star"></i>
+										</li>
+									</ul>
+									<div class="result-user">
+										<i class="icon-user"></i>
+									</div>
+								</div>
+							</div>
+						</li>
+					{{/each}}
+				</ol>
+			</div>
+		</div>
+	</div>
 </div>
