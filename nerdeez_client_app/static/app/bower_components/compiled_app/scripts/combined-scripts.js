@@ -438,15 +438,16 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 	selectedSort: "Best Match",
 
 	newSort: null,
+
+	/**
+	 * when the user submits the search form
+	 */
+	search: function(){
+		this.set('content', Nerdeez.Schoolgroup.find({search: this.get('searchQuery')}));
+	}.observes('searchQuery'),
+
 	
 	actions: {
-		/**
-		 * when the user submits the search form
-		 */
-		search: function(){
-			this.set('content', Nerdeez.Schoolgroup.find({search: this.get('searchQuery')}));
-		}.observes('searchQuery'),
-
 		manageSort: function(yariv){
 			this.set("selectedSort", yariv);
 		}

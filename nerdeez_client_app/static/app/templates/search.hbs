@@ -12,7 +12,7 @@ version: 1.0
 <div class="search">
 	<div class="row">
 		<div class="span7">
-			<form class="form-search" {{action "search" on="submit" target="controller"}}>
+			<form class="form-search">
 				<div class="input-append">
 					{{
 						view Ember.TextField
@@ -20,7 +20,7 @@ version: 1.0
 						valueBinding="searchQuery"
 						placeholder="Search"
 					}}
-					<button type="submit" class="btn"> <i class="icon-search"></i> </button>
+					<i class="icon-search"></i>
 				</div>
 			</form>
 		</div>

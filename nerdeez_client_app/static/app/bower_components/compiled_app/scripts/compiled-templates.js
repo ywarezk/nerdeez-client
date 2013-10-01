@@ -1075,14 +1075,7 @@ function program14(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<!--\n\nHolds the html of the search page\nmake sure to keep bootstrap grid system\n\nauthor: Doron Nechshon\ncopyright: Nerdeez Ltd.\nversion: 1.0\n\n-->\n\n<div class=\"search\">\n	<div class=\"row\">\n		<div class=\"span7\">\n			<form class=\"form-search\" ");
-  hashContexts = {'on': depth0,'target': depth0};
-  hashTypes = {'on': "STRING",'target': "STRING"};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "search", {hash:{
-    'on': ("submit"),
-    'target': ("controller")
-  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n				<div class=\"input-append\">\n					");
+  data.buffer.push("<!--\n\nHolds the html of the search page\nmake sure to keep bootstrap grid system\n\nauthor: Doron Nechshon\ncopyright: Nerdeez Ltd.\nversion: 1.0\n\n-->\n\n<div class=\"search\">\n	<div class=\"row\">\n		<div class=\"span7\">\n			<form class=\"form-search\">\n				<div class=\"input-append\">\n					");
   hashContexts = {'class': depth0,'valueBinding': depth0,'placeholder': depth0};
   hashTypes = {'class': "STRING",'valueBinding': "STRING",'placeholder': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
@@ -1090,7 +1083,7 @@ function program14(depth0,data) {
     'valueBinding': ("searchQuery"),
     'placeholder': ("Search")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n					<button type=\"submit\" class=\"btn\"> <i class=\"icon-search\"></i> </button>\n				</div>\n			</form>\n		</div>\n		<div class=\"span3 sortby\">\n			<h5>Sort By</h5>\n			<div class=\"dropdown\">\n				<!-- Link or button to toggle dropdown -->\n				<b class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\"> \n					");
+  data.buffer.push("\n					<i class=\"icon-search\"></i>\n				</div>\n			</form>\n		</div>\n		<div class=\"span3 sortby\">\n			<h5>Sort By</h5>\n			<div class=\"dropdown\">\n				<!-- Link or button to toggle dropdown -->\n				<b class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\"> \n					");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "controller.selectedSort", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
