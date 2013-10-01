@@ -10,20 +10,38 @@ version: 1.0
 -->
 
 <div class="search">
-	<div class="searchtab">
-		<div class="row">
-			<div class="span8">
-				{{
-					view Ember.TextField
-					placeholder="Search"
-				}}
-			</div>
-			<div class="span2 sortby">
-				Sort By ....
+	<div class="row">
+		<div class="span7">
+			<form class="form-search" {{action "search" on="submit" target="controller"}}>
+				<div class="input-append">
+					{{
+						view Ember.TextField
+						class="nerdeez-inputs search-query"
+						valueBinding="searchQuery"
+						placeholder="Search"
+					}}
+					<button type="submit" class="btn"> <i class="icon-search"></i> </button>
+				</div>
+			</form>
+		</div>
+		<div class="span3 sortby">
+			<h5>Sort By</h5>
+			<div class="dropdown">
+				<!-- Link or button to toggle dropdown -->
+				<b class="dropdown-toggle" data-toggle="dropdown" href="#"> 
+					{{controller.selectedSort}}
+					<b class="caret"></b>
+				</b>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				    <li {{action "manageSort" "byRelevance" target="controller"}}>Relevance</li>
+				    <li {{action "manageSort" "byGrades" target="controller"}}>Grades</li>
+				    <li {{action "manageSort" "byUsers" target="controller"}}>No. of Users</li>
+				    <li {{action "manageSort" "byFiles" target="controller"}}>No. of Files</li>
+				</ul>
 			</div>
 		</div>
-		<hr />
 	</div>
+	<hr />
 	<div class="row">
 		<ol class="results">
 			{{#each controller}}

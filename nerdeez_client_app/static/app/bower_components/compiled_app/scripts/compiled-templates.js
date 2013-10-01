@@ -1075,13 +1075,50 @@ function program14(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<!--\n\nHolds the html of the search page\nmake sure to keep bootstrap grid system\n\nauthor: Doron Nechshon\ncopyright: Nerdeez Ltd.\nversion: 1.0\n\n-->\n\n<div class=\"search\">\n	<div class=\"searchtab\">\n		<div class=\"row\">\n			<div class=\"span8\">\n				");
-  hashContexts = {'placeholder': depth0};
-  hashTypes = {'placeholder': "STRING"};
+  data.buffer.push("<!--\n\nHolds the html of the search page\nmake sure to keep bootstrap grid system\n\nauthor: Doron Nechshon\ncopyright: Nerdeez Ltd.\nversion: 1.0\n\n-->\n\n<div class=\"search\">\n	<div class=\"row\">\n		<div class=\"span7\">\n			<form class=\"form-search\" ");
+  hashContexts = {'on': depth0,'target': depth0};
+  hashTypes = {'on': "STRING",'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "search", {hash:{
+    'on': ("submit"),
+    'target': ("controller")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n				<div class=\"input-append\">\n					");
+  hashContexts = {'class': depth0,'valueBinding': depth0,'placeholder': depth0};
+  hashTypes = {'class': "STRING",'valueBinding': "STRING",'placeholder': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'class': ("nerdeez-inputs search-query"),
+    'valueBinding': ("searchQuery"),
     'placeholder': ("Search")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n			</div>\n			<div class=\"span2 sortby\">\n				Sort By ....\n			</div>\n		</div>\n		<hr />\n	</div>\n	<div class=\"row\">\n		<ol class=\"results\">\n			");
+  data.buffer.push("\n					<button type=\"submit\" class=\"btn\"> <i class=\"icon-search\"></i> </button>\n				</div>\n			</form>\n		</div>\n		<div class=\"span3 sortby\">\n			<h5>Sort By</h5>\n			<div class=\"dropdown\">\n				<!-- Link or button to toggle dropdown -->\n				<b class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\"> \n					");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "controller.selectedSort", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n					<b class=\"caret\"></b>\n				</b>\n				<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"dropdownMenu1\">\n				    <li ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "manageSort", "byRelevance", {hash:{
+    'target': ("controller")
+  },contexts:[depth0,depth0],types:["STRING","STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">Relevance</li>\n				    <li ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "manageSort", "byGrades", {hash:{
+    'target': ("controller")
+  },contexts:[depth0,depth0],types:["STRING","STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">Grades</li>\n				    <li ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "manageSort", "byUsers", {hash:{
+    'target': ("controller")
+  },contexts:[depth0,depth0],types:["STRING","STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">No. of Users</li>\n				    <li ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "manageSort", "byFiles", {hash:{
+    'target': ("controller")
+  },contexts:[depth0,depth0],types:["STRING","STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">No. of Files</li>\n				</ul>\n			</div>\n		</div>\n	</div>\n	<hr />\n	<div class=\"row\">\n		<ol class=\"results\">\n			");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "controller", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});

@@ -11,14 +11,30 @@
 
 .search {
 	font-size: 14px;
-	.searchtab {
-		input[type="text"]{
-            height: 40px;
-            width: 600px;
-	    }
-		.sortby {
-			margin-top: 18px;
-			border-bottom: 1px solid grey; 
+	.form-search {
+		.nerdeez-inputs {
+			width: 620px !important;
+			border-radius: 0;
+		}
+	}
+	.btn {
+		border-radius: 0 !important;
+		height: 41px;
+    	padding-left: 7px;
+    	.icon-search {
+    		font-size: 20px;
+    	}
+	}	
+	.sortby {
+		margin-top: 18px;
+		border-bottom: 1px solid grey;
+		h5 {
+			width: 60px;
+			float:left;
+		}
+		.dropdown {
+			float: left;
+    		width: 120px;
 		}
 	}
 	hr {
