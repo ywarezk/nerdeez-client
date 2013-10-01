@@ -21,12 +21,12 @@
 			border-bottom: 1px solid grey; 
 		}
 	}
-	.buffer-left {
-		padding-left: 15px;
-	}
 	hr {
 		border-color: #C3C3C3 !important;
 		border-top: 1px;
+	}
+	.row {
+		margin-top: 0 !important;
 	}
 	.results {
 		list-style: none;
@@ -41,8 +41,11 @@
 		    	height: 120px;
 		    	background-color: white;
 		    	padding-top: 24px;
-			    pic-container {
+		    	padding-left: 15px;
+		    	padding-right: 15px;
+			    .pic-container {
 			    	float: left;
+			    	padding-right: 15px;
 			    }
 			    .result-text {
 			    	display: table;
@@ -66,13 +69,44 @@
 			.result-footer {
 				height: 40px;
 				background-color: grey;
+				padding-left: 15px;
+				.result-user {
+					width: 245px;
+				}
 				ul {
 					list-style: none;
 					margin: 0;
 					height: 20px;
-					width: 70px;
 					padding-top: 12px;
 					float: left;
+				}
+				.rating {
+					width: 140px;
+					font-size: 18px;
+					padding-top: 14px;
+					.icon-star {
+						padding-right: 3px;
+					}
+				}
+				.entry-info {
+					width: 300px;
+				}
+				.iconproperties {
+					font-size: 20px;
+    				padding-right: 5px;
+    				.icon-user {
+    					padding-top: 1px;
+    				}
+    				.icon-file-text {
+    					padding-top: 2px;
+    				}
+				}
+				.verticalLine {
+ 				   	border-style: solid;
+				    border-width: thin;
+				    height: 18px;
+				    margin-left: 40px;
+				    margin-right: 40px;
 				}
 			}
 		}

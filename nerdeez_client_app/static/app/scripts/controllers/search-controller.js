@@ -21,15 +21,6 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 
 	iconClass: null,
 	
-	setIconClass: function() {
-		a = this.get('content').school_type;
-		if (a == 0)
-			iconClass = "faculty-icon";
-		else if (a == 1)
-			iconClass = "university-icon";
-		else
-			iconClass = "course-icon";
-	},
 	/**
 	 * when the user submits the search form
 	 */

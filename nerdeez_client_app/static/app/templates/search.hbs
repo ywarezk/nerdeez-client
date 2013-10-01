@@ -25,52 +25,93 @@ version: 1.0
 		<hr />
 	</div>
 	<div class="row">
-		<div class="span10">
-			<div class="row">
-				<ol class="results">
-					{{#each controller}}
-						<li>
-							<div class="span5 resultbox">
-								<div class="result-action">
-									<div class="pic-container buffer-left">
-										<i {{bind-attr class="getIconClass"}}></i>
-									</div>
-									<div class="result-text buffer-left">
-											<h5> Course Number: </h5>
-											<span>{{title}}</span>
-									</div>
-									<div class="result-text buffer-left">
-											<h5> Description: </h5>
-											<span>{{description}}</span>
-									</div>
-								</div>
-								<div class="result-footer">
-									<ul class="rating buffer-left">
-										<li>
-											<i class="icon-star"></i>
-										</li>
-										<li>
-											<i class="icon-star"></i>
-										</li>
-										<li>
-											<i class="icon-star"></i>
-										</li>
-										<li>
-											<i class="icon-star"></i>
-										</li>
-										<li>
-											<i class="icon-star"></i>
-										</li>
-									</ul>
-									<div class="result-user">
-										<i class="icon-user"></i>
-									</div>
-								</div>
+		<ol class="results">
+			{{#each controller}}
+				<li>
+					<div class="span5 resultbox">
+						<div class="result-action">
+							<div class="pic-container">
+								<i {{bind-attr class="getIconClass"}}></i>
 							</div>
-						</li>
-					{{/each}}
-				</ol>
-			</div>
-		</div>
+							<div class="result-text">
+								<h5>
+									{{#if isCourse}}
+										Course Number:
+									{{/if}}
+									{{#if isFaculty}}
+										Faculty Name:
+									{{/if}}
+									{{#if isUniversity}}
+										University Name:
+									{{/if}}
+								</h5>
+								<span>{{title}}</span>
+							</div>
+							<div class="result-text">
+									<h5> Description: </h5>
+									<span>{{description}}</span>
+							</div>
+							<div class="result-text">
+								<h5> 
+									{{#if isCourse}}
+										Faculty:
+									{{/if}}
+									{{#if isFaculty}}
+										University:
+									{{/if}}
+								</h5>
+								<span>
+									{{#unless isUniversity}}
+										{{parent.title}}
+									{{/unless}}
+								</span>
+							</div>
+							<div class="result-text">
+								{{#if isCourse}}
+									<h5> University: </h5>
+									<span>{{parent.parent.title}}</span>
+								{{/if}}
+							</div>
+						</div>
+						<div class="result-footer">
+							<ul class="rating">
+								<li>
+									<i class="icon-star"></i>
+								</li>
+								<li>
+									<i class="icon-star"></i>
+								</li>
+								<li>
+									<i class="icon-star"></i>
+								</li>
+								<li>
+									<i class="icon-star"></i>
+								</li>
+								<li>
+									<i class="icon-star"></i>
+								</li>
+							</ul>
+							<ul class="entry-info">
+								<li class="iconproperties">
+									<i class="icon-user"></i>
+								</li>
+								<li>
+									<h5>Users: ... </h5>
+								</li>
+								<li>
+									<i class="verticalLine"></i>
+								</li>
+								<li class="iconproperties">
+									<i class="icon-file-text"></i>
+								</li>
+								<li>
+									<h5>Files: ... </h5>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			{{/each}}
+		</ol>
 	</div>
 </div>
