@@ -26,3 +26,7 @@ Ember.View.reopen({
     }
 });
 
+Ember.Select.reopen({
+	attributeBindings: ['data-errormessage-value-missing']
+});
+

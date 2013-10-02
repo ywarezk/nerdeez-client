@@ -1,0 +1,81 @@
+<!-- 
+	when the user clicks the add new school group and choose a course to add
+-->
+
+<!-- begin choose faculty -->
+<form class="js-validation">
+	<div class="description">
+		<div class="faq-icon">
+			<div class="faq-number">3</div>
+		</div>
+		<div class="faq-text">
+			<h4>Choose Faculty</h4>
+			<p>
+				Choose the faculty that this course belongs to.
+			</p>	
+		</div>
+	</div>
+	<div class="actions type">
+		{{
+			view
+			Ember.Select
+			contentBinding="controller.content"
+			selectionBinding="faculty"
+			optionLabelPath="content.title"
+			name="faculty"
+			class="nerdeez-select validate[required]"
+			prompt="Select faculty"
+		}}
+	</div>
+	<div class="actions2">
+		<p>OR</p>
+		<button class="button btn btn-primary btn-large" {{action "addFaculty" target="view"}}>
+			<i class="icon-plus" style=""></i>
+			Create a new Faculty
+		</button>
+	</div>
+	{{#if isNewFacultyLoading}}
+	        {{loading}}
+	{{/if}}
+	<div class="clearfix next">
+		<button class="btn pull-right btn-primary btn-large" {{action "showFourthStep" target="view"}}>Next</button>
+	</div>
+</form>
+<!-- end choose uni -->
+						
+<!-- begin modal for new uni -->
+<div aria-hidden="true" aria-labelledby="windowTitleLabel" role="dialog" tabindex="-1" class="modal hide fade" id="new-faculty">
+	<form class="js-validation">
+		<div class="modal-header">
+			<a data-dismiss="modal" class="close" href="#">×</a>
+			<h3>New Faculty</h3>
+			</div>
+		<div class="modal-body">
+			<div class="field">
+				<label>Faculty name (Required):</label>
+				{{
+					view
+					Ember.TextField
+					placeholder="Faculty name"
+					valueBinding="newFacultyTitle"
+					class="nerdeez-inputs validate[required]"
+				}}
+			</div>
+			<div class="field">
+				<label>Description (Optional):</label>
+				{{
+					view
+					Ember.TextArea
+					placeholder="Extra information about the Faculty"
+					valueBinding="newFacultyDescription"
+					class="nerdeez-inputs"
+				}}
+			</div>
+		</div>
+		<div class="modal-footer">
+	        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+	        <button class="btn btn-primary" type="button" {{action "newFaculty" target="view"}}>Save changes</button>
+	    </div>
+	</form>
+</div>
+<!-- end modal for new uni -->

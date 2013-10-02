@@ -20,6 +20,7 @@ Nerdeez.Router.map(function () {
     this.resource('schoolgroup', { path: '/schoolgroup/:schoolgroup_id' }, function(){
         this.route('wall');
         this.route('files');
+        this.route('about');
     });
     this.route('login');
     this.route('logout');
@@ -29,7 +30,11 @@ Nerdeez.Router.map(function () {
     this.route('changePassword', {path: '/change-password'});
     this.route('forgetPassword', {path: '/forget-password'})
     this.route('resetPassword', {path: '/reset-password/:hash'})
-    this.route('addSchoolGroup', {path: '/add-school-group'})
+    this.resource('addSchoolGroup', {path: '/add-school-group'}, function(){
+	    	this.route('course');
+	    	this.route('faculty');
+	    	this.route('uni');
+    })
 });
 
 /**
@@ -239,12 +244,23 @@ Nerdeez.AddSchoolGroupRoute = Nerdeez.NerdeezRoute.extend({
 		return Nerdeez.Schoolgroup.find({school_type: universityId});
 	},
 	
+});
+
+Nerdeez.AddSchoolGroupCourseRoute = Nerdeez.NerdeezRoute.extend({
 	setupController: function(controller, model){
-		otherUni = Nerdeez.Schoolgroup.createRecord();
-		otherUni.set('title', 'Other');
-		otherUni.set('school_type', 0);
-		model.addObject(otherUni);
-		this.controller.set('universities', model);
+		this.controllerFor('add_school_group').set('schoolType', Nerdeez.SCHOOLGROUP_TYPE[0].id);
+	}
+});
+
+Nerdeez.AddSchoolGroupFacultyRoute = Nerdeez.NerdeezRoute.extend({
+	setupController: function(controller, model){
+		this.controllerFor('add_school_group').set('schoolType', Nerdeez.SCHOOLGROUP_TYPE[1].id);
+	}
+});
+
+Nerdeez.AddSchoolGroupUniRoute = Nerdeez.NerdeezRoute.extend({
+	setupController: function(controller, model){
+		this.controllerFor('add_school_group').set('schoolType', Nerdeez.SCHOOLGROUP_TYPE[2].id);
 	}
 });
 

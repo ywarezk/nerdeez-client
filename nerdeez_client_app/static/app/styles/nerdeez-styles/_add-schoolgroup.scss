@@ -23,11 +23,14 @@
 				    text-align: center;
 				}
 				.actions{
-					text-align: center;
-					button{
-						float: none;
-						clear: both;
-					}
+    					text-align: center;
+    					button{
+    						float: none;
+    						clear: both;
+    					}
+    					label{
+      					  text-align: left;
+    					}
 				}
 				.actions.type{
 					button:nth-of-type(1){
@@ -38,9 +41,33 @@
 					}
 					
 				}
+				.actions2{
+    				  text-align: center;
+    				  button{
+      				    margin-top: 0px; float: none;
+      				    i.icon-plus{
+        				      position: relative; top: 4px
+      				    }
+    				  }
+				}
+				.loading{
+    				  position: relative;
+            top: 30px;
+				}
+				.next{
+    				  position: relative; top: 25px;
+				}
+				.alert{
+				  position: relative; top:25px; margin-top: 15px
+				}
 			}
 			#faq-1{
 				display: block;
+			}
+			#faq-3-course-faculty-uni{
+    			  .next{
+              top: 6px !important;
+    			  }
 			}
 		}
 	}

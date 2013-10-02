@@ -14,7 +14,7 @@
 Nerdeez.Schoolgroup = DS.Model.extend({
 	title: DS.attr('string'),
 	description: DS.attr('string'),
-	image: DS.attr('string'),
 	school_type: DS.attr('number'),
-	parent: DS.belongsTo('Nerdeez.Schoolgroup')
+	parent: DS.belongsTo('Nerdeez.Schoolgroup'),
+	grade: DS.attr('number')
 });

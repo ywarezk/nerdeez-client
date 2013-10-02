@@ -268,42 +268,276 @@ function program9(depth0,data) {
 Ember.TEMPLATES["add_school_group"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, hashTypes, hashContexts, escapeExpression=this.escapeExpression, self=this;
+  var buffer = '', stack1, stack2, hashContexts, hashTypes, options, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
   
-  var buffer = '', hashContexts, hashTypes;
-  data.buffer.push("\n									<button class=\"button btn btn-primary btn-large\" ");
-  hashContexts = {'target': depth0};
-  hashTypes = {'target': "STRING"};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "schoolgroupTypeClicked", "", {hash:{
-    'target': ("view")
-  },contexts:[depth0,depth0],types:["ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n										");
+  
+  data.buffer.push("\n								Course\n								");
+  }
+
+function program3(depth0,data) {
+  
+  
+  data.buffer.push("\n								Faculty\n								");
+  }
+
+function program5(depth0,data) {
+  
+  
+  data.buffer.push("\n								University\n								");
+  }
+
+function program7(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\n								        ");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n									</button>\n								");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "loading", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n								");
   return buffer;
   }
 
-  data.buffer.push("<!--\n	Handlebar for adding a course\n	\n	Created September 26th, 2013\n	@author: Yariv Katz\n	@copyright: nerdeez.com\n	@version: 1.0\n-->\n\n<div class=\"add_school_group contact\">\n	<div class=\"account-container register stacked\">\n	\n    	<div class=\"content clearfix\">\n    		\n    		<form class=\"js-validation\" >\n    			<div class=\"faq-container\">\n					<ol class=\"faqList faq-list\">\n						\n						<!-- begin school type -->\n						<li id=\"faq-1\">\n							<div class=\"description\">\n								<div class=\"faq-icon\">\n									<div class=\"faq-number\">1</div>\n								</div>\n								<div class=\"faq-text\">\n									<h4>School Group type?</h4>\n									<p>\n										Select the school group type you want to add.\n									</p>	\n								</div>\n							</div>\n							<div class=\"actions type\">\n								");
+function program9(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\n							        ");
   hashTypes = {};
   hashContexts = {};
-  stack1 = helpers.each.call(depth0, "Nerdeez.SCHOOLGROUP_TYPE", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n							</div>\n						</li>\n						<!-- end school type -->\n						\n						<li id=\"faq-2-course\">\n							<div class=\"description\">\n								<div class=\"faq-icon\">\n									<div class=\"faq-number\">2</div>\n								</div>\n								<div class=\"faq-text\">\n									<h4>Choose University &amp; Faculty</h4>\n									<p>\n										Choose the university and faculty that this course is part of.\n									</p>	\n								</div>\n							</div>\n							<div class=\"actions type\">\n								<label for=\"university\">University:</label>\n								");
-  hashContexts = {'contentBinding': depth0,'selectionBinding': depth0,'optionLabelPath': depth0,'name': depth0,'class': depth0};
-  hashTypes = {'contentBinding': "STRING",'selectionBinding': "STRING",'optionLabelPath': "STRING",'name': "STRING",'class': "STRING"};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "loading", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n							");
+  return buffer;
+  }
+
+function program11(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\n						        <div class=\"alert alert-danger\">\n						          ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "message", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n						        </div>\n						    ");
+  return buffer;
+  }
+
+function program13(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\n						        <div class=\"alert alert-success\">\n						          ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "message", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n						        </div>\n						    ");
+  return buffer;
+  }
+
+  data.buffer.push("<!--\n	Handlebar for adding a course\n	\n	Created September 26th, 2013\n	@author: Yariv Katz\n	@copyright: nerdeez.com\n	@version: 1.0\n-->\n\n<div class=\"add_school_group contact\">\n	<div class=\"account-container register stacked\">\n	\n    	<div class=\"content clearfix\">\n    		\n    			<div class=\"faq-container\">\n					<ol class=\"faqList faq-list\">\n						\n						<!-- begin school type -->\n						<li id=\"faq-1\">\n							<div class=\"description\">\n								<div class=\"faq-icon\">\n									<div class=\"faq-number\">1</div>\n								</div>\n								<div class=\"faq-text\">\n									<h4>School Group type?</h4>\n									<p>\n										Select the school group type you want to add.\n									</p>	\n								</div>\n							</div>\n							<div class=\"actions type\">\n								");
+  hashContexts = {'class': depth0};
+  hashTypes = {'class': "STRING"};
+  options = {hash:{
+    'class': ("button btn btn-primary btn-large")
+  },inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "addSchoolGroup.course", options) : helperMissing.call(depth0, "link-to", "addSchoolGroup.course", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n								");
+  hashContexts = {'class': depth0};
+  hashTypes = {'class': "STRING"};
+  options = {hash:{
+    'class': ("button btn btn-primary btn-large")
+  },inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "addSchoolGroup.faculty", options) : helperMissing.call(depth0, "link-to", "addSchoolGroup.faculty", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n								");
+  hashContexts = {'class': depth0};
+  hashTypes = {'class': "STRING"};
+  options = {hash:{
+    'class': ("button btn btn-primary btn-large")
+  },inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "addSchoolGroup.uni", options) : helperMissing.call(depth0, "link-to", "addSchoolGroup.uni", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n							</div>\n						</li>\n						<!-- end school type -->\n						\n						<!-- begin choose uni -->\n						<li id=\"faq-2-course-faculty\">\n							<form class=\"js-validation\">\n								<div class=\"description\">\n									<div class=\"faq-icon\">\n										<div class=\"faq-number\">2</div>\n									</div>\n									<div class=\"faq-text\">\n										<h4>Choose University</h4>\n										<p>\n											Choose the university that this <span class=\"tbd\"></span> belongs to.\n										</p>	\n									</div>\n								</div>\n								<div class=\"actions type\">\n									");
+  hashContexts = {'contentBinding': depth0,'selectionBinding': depth0,'optionLabelPath': depth0,'name': depth0,'class': depth0,'prompt': depth0};
+  hashTypes = {'contentBinding': "STRING",'selectionBinding': "STRING",'optionLabelPath': "STRING",'name': "STRING",'class': "STRING",'prompt': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Select", {hash:{
     'contentBinding': ("controller.content"),
     'selectionBinding': ("university"),
     'optionLabelPath': ("content.title"),
     'name': ("university"),
-    'class': ("nerdeez-select")
+    'class': ("nerdeez-select validate[required]"),
+    'prompt': ("Select university")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n							</div>\n						</li>\n						\n						\n						\n					</ol>		\n				</div>\n    			\n    			\n    		</form>\n    		\n    	</div> <!-- /content -->\n    	\n    	\n    </div>\n</div>");
+  data.buffer.push("\n								</div>\n								<div class=\"actions2\">\n									<p>OR</p>\n									<button class=\"button btn btn-primary btn-large\" ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "addUniversity", {hash:{
+    'target': ("view")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n										<i class=\"icon-plus\" style=\"\"></i>\n										Create a new university\n									</button>\n								</div>\n								");
+  hashTypes = {};
+  hashContexts = {};
+  stack2 = helpers['if'].call(depth0, "isNewUniLoading", {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n								<div class=\"clearfix next\">\n									<button class=\"btn pull-right btn-primary btn-large\" ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "showThirdStep", {hash:{
+    'target': ("view")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">Next</button>\n								</div>\n							</form>\n						</li>\n						<!-- end choose uni -->\n						\n						<!-- begin modal for new uni -->\n						<div aria-hidden=\"true\" aria-labelledby=\"windowTitleLabel\" role=\"dialog\" tabindex=\"-1\" class=\"modal hide fade\" id=\"new-university\">\n							<form class=\"js-validation\">\n								<div class=\"modal-header\">\n									<a data-dismiss=\"modal\" class=\"close\" href=\"#\">×</a>\n									<h3>New University</h3>\n									</div>\n								<div class=\"modal-body\">\n									<div class=\"field\">\n										<label>University name (Required):</label>\n										");
+  hashContexts = {'placeholder': depth0,'valueBinding': depth0,'class': depth0};
+  hashTypes = {'placeholder': "STRING",'valueBinding': "STRING",'class': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'placeholder': ("University name"),
+    'valueBinding': ("newUniTitle"),
+    'class': ("nerdeez-inputs validate[required]")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n									</div>\n									<div class=\"field\">\n										<label>Description (Optional):</label>\n										");
+  hashContexts = {'placeholder': depth0,'valueBinding': depth0,'class': depth0};
+  hashTypes = {'placeholder': "STRING",'valueBinding': "STRING",'class': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextArea", {hash:{
+    'placeholder': ("Extra information about the University"),
+    'valueBinding': ("newUniDescription"),
+    'class': ("nerdeez-inputs")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n									</div>\n								</div>\n								<div class=\"modal-footer\">\n							        <button data-dismiss=\"modal\" class=\"btn btn-default\" type=\"button\">Close</button>\n						            <button class=\"btn btn-primary\" type=\"button\" ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "newUni", {hash:{
+    'target': ("view")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">Save changes</button>\n					            </div>\n							</form>					           \n				        </div>\n						<!-- end modal for new uni -->\n						\n						<!-- begin title description step -->\n						<li id=\"faq-3-course-faculty-uni\">\n							<div class=\"description\">\n								<div class=\"faq-icon\">\n									<div class=\"faq-number\">2</div>\n								</div>\n								<div class=\"faq-text\">\n									<h4>Name/Description</h4>\n									<p>\n										Write the title and description of the <span class=\"tbd\"></span> .\n									</p>	\n								</div>\n							</div>\n							<div class=\"actions type\">\n								<label>Name (Required):</label>\n									");
+  hashContexts = {'placeholder': depth0,'valueBinding': depth0,'class': depth0};
+  hashTypes = {'placeholder': "STRING",'valueBinding': "STRING",'class': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'placeholder': ("name"),
+    'valueBinding': ("title"),
+    'class': ("nerdeez-inputs")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n								<label>Description (Required):</label>\n									");
+  hashContexts = {'placeholder': depth0,'valueBinding': depth0,'class': depth0};
+  hashTypes = {'placeholder': "STRING",'valueBinding': "STRING",'class': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextArea", {hash:{
+    'placeholder': ("Description"),
+    'valueBinding': ("description"),
+    'class': ("nerdeez-inputs")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n							</div>\n							");
+  hashTypes = {};
+  hashContexts = {};
+  stack2 = helpers['if'].call(depth0, "isSaveLoading", {hash:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n							\n							\n							<div class=\"clearfix next\">\n								<button class=\"btn pull-right btn-primary btn-large\" ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "saveSchoolGroup", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">Submit</button>\n							</div>\n							");
+  hashTypes = {};
+  hashContexts = {};
+  stack2 = helpers['if'].call(depth0, "isError", {hash:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n						    \n						    ");
+  hashTypes = {};
+  hashContexts = {};
+  stack2 = helpers['if'].call(depth0, "isSuccess", {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n						</li>\n						<!-- end choose uni -->\n						\n						<!-- Begin choose faculty -->\n						<li id=\"faq-4-course\">\n						");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n						</li>\n						<!-- end choose faculty -->\n						\n					</ol>		\n				</div>\n    			\n    			\n    		\n    	</div> <!-- /content -->\n    	\n    	\n    </div>\n</div>");
   return buffer;
+  
+});
+
+Ember.TEMPLATES["add_school_group/course"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, hashContexts, hashTypes, escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\n	        ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "loading", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n	");
+  return buffer;
+  }
+
+  data.buffer.push("<!-- \n	when the user clicks the add new school group and choose a course to add\n-->\n\n<!-- begin choose faculty -->\n<form class=\"js-validation\">\n	<div class=\"description\">\n		<div class=\"faq-icon\">\n			<div class=\"faq-number\">3</div>\n		</div>\n		<div class=\"faq-text\">\n			<h4>Choose Faculty</h4>\n			<p>\n				Choose the faculty that this course belongs to.\n			</p>	\n		</div>\n	</div>\n	<div class=\"actions type\">\n		");
+  hashContexts = {'contentBinding': depth0,'selectionBinding': depth0,'optionLabelPath': depth0,'name': depth0,'class': depth0,'prompt': depth0};
+  hashTypes = {'contentBinding': "STRING",'selectionBinding': "STRING",'optionLabelPath': "STRING",'name': "STRING",'class': "STRING",'prompt': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Select", {hash:{
+    'contentBinding': ("controller.content"),
+    'selectionBinding': ("faculty"),
+    'optionLabelPath': ("content.title"),
+    'name': ("faculty"),
+    'class': ("nerdeez-select validate[required]"),
+    'prompt': ("Select faculty")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n	</div>\n	<div class=\"actions2\">\n		<p>OR</p>\n		<button class=\"button btn btn-primary btn-large\" ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "addFaculty", {hash:{
+    'target': ("view")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n			<i class=\"icon-plus\" style=\"\"></i>\n			Create a new Faculty\n		</button>\n	</div>\n	");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers['if'].call(depth0, "isNewFacultyLoading", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n	<div class=\"clearfix next\">\n		<button class=\"btn pull-right btn-primary btn-large\" ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "showFourthStep", {hash:{
+    'target': ("view")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">Next</button>\n	</div>\n</form>\n<!-- end choose uni -->\n						\n<!-- begin modal for new uni -->\n<div aria-hidden=\"true\" aria-labelledby=\"windowTitleLabel\" role=\"dialog\" tabindex=\"-1\" class=\"modal hide fade\" id=\"new-faculty\">\n	<form class=\"js-validation\">\n		<div class=\"modal-header\">\n			<a data-dismiss=\"modal\" class=\"close\" href=\"#\">×</a>\n			<h3>New Faculty</h3>\n			</div>\n		<div class=\"modal-body\">\n			<div class=\"field\">\n				<label>Faculty name (Required):</label>\n				");
+  hashContexts = {'placeholder': depth0,'valueBinding': depth0,'class': depth0};
+  hashTypes = {'placeholder': "STRING",'valueBinding': "STRING",'class': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'placeholder': ("Faculty name"),
+    'valueBinding': ("newFacultyTitle"),
+    'class': ("nerdeez-inputs validate[required]")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n			</div>\n			<div class=\"field\">\n				<label>Description (Optional):</label>\n				");
+  hashContexts = {'placeholder': depth0,'valueBinding': depth0,'class': depth0};
+  hashTypes = {'placeholder': "STRING",'valueBinding': "STRING",'class': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextArea", {hash:{
+    'placeholder': ("Extra information about the Faculty"),
+    'valueBinding': ("newFacultyDescription"),
+    'class': ("nerdeez-inputs")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n			</div>\n		</div>\n		<div class=\"modal-footer\">\n	        <button data-dismiss=\"modal\" class=\"btn btn-default\" type=\"button\">Close</button>\n	        <button class=\"btn btn-primary\" type=\"button\" ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "newFaculty", {hash:{
+    'target': ("view")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">Save changes</button>\n	    </div>\n	</form>\n</div>\n<!-- end modal for new uni -->");
+  return buffer;
+  
+});
+
+Ember.TEMPLATES["add_school_group/faculty"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  
+
+
+  data.buffer.push("\n");
+  
+});
+
+Ember.TEMPLATES["add_school_group/uni"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  
+
+
+  data.buffer.push("<h1>Uni</h1>");
   
 });
 

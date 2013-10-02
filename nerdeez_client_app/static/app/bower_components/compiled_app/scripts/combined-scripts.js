@@ -280,6 +280,10 @@ Ember.View.reopen({
     }
 });
 
+Ember.Select.reopen({
+	attributeBindings: ['data-errormessage-value-missing']
+});
+
 
 
 })();
@@ -297,20 +301,104 @@ Ember.View.reopen({
  */
 
 Nerdeez.AddSchoolGroupView = Ember.View.extend({
-	
 	actions: {
-		schoolgroupTypeClicked: function(type){
-			//set school group param
-			this.controller.set('schoolType', type.id);
-			
-			//make this li invisible and show the next step
-			$('#faq-1').fadeOut('normal', function(){
-				if(type.title === 'Course'){
-					$('#faq-2-course').fadeIn('normal');
-				}				
-			});
+		
+		/**
+		 * the user clicks to show th enew uni modal
+		 */
+		addUniversity: function(){
+			$('#new-university').modal('show');
+		},
+		
+		/**
+		 * when the user submits the new uni modal
+		 */
+		newUni: function(){
+			if(!$('#new-university .js-validation').validationEngine('validate')) return;
+			$('#new-university').modal('hide');
+			this.controller.send('newUni');
+		},
+		
+		/**
+		 * when the user selects uni and continues to the next step
+		 */
+		showThirdStep: function(){
+			switch(this.get('controller.schoolType')){
+				case Nerdeez.SCHOOLGROUP_TYPE[0].id: //course
+					if (!$("#faq-2-course-faculty .js-validation").validationEngine('validate')) return;
+					$('.faqList li').css('display', 'none');		
+					$('#faq-4-course').css('display', 'block');
+					break;
+				case Nerdeez.SCHOOLGROUP_TYPE[1].id: //faculty
+					if (!$("#faq-2-course-faculty .js-validation").validationEngine('validate')) return;
+					$('.faqList li').css('display', 'none');		
+					$('#faq-3-course-faculty-uni').css('display', 'block');
+					break;
+				case Nerdeez.SCHOOLGROUP_TYPE[2].id: //uni
+					$('.faqList li').css('display', 'none');		
+					$('#faq-3-course-faculty-uni').css('display', 'block');
+					break;
+			}
 		}
 	}
+});
+
+Nerdeez.AddUniFacultyCourseMasterView = Ember.View.extend({
+	didInsertElement: function(){
+		$('#faq-1').css('display', 'none');
+		$('#faq-2-course-faculty').css('display', 'block');
+	},
+	
+	willDestroyElement: function(){
+		$('.faqList li').css('display', 'none');
+		$('#faq-1').css('display', 'block');
+	}
+});
+
+Nerdeez.AddSchoolGroupCourseView = Nerdeez.AddUniFacultyCourseMasterView.extend({
+	didInsertElement: function(){
+		this._super();
+		$('#faq-2-course-faculty .tbd').text('Course');
+		$('#faq-3-course-faculty-uni .faq-number').text('4');
+		$('#faq-3-course-faculty-uni .tbd').text('Course');
+	},
+	
+	actions: {
+		addFaculty: function(){
+			$('#new-faculty').modal('show');
+		},
+		
+		newFaculty: function(){
+			if(!$('#new-faculty .js-validation').validationEngine('validate')) return;
+			$('#new-faculty').modal('hide');
+			this.controller.send('newFaculty');
+		},
+		
+		showFourthStep: function(){
+			if (!$("#faq-4-course .js-validation").validationEngine('validate')) return;
+			$('.faqList li').css('display', 'none');		
+			$('#faq-3-course-faculty-uni').css('display', 'block');
+		}
+	}
+});
+
+Nerdeez.AddSchoolGroupFacultyView = Nerdeez.AddUniFacultyCourseMasterView.extend({
+	didInsertElement: function(){
+		this._super();
+		$('#faq-2-course-faculty .tbd').text('Faculty');
+		$('#faq-3-course-faculty-uni .tbd').text('Faculty');
+		$('#faq-3-course-faculty-uni .faq-number').text('3');
+	}
+});
+
+Nerdeez.AddSchoolGroupUniView = Nerdeez.AddUniFacultyCourseMasterView.extend({
+	didInsertElement: function(){
+		$('#faq-1').css('display', 'none');
+		$('#faq-3-course-faculty-uni').css('display', 'block');
+		$('#faq-3-course-faculty-uni .tbd').text('University');
+	},
+	
+
 });
 
 
@@ -334,9 +422,9 @@ Nerdeez.AddSchoolGroupView = Ember.View.extend({
 Nerdeez.Schoolgroup = DS.Model.extend({
 	title: DS.attr('string'),
 	description: DS.attr('string'),
-	image: DS.attr('string'),
 	school_type: DS.attr('number'),
-	parent: DS.belongsTo('Nerdeez.Schoolgroup')
+	parent: DS.belongsTo('Nerdeez.Schoolgroup'),
+	grade: DS.attr('number')
 });
 
 
@@ -1114,6 +1202,10 @@ Nerdeez.ResetPasswordController = Ember.Controller.extend({
  */
 
 Nerdeez.AddSchoolGroupController = Ember.ArrayController.extend({
+	/**
+	 * need the course controller to populate the content of the faculties upon university choosing
+	 */
+	needs: ['add_school_group_course'],
 	
 	/**
 	 * will hold the school group type (1) course (2) faculty (3) uni
@@ -1121,6 +1213,186 @@ Nerdeez.AddSchoolGroupController = Ember.ArrayController.extend({
 	 */
 	schoolType: null,
 	
+	/**
+	 * the title of the uni in the new uni modal
+	 * @type {String}
+	 */
+	newUniTitle: null,
+	
+	/**
+	 * the description of the uni in the new uni modal
+	 * @type {String}
+	 */
+	newUniDescription: null,
+	
+	/**
+	 * when set to true will put a loading on the new uni modal
+	 * @type {Boolean}
+	 */
+	isNewUniLoading: false,
+	
+	/**
+	 * will hold the university selected for the parent of course/faculty
+	 * @type {Nerdeez.Schoolgroup}
+	 */
+	university: null,
+	
+	
+	/**
+	 * if true then the final step loading is activated
+	 * @type {Boolean}
+	 */
+	isSaveLoading: false,
+	
+	/**
+	 * will hold the faculty parent of the course
+	 * @type {Nerdeez.Schoolgroup}
+	 */
+	faculty: null,
+	
+	/**
+	 * if true the error box is displayed
+	 * @type {Boolean}
+	 */
+	isError: false,
+	
+	/**
+	 * if true the success box is displayed
+	 * @type {Boolean}
+	 */
+	isSuccess: false,
+	
+	/**
+	 * The message to display for the user
+	 * @type {String}
+	 */
+	message: false,
+	
+	/**
+	 * holds the title for the new school group
+	 * @type {String} 
+	 */
+	title: null,
+	
+	/**
+	 * holds the descirption for the new school group
+	 * @type {String} 
+	 */
+	description: null,
+	
+	/**
+	 * When we select a university fetch the relevent faculties if necessary 
+	 */
+	fetchFaculties: function(){
+		if(this.get('schoolType') == Nerdeez.SCHOOLGROUP_TYPE[0].id){
+			this.get('controllers.add_school_group_course').set('content', Nerdeez.Schoolgroup.find({parent__id__exact: this.get('university.id')}));
+		}
+	}.observes('university'),
+	
+	actions: {
+		
+		/**
+		 * when the user submits the new uni modal.
+		 * this will query the server to create new university
+		 */
+		newUni: function(){
+			this.set('isNewUniLoading', true);
+			var xthis = this;
+			var newUni = Nerdeez.Schoolgroup.createRecord();
+			newUni.set('title', this.get('newUniTitle'));
+			newUni.set('description', this.get('newUniDescription'));
+			newUni.set('school_type', Nerdeez.SCHOOLGROUP_TYPE[2].id);
+			newUni.transaction.commit();
+			newUni.one('didCreate', function(e){
+				xthis.set('isNewUniLoading', false);
+				xthis.get('content').pushObject(this);
+				xthis.set('university', this);
+			});
+		},
+		
+		/**
+		 * when the user completed the add process and submits the form
+		 */
+		saveSchoolGroup: function(){
+			var xthis = this;
+			xthis.set('isSaveLoading', true);
+			var newSchoolGroup = Nerdeez.Schoolgroup.createRecord();
+			newSchoolGroup.set('title', this.get('title'));
+			newSchoolGroup.set('description', this.get('description'));
+			newSchoolGroup.set('school_type', this.get('schoolType'));
+			switch (this.get('schoolType')){
+				case Nerdeez.SCHOOLGROUP_TYPE[0].id: //course
+					newSchoolGroup.set('parent', this.get('faculty'));
+					break;
+				case Nerdeez.SCHOOLGROUP_TYPE[1].id: //course
+					newSchoolGroup.set('parent', this.get('university'));
+					break;
+			}
+			newSchoolGroup.transaction.commit();
+			newSchoolGroup.one('didCreate', function(){
+				xthis.set('isSaveLoading', false);
+				xthis.set('isSuccess', true);
+				xthis.set('message', 'Success! Redirecting you to the course page');
+				var model = this;
+				setTimeout(function(){
+					Nerdeez.Router.router.transitionTo('schoolgroup.about', model);
+				},2000);
+			});
+		}
+	}
+	
+});
+
+Nerdeez.AddSchoolGroupCourseController = Ember.ArrayController.extend({
+	/**
+	 * needs access to the parent controller
+	 */
+	needs: ['add_school_group'],
+	
+	/**
+	 * when set to true will display a loading sign
+	 * @type {Boolean}
+	 */
+	isNewFacultyLoading: false,
+	
+	/**
+	 * holds the faculty name in the new faculty modal
+	 * @type {String}
+	 */
+	newFacultyTitle: null,
+	
+	/**
+	 * holds the faculty description in the new faculty modal
+	 * @type {String}
+	 */
+	newFacultyDescription: null,
+	
+	/**
+	 * the selected faculty
+	 * @type {Nerdeez.Schoolgroup}
+	 */
+	facultyBinding: "Nerdeez.addSchoolGroupController.faculty",
+	
+	
+	actions: {
+		newFaculty: function(){
+			var xthis = this;
+			this.set('isNewFacultyLoading', true);
+			console.log('how the fuck do i access the parent controller');
+			var newFaculty = Nerdeez.Schoolgroup.createRecord();
+			newFaculty.set('title', this.get('newFacultyTitle'));
+			newFaculty.set('description', this.get('newFacultyDescription'));
+			newFaculty.set('school_type', Nerdeez.SCHOOLGROUP_TYPE[1].id);
+			//newFaculty.set('parent', )
+			newFaculty.transaction.commit();
+			newFaculty.one('didCreate', function(){
+				xthis.set('isNewFacultyLoading', false);
+				xthis.set('faculty', this);
+				xthis.get('content').addObject(this);
+			});
+			
+		}
+	}
 });
 
 
@@ -1189,6 +1461,7 @@ Nerdeez.Router.map(function () {
     this.resource('schoolgroup', { path: '/schoolgroup/:schoolgroup_id' }, function(){
         this.route('wall');
         this.route('files');
+        this.route('about');
     });
     this.route('login');
     this.route('logout');
@@ -1198,7 +1471,11 @@ Nerdeez.Router.map(function () {
     this.route('changePassword', {path: '/change-password'});
     this.route('forgetPassword', {path: '/forget-password'})
     this.route('resetPassword', {path: '/reset-password/:hash'})
-    this.route('addSchoolGroup', {path: '/add-school-group'})
+    this.resource('addSchoolGroup', {path: '/add-school-group'}, function(){
+	    	this.route('course');
+	    	this.route('faculty');
+	    	this.route('uni');
+    })
 });
 
 /**
@@ -1408,12 +1685,23 @@ Nerdeez.AddSchoolGroupRoute = Nerdeez.NerdeezRoute.extend({
 		return Nerdeez.Schoolgroup.find({school_type: universityId});
 	},
 	
+});
+
+Nerdeez.AddSchoolGroupCourseRoute = Nerdeez.NerdeezRoute.extend({
 	setupController: function(controller, model){
-		otherUni = Nerdeez.Schoolgroup.createRecord();
-		otherUni.set('title', 'Other');
-		otherUni.set('school_type', 0);
-		model.addObject(otherUni);
-		this.controller.set('universities', model);
+		this.controllerFor('add_school_group').set('schoolType', Nerdeez.SCHOOLGROUP_TYPE[0].id);
+	}
+});
+
+Nerdeez.AddSchoolGroupFacultyRoute = Nerdeez.NerdeezRoute.extend({
+	setupController: function(controller, model){
+		this.controllerFor('add_school_group').set('schoolType', Nerdeez.SCHOOLGROUP_TYPE[1].id);
+	}
+});
+
+Nerdeez.AddSchoolGroupUniRoute = Nerdeez.NerdeezRoute.extend({
+	setupController: function(controller, model){
+		this.controllerFor('add_school_group').set('schoolType', Nerdeez.SCHOOLGROUP_TYPE[2].id);
 	}
 });
 

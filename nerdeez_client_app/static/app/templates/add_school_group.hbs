@@ -12,7 +12,6 @@
 	
     	<div class="content clearfix">
     		
-    		<form class="js-validation" >
     			<div class="faq-container">
 					<ol class="faqList faq-list">
 						
@@ -30,48 +29,162 @@
 								</div>
 							</div>
 							<div class="actions type">
-								{{#each Nerdeez.SCHOOLGROUP_TYPE}}
-									<button class="button btn btn-primary btn-large" {{action schoolgroupTypeClicked this target="view"}}>
-										{{title}}
-									</button>
-								{{/each}}
+								{{#link-to "addSchoolGroup.course" class="button btn btn-primary btn-large"}}
+								Course
+								{{/link-to}}
+								{{#link-to "addSchoolGroup.faculty" class="button btn btn-primary btn-large"}}
+								Faculty
+								{{/link-to}}
+								{{#link-to "addSchoolGroup.uni" class="button btn btn-primary btn-large"}}
+								University
+								{{/link-to}}
 							</div>
 						</li>
 						<!-- end school type -->
 						
-						<li id="faq-2-course">
+						<!-- begin choose uni -->
+						<li id="faq-2-course-faculty">
+							<form class="js-validation">
+								<div class="description">
+									<div class="faq-icon">
+										<div class="faq-number">2</div>
+									</div>
+									<div class="faq-text">
+										<h4>Choose University</h4>
+										<p>
+											Choose the university that this <span class="tbd"></span> belongs to.
+										</p>	
+									</div>
+								</div>
+								<div class="actions type">
+									{{
+										view
+										Ember.Select
+										contentBinding="controller.content"
+										selectionBinding="university"
+										optionLabelPath="content.title"
+										name="university"
+										class="nerdeez-select validate[required]"
+										prompt="Select university"
+									}}
+								</div>
+								<div class="actions2">
+									<p>OR</p>
+									<button class="button btn btn-primary btn-large" {{action "addUniversity" target="view"}}>
+										<i class="icon-plus" style=""></i>
+										Create a new university
+									</button>
+								</div>
+								{{#if isNewUniLoading}}
+								        {{loading}}
+								{{/if}}
+								<div class="clearfix next">
+									<button class="btn pull-right btn-primary btn-large" {{action "showThirdStep" target="view"}}>Next</button>
+								</div>
+							</form>
+						</li>
+						<!-- end choose uni -->
+						
+						<!-- begin modal for new uni -->
+						<div aria-hidden="true" aria-labelledby="windowTitleLabel" role="dialog" tabindex="-1" class="modal hide fade" id="new-university">
+							<form class="js-validation">
+								<div class="modal-header">
+									<a data-dismiss="modal" class="close" href="#">×</a>
+									<h3>New University</h3>
+									</div>
+								<div class="modal-body">
+									<div class="field">
+										<label>University name (Required):</label>
+										{{
+											view
+											Ember.TextField
+											placeholder="University name"
+											valueBinding="newUniTitle"
+											class="nerdeez-inputs validate[required]"
+										}}
+									</div>
+									<div class="field">
+										<label>Description (Optional):</label>
+										{{
+											view
+											Ember.TextArea
+											placeholder="Extra information about the University"
+											valueBinding="newUniDescription"
+											class="nerdeez-inputs"
+										}}
+									</div>
+								</div>
+								<div class="modal-footer">
+							        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+						            <button class="btn btn-primary" type="button" {{action "newUni" target="view"}}>Save changes</button>
+					            </div>
+							</form>					           
+				        </div>
+						<!-- end modal for new uni -->
+						
+						<!-- begin title description step -->
+						<li id="faq-3-course-faculty-uni">
 							<div class="description">
 								<div class="faq-icon">
 									<div class="faq-number">2</div>
 								</div>
 								<div class="faq-text">
-									<h4>Choose University &amp; Faculty</h4>
+									<h4>Name/Description</h4>
 									<p>
-										Choose the university and faculty that this course is part of.
+										Write the title and description of the <span class="tbd"></span> .
 									</p>	
 								</div>
 							</div>
 							<div class="actions type">
-								<label for="university">University:</label>
-								{{
-									view
-									Ember.Select
-									contentBinding="controller.content"
-									selectionBinding="university"
-									optionLabelPath="content.title"
-									name="university"
-									class="nerdeez-select"
-								}}
+								<label>Name (Required):</label>
+									{{
+										view
+										Ember.TextField
+										placeholder="name"
+										valueBinding="title"
+										class="nerdeez-inputs"
+									}}
+								<label>Description (Required):</label>
+									{{
+										view
+										Ember.TextArea
+										placeholder="Description"
+										valueBinding="description"
+										class="nerdeez-inputs"
+									}}
 							</div>
+							{{#if isSaveLoading}}
+							        {{loading}}
+							{{/if}}
+							
+							
+							<div class="clearfix next">
+								<button class="btn pull-right btn-primary btn-large" {{action "saveSchoolGroup"}}>Submit</button>
+							</div>
+							{{#if isError}}
+						        <div class="alert alert-danger">
+						          {{message}}
+						        </div>
+						    {{/if}}
+						    
+						    {{#if isSuccess}}
+						        <div class="alert alert-success">
+						          {{message}}
+						        </div>
+						    {{/if}}
 						</li>
+						<!-- end choose uni -->
 						
-						
+						<!-- Begin choose faculty -->
+						<li id="faq-4-course">
+						{{outlet}}
+						</li>
+						<!-- end choose faculty -->
 						
 					</ol>		
 				</div>
     			
     			
-    		</form>
     		
     	</div> <!-- /content -->
     	

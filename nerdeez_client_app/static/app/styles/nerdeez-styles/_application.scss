@@ -92,6 +92,7 @@ input.nerdeez-search{
 .nerdeez-inputs{
     height: 41px !important;
     width: 100% !important;
+    color: #555555;
 }
 
 .loading{
@@ -130,6 +131,30 @@ textarea{
   display: block;
   font-family: 'Open Sans';
   font-size: 13px;
+}
+
+/**
+ *   in modals set the loading icon in the right place
+ */
+
+.modal{
+    .modal-footer{
+        .loading{
+            float: left;
+            position: relative;
+            top: 8px;
+        }
+    }
+    .modal-header{
+        .close{
+            position: relative;
+            top: 16px;
+            font-size: 30px;
+        }
+    }
+    .formError {
+        left: 216px !important;
+    }
 }
 
 /*.nerdeez-select{
@@ -236,3 +261,4 @@ pointer-events: none;
     position: relative;
     width: 150px;
 }*/
+
