@@ -406,25 +406,13 @@ pointer-events: none;
   padding-top: 9px;
   pointer-events: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000355}}
-.search .filter-border {
-  background: none repeat scroll 0% 0% white;
-  margin-bottom: 20px;
-  width: 100px;
-  padding-left: 15px;
-  padding-top: 11px;
-  border: 1px solid #cccccc;
-  height: 28px;
-  padding-right: 15px;
-  display: inline-block;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000354}}
 .search .nerdeez-inputs {
   width: 620px !important;
   border-radius: 0;
   border-right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000358}}
 .search .nerdeez-inputs .search-query {
   border-radius: 0;
   height: 100%;
@@ -432,7 +420,7 @@ pointer-events: none;
   padding-right: 30px;
   font-size: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000365}}
 .search .nerdeez-inputs .icon-search {
   float: right;
   bottom: 29px;
@@ -441,7 +429,7 @@ pointer-events: none;
   position: relative;
   right: 17px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000374}}
 .search .border-icon {
   background-color: white;
   border-color: #cccccc #cccccc #cccccc;
@@ -455,140 +443,260 @@ pointer-events: none;
   padding-top: 10px;
   width: 27px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000386}}
 .search .border-icon .icon-search {
   font-size: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000390}}
 .search .sortby {
   margin-top: 63px;
   border-bottom: 1px solid grey;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000393}}
 .search .sortby h5 {
   width: 60px;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\0000397}}
 .search .sortby .dropdown {
   float: left;
   width: 120px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003102}}
 .search hr {
   border-color: #c3c3c3 !important;
   border-top: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003118}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003106}}
 .search .row {
   margin-top: 0 !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003109}}
 .search .results {
   list-style: none;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003112}}
 .search .results li {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003127}}
-.search .results .resultbox {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003116}}
+.search .results .hoveron .resultbox {
   height: 184px;
   margin-bottom: 30px;
+  box-shadow: -5px 5px 4px 2px gray;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003130}}
-.search .results .resultbox .result-action {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003120}}
+.search .results .hoveron .resultbox .result-action {
   height: 120px;
   background-color: white;
   padding-top: 24px;
   padding-left: 15px;
   padding-right: 15px;
+  border: 1px solid gray;
+  border-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003136}}
-.search .results .resultbox .result-action .pic-container {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003128}}
+.search .results .hoveron .resultbox .result-action .pic-container {
   float: left;
   padding-right: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003140}}
-.search .results .resultbox .result-action .result-text {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003132}}
+.search .results .hoveron .resultbox .result-action .result-text {
   display: table;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003143}}
-.search .results .resultbox .result-action i {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003135}}
+.search .results .hoveron .resultbox .result-action i {
   display: block;
   height: 95px;
   width: 100px;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003149}}
-.search .results .resultbox .result-action .faculty-icon {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003142}}
+.search .results .hoveron .resultbox .result-action .faculty-icon .standard-img {
+  display: block;
   background-image: url('/static/app/img/faculty-pic.png?1380544577');
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003146}}
+.search .results .hoveron .resultbox .result-action .faculty-icon .blurred-img {
+  display: none;
+  background-image: url('/static/app/img/faculty-pic-blurred.png?1380829889');
+}
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003152}}
-.search .results .resultbox .result-action .course-icon {
+.search .results .hoveron .resultbox .result-action .course-icon .standard-img {
+  display: block;
   background-image: url('/static/app/img/course-pic.png?1380544566');
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003155}}
-.search .results .resultbox .result-action .university-icon {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003156}}
+.search .results .hoveron .resultbox .result-action .course-icon .blurred-img {
+  display: none;
+  background-image: url('/static/app/img/course-pic-blurred.png?1380829824');
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003162}}
+.search .results .hoveron .resultbox .result-action .university-icon .standard-img {
+  display: block;
   background-image: url('/static/app/img/university-pic.png?1380544582');
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003159}}
-.search .results .resultbox .result-footer {
-  height: 40px;
-  background-color: grey;
-  padding-left: 15px;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003166}}
+.search .results .hoveron .resultbox .result-action .university-icon .blurred-img {
+  display: none;
+  background-image: url('/static/app/img/university-pic-blurred.png?1380829911');
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003163}}
-.search .results .resultbox .result-footer .result-user {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003172}}
+.search .results .hoveron .resultbox .result-footer {
+  height: 40px;
+  background-color: #E6E6E6;
+  padding-left: 15px;
+  border: 1px solid gray;
+  border-top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003178}}
+.search .results .hoveron .resultbox .result-footer .result-user {
   width: 245px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003166}}
-.search .results .resultbox .result-footer ul {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003181}}
+.search .results .hoveron .resultbox .result-footer ul {
   list-style: none;
   margin: 0;
   height: 20px;
   padding-top: 12px;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003173}}
-.search .results .resultbox .result-footer .rating {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003188}}
+.search .results .hoveron .resultbox .result-footer .rating {
   width: 140px;
   font-size: 18px;
   padding-top: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003177}}
-.search .results .resultbox .result-footer .rating .icon-star {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003192}}
+.search .results .hoveron .resultbox .result-footer .rating .icon-star {
   padding-right: 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003181}}
-.search .results .resultbox .result-footer .entry-info {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003196}}
+.search .results .hoveron .resultbox .result-footer .entry-info {
   width: 300px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003184}}
-.search .results .resultbox .result-footer .iconproperties {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003199}}
+.search .results .hoveron .resultbox .result-footer .iconproperties {
   font-size: 20px;
   padding-right: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003187}}
-.search .results .resultbox .result-footer .iconproperties .icon-user {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003202}}
+.search .results .hoveron .resultbox .result-footer .iconproperties .icon-user {
   padding-top: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003190}}
-.search .results .resultbox .result-footer .iconproperties .icon-file-text {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003205}}
+.search .results .hoveron .resultbox .result-footer .iconproperties .icon-file-text {
   padding-top: 2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003194}}
-.search .results .resultbox .result-footer .verticalLine {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003209}}
+.search .results .hoveron .resultbox .result-footer .verticalLine {
   border-style: solid;
   border-width: thin;
   height: 18px;
   margin-left: 40px;
   margin-right: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003203}}
-.search .results h5, .search .results p {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003218}}
+.search .results .hoveron h5, .search .results .hoveron p {
   display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003221}}
+.search .results .hoveron .hoveron-toggle {
+  display: none;
+  bottom: 185px;
+  position: relative;
+  width: 470px;
+  height: 144px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003223}}
+.search .results .hoveron .hoveron-toggle a {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003230}}
+.search .results .hoveron .hoveron-toggle .hoveron-main {
+  position: relative;
+  top: 95px;
+  width: 350px;
+  left: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003235}}
+.search .results .hoveron .hoveron-toggle .hoveron-main .hoveron-block {
+  height: 45px;
+  width: 125px;
+  box-shadow: -3px 3px 4px 1px gray;
+  z-index: 11;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003241}}
+.search .results .hoveron .hoveron-toggle .hoveron-main .hoveron-block .block-icon {
+  float: left;
+  font-size: 25px;
+  width: 28px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003246}}
+.search .results .hoveron .hoveron-toggle .hoveron-main .hoveron-block .block-text {
+  padding-left: 55px;
+  padding-top: 5px;
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003252}}
+.search .results .hoveron .hoveron-toggle .hoveron-main .hoveron-wall {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003254}}
+.search .results .hoveron .hoveron-toggle .hoveron-main .hoveron-wall .wall-icon {
+  padding-top: 15px;
+  height: 30px;
+  background: #363636;
+  color: #A5A5A5;
+  padding-left: 5px;
+  padding-right: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003262}}
+.search .results .hoveron .hoveron-toggle .hoveron-main .hoveron-wall .wall-text {
+  background: #565656;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003266}}
+.search .results .hoveron .hoveron-toggle .hoveron-main .hoveron-files {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003268}}
+.search .results .hoveron .hoveron-toggle .hoveron-main .hoveron-files .files-icon {
+  padding-top: 17px;
+  background: #A36200;
+  height: 28px;
+  padding-left: 8px;
+  color: #FFA31A;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003275}}
+.search .results .hoveron .hoveron-toggle .hoveron-main .hoveron-files .files-text {
+  background: #FFA31A;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003280}}
+.search .results .hoveron .hoveron-toggle .hoveron-blur {
+  background: gray;
+  height: 144px;
+  opacity: 0.5;
+  width: 470px;
+  z-index: 10;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003290}}
+.search .results .hoveron:hover .result-text {
+  color: transparent !important;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003294}}
+.search .results .hoveron:hover .hoveron-toggle {
+  display: block !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003297}}
+.search .results .hoveron:hover .standard-img {
+  display: none !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003300}}
+.search .results .hoveron:hover .blurred-img {
+  display: block !important;
 }
 
 /**

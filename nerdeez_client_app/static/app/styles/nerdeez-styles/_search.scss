@@ -51,18 +51,6 @@
     		pointer-events:none;
 		}
 	}
-
-	.filter-border {
-		background: none repeat scroll 0% 0% white; 
-		margin-bottom: 20px; 
-		width: 100px; 
-		padding-left: 15px; 
-		padding-top: 11px; 
-		border: 1px solid rgb(204, 204, 204);
-		height: 28px;
-		padding-right: 15px;
-		display: inline-block;
-	}
 	.nerdeez-inputs {
 		width: 620px !important;
 		border-radius: 0;
@@ -124,84 +112,194 @@
 		li {
 			float: left;
 		}
-		.resultbox {
-		    height: 184px;
-		    margin-bottom: 30px;
-		    .result-action {
-		    	height: 120px;
-		    	background-color: white;
-		    	padding-top: 24px;
-		    	padding-left: 15px;
-		    	padding-right: 15px;
-			    .pic-container {
-			    	float: left;
+		.hoveron {
+			.resultbox {
+			    height: 184px;
+			    margin-bottom: 30px;
+			    box-shadow: -5px 5px 4px 2px gray;
+			    .result-action {
+			    	height: 120px;
+			    	background-color: white;
+			    	padding-top: 24px;
+			    	padding-left: 15px;
 			    	padding-right: 15px;
-			    }
-			    .result-text {
-			    	display: table;
-			    }
-			    i {
-			    	display: block;
-			    	height: 95px;
-			    	width: 100px;
-			    	float: left;
-			    }
-			    .faculty-icon {
-			    	background-image: image-url("faculty-pic.png");
-			    }
-			    .course-icon {
-			    	background-image: image-url("course-pic.png");
-			    }
-			    .university-icon {
-			    	background-image: image-url("university-pic.png");
-			    }
-			}
-			.result-footer {
-				height: 40px;
-				background-color: grey;
-				padding-left: 15px;
-				.result-user {
-					width: 245px;
+			    	border: 1px solid gray;
+			    	border-bottom: 0;
+				    .pic-container {
+				    	float: left;
+				    	padding-right: 15px;
+				    }
+				    .result-text {
+				    	display: table;
+				    }
+				    i {
+				    	display: block;
+				    	height: 95px;
+				    	width: 100px;
+				    	float: left;
+				    }
+				    .faculty-icon {
+				    	.standard-img {
+				    		display: block;
+				    		background-image: image-url("faculty-pic.png");
+				    	}
+				    	.blurred-img {
+				    		display: none;
+				    		background-image: image-url("faculty-pic-blurred.png");
+				    	}
+				    }
+				    .course-icon {
+				    	.standard-img {
+				    		display: block;
+				    		background-image: image-url("course-pic.png");
+				    	}
+				    	.blurred-img {
+				    		display: none;
+				    		background-image: image-url("course-pic-blurred.png");
+				    	}
+				    }
+				    .university-icon {
+				    	.standard-img {
+				    		display: block;
+				    		background-image: image-url("university-pic.png");
+				    	}
+					    .blurred-img {
+					    	display: none;
+					    	background-image: image-url("university-pic-blurred.png");
+					    }
+				    }
 				}
-				ul {
-					list-style: none;
-					margin: 0;
-					height: 20px;
-					padding-top: 12px;
-					float: left;
-				}
-				.rating {
-					width: 140px;
-					font-size: 18px;
-					padding-top: 14px;
-					.icon-star {
-						padding-right: 3px;
+				.result-footer {
+					height: 40px;
+					background-color: #E6E6E6;
+					padding-left: 15px;
+					border: 1px solid gray;
+					border-top: 0;
+					.result-user {
+						width: 245px;
+					}
+					ul {
+						list-style: none;
+						margin: 0;
+						height: 20px;
+						padding-top: 12px;
+						float: left;
+					}
+					.rating {
+						width: 140px;
+						font-size: 18px;
+						padding-top: 14px;
+						.icon-star {
+							padding-right: 3px;
+						}
+					}
+					.entry-info {
+						width: 300px;
+					}
+					.iconproperties {
+						font-size: 20px;
+	    				padding-right: 5px;
+	    				.icon-user {
+	    					padding-top: 1px;
+	    				}
+	    				.icon-file-text {
+	    					padding-top: 2px;
+	    				}
+					}
+					.verticalLine {
+	 				   	border-style: solid;
+					    border-width: thin;
+					    height: 18px;
+					    margin-left: 40px;
+					    margin-right: 40px;
 					}
 				}
-				.entry-info {
-					width: 300px;
+			}
+			h5, p {
+				display: inline;
+			}
+			.hoveron-toggle {
+	    		display:none;
+	    		a {
+	    			color: white;
+	    		}
+    			bottom: 185px;
+				position: relative;
+    			width: 470px;
+    			height: 144px;
+	    		.hoveron-main {
+	    			position: relative;
+				    top: 95px;
+				    width: 350px;
+        			left: 50px;
+					.hoveron-block {
+						height: 45px;
+		    			width: 125px;
+		    			box-shadow: -3px 3px 4px 1px gray;
+		    			z-index: 11;
+		    			position: relative;
+		    			.block-icon {
+		    				float:left;
+		    				font-size: 25px;
+		    				width: 28px;
+		    			}
+		    			.block-text {
+		    				padding-left: 55px;
+		    				padding-top: 5px;
+		    				color: white;
+		    			}
+					}
+					.hoveron-wall {
+						float:left;
+						.wall-icon {
+							padding-top: 15px;
+							height: 30px;
+							background: #363636;
+							color: #A5A5A5;
+							padding-left: 5px;
+							padding-right: 3px;
+						}
+						.wall-text {
+							background: #565656;
+						}
+					}
+					.hoveron-files {
+						float:right;
+						.files-icon {
+							padding-top: 17px;
+							background: #A36200;
+							height: 28px;
+		    				padding-left: 8px;
+		    				color: #FFA31A;
+						}
+						.files-text {
+							background: #FFA31A;
+						}
+					}
 				}
-				.iconproperties {
-					font-size: 20px;
-    				padding-right: 5px;
-    				.icon-user {
-    					padding-top: 1px;
-    				}
-    				.icon-file-text {
-    					padding-top: 2px;
-    				}
-				}
-				.verticalLine {
- 				   	border-style: solid;
-				    border-width: thin;
-				    height: 18px;
-				    margin-left: 40px;
-				    margin-right: 40px;
+				.hoveron-blur {
+					background: gray;
+				    height: 144px;
+				    opacity: 0.5;
+				    width: 470px;
+				    z-index: 10;
 				}
 			}
 		}
-		h5, p {
-			display: inline;
+		.hoveron:hover {
+			.result-text {
+				color: transparent !important;
+   				text-shadow: 0 0 5px rgba(0,0,0,0.5) !important;
+			}
+			.hoveron-toggle {
+				display:block !important;
+			}
+			.standard-img {
+				display: none !important;
+			}
+			.blurred-img {
+				display: block !important;
+			}
 		}
 	}
 }

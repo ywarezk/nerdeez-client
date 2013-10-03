@@ -450,7 +450,7 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 	actions: {
 		manageSort: function(yariv){
 			this.set("selectedSort", yariv);
-			this.set('content', Nerdeez.Schoolgroup.find({order_by: yariv}))
+			//this.set('content', Nerdeez.Schoolgroup.find({order_by: grade}))
 		}
 	}
 });

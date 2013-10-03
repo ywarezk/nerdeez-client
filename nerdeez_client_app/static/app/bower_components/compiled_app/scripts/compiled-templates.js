@@ -970,109 +970,133 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1, stack2, hashContexts, hashTypes, options;
-  data.buffer.push("\n				<li>\n					<div class=\"span5 resultbox\">\n						<div class=\"result-action\">\n							<div class=\"pic-container\">\n								<i ");
+  data.buffer.push("\n				<li>\n					<div class=\"hoveron\">\n						<div class=\"span5 resultbox\">\n							<div class=\"result-action\">\n								<div class=\"pic-container\">\n									<div ");
   hashContexts = {'class': depth0};
   hashTypes = {'class': "STRING"};
   options = {hash:{
     'class': ("getIconClass")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || depth0['bind-attr']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
-  data.buffer.push("></i>\n							</div>\n							<div class=\"result-text\">\n								<h5>\n									");
+  data.buffer.push(">\n										<i class=\"standard-img\"></i>\n										<i class=\"blurred-img\"></i>\n									</div>\n								</div>\n								<div class=\"result-text\">\n									<h5>\n										");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "isCourse", {hash:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n									");
+  data.buffer.push("\n										");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "isFaculty", {hash:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n									");
+  data.buffer.push("\n										");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "isUniversity", {hash:{},inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n								</h5>\n								<span>");
+  data.buffer.push("\n									</h5>\n									<span>");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("</span>\n							</div>\n							<div class=\"result-text\">\n									<h5> Description: </h5>\n									<span>");
+  data.buffer.push("</span>\n								</div>\n								<div class=\"result-text\">\n										<h5> Description: </h5>\n										<span>");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "description", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("</span>\n							</div>\n							<div class=\"result-text\">\n								<h5> \n									");
+  data.buffer.push("</span>\n								</div>\n								<div class=\"result-text\">\n									<h5> \n										");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "isCourse", {hash:{},inverse:self.noop,fn:self.program(8, program8, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n									");
+  data.buffer.push("\n										");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "isFaculty", {hash:{},inverse:self.noop,fn:self.program(10, program10, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n								</h5>\n								<span>\n									");
+  data.buffer.push("\n									</h5>\n									<span>\n										");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers.unless.call(depth0, "isUniversity", {hash:{},inverse:self.noop,fn:self.program(12, program12, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n								</span>\n							</div>\n							<div class=\"result-text\">\n								");
+  data.buffer.push("\n									</span>\n								</div>\n								<div class=\"result-text\">\n									");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "isCourse", {hash:{},inverse:self.noop,fn:self.program(14, program14, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n							</div>\n						</div>\n						<div class=\"result-footer\">\n							<ul class=\"rating\">\n								<li>\n									<i class=\"icon-star\"></i>\n								</li>\n								<li>\n									<i class=\"icon-star\"></i>\n								</li>\n								<li>\n									<i class=\"icon-star\"></i>\n								</li>\n								<li>\n									<i class=\"icon-star\"></i>\n								</li>\n								<li>\n									<i class=\"icon-star\"></i>\n								</li>\n							</ul>\n							<ul class=\"entry-info\">\n								<li class=\"iconproperties\">\n									<i class=\"icon-user\"></i>\n								</li>\n								<li>\n									<h5>Users: ... </h5>\n								</li>\n								<li>\n									<i class=\"verticalLine\"></i>\n								</li>\n								<li class=\"iconproperties\">\n									<i class=\"icon-file-text\"></i>\n								</li>\n								<li>\n									<h5>Files: ... </h5>\n								</li>\n							</ul>\n						</div>\n					</div>\n				</li>\n			");
+  data.buffer.push("\n								</div>\n							</div>\n							<div class=\"result-footer\">\n								<ul class=\"rating\">\n									<li>\n										<i class=\"icon-star\"></i>\n									</li>\n									<li>\n										<i class=\"icon-star\"></i>\n									</li>\n									<li>\n										<i class=\"icon-star\"></i>\n									</li>\n									<li>\n										<i class=\"icon-star\"></i>\n									</li>\n									<li>\n										<i class=\"icon-star\"></i>\n									</li>\n								</ul>\n								<ul class=\"entry-info\">\n									<li class=\"iconproperties\">\n										<i class=\"icon-user\"></i>\n									</li>\n									<li>\n										<h5>Users: ... </h5>\n									</li>\n									<li>\n										<i class=\"verticalLine\"></i>\n									</li>\n									<li class=\"iconproperties\">\n										<i class=\"icon-file-text\"></i>\n									</li>\n									<li>\n										<h5>Files: ... </h5>\n									</li>\n								</ul>\n							</div>\n							<div class=\"hoveron-toggle\">\n								<div class=\"hoveron-main\">\n									");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(16, program16, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "search", options) : helperMissing.call(depth0, "link-to", "search", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n									");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(18, program18, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "search", options) : helperMissing.call(depth0, "link-to", "search", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n								</div>\n								<div class=\"hoveron-blur\"></div>\n							</div>\n						</div>\n					</div>\n				</li>\n			");
   return buffer;
   }
 function program2(depth0,data) {
   
   
-  data.buffer.push("\n										Course Number:\n									");
+  data.buffer.push("\n											Course Number:\n										");
   }
 
 function program4(depth0,data) {
   
   
-  data.buffer.push("\n										Faculty Name:\n									");
+  data.buffer.push("\n											Faculty Name:\n										");
   }
 
 function program6(depth0,data) {
   
   
-  data.buffer.push("\n										University Name:\n									");
+  data.buffer.push("\n											University Name:\n										");
   }
 
 function program8(depth0,data) {
   
   
-  data.buffer.push("\n										Faculty:\n									");
+  data.buffer.push("\n											Faculty:\n										");
   }
 
 function program10(depth0,data) {
   
   
-  data.buffer.push("\n										University:\n									");
+  data.buffer.push("\n											University:\n										");
   }
 
 function program12(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n										");
+  data.buffer.push("\n											");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "parent.title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n									");
+  data.buffer.push("\n										");
   return buffer;
   }
 
 function program14(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n									<h5> University: </h5>\n									<span>");
+  data.buffer.push("\n										<h5> University: </h5>\n										<span>");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "parent.parent.title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("</span>\n								");
+  data.buffer.push("</span>\n									");
   return buffer;
+  }
+
+function program16(depth0,data) {
+  
+  
+  data.buffer.push("\n									<div class=\"hoveron-block hoveron-wall\">\n											<div class=\"block-icon wall-icon\">\n												<i class=\"icon-comments\"></i>\n											</div>\n											<div class=\"block-text wall-text\">\n												<h3>Wall</h3>\n											</div>\n									</div>\n									");
+  }
+
+function program18(depth0,data) {
+  
+  
+  data.buffer.push("\n									<div class=\"hoveron-block hoveron-files\">\n										<div class=\"block-icon files-icon\">\n											<i class=\"icon-file\"></i>\n										</div>\n										<div class=\"block-text files-text\">\n											<h3>Files</h3>\n										</div>\n									</div>\n									");
   }
 
   data.buffer.push("<!--\n\nHolds the html of the search page\nmake sure to keep bootstrap grid system\n\nauthor: Doron Nechshon\ncopyright: Nerdeez Ltd.\nversion: 1.0\n\n-->\n\n<div class=\"search\">\n	<div class=\"row\">\n		<div class=\"span7\">\n			<div class=\"styled-select\">\n				");
