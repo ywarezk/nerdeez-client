@@ -24,9 +24,13 @@
 				}
 				.actions{
     					text-align: center;
-    					button{
+    					a.btn{
     						float: none;
     						clear: both;
+    						margin-left: 10px;
+    					}
+    					a.btn:nth-of-type(1){
+    						margin-left: 0 !important;
     					}
     					label{
       					  text-align: left;

@@ -1322,7 +1322,7 @@ Nerdeez.AddSchoolGroupController = Ember.ArrayController.extend({
 			newSchoolGroup.set('school_type', this.get('schoolType'));
 			switch (this.get('schoolType')){
 				case Nerdeez.SCHOOLGROUP_TYPE[0].id: //course
-					newSchoolGroup.set('parent', this.get('faculty'));
+					newSchoolGroup.set('parent', this.get('controllers.add_school_group_course.faculty'));
 					break;
 				case Nerdeez.SCHOOLGROUP_TYPE[1].id: //course
 					newSchoolGroup.set('parent', this.get('university'));
@@ -1383,7 +1383,8 @@ Nerdeez.AddSchoolGroupCourseController = Ember.ArrayController.extend({
 			newFaculty.set('title', this.get('newFacultyTitle'));
 			newFaculty.set('description', this.get('newFacultyDescription'));
 			newFaculty.set('school_type', Nerdeez.SCHOOLGROUP_TYPE[1].id);
-			//newFaculty.set('parent', )
+			var parentUniId = this.get('controllers.add_school_group.university');
+			newFaculty.set('parent', parentUniId);
 			newFaculty.transaction.commit();
 			newFaculty.one('didCreate', function(){
 				xthis.set('isNewFacultyLoading', false);
