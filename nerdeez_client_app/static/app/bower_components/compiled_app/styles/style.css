@@ -439,17 +439,6 @@ pointer-events: none;
 }
 
 /**
- * styles for the wall oof the university
- * @copyright: nerdeez Ltd.
- * @version: 1.0
- * @author: Yariv Katz
- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_wall\.scss}line{font-family:\000038}}
-.wall {
-  text-align: center;
-}
-
-/**
  * stylesheet for the contact page
  * 
  * @version: 1.0
@@ -573,3 +562,12 @@ pointer-events: none;
 .add_school_group .account-container .faqList.faq-list #faq-3-course-faculty-uni .next {
   top: 6px !important;
 }
+
+/**
+ * styles for the wall, files and about of a school group
+   Created October 3rd, 2013
+ 
+ * @copyright: nerdeez Ltd.
+ * @version: 1.0
+ * @author: Doron Nachshon
+ */

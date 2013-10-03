@@ -1669,6 +1669,15 @@ Nerdeez.SchoolgroupFilesRoute = Nerdeez.LoginRequired.extend({
 });
 
 /**
+ * the route to a course about page
+ */
+Nerdeez.SchoolgroupAboutRoute = Nerdeez.LoginRequired.extend({
+    model: function(){
+        return this.modelFor('schoolgroup');
+    }
+});
+
+/**
  * the route for the add school group page
  */
 Nerdeez.AddSchoolGroupRoute = Nerdeez.NerdeezRoute.extend({
