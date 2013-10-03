@@ -276,6 +276,18 @@ pointer-events: none;
     position: relative;
     width: 150px;
 }*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003265}}
+.btn:focus {
+  background-color: #F7A01F !important;
+  /*background-image: linear-gradient(to bottom, #FFAD33, #EB8D00);*/
+  background-image: -webkit-gradient(linear, 100% 100%, 0% 0%, color-stop(0%, #ffad33), color-stop(100%, #eb8d00));
+  background-image: -webkit-linear-gradient(right bottom, #ffad33, #eb8d00);
+  background-image: -moz-linear-gradient(right bottom, #ffad33, #eb8d00);
+  background-image: -o-linear-gradient(right bottom, #ffad33, #eb8d00);
+  background-image: linear-gradient(right bottom, #ffad33, #eb8d00);
+  background-repeat: repeat-x;
+}
+
 /**
 * holds the styles of the header
 * @copyright: nerdeez.com Ltd.

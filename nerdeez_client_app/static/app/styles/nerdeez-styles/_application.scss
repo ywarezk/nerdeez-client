@@ -262,3 +262,10 @@ pointer-events: none;
     width: 150px;
 }*/
 
+.btn:focus{
+    background-color: #F7A01F !important;
+    /*background-image: linear-gradient(to bottom, #FFAD33, #EB8D00);*/
+    @include background-image(linear-gradient(right bottom, #FFAD33, #EB8D00));
+    background-repeat: repeat-x;
+}
+
