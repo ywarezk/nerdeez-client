@@ -11,22 +11,96 @@
 
 .search {
 	font-size: 14px;
-	.form-search {
-		.nerdeez-inputs {
-			width: 620px !important;
-			border-radius: 0;
+	a {
+		color: #333333;
+	}
+	.styled-select {
+		select {
+		   background: transparent;
+		   width: 125px;
+		   padding: 5px;
+		   font-size: 16px;
+		   line-height: 1;
+		   border: 0;
+		   border-radius: 0;
+		   height: 34px;
+		   -webkit-appearance: none;
+		   outline: 0 !important;
+		   padding-left: 14px;
+		}
+		width: 125px;
+	   	height: 34px;
+		overflow: hidden;
+		background: white;
+		border: 1px solid #ccc;
+		margin-bottom: 18px;
+		.select-icon {
+			.icon-sort {
+			    color: gray;
+    			font-size: 18px;
+			    padding-left: 10px;
+			    padding-top: 9px;
+			    pointer-events:none;
+			}
+			bottom: 44px;
+		    height: 34px;
+		    left: 95px;
+		    position: relative;
+    		width: 30px;
+    		background: #CCCCCC;
+    		pointer-events:none;
 		}
 	}
-	.btn {
-		border-radius: 0 !important;
-		height: 41px;
-    	padding-left: 7px;
+
+	.filter-border {
+		background: none repeat scroll 0% 0% white; 
+		margin-bottom: 20px; 
+		width: 100px; 
+		padding-left: 15px; 
+		padding-top: 11px; 
+		border: 1px solid rgb(204, 204, 204);
+		height: 28px;
+		padding-right: 15px;
+		display: inline-block;
+	}
+	.nerdeez-inputs {
+		width: 620px !important;
+		border-radius: 0;
+		border-right: 0;
+		.search-query {
+			border-radius: 0;
+			height: 100%;
+			width: 100%;
+			padding-right: 30px;
+			font-size: 16px;
+		}
+		.icon-search {
+			float: right;
+			bottom: 29px;
+		    display: block;
+		    font-size: 20px;
+		    position: relative;
+		    right: 17px;
+		}
+	}
+	.border-icon {
+			background-color: white;
+		    border-color: #CCCCCC #CCCCCC #CCCCCC;
+		    border-image: none;
+		    border-style: solid;
+		    border-width: 1px 1px 1px 0;
+		    float: right;
+		    height: 29px;
+		    margin-left: -1px;
+		    padding-left: 6px;
+		    padding-top: 10px;
+		    width: 27px;
     	.icon-search {
     		font-size: 20px;
     	}
 	}	
 	.sortby {
-		margin-top: 18px;
+		margin-top: 63px;
 		border-bottom: 1px solid grey;
 		h5 {
 			width: 60px;
