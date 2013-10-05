@@ -1,26 +1,27 @@
+{{#if Nerdeez.auth.isLoggedIn}}
 <div class="left-sidebar left-sidebar-history">
 	<ul class="nav nav-tabs nav-stacked">
 		<li class="header">
 			Enrolled Courses
 		</li>
-	    {{#each Nerdeez.auth.user_profile.school_groups}}
+	    {{#each Nerdeez.auth.user_profile.enrolls}}
 		    <li class="parent">
-			    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{title}}</a>
+			    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{school_group.title}}</a>
 			    <ul class="history-submenu">
 			        <li>
-						{{#linkTo "schoolgroup.about" this class="child"}}
+						{{#linkTo "schoolgroup.about" this.school_group class="child"}}
 						    About
 						    <i class="icon-info"></i>
 					    {{/linkTo}}				          
 			        </li>
 			        <li>
-				        {{#linkTo "schoolgroup.wall" this class="child"}}
+				        {{#linkTo "schoolgroup.wall" this.school_group class="child"}}
 						    Wall
 						    <i class="icon-comments"></i>
 					    {{/linkTo}}
 			        </li>
 			        <li>
-				        {{#linkTo "schoolgroup.files" this class="child"}}
+				        {{#linkTo "schoolgroup.files" this.school_group class="child"}}
 						    Files
 						    <i class="icon-file"></i>
 					    {{/linkTo}}
@@ -30,3 +31,4 @@
 	    {{/each}}
     </ul>
 </div>
+{{/if}}

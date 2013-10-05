@@ -206,6 +206,13 @@ Nerdeez.TermsRoute = Nerdeez.FlatPageRoute.extend({
 Nerdeez.SchoolgroupRoute = Ember.Route.extend({
     model: function(param){
         return Nerdeez.Schoolgroup.find(param.schoolgroup_id);
+    },
+    setupController: function(controller, model){
+	    	controller.set('content', model);
+	    	var enroll = Nerdeez.Enroll.createRecord();
+		enroll.set('user', Nerdeez.get('auth.user_profile'));
+		enroll.set('school_group', model);
+		enroll.transaction.commit();
     }
 });
 

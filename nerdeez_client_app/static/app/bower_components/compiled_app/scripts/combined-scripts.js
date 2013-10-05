@@ -281,9 +281,14 @@ Ember.View.reopen({
         $('.js-validation').validationEngine();
         
         //fix for the history bar
-        $('.left-sidebar .child.active').closest('.parent').addClass('open')
+        //$('.left-sidebar .child.active').closest('.parent').addClass('open')
         
     }
+    
+    // willDestroyElement: function(){
+	    	// this._super();
+	    	// $('.left-sidebar .child.active').closest('.parent').addClass('open')
+    // }
 });
 
 Ember.Select.reopen({
@@ -493,8 +498,28 @@ Nerdeez.set('auth', Nerdeez.Auth.current());
  */
 
 Nerdeez.Userprofile = DS.Model.extend({
-	school_groups: DS.hasMany('Nerdeez.Schoolgroup')
+	enrolls: DS.hasMany('Nerdeez.Enroll')
 });
+
+})();
+
+(function() {
+
+/**
+ * the model for the enroll user to courses will be defined here
+ * 
+ * Created October 5th, 2013
+ * @version: 1.0
+ * @author: Yariv Katz
+ * @copyright: Nerdeez Ltd.
+ */
+
+Nerdeez.Enroll = DS.Model.extend({
+	// user: DS.belongsTo('Nerdeez.Userprofile'),
+	school_group: DS.belongsTo('Nerdeez.Schoolgroup'),
+	last_entered: DS.attr('date')
+});
+
 
 })();
 
@@ -1673,6 +1698,13 @@ Nerdeez.TermsRoute = Nerdeez.FlatPageRoute.extend({
 Nerdeez.SchoolgroupRoute = Ember.Route.extend({
     model: function(param){
         return Nerdeez.Schoolgroup.find(param.schoolgroup_id);
+    },
+    setupController: function(controller, model){
+	    	controller.set('content', model);
+	    	var enroll = Nerdeez.Enroll.createRecord();
+		enroll.set('user', Nerdeez.get('auth.user_profile'));
+		enroll.set('school_group', model);
+		enroll.transaction.commit();
     }
 });
 
@@ -2758,7 +2790,10 @@ Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
                 parent: { embedded: 'load' }
             });
             this.mappings.set( 'Nerdeez.Userprofile', { 
-                school_groups: { embedded: 'load' }
+                enrolls: { embedded: 'load' }
+            });
+            this.mappings.set( 'Nerdeez.Enroll', { 
+                school_group: { embedded: 'load' }
             });
         }
     })

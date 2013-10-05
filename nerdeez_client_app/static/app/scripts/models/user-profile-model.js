@@ -8,5 +8,5 @@
  */
 
 Nerdeez.Userprofile = DS.Model.extend({
-	school_groups: DS.hasMany('Nerdeez.Schoolgroup')
+	enrolls: DS.hasMany('Nerdeez.Enroll')
 });

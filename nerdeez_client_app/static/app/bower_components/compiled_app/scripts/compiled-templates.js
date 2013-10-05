@@ -64,67 +64,76 @@ function program7(depth0,data) {
 Ember.TEMPLATES["_history-bar"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, hashTypes, hashContexts, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+  var stack1, hashTypes, hashContexts, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
+  
+  var buffer = '', stack1, hashTypes, hashContexts;
+  data.buffer.push("\n<div class=\"left-sidebar left-sidebar-history\">\n	<ul class=\"nav nav-tabs nav-stacked\">\n		<li class=\"header\">\n			Enrolled Courses\n		</li>\n	    ");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers.each.call(depth0, "Nerdeez.auth.user_profile.enrolls", {hash:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n    </ul>\n</div>\n");
+  return buffer;
+  }
+function program2(depth0,data) {
   
   var buffer = '', stack1, stack2, hashTypes, hashContexts, options;
   data.buffer.push("\n		    <li class=\"parent\">\n			    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "school_group.title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("</a>\n			    <ul class=\"history-submenu\">\n			        <li>\n						");
   hashContexts = {'class': depth0};
   hashTypes = {'class': "STRING"};
   options = {hash:{
     'class': ("child")
-  },inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "schoolgroup.about", "", options) : helperMissing.call(depth0, "linkTo", "schoolgroup.about", "", options));
+  },inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "schoolgroup.about", "school_group", options) : helperMissing.call(depth0, "linkTo", "schoolgroup.about", "school_group", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("				          \n			        </li>\n			        <li>\n				        ");
   hashContexts = {'class': depth0};
   hashTypes = {'class': "STRING"};
   options = {hash:{
     'class': ("child")
-  },inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "schoolgroup.wall", "", options) : helperMissing.call(depth0, "linkTo", "schoolgroup.wall", "", options));
+  },inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "schoolgroup.wall", "school_group", options) : helperMissing.call(depth0, "linkTo", "schoolgroup.wall", "school_group", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n			        </li>\n			        <li>\n				        ");
   hashContexts = {'class': depth0};
   hashTypes = {'class': "STRING"};
   options = {hash:{
     'class': ("child")
-  },inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "schoolgroup.files", "", options) : helperMissing.call(depth0, "linkTo", "schoolgroup.files", "", options));
+  },inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "schoolgroup.files", "school_group", options) : helperMissing.call(depth0, "linkTo", "schoolgroup.files", "school_group", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n			        </li>\n		        </ul>\n		    </li>\n	    ");
   return buffer;
   }
-function program2(depth0,data) {
+function program3(depth0,data) {
   
   
   data.buffer.push("\n						    About\n						    <i class=\"icon-info\"></i>\n					    ");
   }
 
-function program4(depth0,data) {
+function program5(depth0,data) {
   
   
   data.buffer.push("\n						    Wall\n						    <i class=\"icon-comments\"></i>\n					    ");
   }
 
-function program6(depth0,data) {
+function program7(depth0,data) {
   
   
   data.buffer.push("\n						    Files\n						    <i class=\"icon-file\"></i>\n					    ");
   }
 
-  data.buffer.push("<div class=\"left-sidebar left-sidebar-history\">\n	<ul class=\"nav nav-tabs nav-stacked\">\n		<li class=\"header\">\n			Enrolled Courses\n		</li>\n	    ");
   hashTypes = {};
   hashContexts = {};
-  stack1 = helpers.each.call(depth0, "Nerdeez.auth.user_profile.school_groups", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack1 = helpers['if'].call(depth0, "Nerdeez.auth.isLoggedIn", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n    </ul>\n</div>");
-  return buffer;
+  else { data.buffer.push(''); }
   
 });
 

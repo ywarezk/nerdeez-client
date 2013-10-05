@@ -63,6 +63,7 @@ require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/models/auth-model');
 require('scripts/models/user-profile-model');
+require('scripts/models/enroll-model');
 require('scripts/controllers/search-controller');
 require('scripts/controllers/login-controller');
 require('scripts/controllers/register-controller');

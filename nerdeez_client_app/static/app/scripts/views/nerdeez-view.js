@@ -24,9 +24,14 @@ Ember.View.reopen({
         $('.js-validation').validationEngine();
         
         //fix for the history bar
-        $('.left-sidebar .child.active').closest('.parent').addClass('open')
+        //$('.left-sidebar .child.active').closest('.parent').addClass('open')
         
     }
+    
+    // willDestroyElement: function(){
+	    	// this._super();
+	    	// $('.left-sidebar .child.active').closest('.parent').addClass('open')
+    // }
 });
 
 Ember.Select.reopen({
