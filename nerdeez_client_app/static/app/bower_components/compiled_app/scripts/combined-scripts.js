@@ -1705,6 +1705,15 @@ Nerdeez.SchoolgroupRoute = Ember.Route.extend({
 		enroll.set('user', Nerdeez.get('auth.user_profile'));
 		enroll.set('school_group', model);
 		enroll.transaction.commit();
+		
+		var enrolls = Nerdeez.get('auth.user_profile.enrolls');
+		var isInBar = false;
+		enrolls.forEach(function(item, index, enumerable){
+			if(item.get('school_group.id') == model.get('id'))isInBar = true;
+		});
+		if(!isInBar){
+			enrolls.insertAt(0,enroll);
+		}
     }
 });
 
