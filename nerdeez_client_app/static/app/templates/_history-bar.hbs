@@ -4,23 +4,23 @@
 			Enrolled Courses
 		</li>
 	    {{#each Nerdeez.auth.user_profile.school_groups}}
-		    <li>
+		    <li class="parent">
 			    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{title}}</a>
 			    <ul class="history-submenu">
 			        <li>
-						{{#linkTo "schoolgroup.about" this}}
+						{{#linkTo "schoolgroup.about" this class="child"}}
 						    About
 						    <i class="icon-info"></i>
 					    {{/linkTo}}				          
 			        </li>
 			        <li>
-				        {{#linkTo "schoolgroup.wall" this}}
+				        {{#linkTo "schoolgroup.wall" this class="child"}}
 						    Wall
 						    <i class="icon-comments"></i>
 					    {{/linkTo}}
 			        </li>
 			        <li>
-				        {{#linkTo "schoolgroup.files" this}}
+				        {{#linkTo "schoolgroup.files" this class="child"}}
 						    Files
 						    <i class="icon-file"></i>
 					    {{/linkTo}}

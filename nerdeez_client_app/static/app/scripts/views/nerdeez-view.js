@@ -23,6 +23,9 @@ Ember.View.reopen({
         //FB.XFBML.parse();
         $('.js-validation').validationEngine();
         
+        //fix for the history bar
+        $('.left-sidebar .child.active').closest('.parent').addClass('open')
+        
     }
 });
 
