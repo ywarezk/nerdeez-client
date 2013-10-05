@@ -374,10 +374,79 @@ pointer-events: none;
   -o-border-radius: 0 10px 10px 0;
   border-radius: 0 10px 10px 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000315}}
+.left-sidebar li {
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000316}}
 .left-sidebar li a:focus {
   background-color: #FFA31A !important;
   color: white !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000324}}
+.left-sidebar li .history-submenu {
+  display: none;
+  padding-left: 11px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000327}}
+.left-sidebar li .history-submenu li {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000330}}
+.left-sidebar li .history-submenu li a {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  padding-left: 4px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000335}}
+.left-sidebar li .history-submenu li a i {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000339}}
+.left-sidebar li .history-submenu li a.active {
+  background-color: #FFA31A;
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000345}}
+.left-sidebar li a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000350}}
+.left-sidebar li a.active {
+  background-color: #FFA31A;
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000355}}
+.left-sidebar li.header {
+  color: #FFFFFF;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-top: 2px;
+  background-color: #282828;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -ms-border-radius: 10px 10px 10px 10px;
+  -o-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000364}}
+.left-sidebar li.open .history-submenu {
+  display: block !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000370}}
+.left-sidebar-history {
+  margin-top: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_left-sidebar\.scss}line{font-family:\0000373}}
+.left-sidebar-history li a:focus {
+  background-color: #999999 !important;
 }
 
 /**

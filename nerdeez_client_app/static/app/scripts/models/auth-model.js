@@ -8,7 +8,13 @@
  */
 
 Nerdeez.Auth = Ember.Object.extend({
-	isLoggedIn: false
+	isLoggedIn: false,
+	
+	/**
+	 * holds the user profile model for the loged in user
+	 * @type {Nerdeez.UserProfile}
+	 */
+	user_profile: null
 });
 Nerdeez.Auth.reopenClass(Nerdeez.Singleton);
 Nerdeez.set('auth', Nerdeez.Auth.current());

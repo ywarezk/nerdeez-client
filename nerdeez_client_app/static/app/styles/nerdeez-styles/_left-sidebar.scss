@@ -17,5 +17,61 @@
             background-color: #FFA31A !important;
             color: white !important;
         }
+        position: relative;
+        background-color: white;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        .history-submenu{
+            display: none;
+            padding-left: 11px;
+            li{
+                padding-top: 3px;
+                padding-bottom: 3px;
+                a{
+                    width: 100%;
+                    display: block;
+                    text-decoration: none;
+                    padding-left: 4px;
+                    i{
+                        float: right;
+                    }
+                }
+                a.active{
+                    background-color: #FFA31A;
+                    color: white;
+                }
+            }
+        }
+        a{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+        }
+        a.active{
+            background-color: #FFA31A;
+            color: white;
+        }
+    }
+    li.header{
+        color: #FFFFFF;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        padding-top: 2px;
+        background-color: #282828;
+        @include border-radius(10px 10px 10px 10px);
+    }
+    li.open{
+        .history-submenu{
+            display: block !important;
+        }
+    }
+}
+
+.left-sidebar-history{
+    margin-top: 40px;
+    li{
+        a:focus{
+          background-color: #999999 !important;
+        }
     }
 }

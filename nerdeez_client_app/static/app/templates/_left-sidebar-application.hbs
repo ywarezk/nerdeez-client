@@ -1,0 +1,21 @@
+<div class="left-sidebar">
+	<ul class="nav nav-tabs nav-stacked">
+		<li class="header">
+			Application bar
+		</li>
+	    <li>
+		    	{{#link-to 'search'}}
+		    		Search
+                    <i class="icon-search pull-right"></i>
+		    	{{/link-to}}
+	    </li>
+	    {{#if Nerdeez.isLoggedIn}}
+	    <li>
+		    	{{#link-to 'addSchoolGroup'}}
+		    		Add course
+                    <i class="icon-plus pull-right"></i>
+		    	{{/link-to}}
+	    </li>
+	    {{/if}}
+    </ul>
+</div>

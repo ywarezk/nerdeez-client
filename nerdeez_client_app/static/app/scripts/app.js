@@ -27,19 +27,22 @@ Nerdeez.SCHOOLGROUP_TYPE = [
 */
 var readyFunction = function(temp1, temp2, temp3){
 	var adapter = Nerdeez.Adapter.current();
+	var auth = Nerdeez.Auth.current();
+	Nerdeez.set('auth', auth);
 	adapter.ajax(
         SERVER_URL + '/api/v1/utilities/is-login/',
         	'POST',
         	{
 	        	success: function(json){
-	        		var auth = Nerdeez.Auth.current();
-	        		auth.set('isLoggedIn', json['is_logged_in']);
-	        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+	        		Nerdeez.get('auth').set('isLoggedIn',json['is_logged_in']);
+	        		//var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
+	        		//userProfile.set('data', {school_groups: json['user_profile'].school_groups})
+	        		//var school_groups = userProfile.get('school_groups');
+	        		//var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
+	        		Nerdeez.get('auth').set('user_profile',Nerdeez.Userprofile.find(json['user_profile'].id));
 	        	},
 	        	error: function(json){
-	        	    var auth = Nerdeez.Auth.current();
-	        		auth.set('isLoggedIn', false);
-	        		Nerdeez.set('isLoggedIn', false);
+	        		Nerdeez.get('auth').set('isLoggedIn',false);
 	        	},
 	        	data:{}
         	}    
@@ -59,6 +62,7 @@ require('scripts/views/add-schoolgroup-view');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/models/auth-model');
+require('scripts/models/user-profile-model');
 require('scripts/controllers/search-controller');
 require('scripts/controllers/login-controller');
 require('scripts/controllers/register-controller');

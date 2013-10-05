@@ -29,19 +29,22 @@ Nerdeez.SCHOOLGROUP_TYPE = [
 */
 var readyFunction = function(temp1, temp2, temp3){
 	var adapter = Nerdeez.Adapter.current();
+	var auth = Nerdeez.Auth.current();
+	Nerdeez.set('auth', auth);
 	adapter.ajax(
         SERVER_URL + '/api/v1/utilities/is-login/',
         	'POST',
         	{
 	        	success: function(json){
-	        		var auth = Nerdeez.Auth.current();
-	        		auth.set('isLoggedIn', json['is_logged_in']);
-	        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+	        		Nerdeez.get('auth').set('isLoggedIn',json['is_logged_in']);
+	        		//var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
+	        		//userProfile.set('data', {school_groups: json['user_profile'].school_groups})
+	        		//var school_groups = userProfile.get('school_groups');
+	        		//var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
+	        		Nerdeez.get('auth').set('user_profile',Nerdeez.Userprofile.find(json['user_profile'].id));
 	        	},
 	        	error: function(json){
-	        	    var auth = Nerdeez.Auth.current();
-	        		auth.set('isLoggedIn', false);
-	        		Nerdeez.set('isLoggedIn', false);
+	        		Nerdeez.get('auth').set('isLoggedIn',false);
 	        	},
 	        	data:{}
         	}    
@@ -415,16 +418,14 @@ Nerdeez.AddSchoolGroupUniView = Nerdeez.AddUniFacultyCourseMasterView.extend({
  * 
  */
 
-/**
- * abstract class for all the school group models
- */
 
 Nerdeez.Schoolgroup = DS.Model.extend({
 	title: DS.attr('string'),
 	description: DS.attr('string'),
 	school_type: DS.attr('number'),
 	parent: DS.belongsTo('Nerdeez.Schoolgroup'),
-	grade: DS.attr('number')
+	grade: DS.attr('number'),
+	user: DS.belongsTo('Nerdeez.UserProfile')
 });
 
 
@@ -463,11 +464,34 @@ Nerdeez.Flatpage = DS.Model.extend({
  */
 
 Nerdeez.Auth = Ember.Object.extend({
-	isLoggedIn: false
+	isLoggedIn: false,
+	
+	/**
+	 * holds the user profile model for the loged in user
+	 * @type {Nerdeez.UserProfile}
+	 */
+	user_profile: null
 });
 Nerdeez.Auth.reopenClass(Nerdeez.Singleton);
 Nerdeez.set('auth', Nerdeez.Auth.current());
 
+
+})();
+
+(function() {
+
+/**
+ * user profile model will be defined here
+ * 
+ * Created October 4th, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez Ltd.
+ */
+
+Nerdeez.Userprofile = DS.Model.extend({
+	school_groups: DS.hasMany('Nerdeez.Schoolgroup')
+});
 
 })();
 
@@ -589,10 +613,8 @@ Nerdeez.LoginController = Ember.Controller.extend({
 		        	'POST',
 		        	{
 			        	success: function(json){
-			        	    console.log('redirecting to page');
-			        	    var auth = Nerdeez.Auth.current();
-			        		auth.set('isLoggedIn', json['success']);
-			        		Nerdeez.set('isLoggedIn', json['success']);
+			        		Nerdeez.get('auth').set('isLoggedIn', json['success']);
+			        		Nerdeez.get('auth').set('user_profile', Nerdeez.Userprofile.find(json['user_profile'].id));
 			        		xthis.set('isLoading', false);
 			        	},
 			        	error: function(json){
@@ -1511,7 +1533,7 @@ Nerdeez.NerdeezRoute = Ember.Route.extend({
  */
 Nerdeez.LoginRequired = Ember.Route.extend({
     redirect: function(){
-        isLoggedIn = Nerdeez.get('isLoggedIn');
+        isLoggedIn = Nerdeez.get('auth.isLoggedIn');
         if(!isLoggedIn){
 	        	this.transitionTo('login');
         }
@@ -1595,6 +1617,7 @@ Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 	}
 	
 });
+
 
 /**
  * the route for the university search, grab the initial data
@@ -2730,6 +2753,9 @@ Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
             this._super();
             this.mappings.set( 'Nerdeez.Schoolgroup', { 
                 parent: { embedded: 'load' }
+            });
+            this.mappings.set( 'Nerdeez.Userprofile', { 
+                school_groups: { embedded: 'load' }
             });
         }
     })

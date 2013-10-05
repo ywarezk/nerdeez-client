@@ -78,10 +78,8 @@ Nerdeez.LoginController = Ember.Controller.extend({
 		        	'POST',
 		        	{
 			        	success: function(json){
-			        	    console.log('redirecting to page');
-			        	    var auth = Nerdeez.Auth.current();
-			        		auth.set('isLoggedIn', json['success']);
-			        		Nerdeez.set('isLoggedIn', json['success']);
+			        		Nerdeez.get('auth').set('isLoggedIn', json['success']);
+			        		Nerdeez.get('auth').set('user_profile', Nerdeez.Userprofile.find(json['user_profile'].id));
 			        		xthis.set('isLoading', false);
 			        	},
 			        	error: function(json){

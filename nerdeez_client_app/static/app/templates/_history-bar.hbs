@@ -1,0 +1,32 @@
+<div class="left-sidebar left-sidebar-history">
+	<ul class="nav nav-tabs nav-stacked">
+		<li class="header">
+			Enrolled Courses
+		</li>
+	    {{#each Nerdeez.auth.user_profile.school_groups}}
+		    <li>
+			    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{title}}</a>
+			    <ul class="history-submenu">
+			        <li>
+						{{#linkTo "schoolgroup.about" this}}
+						    About
+						    <i class="icon-info"></i>
+					    {{/linkTo}}				          
+			        </li>
+			        <li>
+				        {{#linkTo "schoolgroup.wall" this}}
+						    Wall
+						    <i class="icon-comments"></i>
+					    {{/linkTo}}
+			        </li>
+			        <li>
+				        {{#linkTo "schoolgroup.files" this}}
+						    Files
+						    <i class="icon-file"></i>
+					    {{/linkTo}}
+			        </li>
+		        </ul>
+		    </li>
+	    {{/each}}
+    </ul>
+</div>

@@ -69,7 +69,7 @@ Nerdeez.NerdeezRoute = Ember.Route.extend({
  */
 Nerdeez.LoginRequired = Ember.Route.extend({
     redirect: function(){
-        isLoggedIn = Nerdeez.get('isLoggedIn');
+        isLoggedIn = Nerdeez.get('auth.isLoggedIn');
         if(!isLoggedIn){
 	        	this.transitionTo('login');
         }
@@ -153,6 +153,7 @@ Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 	}
 	
 });
+
 
 /**
  * the route for the university search, grab the initial data
