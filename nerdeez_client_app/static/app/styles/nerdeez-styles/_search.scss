@@ -279,7 +279,7 @@
 				}
 				.hoveron-blur {
 					background: gray;
-				    height: 144px;
+				    height: 185px;
 				    opacity: 0.5;
 				    width: 470px;
 				    z-index: 10;
@@ -287,7 +287,7 @@
 			}
 		}
 		.hoveron:hover {
-			.result-text {
+			.resultbox {
 				color: transparent !important;
    				text-shadow: 0 0 5px rgba(0,0,0,0.5) !important;
 			}
