@@ -17,6 +17,7 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 	image: DS.attr('string'),
 	school_type: DS.attr('number'),
 	parent: DS.belongsTo('Nerdeez.Schoolgroup'),
+	grade: DS.attr('number'),
 	getIconClass: function() {
 		a = this.get("school_type");
 		if (a == 1)

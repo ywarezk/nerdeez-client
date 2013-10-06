@@ -25,3 +25,11 @@
 Ember.Handlebars.registerBoundHelper('loading', function() {
     return new Ember.Handlebars.SafeString('<div class="loading"><i class="icon-refresh icon-spin"></i></div>');
 });
+
+Ember.Handlebars.registerHelper('getRating', function(currRating, outOf, options) {
+    var html='';
+    if (currRating==0) {
+        html = '<li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li>';
+    }
+    return new Handlebars.SafeString(html);
+});

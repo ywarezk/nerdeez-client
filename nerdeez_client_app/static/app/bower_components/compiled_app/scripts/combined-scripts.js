@@ -337,6 +337,7 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 	image: DS.attr('string'),
 	school_type: DS.attr('number'),
 	parent: DS.belongsTo('Nerdeez.Schoolgroup'),
+	grade: DS.attr('number'),
 	getIconClass: function() {
 		a = this.get("school_type");
 		if (a == 1)
@@ -1192,6 +1193,14 @@ Nerdeez.AddSchoolGroupController = Ember.ArrayController.extend({
  */
 Ember.Handlebars.registerBoundHelper('loading', function() {
     return new Ember.Handlebars.SafeString('<div class="loading"><i class="icon-refresh icon-spin"></i></div>');
+});
+
+Ember.Handlebars.registerHelper('getRating', function(currRating, outOf, options) {
+    var html='';
+    if (currRating==0) {
+        html = '<li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li>';
+    }
+    return new Handlebars.SafeString(html);
 });
 
 })();
