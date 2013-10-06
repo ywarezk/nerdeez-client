@@ -1548,6 +1548,12 @@ Nerdeez.SchoolgroupFilesController = Ember.ObjectController.extend({
 	newHwDescription: null,
 	
 	/**
+	 * holds the files for a new hw
+	 * @type {Ember.Array}
+	 */
+	newHwFiles: Ember.A(),
+	
+	/**
 	 * will hold the file url when opening a new hw thread
 	 * @type {String}
 	 */
