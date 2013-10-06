@@ -436,22 +436,31 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 
 	iconClass: null,
 
-	selectedSort: "Best Match",
-
 	newSort: null,
+
+	sortBy: null,
+
+	sortName: "Relevance",
+
+	filterBy: null,
 
 	/**
 	 * when the user submits the search form
 	 */
-	search: function(){
-		this.set('content', Nerdeez.Schoolgroup.find({search: this.get('searchQuery')}));
-	}.observes('searchQuery'),
+	 search: function(){
+			this.set('content', Nerdeez.Schoolgroup.find({search: this.get('searchQuery'), order_by: this.get('sortBy'), school_type: this.get('filterBy')}));
+		}.observes('searchQuery', 'sortBy', 'filterBy'),
 
-	
-	actions: {
-		manageSort: function(yariv){
-			this.set("selectedSort", yariv);
-			//this.set('content', Nerdeez.Schoolgroup.find({order_by: grade}))
+	 actions: {
+		setSort: function(sortBy) {
+			this.set("sortName", sortBy.charAt(0).toUpperCase() + sortBy.slice(1));
+			if (sortBy === "relevance")
+				this.set("sortBy", null);
+			else
+				this.set("sortBy", sortBy);
+		},
+
+		setFilter: function(filterBy) {
 		}
 	}
 });
@@ -1195,10 +1204,29 @@ Ember.Handlebars.registerBoundHelper('loading', function() {
     return new Ember.Handlebars.SafeString('<div class="loading"><i class="icon-refresh icon-spin"></i></div>');
 });
 
-Ember.Handlebars.registerHelper('getRating', function(currRating, outOf, options) {
+/**
+* produces a star rating
+* @param {Object} currRating - the current star rating (full or half stars)
+* @param {Object} outOf - the total amount of stars
+* usage
+* '''handlebar
+* {{getRating 3.5 5}} //will produce 3.5 full stars out of 5 stars
+* '''
+*
+* @return {Handlebars.SafeString}
+*/
+Ember.Handlebars.registerBoundHelper('getRating', function(currRating, outOf, options) {
     var html='';
-    if (currRating==0) {
-        html = '<li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li>';
+    var rating = currRating;
+    for (var i=1; i<=outOf; i++) {
+    	if (i<=currRating)
+    		html += '<li><i class="icon-star"></i></li>';
+    	else if (rating % 1 !== 0){
+    		html += '<li><i class="icon-star-half-empty"></i></li>';
+    		rating = 0;
+    	}
+    	else
+    		html += '<li><i class="icon-star-empty"></i></li>';
     }
     return new Handlebars.SafeString(html);
 });

@@ -15,12 +15,11 @@ version: 1.0
 			<div class="styled-select">
 				{{
 					view Ember.Select
-					viewName="select"
-	                contentBinding=""
-	                optionLabelPath=""
-	                optionValuePath=""
-	                prompt="Filter"
-	                selectionBinding="selectedPerson"
+					prompt = "All"
+					contentBinding = "Nerdeez.SCHOOLGROUP_TYPE"
+					optionValuePath = "content.id"
+					optionLabelPath = "content.title"
+					selectionBinding = "filterBy"
 				}}
 				<div class="select-icon">
 					<i class="icon-sort"></i>
@@ -41,14 +40,15 @@ version: 1.0
 				<h5>Sort By</h5>
 				<div class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
-						{{controller.selectedSort}}
+						{{controller.sortName}}
 						<b class="caret"></b>
 					</a>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-					    <li><a href="#" {{action "manageSort" "byRelevance" target="controller"}}>Relevance</a></li>
-					    <li><a href="#" {{action "manageSort" "byGrades" target="controller"}}>Grades</a></li>
-					    <li><a href="#" {{action "manageSort" "byUsers" target="controller"}}>No. of Users</a></li>
-					    <li><a href="#" {{action "manageSort" "byFiles" target="controller"}}>No. of Files</a></li>
+						<li><a href="#" {{action "setSort" "relevance" target="controller"}}>Relevance</a></li>
+					    <li><a href="#" {{action "setSort" "title" target="controller"}}>Title</a></li>
+					    <li><a href="#" {{action "setSort" "grades" target="controller"}}>Grades</a></li>
+					    <li><a href="#" {{action "setSort" "users" target="controller"}}>No. of Users</a></li>
+					    <li><a href="#" {{action "setSort" "files" target="controller"}}>No. of Files</a></li>
 					</ul>
 				</div>
 			</div>
@@ -110,7 +110,7 @@ version: 1.0
 							</div>
 							<div class="result-footer">
 								<ul class="rating">
-									{{getRating 0 5}}
+									{{getRating grade 5}}
 								</ul>
 								<ul class="entry-info">
 									<li class="iconproperties">
