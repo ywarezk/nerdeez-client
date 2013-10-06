@@ -59,11 +59,14 @@ require('bower_components/facebook/facebook');
 require('scripts/nerdeez-ember/singleton');
 require('scripts/views/nerdeez-view');
 require('scripts/views/add-schoolgroup-view');
+require('scripts/views/schoolgroup-files-view');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/models/auth-model');
 require('scripts/models/user-profile-model');
 require('scripts/models/enroll-model');
+require('scripts/models/hw-model');
+require('scripts/models/file-model');
 require('scripts/controllers/search-controller');
 require('scripts/controllers/login-controller');
 require('scripts/controllers/register-controller');
@@ -72,6 +75,7 @@ require('scripts/controllers/change-password-controller');
 require('scripts/controllers/forget-password-controller');
 require('scripts/controllers/reset-password-controller');
 require('scripts/controllers/add-schoolgroup-controller');
+require('scripts/controllers/schoolgroup-files-controller');
 require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
 
 //routes

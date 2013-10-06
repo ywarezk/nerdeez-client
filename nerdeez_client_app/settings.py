@@ -167,3 +167,5 @@ TEMPLATE_DEBUG = DEBUG
 SERVER_URL = os.getenv('SERVER_URL', 'https://nerdeez-server-dev.herokuapp.com')
 
 FACEBOOK_APP_ID = os.getenv('FACEBOOK_APP_ID', '410003599108568')
+
+FILEPICKER_API_KEY = os.getenv('FILEPICKER_API_KEY', 'AW6zvjfp0To670pL4pWBSz')

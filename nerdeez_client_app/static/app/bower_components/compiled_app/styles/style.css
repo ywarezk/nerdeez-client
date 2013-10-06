@@ -156,19 +156,28 @@ textarea {
 /**
  *   in modals set the loading icon in the right place
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003142}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003141}}
+.modal form {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003145}}
 .modal .modal-footer .loading {
   float: left;
   position: relative;
   top: 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003150}}
+.modal .modal-footer .alert {
+  float: left;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003156}}
 .modal .modal-header .close {
   position: relative;
   top: 16px;
   font-size: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003162}}
 .modal .formError {
   left: 216px !important;
 }
@@ -276,7 +285,7 @@ pointer-events: none;
     position: relative;
     width: 150px;
 }*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003265}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003272}}
 .btn:focus {
   background-color: #F7A01F !important;
   /*background-image: linear-gradient(to bottom, #FFAD33, #EB8D00);*/
@@ -652,3 +661,11 @@ pointer-events: none;
  * @version: 1.0
  * @author: Doron Nachshon
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000319}}
+.schoolgroup-files #new-hw .field.center {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000321}}
+.schoolgroup-files #new-hw .field.center button.button {
+  float: none;
+}
