@@ -27,24 +27,6 @@ Nerdeez.SchoolgroupFilesController = Ember.ObjectController.extend({
 	newHwFiles: Ember.A(),
 	
 	/**
-	 * will hold the file url when opening a new hw thread
-	 * @type {String}
-	 */
-	newHwFileUrl: null,
-	
-	/**
-	 * will hold the file title when opening a new hw thread
-	 * @type {String}
-	 */
-	newHwFileTitle: null,
-	
-	/**
-	 * will hold the file size when opening a new hw thread
-	 * @type {String}
-	 */
-	newHwFileSize: null,
-	
-	/**
 	 * when true display the error message in the new hw dialog
 	 * @type {Boolean} 
 	 */
@@ -77,12 +59,18 @@ Nerdeez.SchoolgroupFilesController = Ember.ObjectController.extend({
 				},
 				{
 					location: 'S3',
-					path: '/nerdeez-server/files/'
+					path: '/files/'
 				},
 				function(inkBlobs){ //success
-					xthis.set('newHwFileUrl', inkBlobs.url);
-					xthis.set('newHwFileTitle', inkBlobs.filename);
-					xthis.set('newHwFileSize', inkBlobs.size);
+					inkBlobs.forEach(function(item, index, enumerable){
+						var file = Nerdeez.File.createRecord();
+						file.set('title', item.filename);
+						file.set('file', item.url);
+						file.set('size', item.size);
+						file.transaction.commit();
+						xthis.get('newHwFiles').pushObject(file);	
+					})
+					
 				},
 				function(reason){ //error
 					xthis.set('isNewHwError', true);
@@ -96,29 +84,32 @@ Nerdeez.SchoolgroupFilesController = Ember.ObjectController.extend({
 		 * @param {function} use this function on success
 		 */	
 		newHW: function(onSuccess){
+			if(!$('#new-hw .js-validation').validationEngine('validate'))return;
 			var xthis = this;
+			xthis.set('isNewHwLoading', true);
 			var hw = Nerdeez.Hw.createRecord();
 			hw.set('title', this.get('newHwTitle')); 
 			hw.set('description', this.get('newHwDescription')); 
 			hw.set('school_group', this.get('content')); 
 			hw.transaction.commit();
 			hw.one('didCreate', function(){
-				if(this.get('newHwFileUrl') != null){
-					var file = Nerdeez.File.createRecord();
-					file.set('title', xthis.get('newHwFileTitle'));
-					file.set('hw', this);
-					file.set('file', xthis.get('newHwFileUrl'));
-					file.transaction.commit();
-					file.one('didCreate', function(){
-						xthis.set('isNewHwLoading', false);
-						onSuccess();
+				if(xthis.get('newHwFiles.length') > 0 ){
+					xthis.get('newHwFiles').forEach(function(item, index, enumerable){
+						item.set('hw', this);
+						item.transaction.commit();						
 					})
+					xthis.set('isNewHwLoading', false);
+					onSuccess();
 				}
 				else{
 					xthis.set('isNewHwLoading', false);
 					onSuccess();
 				}
-			}) 
+			});
+			hw.one('becameError', function(json){
+				xthis.set('isNewHwLoading', false);
+				xthis.set('hwMessage', json.errors);
+			});
 		}
 	}
 });

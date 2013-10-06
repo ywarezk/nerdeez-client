@@ -669,3 +669,8 @@ pointer-events: none;
 .schoolgroup-files #new-hw .field.center button.button {
   float: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000325}}
+.schoolgroup-files #new-hw .uploaded-files {
+  margin-top: 10px;
+  text-align: center;
+}

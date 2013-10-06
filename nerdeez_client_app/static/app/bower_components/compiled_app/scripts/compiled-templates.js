@@ -1290,6 +1290,17 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\n						<div class=\"single-file\">\n							<i class=\"icon-ok\"></i>\n							");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n						</div>\n					");
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
   data.buffer.push("\n				<div class=\"alert alert-danger\">\n					");
   hashTypes = {};
   hashContexts = {};
@@ -1298,7 +1309,7 @@ function program1(depth0,data) {
   return buffer;
   }
 
-function program3(depth0,data) {
+function program5(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
   data.buffer.push("\n				");
@@ -1340,15 +1351,20 @@ function program3(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "uploadHW", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n						<i class=\"icon-upload\"></i>\n						Upload H.W files\n					</button>\n				</div>\n			</div>\n			<div class=\"modal-footer\">\n				");
+  data.buffer.push(">\n						<i class=\"icon-upload\"></i>\n						Upload H.W files\n					</button>\n				</div>\n				<div class=\"uploaded-files\">\n					");
   hashTypes = {};
   hashContexts = {};
-  stack2 = helpers['if'].call(depth0, "isNewHwError", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack2 = helpers.each.call(depth0, "newHwFiles", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n				</div>\n			</div>\n			<div class=\"modal-footer\">\n				");
+  hashTypes = {};
+  hashContexts = {};
+  stack2 = helpers['if'].call(depth0, "isNewHwError", {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n				");
   hashTypes = {};
   hashContexts = {};
-  stack2 = helpers['if'].call(depth0, "isNewHwLoading", {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack2 = helpers['if'].call(depth0, "isNewHwLoading", {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n		        <button data-dismiss=\"modal\" class=\"btn btn-default\" type=\"button\">Close</button>\n		        <button class=\"btn btn-primary\" type=\"button\" ");
   hashContexts = {'target': depth0};

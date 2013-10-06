@@ -60,6 +60,14 @@
 						Upload H.W files
 					</button>
 				</div>
+				<div class="uploaded-files">
+					{{#each newHwFiles}}
+						<div class="single-file">
+							<i class="icon-ok"></i>
+							{{title}}
+						</div>
+					{{/each}}
+				</div>
 			</div>
 			<div class="modal-footer">
 				{{#if isNewHwError}}
