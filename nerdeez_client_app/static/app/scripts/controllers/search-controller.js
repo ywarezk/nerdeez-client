@@ -19,33 +19,34 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 	 */
 	searchQuery: null,
 
-	iconClass: null,
-
-	newSort: null,
-
 	sortBy: null,
 
 	sortName: "Relevance",
 
 	filterBy: null,
 
+	resultNum : 0,
+
 	/**
 	 * when the user submits the search form
 	 */
 	 search: function(){
-			this.set('content', Nerdeez.Schoolgroup.find({search: this.get('searchQuery'), order_by: this.get('sortBy'), school_type: this.get('filterBy')}));
+	 	var searchmsg = {};
+	 	searchmsg['limit'] = Nerdeez.get('SEARCH_LIMIT');
+	 	if (this.get('searchQuery') !== null)
+	 		searchmsg['search'] = this.get('searchQuery');
+	 	if (this.get('sortBy') !== null)
+	 		searchmsg['order_by'] = this.get('sortBy');
+	 	if (this.get('filterBy') !== null)
+	 		searchmsg['school_type'] = this.get('filterBy');
+		this.set('content', Nerdeez.Schoolgroup.find(searchmsg));
+		this.set('resultNum', this.get('content.content.length'));
 		}.observes('searchQuery', 'sortBy', 'filterBy'),
 
 	 actions: {
 		setSort: function(sortBy) {
-			this.set("sortName", sortBy.charAt(0).toUpperCase() + sortBy.slice(1));
-			if (sortBy === "relevance")
-				this.set("sortBy", null);
-			else
-				this.set("sortBy", sortBy);
-		},
-
-		setFilter: function(filterBy) {
+			this.set("sortName", sortBy.title);
+			this.set("sortBy", sortBy.value);
 		}
 	}
 });

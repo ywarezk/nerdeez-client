@@ -14,41 +14,43 @@
 	a {
 		color: #333333;
 	}
-	.styled-select {
-		select {
-		   background: transparent;
-		   width: 125px;
-		   padding: 5px;
-		   font-size: 16px;
-		   line-height: 1;
-		   border: 0;
-		   border-radius: 0;
-		   height: 34px;
-		   -webkit-appearance: none;
-		   outline: 0 !important;
-		   padding-left: 14px;
-		}
+	.filter-zone {
 		width: 125px;
-	   	height: 34px;
-		overflow: hidden;
-		background: white;
-		border: 1px solid #ccc;
-		margin-bottom: 18px;
-		.select-icon {
-			.icon-sort {
-			    color: gray;
-    			font-size: 18px;
-			    padding-left: 10px;
-			    padding-top: 9px;
-			    pointer-events:none;
+		.styled-select {
+			select {
+			   background: transparent;
+			   padding: 5px;
+			   font-size: 16px;
+			   line-height: 1;
+			   border: 0;
+			   border-radius: 0;
+			   height: 34px;
+			   -webkit-appearance: none;
+			   outline: 0 !important;
+			   padding-left: 14px;
 			}
-			bottom: 44px;
-		    height: 34px;
-		    left: 95px;
-		    position: relative;
-    		width: 30px;
-    		background: #CCCCCC;
-    		pointer-events:none;
+			width: 125px;
+		   	height: 34px;
+			overflow: hidden;
+			background: white;
+			border: 1px solid #ccc;
+			margin-bottom: 18px;
+			.select-icon {
+				.icon-sort {
+				    color: gray;
+	    			font-size: 18px;
+				    padding-left: 10px;
+				    padding-top: 9px;
+				    pointer-events:none;
+				}
+				bottom: 44px;
+			    height: 34px;
+			    left: 95px;
+			    position: relative;
+	    		width: 30px;
+	    		background: #CCCCCC;
+	    		pointer-events:none;
+			}
 		}
 	}
 	.nerdeez-inputs {
@@ -109,6 +111,11 @@
 	}
 	.row {
 		margin-top: 0 !important;
+	}
+	.result-num {
+		margin-bottom: 20px;
+		background: white;
+		height: 35px;
 	}
 	.results {
 		list-style: none;
@@ -227,6 +234,7 @@
 	    		display:none;
 	    		a {
 	    			color: white;
+	    			text-decoration: none;
 	    		}
     			bottom: 185px;
 				position: relative;
