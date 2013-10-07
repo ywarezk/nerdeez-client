@@ -26,7 +26,7 @@ Nerdeez.SCHOOLGROUP_TYPE = [
 Nerdeez.SORTBY_TYPE = [
 	{value: 'null', title: 'Relevance'},
 	{value: 'title', title: 'Title'},
-	{value: '-grade', title: 'Grade'},
+	{value: '-grade', title: 'Rating'},
 	{value: 'users', title: 'Users'},
 	{value: 'files', title: 'Files'}
 ]

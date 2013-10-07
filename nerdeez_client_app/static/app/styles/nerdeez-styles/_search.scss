@@ -14,9 +14,9 @@
 	a {
 		color: #333333;
 	}
-	.filter-zone {
+	.filter-zone { // Filter selector
 		width: 125px;
-		.styled-select {
+		.styled-select { //on top of standard select
 			select {
 			   background: transparent;
 			   padding: 5px;
@@ -53,7 +53,7 @@
 			}
 		}
 	}
-	.nerdeez-inputs {
+	.nerdeez-inputs { //search text input
 		width: 620px !important;
 		border-radius: 0;
 		border-right: 0;
@@ -64,7 +64,7 @@
 			padding-right: 30px;
 			font-size: 16px;
 		}
-		.icon-search, .loading {
+		.icon-search, .loading { //search icon and loading ball
 			float: right;
 			bottom: 29px;
 		    display: block;
@@ -73,23 +73,7 @@
 		    right: 17px;
 		}
 	}
-	.border-icon {
-			background-color: white;
-		    border-color: #CCCCCC #CCCCCC #CCCCCC;
-		    border-image: none;
-		    border-style: solid;
-		    border-width: 1px 1px 1px 0;
-		    float: right;
-		    height: 29px;
-		    margin-left: -1px;
-		    padding-left: 6px;
-		    padding-top: 10px;
-		    width: 27px;
-    	.icon-search {
-    		font-size: 20px;
-    	}
-	}	
-	.sortby {
+	.sortby { // sort by dropdown
 		margin-top: 97px;
 		height: 22px;
 		width: 180px;
@@ -105,13 +89,13 @@
     		width: 120px;
 		}
 	}
-	hr {
+	hr { // line to seperate between the page header (input) and content (output)
 		border-color: #C3C3C3 !important;
 		border-top: 1px;
 	}
 	.row {
 		margin-top: 0 !important;
-	}
+	} //number of results found, appears only after successful search
 	.result-num {
 		display: none;
 		margin-bottom: 20px;
@@ -135,18 +119,18 @@
 			}
 		}
 	}
-	.results {
+	.results { //results design
 		list-style: none;
 		margin: 0;
 		li {
 			float: left;
 		}
-		.hoveron {
-			.resultbox {
+		.hoveron { //hoverons are here for the hover design on the resultbox
+			.resultbox { //each result
 			    height: 184px;
 			    margin-bottom: 30px;
 			    box-shadow: -5px 5px 4px 2px gray;
-			    .result-action {
+			    .result-action { //action pane
 			    	height: 120px;
 			    	background-color: white;
 			    	padding-top: 24px;
@@ -198,7 +182,7 @@
 					    }
 				    }
 				}
-				.result-footer {
+				.result-footer { //footer pane
 					height: 40px;
 					background-color: #E6E6E6;
 					padding-left: 15px;
@@ -214,7 +198,7 @@
 						padding-top: 12px;
 						float: left;
 					}
-					.rating {
+					.rating { //changes dynamically
 						width: 140px;
 						font-size: 18px;
 						padding-top: 14px;
@@ -248,7 +232,7 @@
 			h5, p {
 				display: inline;
 			}
-			.hoveron-toggle {
+			.hoveron-toggle { //hoveron design, display none
 	    		display:none;
 	    		a {
 	    			color: white;
