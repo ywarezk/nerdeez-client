@@ -138,11 +138,18 @@ textarea{
  */
 
 .modal{
+    form{
+        margin: 0;
+    }
     .modal-footer{
         .loading{
             float: left;
             position: relative;
             top: 8px;
+        }
+        .alert{
+            float: left;
+            margin: 0;
         }
     }
     .modal-header{

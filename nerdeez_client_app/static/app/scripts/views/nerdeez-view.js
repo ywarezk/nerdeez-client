@@ -26,6 +26,8 @@ Ember.View.reopen({
         //fix for the history bar
         //$('.left-sidebar .child.active').closest('.parent').addClass('open')
         
+        filepicker.setKey(FILEPICKER_API_KEY);
+        
     }
     
     // willDestroyElement: function(){

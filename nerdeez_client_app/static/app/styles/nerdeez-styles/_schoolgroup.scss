@@ -13,3 +13,18 @@
 .schoolgroup-about{
   
 }
+
+.schoolgroup-files{
+    #new-hw{
+        .field.center{
+            text-align: center;
+            button.button{
+                float: none;
+            }
+        }
+        .uploaded-files{
+            margin-top: 10px;
+            text-align: center;
+        }
+    }
+}
