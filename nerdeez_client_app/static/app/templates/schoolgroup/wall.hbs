@@ -10,5 +10,53 @@
 -->
 
 <div class="schoolgroup-wall">
-	<h1>Wall {{title}}</h1>
+	<div class="row">
+		<div class="span10">
+			<div class="wall-resultbox">
+				<div class="wall-action">
+					<div class="pic-content">
+						<div {{bind-attr class="getIconClass"}}>
+							<i class="schoolgroup-img"></i>
+						</div>
+					</div>
+					<div class="wall-content">
+						<div class="result-title">
+							<h3>
+								{{#if isCourse}}
+									Course Name:
+								{{/if}}
+								{{#if isFaculty}}
+									Faculty Name:
+								{{/if}}
+								{{#if isUniversity}}
+									University Name:
+								{{/if}}
+							</h3>
+							<span>{{title}}</span>
+						</div>
+						<div class="result-description">
+								<h5> Description: </h5>
+								<span>{{description}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="wall-footer">
+					<div class="wall-share">
+						<ul class="rating">
+							<li><i class="icon-thumbs-down"></i></li>
+							<li>Dislike:</li>
+							<li>.....</li>
+							<li><i class="vertical-line"></i></li>
+							<li><i class="icon-thumbs-up"></i></li>
+							<li>Like:</li>
+							<li>.....</li>
+						</ul>
+						<div class="share">
+							<button class="btn" {{action "share" target="controller"}}>F | Share on Facebook</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

@@ -148,17 +148,19 @@
 				    i {
 				    	display: block;
 				    	height: 95px;
-				    	width: 100px;
+				    	width: 101px;
 				    	float: left;
 				    }
 				    .faculty-icon {
 				    	.standard-img {
 				    		display: block;
 				    		background-image: image-url("faculty-pic.png");
+				    		background-size: 100% 100%;
 				    	}
 				    	.blurred-img {
 				    		display: none;
 				    		background-image: image-url("faculty-pic-blurred.png");
+				    		background-size: 100% 100%;
 				    	}
 				    }
 				    .course-icon {
@@ -169,16 +171,19 @@
 				    	.blurred-img {
 				    		display: none;
 				    		background-image: image-url("course-pic-blurred.png");
+				    		background-size: 100% 100%;
 				    	}
 				    }
 				    .university-icon {
 				    	.standard-img {
 				    		display: block;
 				    		background-image: image-url("university-pic.png");
+				    		background-size: 100% 100%;
 				    	}
 					    .blurred-img {
 					    	display: none;
 					    	background-image: image-url("university-pic-blurred.png");
+					    	background-size: 100% 100%;
 					    }
 				    }
 				}
@@ -220,7 +225,7 @@
 	    					padding-top: 2px;
 	    				}
 					}
-					.verticalLine {
+					.vertical-line {
 	 				   	border-style: solid;
 					    border-width: thin;
 					    height: 18px;
