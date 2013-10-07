@@ -14,7 +14,8 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 	school_type: DS.attr('number'),
 	parent: DS.belongsTo('Nerdeez.Schoolgroup'),
 	grade: DS.attr('number'),
-	user: DS.belongsTo('Nerdeez.UserProfile')
+	user: DS.belongsTo('Nerdeez.Userprofile'),
+	
 	getIconClass: function() {
 		a = this.get("school_type");
 		if (a == 1)
@@ -24,6 +25,7 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 		else
 			return "university-icon";
 	}.property("school_type"),
+	
 	isCourse: function() {
 		if (this.get("school_type") == 1)
 			return true;
@@ -36,6 +38,7 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 		else
 			return false;
 	}.property("school_type"),
+	
 	isUniversity: function() {
 		if (this.get("school_type") == 3)
 			return true;

@@ -23,6 +23,15 @@ Nerdeez.SCHOOLGROUP_TYPE = [
 	{id: 3, title: 'University'}
 ]
 
+Nerdeez.SORTBY_TYPE = [
+	{value: 'null', title: 'Relevance'},
+	{value: 'title', title: 'Title'},
+	{value: '-grade', title: 'Rating'},
+	{value: 'users', title: 'Users'},
+	{value: 'files', title: 'Files'}
+]
+
+Nerdeez.SEARCH_LIMIT = 20;
 /**
 * application init function
 * will check if the user is logged in upon application start
@@ -433,7 +442,37 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 	school_type: DS.attr('number'),
 	parent: DS.belongsTo('Nerdeez.Schoolgroup'),
 	grade: DS.attr('number'),
-	user: DS.belongsTo('Nerdeez.UserProfile')
+	user: DS.belongsTo('Nerdeez.Userprofile'),
+	
+	getIconClass: function() {
+		a = this.get("school_type");
+		if (a == 1)
+			return "course-icon";
+		else if (a == 2)
+			return "faculty-icon";
+		else
+			return "university-icon";
+	}.property("school_type"),
+	
+	isCourse: function() {
+		if (this.get("school_type") == 1)
+			return true;
+		else
+			return false;
+	}.property("school_type"),
+	isFaculty: function() {
+		if (this.get("school_type") == 2)
+			return true;
+		else
+			return false;
+	}.property("school_type"),
+	
+	isUniversity: function() {
+		if (this.get("school_type") == 3)
+			return true;
+		else
+			return false;
+	}.property("school_type")
 });
 
 
@@ -545,17 +584,84 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 	 * @type {string}
 	 */
 	searchQuery: null,
-	
+
+	/**
+	* the sort query
+	* @property
+	* @public
+	* @type {string}
+	*/
+	sortBy: null,
+
+	/**
+	* the sort value
+	* @property
+	* @public
+	* @type {string}
+	*/
+	sortName: "Relevance",
+
+	/**
+	* the filter query
+	* @property
+	* @public
+	* @type {string}
+	*/
+	filterBy: null,
+
+	/**
+	* number of search results
+	* @property
+	* @public
+	* @type {integer}
+	*/
+	resultNum: 0,
 	
 	/**
-	 * when the user submits the search form
+	* set to true if we are moving to the loading state
+	* @property
+	* @private
+	* @type {boolean}
+	*/
+	isLoading: false,
+
+	/**
+	 * triggers when the users is using the search bar / filter / sort by
 	 */
-	search: function(){
-		this.set('content', Nerdeez.Schoolgroup.find({search: this.get('searchQuery')}));
-	}.observes('searchQuery')
+	 search: function(){
+	 	var xthis = this;
+	 	var searchmsg = {};
+	 	$('.result-num').hide();
+	 	this.set('isLoading', true);
+	 	searchmsg['limit'] = Nerdeez.get('SEARCH_LIMIT');
+	 	if (this.get('searchQuery') !== null)
+	 		searchmsg['search'] = this.get('searchQuery');
+	 	if (this.get('sortBy') !== null)
+	 		searchmsg['order_by'] = this.get('sortBy');
+	 	if (this.get('filterBy') !== null)
+	 		searchmsg['school_type'] = this.get('filterBy');
+
+	 	var srch = Nerdeez.Schoolgroup.find(searchmsg);
+
+		this.set('content', srch);
+		srch.one('didLoad', function() {
+			xthis.set('isLoading', false);
+			xthis.set('resultNum', xthis.get('content.content.length'));
+			$('.result-num').show();
+		});
+		}.observes('searchQuery', 'sortBy', 'filterBy'),
+
+	 actions: {
+	 	/**
+	 	* set the correct value and name for the sort by search query
+	 	* @params array the current presented name and the value of the selected sort
+	 	*/
+		setSort: function(sortBy) {
+			this.set("sortName", sortBy.title);
+			this.set("sortBy", sortBy.value);
+		}
+	}
 });
-
-
 
 })();
 
@@ -1477,6 +1583,33 @@ Nerdeez.AddSchoolGroupCourseController = Ember.ArrayController.extend({
  */
 Ember.Handlebars.registerBoundHelper('loading', function() {
     return new Ember.Handlebars.SafeString('<div class="loading"><i class="icon-refresh icon-spin"></i></div>');
+});
+
+/**
+* produces a star rating
+* @param {Object} currRating - the current star rating (full or half stars)
+* @param {Object} outOf - the total amount of stars
+* usage
+* '''handlebar
+* {{getRating 3.5 5}} //will produce 3.5 full stars out of 5 stars
+* '''
+*
+* @return {Handlebars.SafeString}
+*/
+Ember.Handlebars.registerBoundHelper('getRating', function(currRating, outOf, options) {
+    var html='';
+    var rating = currRating;
+    for (var i=1; i<=outOf; i++) {
+    	if (i<=currRating)
+    		html += '<li><i class="icon-star"></i></li>';
+    	else if (rating % 1 !== 0){
+    		html += '<li><i class="icon-star-half-empty"></i></li>';
+    		rating = 0;
+    	}
+    	else
+    		html += '<li><i class="icon-star-empty"></i></li>';
+    }
+    return new Handlebars.SafeString(html);
 });
 
 })();
