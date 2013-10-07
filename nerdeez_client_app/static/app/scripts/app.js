@@ -21,6 +21,15 @@ Nerdeez.SCHOOLGROUP_TYPE = [
 	{id: 3, title: 'University'}
 ]
 
+Nerdeez.SORTBY_TYPE = [
+	{value: 'null', title: 'Relevance'},
+	{value: 'title', title: 'Title'},
+	{value: '-grade', title: 'Rating'},
+	{value: 'users', title: 'Users'},
+	{value: 'files', title: 'Files'}
+]
+
+Nerdeez.SEARCH_LIMIT = 20;
 /**
 * application init function
 * will check if the user is logged in upon application start

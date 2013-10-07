@@ -14,44 +14,46 @@
 	a {
 		color: #333333;
 	}
-	.styled-select {
-		select {
-		   background: transparent;
-		   width: 125px;
-		   padding: 5px;
-		   font-size: 16px;
-		   line-height: 1;
-		   border: 0;
-		   border-radius: 0;
-		   height: 34px;
-		   -webkit-appearance: none;
-		   outline: 0 !important;
-		   padding-left: 14px;
-		}
+	.filter-zone { // Filter selector
 		width: 125px;
-	   	height: 34px;
-		overflow: hidden;
-		background: white;
-		border: 1px solid #ccc;
-		margin-bottom: 18px;
-		.select-icon {
-			.icon-sort {
-			    color: gray;
-    			font-size: 18px;
-			    padding-left: 10px;
-			    padding-top: 9px;
-			    pointer-events:none;
+		.styled-select { //on top of standard select
+			select {
+			   background: transparent;
+			   padding: 5px;
+			   font-size: 16px;
+			   line-height: 1;
+			   border: 0;
+			   border-radius: 0;
+			   height: 34px;
+			   -webkit-appearance: none;
+			   outline: 0 !important;
+			   padding-left: 14px;
 			}
-			bottom: 44px;
-		    height: 34px;
-		    left: 95px;
-		    position: relative;
-    		width: 30px;
-    		background: #CCCCCC;
-    		pointer-events:none;
+			width: 125px;
+		   	height: 34px;
+			overflow: hidden;
+			background: white;
+			border: 1px solid #ccc;
+			margin-bottom: 18px;
+			.select-icon {
+				.icon-sort {
+				    color: gray;
+	    			font-size: 18px;
+				    padding-left: 10px;
+				    padding-top: 9px;
+				    pointer-events:none;
+				}
+				bottom: 44px;
+			    height: 34px;
+			    left: 95px;
+			    position: relative;
+	    		width: 30px;
+	    		background: #CCCCCC;
+	    		pointer-events:none;
+			}
 		}
 	}
-	.nerdeez-inputs {
+	.nerdeez-inputs { //search text input
 		width: 620px !important;
 		border-radius: 0;
 		border-right: 0;
@@ -62,7 +64,7 @@
 			padding-right: 30px;
 			font-size: 16px;
 		}
-		.icon-search {
+		.icon-search, .loading { //search icon and loading ball
 			float: right;
 			bottom: 29px;
 		    display: block;
@@ -71,24 +73,8 @@
 		    right: 17px;
 		}
 	}
-	.border-icon {
-			background-color: white;
-		    border-color: #CCCCCC #CCCCCC #CCCCCC;
-		    border-image: none;
-		    border-style: solid;
-		    border-width: 1px 1px 1px 0;
-		    float: right;
-		    height: 29px;
-		    margin-left: -1px;
-		    padding-left: 6px;
-		    padding-top: 10px;
-		    width: 27px;
-    	.icon-search {
-    		font-size: 20px;
-    	}
-	}	
-	.sortby {
-		margin-top: 72px;
+	.sortby { // sort by dropdown
+		margin-top: 97px;
 		height: 22px;
 		width: 180px;
 		border-bottom: 1px solid grey;
@@ -103,25 +89,48 @@
     		width: 120px;
 		}
 	}
-	hr {
+	hr { // line to seperate between the page header (input) and content (output)
 		border-color: #C3C3C3 !important;
 		border-top: 1px;
 	}
 	.row {
 		margin-top: 0 !important;
+	} //number of results found, appears only after successful search
+	.result-num {
+		display: none;
+		margin-bottom: 20px;
+    	background: rgba(255,255,255, .5);
+		height: 35px;
+		padding-left: 15px;
+		padding-bottom: 4px;
+		padding-top: 4px;
+		border: 1px solid #C0C0C0;
+		.icon-book {
+			float:left;
+			padding-top: 9px;
+			padding-right: 20px;
+			font-size: 18px;
+		}
+		p {
+			padding-top: 6px;
+			font-size: 17px;
+			b {
+				padding-right: 2px;
+			}
+		}
 	}
-	.results {
+	.results { //results design
 		list-style: none;
 		margin: 0;
 		li {
 			float: left;
 		}
-		.hoveron {
-			.resultbox {
+		.hoveron { //hoverons are here for the hover design on the resultbox
+			.resultbox { //each result
 			    height: 184px;
 			    margin-bottom: 30px;
 			    box-shadow: -5px 5px 4px 2px gray;
-			    .result-action {
+			    .result-action { //action pane
 			    	height: 120px;
 			    	background-color: white;
 			    	padding-top: 24px;
@@ -173,7 +182,7 @@
 					    }
 				    }
 				}
-				.result-footer {
+				.result-footer { //footer pane
 					height: 40px;
 					background-color: #E6E6E6;
 					padding-left: 15px;
@@ -189,7 +198,7 @@
 						padding-top: 12px;
 						float: left;
 					}
-					.rating {
+					.rating { //changes dynamically
 						width: 140px;
 						font-size: 18px;
 						padding-top: 14px;
@@ -223,10 +232,11 @@
 			h5, p {
 				display: inline;
 			}
-			.hoveron-toggle {
+			.hoveron-toggle { //hoveron design, display none
 	    		display:none;
 	    		a {
 	    			color: white;
+	    			text-decoration: none;
 	    		}
     			bottom: 185px;
 				position: relative;

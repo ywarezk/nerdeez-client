@@ -12,17 +12,20 @@ version: 1.0
 <div class="search">
 	<div class="row">
 		<div class="span7">
-			<div class="styled-select">
-				{{
-					view Ember.Select
-					prompt = "All"
-					contentBinding = "Nerdeez.SCHOOLGROUP_TYPE"
-					optionValuePath = "content.id"
-					optionLabelPath = "content.title"
-					selectionBinding = "filterBy"
-				}}
-				<div class="select-icon">
-					<i class="icon-sort"></i>
+			<div class="filter-zone">
+				<label>Filter</label>
+				<div class="styled-select">
+					{{
+						view Ember.Select
+						prompt = "All"
+						contentBinding = "Nerdeez.SCHOOLGROUP_TYPE"
+						optionValuePath = "content.id"
+						optionLabelPath = "content.title"
+						valueBinding = "filterBy"
+					}}
+					<div class="select-icon">
+						<i class="icon-sort"></i>
+					</div>
 				</div>
 			</div>
 			<form class="form-search nerdeez-inputs">
@@ -32,7 +35,11 @@ version: 1.0
 					valueBinding="searchQuery"
 					placeholder="Search"
 				}}
-				<i class="icon-search"></i>
+				{{#if isLoading}}
+					{{loading}}
+				{{else}}
+					<i class="icon-search"></i>
+				{{/if}}
 			</form>
 		</div>
 		<div class="span3">
@@ -44,17 +51,23 @@ version: 1.0
 						<b class="caret"></b>
 					</a>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-						<li><a href="#" {{action "setSort" "relevance" target="controller"}}>Relevance</a></li>
-					    <li><a href="#" {{action "setSort" "title" target="controller"}}>Title</a></li>
-					    <li><a href="#" {{action "setSort" "grades" target="controller"}}>Grades</a></li>
-					    <li><a href="#" {{action "setSort" "users" target="controller"}}>No. of Users</a></li>
-					    <li><a href="#" {{action "setSort" "files" target="controller"}}>No. of Files</a></li>
+						{{#each Nerdeez.SORTBY_TYPE}}
+							<li><a href="#" {{action "setSort" this target="controller"}}>{{title}}</a></li>
+						{{/each}}
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 	<hr />
+	<div class="row">
+		<div class="span10">
+			<div class="result-num">
+				<i class="icon-book"></i>
+				<p><b>{{controller.resultNum}}</b> Results Found</p>
+			</div>
+		</div>
+	</div>
 	<div class="row">
 		<ol class="results">
 			{{#each controller}}
@@ -71,7 +84,7 @@ version: 1.0
 								<div class="result-text">
 									<h5>
 										{{#if isCourse}}
-											Course Number:
+											Course Name:
 										{{/if}}
 										{{#if isFaculty}}
 											Faculty Name:
@@ -132,17 +145,17 @@ version: 1.0
 							</div>
 							<div class="hoveron-toggle">
 								<div class="hoveron-main">
-									{{#link-to "search"}}
+									{{#link-to "schoolgroup.wall" this}}
 									<div class="hoveron-block hoveron-wall">
-											<div class="block-icon wall-icon">
-												<i class="icon-comments"></i>
-											</div>
-											<div class="block-text wall-text">
-												<h3>Wall</h3>
-											</div>
+										<div class="block-icon wall-icon">
+											<i class="icon-comments"></i>
+										</div>
+										<div class="block-text wall-text">
+											<h3>Wall</h3>
+										</div>
 									</div>
 									{{/link-to}}
-									{{#link-to "search"}}
+									{{#link-to "schoolgroup.files" this}}
 									<div class="hoveron-block hoveron-files">
 										<div class="block-icon files-icon">
 											<i class="icon-file"></i>
