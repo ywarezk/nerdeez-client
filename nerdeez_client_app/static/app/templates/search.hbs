@@ -35,7 +35,11 @@ version: 1.0
 					valueBinding="searchQuery"
 					placeholder="Search"
 				}}
-				<i class="icon-search"></i>
+				{{#if isLoading}}
+					{{loading}}
+				{{else}}
+					<i class="icon-search"></i>
+				{{/if}}
 			</form>
 		</div>
 		<div class="span3">
@@ -59,7 +63,8 @@ version: 1.0
 	<div class="row">
 		<div class="span10">
 			<div class="result-num">
-				<i class="icon-book"></i> <b>{{controller.resultNum}}</b> Results Found
+				<i class="icon-book"></i>
+				<p><b>{{controller.resultNum}}</b> Results Found</p>
 			</div>
 		</div>
 	</div>
