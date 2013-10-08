@@ -144,8 +144,12 @@ textarea{
     .modal-footer{
         .loading{
             float: left;
+            font-size: 30px;
             position: relative;
             top: 8px;
+            i{
+                width: 30px;
+            }
         }
         .alert{
             float: left;

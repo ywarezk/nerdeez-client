@@ -1372,7 +1372,7 @@ function program5(depth0,data) {
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "newHW", {hash:{
     'target': ("view")
   },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">Save changes</button>\n		    </div>\n		</form>\n	</div>\n	<!-- end modal for new hw -->\n	\n	<div class=\"row\">\n	</div>\n	\n</div>");
+  data.buffer.push(">Save changes</button>\n		    </div>\n		</form>\n	</div>\n	<!-- end modal for new hw -->\n	\n	<!-- begin files table -->\n	<div class=\"row\">\n	</div>\n	<!-- end files table -->\n	\n</div>");
   return buffer;
   
 });

@@ -92,10 +92,11 @@ Nerdeez.SchoolgroupFilesController = Ember.ObjectController.extend({
 			hw.set('description', this.get('newHwDescription')); 
 			hw.set('school_group', this.get('content')); 
 			hw.transaction.commit();
-			hw.one('didCreate', function(){
+			hw.one('didCommit', function(){
+				xthis.set('isNewHwLoading', false);
 				if(xthis.get('newHwFiles.length') > 0 ){
 					xthis.get('newHwFiles').forEach(function(item, index, enumerable){
-						item.set('hw', this);
+						item.set('hw', hw);
 						item.transaction.commit();						
 					})
 					xthis.set('isNewHwLoading', false);
@@ -106,7 +107,7 @@ Nerdeez.SchoolgroupFilesController = Ember.ObjectController.extend({
 					onSuccess();
 				}
 			});
-			hw.one('becameError', function(json){
+			hw.one('becameError', function(json, temp1, temp2){
 				xthis.set('isNewHwLoading', false);
 				xthis.set('hwMessage', json.errors);
 			});

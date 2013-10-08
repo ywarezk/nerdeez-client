@@ -12,6 +12,5 @@ Nerdeez.Hw = DS.Model.extend({
 	description: DS.attr('string'),
 	grade: DS.attr('number'),
 	school_group: DS.belongsTo('Nerdeez.Schoolgroup'),
-	files: DS.hasMany('Nerdeez.File'),
-	size: DS.attr('number')
+	files: DS.hasMany('Nerdeez.File')
 });
