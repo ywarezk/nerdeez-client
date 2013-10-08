@@ -88,28 +88,82 @@
 	<!-- begin files table -->
 	<div class="row top-buffer">
 		<div class="span10">
-			<table>
-				<tr>
-					<th>
-						Title
-					</th>
-					<th>
-						Description
-					</th>
-					<th>
-						Num Files
-					</th>
-					<th>
-						Grade
-					</th>
-					<th>
-						Share
-					</th>
-					<th>
-						Date
-					</th>
-				</tr>
-			</table>
+			{{#if hws}}
+				<table>
+					<tr>
+						<th>
+							{{
+								view
+								Ember.Checkbox
+								checkedBinding="isAllHwMarked"
+							}}
+						</th>
+						<th>
+							Title
+						</th>
+						<th>
+							Description
+						</th>
+						<th>
+							Num Files
+						</th>
+						<th>
+							Grade
+						</th>
+						<th>
+							Share
+						</th>
+						<th>
+							Date
+						</th>
+						<th>
+							Download
+						</th>
+					</tr>
+					{{#each hws}}
+						<tr>
+							<td>
+								{{
+									view
+									Ember.Checkbox
+								}}
+							</td>
+							<td>
+								{{title}}
+							</td>
+							<td>
+								{{description}}
+							</td>
+							<td>
+								{{files.length}}
+							</td>
+							<td>
+								{{getRating grade 5}}
+							</td>
+							<td>
+								<a>
+									<i class="icon-facebook-sign">
+									</i>
+								</a>
+							</td>
+							<td>
+								{{creation_date}}
+							</td>
+							<td>
+								<a>
+									<i class="icon-download"></i>
+								</a>								
+							</td>
+						</tr>
+					{{/each}}
+				</table>
+			{{else}}
+				<div class="alert alert-info">
+					<span>
+						No H.W opened here. Be th first to post!
+					</span>
+				</div>
+			{{/if}}
 		</div>
 	</div>
 	<!-- end files table -->

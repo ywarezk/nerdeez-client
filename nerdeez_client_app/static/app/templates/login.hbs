@@ -30,6 +30,7 @@ version: 1.0
     					class="validate[required,custom[email]] login username-field nerdeez-inputs"
     					placeholder="Email"
     					required="true"
+    					tabindex="1"
     					}}
     				</div> <!-- /field -->
     				
@@ -43,6 +44,7 @@ version: 1.0
     					placeholder="Password"
     					required="true"
     					type="password"
+    					tabindex="2"
     					}}
     				</div> <!-- /password -->
     				
@@ -57,12 +59,12 @@ version: 1.0
     					Ember.Checkbox 
     					checkedBinding="isRememberMe" 
     					class="field login-checkbox"
-    					tabindex="4"
+    					tabindex="3"
     					}}
     					<label class="choice" for="Field">Keep me signed in</label>
     				</span>
     									
-    				<button class="button btn btn-primary btn-large" {{action "login"}}>Sign In</button>
+    				<button class="button btn btn-primary btn-large" {{action "login"}} tabindex="4">Sign In</button>
     				
     				<div class="forget-password">
 				    <p>

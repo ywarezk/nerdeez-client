@@ -14,7 +14,7 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 	school_type: DS.attr('number'),
 	parent: DS.belongsTo('Nerdeez.Schoolgroup'),
 	grade: DS.attr('number'),
-	hws: DS.hasMany('Nerdeez.Hw')
+	hws: DS.hasMany('Nerdeez.Hw'),
 	user: DS.belongsTo('Nerdeez.Userprofile'),
 	
 	getIconClass: function() {

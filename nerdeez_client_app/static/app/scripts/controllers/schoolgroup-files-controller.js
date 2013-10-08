@@ -111,6 +111,14 @@ Nerdeez.SchoolgroupFilesController = Ember.ObjectController.extend({
 				xthis.set('isNewHwLoading', false);
 				xthis.set('hwMessage', json.errors);
 			});
+		},
+		
+		/**
+		 * when the user clicks the fb share will use doron's mixins
+		 */
+		fbShare: function(){
+			//TODO
+			console.log('fb share');
 		}
 	}
 });

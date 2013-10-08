@@ -473,7 +473,7 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 	school_type: DS.attr('number'),
 	parent: DS.belongsTo('Nerdeez.Schoolgroup'),
 	grade: DS.attr('number'),
-	hws: DS.hasMany('Nerdeez.Hw')
+	hws: DS.hasMany('Nerdeez.Hw'),
 	user: DS.belongsTo('Nerdeez.Userprofile'),
 	
 	getIconClass: function() {
@@ -610,7 +610,8 @@ Nerdeez.Hw = DS.Model.extend({
 	description: DS.attr('string'),
 	grade: DS.attr('number'),
 	school_group: DS.belongsTo('Nerdeez.Schoolgroup'),
-	files: DS.hasMany('Nerdeez.File')
+	files: DS.hasMany('Nerdeez.File'),
+	creation_date: DS.attr('date')
 });
 
 
@@ -1746,6 +1747,14 @@ Nerdeez.SchoolgroupFilesController = Ember.ObjectController.extend({
 				xthis.set('isNewHwLoading', false);
 				xthis.set('hwMessage', json.errors);
 			});
+		},
+		
+		/**
+		 * when the user clicks the fb share will use doron's mixins
+		 */
+		fbShare: function(){
+			//TODO
+			console.log('fb share');
 		}
 	}
 });
