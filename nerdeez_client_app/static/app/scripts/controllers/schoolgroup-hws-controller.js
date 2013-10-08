@@ -7,7 +7,7 @@
  * @copyright: Nerdeez Ltd.
  */
 
-Nerdeez.SchoolgroupFilesController = Ember.ObjectController.extend({
+Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 	/**
 	 * holds the title of a new hw
 	 * @type {String}
@@ -43,6 +43,24 @@ Nerdeez.SchoolgroupFilesController = Ember.ObjectController.extend({
 	 * @type {Boolean}
 	 */
 	isNewHwLoading: false,
+	
+	/**
+	 * will display the alert success box
+	 * @type {Boolean}
+	 */
+	isSuccess: false,
+	
+	/**
+	 * the message in the alert box
+	 * @type {String}
+	 */
+	message: null,
+	
+	/**
+	 * holds the newly created hw
+	 * @type {Nerdeez.Hw}
+	 */
+	newCreatedHw: null,
 	
 	actions: {
 		
@@ -106,6 +124,9 @@ Nerdeez.SchoolgroupFilesController = Ember.ObjectController.extend({
 					xthis.set('isNewHwLoading', false);
 					onSuccess();
 				}
+				xthis.set('isSuccess', true);
+				xthis.set('message', 'Successfully created the H.W');
+				xthis.set('newCreatedHw', hw);
 			});
 			hw.one('becameError', function(json, temp1, temp2){
 				xthis.set('isNewHwLoading', false);
@@ -116,9 +137,10 @@ Nerdeez.SchoolgroupFilesController = Ember.ObjectController.extend({
 		/**
 		 * when the user clicks the fb share will use doron's mixins
 		 */
-		fbShare: function(){
+		fbShare: function(e){
 			//TODO
 			console.log('fb share');
+			return false;
 		}
 	}
 });

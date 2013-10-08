@@ -19,7 +19,10 @@ Nerdeez.Router.map(function () {
 	this.route('privacy');
     this.resource('schoolgroup', { path: '/schoolgroup/:schoolgroup_id' }, function(){
         this.route('wall');
-        this.route('files');
+        //this.route('hws');
+        this.resource('hws', function(){
+	        	this.route('hw', {path: '/hw/:hwId'});
+        });
         this.route('about');
     });
     this.route('login');
@@ -237,9 +240,18 @@ Nerdeez.SchoolgroupWallRoute = Nerdeez.LoginRequired.extend({
 /**
  * the route to a course files page
  */
-Nerdeez.SchoolgroupFilesRoute = Nerdeez.LoginRequired.extend({
+Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
     model: function(){
         return this.modelFor('schoolgroup');
+    }
+});
+
+/**
+ * the route to a single hw page
+ */
+Nerdeez.HwsHwRoute = Nerdeez.LoginRequired.extend({
+    model: function(param){
+        return Nerdeez.Hw.find(param.hwId);
     }
 });
 

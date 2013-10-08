@@ -7,7 +7,7 @@
  * @copyright: Nerdeez Ltd.
  */
 
-Nerdeez.SchoolgroupFilesView = Ember.View.extend({
+Nerdeez.HwsIndexView = Ember.View.extend({
 	actions: {
 		showAddHw: function(){
 			$('#new-hw').modal('show');

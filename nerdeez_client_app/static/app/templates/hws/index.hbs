@@ -26,6 +26,14 @@
 	</div>
 	<!-- end table actions -->
 	
+	<!-- begin status -->
+	{{#if isSuccess}}
+	<div class="alert alert-success top-buffer pull-left">
+	    {{message}} 
+	</div>
+	{{/if}}
+	<!-- end status -->
+	
 	<!-- begin modal for new hw -->
 	<div aria-hidden="true" aria-labelledby="windowTitleLabel" role="dialog" tabindex="-1" class="modal hide fade" id="new-hw">
 		<form class="js-validation">
@@ -110,40 +118,42 @@
 							<th>
 								Date
 							</th>
-							<th>
+							<!--<th>
 								Download
-							</th>
+							</th>-->
 						</tr>
 					</thead>
 					<tbody>
-					{{#each hws}}
+					{{#each hw in hws}}
 						<tr>
 							<td>
-								{{title}}
+								{{#link-to "hws.hw" hw}}
+								{{hw.title}}
+								{{/link-to}}
 							</td>
 							<td>
-								{{description}}
+								{{hw.description}}
 							</td>
 							<td class="center">
-								{{files.length}}
+								{{hw.files.length}}
 							</td>
 							<td class="center">
 								{{getRating grade 5}}
 							</td>
 							<td class="center">
-								<a>
+								<a {{action "fbShare"}}>
 									<i class="icon-facebook-sign">
 									</i>
 								</a>
 							</td>
 							<td>
-								{{getCreationDate}}
+								{{hw.getCreationDate}}
 							</td>
-							<td class="center">
+							<!--<td class="center">
 								<a>
 									<i class="icon-download"></i>
 								</a>								
-							</td>
+							</td>-->
 						</tr>
 					{{/each}}
 					</tbody>

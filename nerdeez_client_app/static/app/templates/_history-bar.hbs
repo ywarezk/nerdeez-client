@@ -2,7 +2,7 @@
 <div class="left-sidebar left-sidebar-history">
 	<ul class="nav nav-tabs nav-stacked">
 		<li class="header">
-			Enrolled Courses
+			History bar
 		</li>
 	    {{#each Nerdeez.auth.user_profile.enrolls}}
 		    <li class="parent">
@@ -21,8 +21,8 @@
 					    {{/linkTo}}
 			        </li>
 			        <li>
-				        {{#linkTo "schoolgroup.files" this.school_group class="child"}}
-						    Files
+				        {{#linkTo "hws.index" this.school_group class="child"}}
+						    Hws
 						    <i class="icon-file"></i>
 					    {{/linkTo}}
 			        </li>
