@@ -38,7 +38,7 @@ Ember.Handlebars.registerBoundHelper('loading', function() {
 * @return {Handlebars.SafeString}
 */
 Ember.Handlebars.registerBoundHelper('getRating', function(currRating, outOf, options) {
-    var html='<ul class="rating">';
+    var html='<div class="rating"><ul>';
     var rating = currRating;
     for (var i=1; i<=outOf; i++) {
     	if (i<=currRating)
@@ -50,6 +50,6 @@ Ember.Handlebars.registerBoundHelper('getRating', function(currRating, outOf, op
     	else
     		html += '<li><i class="icon-star-empty"></i></li>';
     }
-    html +="</ul>";
+    html +="</ul></div>";
     return new Handlebars.SafeString(html);
 });

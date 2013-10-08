@@ -102,11 +102,14 @@ input.nerdeez-search{
 }
 
 .rating { //design for the star rating created by the getRating handlebar
-    width: 140px;
     font-size: 18px;
-    padding-top: 14px;
+    margin-top: 3px;
+    margin-right: 55px;
     color: #E6C200;
-    list-style: none;
+    float: left;
+    ul {
+        list-style: none;
+    }
     .icon-star, .icon-star-empty, .icon-star-half-empty {
         padding-right: 3px;
     }
