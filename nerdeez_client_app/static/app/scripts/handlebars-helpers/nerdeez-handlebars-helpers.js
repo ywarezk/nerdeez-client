@@ -25,3 +25,30 @@
 Ember.Handlebars.registerBoundHelper('loading', function() {
     return new Ember.Handlebars.SafeString('<div class="loading"><i class="icon-refresh icon-spin"></i></div>');
 });
+
+/**
+* produces a star rating
+* @param {Object} currRating - the current star rating (full or half stars)
+* @param {Object} outOf - the total amount of stars
+* usage
+* '''handlebar
+* {{getRating 3.5 5}} //will produce 3.5 full stars out of 5 stars
+* '''
+*
+* @return {Handlebars.SafeString}
+*/
+Ember.Handlebars.registerBoundHelper('getRating', function(currRating, outOf, options) {
+    var html='';
+    var rating = currRating;
+    for (var i=1; i<=outOf; i++) {
+    	if (i<=currRating)
+    		html += '<li><i class="icon-star"></i></li>';
+    	else if (rating % 1 !== 0){
+    		html += '<li><i class="icon-star-half-empty"></i></li>';
+    		rating = 0;
+    	}
+    	else
+    		html += '<li><i class="icon-star-empty"></i></li>';
+    }
+    return new Handlebars.SafeString(html);
+});
