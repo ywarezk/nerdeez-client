@@ -65,7 +65,7 @@ Nerdeez.set('ready', readyFunction);
 require('bower_components/facebook/facebook');
 
 //application files
-require('scripts/nerdeez-ember/singleton');
+require('scripts/nerdeez-ember/mixins');
 require('scripts/views/nerdeez-view');
 require('scripts/views/add-schoolgroup-view');
 require('scripts/views/schoolgroup-files-view');
@@ -80,6 +80,7 @@ require('scripts/controllers/search-controller');
 require('scripts/controllers/login-controller');
 require('scripts/controllers/register-controller');
 require('scripts/controllers/contact-controller');
+require('scripts/controllers/wall-controller');
 require('scripts/controllers/change-password-controller');
 require('scripts/controllers/forget-password-controller');
 require('scripts/controllers/reset-password-controller');
