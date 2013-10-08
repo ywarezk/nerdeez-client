@@ -265,13 +265,26 @@ Nerdeez.Singleton = Ember.Mixin.create({
 });
 
 
-/**
-*
-*
-*
-**/
-Nerdeez.fbDialog = Ember.Mixin.create({
-
+Nerdeez.Share = Ember.Mixin.create({
+  share: function() {
+    FB.ui(
+    {
+      method: 'feed',
+      name: this.get('content.title'),
+      caption: 'Nerdeez - Doing homework together',
+      description: this.get('content.description'),
+      link: window.location.href,
+      picture: 'https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo.png'
+    },
+      function(response) {
+        if (response && response.post_id) {
+            alert('Post was published.');
+        } else {
+            alert('Post was not published.');
+        }
+      }
+    );
+  }
 });
 
 })();
@@ -1160,26 +1173,8 @@ Nerdeez.ContactController = Ember.Controller.extend({
 * @version: 1.0
 */
 
-Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.fbDialog, {
-  share: function() {
-      FB.ui(
-      {
-        method: 'feed',
-        name: 'Facebook Dialogs',
-        link: 'https://developers.facebook.com/docs/dialogs/',
-        picture: 'http://fbrell.com/f8.jpg',
-        caption: 'Reference Documentation',
-        description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
-      },
-      function(response) {
-        if (response && response.post_id) {
-          alert('Post was published.');
-        } else {
-          alert('Post was not published.');
-        }
-      }
-    );
-  }
+Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share, {
+  	
 });
 
 })();

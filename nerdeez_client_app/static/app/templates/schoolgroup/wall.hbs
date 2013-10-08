@@ -15,34 +15,34 @@
 			<div class="wall-resultbox">
 				<div class="wall-action">
 					<div class="pic-content">
-						<div {{bind-attr class="getIconClass"}}>
+						<div {{bind-attr class="model.getIconClass"}}>
 							<i class="schoolgroup-img"></i>
 						</div>
 					</div>
 					<div class="wall-content">
 						<div class="result-title">
 							<h3>
-								{{#if isCourse}}
+								{{#if model.isCourse}}
 									Course Name:
 								{{/if}}
-								{{#if isFaculty}}
+								{{#if model.isFaculty}}
 									Faculty Name:
 								{{/if}}
-								{{#if isUniversity}}
+								{{#if model.isUniversity}}
 									University Name:
 								{{/if}}
 							</h3>
-							<span>{{title}}</span>
+							<span>{{model.title}}</span>
 						</div>
 						<div class="result-description">
 							<h5> Description: </h5>
-							<span>{{description}}</span>
+							<span>{{model.description}}</span>
 						</div>
 					</div>
 				</div>
 				<div class="wall-footer">
 					<div class="wall-share">
-						<ul class="rating">
+						<ul class="like-status">
 							<li><i class="icon-thumbs-down"></i></li>
 							<li>Dislike:</li>
 							<li>.....</li>
@@ -51,8 +51,8 @@
 							<li>Like:</li>
 							<li>.....</li>
 						</ul>
-						<div class="share">
-							<button class="btn" {{action "share" target="controller"}}>F | Share on Facebook</button>
+						<div class="fb">
+							<a class="btn_2" {{action share}}>Share on Facebook</a>
 						</div>
 					</div>
 				</div>
