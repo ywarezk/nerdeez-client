@@ -464,7 +464,8 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 	school_type: DS.attr('number'),
 	parent: DS.belongsTo('Nerdeez.Schoolgroup'),
 	grade: DS.attr('number'),
-	user: DS.belongsTo('Nerdeez.UserProfile')
+	user: DS.belongsTo('Nerdeez.UserProfile'),
+	hws: DS.hasMany('Nerdeez.Hw')
 });
 
 
@@ -2996,7 +2997,8 @@ Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
         init: function(){
             this._super();
             this.mappings.set( 'Nerdeez.Schoolgroup', { 
-                parent: { embedded: 'load' }
+                parent: { embedded: 'load' },
+                hws: { embedded: 'load' }
             });
             this.mappings.set( 'Nerdeez.Userprofile', { 
                 enrolls: { embedded: 'load' }

@@ -40,7 +40,8 @@ Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
         init: function(){
             this._super();
             this.mappings.set( 'Nerdeez.Schoolgroup', { 
-                parent: { embedded: 'load' }
+                parent: { embedded: 'load' },
+                hws: { embedded: 'load' }
             });
             this.mappings.set( 'Nerdeez.Userprofile', { 
                 enrolls: { embedded: 'load' }
