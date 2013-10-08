@@ -101,6 +101,17 @@ input.nerdeez-search{
     }
 }
 
+.rating { //design for the star rating created by the getRating handlebar
+    width: 140px;
+    font-size: 18px;
+    padding-top: 14px;
+    color: #E6C200;
+    list-style: none;
+    .icon-star, .icon-star-empty, .icon-star-half-empty {
+        padding-right: 3px;
+    }
+}
+
 /**
  *  the loading sign on the forms
  */

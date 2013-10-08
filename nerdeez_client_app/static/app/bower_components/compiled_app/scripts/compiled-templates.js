@@ -1546,12 +1546,12 @@ function program7(depth0,data) {
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "isCourse", {hash:{},inverse:self.noop,fn:self.program(20, program20, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n								</div>\n							</div>\n							<div class=\"result-footer\">\n								<ul class=\"rating\">\n									");
+  data.buffer.push("\n								</div>\n							</div>\n							<div class=\"result-footer\">\n								");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0,depth0],types:["ID","INTEGER"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.getRating || depth0.getRating),stack1 ? stack1.call(depth0, "grade", 5, options) : helperMissing.call(depth0, "getRating", "grade", 5, options))));
-  data.buffer.push("\n								</ul>\n								<ul class=\"entry-info\">\n									<li class=\"iconproperties\">\n										<i class=\"icon-user\"></i>\n									</li>\n									<li>\n										<h5>Users: ... </h5>\n									</li>\n									<li>\n										<i class=\"verticalLine\"></i>\n									</li>\n									<li class=\"iconproperties\">\n										<i class=\"icon-file-text\"></i>\n									</li>\n									<li>\n										<h5>Files: ... </h5>\n									</li>\n								</ul>\n							</div>\n							<div class=\"hoveron-toggle\">\n								<div class=\"hoveron-main\">\n									");
+  data.buffer.push("\n								<ul class=\"entry-info\">\n									<li class=\"iconproperties\">\n										<i class=\"icon-user\"></i>\n									</li>\n									<li>\n										<h5>Users: ... </h5>\n									</li>\n									<li>\n										<i class=\"verticalLine\"></i>\n									</li>\n									<li class=\"iconproperties\">\n										<i class=\"icon-file-text\"></i>\n									</li>\n									<li>\n										<h5>Files: ... </h5>\n									</li>\n								</ul>\n							</div>\n							<div class=\"hoveron-toggle\">\n								<div class=\"hoveron-main\">\n									");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(22, program22, data),contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
