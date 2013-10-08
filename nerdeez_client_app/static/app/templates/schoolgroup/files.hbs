@@ -16,7 +16,7 @@
 	<!-- end of upper part -->
 	
 	<!-- the part for the table actions -->
-	<div class="row">
+	<div class="row table-controllers">
 		<div class="span2">
 			<button class="button btn btn-primary btn-large" {{action "showAddHw" target="view"}}>
 				<i class="icon-plus"></i>
@@ -86,76 +86,67 @@
 	<!-- end modal for new hw -->
 	
 	<!-- begin files table -->
-	<div class="row top-buffer">
+	<div class="row top-buffer hw-table">
 		<div class="span10">
 			{{#if hws}}
-				<table>
-					<tr>
-						<th>
-							{{
-								view
-								Ember.Checkbox
-								checkedBinding="isAllHwMarked"
-							}}
-						</th>
-						<th>
-							Title
-						</th>
-						<th>
-							Description
-						</th>
-						<th>
-							Num Files
-						</th>
-						<th>
-							Grade
-						</th>
-						<th>
-							Share
-						</th>
-						<th>
-							Date
-						</th>
-						<th>
-							Download
-						</th>
-					</tr>
+				<table class="table table-bordered table-striped table-highlight">
+					<thead>
+						<tr>
+							<th>
+								Title
+							</th>
+							<th>
+								Description
+							</th>
+							<th>
+								Num Files
+							</th>
+							<th>
+								Grade
+							</th>
+							<th>
+								Share
+							</th>
+							<th>
+								Date
+							</th>
+							<th>
+								Download
+							</th>
+						</tr>
+					</thead>
+					<tbody>
 					{{#each hws}}
 						<tr>
-							<td>
-								{{
-									view
-									Ember.Checkbox
-								}}
-							</td>
 							<td>
 								{{title}}
 							</td>
 							<td>
 								{{description}}
 							</td>
-							<td>
+							<td class="center">
 								{{files.length}}
 							</td>
-							<td>
+							<td class="center">
 								{{getRating grade 5}}
 							</td>
-							<td>
+							<td class="center">
 								<a>
 									<i class="icon-facebook-sign">
 									</i>
 								</a>
 							</td>
 							<td>
-								{{creation_date}}
+								{{getCreationDate}}
 							</td>
-							<td>
+							<td class="center">
 								<a>
 									<i class="icon-download"></i>
 								</a>								
 							</td>
 						</tr>
 					{{/each}}
+					</tbody>
 				</table>
 			{{else}}
 				<div class="alert alert-info">

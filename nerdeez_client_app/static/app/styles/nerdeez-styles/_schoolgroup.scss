@@ -27,4 +27,22 @@
             text-align: center;
         }
     }
+    .table-controllers{
+        .button{
+            float: left;
+        }
+    }
+    .hw-table{
+        .table{
+            td:nth-of-type(2){
+                width: 100%;
+            }
+            td{
+                min-width: 70px;
+            }
+            td.center{
+                text-align: center;
+            }
+        }
+    }
 }

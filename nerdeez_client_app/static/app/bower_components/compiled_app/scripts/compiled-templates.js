@@ -1324,19 +1324,13 @@ function program5(depth0,data) {
 
 function program7(depth0,data) {
   
-  var buffer = '', stack1, hashContexts, hashTypes;
-  data.buffer.push("\n				<table>\n					<tr>\n						<th>\n							");
-  hashContexts = {'checkedBinding': depth0};
-  hashTypes = {'checkedBinding': "STRING"};
-  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Checkbox", {hash:{
-    'checkedBinding': ("isAllHwMarked")
-  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n						</th>\n						<th>\n							Title\n						</th>\n						<th>\n							Description\n						</th>\n						<th>\n							Num Files\n						</th>\n						<th>\n							Grade\n						</th>\n						<th>\n							Share\n						</th>\n						<th>\n							Date\n						</th>\n						<th>\n							Download\n						</th>\n					</tr>\n					");
+  var buffer = '', stack1, hashTypes, hashContexts;
+  data.buffer.push("\n				<table class=\"table table-bordered table-striped table-highlight\">\n					<thead>\n						<tr>\n							<th>\n								Title\n							</th>\n							<th>\n								Description\n							</th>\n							<th>\n								Num Files\n							</th>\n							<th>\n								Grade\n							</th>\n							<th>\n								Share\n							</th>\n							<th>\n								Date\n							</th>\n							<th>\n								Download\n							</th>\n						</tr>\n					</thead>\n					<tbody>\n					");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "hws", {hash:{},inverse:self.noop,fn:self.program(8, program8, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n				</table>\n			");
+  data.buffer.push("\n					</tbody>\n				</table>\n			");
   return buffer;
   }
 function program8(depth0,data) {
@@ -1345,29 +1339,25 @@ function program8(depth0,data) {
   data.buffer.push("\n						<tr>\n							<td>\n								");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Checkbox", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n							</td>\n							<td>\n								");
-  hashTypes = {};
-  hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n							</td>\n							<td>\n								");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "description", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n							</td>\n							<td>\n								");
+  data.buffer.push("\n							</td>\n							<td class=\"center\">\n								");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "files.length", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n							</td>\n							<td>\n								");
+  data.buffer.push("\n							</td>\n							<td class=\"center\">\n								");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0,depth0],types:["ID","INTEGER"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.getRating || depth0.getRating),stack1 ? stack1.call(depth0, "grade", 5, options) : helperMissing.call(depth0, "getRating", "grade", 5, options))));
-  data.buffer.push("\n							</td>\n							<td>\n								<a>\n									<i class=\"icon-facebook-sign\">\n									</i>\n								</a>\n							</td>\n							<td>\n								");
+  data.buffer.push("\n							</td>\n							<td class=\"center\">\n								<a>\n									<i class=\"icon-facebook-sign\">\n									</i>\n								</a>\n							</td>\n							<td>\n								");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "creation_date", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n							</td>\n							<td>\n								<a>\n									<i class=\"icon-download\"></i>\n								</a>								\n							</td>\n						</tr>\n					");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "getCreationDate", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n							</td>\n							<td class=\"center\">\n								<a>\n									<i class=\"icon-download\"></i>\n								</a>								\n							</td>\n						</tr>\n					");
   return buffer;
   }
 
@@ -1382,7 +1372,7 @@ function program10(depth0,data) {
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "schoolgroup-short-description", options) : helperMissing.call(depth0, "partial", "schoolgroup-short-description", options))));
-  data.buffer.push("\n	</div>\n	<!-- end of upper part -->\n	\n	<!-- the part for the table actions -->\n	<div class=\"row\">\n		<div class=\"span2\">\n			<button class=\"button btn btn-primary btn-large\" ");
+  data.buffer.push("\n	</div>\n	<!-- end of upper part -->\n	\n	<!-- the part for the table actions -->\n	<div class=\"row table-controllers\">\n		<div class=\"span2\">\n			<button class=\"button btn btn-primary btn-large\" ");
   hashContexts = {'target': depth0};
   hashTypes = {'target': "STRING"};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "showAddHw", {hash:{
@@ -1429,7 +1419,7 @@ function program10(depth0,data) {
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "newHW", {hash:{
     'target': ("view")
   },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">Save changes</button>\n		    </div>\n		</form>\n	</div>\n	<!-- end modal for new hw -->\n	\n	<!-- begin files table -->\n	<div class=\"row top-buffer\">\n		<div class=\"span10\">\n			");
+  data.buffer.push(">Save changes</button>\n		    </div>\n		</form>\n	</div>\n	<!-- end modal for new hw -->\n	\n	<!-- begin files table -->\n	<div class=\"row top-buffer hw-table\">\n		<div class=\"span10\">\n			");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "hws", {hash:{},inverse:self.program(10, program10, data),fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
