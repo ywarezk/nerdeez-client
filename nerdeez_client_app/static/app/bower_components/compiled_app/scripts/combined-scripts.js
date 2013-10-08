@@ -271,25 +271,7 @@ Nerdeez.Singleton = Ember.Mixin.create({
 *
 **/
 Nerdeez.fbDialog = Ember.Mixin.create({
-  share: function() {
-      FB.ui(
-      {
-        method: 'feed',
-        name: 'Facebook Dialogs',
-        link: 'https://developers.facebook.com/docs/dialogs/',
-        picture: 'http://fbrell.com/f8.jpg',
-        caption: 'Reference Documentation',
-        description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
-      },
-      function(response) {
-        if (response && response.post_id) {
-          alert('Post was published.');
-        } else {
-          alert('Post was not published.');
-        }
-      }
-    );
-  }
+
 });
 
 })();
@@ -1178,8 +1160,26 @@ Nerdeez.ContactController = Ember.Controller.extend({
 * @version: 1.0
 */
 
-Nerdeez.WallController = Ember.Controller.extend(Nerdeez.fbDialog, {
-
+Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.fbDialog, {
+  share: function() {
+      FB.ui(
+      {
+        method: 'feed',
+        name: 'Facebook Dialogs',
+        link: 'https://developers.facebook.com/docs/dialogs/',
+        picture: 'http://fbrell.com/f8.jpg',
+        caption: 'Reference Documentation',
+        description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+      },
+      function(response) {
+        if (response && response.post_id) {
+          alert('Post was published.');
+        } else {
+          alert('Post was not published.');
+        }
+      }
+    );
+  }
 });
 
 })();
@@ -1849,7 +1849,7 @@ Ember.Handlebars.registerBoundHelper('loading', function() {
 * @return {Handlebars.SafeString}
 */
 Ember.Handlebars.registerBoundHelper('getRating', function(currRating, outOf, options) {
-    var html='<ul class="rating">';
+    var html='';
     var rating = currRating;
     for (var i=1; i<=outOf; i++) {
     	if (i<=currRating)
@@ -1860,7 +1860,6 @@ Ember.Handlebars.registerBoundHelper('getRating', function(currRating, outOf, op
     	}
     	else
     		html += '<li><i class="icon-star-empty"></i></li>';
-        html += '</ul>';
     }
     return new Handlebars.SafeString(html);
 });
