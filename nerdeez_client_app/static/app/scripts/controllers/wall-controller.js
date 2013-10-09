@@ -6,6 +6,4 @@
 * @version: 1.0
 */
 
-Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share, {
-  	
-});
+Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share);

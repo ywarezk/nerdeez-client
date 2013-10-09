@@ -264,26 +264,42 @@ Nerdeez.Singleton = Ember.Mixin.create({
 
 });
 
-
+/**
+* This mixin provides
+*
+*
+*
+**/
 Nerdeez.Share = Ember.Mixin.create({
-  share: function() {
-    FB.ui(
-    {
-      method: 'feed',
-      name: this.get('content.title'),
-      caption: 'Nerdeez - Doing homework together',
-      description: this.get('content.description'),
-      link: window.location.href,
-      picture: 'https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo.png'
-    },
-      function(response) {
-        if (response && response.post_id) {
-            alert('Post was published.');
-        } else {
-            alert('Post was not published.');
+  
+  method: 'feed',
+  name: 'Nerdeez',
+  caption: 'Nerdeez - Doing homework together',
+  description: "",
+  link: window.location.href,
+  picture: 'https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo.png',
+
+  actions: {
+    share: function() {
+      var xthis = this;
+      FB.ui(
+      {
+        method: xthis.get('method'),
+        name: xthis.get('name'),
+        caption: xthis.get('caption'),
+        description: xthis.get('description'),
+        link: xthis.get('link'),
+        picture: xthis.get('picture')
+      },
+        function(response) {
+          if (response && response.post_id) {
+              alert('Post was published.');
+          } else {
+              alert('Post was not published.');
+          }
         }
-      }
-    );
+      );
+    }
   }
 });
 
@@ -1173,9 +1189,7 @@ Nerdeez.ContactController = Ember.Controller.extend({
 * @version: 1.0
 */
 
-Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share, {
-  	
-});
+Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share);
 
 })();
 
