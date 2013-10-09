@@ -127,7 +127,7 @@ window.fbAsyncInit = function() {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {return;}
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js";
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
     fjs.parentNode.insertBefore(js, fjs);
     
 }(document, 'script', 'facebook-jssdk'));
@@ -265,22 +265,112 @@ Nerdeez.Singleton = Ember.Mixin.create({
 });
 
 /**
-* This mixin provides
-*
-*
-*
+ This mixin allows for facebook's "share" capability,
+ provided by the share function.
+
+ Properties are provided with default values.
+ 
+ Example Usage (default values):
+
+ ''''javascript
+
+ App.myController = Ember.Controller.extend(Nerdeez.Share);
+
+ ''''handlebars
+
+ <a {{action share}}>
+
+ ''''
+
+ To customize properties' values,
+ redefine the shareInit method.
+ 
+ Example:
+
+ '''javascript
+
+ //the controller or view that'll use the mixin
+ App.myController = Ember.Controller.extend(Nerdeez.share, {
+
+  //using shareInit hook to customize default values
+  shareInit: function() {
+    this.set('method', this.get('content.method'));
+    this.set('link', "http://www.Nerdeez.com");
+  }
+ })
+
+**/
+
+/**
+  @class Nerdeez.Share
+  @extends Ember.Mixin
+  @namespace Nerdeez
+  @module Nerdeez
 **/
 Nerdeez.Share = Ember.Mixin.create({
-  
+
+  /**
+  * The UI dialog to invoke.
+  * @property
+  * @public
+  * @type {string}
+  */
   method: 'feed',
+  /**
+  * the dialog title
+  * @property
+  * @public
+  * @type {string}
+  */
   name: 'Nerdeez',
+  /**
+  * dialog caption
+  * @property
+  * @public
+  * @type {string}
+  */
   caption: 'Nerdeez - Doing homework together',
+  /**
+  * dialog description
+  * @property
+  * @public
+  * @type {string}
+  */
   description: "",
+  /**
+  * dialog link
+  * @property
+  * @public
+  * @type {string}
+  */
   link: window.location.href,
+  /**
+  * dialog image
+  * @property
+  * @public
+  * @type {string}
+  */
   picture: 'https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo.png',
 
+  /**
+    Init function, empty by default.
+
+    @method shareInit
+  **/
+  shareInit: function() {},
+
   actions: {
+
+    /**
+    main function, holds FB.ui, a generic helper method for
+    triggering Dialogs which allow the user to take some action.
+
+    @method current
+    @returns {Ember.Object} the instance of the singleton
+  **/
+
     share: function() {
+      this.shareInit();
       var xthis = this;
       FB.ui(
       {
@@ -329,14 +419,14 @@ Ember.View.reopen({
      */
     didInsertElement: function(){
         this._super();
-        //FB.XFBML.parse();
+        
+        FB.XFBML.parse();
         $('.js-validation').validationEngine();
         
         //fix for the history bar
         //$('.left-sidebar .child.active').closest('.parent').addClass('open')
         
         filepicker.setKey(FILEPICKER_API_KEY);
-        
     }
     
     // willDestroyElement: function(){
@@ -1189,7 +1279,19 @@ Nerdeez.ContactController = Ember.Controller.extend({
 * @version: 1.0
 */
 
-Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share);
+Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share, {
+
+	/**
+	* Init facebook's share function from the Mixin
+	**/
+	url: window.location.href,
+
+	shareInit: function(){
+		this.set('name', this.get('content.title'));
+		this.set('description', this.get('content.description'));
+	}
+
+});
 
 })();
 
@@ -2680,6 +2782,9 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
 	    this.ajax(this.buildURL(root), "POST", {
 		      data: data,
 		      success: function(json) {
+		      	if(record.get('id') == null){
+			        	record.set('id', json.id);
+		        }
 		        xthis.didCreateRecord(store, type, record, json);
 		      },
 		      error: function(xhr){

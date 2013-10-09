@@ -12,50 +12,22 @@
     li {
         float: left;
     }
-    .wall-resultbox { 
-        height: 150px;
-        margin-bottom: 30px;
-        box-shadow: -5px 5px 4px 2px gray;
-        .wall-action { //action pane
-            height: 95px;
-            background-color: white;
-            padding-top: 20px;
-            padding-left: 15px;
-            padding-right: 15px;
-            border: 1px solid gray;
-            border-bottom: 0;
+    .wall-main { 
+        .main-action { //action pane
             .pic-content {
                 float: left;
                 padding-right: 15px;
+                .nerdeez-action-image {
+                    background-size: 85px 80px;
+                }
                 i {
                     display: block;
                     height: 80px;
                     width: 84px;
                     float: left;
                 }
-               .faculty-icon {
-                    .schoolgroup-img {
-                        display: block;
-                        background-image: image-url("faculty-pic.png");
-                        background-size: 85px 80px;
-                    }
-                }
-                .course-icon {
-                    .schoolgroup-img {
-                        display: block;
-                        background-image: image-url("course-pic.png");
-                        background-size: 85px 80px;
-                    }
-                }
-                .university-icon {
-                    .schoolgroup-img {
-                        display: block;
-                        background-image: image-url("university-pic.png");
-                        background-size: 85px 80px;
-                    }
-                }
             }
-            .wall-content {
+            .text-content {
                 .result-title {
                     font-size: 18px;
                     padding-bottom: 10px;
@@ -70,13 +42,8 @@
                 }
             }
         }
-        .wall-footer { //footer pane
-            height: 35px;
-            background-color: #E6E6E6;
-            padding-left: 15px;
-            border: 1px solid gray;
-            border-top: 0;
-            .wall-share {
+        .main-footer { //footer pane
+            .main-share {
                 float: right;
                 width: 500px;
                 ul {
@@ -119,6 +86,15 @@
                     padding-top: 2px;
                 }
             }
+        }
+    }
+
+    .wall-comments {
+        height: auto !important;
+        background-color: white;
+        border: 1px solid gray;
+        .fb-comments {
+            padding: 50px;
         }
     }
  }

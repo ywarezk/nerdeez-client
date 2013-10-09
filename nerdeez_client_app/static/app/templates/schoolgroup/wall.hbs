@@ -1,5 +1,5 @@
 <!--
-	the school group wall is located here
+	the school group main is located here
 	be aware that the top section of this page is shared in the course files page as well
 	so it should be a partial
 	
@@ -12,14 +12,14 @@
 <div class="schoolgroup-wall">
 	<div class="row">
 		<div class="span10">
-			<div class="wall-resultbox">
-				<div class="wall-action">
+			<div class="wall-main nerdeez-box">
+				<div class="main-action nerdeez-box-action">
 					<div class="pic-content">
 						<div {{bind-attr class="model.getIconClass"}}>
 							<i class="schoolgroup-img"></i>
 						</div>
 					</div>
-					<div class="wall-content">
+					<div class="text-content">
 						<div class="result-title">
 							<h3>
 								{{#if model.isCourse}}
@@ -40,8 +40,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="wall-footer">
-					<div class="wall-share">
+				<div class="main-footer nerdeez-box-footer">
+					<div class="main-share">
 						<ul class="like-status">
 							<li><i class="icon-thumbs-down"></i></li>
 							<li>Dislike:</li>
@@ -56,6 +56,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="wall-comments nerdeez-box">
+				<div class="fb-comments" {{bind-attr data-href="controller.url"}} data-colorscheme="light" data-numposts="5" data-width="870"></div>
 			</div>
 		</div>
 	</div>
