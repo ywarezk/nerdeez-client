@@ -39,25 +39,34 @@ Nerdeez.SEARCH_LIMIT = 20;
 var readyFunction = function(temp1, temp2, temp3){
 	var adapter = Nerdeez.Adapter.current();
 	var auth = Nerdeez.Auth.current();
+	auth.set('apiKey', $.cookie('apiKey'));
+	auth.set('username', $.cookie('username'));
+	adapter.set('apiKey', $.cookie('apiKey'));
+	adapter.set('username', $.cookie('username'));
+	auth.set('userProfile',Nerdeez.Userprofile.find($.cookie('id')));
+	auth.set('id',$.cookie('id'));
 	Nerdeez.set('auth', auth);
-	adapter.ajax(
-        SERVER_URL + '/api/v1/utilities/is-login/',
-        	'POST',
-        	{
-	        	success: function(json){
-	        		Nerdeez.get('auth').set('isLoggedIn',json['is_logged_in']);
-	        		//var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
-	        		//userProfile.set('data', {school_groups: json['user_profile'].school_groups})
-	        		//var school_groups = userProfile.get('school_groups');
-	        		//var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
-	        		Nerdeez.get('auth').set('user_profile',Nerdeez.Userprofile.find(json['user_profile'].id));
-	        	},
-	        	error: function(json){
-	        		Nerdeez.get('auth').set('isLoggedIn',false);
-	        	},
-	        	data:{}
-        	}    
-    );
+	
+	
+	
+	// adapter.ajax(
+        // SERVER_URL + '/api/v1/utilities/is-login/',
+        	// 'POST',
+        	// {
+	        	// success: function(json){
+	        		// Nerdeez.get('auth').set('isLoggedIn',json['is_logged_in']);
+	        		// //var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
+	        		// //userProfile.set('data', {school_groups: json['user_profile'].school_groups})
+	        		// //var school_groups = userProfile.get('school_groups');
+	        		// //var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
+	        		// Nerdeez.get('auth').set('user_profile',Nerdeez.Userprofile.find(json['user_profile'].id));
+	        	// },
+	        	// error: function(json){
+	        		// Nerdeez.get('auth').set('isLoggedIn',false);
+	        	// },
+	        	// data:{}
+        	// }    
+    // );
 }
 Nerdeez.set('ready', readyFunction);
 
@@ -131,6 +140,129 @@ window.fbAsyncInit = function() {
     fjs.parentNode.insertBefore(js, fjs);
     
 }(document, 'script', 'facebook-jssdk'));
+
+})();
+
+(function() {
+
+/*!
+ * jQuery Cookie Plugin v1.4.0
+ * https://github.com/carhartl/jquery-cookie
+ *
+ * Copyright 2013 Klaus Hartl
+ * Released under the MIT license
+ */
+(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as anonymous module.
+		define(['jquery'], factory);
+	} else {
+		// Browser globals.
+		factory(jQuery);
+	}
+}(function ($) {
+
+	var pluses = /\+/g;
+
+	function encode(s) {
+		return config.raw ? s : encodeURIComponent(s);
+	}
+
+	function decode(s) {
+		return config.raw ? s : decodeURIComponent(s);
+	}
+
+	function stringifyCookieValue(value) {
+		return encode(config.json ? JSON.stringify(value) : String(value));
+	}
+
+	function parseCookieValue(s) {
+		if (s.indexOf('"') === 0) {
+			// This is a quoted cookie as according to RFC2068, unescape...
+			s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+		}
+
+		try {
+			// Replace server-side written pluses with spaces.
+			// If we can't decode the cookie, ignore it, it's unusable.
+			s = decodeURIComponent(s.replace(pluses, ' '));
+		} catch(e) {
+			return;
+		}
+
+		try {
+			// If we can't parse the cookie, ignore it, it's unusable.
+			return config.json ? JSON.parse(s) : s;
+		} catch(e) {}
+	}
+
+	function read(s, converter) {
+		var value = config.raw ? s : parseCookieValue(s);
+		return $.isFunction(converter) ? converter(value) : value;
+	}
+
+	var config = $.cookie = function (key, value, options) {
+
+		// Write
+		if (value !== undefined && !$.isFunction(value)) {
+			options = $.extend({}, config.defaults, options);
+
+			if (typeof options.expires === 'number') {
+				var days = options.expires, t = options.expires = new Date();
+				t.setDate(t.getDate() + days);
+			}
+
+			return (document.cookie = [
+				encode(key), '=', stringifyCookieValue(value),
+				options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+				options.path    ? '; path=' + options.path : '',
+				options.domain  ? '; domain=' + options.domain : '',
+				options.secure  ? '; secure' : ''
+			].join(''));
+		}
+
+		// Read
+
+		var result = key ? undefined : {};
+
+		// To prevent the for loop in the first place assign an empty array
+		// in case there are no cookies at all. Also prevents odd result when
+		// calling $.cookie().
+		var cookies = document.cookie ? document.cookie.split('; ') : [];
+
+		for (var i = 0, l = cookies.length; i < l; i++) {
+			var parts = cookies[i].split('=');
+			var name = decode(parts.shift());
+			var cookie = parts.join('=');
+
+			if (key && key === name) {
+				// If second argument (value) is a function it's a converter...
+				result = read(cookie, value);
+				break;
+			}
+
+			// Prevent storing a cookie that we couldn't decode.
+			if (!key && (cookie = read(cookie)) !== undefined) {
+				result[name] = cookie;
+			}
+		}
+
+		return result;
+	};
+
+	config.defaults = {};
+
+	$.removeCookie = function (key, options) {
+		if ($.cookie(key) !== undefined) {
+			// Must not alter options, thus extending a fresh object...
+			$.cookie(key, '', $.extend({}, options, { expires: -1 }));
+			return true;
+		}
+		return false;
+	};
+
+}));
+
 
 })();
 
@@ -675,13 +807,39 @@ Nerdeez.Flatpage = DS.Model.extend({
  */
 
 Nerdeez.Auth = Ember.Object.extend({
-	isLoggedIn: false,
+	
 	
 	/**
 	 * holds the user profile model for the loged in user
 	 * @type {Nerdeez.UserProfile}
 	 */
-	user_profile: null
+	userProfile: null,
+	
+	/**
+	 * will hold the user api key
+	 * @type {String}
+	 */
+	apiKey: null,
+	
+	/**
+	 * will hold the username
+	 * @type {String}
+	 */
+	username: null,
+	
+	/**
+	 * holds the id of the user profile
+	 * @type {int}
+	 */
+	id: null,
+	
+	/**
+	 * return true if the user is logged in
+	 * @returns: {Boolean}
+	 */
+	isLoggedIn: function(){
+		return this.get('apiKey') != null && this.get('username') != null && this.get('id') != null;
+	}.property('apiKey', 'username'),
 });
 Nerdeez.Auth.reopenClass(Nerdeez.Singleton);
 Nerdeez.set('auth', Nerdeez.Auth.current());
@@ -936,6 +1094,31 @@ Nerdeez.LoginController = Ember.Controller.extend({
      */
     isLoading: false,
     
+    /**
+     * function that is common for all the logins
+     * @param {Object} json object
+     */
+    commonLogin: function(json){
+	    	if(this.get('isRememberMe')){
+    			var expires = 7;
+    		}
+    		else{
+    			var expires = 1;
+    		}
+    		Nerdeez.get('auth').set('username', json['username']);
+    		Nerdeez.get('auth').set('apiKey', json['api_key']);
+    		var adapter = Nerdeez.Adapter.current();
+    		adapter.set('apiKey', json['api_key']);
+		adapter.set('username', json['username']);
+    		Nerdeez.get('auth').set('userProfile', Nerdeez.Userprofile.find(json['user_profile'].id));
+    		$.cookie('username', json['username'], { expires: expires, path: '/' });
+    		$.cookie('apiKey', json['api_key'], { expires: expires, path: '/' });
+    		$.cookie('id', json['user_profile'].id, { expires: expires, path: '/' });
+    		this.set('isLoading', false);
+    		this.transitionToRoute('index');
+    		
+    },
+    
     actions: {
         
         /**
@@ -963,9 +1146,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
 		        	'POST',
 		        	{
 			        	success: function(json){
-			        		Nerdeez.get('auth').set('isLoggedIn', json['success']);
-			        		Nerdeez.get('auth').set('user_profile', Nerdeez.Userprofile.find(json['user_profile'].id));
-			        		xthis.set('isLoading', false);
+			        		xthis.commonLogin(json);
 			        	},
 			        	error: function(json){
 			        		var message = $.parseJSON(json.responseText).message;
@@ -1027,11 +1208,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
 				        	'POST',
 				        	{
 					        	success: function(json){
-					        	    var auth = Nerdeez.Auth.current();
-					        		auth.set('isLoggedIn', json['is_logged_in']);
-					        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
-					        		xthis.set('isLoading', false);
-					        		xthis.transitionTo('index');
+					        	    xthis.commonLogin(json);
 					        	},
 					        	error: function(json){
 					        		xthis.set('isError', true);
@@ -2066,32 +2243,11 @@ Nerdeez.LoginRequired = Ember.Route.extend({
 
 Nerdeez.LogoutRoute = Ember.Route.extend({
     redirect: function(){
-        // self = this;
-        // FB.logout(function(response) {
-            // Ember.run(function(){
-                // Nerdeez.set('isConnected' , false);    
-            // });
-            // self.transitionTo('index');
-        // });
-        var adapter = Nerdeez.Adapter.current();
-        adapter.ajax(
-	        SERVER_URL + '/api/v1/utilities/logout/',
-	        	'POST',
-	        	{
-		        	success: function(json){
-		        		var auth = Nerdeez.Auth.current();
-		        		auth.set('isLoggedIn', json['is_logged_in']);
-		        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
-		        	},
-		        	error: function(json){
-		        	    var auth = Nerdeez.Auth.current();
-		        		auth.set('isLoggedIn', false);
-		        		Nerdeez.set('isLoggedIn', false);
-		        	},
-		        	data:{}
-	        	}    
-	    );
-	    FB.logout();
+	    var auth = Nerdeez.Auth.current();
+	    auth.set('username', null);
+	    auth.set('apiKey', null);
+	    $.cookie('username', null);
+		$.cookie('apiKey', null);
         this.transitionTo('index');
     }
 });
@@ -2111,6 +2267,7 @@ Nerdeez.ResetPasswordRoute = Nerdeez.NerdeezRoute.extend({
 
 Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 	enter: function(){
+		var xthis = this;
 		
 		//get the params from twitter if exists
 		var oauthToken = this.getURLParameter('oauth_token');
@@ -2124,9 +2281,10 @@ Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 				'POST',
 				{
 					success: function(json){
-						var auth = Nerdeez.Auth.current();
-			        		auth.set('isLoggedIn', json['is_logged_in']);
-			        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+						// var auth = Nerdeez.Auth.current();
+			        		// auth.set('isLoggedIn', json['is_logged_in']);
+			        		// Nerdeez.set('isLoggedIn', json['is_logged_in']);
+			        		xthis.controllerFor('login').commonLogin(json);
 					},
 					error: function(json){
 						console.log('twitter callback error');
@@ -2197,18 +2355,20 @@ Nerdeez.SchoolgroupRoute = Ember.Route.extend({
     },
     setupController: function(controller, model){
 	    	controller.set('content', model);
-	    	var enroll = Nerdeez.Enroll.createRecord();
-		enroll.set('user', Nerdeez.get('auth.user_profile'));
-		enroll.set('school_group', model);
-		enroll.transaction.commit();
-		
-		var enrolls = Nerdeez.get('auth.user_profile.enrolls');
-		var isInBar = false;
-		enrolls.forEach(function(item, index, enumerable){
-			if(item.get('school_group.id') == model.get('id'))isInBar = true;
-		});
-		if(!isInBar){
-			enrolls.insertAt(0,enroll);
+	    	if(Nerdeez.get('auth.isLoggedIn')){
+		    	var enroll = Nerdeez.Enroll.createRecord();
+			enroll.set('user', Nerdeez.get('auth.userProfile'));
+			enroll.set('school_group', model);
+			enroll.transaction.commit();
+			
+			var enrolls = Nerdeez.get('auth.userProfile.enrolls');
+			var isInBar = false;
+			enrolls.forEach(function(item, index, enumerable){
+				if(item.get('school_group.id') == model.get('id'))isInBar = true;
+			});
+			if(!isInBar){
+				enrolls.insertAt(0,enroll);
+			}
 		}
     }
 });
@@ -2216,7 +2376,7 @@ Nerdeez.SchoolgroupRoute = Ember.Route.extend({
 /**
  * the route to a course wall page
  */
-Nerdeez.SchoolgroupWallRoute = Nerdeez.LoginRequired.extend({
+Nerdeez.SchoolgroupWallRoute = Nerdeez.NerdeezRoute.extend({
     model: function(){
         return this.modelFor('schoolgroup');
     }
@@ -3289,6 +3449,9 @@ Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
     stopLoadingFunction: function(){
         
     },
+    
+    apiKey: Nerdeez.get('auth.apiKey'),
+    username: Nerdeez.get('auth.username'),
     
     /**
      * our serializer
