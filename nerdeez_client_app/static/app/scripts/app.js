@@ -37,25 +37,34 @@ Nerdeez.SEARCH_LIMIT = 20;
 var readyFunction = function(temp1, temp2, temp3){
 	var adapter = Nerdeez.Adapter.current();
 	var auth = Nerdeez.Auth.current();
+	auth.set('apiKey', $.cookie('apiKey'));
+	auth.set('username', $.cookie('username'));
+	adapter.set('apiKey', $.cookie('apiKey'));
+	adapter.set('username', $.cookie('username'));
+	auth.set('userProfile',Nerdeez.Userprofile.find($.cookie('id')));
+	auth.set('id',$.cookie('id'));
 	Nerdeez.set('auth', auth);
-	adapter.ajax(
-        SERVER_URL + '/api/v1/utilities/is-login/',
-        	'POST',
-        	{
-	        	success: function(json){
-	        		Nerdeez.get('auth').set('isLoggedIn',json['is_logged_in']);
-	        		//var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
-	        		//userProfile.set('data', {school_groups: json['user_profile'].school_groups})
-	        		//var school_groups = userProfile.get('school_groups');
-	        		//var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
-	        		Nerdeez.get('auth').set('user_profile',Nerdeez.Userprofile.find(json['user_profile'].id));
-	        	},
-	        	error: function(json){
-	        		Nerdeez.get('auth').set('isLoggedIn',false);
-	        	},
-	        	data:{}
-        	}    
-    );
+	
+	
+	
+	// adapter.ajax(
+        // SERVER_URL + '/api/v1/utilities/is-login/',
+        	// 'POST',
+        	// {
+	        	// success: function(json){
+	        		// Nerdeez.get('auth').set('isLoggedIn',json['is_logged_in']);
+	        		// //var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
+	        		// //userProfile.set('data', {school_groups: json['user_profile'].school_groups})
+	        		// //var school_groups = userProfile.get('school_groups');
+	        		// //var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
+	        		// Nerdeez.get('auth').set('user_profile',Nerdeez.Userprofile.find(json['user_profile'].id));
+	        	// },
+	        	// error: function(json){
+	        		// Nerdeez.get('auth').set('isLoggedIn',false);
+	        	// },
+	        	// data:{}
+        	// }    
+    // );
 }
 Nerdeez.set('ready', readyFunction);
 
@@ -63,9 +72,10 @@ Nerdeez.set('ready', readyFunction);
 
 //vendor files
 require('bower_components/facebook/facebook');
+require('bower_components/jquery-plugin/jquery.cookie');
 
 //application files
-require('scripts/nerdeez-ember/singleton');
+require('scripts/nerdeez-ember/mixins');
 require('scripts/views/nerdeez-view');
 require('scripts/views/add-schoolgroup-view');
 require('scripts/views/schoolgroup-hws-view');

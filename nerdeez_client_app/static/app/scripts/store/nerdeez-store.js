@@ -33,6 +33,9 @@ Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
         
     },
     
+    apiKey: Nerdeez.get('auth.apiKey'),
+    username: Nerdeez.get('auth.username'),
+    
     /**
      * our serializer
      */

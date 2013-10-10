@@ -81,32 +81,11 @@ Nerdeez.LoginRequired = Ember.Route.extend({
 
 Nerdeez.LogoutRoute = Ember.Route.extend({
     redirect: function(){
-        // self = this;
-        // FB.logout(function(response) {
-            // Ember.run(function(){
-                // Nerdeez.set('isConnected' , false);    
-            // });
-            // self.transitionTo('index');
-        // });
-        var adapter = Nerdeez.Adapter.current();
-        adapter.ajax(
-	        SERVER_URL + '/api/v1/utilities/logout/',
-	        	'POST',
-	        	{
-		        	success: function(json){
-		        		var auth = Nerdeez.Auth.current();
-		        		auth.set('isLoggedIn', json['is_logged_in']);
-		        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
-		        	},
-		        	error: function(json){
-		        	    var auth = Nerdeez.Auth.current();
-		        		auth.set('isLoggedIn', false);
-		        		Nerdeez.set('isLoggedIn', false);
-		        	},
-		        	data:{}
-	        	}    
-	    );
-	    FB.logout();
+	    var auth = Nerdeez.Auth.current();
+	    auth.set('username', null);
+	    auth.set('apiKey', null);
+	    $.cookie('username', null);
+		$.cookie('apiKey', null);
         this.transitionTo('index');
     }
 });
@@ -126,6 +105,7 @@ Nerdeez.ResetPasswordRoute = Nerdeez.NerdeezRoute.extend({
 
 Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 	enter: function(){
+		var xthis = this;
 		
 		//get the params from twitter if exists
 		var oauthToken = this.getURLParameter('oauth_token');
@@ -139,9 +119,10 @@ Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 				'POST',
 				{
 					success: function(json){
-						var auth = Nerdeez.Auth.current();
-			        		auth.set('isLoggedIn', json['is_logged_in']);
-			        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+						// var auth = Nerdeez.Auth.current();
+			        		// auth.set('isLoggedIn', json['is_logged_in']);
+			        		// Nerdeez.set('isLoggedIn', json['is_logged_in']);
+			        		xthis.controllerFor('login').commonLogin(json);
 					},
 					error: function(json){
 						console.log('twitter callback error');
@@ -212,18 +193,20 @@ Nerdeez.SchoolgroupRoute = Ember.Route.extend({
     },
     setupController: function(controller, model){
 	    	controller.set('content', model);
-	    	var enroll = Nerdeez.Enroll.createRecord();
-		enroll.set('user', Nerdeez.get('auth.user_profile'));
-		enroll.set('school_group', model);
-		enroll.transaction.commit();
-		
-		var enrolls = Nerdeez.get('auth.user_profile.enrolls');
-		var isInBar = false;
-		enrolls.forEach(function(item, index, enumerable){
-			if(item.get('school_group.id') == model.get('id'))isInBar = true;
-		});
-		if(!isInBar){
-			enrolls.insertAt(0,enroll);
+	    	if(Nerdeez.get('auth.isLoggedIn')){
+		    	var enroll = Nerdeez.Enroll.createRecord();
+			enroll.set('user', Nerdeez.get('auth.userProfile'));
+			enroll.set('school_group', model);
+			enroll.transaction.commit();
+			
+			var enrolls = Nerdeez.get('auth.userProfile.enrolls');
+			var isInBar = false;
+			enrolls.forEach(function(item, index, enumerable){
+				if(item.get('school_group.id') == model.get('id'))isInBar = true;
+			});
+			if(!isInBar){
+				enrolls.insertAt(0,enroll);
+			}
 		}
     }
 });
@@ -231,7 +214,7 @@ Nerdeez.SchoolgroupRoute = Ember.Route.extend({
 /**
  * the route to a course wall page
  */
-Nerdeez.SchoolgroupWallRoute = Nerdeez.LoginRequired.extend({
+Nerdeez.SchoolgroupWallRoute = Nerdeez.NerdeezRoute.extend({
     model: function(){
         return this.modelFor('schoolgroup');
     }
