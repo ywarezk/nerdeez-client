@@ -51,6 +51,31 @@ Nerdeez.LoginController = Ember.Controller.extend({
      */
     isLoading: false,
     
+    /**
+     * function that is common for all the logins
+     * @param {Object} json object
+     */
+    commonLogin: function(json){
+	    	if(this.get('isRememberMe')){
+    			var expires = 7;
+    		}
+    		else{
+    			var expires = 1;
+    		}
+    		Nerdeez.get('auth').set('username', json['username']);
+    		Nerdeez.get('auth').set('apiKey', json['api_key']);
+    		var adapter = Nerdeez.Adapter.current();
+    		adapter.set('apiKey', json['api_key']);
+		adapter.set('username', json['username']);
+    		Nerdeez.get('auth').set('userProfile', Nerdeez.Userprofile.find(json['user_profile'].id));
+    		$.cookie('username', json['username'], { expires: expires, path: '/' });
+    		$.cookie('apiKey', json['api_key'], { expires: expires, path: '/' });
+    		$.cookie('id', json['user_profile'].id, { expires: expires, path: '/' });
+    		this.set('isLoading', false);
+    		this.transitionToRoute('index');
+    		
+    },
+    
     actions: {
         
         /**
@@ -78,9 +103,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
 		        	'POST',
 		        	{
 			        	success: function(json){
-			        		Nerdeez.get('auth').set('isLoggedIn', json['success']);
-			        		Nerdeez.get('auth').set('user_profile', Nerdeez.Userprofile.find(json['user_profile'].id));
-			        		xthis.set('isLoading', false);
+			        		xthis.commonLogin(json);
 			        	},
 			        	error: function(json){
 			        		var message = $.parseJSON(json.responseText).message;
@@ -142,11 +165,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
 				        	'POST',
 				        	{
 					        	success: function(json){
-					        	    var auth = Nerdeez.Auth.current();
-					        		auth.set('isLoggedIn', json['is_logged_in']);
-					        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
-					        		xthis.set('isLoading', false);
-					        		xthis.transitionTo('index');
+					        	    xthis.commonLogin(json);
 					        	},
 					        	error: function(json){
 					        		xthis.set('isError', true);

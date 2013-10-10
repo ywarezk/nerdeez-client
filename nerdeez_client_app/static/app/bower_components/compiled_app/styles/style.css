@@ -642,32 +642,32 @@ pointer-events: none;
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003155}}
 .search .results .hoveron .resultbox .result-action .faculty-icon .standard-img {
   display: block;
-  background-image: url('/static/app/img/faculty-pic.png?1381147333');
+  background-image: url('/static/app/img/faculty-pic.png?1381239079');
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003159}}
 .search .results .hoveron .resultbox .result-action .faculty-icon .blurred-img {
   display: none;
-  background-image: url('/static/app/img/faculty-pic-blurred.png?1381147333');
+  background-image: url('/static/app/img/faculty-pic-blurred.png?1381239079');
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003165}}
 .search .results .hoveron .resultbox .result-action .course-icon .standard-img {
   display: block;
-  background-image: url('/static/app/img/course-pic.png?1381147333');
+  background-image: url('/static/app/img/course-pic.png?1381239079');
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003169}}
 .search .results .hoveron .resultbox .result-action .course-icon .blurred-img {
   display: none;
-  background-image: url('/static/app/img/course-pic-blurred.png?1381147333');
+  background-image: url('/static/app/img/course-pic-blurred.png?1381239079');
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003175}}
 .search .results .hoveron .resultbox .result-action .university-icon .standard-img {
   display: block;
-  background-image: url('/static/app/img/university-pic.png?1381147333');
+  background-image: url('/static/app/img/university-pic.png?1381239079');
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003179}}
 .search .results .hoveron .resultbox .result-action .university-icon .blurred-img {
   display: none;
-  background-image: url('/static/app/img/university-pic-blurred.png?1381147333');
+  background-image: url('/static/app/img/university-pic-blurred.png?1381239079');
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003185}}
 .search .results .hoveron .resultbox .result-footer {
