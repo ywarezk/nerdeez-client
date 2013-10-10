@@ -2665,7 +2665,7 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
 	 * @type string
 	 * @public
 	 */
-	api_key: null,
+	apiKey: null,
 	
 	/**
 	 * will append this to the url for tastypie authentication
@@ -2733,15 +2733,17 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
     ajax: function (url, type, hash) {
     	
 		// if the api key and username are set then append them to url	    	
-        if(this.get('api_key') != null && this.get('username') != null){
-            api_key = this.get('api_key');
-            username = this.get('username');
-            url = url + '?username=' + username + '&api_key=' + api_key;
+        if(this.get('apiKey') != null && this.get('username') != null && type.toLowerCase() == "get"){
+            var api_key = this.get('apiKey');
+            var username = this.get('username');
+            var url = url + '?username=' + username + '&api_key=' + api_key;
         }
         
         //if its post put request then prepare the data
         pass_data = hash.data;
         if (type.toLowerCase() == "post" || type.toLowerCase() == "put"){
+	        	hash.data['username'] = this.get('username');
+	        	hash.data['api_key'] = this.get('apiKey');
             pass_data = JSON.stringify(hash.data);
         }
         
