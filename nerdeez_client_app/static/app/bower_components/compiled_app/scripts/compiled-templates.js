@@ -1433,15 +1433,12 @@ function program5(depth0,data) {
   data.buffer.push("</span>\n						</div>\n					</div>\n				</div>\n				<div class=\"main-footer nerdeez-box-footer\">\n					<div class=\"main-share\">\n						<ul class=\"like-status\">\n							<li><i class=\"icon-thumbs-down\"></i></li>\n							<li>Dislike:</li>\n							<li>.....</li>\n							<li><i class=\"vertical-line\"></i></li>\n							<li><i class=\"icon-thumbs-up\"></i></li>\n							<li>Like:</li>\n							<li>.....</li>\n						</ul>\n						<div class=\"fb\">\n							<a class=\"btn_2\" ");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "share", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">Share on Facebook</a>\n						</div>\n					</div>\n				</div>\n			</div>\n			<div class=\"wall-comments nerdeez-box\">\n				<div class=\"fb-comments\" ");
-  hashContexts = {'data-href': depth0};
-  hashTypes = {'data-href': "STRING"};
-  options = {hash:{
-    'data-href': ("controller.url")
-  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || depth0['bind-attr']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
-  data.buffer.push(" data-colorscheme=\"light\" data-numposts=\"5\" data-width=\"870\"></div>\n			</div>\n		</div>\n	</div>\n</div>");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "fbShare", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">Share on Facebook</a>\n						</div>\n					</div>\n				</div>\n			</div>\n			<div class=\"wall-comments nerdeez-box\">\n				");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "fbComments", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n			</div>\n		</div>\n	</div>\n</div>");
   return buffer;
   
 });

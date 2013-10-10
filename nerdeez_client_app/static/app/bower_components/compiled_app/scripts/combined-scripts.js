@@ -136,7 +136,7 @@ window.fbAsyncInit = function() {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {return;}
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    js.src = "//connect.facebook.net/en_US/all.js";
     fjs.parentNode.insertBefore(js, fjs);
     
 }(document, 'script', 'facebook-jssdk'));
@@ -501,7 +501,7 @@ Nerdeez.Share = Ember.Mixin.create({
     @returns {Ember.Object} the instance of the singleton
   **/
 
-    share: function() {
+    fbShare: function() {
       this.shareInit();
       var xthis = this;
       FB.ui(
@@ -552,13 +552,16 @@ Ember.View.reopen({
     didInsertElement: function(){
         this._super();
         
-        FB.XFBML.parse();
         $('.js-validation').validationEngine();
         
         //fix for the history bar
         //$('.left-sidebar .child.active').closest('.parent').addClass('open')
         
         filepicker.setKey(FILEPICKER_API_KEY);
+        
+        Ember.run.scheduleOnce('afterRender', this, function(){
+            FB.XFBML.parse();
+        });
     }
     
     // willDestroyElement: function(){
@@ -1461,7 +1464,6 @@ Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share, {
 	/**
 	* Init facebook's share function from the Mixin
 	**/
-	url: window.location.href,
 
 	shareInit: function(){
 		this.set('name', this.get('content.title'));
@@ -2149,6 +2151,12 @@ Ember.Handlebars.registerBoundHelper('getRating', function(currRating, outOf, op
     	else
     		html += '<li><i class="icon-star-empty"></i></li>';
     }
+    return new Handlebars.SafeString(html);
+});
+
+Ember.Handlebars.registerBoundHelper('fbComments', function() {
+    
+    var html='<div id="addfb1"><div class="fb-comments" data-href="window.location.href" data-colorscheme="light" data-numposts="5" data-width="870"></div></div>';
     return new Handlebars.SafeString(html);
 });
 

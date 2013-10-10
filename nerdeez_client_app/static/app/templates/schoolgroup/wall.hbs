@@ -52,13 +52,13 @@
 							<li>.....</li>
 						</ul>
 						<div class="fb">
-							<a class="btn_2" {{action share}}>Share on Facebook</a>
+							<a class="btn_2" {{action fbShare}}>Share on Facebook</a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="wall-comments nerdeez-box">
-				<div class="fb-comments" {{bind-attr data-href="controller.url"}} data-colorscheme="light" data-numposts="5" data-width="870"></div>
+				{{fbComments}}
 			</div>
 		</div>
 	</div>

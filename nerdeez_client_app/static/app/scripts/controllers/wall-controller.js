@@ -11,7 +11,6 @@ Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share, {
 	/**
 	* Init facebook's share function from the Mixin
 	**/
-	url: window.location.href,
 
 	shareInit: function(){
 		this.set('name', this.get('content.title'));

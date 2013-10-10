@@ -21,13 +21,16 @@ Ember.View.reopen({
     didInsertElement: function(){
         this._super();
         
-        FB.XFBML.parse();
         $('.js-validation').validationEngine();
         
         //fix for the history bar
         //$('.left-sidebar .child.active').closest('.parent').addClass('open')
         
         filepicker.setKey(FILEPICKER_API_KEY);
+        
+        Ember.run.scheduleOnce('afterRender', this, function(){
+            FB.XFBML.parse();
+        });
     }
     
     // willDestroyElement: function(){
