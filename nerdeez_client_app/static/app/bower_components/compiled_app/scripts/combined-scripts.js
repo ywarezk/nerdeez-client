@@ -144,127 +144,6 @@ window.fbAsyncInit = function() {
 (function() {
 
 /**
-  This mixin allows a class to return a singleton, as well as a method to quickly
-  read/write attributes on the singleton.
-
-
-  Example usage:
-
-  ```javascript
-
-    // Define your class and apply the Mixin
-    User = Ember.Object.extend({});
-    User.reopenClass(Discourse.Singleton);
-
-    // Retrieve the current instance:
-    var instance = User.current();
-
-  ```
-
-  Commonly you want to read or write a property on the singleton. There's a
-  helper method which is a little nicer than `.current().get()`:
-
-  ```javascript
-
-    // Sets the age to 34
-    User.currentProp('age', 34);
-
-    console.log(User.currentProp('age')); // 34
-
-  ```
-
-  If you want to customize how the singleton is created, redefine the `createCurrent`
-  method:
-
-  ```javascript
-
-    // Define your class and apply the Mixin
-    Foot = Ember.Object.extend({});
-    Foot.reopenClass(Discourse.Singleton, {
-      createCurrent: function() {
-        return Foot.create({toes: 5});
-      }
-    });
-
-    console.log(Foot.currentProp('toes')); // 5
-
-  ```
-**/
-
-//create the namespace if the namespace doesnt exist
-if (typeof window.Nerdeez === "undefined"){
-	var Nerdeez = Ember.Namespace.create();
-}
-else{
-	var Nerdeez = window.Nerdeez;
-}
-
-/**
-  @class Discourse.Singleton
-  @extends Ember.Mixin
-  @namespace Discourse
-  @module Discourse
-**/
-Nerdeez.Singleton = Ember.Mixin.create({
-
-  /**
-    Returns the current singleton instance of the class.
-
-    @method current
-    @returns {Ember.Object} the instance of the singleton
-  **/
-  current: function() {
-    if (!this._current) {
-      this._current = this.createCurrent();
-    }
-
-    return this._current;
-  },
-
-
-  /**
-    How the singleton instance is created. This can be overridden
-    with logic for creating (or even returning null) your instance.
-
-    By default it just calls `create` with an empty object.
-
-    @method createCurrent
-    @returns {Ember.Object} the instance that will be your singleton
-  **/
-  createCurrent: function() {
-    return this.create({});
-  },
-
-  /**
-    Returns or sets a property on the singleton instance.
-
-    @method currentProp
-    @param {String} property the property we want to get or set
-    @param {String} value the optional value to set the property to
-    @returns the value of the property
-  **/
-  currentProp: function(property, value) {
-    var instance = this.current();
-    if (!instance) { return; }
-
-    if (typeof(value) !== "undefined") {
-      instance.set(property, value);
-      return value;
-    } else {
-      return instance.get(property);
-    }
-  }
-
-});
-
-
-
-
-})();
-
-(function() {
-
-/**
 * all views in the application will extend this master view
 *
 * @copyright: nerdeez.com Ltd.
@@ -2498,7 +2377,7 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
 	 * @type string
 	 * @public
 	 */
-	api_key: null,
+	apiKey: null,
 	
 	/**
 	 * will append this to the url for tastypie authentication
@@ -2566,15 +2445,17 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
     ajax: function (url, type, hash) {
     	
 		// if the api key and username are set then append them to url	    	
-        if(this.get('api_key') != null && this.get('username') != null){
-            api_key = this.get('api_key');
-            username = this.get('username');
-            url = url + '?username=' + username + '&api_key=' + api_key;
+        if(this.get('apiKey') != null && this.get('username') != null && type.toLowerCase() == "get"){
+            var api_key = this.get('apiKey');
+            var username = this.get('username');
+            var url = url + '?username=' + username + '&api_key=' + api_key;
         }
         
         //if its post put request then prepare the data
         pass_data = hash.data;
         if (type.toLowerCase() == "post" || type.toLowerCase() == "put"){
+	        	hash.data['username'] = this.get('username');
+	        	hash.data['api_key'] = this.get('apiKey');
             pass_data = JSON.stringify(hash.data);
         }
         
@@ -2615,6 +2496,9 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
 	    this.ajax(this.buildURL(root), "POST", {
 		      data: data,
 		      success: function(json) {
+		      	if(record.get('id') == null){
+			        	record.set('id', json.id);
+		        }
 		        xthis.didCreateRecord(store, type, record, json);
 		      },
 		      error: function(xhr){
