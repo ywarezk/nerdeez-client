@@ -65,7 +65,7 @@ Nerdeez.set('ready', readyFunction);
 require('bower_components/facebook/facebook');
 
 //application files
-require('scripts/nerdeez-ember/singleton');
+require('scripts/nerdeez-ember/mixins');
 require('scripts/views/nerdeez-view');
 require('scripts/views/add-schoolgroup-view');
 require('scripts/views/schoolgroup-files-view');
