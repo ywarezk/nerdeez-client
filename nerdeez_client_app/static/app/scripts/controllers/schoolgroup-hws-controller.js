@@ -81,11 +81,17 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 				},
 				function(inkBlobs){ //success
 					inkBlobs.forEach(function(item, index, enumerable){
-						var file = Nerdeez.File.createRecord();
-						file.set('title', item.filename);
-						file.set('file', item.url);
-						file.set('size', item.size);
-						file.transaction.commit();
+						// var file = Nerdeez.File.createRecord();
+						// file.set('title', item.filename);
+						// file.set('file', item.url);
+						// file.set('size', item.size);
+						// file.transaction.commit();
+						var file = 
+							{
+								title: item.filename,
+								file: item.url,
+								size: item.size 
+							}
 						xthis.get('newHwFiles').pushObject(file);	
 					})
 					
@@ -114,8 +120,12 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 				xthis.set('isNewHwLoading', false);
 				if(xthis.get('newHwFiles.length') > 0 ){
 					xthis.get('newHwFiles').forEach(function(item, index, enumerable){
-						item.set('hw', hw);
-						item.transaction.commit();						
+						var file = Nerdeez.File.createRecord();
+						file.set('title', item.title);
+						file.set('file', item.file);
+						file.set('size', item.size);
+						file.set('hw', hw);
+						file.transaction.commit();						
 					})
 					xthis.set('isNewHwLoading', false);
 					onSuccess();
