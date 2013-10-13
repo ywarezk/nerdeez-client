@@ -124,38 +124,38 @@
 						</tr>
 					</thead>
 					<tbody>
-					{{#each hw in hws}}
-						<tr>
-							<td>
-								{{#link-to "hws.hw" hw}}
-								{{hw.title}}
-								{{/link-to}}
-							</td>
-							<td>
-								{{hw.description}}
-							</td>
-							<td class="center">
-								{{hw.files.length}}
-							</td>
-							<td class="center">
-								{{getRating grade 5}}
-							</td>
-							<td class="center">
-								<a {{action "fbShare"}}>
-									<i class="icon-facebook-sign">
-									</i>
-								</a>
-							</td>
-							<td>
-								{{hw.getCreationDate}}
-							</td>
-							<!--<td class="center">
-								<a>
-									<i class="icon-download"></i>
-								</a>								
-							</td>-->
-						</tr>
-					{{/each}}
+						{{#each hw in hws}}
+							<tr>
+								<td>
+									{{#link-to "hws.hw" hw.id}}
+									{{hw.title}}
+									{{/link-to}}
+								</td>
+								<td>
+									{{hw.description}}
+								</td>
+								<td class="center">
+									{{hw.files.length}}
+								</td>
+								<td class="center">
+									{{getRating grade 5}}
+								</td>
+								<td class="center">
+									<a {{action "fbShare"}}>
+										<i class="icon-facebook-sign">
+										</i>
+									</a>
+								</td>
+								<td>
+									{{hw.getCreationDate}}
+								</td>
+								<!--<td class="center">
+									<a>
+										<i class="icon-download"></i>
+									</a>								
+								</td>-->
+							</tr>
+						{{/each}}
 					</tbody>
 				</table>
 			{{else}}

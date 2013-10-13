@@ -2426,7 +2426,11 @@ Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
 Nerdeez.HwsHwRoute = Nerdeez.LoginRequired.extend({
     model: function(param){
         return Nerdeez.Hw.find(param.hwId);
-    }
+    },
+    serialize: function(model) {
+	    // this will make the URL `/posts/12`
+	    return { post_id: model.get('id') };
+	}
 });
 
 /**
