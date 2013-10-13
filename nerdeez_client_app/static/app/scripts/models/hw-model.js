@@ -14,6 +14,8 @@ Nerdeez.Hw = DS.Model.extend({
 	school_group: DS.belongsTo('Nerdeez.Schoolgroup'),
 	files: DS.hasMany('Nerdeez.File'),
 	creation_date: DS.attr('date'),
+	like: DS.attr('number'),
+	dislike: DS.attr('number'),
 	
 	/**
 	 * return the creation date in a human readable format

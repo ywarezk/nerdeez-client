@@ -12,5 +12,7 @@ Nerdeez.File = DS.Model.extend({
 	grade: DS.attr('number'),
 	hw: DS.belongsTo('Nerdeez.Hw'),
 	file: DS.attr('string'),
-	size: DS.attr('number')
+	size: DS.attr('number'),
+	like: DS.attr('number'),
+	dislike: DS.attr('number')
 });

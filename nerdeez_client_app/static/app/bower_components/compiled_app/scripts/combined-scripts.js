@@ -740,6 +740,8 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 	grade: DS.attr('number'),
 	hws: DS.hasMany('Nerdeez.Hw'),
 	user: DS.belongsTo('Nerdeez.Userprofile'),
+	like: DS.attr('number'),
+	dislike: DS.attr('number'),
 	
 	getIconClass: function() {
 		a = this.get("school_type");
@@ -903,6 +905,8 @@ Nerdeez.Hw = DS.Model.extend({
 	school_group: DS.belongsTo('Nerdeez.Schoolgroup'),
 	files: DS.hasMany('Nerdeez.File'),
 	creation_date: DS.attr('date'),
+	like: DS.attr('number'),
+	dislike: DS.attr('number'),
 	
 	/**
 	 * return the creation date in a human readable format
@@ -933,7 +937,9 @@ Nerdeez.File = DS.Model.extend({
 	grade: DS.attr('number'),
 	hw: DS.belongsTo('Nerdeez.Hw'),
 	file: DS.attr('string'),
-	size: DS.attr('number')
+	size: DS.attr('number'),
+	like: DS.attr('number'),
+	dislike: DS.attr('number')
 });
 
 
