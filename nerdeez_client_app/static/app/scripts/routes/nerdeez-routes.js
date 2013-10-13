@@ -74,6 +74,11 @@ Nerdeez.LoginRequired = Ember.Route.extend({
     redirect: function(){
         isLoggedIn = Nerdeez.get('auth.isLoggedIn');
         if(!isLoggedIn){
+	        	var loginController = this.controllerFor('login');
+	        	loginController.set('isError', true);
+	        	loginController.set('message', 'You must be logged in to access this page');
+	        	loginController.set('redirect', this.routeName);
+	        	loginController.set('redirectModel', this.model());
 	        	this.transitionTo('login');
         }
     }

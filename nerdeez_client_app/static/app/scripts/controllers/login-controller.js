@@ -8,6 +8,18 @@
 
 var Nerdeez = window.Nerdeez;
 Nerdeez.LoginController = Ember.Controller.extend({
+	
+	/**
+	 * if redirecting with model it will hold the model
+	 * @type {DS.Model}
+	 */
+	redirectModel: null,
+	
+	/**
+	 * will redirect the user to the path specified in the property
+	 * @type {String} 
+	 */
+	redirect: 'index',
     
     /**
      * holds the user input for the email
@@ -72,7 +84,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
     		$.cookie('apiKey', json['api_key'], { expires: expires, path: '/' });
     		$.cookie('id', json['user_profile'].id, { expires: expires, path: '/' });
     		this.set('isLoading', false);
-    		this.transitionToRoute('index');
+    		this.transitionToRoute(this.get('redirect'), this.get('redirectModel'));
     		
     },
     
