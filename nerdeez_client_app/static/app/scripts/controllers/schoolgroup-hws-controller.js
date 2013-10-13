@@ -81,11 +81,6 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 				},
 				function(inkBlobs){ //success
 					inkBlobs.forEach(function(item, index, enumerable){
-						// var file = Nerdeez.File.createRecord();
-						// file.set('title', item.filename);
-						// file.set('file', item.url);
-						// file.set('size', item.size);
-						// file.transaction.commit();
 						var file = 
 							{
 								title: item.filename,
@@ -137,6 +132,9 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 				xthis.set('isSuccess', true);
 				xthis.set('message', 'Successfully created the H.W');
 				xthis.set('newCreatedHw', hw);
+				xthis.set('newHwFiles', Ember.A());
+				xthis.set('newHwTitle', null);
+				xthis.set('newHwDescription', null);
 			});
 			hw.one('becameError', function(json, temp1, temp2){
 				xthis.set('isNewHwLoading', false);
