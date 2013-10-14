@@ -6,7 +6,24 @@
 			
 			<div class="masthead-text">
 				<h2></h2>
-				<p></p>
+				<p>
+				{{#each Nerdeez.masthead}}
+					{{#if model}}
+						{{#link-to route model}}
+						{{title}}
+						<i class="icon-caret-right">
+						</i>
+						{{/link-to}}
+					{{else}}
+						{{#link-to route}}
+						{{title}}
+						<i class="icon-caret-right">
+						</i>
+						{{/link-to}}
+					{{/if}}
+					
+				{{/each}}
+				</p>
 			</div> <!-- /.masthead-text -->
 			
 		</div>

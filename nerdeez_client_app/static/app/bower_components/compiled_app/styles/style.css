@@ -360,6 +360,34 @@ pointer-events: none;
   top: 4px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000339}}
+#masthead {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000342}}
+#masthead .masthead-text p {
+  font-size: 18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000344}}
+#masthead .masthead-text p a {
+  color: #e62a59;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000347}}
+#masthead .masthead-text p a i {
+  position: relative;
+  top: 7px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000352}}
+#masthead .masthead-text p a:hover {
+  color: #888888;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000357}}
+#masthead .masthead-text p a:nth-last-of-type(1) i {
+  display: none;
+}
+
 /**
 * holds the styles of the header
 * @copyright: nerdeez.com Ltd.

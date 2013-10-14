@@ -45,6 +45,22 @@ Nerdeez.Router.map(function () {
  * it will contain common route functions
  */
 Nerdeez.NerdeezRoute = Ember.Route.extend({
+    schoolGroupRoutes: function(model){
+	    	var masthead = Nerdeez.get('masthead');
+	    	if (model.get('parent') != null){
+	    		this.schoolGroupRoutes(model.get('parent'));
+	    		
+		}
+		masthead.addObject({route: 'schoolgroup.about', model: model, title: model.get('title')});
+		
+	},
+	
+	populateMastheadSchoolgroupRoutes: function(model){
+		var masthead = Ember.A();
+		masthead.addObject({route: 'index', model: null, title: 'Home'});
+		Nerdeez.set('masthead', masthead);
+		this.schoolGroupRoutes(model);
+	},
     
     /**
      * wiil extract the url params
@@ -70,7 +86,7 @@ Nerdeez.NerdeezRoute = Ember.Route.extend({
  * all the routes that require login will extend this
  * Usage: just extend this class instead of the regular Ember.Route
  */
-Nerdeez.LoginRequired = Ember.Route.extend({
+Nerdeez.LoginRequired = Nerdeez.NerdeezRoute.extend({
     redirect: function(){
         isLoggedIn = Nerdeez.get('auth.isLoggedIn');
         if(!isLoggedIn){
@@ -110,6 +126,7 @@ Nerdeez.ResetPasswordRoute = Nerdeez.NerdeezRoute.extend({
 
 Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 	enter: function(){
+		
 		var xthis = this;
 		
 		//get the params from twitter if exists
@@ -143,11 +160,26 @@ Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 	
 });
 
+Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
+	enter: function(){
+		var masthead = Ember.A();
+		masthead.addObject({route: 'index', model: null, title: 'Home'});
+		Nerdeez.set('masthead', masthead);
+	}
+});
+
 
 /**
  * the route for the university search, grab the initial data
  */
 Nerdeez.SearchRoute = Ember.Route.extend({
+	enter: function(){
+		var masthead = Ember.A();
+		masthead.addObject({route: 'index', model: null, title: 'Home'});
+		masthead.addObject({route: 'search', model: null, title: 'Search'});
+		Nerdeez.set('masthead', masthead);
+	},
+	
 	model: function(param){
 		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title'});
 	}
@@ -166,6 +198,14 @@ Nerdeez.FlatPageRoute = Ember.Route.extend({
  * route to about page
  */
 Nerdeez.AboutRoute = Nerdeez.FlatPageRoute.extend({
+	
+	enter: function(){
+		var masthead = Ember.A();
+		masthead.addObject({route: 'index', model: null, title: 'Home'});
+		masthead.addObject({route: 'about', model: null, title: 'About'});
+		Nerdeez.set('masthead', masthead);
+	},
+	
 	model: function(param){
 		return Nerdeez.Flatpage.find({'title' : 'about'});
 	}
@@ -175,6 +215,13 @@ Nerdeez.AboutRoute = Nerdeez.FlatPageRoute.extend({
  * route to privacy page
  */
 Nerdeez.PrivacyRoute = Nerdeez.FlatPageRoute.extend({
+	enter: function(){
+		var masthead = Ember.A();
+		masthead.addObject({route: 'index', model: null, title: 'Home'});
+		masthead.addObject({route: 'privacy', model: null, title: 'Privacy'});
+		Nerdeez.set('masthead', masthead);
+	},
+	
 	model: function(param){
 		return Nerdeez.Flatpage.find({'title' : 'privacy'});
 	}
@@ -184,6 +231,13 @@ Nerdeez.PrivacyRoute = Nerdeez.FlatPageRoute.extend({
  * route to terms page
  */
 Nerdeez.TermsRoute = Nerdeez.FlatPageRoute.extend({
+	enter: function(){
+		var masthead = Ember.A();
+		masthead.addObject({route: 'index', model: null, title: 'Home'});
+		masthead.addObject({route: 'terms', model: null, title: 'Terms & Conditions'});
+		Nerdeez.set('masthead', masthead);
+	},
+	
 	model: function(param){
 		return Nerdeez.Flatpage.find({'title': 'terms'});
 	}
@@ -192,10 +246,12 @@ Nerdeez.TermsRoute = Nerdeez.FlatPageRoute.extend({
 /**
  * the route to a course page
  */
-Nerdeez.SchoolgroupRoute = Ember.Route.extend({
+Nerdeez.SchoolgroupRoute = Nerdeez.NerdeezRoute.extend({
+	
     model: function(param){
         return Nerdeez.Schoolgroup.find(param.schoolgroup_id);
     },
+    
     setupController: function(controller, model){
 	    	controller.set('content', model);
 	    	if(Nerdeez.get('auth.isLoggedIn')){
@@ -213,6 +269,11 @@ Nerdeez.SchoolgroupRoute = Ember.Route.extend({
 				enrolls.insertAt(0,enroll);
 			}
 		}
+		
+		var masthead = Ember.A();
+		masthead.addObject({route: 'index', model: null, title: 'Home'});
+		Nerdeez.set('masthead', masthead);
+		this.schoolGroupRoutes(model);
     }
 });
 
@@ -220,6 +281,12 @@ Nerdeez.SchoolgroupRoute = Ember.Route.extend({
  * the route to a course wall page
  */
 Nerdeez.SchoolgroupWallRoute = Nerdeez.NerdeezRoute.extend({
+	enter: function(){
+		this.populateMastheadSchoolgroupRoutes(this.modelFor('schoolgroup'));
+		var masthead = Nerdeez.get('masthead');
+		masthead.addObject({route: 'schoolgroup.wall', model: this.modelFor('schoolgroup'), title: 'Wall'});
+	},
+	
     model: function(){
         return this.modelFor('schoolgroup');
     }
@@ -229,6 +296,12 @@ Nerdeez.SchoolgroupWallRoute = Nerdeez.NerdeezRoute.extend({
  * the route to a course files page
  */
 Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
+	enter: function(){
+		this.populateMastheadSchoolgroupRoutes(this.modelFor('schoolgroup'));
+		var masthead = Nerdeez.get('masthead');
+		masthead.addObject({route: 'hws.index', model: this.modelFor('schoolgroup'), title: "H.W's"});
+	},
+	
     model: function(){
         return this.modelFor('schoolgroup');
     }
@@ -238,19 +311,29 @@ Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
  * the route to a single hw page
  */
 Nerdeez.HwsHwRoute = Nerdeez.LoginRequired.extend({
+	
     model: function(param){
         return Nerdeez.Hw.find(param.hwId);
     },
-    serialize: function(model) {
-	    // this will make the URL `/posts/12`
-	    return { post_id: model.get('id') };
-	}
+    
+    setupController: function(controller, model){
+	    	this.populateMastheadSchoolgroupRoutes(model.get('school_group'));
+		var masthead = Nerdeez.get('masthead');
+		masthead.addObject({route: 'schoolgroup.hws', model: model.get('school_group'), title: "H.W's"});
+		masthead.addObject({route: 'hws.hw', model: model, title: model.get('title')});
+	},
 });
 
 /**
  * the route to a course about page
  */
 Nerdeez.SchoolgroupAboutRoute = Nerdeez.LoginRequired.extend({
+	enter: function(){
+		this.populateMastheadSchoolgroupRoutes(this.modelFor('schoolgroup'));
+		var masthead = Nerdeez.get('masthead');
+		masthead.addObject({route: 'schoolgroup.about', model: this.modelFor('schoolgroup'), title: 'About'});
+	},
+	
     model: function(){
         return this.modelFor('schoolgroup');
     }
@@ -260,6 +343,13 @@ Nerdeez.SchoolgroupAboutRoute = Nerdeez.LoginRequired.extend({
  * the route for the add school group page
  */
 Nerdeez.AddSchoolGroupRoute = Nerdeez.NerdeezRoute.extend({
+	enter: function(){
+		var masthead = Ember.A();
+		masthead.addObject({route: 'index', model: null, title: 'Home'});
+		masthead.addObject({route: 'addSchoolGroup', model: null, title: 'Add Uni/Faculty/Course'});
+		Nerdeez.set('masthead', masthead);
+	},
+	
 	model: function(param){
 		
 		//find the id of the university

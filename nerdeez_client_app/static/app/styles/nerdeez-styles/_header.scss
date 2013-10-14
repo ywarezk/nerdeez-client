@@ -36,4 +36,30 @@
     }
 }
 
+#masthead{
+    padding-top: 14px; padding-bottom: 14px;
+    .masthead-text{
+        p{
+            font-size: 18px;
+            a{
+                color: #e62a59;
+                text-decoration: none;
+                i{
+                    
+                    position: relative;
+                    top: 7px;
+                }
+                &:hover{
+                    color: #888888;
+                }
+            }
+            a:nth-last-of-type(1){
+                i{
+                  display: none;
+                }
+            }
+        }
+    }
+}
+
 
