@@ -30,6 +30,10 @@ Nerdeez.SORTBY_TYPE = [
 ]
 
 Nerdeez.SEARCH_LIMIT = 20;
+
+Nerdeez.UPLOAD_ALLOWED_EXTENSIONS = ['.doc', '.docx', '.pdf', '.xls', '.xlsx', '.ppt', '.pptx', '.zip', '.rar', '.png', '.jpg', '.jpeg', '.bmp', '.gif'] 
+Nerdeez.UPLOAD_SERVICES = ['COMPUTER','DROPBOX', 'GOOGLE_DRIVE', 'SKYDRIVE', 'URL', 'GMAIL','BOX'] 
+
 /**
 * application init function
 * will check if the user is logged in upon application start
@@ -79,6 +83,7 @@ require('scripts/nerdeez-ember/mixins');
 require('scripts/views/nerdeez-view');
 require('scripts/views/add-schoolgroup-view');
 require('scripts/views/schoolgroup-hws-view');
+require('scripts/models/nerdeez-model');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/models/auth-model');
@@ -95,6 +100,7 @@ require('scripts/controllers/forget-password-controller');
 require('scripts/controllers/reset-password-controller');
 require('scripts/controllers/add-schoolgroup-controller');
 require('scripts/controllers/schoolgroup-hws-controller');
+require('scripts/controllers/schoolgroup-hws-hw-controller');
 require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
 
 //routes

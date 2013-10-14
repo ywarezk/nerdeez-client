@@ -72,8 +72,8 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 			filepicker.pickAndStore(
 				{
 					multiple: true,
-					extensions: ['.doc', '.docx', '.pdf', '.xls', '.xlsx', '.ppt', '.pptx', '.zip', '.rar', '.png', '.jpg', '.jpeg', '.bmp', '.gif'],
-					services: ['COMPUTER','DROPBOX', 'GOOGLE_DRIVE', 'SKYDRIVE', 'URL', 'GMAIL','BOX']
+					extensions: Nerdeez.UPLOAD_ALLOWED_EXTENSIONS,
+					services: Nerdeez.UPLOAD_SERVICES
 				},
 				{
 					location: 'S3',

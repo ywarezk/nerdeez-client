@@ -32,6 +32,10 @@ Nerdeez.SORTBY_TYPE = [
 ]
 
 Nerdeez.SEARCH_LIMIT = 20;
+
+Nerdeez.UPLOAD_ALLOWED_EXTENSIONS = ['.doc', '.docx', '.pdf', '.xls', '.xlsx', '.ppt', '.pptx', '.zip', '.rar', '.png', '.jpg', '.jpeg', '.bmp', '.gif'] 
+Nerdeez.UPLOAD_SERVICES = ['COMPUTER','DROPBOX', 'GOOGLE_DRIVE', 'SKYDRIVE', 'URL', 'GMAIL','BOX'] 
+
 /**
 * application init function
 * will check if the user is logged in upon application start
@@ -723,6 +727,34 @@ Nerdeez.HwsIndexView = Ember.View.extend({
 (function() {
 
 /**
+ * will hold abstract class for all the models in the app
+ * and will hold common functions for all the models
+ * 
+ * Created October 14th, 2013
+ * @version: 1.0
+ * @copyright: Nerdeez Ltd.
+ * @author: Yariv Katz
+ */
+
+Nerdeez.NerdeezModel = DS.Model.extend({
+	creation_date: DS.attr('date'),
+	
+	/**
+	 * return the creation date in a human readable format
+	 * @return: {String} beautiful date
+	 */
+	getCreationDate: function(){
+		var date = new Date(this.get('creation_date'));
+		return date.toLocaleDateString();
+	}.property('creation_date')
+});
+
+
+})();
+
+(function() {
+
+/**
  * holds the model for the schoolgroups
  * 
  * @author: Yariv Katz
@@ -898,24 +930,14 @@ Nerdeez.Enroll = DS.Model.extend({
  * @copyright: Nerdeez Ltd.
  */
 
-Nerdeez.Hw = DS.Model.extend({
+Nerdeez.Hw = Nerdeez.NerdeezModel.extend({
 	title: DS.attr('string'),
 	description: DS.attr('string'),
 	grade: DS.attr('number'),
 	school_group: DS.belongsTo('Nerdeez.Schoolgroup'),
 	files: DS.hasMany('Nerdeez.File'),
-	creation_date: DS.attr('date'),
 	like: DS.attr('number'),
 	dislike: DS.attr('number'),
-	
-	/**
-	 * return the creation date in a human readable format
-	 * @return: {String} beautiful date
-	 */
-	getCreationDate: function(){
-		var date = new Date(this.get('creation_date'));
-		return date.toLocaleDateString();
-	}.property('creation_date')
 });
 
 
@@ -932,14 +954,14 @@ Nerdeez.Hw = DS.Model.extend({
  * @copyright: Nerdeez Ltd.
  */
 
-Nerdeez.File = DS.Model.extend({
+Nerdeez.File = Nerdeez.NerdeezModel.extend({
 	title: DS.attr('string'),
 	grade: DS.attr('number'),
 	hw: DS.belongsTo('Nerdeez.Hw'),
 	file: DS.attr('string'),
 	size: DS.attr('number'),
 	like: DS.attr('number'),
-	dislike: DS.attr('number')
+	dislike: DS.attr('number'),
 });
 
 
@@ -2045,8 +2067,8 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 			filepicker.pickAndStore(
 				{
 					multiple: true,
-					extensions: ['.doc', '.docx', '.pdf', '.xls', '.xlsx', '.ppt', '.pptx', '.zip', '.rar', '.png', '.jpg', '.jpeg', '.bmp', '.gif'],
-					services: ['COMPUTER','DROPBOX', 'GOOGLE_DRIVE', 'SKYDRIVE', 'URL', 'GMAIL','BOX']
+					extensions: Nerdeez.UPLOAD_ALLOWED_EXTENSIONS,
+					services: Nerdeez.UPLOAD_SERVICES
 				},
 				{
 					location: 'S3',
@@ -2123,6 +2145,103 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 			console.log('fb share');
 			return false;
 		}
+	}
+});
+
+
+})();
+
+(function() {
+
+/**
+ * controller for a single h.w
+ * 
+ * Created October 14th, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez Ltd.
+ */
+
+Nerdeez.HwsHwController = Ember.ObjectController.extend({
+	/**
+	 * will display an alert box
+	 * @type {Boolean}
+	 */
+	isError: false,
+	
+	/**
+	 * will display an success box
+	 * @type {Boolean}
+	 */
+	isSuccess: false,
+	
+	/**
+	 * will display message
+	 * @type {String}
+	 */
+	message: null,
+	
+	actions: {
+		
+		/**
+		 * when the user clicks to upload files
+		 */
+		uploadFiles: function(){
+			var xthis = this;
+			filepicker.pickAndStore(
+				{
+					multiple: true,
+					extensions: Nerdeez.UPLOAD_ALLOWED_EXTENSIONS,
+					services: Nerdeez.UPLOAD_SERVICES
+				},
+				{
+					location: 'S3',
+					path: '/files/'
+				},
+				function(inkBlobs){ //success
+					inkBlobs.forEach(function(item, index, enumerable){
+						var file = Nerdeez.File.createRecord(
+							{
+								title: item.filename,
+								file: item.url,
+								hw: xthis.get('content'),
+								size: item.size
+							}
+						);
+						file.transaction.commit();
+						file.one('becameError', function(){
+							xthis.set('isError', true);
+							xthis.set('isSuccess', false);
+							xthis.set('message', 'Communication error with server');	
+						})
+					})
+					xthis.set('isSuccess', true);
+					xthis.set('isError', false);
+					xthis.set('message', 'Successfully uploaded files');					
+				},
+				function(reason){ //error
+					xthis.set('isError', true);
+					xthis.set('isSuccess', false);
+					xthis.set('message', 'Failed to upload Files');
+				}
+			);
+		},
+		
+		/**
+		 * when the user clicks to share with facebook
+		 */
+		fbShare: function(){
+			//TODO
+		},
+		
+		/**
+		 * when the user clicks to download a file
+		 * @param {Nerdeez.File} file
+		 */
+		downloadFile: function(file){
+			var win=window.open(file.get('file'), '_blank');
+			win.focus();
+		},
 	}
 });
 
@@ -2517,9 +2636,10 @@ Nerdeez.HwsHwRoute = Nerdeez.LoginRequired.extend({
     },
     
     setupController: function(controller, model){
+	    	controller.set('content', model);
 	    	this.populateMastheadSchoolgroupRoutes(model.get('school_group'));
 		var masthead = Nerdeez.get('masthead');
-		masthead.addObject({route: 'schoolgroup.hws', model: model.get('school_group'), title: "H.W's"});
+		masthead.addObject({route: 'hws.index', model: model.get('school_group'), title: "H.W's"});
 		masthead.addObject({route: 'hws.hw', model: model, title: model.get('title')});
 	},
 });

@@ -317,9 +317,10 @@ Nerdeez.HwsHwRoute = Nerdeez.LoginRequired.extend({
     },
     
     setupController: function(controller, model){
+	    	controller.set('content', model);
 	    	this.populateMastheadSchoolgroupRoutes(model.get('school_group'));
 		var masthead = Nerdeez.get('masthead');
-		masthead.addObject({route: 'schoolgroup.hws', model: model.get('school_group'), title: "H.W's"});
+		masthead.addObject({route: 'hws.index', model: model.get('school_group'), title: "H.W's"});
 		masthead.addObject({route: 'hws.hw', model: model, title: model.get('title')});
 	},
 });

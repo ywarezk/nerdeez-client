@@ -39,17 +39,6 @@
             }
             td{
                 min-width: 70px;
-                .rating{
-                    text-align: center;
-                    margin: 0;
-                    width: 94px;
-                    ul{
-                        margin: 0px auto;
-                        li{
-                            display: inline;
-                        }
-                    }
-                }
                 a{
                     cursor: pointer;
                     text-decoration: none;
@@ -59,9 +48,6 @@
                         top: 5px;
                     }
                 }
-            }
-            td.center{
-                text-align: center;
             }
         }
     }

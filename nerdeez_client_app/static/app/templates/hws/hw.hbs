@@ -1,1 +1,141 @@
-<h1>Hw page {{title}}</h1>
+<!--
+	handle bar file for a single h.w page
+	
+	Created October 14th, 2013
+	@author: Yariv Katz
+	@version: 1.0
+	@copyright: Nerdeez Ltd. 
+-->
+
+<div class="hw">
+	
+	<!-- the upper part with the details -->
+	<div class="row">
+		
+	</div>
+	<!-- end upper part -->
+	
+	<!-- The part that contains the files/comments -->
+	<div class="row">
+		
+		<!-- will hold the comments -->
+		<div class="span5">
+		</div>
+		<!-- end comments -->
+		
+		<!-- will hold the files table -->
+		<div class="span5">
+			
+			<!-- will hold the controlls section -->
+			<div class="row">
+				<div class="span5">
+					<div class="single-button pull-left">
+						<button class="button btn btn-primary btn-large" {{action "uploadFiles"}}>
+							Upload H.W
+						</button>
+					</div>
+				</div>
+				<div class="span5">
+					{{#if isError}}
+					<div class="alert alert-danger pull-left top-buffer">
+						{{message}}
+					</div>
+					{{/if}}
+					{{#if isSuccess}}
+					<div class="alert alert-success pull-left top-buffer">
+						{{message}}
+					</div>
+					{{/if}}
+				</div>
+			</div>
+			<!-- end controlls -->
+			
+			
+			<!-- begin the file table -->
+			<div class="row">
+				<div class="span5">
+					{{#if files}}
+						<table class="table table-bordered table-striped table-highlight">
+							<thead>
+								<tr>
+									<th>
+										File name
+									</th>
+									<th>
+										Size
+									</th>
+									<th>
+										Like
+									</th>
+									<th>
+										DisLike
+									</th>
+									<th>
+										Grade
+									</th>
+									<th>
+										Share
+									</th>
+									<th>
+										Date
+									</th>
+									<th>
+										Download
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								{{#each files}}
+									<tr>
+										<td>
+											{{title}}
+										</td>
+										<td class="center">
+											{{size}}
+										</td>
+										<td class="center">
+											{{like}}
+										</td>
+										<td class="center">
+											{{dislike}}
+										</td>
+										<td class="center">
+											{{getRating grade 5}}
+										</td>
+										<td class="center">
+											<a {{action "fbShare"}}>
+												<i class="icon-facebook-sign">
+												</i>
+											</a>
+										</td>
+										<td>
+											{{getCreationDate}}
+										</td>
+										<td class="center">
+											<a {{action "downloadFile" this}}>
+												<i class="icon-download"></i>
+											</a>								
+										</td>
+									</tr>
+								{{/each}}
+							</tbody>
+						</table>
+					{{else}}
+						<div class="alert alert-info">
+							<span>
+								No files uploaded. Be the first to post!
+							</span>
+						</div>
+					{{/if}}
+				</div>
+			</div>
+			<!-- end the file table -->
+			
+		</div>
+		<!-- end files table -->
+		
+	</div>
+	<!-- end files/comments part -->
+	
+</div>
+

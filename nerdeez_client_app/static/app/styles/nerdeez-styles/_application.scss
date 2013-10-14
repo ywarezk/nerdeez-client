@@ -294,3 +294,19 @@ pointer-events: none;
     background-repeat: repeat-x;
 }
 
+.table.table-bordered.table-striped.table-highlight{
+    .rating{
+        text-align: center;
+        margin: 0;
+        width: 94px;
+        ul{
+            margin: 0px auto;
+            li{
+                display: inline;
+            }
+        }
+    }
+    td.center{
+        text-align: center;
+    }
+}
