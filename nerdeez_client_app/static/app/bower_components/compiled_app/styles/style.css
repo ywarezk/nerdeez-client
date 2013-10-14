@@ -1132,3 +1132,29 @@ pointer-events: none;
 .schoolgroup-files .hw-table .table td.center {
   text-align: center;
 }
+
+/**
+ * the style sheet for the loading template
+ * 
+ * Created October 14th, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez Ltd.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_loading\.scss}line{font-family:\0000310}}
+.loading-hbs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #888888;
+  opacity: 0.6;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_loading\.scss}line{font-family:\0000318}}
+.loading-hbs i {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 100px;
+}

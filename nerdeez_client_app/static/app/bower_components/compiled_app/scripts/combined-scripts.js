@@ -2645,6 +2645,8 @@ Nerdeez.VerifyEmailRoute = Nerdeez.NerdeezRoute.extend({
     }
 });
 
+Nerdeez.LoadingRoute = Nerdeez.NerdeezRoute.extend({});
+
 
 })();
 
