@@ -105,8 +105,10 @@ Nerdeez.LogoutRoute = Ember.Route.extend({
 	    var auth = Nerdeez.Auth.current();
 	    auth.set('username', null);
 	    auth.set('apiKey', null);
-	    $.cookie('username', null);
-		$.cookie('apiKey', null);
+	    auth.set('id', null);
+	    $.removeCookie('username');
+	    $.removeCookie('apiKey');
+	    $.removeCookie('id');
         this.transitionTo('index');
     }
 });
@@ -303,7 +305,7 @@ Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
 	},
 	
     model: function(){
-        return this.modelFor('schoolgroup');
+        return Nerdeez.Hw.find({school_group__id: this.modelFor('schoolgroup').get('id')});
     }
 });
 

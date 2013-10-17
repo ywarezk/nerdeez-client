@@ -96,7 +96,7 @@
 	<!-- begin files table -->
 	<div class="row top-buffer hw-table">
 		<div class="span10">
-			{{#if hws}}
+			{{#if controller}}
 				<table class="table table-bordered table-striped table-highlight">
 					<thead>
 						<tr>
@@ -124,7 +124,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						{{#each hw in hws}}
+						{{#each hw in controller}}
 							<tr>
 								<td>
 									{{#link-to "hws.hw" hw.id}}

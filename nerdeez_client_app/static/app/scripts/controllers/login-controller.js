@@ -76,6 +76,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
     		}
     		Nerdeez.get('auth').set('username', json['username']);
     		Nerdeez.get('auth').set('apiKey', json['api_key']);
+    		Nerdeez.get('auth').set('id', json['api_key']);
     		var adapter = Nerdeez.Adapter.current();
     		adapter.set('apiKey', json['api_key']);
 		adapter.set('username', json['username']);

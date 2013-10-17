@@ -1151,7 +1151,7 @@ function program9(depth0,data) {
   data.buffer.push("\n				<table class=\"table table-bordered table-striped table-highlight\">\n					<thead>\n						<tr>\n							<th>\n								Title\n							</th>\n							<th>\n								Description\n							</th>\n							<th>\n								Num Files\n							</th>\n							<th>\n								Grade\n							</th>\n							<th>\n								Share\n							</th>\n							<th>\n								Date\n							</th>\n							<!--<th>\n								Download\n							</th>-->\n						</tr>\n					</thead>\n					<tbody>\n						");
   hashTypes = {};
   hashContexts = {};
-  stack1 = helpers.each.call(depth0, "hw", "in", "hws", {hash:{},inverse:self.noop,fn:self.program(10, program10, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack1 = helpers.each.call(depth0, "hw", "in", "controller", {hash:{},inverse:self.noop,fn:self.program(10, program10, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n					</tbody>\n				</table>\n			");
   return buffer;
@@ -1266,7 +1266,7 @@ function program13(depth0,data) {
   data.buffer.push(">Save changes</button>\n		    </div>\n		</form>\n	</div>\n	<!-- end modal for new hw -->\n	\n	<!-- begin files table -->\n	<div class=\"row top-buffer hw-table\">\n		<div class=\"span10\">\n			");
   hashTypes = {};
   hashContexts = {};
-  stack2 = helpers['if'].call(depth0, "hws", {hash:{},inverse:self.program(13, program13, data),fn:self.program(9, program9, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack2 = helpers['if'].call(depth0, "controller", {hash:{},inverse:self.program(13, program13, data),fn:self.program(9, program9, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n		</div>\n	</div>\n	<!-- end files table -->\n	\n</div>");
   return buffer;
