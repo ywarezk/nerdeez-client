@@ -62,6 +62,12 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 	 */
 	newCreatedHw: null,
 	
+	/**
+	 * will hold the belongs to school group
+	 * @type {Nerdeez.Schoolgroup}
+	 */
+	schoolGroup: null,
+	
 	actions: {
 		
 		/**
@@ -109,7 +115,7 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 			var hw = Nerdeez.Hw.createRecord();
 			hw.set('title', this.get('newHwTitle')); 
 			hw.set('description', this.get('newHwDescription')); 
-			hw.set('school_group', this.get('content')); 
+			hw.set('school_group', this.get('schoolGroup')); 
 			hw.transaction.commit();
 			hw.one('didCommit', function(){
 				xthis.set('isNewHwLoading', false);

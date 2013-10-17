@@ -68,6 +68,7 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 	 	$('.result-num').hide();
 	 	this.set('isLoading', true);
 	 	searchmsg['limit'] = Nerdeez.get('SEARCH_LIMIT');
+	 	searchmsg['page'] = 'search';
 	 	if (this.get('searchQuery') !== null)
 	 		searchmsg['search'] = this.get('searchQuery');
 	 	if (this.get('sortBy') !== null)

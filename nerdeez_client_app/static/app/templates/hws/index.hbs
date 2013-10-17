@@ -124,18 +124,18 @@
 						</tr>
 					</thead>
 					<tbody>
-						{{#each hw in controller}}
+						{{#each controller.content}}
 							<tr>
 								<td>
-									{{#link-to "hws.hw" hw.id}}
-									{{hw.title}}
+									{{#link-to "hws.hw" id}}
+									{{title}}
 									{{/link-to}}
 								</td>
 								<td>
-									{{hw.description}}
+									{{description}}
 								</td>
 								<td class="center">
-									{{hw.files.length}}
+									{{files.length}}
 								</td>
 								<td class="center">
 									{{getRating grade 5}}
@@ -147,7 +147,7 @@
 									</a>
 								</td>
 								<td>
-									{{hw.getCreationDate}}
+									{{getCreationDate}}
 								</td>
 								<!--<td class="center">
 									<a>

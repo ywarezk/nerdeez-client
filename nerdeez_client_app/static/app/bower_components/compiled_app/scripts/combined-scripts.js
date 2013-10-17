@@ -1039,6 +1039,7 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 	 	$('.result-num').hide();
 	 	this.set('isLoading', true);
 	 	searchmsg['limit'] = Nerdeez.get('SEARCH_LIMIT');
+	 	searchmsg['page'] = 'search';
 	 	if (this.get('searchQuery') !== null)
 	 		searchmsg['search'] = this.get('searchQuery');
 	 	if (this.get('sortBy') !== null)
@@ -2058,6 +2059,12 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 	 */
 	newCreatedHw: null,
 	
+	/**
+	 * will hold the belongs to school group
+	 * @type {Nerdeez.Schoolgroup}
+	 */
+	schoolGroup: null,
+	
 	actions: {
 		
 		/**
@@ -2105,7 +2112,7 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 			var hw = Nerdeez.Hw.createRecord();
 			hw.set('title', this.get('newHwTitle')); 
 			hw.set('description', this.get('newHwDescription')); 
-			hw.set('school_group', this.get('content')); 
+			hw.set('school_group', this.get('schoolGroup')); 
 			hw.transaction.commit();
 			hw.one('didCommit', function(){
 				xthis.set('isNewHwLoading', false);
@@ -2407,16 +2414,20 @@ Nerdeez.NerdeezRoute = Ember.Route.extend({
  * Usage: just extend this class instead of the regular Ember.Route
  */
 Nerdeez.LoginRequired = Nerdeez.NerdeezRoute.extend({
-    redirect: function(){
-        isLoggedIn = Nerdeez.get('auth.isLoggedIn');
+	redirectIfNeeded: function(model){
+		isLoggedIn = Nerdeez.get('auth.isLoggedIn');
         if(!isLoggedIn){
+	        	
 	        	var loginController = this.controllerFor('login');
 	        	loginController.set('isError', true);
 	        	loginController.set('message', 'You must be logged in to access this page');
 	        	loginController.set('redirect', this.routeName);
-	        	loginController.set('redirectModel', this.model());
+	        	loginController.set('redirectModel', model);
 	        	this.transitionTo('login');
         }
+	},
+    redirect: function(){
+        this.redirectIfNeeded(this.model());
     }
 });
 
@@ -2503,7 +2514,7 @@ Nerdeez.SearchRoute = Ember.Route.extend({
 	},
 	
 	model: function(param){
-		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title'});
+		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title', page: 'search'});
 	}
 });
 
@@ -2625,7 +2636,15 @@ Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
 	},
 	
     model: function(){
+	    	if(!Nerdeez.get('auth.isLoggedIn')){
+		    	this.redirectIfNeeded(this.modelFor('schoolgroup'));
+		    	return;
+		}
         return Nerdeez.Hw.find({school_group__id: this.modelFor('schoolgroup').get('id')});
+    },
+    setupController: function(controller, model){
+	    controller.set('content', model);
+	    	controller.set('schoolGroup', this.modelFor('schoolgroup'));
     }
 });
 
