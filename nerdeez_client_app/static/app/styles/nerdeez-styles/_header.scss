@@ -44,20 +44,18 @@
             a{
                 color: #e62a59;
                 text-decoration: none;
-                i{
-                    
-                    position: relative;
-                    top: 7px;
-                }
                 &:hover{
                     color: #888888;
                 }
             }
-            a:nth-last-of-type(1){
-                i{
+            i{
+               margin-left: 10px;       
+                position: relative;
+                top: 5px;
+            }
+            i:nth-last-of-type(1){
                   display: none;
                 }
-            }
         }
     }
 }

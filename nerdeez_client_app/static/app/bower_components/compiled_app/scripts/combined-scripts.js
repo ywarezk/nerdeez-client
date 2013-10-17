@@ -2138,6 +2138,7 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 				xthis.set('newHwFiles', Ember.A());
 				xthis.set('newHwTitle', null);
 				xthis.set('newHwDescription', null);
+				xthis.get('content').addObject(hw);
 			});
 			hw.one('becameError', function(json, temp1, temp2){
 				xthis.set('isNewHwLoading', false);
@@ -2426,9 +2427,9 @@ Nerdeez.LoginRequired = Nerdeez.NerdeezRoute.extend({
 	        	this.transitionTo('login');
         }
 	},
-    redirect: function(){
-        this.redirectIfNeeded(this.model());
-    }
+    // redirect: function(){
+        // this.redirectIfNeeded(this.model());
+    // }
 });
 
 Nerdeez.LogoutRoute = Ember.Route.extend({
@@ -2636,10 +2637,7 @@ Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
 	},
 	
     model: function(){
-	    	if(!Nerdeez.get('auth.isLoggedIn')){
-		    	this.redirectIfNeeded(this.modelFor('schoolgroup'));
-		    	return;
-		}
+		this.redirectIfNeeded(this.modelFor('schoolgroup'));
         return Nerdeez.Hw.find({school_group__id: this.modelFor('schoolgroup').get('id')});
     },
     setupController: function(controller, model){
@@ -2654,7 +2652,9 @@ Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
 Nerdeez.HwsHwRoute = Nerdeez.LoginRequired.extend({
 	
     model: function(param){
-        return Nerdeez.Hw.find(param.hwId);
+        var model = Nerdeez.Hw.find(param.hwId);
+        this.redirectIfNeeded(model);
+        return model;
     },
     
     setupController: function(controller, model){

@@ -141,6 +141,7 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
 				xthis.set('newHwFiles', Ember.A());
 				xthis.set('newHwTitle', null);
 				xthis.set('newHwDescription', null);
+				xthis.get('content').addObject(hw);
 			});
 			hw.one('becameError', function(json, temp1, temp2){
 				xthis.set('isNewHwLoading', false);
