@@ -1001,42 +1001,53 @@ function program5(depth0,data) {
 Ember.TEMPLATES["hws/hw"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, hashTypes, hashContexts, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+  var buffer = '', stack1, stack2, hashTypes, hashContexts, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
 
 function program1(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n					<div class=\"alert alert-danger pull-left top-buffer\">\n						");
+  data.buffer.push("\n						");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "message", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n					</div>\n					");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "loading", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n					");
   return buffer;
   }
 
 function program3(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n					<div class=\"alert alert-success pull-left top-buffer\">\n						");
+  data.buffer.push("\n					<div class=\"alert alert-danger pull-left top-buffer\">\n						");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "message", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "statusMessage", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n					</div>\n					");
   return buffer;
   }
 
 function program5(depth0,data) {
   
+  var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\n					<div class=\"alert alert-success pull-left top-buffer\">\n						");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "statusMessage", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n					</div>\n					");
+  return buffer;
+  }
+
+function program7(depth0,data) {
+  
   var buffer = '', stack1, hashTypes, hashContexts;
   data.buffer.push("\n						<table class=\"table table-bordered table-striped table-highlight\">\n							<thead>\n								<tr>\n									<th>\n										File name\n									</th>\n									<th>\n										Size\n									</th>\n									<th>\n										Like\n									</th>\n									<th>\n										DisLike\n									</th>\n									<th>\n										Grade\n									</th>\n									<th>\n										Share\n									</th>\n									<th>\n										Date\n									</th>\n									<th>\n										Download\n									</th>\n									<th>\n										Flag\n									</th>\n								</tr>\n							</thead>\n							<tbody>\n								");
   hashTypes = {};
   hashContexts = {};
-  stack1 = helpers.each.call(depth0, "files", {hash:{},inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack1 = helpers.each.call(depth0, "files", {hash:{},inverse:self.noop,fn:self.program(8, program8, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</tbody>\n						</table>\n					");
   return buffer;
   }
-function program6(depth0,data) {
+function program8(depth0,data) {
   
   var buffer = '', stack1, hashTypes, hashContexts, options;
   data.buffer.push("\n									<tr>\n										<td>\n											");
@@ -1060,7 +1071,7 @@ function program6(depth0,data) {
   hashContexts = {};
   options = {hash:{},contexts:[depth0,depth0],types:["ID","INTEGER"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.getRating || depth0.getRating),stack1 ? stack1.call(depth0, "grade", 5, options) : helperMissing.call(depth0, "getRating", "grade", 5, options))));
-  data.buffer.push("\n										</td>\n										<td class=\"center\">\n											<a ");
+  data.buffer.push("\n										</td>\n										<td class=\"center\">\n											<a class=\"nerdeez-button\" ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "fbShare", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
@@ -1068,22 +1079,30 @@ function program6(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "getCreationDate", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n										</td>\n										<td class=\"center\">\n											<a ");
+  data.buffer.push("\n										</td>\n										<td class=\"center\">\n											<a class=\"nerdeez-button\" ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "downloadFile", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n												<i class=\"icon-download\"></i>\n											</a>								\n										</td>\n										<td class=\"center\">\n											<a ");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "flagFile", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n												<i class=\"icon-download\"></i>\n											</a>								\n										</td>\n										<td class=\"center\">\n											<a class=\"nerdeez-button\" ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "flagFile", "", {hash:{
+    'target': ("view")
+  },contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push(">\n												<i class=\"icon-flag\"></i>\n											</a>								\n										</td>\n									</tr>\n								");
   return buffer;
   }
 
-function program8(depth0,data) {
+function program10(depth0,data) {
   
   
   data.buffer.push("\n						<div class=\"alert alert-info\">\n							<span>\n								No files uploaded. Be the first to post!\n							</span>\n						</div>\n					");
+  }
+
+function program12(depth0,data) {
+  
+  
+  data.buffer.push(" Terms ");
   }
 
   data.buffer.push("<!--\n	handle bar file for a single h.w page\n	\n	Created October 14th, 2013\n	@author: Yariv Katz\n	@version: 1.0\n	@copyright: Nerdeez Ltd. \n-->\n\n<div class=\"hw\">\n	\n	<!-- the upper part with the details -->\n	<div class=\"row\">\n		\n	</div>\n	<!-- end upper part -->\n	\n	<!-- The part that contains the files/comments -->\n	<div class=\"row\">\n		\n		<!-- will hold the comments -->\n		<div class=\"span5\">\n		</div>\n		<!-- end comments -->\n		\n		<!-- will hold the files table -->\n		<div class=\"span5\">\n			\n			<!-- will hold the controlls section -->\n			<div class=\"row\">\n				<div class=\"span5\">\n					<div class=\"single-button pull-left\">\n						<button class=\"button btn btn-primary btn-large\" ");
@@ -1093,19 +1112,41 @@ function program8(depth0,data) {
   data.buffer.push(">\n							Upload H.W\n						</button>\n					</div>\n				</div>\n				<div class=\"span5\">\n					");
   hashTypes = {};
   hashContexts = {};
-  stack1 = helpers['if'].call(depth0, "isError", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack1 = helpers['if'].call(depth0, "isLoading", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n					");
   hashTypes = {};
   hashContexts = {};
-  stack1 = helpers['if'].call(depth0, "isSuccess", {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack1 = helpers['if'].call(depth0, "isError", {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n					");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers['if'].call(depth0, "isSuccess", {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n				</div>\n			</div>\n			<!-- end controlls -->\n			\n			\n			<!-- begin the file table -->\n			<div class=\"row\">\n				<div class=\"span5\">\n					");
   hashTypes = {};
   hashContexts = {};
-  stack1 = helpers['if'].call(depth0, "files", {hash:{},inverse:self.program(8, program8, data),fn:self.program(5, program5, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack1 = helpers['if'].call(depth0, "files", {hash:{},inverse:self.program(10, program10, data),fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n				</div>\n			</div>\n			<!-- end the file table -->\n			\n		</div>\n		<!-- end files table -->\n		\n	</div>\n	<!-- end files/comments part -->\n	\n</div>\n\n");
+  data.buffer.push("\n				</div>\n			</div>\n			<!-- end the file table -->\n			\n		</div>\n		<!-- end files table -->\n		\n	</div>\n	<!-- end files/comments part -->\n	\n	<!-- begin modal for flag file -->\n	<div aria-hidden=\"true\" aria-labelledby=\"windowTitleLabel\" role=\"dialog\" tabindex=\"-1\" class=\"modal hide fade\" id=\"flag-file\">\n		<form class=\"js-validation\">\n			<div class=\"modal-header\">\n				<a data-dismiss=\"modal\" class=\"close\" href=\"#\">×</a>\n				<h3>Flag File</h3>\n				</div>\n			<div class=\"modal-body\">\n				<p>\n					Please specify why this file Violated your right, Your complaints will be checked, and the file will be removed if it causes a violation in accourdane with our ");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(12, program12, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "terms", options) : helperMissing.call(depth0, "link-to", "terms", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n				</p>\n				<div class=\"field\">\n					<label>Flag Message</label>\n					");
+  hashContexts = {'placeholder': depth0,'valueBinding': depth0};
+  hashTypes = {'placeholder': "STRING",'valueBinding': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextArea", {hash:{
+    'placeholder': ("Specify the reason why you flagged this file (Example: Copy right violation, Adult meterial etc.)"),
+    'valueBinding': ("flagMessage")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n				</div>\n			</div>\n			<div class=\"modal-footer\">\n		        <button data-dismiss=\"modal\" class=\"btn btn-default\" type=\"button\">Close</button>\n		        <button class=\"btn btn-primary\" type=\"button\" ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "flagFile", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">Save changes</button>\n		    </div>\n		</form>\n	</div>\n	<!-- end modal for flag file -->\n	\n</div>\n\n");
   return buffer;
   
 });

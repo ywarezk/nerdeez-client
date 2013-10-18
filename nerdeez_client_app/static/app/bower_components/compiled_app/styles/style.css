@@ -338,6 +338,13 @@ pointer-events: none;
   text-align: center;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003314}}
+a.nerdeez-button {
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
 /**
 * holds the styles of the header
 * @copyright: nerdeez.com Ltd.
@@ -1134,6 +1141,23 @@ pointer-events: none;
   font-size: 26px;
   position: relative;
   top: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000358}}
+.hw .table td {
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000361}}
+.hw .table a.nerdeez-button {
+  font-size: 26px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000363}}
+.hw .table a.nerdeez-button i.icon-flag {
+  color: red;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000369}}
+.hw #flag-file textarea {
+  height: 89px;
 }
 
 /**

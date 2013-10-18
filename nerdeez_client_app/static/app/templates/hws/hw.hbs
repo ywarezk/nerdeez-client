@@ -36,14 +36,17 @@
 					</div>
 				</div>
 				<div class="span5">
+					{{#if isLoading}}
+						{{loading}}
+					{{/if}}
 					{{#if isError}}
 					<div class="alert alert-danger pull-left top-buffer">
-						{{message}}
+						{{statusMessage}}
 					</div>
 					{{/if}}
 					{{#if isSuccess}}
 					<div class="alert alert-success pull-left top-buffer">
-						{{message}}
+						{{statusMessage}}
 					</div>
 					{{/if}}
 				</div>
@@ -106,7 +109,7 @@
 											{{getRating grade 5}}
 										</td>
 										<td class="center">
-											<a {{action "fbShare"}}>
+											<a class="nerdeez-button" {{action "fbShare"}}>
 												<i class="icon-facebook-sign">
 												</i>
 											</a>
@@ -115,12 +118,12 @@
 											{{getCreationDate}}
 										</td>
 										<td class="center">
-											<a {{action "downloadFile" this}}>
+											<a class="nerdeez-button" {{action "downloadFile" this}}>
 												<i class="icon-download"></i>
 											</a>								
 										</td>
 										<td class="center">
-											<a {{action "flagFile" this}}>
+											<a class="nerdeez-button" {{action "flagFile" this target="view"}}>
 												<i class="icon-flag"></i>
 											</a>								
 										</td>
@@ -144,6 +147,35 @@
 		
 	</div>
 	<!-- end files/comments part -->
+	
+	<!-- begin modal for flag file -->
+	<div aria-hidden="true" aria-labelledby="windowTitleLabel" role="dialog" tabindex="-1" class="modal hide fade" id="flag-file">
+		<form class="js-validation">
+			<div class="modal-header">
+				<a data-dismiss="modal" class="close" href="#">×</a>
+				<h3>Flag File</h3>
+				</div>
+			<div class="modal-body">
+				<p>
+					Please specify why this file Violated your right, Your complaints will be checked, and the file will be removed if it causes a violation in accourdane with our {{#link-to "terms"}} Terms {{/link-to}}
+				</p>
+				<div class="field">
+					<label>Flag Message</label>
+					{{
+						view
+						Ember.TextArea
+						placeholder="Specify the reason why you flagged this file (Example: Copy right violation, Adult meterial etc.)"
+						valueBinding="flagMessage"
+					}}
+				</div>
+			</div>
+			<div class="modal-footer">
+		        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+		        <button class="btn btn-primary" type="button" {{action "flagFile"}}>Save changes</button>
+		    </div>
+		</form>
+	</div>
+	<!-- end modal for flag file -->
 	
 </div>
 

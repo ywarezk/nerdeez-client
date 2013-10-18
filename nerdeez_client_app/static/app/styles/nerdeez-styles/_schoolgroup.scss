@@ -52,3 +52,22 @@
         }
     }
 }
+
+.hw{
+    .table{
+        td{
+            vertical-align: middle;
+        }
+        a.nerdeez-button{
+                font-size: 26px;
+                i.icon-flag{
+                    color: red;
+                }
+        }
+    }
+    #flag-file{
+        textarea{
+            height: 89px;
+        }
+    }
+}

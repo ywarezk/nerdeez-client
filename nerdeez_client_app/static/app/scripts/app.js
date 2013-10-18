@@ -45,7 +45,7 @@ var readyFunction = function(temp1, temp2, temp3){
 	auth.set('username', $.cookie('username'));
 	adapter.set('apiKey', $.cookie('apiKey'));
 	adapter.set('username', $.cookie('username'));
-	//auth.set('userProfile',Nerdeez.Userprofile.find($.cookie('id')));
+	auth.set('userProfile',Nerdeez.Userprofile.find($.cookie('id')));
 	auth.set('id',$.cookie('id'));
 	Nerdeez.set('auth', auth);
 	
@@ -83,6 +83,7 @@ require('scripts/nerdeez-ember/mixins');
 require('scripts/views/nerdeez-view');
 require('scripts/views/add-schoolgroup-view');
 require('scripts/views/schoolgroup-hws-view');
+require('scripts/views/schoolgroup-hws-hw-view');
 require('scripts/models/nerdeez-model');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');

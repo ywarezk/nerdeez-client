@@ -47,7 +47,7 @@ var readyFunction = function(temp1, temp2, temp3){
 	auth.set('username', $.cookie('username'));
 	adapter.set('apiKey', $.cookie('apiKey'));
 	adapter.set('username', $.cookie('username'));
-	//auth.set('userProfile',Nerdeez.Userprofile.find($.cookie('id')));
+	auth.set('userProfile',Nerdeez.Userprofile.find($.cookie('id')));
 	auth.set('id',$.cookie('id'));
 	Nerdeez.set('auth', auth);
 	
@@ -801,6 +801,29 @@ Nerdeez.HwsIndexView = Ember.View.extend({
 				$('#new-hw').modal('hide');
 			}
 			this.controller.send('newHW', onSuccess);
+		}
+	}
+});
+
+
+})();
+
+(function() {
+
+/**
+ * the view for a hw page
+ * 
+ * Created October 18th, 2013
+ * @version: 2.0
+ * @copyright: Nerdeez Ltd.
+ * @author: Yariv Katz
+ */
+
+Nerdeez.HwsHwView = Ember.View.extend({
+	actions: {
+		flagFile: function(file){
+			$('#flag-file').modal('show');
+			this.controller.set('flaggedFile', file);
 		}
 	}
 });
@@ -2259,24 +2282,18 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
  * @copyright: Nerdeez Ltd.
  */
 
-Nerdeez.HwsHwController = Ember.ObjectController.extend({
+Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,{
 	/**
-	 * will display an alert box
-	 * @type {Boolean}
-	 */
-	isError: false,
-	
-	/**
-	 * will display an success box
-	 * @type {Boolean}
-	 */
-	isSuccess: false,
-	
-	/**
-	 * will display message
+	 * will hold the flag message input from the flag modal
 	 * @type {String}
 	 */
-	message: null,
+	flagMessage: null,
+	
+	/**
+	 * the file that is being marked as flagged
+	 * @type {DS.File}
+	 */
+	flaggedFile: null,
 	
 	actions: {
 		
@@ -2307,19 +2324,13 @@ Nerdeez.HwsHwController = Ember.ObjectController.extend({
 						);
 						file.transaction.commit();
 						file.one('becameError', function(){
-							xthis.set('isError', true);
-							xthis.set('isSuccess', false);
-							xthis.set('message', 'Communication error with server');	
+							xthis.error('Communication error with server');	
 						})
 					})
-					xthis.set('isSuccess', true);
-					xthis.set('isError', false);
-					xthis.set('message', 'Successfully uploaded files');					
+					xthis.success('Successfully uploaded files');			
 				},
 				function(reason){ //error
-					xthis.set('isError', true);
-					xthis.set('isSuccess', false);
-					xthis.set('message', 'Failed to upload Files');
+					xthis.error('Failed to upload Files');
 				}
 			);
 		},
@@ -2339,6 +2350,25 @@ Nerdeez.HwsHwController = Ember.ObjectController.extend({
 			var win=window.open(file.get('file'), '_blank');
 			win.focus();
 		},
+		
+		/**
+		 * report the file as flagged
+		 * @param {Nerdeez.File} file
+		 */
+		flagFile: function(file){
+			var xthis = this;
+			var file = this.get('flaggedFile');
+			file.set('flag', true);
+			file.set('flag_message', this.get('flagMessage'));
+			file.transaction.commit();
+			file.one('didUpdate', function(){
+				xthis.success('Successfully sent the flag report');
+			})
+			file.one('becameError', function(){
+				xthis.error('Communication error: Failed to send the report, please try again');
+			})
+			$('#flag-file').modal('hide');
+		}
 	}
 });
 
@@ -2580,16 +2610,22 @@ Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 		}
 	},
 	
-	model: function(){
-		if(Nerdeez.get('auth.isLoggedIn')){
-			return Nerdeez.Userprofile.find(Nerdeez.get('auth.id'));
-		}
-	},
-	
-	setupController: function(controller, model){
-		var auth = Nerdeez.Auth.current();
-		auth.set('userProfile',model);
-	}
+	// model: function(){
+		// if(Nerdeez.get('auth.isLoggedIn')){
+			// return Nerdeez.Userprofile.find(Nerdeez.get('auth.id'));
+		// }
+	// },
+// 	
+	// setupController: function(controller, model){
+		// var auth = Nerdeez.Auth.current();
+		// auth.set('userProfile',model);
+	// },
+// 	
+	// actions: {
+		// error: function(status){
+			// console.log('ERROR');
+		// }
+	// }
 	
 });
 
@@ -3510,7 +3546,8 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
 	        success: function(json) {
 	                xthis.didFindAll(store, type, json);
 	                
-	        }
+	        },
+	        error: DS.rejectionHandler
 	    });
 	},
 
@@ -3531,7 +3568,8 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
             data: data,
             success: function(json) {
                     xthis.didFindQuery(store, type, json, recordArray);
-            }
+            },
+            error: DS.rejectionHandler
         });
     },
     
@@ -3549,7 +3587,8 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
         this.ajax(this.buildURL(root, id), "GET", {
             success: function(json) {
                     xthis.didFindRecord(store, type, json, id);
-            }
+            },
+            error: DS.rejectionHandler
         });
     },
     
@@ -3794,7 +3833,13 @@ Nerdeez.Wormhole = Ember.Object.extend({
             deferred.reject(data.data.textStatus, data.errorThrown);
             //alert('Communication error');
             this.alwaysFunction[data.requestId]();
-            this.failFunction[data.requestId]({status: data.data.jqXHR.status, responseText: data.data.jqXHR.responseText});
+            try{
+	            this.failFunction[data.requestId]({status: data.data.jqXHR.status, responseText: data.data.jqXHR.responseText});	
+            }
+            catch(e){
+	            console.log('wormhole failed to run the failed funciton');
+            }
+            
         }
         this.alwaysFunction[data.requestId]();
     }

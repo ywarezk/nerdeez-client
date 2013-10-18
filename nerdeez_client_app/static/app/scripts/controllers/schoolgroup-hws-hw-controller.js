@@ -7,24 +7,18 @@
  * @copyright: Nerdeez Ltd.
  */
 
-Nerdeez.HwsHwController = Ember.ObjectController.extend({
+Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,{
 	/**
-	 * will display an alert box
-	 * @type {Boolean}
-	 */
-	isError: false,
-	
-	/**
-	 * will display an success box
-	 * @type {Boolean}
-	 */
-	isSuccess: false,
-	
-	/**
-	 * will display message
+	 * will hold the flag message input from the flag modal
 	 * @type {String}
 	 */
-	message: null,
+	flagMessage: null,
+	
+	/**
+	 * the file that is being marked as flagged
+	 * @type {DS.File}
+	 */
+	flaggedFile: null,
 	
 	actions: {
 		
@@ -55,19 +49,13 @@ Nerdeez.HwsHwController = Ember.ObjectController.extend({
 						);
 						file.transaction.commit();
 						file.one('becameError', function(){
-							xthis.set('isError', true);
-							xthis.set('isSuccess', false);
-							xthis.set('message', 'Communication error with server');	
+							xthis.error('Communication error with server');	
 						})
 					})
-					xthis.set('isSuccess', true);
-					xthis.set('isError', false);
-					xthis.set('message', 'Successfully uploaded files');					
+					xthis.success('Successfully uploaded files');			
 				},
 				function(reason){ //error
-					xthis.set('isError', true);
-					xthis.set('isSuccess', false);
-					xthis.set('message', 'Failed to upload Files');
+					xthis.error('Failed to upload Files');
 				}
 			);
 		},
@@ -87,5 +75,24 @@ Nerdeez.HwsHwController = Ember.ObjectController.extend({
 			var win=window.open(file.get('file'), '_blank');
 			win.focus();
 		},
+		
+		/**
+		 * report the file as flagged
+		 * @param {Nerdeez.File} file
+		 */
+		flagFile: function(file){
+			var xthis = this;
+			var file = this.get('flaggedFile');
+			file.set('flag', true);
+			file.set('flag_message', this.get('flagMessage'));
+			file.transaction.commit();
+			file.one('didUpdate', function(){
+				xthis.success('Successfully sent the flag report');
+			})
+			file.one('becameError', function(){
+				xthis.error('Communication error: Failed to send the report, please try again');
+			})
+			$('#flag-file').modal('hide');
+		}
 	}
 });
