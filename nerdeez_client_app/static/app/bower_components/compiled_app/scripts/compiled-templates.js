@@ -1057,8 +1057,8 @@ function program8(depth0,data) {
   data.buffer.push("\n										</td>\n										<td class=\"center\">\n											");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "size", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n										</td>\n										<td class=\"center\">\n											");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "getSize", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("MB\n										</td>\n										<td class=\"center\">\n											");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "like", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
