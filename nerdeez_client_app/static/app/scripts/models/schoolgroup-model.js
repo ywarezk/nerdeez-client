@@ -18,6 +18,8 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 	user: DS.belongsTo('Nerdeez.Userprofile'),
 	like: DS.attr('number'),
 	dislike: DS.attr('number'),
+	num_users: DS.attr('number'),
+	num_files: DS.attr('number'),
 	
 	getIconClass: function() {
 		a = this.get("school_type");

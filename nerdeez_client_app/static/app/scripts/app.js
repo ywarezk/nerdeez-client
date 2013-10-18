@@ -45,7 +45,7 @@ var readyFunction = function(temp1, temp2, temp3){
 	auth.set('username', $.cookie('username'));
 	adapter.set('apiKey', $.cookie('apiKey'));
 	adapter.set('username', $.cookie('username'));
-	auth.set('userProfile',Nerdeez.Userprofile.find($.cookie('id')));
+	//auth.set('userProfile',Nerdeez.Userprofile.find($.cookie('id')));
 	auth.set('id',$.cookie('id'));
 	Nerdeez.set('auth', auth);
 	

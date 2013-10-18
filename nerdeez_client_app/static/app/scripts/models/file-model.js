@@ -15,4 +15,6 @@ Nerdeez.File = Nerdeez.NerdeezModel.extend({
 	size: DS.attr('number'),
 	like: DS.attr('number'),
 	dislike: DS.attr('number'),
+	flag: DS.attr('boolean'),
+	flag_message: DS.attr('string')
 });

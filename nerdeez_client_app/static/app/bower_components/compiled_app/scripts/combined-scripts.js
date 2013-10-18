@@ -47,7 +47,7 @@ var readyFunction = function(temp1, temp2, temp3){
 	auth.set('username', $.cookie('username'));
 	adapter.set('apiKey', $.cookie('apiKey'));
 	adapter.set('username', $.cookie('username'));
-	auth.set('userProfile',Nerdeez.Userprofile.find($.cookie('id')));
+	//auth.set('userProfile',Nerdeez.Userprofile.find($.cookie('id')));
 	auth.set('id',$.cookie('id'));
 	Nerdeez.set('auth', auth);
 	
@@ -774,6 +774,8 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 	user: DS.belongsTo('Nerdeez.Userprofile'),
 	like: DS.attr('number'),
 	dislike: DS.attr('number'),
+	num_users: DS.attr('number'),
+	num_files: DS.attr('number'),
 	
 	getIconClass: function() {
 		a = this.get("school_type");
@@ -962,6 +964,8 @@ Nerdeez.File = Nerdeez.NerdeezModel.extend({
 	size: DS.attr('number'),
 	like: DS.attr('number'),
 	dislike: DS.attr('number'),
+	flag: DS.attr('boolean'),
+	flag_message: DS.attr('string')
 });
 
 
@@ -2490,6 +2494,17 @@ Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 				}
 			);
 		}
+	},
+	
+	model: function(){
+		if(Nerdeez.get('auth.isLoggedIn')){
+			return Nerdeez.Userprofile.find(Nerdeez.get('auth.id'));
+		}
+	},
+	
+	setupController: function(controller, model){
+		var auth = Nerdeez.Auth.current();
+		auth.set('userProfile',model);
 	}
 	
 });

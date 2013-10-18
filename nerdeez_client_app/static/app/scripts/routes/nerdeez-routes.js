@@ -162,6 +162,17 @@ Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
 				}
 			);
 		}
+	},
+	
+	model: function(){
+		if(Nerdeez.get('auth.isLoggedIn')){
+			return Nerdeez.Userprofile.find(Nerdeez.get('auth.id'));
+		}
+	},
+	
+	setupController: function(controller, model){
+		var auth = Nerdeez.Auth.current();
+		auth.set('userProfile',model);
 	}
 	
 });
