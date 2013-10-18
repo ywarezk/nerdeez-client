@@ -529,6 +529,90 @@ Nerdeez.Share = Ember.Mixin.create({
   }
 });
 
+/**
+ This mixin allows for controllers to pass status messages and loading
+
+ 
+ Example Usage (default values):
+
+ ''''javascript
+
+ App.myController = Ember.Controller.extend(Nerdeez.Status,{ ... });
+
+ ''''handlebars
+
+ {{#if isSuccess}}
+	 ...
+	 {{statusMessage}}
+ {{/if}}
+ 
+ {{#if isError}}
+	 ...
+	 {{statusMessage}}
+ {{/if}}
+ 
+ {{#if isLoading}}
+	 ...
+ {{/if}}
+
+ ''''
+
+**/
+
+/**
+  @class Nerdeez.Share
+  @extends Ember.Mixin
+  @namespace Nerdeez
+  @module Nerdeez
+**/
+Nerdeez.Status = Ember.Mixin.create({
+	/**
+	 * if set to true will display the success alert
+	 * @type {Boolean}
+	 */
+	isSuccess: false,
+	
+	/**
+	 * if set to true will display the danger alert
+	 * @type {Boolean}
+	 */
+	isError: false,
+	
+	/**
+	 * if set to true will display the loading screen
+	 * @type {Boolean}
+	 */
+	isLoading: false,
+	
+	/**
+	 * will display a message in the alerts
+	 * @type {String}
+	 */
+	statusMessage: null,
+	
+	/**
+	 * will display an error
+	 * @param {String} message - the message to display
+	 */
+	error: function(message){
+		this.set('isError', true);
+		this.set('isSuccess', false);
+		this.set('isLoading', false);
+		this.set('statusMessage', message);
+	},
+	
+	/**
+	 * will display an success
+	 * @param {String} message - the message to display
+	 */
+	success: function(message){
+		this.set('isError', false);
+		this.set('isSuccess', true);
+		this.set('isLoading', false);
+		this.set('statusMessage', message);
+	},
+});
+
 })();
 
 (function() {
@@ -3198,7 +3282,7 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
     ajax: function (url, type, hash) {
     	
 		// if the api key and username are set then append them to url	    	
-        if(this.get('apiKey') != null && this.get('username') != null && type.toLowerCase() == "get"){
+        if(this.get('apiKey') != null && this.get('username') != null && (type.toLowerCase() == "get" || type.toLowerCase() == "delete")){
             var api_key = this.get('apiKey');
             var username = this.get('username');
             var url = url + '?username=' + username + '&api_key=' + api_key;
@@ -3207,8 +3291,10 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
         //if its post put request then prepare the data
         pass_data = hash.data;
         if (type.toLowerCase() == "post" || type.toLowerCase() == "put"){
+        	if(this.get('username') != null && this.get('apiKey') != null){
 	        	hash.data['username'] = this.get('username');
 	        	hash.data['api_key'] = this.get('apiKey');
+	        }
             pass_data = JSON.stringify(hash.data);
         }
         

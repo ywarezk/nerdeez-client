@@ -1028,7 +1028,7 @@ function program3(depth0,data) {
 function program5(depth0,data) {
   
   var buffer = '', stack1, hashTypes, hashContexts;
-  data.buffer.push("\n						<table class=\"table table-bordered table-striped table-highlight\">\n							<thead>\n								<tr>\n									<th>\n										File name\n									</th>\n									<th>\n										Size\n									</th>\n									<th>\n										Like\n									</th>\n									<th>\n										DisLike\n									</th>\n									<th>\n										Grade\n									</th>\n									<th>\n										Share\n									</th>\n									<th>\n										Date\n									</th>\n									<th>\n										Download\n									</th>\n								</tr>\n							</thead>\n							<tbody>\n								");
+  data.buffer.push("\n						<table class=\"table table-bordered table-striped table-highlight\">\n							<thead>\n								<tr>\n									<th>\n										File name\n									</th>\n									<th>\n										Size\n									</th>\n									<th>\n										Like\n									</th>\n									<th>\n										DisLike\n									</th>\n									<th>\n										Grade\n									</th>\n									<th>\n										Share\n									</th>\n									<th>\n										Date\n									</th>\n									<th>\n										Download\n									</th>\n									<th>\n										Flag\n									</th>\n								</tr>\n							</thead>\n							<tbody>\n								");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "files", {hash:{},inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
@@ -1072,7 +1072,11 @@ function program6(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "downloadFile", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n												<i class=\"icon-download\"></i>\n											</a>								\n										</td>\n									</tr>\n								");
+  data.buffer.push(">\n												<i class=\"icon-download\"></i>\n											</a>								\n										</td>\n										<td class=\"center\">\n											<a ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "flagFile", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n												<i class=\"icon-flag\"></i>\n											</a>								\n										</td>\n									</tr>\n								");
   return buffer;
   }
 
