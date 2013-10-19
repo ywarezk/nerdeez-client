@@ -3,7 +3,7 @@ import os
 
 DEBUG = os.environ.get('NERDEEZ_DEBUG', 'FALSE') == 'TRUE'
 TEMPLATE_DEBUG = DEBUG
-
+COMPRESS_ENABLED = not DEBUG
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )

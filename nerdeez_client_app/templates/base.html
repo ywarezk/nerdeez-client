@@ -15,11 +15,11 @@
 
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
-        
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         
         {% load compress %}
 		{% compress css %}
-        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/ui-lightness/jquery-ui-1.8.21.custom.css">  
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/bootstrap-responsive.min.css">
@@ -154,7 +154,7 @@
         <script src="{{STATIC_URL}}theme/js/plugins/excanvas/excanvas.min.js"></script>
         <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.js"></script>
         <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.pie.js"></script>
-        <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.orderBars.js"></script>
+        <!--<script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.orderBars.js"></script>-->
         <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
         <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.resize.js"></script>
         
@@ -182,7 +182,8 @@
 		</script>-->        
 		<!-- end filepicker -->
 		
-		<script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
+		
 		{% endcompress %}
+		<script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
     </body>
 </html>
