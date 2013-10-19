@@ -4,4 +4,5 @@ django-appconf==0.6
 django-compressor==1.3
 gunicorn==0.17.4
 six==1.4.1
+versiontools==1.9.1
 wsgiref==0.1.2
