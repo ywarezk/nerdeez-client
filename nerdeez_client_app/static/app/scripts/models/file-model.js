@@ -10,7 +10,7 @@
 Nerdeez.File = Nerdeez.NerdeezModel.extend({
 	title: DS.attr('string'),
 	grade: DS.attr('number'),
-	hw: DS.belongsTo('Nerdeez.Hw'),
+	//hw: DS.belongsTo('Nerdeez.Hw'),
 	file: DS.attr('string'),
 	size: DS.attr('number'),
 	like: DS.attr('number'),
@@ -24,5 +24,7 @@ Nerdeez.File = Nerdeez.NerdeezModel.extend({
 	getSize: function(){
 		var sizeMb = this.get('size') / Math.pow(2,10) / Math.pow(2,10);
 		return sizeMb.toPrecision(2);
-	}.property('size')
+	}.property('size'),
+	
+	
 });

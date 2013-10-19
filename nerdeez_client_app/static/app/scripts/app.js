@@ -78,6 +78,9 @@ Nerdeez.set('ready', readyFunction);
 require('bower_components/facebook/facebook');
 require('bower_components/jquery-plugin/jquery.cookie');
 
+//mixins
+require('scripts/mixins/like-mixin');
+
 //application files
 require('scripts/nerdeez-ember/mixins');
 require('scripts/views/nerdeez-view');
@@ -106,6 +109,7 @@ require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
 
 //routes
 require('scripts/routes/nerdeez-routes');
+
 
 
 //store

@@ -7,7 +7,7 @@
  * @copyright: Nerdeez Ltd.
  */
 
-Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,{
+Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,Nerdeez.LikeDislike,{
 	/**
 	 * will hold the flag message input from the flag modal
 	 * @type {String}
@@ -93,6 +93,7 @@ Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,{
 				xthis.error('Communication error: Failed to send the report, please try again');
 			})
 			$('#flag-file').modal('hide');
-		}
+		},
+		
 	}
 });

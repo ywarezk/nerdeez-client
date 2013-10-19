@@ -100,10 +100,22 @@
 											{{getSize}}MB
 										</td>
 										<td class="center">
+											<a class="nerdeez-button" {{action "incLike" this}}>
+												<i class="icon-thumbs-up-alt">
+												</i>
+											</a>
+											<span class="badge">
 											{{like}}
+											</span>
 										</td>
 										<td class="center">
+											<a class="nerdeez-button" {{action "incLike" this}}>
+												<i class="icon-thumbs-down-alt">
+												</i>
+											</a>
+											<span class="badge">
 											{{dislike}}
+											</span>
 										</td>
 										<td class="center">
 											{{getRating grade 5}}

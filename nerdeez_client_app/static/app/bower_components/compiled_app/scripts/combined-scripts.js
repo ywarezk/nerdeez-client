@@ -272,6 +272,101 @@ window.fbAsyncInit = function() {
 
 (function() {
 
+//mixins
+
+
+})();
+
+(function() {
+
+/**
+ * controller that has a like or dislike on a model should
+ * include this mixin
+ * 
+ * Created October 18th, 2013
+ * @author: Yariv Katz
+ * @version: 2.0
+ * @copyright: Nerdeez Ltd.
+ * 
+ */
+
+/**
+ This mixin allows for controllers to add like and dislike functionality on a model
+ notice in the handlebar that we need to pass the model that needs to be liked/disliked
+
+ 
+ Example Usage (default values):
+
+ ''''javascript
+
+ App.myController = Ember.Controller.extend(Nerdeez.LikeDislike,{ ... });
+
+ ''''handlebars
+
+ <a {{action "incLike" modelToInc}} >
+	 ...
+ </a>
+ <a {{action "disLike" modelToInc}} >
+	 ...
+ </a>
+
+ ''''
+
+**/
+
+/**
+  @class Nerdeez.Status
+  @extends Ember.Mixin
+  @namespace Nerdeez
+  @module Nerdeez
+**/
+Nerdeez.LikeDislike = Ember.Mixin.create({
+	likeDislike: function(record){
+		var xthis = this;
+		//record.clearRelationships();
+		
+		record.transaction.commit();
+		record.one('didUpdate', function(){
+			if (xthis.get('success')){
+				xthis.success('Successfully rated the file');
+			}
+		});
+		record.one('becameError', function(){
+			if (xthis.get('error')){
+				xthis.error('Communication Error! Failed to rate');
+			}
+		})
+	},
+	
+	actions: {
+		/**
+		 * when the user press the like on a resource
+		 */
+		incLike: function(record){
+			var likes = record.get('like');
+			var dislikes = record.get('dislike');
+			if (likes == null || dislikes == null) return;
+			record.set('like', likes + 1);
+			this.likeDislike(record);		
+		},
+		
+		/**
+		 * when the user press the dislike on a resource
+		 */
+		decLike: function(record){
+			var likes = record.get('like');
+			var dislikes = record.get('dislike');
+			if (likes == null || dislikes == null) return;
+			record.set('dislike', dislikes + 1);
+			this.likeDislike(record);
+		}
+	}
+});
+
+})();
+
+(function() {
+
 //application files
 
 
@@ -853,7 +948,10 @@ Nerdeez.NerdeezModel = DS.Model.extend({
 	getCreationDate: function(){
 		var date = new Date(this.get('creation_date'));
 		return date.toLocaleDateString();
-	}.property('creation_date')
+	}.property('creation_date'),
+	
+	
+	
 });
 
 
@@ -1066,7 +1164,7 @@ Nerdeez.Hw = Nerdeez.NerdeezModel.extend({
 Nerdeez.File = Nerdeez.NerdeezModel.extend({
 	title: DS.attr('string'),
 	grade: DS.attr('number'),
-	hw: DS.belongsTo('Nerdeez.Hw'),
+	//hw: DS.belongsTo('Nerdeez.Hw'),
 	file: DS.attr('string'),
 	size: DS.attr('number'),
 	like: DS.attr('number'),
@@ -1080,7 +1178,9 @@ Nerdeez.File = Nerdeez.NerdeezModel.extend({
 	getSize: function(){
 		var sizeMb = this.get('size') / Math.pow(2,10) / Math.pow(2,10);
 		return sizeMb.toPrecision(2);
-	}.property('size')
+	}.property('size'),
+	
+	
 });
 
 
@@ -2290,7 +2390,7 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend({
  * @copyright: Nerdeez Ltd.
  */
 
-Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,{
+Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,Nerdeez.LikeDislike,{
 	/**
 	 * will hold the flag message input from the flag modal
 	 * @type {String}
@@ -2376,7 +2476,8 @@ Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,{
 				xthis.error('Communication error: Failed to send the report, please try again');
 			})
 			$('#flag-file').modal('hide');
-		}
+		},
+		
 	}
 });
 
@@ -3917,9 +4018,9 @@ Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
                 files: { embedded: 'load' },
                 school_group: { embedded: 'load' },
             });
-            this.mappings.set( 'Nerdeez.File', { 
-                hw: { embedded: 'load' }
-            });
+            // this.mappings.set( 'Nerdeez.File', { 
+                // hw: { embedded: 'load' }
+            // });
         }
     })
     

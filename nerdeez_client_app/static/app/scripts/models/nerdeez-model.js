@@ -18,5 +18,8 @@ Nerdeez.NerdeezModel = DS.Model.extend({
 	getCreationDate: function(){
 		var date = new Date(this.get('creation_date'));
 		return date.toLocaleDateString();
-	}.property('creation_date')
+	}.property('creation_date'),
+	
+	
+	
 });
