@@ -16,10 +16,11 @@
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
         
+        
+        {% load compress %}
+		{% compress css %}
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/ui-lightness/jquery-ui-1.8.21.custom.css">  
-        
-        
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/bootstrap-responsive.min.css">
         
@@ -28,6 +29,7 @@
         
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/pages/dashboard.css">
         <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/validation/validationEngine.jquery.css" type="text/css"/>
+        {% endcompress %}
         <!--<script src="{{STATIC_URL}}app/bower_components/modernizr.min.js"></script>-->
         <!-- endbuild -->
         
@@ -110,6 +112,7 @@
         </div>
 
         <!-- build:js scripts/components.js -->
+        {% compress js %}
         <script src="{{STATIC_URL}}app/bower_components/jquery/jquery.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/handlebars/handlebars-1.0.0.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/ember/ember-1.0.0.js"></script>
@@ -180,5 +183,6 @@
 		<!-- end filepicker -->
 		
 		<script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
+		{% endcompress %}
     </body>
 </html>

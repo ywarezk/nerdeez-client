@@ -1,6 +1,7 @@
 # Django settings for nerdeez_client_app project.
+import os
 
-DEBUG = True
+DEBUG = os.environ.get('NERDEEZ_DEBUG', 'FALSE') == 'TRUE'
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -79,6 +80,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
@@ -124,6 +126,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'compressor',
 )
 
 # A sample logging configuration. The only tangible logging
