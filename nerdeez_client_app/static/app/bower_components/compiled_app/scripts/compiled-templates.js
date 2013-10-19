@@ -1750,8 +1750,12 @@ function program5(depth0,data) {
 
 function program7(depth0,data) {
   
-  var buffer = '', stack1, stack2, hashContexts, hashTypes, options;
-  data.buffer.push("\n							<li>\n								<div class=\"hoveron\">\n									<div class=\"span5 resultbox\">\n										<div class=\"result-action\">\n											<div class=\"pic-container\">\n												<div ");
+  var buffer = '', stack1, stack2, hashTypes, hashContexts, options;
+  data.buffer.push("\n							<li >\n								<div class=\"hoveron\" >\n									<div class=\"span5 resultbox\" ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "clickResult", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n										<div class=\"result-action\">\n											<div class=\"pic-container\">\n												<div ");
   hashContexts = {'class': depth0};
   hashTypes = {'class': "STRING"};
   options = {hash:{

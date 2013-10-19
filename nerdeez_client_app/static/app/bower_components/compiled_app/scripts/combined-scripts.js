@@ -1284,6 +1284,14 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 		setSort: function(sortBy) {
 			this.set("sortName", sortBy.title);
 			this.set("sortBy", sortBy.value);
+		},
+		
+		/**
+		 * if the user managed to click a result then transfer him to the about page
+		 * used for support for smartphone where the hover effect is a problem
+		 */
+		clickResult: function(schoolgroup){
+			this.transitionToRoute("schoolgroup.about", schoolgroup);
 		}
 	}
 });
