@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>-->
         <meta name="description" content="">
         <meta name="author" content="">
     	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
@@ -18,6 +19,7 @@
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/ui-lightness/jquery-ui-1.8.21.custom.css">  
         
+        
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/bootstrap-responsive.min.css">
         
@@ -26,8 +28,35 @@
         
         <link rel="stylesheet" href="{{STATIC_URL}}theme/css/pages/dashboard.css">
         <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/validation/validationEngine.jquery.css" type="text/css"/>
-        <script src="{{STATIC_URL}}theme/js/libs/modernizr-2.5.3.min.js"></script>
+        <!--<script src="{{STATIC_URL}}app/bower_components/modernizr.min.js"></script>-->
         <!-- endbuild -->
+        
+        <!--[if IE]>
+			<link href="{{STATIC_URL}}app/styles/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+			<script type="text/javascript">
+                if(console == null && window.console == null){
+    				var console = window.console = {}
+    				console.log = window.console.log = function(){};
+    				console.assert = window.console.assert = function(){};
+    				console.count = window.console.count = function(){};
+    				console.debug = window.console.debug = function(){};
+    				console.dir = window.console.dir = function(){};
+    				console.dirxml = window.console.dirxml = function(){};
+    				console.error = window.console.error = function(){};
+    				console.group = window.console.group = function(){};
+    				console.groupEnd = window.console.groupEnd = function(){};
+    				console.info = window.console.info = function(){};
+    				console.profile = window.console.profile = function(){};
+    				console.profileEnd = window.console.profileEnd = function(){};
+    				console.time = window.console.time = function(){};
+    				console.timeEnd = window.console.timeEnd = function(){};
+    				console.trace = window.console.trace = function(){};
+    				console.warn = window.console.warn = function(){};
+                }
+			</script>
+		<![endif]-->
+        
+        
     </head>
     <body>
 

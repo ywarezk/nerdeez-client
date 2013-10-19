@@ -7,30 +7,39 @@
 */
 
 #header{
+  //width: -moz-max-content !important;
     .logo{
         position: relative;
         top: 14px;
+        margin-bottom: 0;
     }
     .menu{
         position: relative;
         top: 32px;
-        a.active{
-            background: none repeat scroll 0 0 #FFFFFF;
-            border-bottom-color: #FFFFFF;
-            box-shadow: none;
-            color: #303030;
-            filter: none !important;
-            text-shadow: none;
-            text-decoration: none;
-        }
-        .home{
-            height: 20px;
-            a{
+        .nav-collapse{
+            height: 66px;
+            a.active{
+                background: none repeat scroll 0 0 #FFFFFF;
+                border-bottom-color: #FFFFFF;
+                box-shadow: none;
+                color: #303030;
+                filter: none !important;
+                text-shadow: none;
+                text-decoration: none;
+            }
+            .home{
                 height: 20px;
-                i{
-                    position: relative;
-                    top: 4px;
+                a{
+                    height: 20px;
+                    i{
+                        position: relative;
+                        top: 4px;
+                    }
                 }
+            }
+            li{
+                display: inline-block;
+                width: -moz-max-content;
             }
         }
     }
@@ -38,6 +47,7 @@
 
 #masthead{
     padding-top: 14px; padding-bottom: 14px;
+    //width: -moz-max-content !important;
     .masthead-text{
         p{
             font-size: 18px;

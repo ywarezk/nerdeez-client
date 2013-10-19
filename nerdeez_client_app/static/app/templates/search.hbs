@@ -10,161 +10,187 @@ version: 1.0
 -->
 
 <div class="search">
-	<div class="row">
-		<div class="span7">
-			<div class="filter-zone">
-				<label>Filter</label>
-				<div class="styled-select">
-					{{
-						view Ember.Select
-						prompt = "All"
-						contentBinding = "Nerdeez.SCHOOLGROUP_TYPE"
-						optionValuePath = "content.id"
-						optionLabelPath = "content.title"
-						valueBinding = "filterBy"
-					}}
-					<div class="select-icon">
-						<i class="icon-sort"></i>
-					</div>
-				</div>
-			</div>
-			<form class="form-search nerdeez-inputs">
-				{{
-					view Ember.TextField
-					class="search-query"
-					valueBinding="searchQuery"
-					placeholder="Search"
-				}}
-				{{#if isLoading}}
-					{{loading}}
-				{{else}}
-					<i class="icon-search"></i>
-				{{/if}}
-			</form>
-		</div>
-		<div class="span3">
-			<div class="sortby">
-				<h5>Sort By</h5>
-				<div class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
-						{{controller.sortName}}
-						<b class="caret"></b>
-					</a>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-						{{#each Nerdeez.SORTBY_TYPE}}
-							<li><a href="#" {{action "setSort" this target="controller"}}>{{title}}</a></li>
-						{{/each}}
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<hr />
+	
+	<!-- begin upper controllers -->
 	<div class="row">
 		<div class="span10">
-			<div class="result-num">
-				<i class="icon-book"></i>
-				<p><b>{{controller.resultNum}}</b> Results Found</p>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<ol class="results">
-			{{#each controller}}
-				<li>
-					<div class="hoveron">
-						<div class="span5 resultbox">
-							<div class="result-action">
-								<div class="pic-container">
-									<div {{bind-attr class="getIconClass"}}>
-										<i class="standard-img"></i>
-										<i class="blurred-img"></i>
-									</div>
-								</div>
-								<div class="result-text">
-									<h5>
-										{{#if isCourse}}
-											Course Name:
-										{{/if}}
-										{{#if isFaculty}}
-											Faculty Name:
-										{{/if}}
-										{{#if isUniversity}}
-											University Name:
-										{{/if}}
-									</h5>
-									<span>{{title}}</span>
-								</div>
-								<div class="result-text">
-										<h5> Description: </h5>
-										<span>{{description}}</span>
-								</div>
-								<div class="result-text">
-									<h5> 
-										{{#if isCourse}}
-											Faculty:
-										{{/if}}
-										{{#if isFaculty}}
-											University:
-										{{/if}}
-									</h5>
-									<span>
-										{{#unless isUniversity}}
-											{{parent.title}}
-										{{/unless}}
-									</span>
-								</div>
-								<div class="result-text">
-									{{#if isCourse}}
-										<h5> University: </h5>
-										<span>{{parent.parent.title}}</span>
-									{{/if}}
-								</div>
-							</div>
-							<div class="result-footer">
-								<ul class="entry-info">
-									<li>
-										{{getRating grade 5}}	
-									</li>
-									<li>
-										<i class="icon-user"></i>
-										<h5>Users: {{num_users}}</h5>
-									</li>
-									<li>
-										<i class="icon-file-text"></i>
-										<h5>Files: {{num_files}}</h5>
-									</li>
-								</ul>
-							</div>
-							<div class="hoveron-toggle">
-								<div class="hoveron-main">
-									{{#link-to "schoolgroup.wall" this}}
-									<div class="hoveron-block hoveron-wall">
-										<div class="block-icon wall-icon">
-											<i class="icon-comments"></i>
-										</div>
-										<div class="block-text wall-text">
-											<h3>Wall</h3>
-										</div>
-									</div>
-									{{/link-to}}
-									{{#link-to "hws.index" this}}
-									<div class="hoveron-block hoveron-files">
-										<div class="block-icon files-icon">
-											<i class="icon-file"></i>
-										</div>
-										<div class="block-text files-text">
-											<h3>H.W's</h3>
-										</div>
-									</div>
-									{{/link-to}}
-								</div>
-								<div class="hoveron-blur"></div>
+			
+			<div class="row">
+				<div class="span10">
+					<div class="filter-zone pull-left">
+						<label>Filter</label>
+						<div class="styled-select">
+							{{
+								view Ember.Select
+								prompt = "All"
+								contentBinding = "Nerdeez.SCHOOLGROUP_TYPE"
+								optionValuePath = "content.id"
+								optionLabelPath = "content.title"
+								valueBinding = "filterBy"
+							}}
+							<div class="select-icon">
+								<i class="icon-sort"></i>
 							</div>
 						</div>
 					</div>
-				</li>
-			{{/each}}
-		</ol>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="span7">
+					<form class="form-search nerdeez-inputs">
+						{{
+							view Ember.TextField
+							class="search-query"
+							valueBinding="searchQuery"
+							placeholder="Search"
+						}}
+						{{#if isLoading}}
+							{{loading}}
+						{{else}}
+							<i class="icon-search"></i>
+						{{/if}}
+					</form>
+				</div>
+				<div class="span3">
+					<div class="sortby pull-right">
+						<h5>Sort By</h5>
+						<div class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
+								{{controller.sortName}}
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								{{#each Nerdeez.SORTBY_TYPE}}
+									<li><a href="#" {{action "setSort" this target="controller"}}>{{title}}</a></li>
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+	<!-- end upper controllers-->
+	
+	<hr />
+	
+	<!-- begin results -->
+	<div class="row">
+		<div class="span10">
+			
+			<div class="row">
+				<div class="span10">
+					<div class="result-num">
+						<i class="icon-book"></i>
+						<p><b>{{controller.resultNum}}</b> Results Found</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+					
+					<ol class="results">
+						{{#each controller}}
+							<li>
+								<div class="hoveron">
+									<div class="span5 resultbox">
+										<div class="result-action">
+											<div class="pic-container">
+												<div {{bind-attr class="getIconClass"}}>
+													<i class="standard-img"></i>
+													<i class="blurred-img"></i>
+												</div>
+											</div>
+											<div class="result-text">
+												<h5>
+													{{#if isCourse}}
+														Course Name:
+													{{/if}}
+													{{#if isFaculty}}
+														Faculty Name:
+													{{/if}}
+													{{#if isUniversity}}
+														University Name:
+													{{/if}}
+												</h5>
+												<span>{{title}}</span>
+											</div>
+											<div class="result-text">
+													<h5> Description: </h5>
+													<span>{{description}}</span>
+											</div>
+											<div class="result-text">
+												<h5> 
+													{{#if isCourse}}
+														Faculty:
+													{{/if}}
+													{{#if isFaculty}}
+														University:
+													{{/if}}
+												</h5>
+												<span>
+													{{#unless isUniversity}}
+														{{parent.title}}
+													{{/unless}}
+												</span>
+											</div>
+											<div class="result-text">
+												{{#if isCourse}}
+													<h5> University: </h5>
+													<span>{{parent.parent.title}}</span>
+												{{/if}}
+											</div>
+										</div>
+										<div class="result-footer">
+											<ul class="entry-info">
+												<li>
+													{{getRating grade 5}}	
+												</li>
+												<li>
+													<i class="icon-user"></i>
+													<h5>Users: {{num_users}}</h5>
+												</li>
+												<li>
+													<i class="icon-file-text"></i>
+													<h5>Files: {{num_files}}</h5>
+												</li>
+											</ul>
+										</div>
+										<div class="hoveron-toggle">
+											<div class="hoveron-main">
+												{{#link-to "schoolgroup.wall" this}}
+												<div class="hoveron-block hoveron-wall">
+													<div class="block-icon wall-icon">
+														<i class="icon-comments"></i>
+													</div>
+													<div class="block-text wall-text">
+														<h3>Wall</h3>
+													</div>
+												</div>
+												{{/link-to}}
+												{{#link-to "hws.index" this}}
+												<div class="hoveron-block hoveron-files">
+													<div class="block-icon files-icon">
+														<i class="icon-file"></i>
+													</div>
+													<div class="block-text files-text">
+														<h3>H.W's</h3>
+													</div>
+												</div>
+												{{/link-to}}
+											</div>
+											<div class="hoveron-blur"></div>
+										</div>
+									</div>
+								</div>
+							</li>
+						{{/each}}
+					</ol>
+					
+			</div>
+		</div>
+	</div>
+	<!-- end results-->
+	
 </div>

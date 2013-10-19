@@ -54,7 +54,6 @@
 		}
 	}
 	.nerdeez-inputs { //search text input
-		width: 620px !important;
 		border-radius: 0;
 		border-right: 0;
 		.search-query {
@@ -74,11 +73,9 @@
 		}
 	}
 	.sortby { // sort by dropdown
-		margin-top: 97px;
 		height: 22px;
-		width: 180px;
 		border-bottom: 1px solid grey;
-		margin-left: 90px;
+		margin-top: 17px;
 		h5 {
 			width: 60px;
 			float:left;
@@ -86,7 +83,6 @@
 		}
 		.dropdown {
 			float: left;
-    		width: 120px;
 		}
 	}
 	hr { // line to seperate between the page header (input) and content (output)
@@ -127,78 +123,78 @@
 		}
 		.hoveron { //hoverons are here for the hover design on the resultbox
 			.resultbox { //each result
-			    height: 184px;
-			    margin-bottom: 30px;
-			    box-shadow: -5px 5px 4px 2px gray;
-			    .result-action { //action pane
-			    	height: 120px;
-			    	background-color: white;
-			    	padding-top: 24px;
-			    	padding-left: 15px;
-			    	padding-right: 15px;
-			    	border: 1px solid gray;
-			    	border-bottom: 0;
-				    .pic-container {
-				    	float: left;
-				    	padding-right: 15px;
-				    }
-				    .result-text {
-				    	display: table;
-				    }
-				    i {
-				    	display: block;
-				    	height: 95px;
-				    	width: 100px;
-				    	float: left;
-				    }
-				    .faculty-icon {
-				    	.standard-img {
-				    		display: block;
-				    		background-image: image-url("faculty-pic.png");
-				    	}
-				    	.blurred-img {
-				    		display: none;
-				    		background-image: image-url("faculty-pic-blurred.png");
-				    	}
-				    }
-				    .course-icon {
-				    	.standard-img {
-				    		display: block;
-				    		background-image: image-url("course-pic.png");
-				    	}
-				    	.blurred-img {
-				    		display: none;
-				    		background-image: image-url("course-pic-blurred.png");
-				    	}
-				    }
-				    .university-icon {
-				    	.standard-img {
-				    		display: block;
-				    		background-image: image-url("university-pic.png");
-				    	}
-					    .blurred-img {
-					    	display: none;
-					    	background-image: image-url("university-pic-blurred.png");
-					    }
-				    }
+      			    height: 184px;
+      			    margin-bottom: 30px;
+      			    box-shadow: -5px 5px 4px 2px gray;
+      			    .result-action { //action pane
+          			    	height: 120px;
+          			    	background-color: white;
+          			    	padding-top: 24px;
+          			    	padding-left: 15px;
+          			    	padding-right: 15px;
+          			    	border: 1px solid gray;
+          			    	border-bottom: 0;
+        				    .pic-container {
+            				    	float: left;
+            				    	padding-right: 15px;
+        				    }
+        				    .result-text {
+            				    	display: table;
+        				    }
+        				    i {
+            				    	display: block;
+            				    	height: 95px;
+            				    	width: 100px;
+            				    	float: left;
+            				}
+        				    .faculty-icon {
+            				    	.standard-img {
+              				    		display: block;
+              				    		background-image: image-url("faculty-pic.png");
+            				    	}
+        				    	.blurred-img {
+          				    		display: none;
+          				    		background-image: image-url("faculty-pic-blurred.png");
+        				    	}
+    				    }
+    				    .course-icon {
+        				    	.standard-img {
+          				    		display: block;
+          				    		background-image: image-url("course-pic.png");
+        				    	}
+        				    	.blurred-img {
+          				    		display: none;
+          				    		background-image: image-url("course-pic-blurred.png");
+        				    	}
+    				    }
+    				    .university-icon {
+        				    	.standard-img {
+          				    		display: block;
+          				    		background-image: image-url("university-pic.png");
+        				    	}
+      					    .blurred-img {
+          					    	display: none;
+          					    	background-image: image-url("university-pic-blurred.png");
+      					    }
+    				   }
 				}
 				.result-footer { //footer pane
-					height: 40px;
-					background-color: #E6E6E6;
-					padding-left: 15px;
-					border: 1px solid gray;
-					border-top: 0;
-					.result-user {
-						width: 245px;
-					}
-					ul {
-						list-style: none;
-						margin: 0;
-						height: 20px;
-						padding-top: 12px;
-						float: left;
-						
-					}
+    					height: 40px;
+    					background-color: #E6E6E6;
+    					padding-left: 15px;
+    					border: 1px solid gray;
+    					border-top: 0;
+    					.result-user {
+    						width: 245px;
+    					}
+    					ul {
+    						list-style: none;
+    						margin: 0;
+    						height: 20px;
+    						padding-top: 12px;
+    						float: left;
+    						
+    					}
 					.entry-info {
 						& > li{
                   border-right: 3px solid #000000;
@@ -249,13 +245,14 @@
 	    		}
     			bottom: 185px;
 				position: relative;
-    			width: 470px;
     			height: 185px;
 	    		.hoveron-main {
-	    			position: relative;
-				    top: 70px;
-				    width: 339px;
-        			left: 65px;
+    	    			background-color: rgba(0, 0, 0, 0);
+            height: 0;
+            margin: 0 auto;
+            position: relative;
+            top: 70px;
+            width: 84%;
 					.hoveron-block {
 						height: 45px;
 		    			width: 125px;
@@ -323,7 +320,6 @@
 					background: gray;
 				    height: 185px;
 				    opacity: 0.5;
-				    width: 470px;
 				    z-index: 10;
 				}
 			}
