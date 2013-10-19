@@ -1801,16 +1801,16 @@ function program7(depth0,data) {
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "isCourse", {hash:{},inverse:self.noop,fn:self.program(20, program20, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n								</div>\n							</div>\n							<div class=\"result-footer\">\n								");
+  data.buffer.push("\n								</div>\n							</div>\n							<div class=\"result-footer\">\n								<ul class=\"entry-info\">\n									<li>\n										");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0,depth0],types:["ID","INTEGER"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.getRating || depth0.getRating),stack1 ? stack1.call(depth0, "grade", 5, options) : helperMissing.call(depth0, "getRating", "grade", 5, options))));
-  data.buffer.push("\n								<ul class=\"entry-info\">\n									<li class=\"iconproperties\">\n										<i class=\"icon-user\"></i>\n									</li>\n									<li>\n										<h5>Users: ");
+  data.buffer.push("	\n									</li>\n									<li>\n										<i class=\"icon-user\"></i>\n										<h5>Users: ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "num_users", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("</h5>\n									</li>\n									<li>\n										<i class=\"verticalLine\"></i>\n									</li>\n									<li class=\"iconproperties\">\n										<i class=\"icon-file-text\"></i>\n									</li>\n									<li>\n										<h5>Files: ");
+  data.buffer.push("</h5>\n									</li>\n									<li>\n										<i class=\"icon-file-text\"></i>\n										<h5>Files: ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "num_files", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));

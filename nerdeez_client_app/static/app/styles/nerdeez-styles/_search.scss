@@ -197,20 +197,38 @@
 						height: 20px;
 						padding-top: 12px;
 						float: left;
+						
 					}
 					.entry-info {
-						width: 300px;
+						& > li{
+                  border-right: 3px solid #000000;
+                  padding-right: 15px;
+                  padding-left: 15px;
+            }
+            & > li:nth-of-type(1){
+                  padding-left: 0;
+            }
+            & > li:nth-last-of-type(1){
+                  border-right: none;
+            }
+            .rating{
+                margin-right: 0;
+                max-height: 17px;
+                ul{
+                    padding-top: 0;
+                }
+            }
 					}
-					.iconproperties {
-						font-size: 20px;
-	    				padding-right: 5px;
-	    				.icon-user {
-	    					padding-top: 1px;
-	    				}
-	    				.icon-file-text {
-	    					padding-top: 2px;
-	    				}
+					i{
+    					  font-size: 20px;
+              padding-right: 5px;
 					}
+					.icon-user {
+            padding-top: 1px;
+          }
+          .icon-file-text {
+            padding-top: 2px;
+          }
 					.verticalLine {
 	 				   	border-style: solid;
 					    border-width: thin;
