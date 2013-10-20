@@ -49,5 +49,5 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 			return true;
 		else
 			return false;
-	}.property("school_type")
+	}.property("school_type"),
 });

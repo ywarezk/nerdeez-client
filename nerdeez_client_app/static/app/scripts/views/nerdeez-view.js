@@ -20,7 +20,7 @@ Ember.View.reopen({
      */
     didInsertElement: function(){
         this._super();
-        //FB.XFBML.parse();
+        
         $('.js-validation').validationEngine();
         
         //fix for the history bar
@@ -28,7 +28,7 @@ Ember.View.reopen({
         
         filepicker.setKey(FILEPICKER_API_KEY);
         
-    }
+    },
     
     // willDestroyElement: function(){
 	    	// this._super();
@@ -39,4 +39,3 @@ Ember.View.reopen({
 Ember.Select.reopen({
 	attributeBindings: ['data-errormessage-value-missing']
 });
-

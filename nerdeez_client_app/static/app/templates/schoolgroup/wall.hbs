@@ -1,7 +1,7 @@
 <!--
-	the school group wall is located here
-	be aware that the top section of this page is shared in the course files page as well
-	so it should be a partial
+	the school group main is located here
+	The top section of this page is shared in the course files page as well
+	so it's a partial
 	
 	Created October 3rd, 2013
 	@author: Doron Nachshon
@@ -10,5 +10,12 @@
 -->
 
 <div class="schoolgroup-wall">
-	<h1>Wall {{title}}</h1>
+	<div class="row">
+		<div class="span10">
+			{{partial wall-header}}
+			<div class="wall-comments nerdeez-box">
+				{{fb-comment}}
+			</div>
+		</div>
+	</div>
 </div>
