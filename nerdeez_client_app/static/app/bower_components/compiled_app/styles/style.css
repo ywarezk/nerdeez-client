@@ -1277,3 +1277,31 @@ a.nerdeez-button {
 .homepage .donation .actions .button {
   float: none;
 }
+
+/**
+ * the style sheet for pages under construction
+ * 
+ * Created October 20th, 2013
+ * @author: Yariv Kazt
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_under-construction\.scss}line{font-family:\0000310}}
+.under-construction {
+  text-align: center;
+  padding: 20px;
+  font-size: 38px;
+  width: 100%;
+  margin-top: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_under-construction\.scss}line{font-family:\0000312}}
+.under-construction .icon-wrench {
+  font-size: 74px;
+  height: 35px;
+  margin-top: 27px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_under-construction\.scss}line{font-family:\0000315}}
+.under-construction .explain {
+  margin-top: 24px;
+  margin-bottom: 20px;
+}

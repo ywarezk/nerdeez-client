@@ -2873,6 +2873,17 @@ Nerdeez.TermsRoute = Nerdeez.FlatPageRoute.extend({
 });
 
 /**
+ * all the under construction pages will extend this
+ */
+Nerdeez.UnderConstructionRoute = Ember.Route.extend({
+    renderTemplate: function() {
+        this.render('underConstruction');
+    }
+});
+
+Nerdeez.DonateRoute = Nerdeez.UnderConstructionRoute.extend({});
+
+/**
  * the route to a course page
  */
 Nerdeez.SchoolgroupRoute = Nerdeez.NerdeezRoute.extend({

@@ -1,0 +1,18 @@
+/**
+ * the style sheet for pages under construction
+ * 
+ * Created October 20th, 2013
+ * @author: Yariv Kazt
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+
+.under-construction{
+    text-align: center; padding: 20px; font-size: 38px; width: 100%; margin-top: 0px;
+    .icon-wrench{
+        font-size: 74px; height: 35px; margin-top: 27px;
+    }
+    .explain{
+        margin-top: 24px; margin-bottom: 20px;
+    }
+}

@@ -1976,3 +1976,13 @@ function program24(depth0,data) {
   return buffer;
   
 });
+
+Ember.TEMPLATES["under_construction"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  
+
+
+  data.buffer.push("<!--\n	handlebar for the under construction page\n	\n	Created October 20th, 2013\n	@author: Yariv Katz\n	@version: 1.0\n	@copyright: Nerdeez Ltd\n-->\n\n<div class=\"under-construction account-container login stacked\">\n	<i class=\"icon-wrench\">\n	</i>\n	<br/>\n	<div class=\"explain\">\n		<span>\n			We are sorry but this page is under construction\n		</span>\n	</div>\n</div>");
+  
+});
