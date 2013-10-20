@@ -13,7 +13,7 @@ var Ember = window.Ember;
  * define the routes urls here
  */
 Nerdeez.Router.map(function () {
-	this.route('search');
+	this.route('search', {path: '/search/:search_param'});
 	this.route('about');
 	this.route('terms');
 	this.route('privacy');
@@ -205,7 +205,11 @@ Nerdeez.SearchRoute = Ember.Route.extend({
 	
 	model: function(param){
 		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title', page: 'search'});
-	}
+	},
+	
+	serialize: function(model) {
+		  return {search_param: ''};
+	},
 });
 
 /**

@@ -1,2 +1,68 @@
-<h1>Homepage</h1>
-{{outlet}}
+<!--
+	application homepage is defined here
+	
+	Created October 20th, 2013
+	@author: Yariv Katz
+	@version: 2.0
+	@copyright: Nerdeez 
+-->
+
+<div class="homepage">
+	
+	<!-- begin diagram -->
+	<div class="row">
+		<div class="span10">
+		</div>
+	</div>
+	<!-- end diagram -->
+	
+	<!-- begin quickstart -->
+	<div class="row quickstart">
+		<div class="span10 search">
+			<form class="form-search nerdeez-inputs">
+				<div>
+					<h3>
+						Quick Start 
+					</h3>
+					<p>
+						Type your course number
+					</p>
+				</div>
+				<div class="row">
+					<div class="span8">
+					{{
+						view
+						Ember.TextField
+						valueBinding="quickStart"
+						class="search-query"
+						prompt="Ex. 234122"
+					}}
+					<i class="icon-search"></i>
+					</div>
+					<div class="span2">
+						<button class="button btn btn-primary btn-large" {{action "submitSearch"}}>
+							<i class="icon-search"></i>
+							Search
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- end quickstart -->
+	
+	<!-- begin carousel -->
+	<div class="row">
+		<div class="span10">
+		</div>
+	</div>
+	<!-- end carousel -->
+	
+	<!-- begin donation -->
+	<div class="row">
+		<div class="span10">
+		</div>
+	</div>
+	<!-- end donation -->
+	
+</div>

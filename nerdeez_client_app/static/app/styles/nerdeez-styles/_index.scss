@@ -1,0 +1,24 @@
+/**
+ * stylesheet for the homepage
+ * 
+ * Created October 20th, 2013
+ * @author: Yariv Katz
+ * @version: 2.0
+ * @copyright: Nerdeez
+ */
+
+.homepage{
+    .quickstart{
+        .button{
+            margin-top: 0;
+            float: none;
+            height: 41px;
+            width: 88%;
+            i.icon-search{
+                bottom: 0;
+                float: left;
+                left: 8px;
+            }
+        }
+    }
+}

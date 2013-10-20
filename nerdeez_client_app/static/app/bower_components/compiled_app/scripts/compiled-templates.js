@@ -1339,13 +1339,22 @@ function program13(depth0,data) {
 Ember.TEMPLATES["index"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', hashTypes, hashContexts, escapeExpression=this.escapeExpression;
+  var buffer = '', hashContexts, hashTypes, escapeExpression=this.escapeExpression;
 
 
-  data.buffer.push("<h1>Homepage</h1>\n");
+  data.buffer.push("<!--\n	application homepage is defined here\n	\n	Created October 20th, 2013\n	@author: Yariv Katz\n	@version: 2.0\n	@copyright: Nerdeez \n-->\n\n<div class=\"homepage\">\n	\n	<!-- begin diagram -->\n	<div class=\"row\">\n		<div class=\"span10\">\n		</div>\n	</div>\n	<!-- end diagram -->\n	\n	<!-- begin quickstart -->\n	<div class=\"row quickstart\">\n		<div class=\"span10 search\">\n			<form class=\"form-search nerdeez-inputs\">\n				<div>\n					<h3>\n						Quick Start \n					</h3>\n					<p>\n						Type your course number\n					</p>\n				</div>\n				<div class=\"row\">\n					<div class=\"span8\">\n					");
+  hashContexts = {'valueBinding': depth0,'class': depth0,'prompt': depth0};
+  hashTypes = {'valueBinding': "STRING",'class': "STRING",'prompt': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'valueBinding': ("quickStart"),
+    'class': ("search-query"),
+    'prompt': ("Ex. 234122")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n					<i class=\"icon-search\"></i>\n					</div>\n					<div class=\"span2\">\n						<button class=\"button btn btn-primary btn-large\" ");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "submitSearch", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n							<i class=\"icon-search\"></i>\n							Search\n						</button>\n					</div>\n				</div>\n			</form>\n		</div>\n	</div>\n	<!-- end quickstart -->\n	\n	<!-- begin carousel -->\n	<div class=\"row\">\n		<div class=\"span10\">\n		</div>\n	</div>\n	<!-- end carousel -->\n	\n	<!-- begin donation -->\n	<div class=\"row\">\n		<div class=\"span10\">\n		</div>\n	</div>\n	<!-- end donation -->\n	\n</div>");
   return buffer;
   
 });

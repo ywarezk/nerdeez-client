@@ -2495,6 +2495,44 @@ Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,Nerdeez.L
 (function() {
 
 /**
+ * controller for the homepage
+ * 
+ * Created October 20th, 2013
+ * @author: Yariv Katz
+ * @version: 2.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.IndexController = Ember.ArrayController.extend({
+	needs: ['search'],
+	
+	/**
+	 * will hold the user input from the quickstart box
+	 * @type {String}
+	 */
+	quickStart: null,
+	
+	
+	actions: {
+		submitSearch: function(){
+			var searchController = this.get('controllers.search');
+			searchController.set('searchQuery', this.get('quickStart'));
+			this.transitionToRoute('search', Nerdeez.Schoolgroup.find({
+				limit: Nerdeez.get('SEARCH_LIMIT'),
+				page: 'search',
+				search: this.get('quickStart')
+			}));	
+		}
+	}
+	
+});
+
+
+})();
+
+(function() {
+
+/**
  * nerdeez handlebars helper. 
  * register common handlebars that are used alot. 
  * Important note to whomever edits this file: All the programmers are going to use this code throughout the entire application. 
@@ -2576,7 +2614,7 @@ var Ember = window.Ember;
  * define the routes urls here
  */
 Nerdeez.Router.map(function () {
-	this.route('search');
+	this.route('search', {path: '/search/:search_param'});
 	this.route('about');
 	this.route('terms');
 	this.route('privacy');
@@ -2768,7 +2806,11 @@ Nerdeez.SearchRoute = Ember.Route.extend({
 	
 	model: function(param){
 		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title', page: 'search'});
-	}
+	},
+	
+	serialize: function(model) {
+		  return {search_param: ''};
+	},
 });
 
 /**
