@@ -8,13 +8,17 @@
  */
 
 .homepage{
-    .quickstart{
+    .quickstart, .donation{
         -moz-box-sizing: border-box;
         margin-bottom: 20px;
         margin-top: 0 !important;
         padding: 20px;
         width: 100%;
-        height: 191px; padding-right: 0px; padding-left: 0px;
+        padding-right: 0px; 
+        padding-left: 0px;
+    }
+    .quickstart{
+        height: 191px;         
         .padding-left{
             padding-left: 20px;
             @include box-sizing(border-box);
@@ -28,6 +32,29 @@
                 bottom: 0;
                 float: left;
                 left: 8px;
+            }
+        }
+    }
+    .donation{
+        height: 456px;
+        .explain{
+            h2{
+                text-align: center;
+            }
+        }
+        .images{
+            .thumbnail{
+                width: 30%;
+                float: left;
+                img{
+                    
+                }
+            }
+        }
+        .actions{
+            text-align: center;
+            .button{
+                float: none;
             }
         }
     }

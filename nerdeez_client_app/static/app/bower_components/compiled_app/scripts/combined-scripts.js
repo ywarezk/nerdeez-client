@@ -2618,6 +2618,7 @@ Nerdeez.Router.map(function () {
 	this.route('about');
 	this.route('terms');
 	this.route('privacy');
+	this.route('donate');
     this.resource('schoolgroup', { path: '/schoolgroup/:schoolgroup_id' }, function(){
         this.route('wall');
         //this.route('hws');

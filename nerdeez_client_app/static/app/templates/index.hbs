@@ -61,8 +61,29 @@
 	<!-- end carousel -->
 	
 	<!-- begin donation -->
-	<div class="row">
+	<div class="row donation account-container login stacked">
 		<div class="span10">
+			<div class="explain">
+				<h2>
+					Support development by  buying a nerdeez T-Shirt
+				</h2>
+			</div>
+			<div class="images">
+				<div class="thumbnail">
+					<img src="{{unbound view.staticUrl}}img/t-shirt.jpeg" />
+				</div>
+				<div class="thumbnail">
+					<img src="{{unbound view.staticUrl}}img/t-shirt.jpeg" />
+				</div>
+				<div class="thumbnail">
+					<img src="{{unbound view.staticUrl}}img/t-shirt.jpeg" />
+				</div>
+			</div>
+			<div class="actions">
+				{{#link-to "donate" class="button btn btn-primary btn-large"}}
+				Donate
+				{{/link-to}}
+			</div>
 		</div>
 	</div>
 	<!-- end donation -->
