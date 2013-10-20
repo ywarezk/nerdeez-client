@@ -52,3 +52,9 @@ Ember.Handlebars.registerBoundHelper('getRating', function(currRating, outOf, op
     }
     return new Handlebars.SafeString(html);
 });
+
+Ember.Handlebars.registerBoundHelper('fbComments', function() {
+    
+    var html='<div id="addfb1"><div class="fb-comments" data-href=' + window.location.href + ' data-colorscheme="light" data-numposts="5" data-width="870"></div></div>';
+    return new Handlebars.SafeString(html);
+});

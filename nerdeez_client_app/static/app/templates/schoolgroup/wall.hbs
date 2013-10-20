@@ -1,5 +1,5 @@
 <!--
-	the school group wall is located here
+	the school group main is located here
 	be aware that the top section of this page is shared in the course files page as well
 	so it should be a partial
 	
@@ -10,5 +10,56 @@
 -->
 
 <div class="schoolgroup-wall">
-	<h1>Wall {{title}}</h1>
+	<div class="row">
+		<div class="span10">
+			<div class="wall-main nerdeez-box">
+				<div class="main-action nerdeez-box-action">
+					<div class="pic-content">
+						<div {{bind-attr class="model.getIconClass"}}>
+							<i class="schoolgroup-img"></i>
+						</div>
+					</div>
+					<div class="text-content">
+						<div class="result-title">
+							<h3>
+								{{#if model.isCourse}}
+									Course Name:
+								{{/if}}
+								{{#if model.isFaculty}}
+									Faculty Name:
+								{{/if}}
+								{{#if model.isUniversity}}
+									University Name:
+								{{/if}}
+							</h3>
+							<span>{{model.title}}</span>
+						</div>
+						<div class="result-description">
+							<h5> Description: </h5>
+							<span>{{model.description}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="main-footer nerdeez-box-footer">
+					<div class="main-share">
+						<ul class="like-status">
+							<li><i class="icon-thumbs-down"></i></li>
+							<li>Dislike:</li>
+							<li>.....</li>
+							<li><i class="vertical-line"></i></li>
+							<li><i class="icon-thumbs-up"></i></li>
+							<li>Like:</li>
+							<li>.....</li>
+						</ul>
+						<div class="fb">
+							<a class="btn_2" {{action share}}>Share on Facebook</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wall-comments nerdeez-box">
+				{{fb-comment}}
+			</div>
+		</div>
+	</div>
 </div>

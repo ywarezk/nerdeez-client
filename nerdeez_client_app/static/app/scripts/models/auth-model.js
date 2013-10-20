@@ -8,13 +8,39 @@
  */
 
 Nerdeez.Auth = Ember.Object.extend({
-	isLoggedIn: false,
+	
 	
 	/**
 	 * holds the user profile model for the loged in user
 	 * @type {Nerdeez.UserProfile}
 	 */
-	user_profile: null
+	userProfile: null,
+	
+	/**
+	 * will hold the user api key
+	 * @type {String}
+	 */
+	apiKey: null,
+	
+	/**
+	 * will hold the username
+	 * @type {String}
+	 */
+	username: null,
+	
+	/**
+	 * holds the id of the user profile
+	 * @type {int}
+	 */
+	id: null,
+	
+	/**
+	 * return true if the user is logged in
+	 * @returns: {Boolean}
+	 */
+	isLoggedIn: function(){
+		return this.get('apiKey') != null && this.get('username') != null && this.get('id') != null;
+	}.property('apiKey', 'username'),
 });
 Nerdeez.Auth.reopenClass(Nerdeez.Singleton);
 Nerdeez.set('auth', Nerdeez.Auth.current());
