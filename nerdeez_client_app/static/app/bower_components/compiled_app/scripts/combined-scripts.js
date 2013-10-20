@@ -140,7 +140,7 @@ window.fbAsyncInit = function() {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {return;}
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js";
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
     fjs.parentNode.insertBefore(js, fjs);
     
 }(document, 'script', 'facebook-jssdk'));
@@ -734,7 +734,7 @@ Ember.View.reopen({
      */
     didInsertElement: function(){
         this._super();
-        //FB.XFBML.parse();
+        
         $('.js-validation').validationEngine();
         
         //fix for the history bar
@@ -742,7 +742,7 @@ Ember.View.reopen({
         
         filepicker.setKey(FILEPICKER_API_KEY);
         
-    }
+    },
     
     // willDestroyElement: function(){
 	    	// this._super();
@@ -753,8 +753,6 @@ Ember.View.reopen({
 Ember.Select.reopen({
 	attributeBindings: ['data-errormessage-value-missing']
 });
-
-
 
 })();
 
@@ -960,6 +958,68 @@ Nerdeez.NerdeezModel = DS.Model.extend({
 (function() {
 
 /**
+ * The View Component of the Facebook comments plugin
+ * 
+ * Created October 20th, 2013
+ * @copyright: Nerdeez Ltd.
+ * @version: 1.0
+ * @author: Doron Nachshon
+ * 
+ */
+
+
+
+Nerdeez.FbCommentComponent = Ember.Component.extend({
+
+  	/**
+  	* The absolute URL that comments posted in the plugin will be permanently associated with this URL.
+  	* Stories on Facebook about comments posted in the plugin will link to this URL.
+  	* @property
+  	* @public
+  	* @type {string}
+  	*/
+	dataLink: null,
+
+	/**
+	* The color scheme used by the plugin. Can be "light" or "dark".
+	* @property
+	* @public
+	* @type {string}
+	*/
+	dataColorScheme: "light",
+
+	/**
+	* The number of comments to show by default. The minimum value is 1.
+	* @property
+	* @public
+	* @type {integer}
+	*/
+	dataNumPosts: 5,
+
+	/**
+	* The width (in pixels) of the plugin.
+	* The mobile version of the Comments plugin ignores the width parameter,
+	* and instead has a fluid width of 100%.
+	* @property
+	* @public
+	* @type {integer}
+	*/
+	dataWidth: 870,
+
+	didInsertElement: function(){
+		this.set('dataLink', window.location.href);
+
+		Ember.run.scheduleOnce('afterRender', this, function(){
+      		FB.XFBML.parse();
+      	});
+	}
+});
+
+})();
+
+(function() {
+
+/**
  * holds the model for the schoolgroups
  * 
  * @author: Yariv Katz
@@ -1010,7 +1070,7 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 			return true;
 		else
 			return false;
-	}.property("school_type")
+	}.property("school_type"),
 });
 
 
@@ -1295,6 +1355,7 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 		}
 	}
 });
+
 
 })();
 
@@ -1714,6 +1775,31 @@ Nerdeez.ContactController = Ember.Controller.extend({
 	    },	
 	}
     
+});
+
+})();
+
+(function() {
+
+/**
+* the controller for the wall page
+*
+* @copyright: Nerdeez Ltd.
+* @author: Doron Nachshon
+* @version: 1.0
+*/
+
+Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.fbShare, {
+
+	/**
+	* Init facebook's share function from the Mixin
+	**/
+
+	shareInit: function(){
+		this.set('name', this.get('content.title'));
+		this.set('description', this.get('content.description'));
+	}
+
 });
 
 })();
@@ -2547,6 +2633,12 @@ Ember.Handlebars.registerBoundHelper('getRating', function(currRating, outOf, op
     		html += '<li><i class="icon-star-empty"></i></li>';
     }
     html +="</ul></div>";
+    return new Handlebars.SafeString(html);
+});
+
+Ember.Handlebars.registerBoundHelper('fbComments', function() {
+    
+    var html='<div id="addfb1"><div class="fb-comments" data-href=' + window.location.href + ' data-colorscheme="light" data-numposts="5" data-width="870"></div></div>';
     return new Handlebars.SafeString(html);
 });
 
