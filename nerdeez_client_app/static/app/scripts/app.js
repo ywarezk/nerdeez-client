@@ -106,6 +106,7 @@ require('scripts/controllers/add-schoolgroup-controller');
 require('scripts/controllers/schoolgroup-hws-controller');
 require('scripts/controllers/schoolgroup-hws-hw-controller');
 require('scripts/controllers/index-controller');
+require('scripts/nerdeez-ember/handlebars_helpers');
 require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
 
 //routes
