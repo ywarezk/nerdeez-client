@@ -369,7 +369,7 @@ Nerdeez.Share = Ember.Mixin.create({
     @returns {Ember.Object} the instance of the singleton
   **/
 
-    share: function() {
+    fbShare: function() {
       this.shareInit();
       var xthis = this;
       FB.ui(
