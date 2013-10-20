@@ -94,13 +94,5 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 			this.set("sortName", sortBy.title);
 			this.set("sortBy", sortBy.value);
 		},
-
-		share: function(){	
-			FB.ui({
-				method: 'feed',
-				link: 'https://developers.facebook.com/docs/dialogs/',
-				caption: 'An example caption',
-			}, function(response){});
-		},
 	}
 });
