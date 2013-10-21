@@ -1349,7 +1349,11 @@ function program1(depth0,data) {
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "controller", {hash:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n		</div>\n		<div class=\"row\">\n			<div class=\"span10\">\n				<div id=\"carousel-example-generic\" class=\"carousel slide\">\n				  <!-- Indicators -->\n				  <ol class=\"carousel-indicators\">\n				    <li data-target=\"#carousel-example-generic\" data-slide-to=\"0\" class=\"active\"></li>\n				    <li data-target=\"#carousel-example-generic\" data-slide-to=\"1\"></li>\n				    <li data-target=\"#carousel-example-generic\" data-slide-to=\"2\"></li>\n				  </ol>\n				\n				  <!-- Wrapper for slides -->\n				  <div class=\"carousel-inner\">\n				    <div class=\"item active\">\n				      <img src=\"...\" alt=\"...\">\n				      <div class=\"carousel-caption\">\n				        ...\n				      </div>\n				    </div>\n				    ...\n				  </div>\n				\n				  <!-- Controls -->\n				  <a class=\"left carousel-control\" href=\"#carousel-example-generic\" data-slide=\"prev\">\n				    <span class=\"icon-prev\"></span>\n				  </a>\n				  <a class=\"right carousel-control\" href=\"#carousel-example-generic\" data-slide=\"next\">\n				    <span class=\"icon-next\"></span>\n				  </a>\n				</div>\n	\n			</div>\n		</div>\n	");
+  data.buffer.push("\n		</div>\n		<div class=\"uni-carousel account-container login stacked\">\n			<h3 style=\"\">People from these Universities already uploaded <span class=\"label label-success\">");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "numFiles", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</span> files</h3>\n			<div class=\"\">\n				<div id=\"carousel-example-generic\" class=\"carousel slide\">\n				\n				  <!-- Wrapper for slides -->\n				  <div class=\"carousel-inner\">\n				  	\n				  </div>\n				\n				  <!-- Controls -->\n				  <a class=\"left carousel-control\" href=\"#carousel-example-generic\" data-slide=\"prev\">\n					    <i class=\"icon-chevron-left\">\n					    	\n					    </i>\n				  </a>\n				  <a class=\"right carousel-control\" href=\"#carousel-example-generic\" data-slide=\"next\">\n					    <i class=\"icon-chevron-right\">\n					    	\n					    </i>\n				  </a>\n				</div>\n	\n			</div>\n		</div>\n	");
   return buffer;
   }
 function program2(depth0,data) {
@@ -1360,17 +1364,17 @@ function program2(depth0,data) {
   hashTypes = {'mod': "STRING",'html': "STRING"};
   options = {hash:{
     'mod': ("4"),
-    'html': ("</ul></div><div class=\"item\"><ul class=\"tumbnails row clearfix\">")
+    'html': ("</ul></div><div class=\"item\"><ul class=\"tumbnails clearfix\">")
   },contexts:[depth0,depth0],types:["ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  data.buffer.push(escapeExpression(((stack1 = helpers.modZeroExcludeFirst || depth0.modZeroExcludeFirst),stack1 ? stack1.call(depth0, "", "controller", options) : helperMissing.call(depth0, "modZeroExcludeFirst", "", "controller", options))));
+  data.buffer.push(escapeExpression(((stack1 = helpers.modZeroExcludeFirst || depth0.modZeroExcludeFirst),stack1 ? stack1.call(depth0, "", "controller.content", options) : helperMissing.call(depth0, "modZeroExcludeFirst", "", "controller.content", options))));
   data.buffer.push("\n				  ");
   hashContexts = {'html': depth0};
   hashTypes = {'html': "STRING"};
   options = {hash:{
-    'html': ("<div class=\"item active\"><ul class=\"tumbnails row clearfix\">")
+    'html': ("<div class=\"item active\"><ul class=\"tumbnails clearfix\">")
   },contexts:[depth0,depth0],types:["ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  data.buffer.push(escapeExpression(((stack1 = helpers.isFirst || depth0.isFirst),stack1 ? stack1.call(depth0, "", "controller", options) : helperMissing.call(depth0, "isFirst", "", "controller", options))));
-  data.buffer.push("\n					  <li class=\"span3\">\n						  	<div class=\"thumbnail dialog\" align=\"center\">\n						  		<div class=\"image-wrapper\">\n									<img ");
+  data.buffer.push(escapeExpression(((stack1 = helpers.isFirst || depth0.isFirst),stack1 ? stack1.call(depth0, "", "controller.content", options) : helperMissing.call(depth0, "isFirst", "", "controller.content", options))));
+  data.buffer.push("\n					  <li class=\"\">\n						  	<div class=\"thumbnail\" align=\"center\">\n						  		<div class=\"image-wrapper\">\n									<img ");
   hashContexts = {'src': depth0};
   hashTypes = {'src': "STRING"};
   data.buffer.push(escapeExpression(helpers.bindAttr.call(depth0, {hash:{
@@ -1382,7 +1386,7 @@ function program2(depth0,data) {
   options = {hash:{
     'html': ("</ul></div>")
   },contexts:[depth0,depth0],types:["ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  data.buffer.push(escapeExpression(((stack1 = helpers.isLast || depth0.isLast),stack1 ? stack1.call(depth0, "", "controller", options) : helperMissing.call(depth0, "isLast", "", "controller", options))));
+  data.buffer.push(escapeExpression(((stack1 = helpers.isLast || depth0.isLast),stack1 ? stack1.call(depth0, "", "controller.content", options) : helperMissing.call(depth0, "isLast", "", "controller.content", options))));
   data.buffer.push("\n			");
   return buffer;
   }

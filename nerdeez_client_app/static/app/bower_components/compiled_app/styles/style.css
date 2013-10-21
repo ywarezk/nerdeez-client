@@ -1277,6 +1277,75 @@ a.nerdeez-button {
 .homepage .donation .actions .button {
   float: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000361}}
+.homepage .uni-carousel {
+  height: 228px;
+  margin-bottom: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000362}}
+.homepage .uni-carousel h3 {
+  padding-left: 20px;
+  margin-top: 20px;
+  color: #555555;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000370}}
+.homepage .uni-carousel .carousel .carousel-inner {
+  height: 130px;
+  margin: 14px auto 0;
+  width: 93%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000374}}
+.homepage .uni-carousel .carousel .carousel-inner .tumbnails.clearfix {
+  width: 100%;
+  list-style: none outside none;
+  margin-left: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000376}}
+.homepage .uni-carousel .carousel .carousel-inner .tumbnails.clearfix li {
+  width: 22%;
+  float: left;
+  height: 100%;
+  margin-left: 4%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000381}}
+.homepage .uni-carousel .carousel .carousel-inner .tumbnails.clearfix li .thumbnail {
+  height: 92%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000384}}
+.homepage .uni-carousel .carousel .carousel-inner .tumbnails.clearfix li .thumbnail .image-wrapper img {
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000390}}
+.homepage .uni-carousel .carousel .carousel-inner .tumbnails.clearfix li:nth-of-type(1) {
+  margin-left: 0 !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000395}}
+.homepage .uni-carousel .carousel .carousel-control {
+  margin-top: -7px;
+  background: none;
+  border: none;
+  color: #AAAAAA;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000396}}
+.homepage .uni-carousel .carousel .carousel-control i {
+  font-size: 29px;
+  position: relative;
+  top: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003107}}
+.homepage .uni-carousel .carousel .carousel-control:hover {
+  color: black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003110}}
+.homepage .uni-carousel .carousel .left.carousel-control {
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003113}}
+.homepage .uni-carousel .carousel .right.carousel-control {
+  right: 0;
+}
 
 /**
  * the style sheet for pages under construction

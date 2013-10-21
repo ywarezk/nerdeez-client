@@ -87,6 +87,7 @@ require('scripts/views/nerdeez-view');
 require('scripts/views/add-schoolgroup-view');
 require('scripts/views/schoolgroup-hws-view');
 require('scripts/views/schoolgroup-hws-hw-view');
+require('scripts/views/index-view');
 require('scripts/models/nerdeez-model');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');

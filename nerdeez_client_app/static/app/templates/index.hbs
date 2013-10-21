@@ -57,45 +57,38 @@
 	{{#if controller}}
 		<div id="carousel-data" class="hidden">
 			{{#each controller}}
-				{{modZeroExcludeFirst this controller mod="4" html='</ul></div><div class="item"><ul class="tumbnails row clearfix">'}}
-				  {{isFirst this controller html='<div class="item active"><ul class="tumbnails row clearfix">'}}
-					  <li class="span3">
-						  	<div class="thumbnail dialog" align="center">
+				{{modZeroExcludeFirst this controller.content mod="4" html='</ul></div><div class="item"><ul class="tumbnails clearfix">'}}
+				  {{isFirst this controller.content html='<div class="item active"><ul class="tumbnails clearfix">'}}
+					  <li class="">
+						  	<div class="thumbnail" align="center">
 						  		<div class="image-wrapper">
 									<img {{bindAttr src="image"}}>
 						        	</div>
 			                </div>
 					  </li>
-				  {{isLast this controller html="</ul></div>"}}
+				  {{isLast this controller.content html="</ul></div>"}}
 			{{/each}}
 		</div>
-		<div class="row">
-			<div class="span10">
+		<div class="uni-carousel account-container login stacked">
+			<h3 style="">People from these Universities already uploaded <span class="label label-success">{{numFiles}}</span> files</h3>
+			<div class="">
 				<div id="carousel-example-generic" class="carousel slide">
-				  <!-- Indicators -->
-				  <ol class="carousel-indicators">
-				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-				  </ol>
 				
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner">
-				    <div class="item active">
-				      <img src="..." alt="...">
-				      <div class="carousel-caption">
-				        ...
-				      </div>
-				    </div>
-				    ...
+				  	
 				  </div>
 				
 				  <!-- Controls -->
 				  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-				    <span class="icon-prev"></span>
+					    <i class="icon-chevron-left">
+					    	
+					    </i>
 				  </a>
 				  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-				    <span class="icon-next"></span>
+					    <i class="icon-chevron-right">
+					    	
+					    </i>
 				  </a>
 				</div>
 	

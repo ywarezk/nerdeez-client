@@ -198,6 +198,14 @@ Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
 			limit: 10,
 			page: 'search'
 		});
+	},
+	
+	setupController: function(controller, model){
+		this._super(controller, model);
+		var files = Nerdeez.File.find({limit: 1});
+		files.one('didLoad', function(){
+			controller.set('numFiles', files.get('content.totalCount'));	
+		});
 	}
 });
 
