@@ -8,6 +8,50 @@
 	@version: 1.0
 -->
 
-<div class="schoolgroup-about">
-	<h1>About page {{title}}</h1>
+<div class="schoolgroup schoolgroup-about">
+	<div class="nerdeez-box">
+		<div class="nerdeez-box-action">
+			<div class="pic-content">
+				<div {{bind-attr class="model.getIconClass"}}>
+					<i class="schoolgroup-img"></i>
+				</div>
+			</div>
+			<div class="text-content">
+				<div class="result-title">
+					<h3>
+						{{#if model.isCourse}}
+							Course Name:
+						{{/if}}
+						{{#if model.isFaculty}}
+							Faculty Name:
+						{{/if}}
+						{{#if model.isUniversity}}
+							University Name:
+						{{/if}}
+					</h3>
+					<span>{{model.title}}</span>
+				</div>
+				<div class="result-description">
+					<h5> Description: </h5>
+					<span>{{model.description}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="nerdeez-box-footer">
+			<div class="footer-social">
+				<ul class="like-status">
+					<li><i class="icon-thumbs-down"></i></li>
+					<li>Dislike:</li>
+					<li>.....</li>
+					<li><i class="vertical-line"></i></li>
+					<li><i class="icon-thumbs-up"></i></li>
+					<li>Like:</li>
+					<li>.....</li>
+				</ul>
+				<div class="fb">
+					<a class="btn_2" {{action share}}>Share on Facebook</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

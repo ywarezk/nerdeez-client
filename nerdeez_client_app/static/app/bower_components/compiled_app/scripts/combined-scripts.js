@@ -533,12 +533,12 @@ Nerdeez.Singleton = Ember.Mixin.create({
 **/
 
 /**
-  @class Nerdeez.Share
+  @class Nerdeez.fbShare
   @extends Ember.Mixin
   @namespace Nerdeez
   @module Nerdeez
 **/
-Nerdeez.Share = Ember.Mixin.create({
+Nerdeez.fbShare = Ember.Mixin.create({
 
   /**
   * The UI dialog to invoke.
@@ -622,90 +622,6 @@ Nerdeez.Share = Ember.Mixin.create({
       );
     }
   }
-});
-
-/**
- This mixin allows for controllers to pass status messages and loading
-
- 
- Example Usage (default values):
-
- ''''javascript
-
- App.myController = Ember.Controller.extend(Nerdeez.Status,{ ... });
-
- ''''handlebars
-
- {{#if isSuccess}}
-	 ...
-	 {{statusMessage}}
- {{/if}}
- 
- {{#if isError}}
-	 ...
-	 {{statusMessage}}
- {{/if}}
- 
- {{#if isLoading}}
-	 ...
- {{/if}}
-
- ''''
-
-**/
-
-/**
-  @class Nerdeez.Share
-  @extends Ember.Mixin
-  @namespace Nerdeez
-  @module Nerdeez
-**/
-Nerdeez.Status = Ember.Mixin.create({
-	/**
-	 * if set to true will display the success alert
-	 * @type {Boolean}
-	 */
-	isSuccess: false,
-	
-	/**
-	 * if set to true will display the danger alert
-	 * @type {Boolean}
-	 */
-	isError: false,
-	
-	/**
-	 * if set to true will display the loading screen
-	 * @type {Boolean}
-	 */
-	isLoading: false,
-	
-	/**
-	 * will display a message in the alerts
-	 * @type {String}
-	 */
-	statusMessage: null,
-	
-	/**
-	 * will display an error
-	 * @param {String} message - the message to display
-	 */
-	error: function(message){
-		this.set('isError', true);
-		this.set('isSuccess', false);
-		this.set('isLoading', false);
-		this.set('statusMessage', message);
-	},
-	
-	/**
-	 * will display an success
-	 * @param {String} message - the message to display
-	 */
-	success: function(message){
-		this.set('isError', false);
-		this.set('isSuccess', true);
-		this.set('isLoading', false);
-		this.set('statusMessage', message);
-	},
 });
 
 })();
@@ -3527,7 +3443,7 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
     ajax: function (url, type, hash) {
     	
 		// if the api key and username are set then append them to url	    	
-        if(this.get('apiKey') != null && this.get('username') != null && (type.toLowerCase() == "get" || type.toLowerCase() == "delete")){
+        if(this.get('apiKey') != null && this.get('username') != null && type.toLowerCase() == "get"){
             var api_key = this.get('apiKey');
             var username = this.get('username');
             var url = url + '?username=' + username + '&api_key=' + api_key;
@@ -3536,10 +3452,8 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
         //if its post put request then prepare the data
         pass_data = hash.data;
         if (type.toLowerCase() == "post" || type.toLowerCase() == "put"){
-        	if(this.get('username') != null && this.get('apiKey') != null){
 	        	hash.data['username'] = this.get('username');
 	        	hash.data['api_key'] = this.get('apiKey');
-	        }
             pass_data = JSON.stringify(hash.data);
         }
         
@@ -3755,8 +3669,7 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
 	        success: function(json) {
 	                xthis.didFindAll(store, type, json);
 	                
-	        },
-	        error: DS.rejectionHandler
+	        }
 	    });
 	},
 
@@ -3777,8 +3690,7 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
             data: data,
             success: function(json) {
                     xthis.didFindQuery(store, type, json, recordArray);
-            },
-            error: DS.rejectionHandler
+            }
         });
     },
     
@@ -3796,8 +3708,7 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
         this.ajax(this.buildURL(root, id), "GET", {
             success: function(json) {
                     xthis.didFindRecord(store, type, json, id);
-            },
-            error: DS.rejectionHandler
+            }
         });
     },
     
@@ -4042,13 +3953,7 @@ Nerdeez.Wormhole = Ember.Object.extend({
             deferred.reject(data.data.textStatus, data.errorThrown);
             //alert('Communication error');
             this.alwaysFunction[data.requestId]();
-            try{
-	            this.failFunction[data.requestId]({status: data.data.jqXHR.status, responseText: data.data.jqXHR.responseText});	
-            }
-            catch(e){
-	            console.log('wormhole failed to run the failed funciton');
-            }
-            
+            this.failFunction[data.requestId]({status: data.data.jqXHR.status, responseText: data.data.jqXHR.responseText});
         }
         this.alwaysFunction[data.requestId]();
     }
