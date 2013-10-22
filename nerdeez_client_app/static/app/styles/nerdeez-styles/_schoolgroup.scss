@@ -26,7 +26,7 @@
  }
  
 .schoolgroup-about {
-    margin-bottom: 30px;
+    margin-bottom: 0;
     height: 400px;
     .avatar-box {
         border: solid 1px grey;
@@ -80,6 +80,7 @@
         a {
             height: 69%;
             width: 80px;
+            margin-left: 35px;
             i {
                 float: left;
                 font-size: 21px;
@@ -94,6 +95,24 @@
         .btn:focus {
             background-color: #E6E6E6 !important;
             background-image: none;
+        }
+    }
+    .table {
+        box-shadow: -5px 5px 4px 2px #808080;
+        .description {
+            background-color: #F9F9F9;
+            a {
+                color: black;
+                text-decoration: none;
+                i {
+                    color: #000000;
+                    font-size: 18px;
+                    padding-left: 5px;
+                    padding-right: 25px;
+                    position: relative;
+                    top: 3px;
+                }
+            }
         }
     }
 }
