@@ -87,6 +87,7 @@ require('scripts/views/nerdeez-view');
 require('scripts/views/add-schoolgroup-view');
 require('scripts/views/schoolgroup-hws-view');
 require('scripts/views/schoolgroup-hws-hw-view');
+require('scripts/views/index-view');
 require('scripts/models/nerdeez-model');
 require('scripts/views/schoolgroup-files-view');
 require('scripts/components/fb-comment-component');
@@ -108,6 +109,8 @@ require('scripts/controllers/reset-password-controller');
 require('scripts/controllers/add-schoolgroup-controller');
 require('scripts/controllers/schoolgroup-hws-controller');
 require('scripts/controllers/schoolgroup-hws-hw-controller');
+require('scripts/controllers/index-controller');
+require('scripts/nerdeez-ember/handlebars_helpers');
 require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
 
 //routes

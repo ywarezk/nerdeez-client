@@ -1,2 +1,195 @@
-<h1>Homepage</h1>
-{{outlet}}
+<!--
+	application homepage is defined here
+	
+	Created October 20th, 2013
+	@author: Yariv Katz
+	@version: 2.0
+	@copyright: Nerdeez 
+-->
+
+<div class="homepage">
+	
+	<!-- begin diagram -->
+	<div class="row diagram">
+		<div class="span10">
+			<div class="diagram-wrapper">
+				<div class="upper-small-baloons">
+					<div class="single-diagram pull-left step1">
+						<div class="explain">
+							<span>
+								Problem solving your H.W?
+							</span>
+							<br/>
+							<span class="pull-right">
+								Share your solution
+							</span>
+						</div>
+						<div class="cool-arrow pull-left">
+							<img src="{{unbound view.staticUrl}}img/arrow-left.png" />
+						</div>
+						<div class="diagram-circle" style="">
+						    <img src="{{unbound view.staticUrl}}img/question-nerd.png" />
+						</div>
+					</div>
+					<div class="baloon-arrow pull-left arrow1">
+						<img src="{{unbound view.staticUrl}}img/connecting-arrow-left.png" />
+					</div>
+					<div class="single-diagram pull-left step2">
+						<div class="explain">
+							<span>
+								Invite your friends!
+							</span>
+							<br/>
+							<span >
+								Together rate, comment & upload solutions.
+							</span>
+						</div>
+						<div class="cool-arrow pull-left">
+							<img src="{{unbound view.staticUrl}}img/arrow-top.png" />
+						</div>
+						<div class="diagram-circle" style="">
+						    <img src="{{unbound view.staticUrl}}img/nerds-chatting.png" />
+						</div>
+					</div>
+					<div class="baloon-arrow pull-left arrow2">
+						<img src="{{unbound view.staticUrl}}img/connecting-arrow-right.png" />
+					</div>
+					<div class="single-diagram pull-left step3">
+						<div class="explain">
+							<span>
+								Learn & Solve. 
+							</span>
+							<br/>
+							<span>
+								Together with your friends, <br/> learn and solve your H.W
+							</span>
+						</div>
+						<div class="cool-arrow pull-right">
+							<img src="{{unbound view.staticUrl}}img/arrow-right.png"/>
+						</div>
+						<div class="diagram-circle" style="">
+						    <img src="{{unbound view.staticUrl}}img/nerd-solving.png" />
+						</div>
+					</div>
+				</div>
+				<div class="bottom-site-logo">
+					<img src="{{unbound view.staticUrl}}img/moto-baloon.png" />
+					<span>Nerdeez <br/> Doing H.W Together</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end diagram -->
+	
+	<!-- begin quickstart -->
+	<div class="row quickstart account-container login stacked">
+		<div class="span10 search">
+			<div class="row">
+				<form class="form-search nerdeez-inputs">
+					<div class="padding-left">
+						<h3>
+							Quick Start 
+						</h3>
+						<p>
+							Type your course number
+						</p>
+					</div>
+					<div class="row">
+						<div class="span8 padding-left">
+						{{
+							view
+							Ember.TextField
+							valueBinding="quickStart"
+							class="search-query"
+							placeholder="Ex. 234122"
+						}}
+						<i class="icon-search"></i>
+						</div>
+						<div class="span2">
+							<button class="button btn btn-primary btn-large" {{action "submitSearch"}}>
+								<i class="icon-search"></i>
+								Search
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- end quickstart -->
+	
+	<!-- begin carousel -->
+	{{#if controller}}
+		<div id="carousel-data" class="hidden">
+			{{#each controller}}
+				{{modZeroExcludeFirst this controller.content mod="4" html='</ul></div><div class="item"><ul class="tumbnails clearfix">'}}
+				  {{isFirst this controller.content html='<div class="item active"><ul class="tumbnails clearfix">'}}
+					  <li class="">
+						  	<div class="thumbnail" align="center">
+						  		<div class="image-wrapper">
+						  			{{#link-to "schoolgroup.about" this}}
+									<img {{bindAttr src="image"}}>
+									{{/link-to}}
+						        	</div>
+			                </div>
+					  </li>
+				  {{isLast this controller.content html="</ul></div>"}}
+			{{/each}}
+		</div>
+		<div class="uni-carousel account-container login stacked">
+			<h3 style="">People from these Universities already uploaded <span class="label label-success">{{numFiles}}</span> files</h3>
+			<div class="">
+				<div id="carousel-example-generic" class="carousel slide">
+				
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner">
+				  	
+				  </div>
+				
+				  <!-- Controls -->
+				  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+					    <i class="icon-chevron-left">
+					    	
+					    </i>
+				  </a>
+				  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+					    <i class="icon-chevron-right">
+					    	
+					    </i>
+				  </a>
+				</div>
+	
+			</div>
+		</div>
+	{{/if}}
+	<!-- end carousel -->
+	
+	<!-- begin donation -->
+	<div class="row donation account-container login stacked">
+		<div class="span10">
+			<div class="explain">
+				<h2>
+					Support development by  buying a nerdeez T-Shirt
+				</h2>
+			</div>
+			<div class="images">
+				<div class="thumbnail">
+					<img src="{{unbound view.staticUrl}}img/t-shirt.jpeg" />
+				</div>
+				<div class="thumbnail">
+					<img src="{{unbound view.staticUrl}}img/t-shirt.jpeg" />
+				</div>
+				<div class="thumbnail">
+					<img src="{{unbound view.staticUrl}}img/t-shirt.jpeg" />
+				</div>
+			</div>
+			<div class="actions">
+				{{#link-to "donate" class="button btn btn-primary btn-large"}}
+				Donate
+				{{/link-to}}
+			</div>
+		</div>
+	</div>
+	<!-- end donation -->
+	
+</div>

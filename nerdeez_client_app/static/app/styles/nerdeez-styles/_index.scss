@@ -1,0 +1,239 @@
+/**
+ * stylesheet for the homepage
+ * 
+ * Created October 20th, 2013
+ * @author: Yariv Katz
+ * @version: 2.0
+ * @copyright: Nerdeez
+ */
+
+.homepage{
+    .quickstart, .donation{
+        -moz-box-sizing: border-box;
+        margin-bottom: 20px;
+        margin-top: 0 !important;
+        padding: 20px;
+        width: 100%;
+        padding-right: 0px; 
+        padding-left: 0px;
+    }
+    .quickstart{
+        height: 191px;         
+        .padding-left{
+            padding-left: 20px;
+            @include box-sizing(border-box);
+        }
+        .button{
+            margin-top: 0;
+            float: none;
+            height: 41px;
+            width: 88%;
+            i.icon-search{
+                bottom: 0;
+                float: left;
+                left: 8px;
+            }
+        }
+    }
+    .donation{
+        height: 456px;
+        .explain{
+            h2{
+                text-align: center;
+            }
+        }
+        .images{
+            .thumbnail{
+                width: 30%;
+                float: left;
+                img{
+                    
+                }
+            }
+        }
+        .actions{
+            text-align: center;
+            .button{
+                float: none;
+            }
+        }
+    }
+    .uni-carousel{
+        h3{
+            padding-left: 20px; margin-top: 20px;color: #555555
+        }
+        height: 228px;
+        margin-bottom: 20px;
+        width: 100%;
+        margin-top: 20px;
+        .carousel{
+            .carousel-inner{
+                height: 130px;
+                margin: 14px auto 0;
+                width: 93%;
+                .tumbnails.clearfix{
+                    width: 100%; list-style: none outside none; margin-left: 0px;
+                    li{
+                        width: 22%;
+                        float: left;
+                        height: 100%;
+                        margin-left: 4%;
+                        .thumbnail{
+                            height: 92%;
+                            .image-wrapper{
+                                img{
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                    li:nth-of-type(1){
+                        margin-left: 0 !important;
+                    }
+                }
+            }
+            .carousel-control{
+                i{
+                    font-size: 29px;
+                    position: relative;
+                    top: 14px;
+                    
+                }
+                 margin-top: -7px;
+                 background: none;
+                 border: none;  
+                 color: #AAAAAA; 
+            }
+            .carousel-control:hover{
+                color: black;
+            }
+            .left.carousel-control{
+                left: 0;
+            }
+            .right.carousel-control{
+                right: 0;
+            }
+        }
+    }
+    .diagram{
+        margin-top: 102px !important;
+        .diagram-wrapper{
+            height: 313px;
+            margin: 23px auto 0;
+            width: 611px;
+        }
+        .upper-small-baloons{
+            height: 225px;
+            .single-diagram{
+                width: 131px;
+            }
+            .diagram-circle{
+                height: 115px; width: 115px; background-color: white; border-radius: 73px 73px 73px 73px; border: 8px solid rgb(235, 141, 0);
+                @include background-image(radial-gradient(45px 45px, white 10px, #f4d9c8 70px));
+                @include box-shadow(#222222 2px 2px 10px);
+            }
+            .explain{
+                 font-size: 30px;
+                 font-family: 'Sue Ellen Francisco', cursive;
+                 line-height: 41px;
+                 white-space: nowrap;
+            }
+            .step1{
+                .explain{
+                    left: -103px;
+                    position: relative;
+                    top: -55px;
+                }
+                .cool-arrow{
+                    left: -68px;
+                    position: relative;
+                    top: -44px;
+                }
+                .diagram-circle{
+                    img{
+                        left: -14px;
+                        position: relative;
+                    }
+                }
+            }
+            .arrow1{
+                left: -10px;
+                position: relative;
+                top: 11px;
+            }
+            .arrow2{
+                left: 19px;
+                position: relative;
+            }
+            .step2{
+                position: relative;
+                top: -120px;
+                .diagram-circle{
+                    img{
+                        position: relative;
+                        top: 27px;
+                        left: 14px;
+                    }
+                }
+                .explain{
+                    left: -55px;
+                    position: relative;
+                    top: -30px;
+                }
+                .cool-arrow{
+                    left: 62px;
+                    position: relative;
+                    top: -34px;
+                }
+            }
+            .step3{
+                left: 10px;
+                position: relative;
+                top: -78px;
+                .diagram-circle{
+                    img{
+                        left: 21px;
+                        position: relative;
+                        top: 33px;
+                    }
+                }
+                .explain{
+                      left: 114px;
+                      position: relative;
+                      top: -5px;
+                }
+                .cool-arrow{
+                    left: 65px;
+                    position: relative;
+                }
+            }
+         }
+         .bottom-site-logo{
+              color: #FFFFFF;
+              height: 200px;
+              margin-bottom: 0;
+              margin-left: auto;
+              margin-right: auto;
+              position: relative;
+              text-align: center;
+              width: 429px;
+              position: relative;
+              top: -112px;
+              left: 16px;
+              span{
+                  display: block;
+                  font-size: 25px;
+                  height: 0;
+                  left: -8px;
+                  line-height: 35px;
+                  position: relative;
+                  top: 14px;
+              }
+              img{
+                  left: 0;
+                  position: absolute;
+                  top: 0;
+              }
+         }
+    }
+}

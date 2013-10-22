@@ -13,10 +13,11 @@ var Ember = window.Ember;
  * define the routes urls here
  */
 Nerdeez.Router.map(function () {
-	this.route('search');
+	this.route('search', {path: '/search/:search_param'});
 	this.route('about');
 	this.route('terms');
 	this.route('privacy');
+	this.route('donate');
     this.resource('schoolgroup', { path: '/schoolgroup/:schoolgroup_id' }, function(){
         this.route('wall');
         //this.route('hws');
@@ -188,6 +189,23 @@ Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
 		var masthead = Ember.A();
 		masthead.addObject({route: 'index', model: null, title: 'Home'});
 		Nerdeez.set('masthead', masthead);
+	},
+	
+	model: function(){
+		return Nerdeez.Schoolgroup.find({
+			school_type: 3,
+			image__isnull: false,
+			limit: 10,
+			page: 'search'
+		});
+	},
+	
+	setupController: function(controller, model){
+		this._super(controller, model);
+		var files = Nerdeez.File.find({limit: 1});
+		files.one('didLoad', function(){
+			controller.set('numFiles', files.get('content.totalCount'));	
+		});
 	}
 });
 
@@ -205,7 +223,11 @@ Nerdeez.SearchRoute = Ember.Route.extend({
 	
 	model: function(param){
 		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title', page: 'search'});
-	}
+	},
+	
+	serialize: function(model) {
+		  return {search_param: ''};
+	},
 });
 
 /**
@@ -264,6 +286,25 @@ Nerdeez.TermsRoute = Nerdeez.FlatPageRoute.extend({
 	model: function(param){
 		return Nerdeez.Flatpage.find({'title': 'terms'});
 	}
+});
+
+/**
+ * all the under construction pages will extend this
+ */
+Nerdeez.UnderConstructionRoute = Ember.Route.extend({
+	
+    renderTemplate: function() {
+        this.render('underConstruction');
+    }
+});
+
+Nerdeez.DonateRoute = Nerdeez.UnderConstructionRoute.extend({
+	enter: function(){
+		var masthead = Ember.A();
+		masthead.addObject({route: 'index', model: null, title: 'Home'});
+		masthead.addObject({route: 'donate', model: null, title: 'Buy T-Shirts'});
+		Nerdeez.set('masthead', masthead);
+	},
 });
 
 /**

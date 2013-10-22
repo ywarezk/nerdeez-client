@@ -927,6 +927,35 @@ Nerdeez.HwsHwView = Ember.View.extend({
 (function() {
 
 /**
+ * the view for the homepage
+ * 
+ * Created October 21th, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.IndexView = Ember.View.extend({
+	didInsertElement: function(){
+		this._super();
+		var stringOfHtml = $('#carousel-data').html();
+		var wrappedString = '<div>' + stringOfHtml + '</div>';
+		var noScript = wrappedString.replace(/script/g, "THISISNOTASCRIPTREALLY");
+		var html = $(noScript);
+		html.find('THISISNOTASCRIPTREALLY').remove();
+		
+		
+		$('#carousel-example-generic .carousel-inner').html(html.html());
+	
+	}
+});
+
+
+})();
+
+(function() {
+
+/**
  * will hold abstract class for all the models in the app
  * and will hold common functions for all the models
  * 
@@ -1041,6 +1070,7 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 	dislike: DS.attr('number'),
 	num_users: DS.attr('number'),
 	num_files: DS.attr('number'),
+	image: DS.attr('string'),
 	
 	getIconClass: function() {
 		a = this.get("school_type");
@@ -2581,6 +2611,275 @@ Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,Nerdeez.L
 (function() {
 
 /**
+ * controller for the homepage
+ * 
+ * Created October 20th, 2013
+ * @author: Yariv Katz
+ * @version: 2.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.IndexController = Ember.ArrayController.extend({
+	needs: ['search'],
+	
+	/**
+	 * will hold the user input from the quickstart box
+	 * @type {String}
+	 */
+	quickStart: null,
+	
+	
+	actions: {
+		submitSearch: function(){
+			var searchController = this.get('controllers.search');
+			searchController.set('searchQuery', this.get('quickStart'));
+			this.transitionToRoute('search', Nerdeez.Schoolgroup.find({
+				limit: Nerdeez.get('SEARCH_LIMIT'),
+				page: 'search',
+				search: this.get('quickStart')
+			}));	
+		}
+	}
+	
+});
+
+
+})();
+
+(function() {
+
+var Ember = window.Ember;
+
+/**
+ * put this in each handlebar block to see if this is not the first item of the array
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{#each controller}}
+ *    {{notFirst this controller.content html="<div>Not the fist item in array</div>"}}
+ * {{/each}}
+ * ```
+ * 
+ * @param {DS.Model} item teh object to check in the each
+ * @param {DS.RecordArray} array - the arrays of objects to check from
+ * @param {Object} options {html: "the html if this is true"}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('notFirst', function(item, array, options) {
+  var firstObject = array.objectAt(0);
+  if(item != firstObject){
+          return new Ember.Handlebars.SafeString(options.hash.html);
+  }
+  return '';
+});
+
+/**
+ * put this in each handlebar block to check every time you reached the nth item 
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{#each controller}}
+ *    {{modZero this controller.content mod="4" html='<div class="row-fluid">'}}
+ * {{/each}}
+ * ```
+ * 
+ * @param {DS.Model} item teh object to check in the each
+ * @param {DS.RecordArray} array - the arrays of objects to check from
+ * @param {Object} options {html: "the html if this is true", mod: "4"}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('modZero', function(item, array, options) {
+	var whichItem = 0;
+	var mod = options.hash.mod;
+	for(var i=0; i<array.get('length'); i++){
+		var currentObject = array.objectAt(i);
+		if(item == currentObject){
+			whichItem = i;
+		}
+	}
+	if(whichItem%mod == 0){
+		return new Ember.Handlebars.SafeString(options.hash.html);
+	}
+	return '';
+});
+
+/**
+ * put this in each handlebar block to check every time you reached the nth item but if zero then ignore
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{#each controller}}
+ *    {{modZero this controller.content mod="4" html='<div class="row-fluid">'}}
+ * {{/each}}
+ * ```
+ * 
+ * @param {DS.Model} item teh object to check in the each
+ * @param {DS.RecordArray} array - the arrays of objects to check from
+ * @param {Object} options {html: "the html if this is true", mod: "4"}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('modZeroExcludeFirst', function(item, array, options) {
+	var whichItem = 0;
+	var mod = options.hash.mod;
+	for(var i=0; i<array.get('length'); i++){
+		var currentObject = array.objectAt(i);
+		if(item == currentObject){
+			whichItem = i;
+		}
+	}
+	if(whichItem%mod == 0 && whichItem != 0){
+		//console.log('modZeroExcludeFirst');
+		return new Ember.Handlebars.SafeString(options.hash.html);
+	}
+	return '';
+});
+
+/**
+ * put this in each handlebar block to check every time you reached the last item 
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{#each controller}}
+ *    {{isLast this controller.content html="</div>"}}
+ * {{/each}}
+ * ```
+ * 
+ * @param {DS.Model} item teh object to check in the each
+ * @param {DS.RecordArray} array - the arrays of objects to check from
+ * @param {Object} options {html: "the html if this is true"}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('isLast', function(item, array, options) {
+	if(item == array.objectAt(array.get('length') - 1) && array.get('isUpdating') == false){
+		return new Ember.Handlebars.SafeString(options.hash.html);
+	}
+	return '';	
+});
+
+/**
+ * put this in each handlebar block to check every time you're in the first item 
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{#each controller}}
+ *    {{isFirst this controller.content html="<div>The first item of an array</div>"}}
+ * {{/each}}
+ * ```
+ * 
+ * @param {DS.Model} item teh object to check in the each
+ * @param {DS.RecordArray} array - the arrays of objects to check from
+ * @param {Object} options {html: "the html if this is true"}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('isFirst', function(item, array, options) {
+	var firstObject = array.objectAt(0);
+	if(item == firstObject){
+		//console.log('isFirst');
+		return new Ember.Handlebars.SafeString(options.hash.html);
+	}
+	return '';
+});
+
+/**
+ * put this in each handlebar block usually before the end of the form element
+ * to return the status from the form submition
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{status controller messageBinding="message" isSuccessBinding="isSuccess" isShowBinding="isShowStatus"}}
+ * ```
+ * 
+ * the above will create a status info bind it to the controller and in the controller bind the properties: message, isSuccess, isShowStatus
+ * 
+ * @param {Ember.Object} the item which is bounded to the status paramaters
+ * @param {Object} options inside the hash we have {isShow: "true if need to show the status", isSuccess: "true if its a success status", message: 'the message to display'}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('status', function(item, options) {
+    var isShow = options.hash.isShow;
+    var isSuccess = options.hash.isSuccess;
+    var message = options.hash.message;
+    var html = '';
+    if(isShow){
+        html = '<div class="info">';
+        if(isSuccess){
+            html+='<div class="alert alert-success"><i class="icon-ok"></i>' + message + '<a class="close" data-dismiss="alert">x</a></div>';
+        }
+        else{
+            html+='<div class="alert alert-danger"><i class="icon-remove"></i>' + message + '<a class="close" data-dismiss="alert">x</a></div>';
+        }
+        html+='</div>';
+    }
+    return new Handlebars.SafeString(html);
+});
+
+/**
+ * 
+ * will put a loading roller and bind it to what is sent to the handlebar
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{loading controller isLoadingBinding="isLoading"}}
+ * ```
+ * 
+ * the above will bind the loading screen to the controller isLoading property
+ * 
+ * @param {Ember.Object} the item which is bounded to the status paramaters
+ * @param {Object} options inside the hash we have {isLoading: "true if need to show the loading"}
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerBoundHelper('loading', function(item, options) {
+    var isLoading = options.hash.isLoading;
+    var html = '';
+    if(isLoading){
+        html = '<div class="loading"><i class="icon-spin icon-spinner"></i></div>';
+    }
+    return new Handlebars.SafeString(html);
+});
+
+/**
+ * 
+ * will check if 2 vars are equal
+ * 
+ * usage
+ * 
+ * ```handlebar
+ * {{#ifCond v1 v2}}
+ * {{/ifCond}}
+ * ```
+ * 
+ * 
+ * @param {number|string} v1 the first variable
+ * @param {number|string} v2 the second variable
+ * @return {Handlebars.SafeString}
+ */
+Ember.Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+    if (Ember.typeOf(v2) === "string"){    
+        if(this.get(v1) == v2 || this.get(v1) == this.get(v2)) {
+            return options.fn(this);
+        }
+    }
+    else{
+        if(this.get(v1) == v2) {
+            return options.fn(this);
+        }
+    }
+    return options.inverse(this);
+});
+
+
+})();
+
+(function() {
+
+/**
  * nerdeez handlebars helper. 
  * register common handlebars that are used alot. 
  * Important note to whomever edits this file: All the programmers are going to use this code throughout the entire application. 
@@ -2668,10 +2967,11 @@ var Ember = window.Ember;
  * define the routes urls here
  */
 Nerdeez.Router.map(function () {
-	this.route('search');
+	this.route('search', {path: '/search/:search_param'});
 	this.route('about');
 	this.route('terms');
 	this.route('privacy');
+	this.route('donate');
     this.resource('schoolgroup', { path: '/schoolgroup/:schoolgroup_id' }, function(){
         this.route('wall');
         //this.route('hws');
@@ -2843,6 +3143,23 @@ Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
 		var masthead = Ember.A();
 		masthead.addObject({route: 'index', model: null, title: 'Home'});
 		Nerdeez.set('masthead', masthead);
+	},
+	
+	model: function(){
+		return Nerdeez.Schoolgroup.find({
+			school_type: 3,
+			image__isnull: false,
+			limit: 10,
+			page: 'search'
+		});
+	},
+	
+	setupController: function(controller, model){
+		this._super(controller, model);
+		var files = Nerdeez.File.find({limit: 1});
+		files.one('didLoad', function(){
+			controller.set('numFiles', files.get('content.totalCount'));	
+		});
 	}
 });
 
@@ -2860,7 +3177,11 @@ Nerdeez.SearchRoute = Ember.Route.extend({
 	
 	model: function(param){
 		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title', page: 'search'});
-	}
+	},
+	
+	serialize: function(model) {
+		  return {search_param: ''};
+	},
 });
 
 /**
@@ -2919,6 +3240,25 @@ Nerdeez.TermsRoute = Nerdeez.FlatPageRoute.extend({
 	model: function(param){
 		return Nerdeez.Flatpage.find({'title': 'terms'});
 	}
+});
+
+/**
+ * all the under construction pages will extend this
+ */
+Nerdeez.UnderConstructionRoute = Ember.Route.extend({
+	
+    renderTemplate: function() {
+        this.render('underConstruction');
+    }
+});
+
+Nerdeez.DonateRoute = Nerdeez.UnderConstructionRoute.extend({
+	enter: function(){
+		var masthead = Ember.A();
+		masthead.addObject({route: 'index', model: null, title: 'Home'});
+		masthead.addObject({route: 'donate', model: null, title: 'Buy T-Shirts'});
+		Nerdeez.set('masthead', masthead);
+	},
 });
 
 /**
