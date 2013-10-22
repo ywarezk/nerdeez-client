@@ -9,6 +9,43 @@
 
 <div class="homepage">
 	
+	<!-- begin quickstart -->
+	<div class="row quickstart account-container login stacked">
+		<div class="span10 search">
+			<div class="row">
+				<form class="form-search nerdeez-inputs">
+					<div class="padding-left">
+						<h3>
+							Quick Start 
+						</h3>
+						<p>
+							Type your course number
+						</p>
+					</div>
+					<div class="row">
+						<div class="span8 padding-left">
+						{{
+							view
+							Ember.TextField
+							valueBinding="quickStart"
+							class="search-query"
+							placeholder="Ex. 234122"
+						}}
+						<i class="icon-search"></i>
+						</div>
+						<div class="span2">
+							<button class="button btn btn-primary btn-large" {{action "submitSearch"}}>
+								<i class="icon-search"></i>
+								Search
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- end quickstart -->
+	
 	<!-- begin diagram -->
 	<div class="row diagram">
 		<div class="span10">
@@ -81,42 +118,7 @@
 	</div>
 	<!-- end diagram -->
 	
-	<!-- begin quickstart -->
-	<div class="row quickstart account-container login stacked">
-		<div class="span10 search">
-			<div class="row">
-				<form class="form-search nerdeez-inputs">
-					<div class="padding-left">
-						<h3>
-							Quick Start 
-						</h3>
-						<p>
-							Type your course number
-						</p>
-					</div>
-					<div class="row">
-						<div class="span8 padding-left">
-						{{
-							view
-							Ember.TextField
-							valueBinding="quickStart"
-							class="search-query"
-							placeholder="Ex. 234122"
-						}}
-						<i class="icon-search"></i>
-						</div>
-						<div class="span2">
-							<button class="button btn btn-primary btn-large" {{action "submitSearch"}}>
-								<i class="icon-search"></i>
-								Search
-							</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	<!-- end quickstart -->
+	
 	
 	<!-- begin carousel -->
 	{{#if controller}}

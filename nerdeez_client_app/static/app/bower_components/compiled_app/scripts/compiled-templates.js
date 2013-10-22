@@ -436,7 +436,7 @@ function program5(depth0,data) {
   data.buffer.push("\n						University Name:\n					");
   }
 
-  data.buffer.push("<!--\n	Partial for the wall headline\n	\n	Created October 20th, 2013\n	@author: Doron Nachshon\n	@copyright: nerdeez.com\n	@version: 1.0\n-->_\n\n<div class=\"wall-main nerdeez-box\">\n	<div class=\"main-action nerdeez-box-action\">\n		<div class=\"pic-content\">\n			<div ");
+  data.buffer.push("<!--\n	Partial for the wall headline\n	\n	Created October 20th, 2013\n	@author: Doron Nachshon\n	@copyright: nerdeez.com\n	@version: 1.0\n-->\n\n<div class=\"wall-main nerdeez-box\">\n	<div class=\"main-action nerdeez-box-action\">\n		<div class=\"pic-content\">\n			<div ");
   hashContexts = {'class': depth0};
   hashTypes = {'class': "STRING"};
   options = {hash:{
@@ -1440,7 +1440,7 @@ function program13(depth0,data) {
 Ember.TEMPLATES["index"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, stack2, hashTypes, hashContexts, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+  var buffer = '', stack1, stack2, hashContexts, hashTypes, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
 
 function program1(depth0,data) {
   
@@ -1510,7 +1510,19 @@ function program5(depth0,data) {
   data.buffer.push("\n				Donate\n				");
   }
 
-  data.buffer.push("<!--\n	application homepage is defined here\n	\n	Created October 20th, 2013\n	@author: Yariv Katz\n	@version: 2.0\n	@copyright: Nerdeez \n-->\n\n<div class=\"homepage\">\n	\n	<!-- begin diagram -->\n	<div class=\"row diagram\">\n		<div class=\"span10\">\n			<div class=\"diagram-wrapper\">\n				<div class=\"upper-small-baloons\">\n					<div class=\"single-diagram pull-left step1\">\n						<div class=\"explain\">\n							<span>\n								Problem solving your H.W?\n							</span>\n							<br/>\n							<span class=\"pull-right\">\n								Share your solution\n							</span>\n						</div>\n						<div class=\"cool-arrow pull-left\">\n							<img src=\"");
+  data.buffer.push("<!--\n	application homepage is defined here\n	\n	Created October 20th, 2013\n	@author: Yariv Katz\n	@version: 2.0\n	@copyright: Nerdeez \n-->\n\n<div class=\"homepage\">\n	\n	<!-- begin quickstart -->\n	<div class=\"row quickstart account-container login stacked\">\n		<div class=\"span10 search\">\n			<div class=\"row\">\n				<form class=\"form-search nerdeez-inputs\">\n					<div class=\"padding-left\">\n						<h3>\n							Quick Start \n						</h3>\n						<p>\n							Type your course number\n						</p>\n					</div>\n					<div class=\"row\">\n						<div class=\"span8 padding-left\">\n						");
+  hashContexts = {'valueBinding': depth0,'class': depth0,'placeholder': depth0};
+  hashTypes = {'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'valueBinding': ("quickStart"),
+    'class': ("search-query"),
+    'placeholder': ("Ex. 234122")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n						<i class=\"icon-search\"></i>\n						</div>\n						<div class=\"span2\">\n							<button class=\"button btn btn-primary btn-large\" ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "submitSearch", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n								<i class=\"icon-search\"></i>\n								Search\n							</button>\n						</div>\n					</div>\n				</form>\n			</div>\n		</div>\n	</div>\n	<!-- end quickstart -->\n	\n	<!-- begin diagram -->\n	<div class=\"row diagram\">\n		<div class=\"span10\">\n			<div class=\"diagram-wrapper\">\n				<div class=\"upper-small-baloons\">\n					<div class=\"single-diagram pull-left step1\">\n						<div class=\"explain\">\n							<span>\n								Problem solving your H.W?\n							</span>\n							<br/>\n							<span class=\"pull-right\">\n								Share your solution\n							</span>\n						</div>\n						<div class=\"cool-arrow pull-left\">\n							<img src=\"");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
@@ -1546,19 +1558,7 @@ function program5(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/moto-baloon.png\" />\n					<span>Nerdeez <br/> Doing H.W Together</span>\n				</div>\n			</div>\n		</div>\n	</div>\n	<!-- end diagram -->\n	\n	<!-- begin quickstart -->\n	<div class=\"row quickstart account-container login stacked\">\n		<div class=\"span10 search\">\n			<div class=\"row\">\n				<form class=\"form-search nerdeez-inputs\">\n					<div class=\"padding-left\">\n						<h3>\n							Quick Start \n						</h3>\n						<p>\n							Type your course number\n						</p>\n					</div>\n					<div class=\"row\">\n						<div class=\"span8 padding-left\">\n						");
-  hashContexts = {'valueBinding': depth0,'class': depth0,'placeholder': depth0};
-  hashTypes = {'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING"};
-  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
-    'valueBinding': ("quickStart"),
-    'class': ("search-query"),
-    'placeholder': ("Ex. 234122")
-  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n						<i class=\"icon-search\"></i>\n						</div>\n						<div class=\"span2\">\n							<button class=\"button btn btn-primary btn-large\" ");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "submitSearch", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n								<i class=\"icon-search\"></i>\n								Search\n							</button>\n						</div>\n					</div>\n				</form>\n			</div>\n		</div>\n	</div>\n	<!-- end quickstart -->\n	\n	<!-- begin carousel -->\n	");
+  data.buffer.push("img/moto-baloon.png\" />\n					<span>Nerdeez <br/> Doing H.W Together</span>\n				</div>\n			</div>\n		</div>\n	</div>\n	<!-- end diagram -->\n	\n	\n	\n	<!-- begin carousel -->\n	");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "controller", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});

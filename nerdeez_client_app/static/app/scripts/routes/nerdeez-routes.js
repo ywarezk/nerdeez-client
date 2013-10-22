@@ -226,7 +226,7 @@ Nerdeez.SearchRoute = Ember.Route.extend({
 	},
 	
 	serialize: function(model) {
-		  return {search_param: ''};
+		  return {search_param: '#'};
 	},
 });
 
