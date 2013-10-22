@@ -91,7 +91,7 @@ require('scripts/views/index-view');
 require('scripts/models/nerdeez-model');
 require('scripts/views/schoolgroup-files-view');
 require('scripts/components/fb-comment-component');
-//require('scripts/components/pagination-component');
+require('scripts/components/pagination-component');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/models/auth-model');

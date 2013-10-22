@@ -64,6 +64,12 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 	 * @type {Object}
 	 */
 	extraParams: {'page': 'search', 'order_by': 'title' },
+	
+	/**
+	 * this is connected to the pagination page to reset the page when necessary
+	 * @type {int}
+	 */
+	page: 0,
 
 	/**
 	 * triggers when the users is using the search bar / filter / sort by
@@ -83,6 +89,7 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 	 		searchmsg['school_type'] = this.get('filterBy');
         
         xthis.set('extraParams', searchmsg);
+        xthis.set('page',0);
 	 	var srch = Nerdeez.Schoolgroup.find(searchmsg);
 
 		this.set('content', srch);

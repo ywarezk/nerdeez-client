@@ -2034,7 +2034,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 Ember.TEMPLATES["search"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, hashContexts, hashTypes, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+  var buffer = '', stack1, hashContexts, hashTypes, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
 
 function program1(depth0,data) {
   
@@ -2260,7 +2260,16 @@ function program24(depth0,data) {
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "controller", {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n					</ol>\n			</div>\n		</div>\n	</div>\n	<!-- end results-->\n	\n</div>");
+  data.buffer.push("\n					</ol>\n					");
+  hashContexts = {'paginationController': depth0,'paginationExtraParams': depth0,'paginationPage': depth0};
+  hashTypes = {'paginationController': "ID",'paginationExtraParams': "ID",'paginationPage': "ID"};
+  options = {hash:{
+    'paginationController': (""),
+    'paginationExtraParams': ("extraParams"),
+    'paginationPage': ("page")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers['nerdeez-pagination'] || depth0['nerdeez-pagination']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "nerdeez-pagination", options))));
+  data.buffer.push("\n			</div>\n		</div>\n	</div>\n	<!-- end results-->\n	\n</div>");
   return buffer;
   
 });
