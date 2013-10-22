@@ -25,10 +25,28 @@
     }
  }
  
-.schoolgroup-about{
-    height: 500px;
+.schoolgroup-about {
+    height: 260px;
+    .avatar-box {
+        border: solid 1px grey;
+        width: 85%;
+        .avatar-footer {
+            background-color: #2D2D2D;
+            padding-bottom: 4px;
+            h4 {
+                color: white;
+                margin: 0;
+                text-align: center;
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+            }
+        }
+        .avatar-action {
+
+        }
+    }
     .schoolgroup-action {
-        height: 445px !important;
+        height: 75% !important;
+        padding-top: 3% !important;
         font-size: 18px;
         .action-title {
             margin-bottom: 1.5em;
@@ -51,6 +69,36 @@
                     height: auto;
                     padding: 0;
                 }
+            }
+        }
+    }
+    .schoolgroup-footer {
+        ul {
+            padding-top: 0;
+        }
+        .fb-share {
+            .btn-share {
+                background-color: #3B5998;
+                i {
+                    background-color: white;
+                    color: #3B5998 !important;
+                    display: inline-table;
+                    font-size: 26px;
+                    padding-top: 2px;
+                }
+                span {
+                    color: white;
+                    padding-left: 8px;
+                    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+                }
+            }
+            .btn-share:focus {
+                background-color: #3B5998 !important;
+                background-image: -moz-linear-gradient(right bottom , #3B5998, #3B5998);
+                background-repeat: repeat-x;
+            }
+            .btn-share:hover, .btn-share:focus, .btn-share:active, .btn-share.active, .btn-share.disabled, .btn-share[disabled] {
+                background-color: #3B5998;
             }
         }
     }

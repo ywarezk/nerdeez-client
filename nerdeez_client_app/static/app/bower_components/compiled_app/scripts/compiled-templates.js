@@ -1788,19 +1788,19 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   
-  data.buffer.push("\n							Course Name:\n						");
+  data.buffer.push("\n								Course Name:\n							");
   }
 
 function program3(depth0,data) {
   
   
-  data.buffer.push("\n							Faculty Name:\n						");
+  data.buffer.push("\n								Faculty Name:\n							");
   }
 
 function program5(depth0,data) {
   
   
-  data.buffer.push("\n							University Name:\n						");
+  data.buffer.push("\n								University Name:\n							");
   }
 
 function program7(depth0,data) {
@@ -1847,33 +1847,37 @@ function program15(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<!--\n	this will hold the about page of a school group\n	this handlebar already gets a school group\n	\n	Created October 3rd, 2013\n	@author: Doron Nachshon\n	@copyright: Nerdeez Ltd.\n	@version: 1.0\n-->\n\n<div class=\"schoolgroup schoolgroup-about\">\n	<div class=\"nerdeez-box wallabout schoolgroup-about\">\n		<div class=\"nerdeez-box-action wallabout-action schoolgroup-action\">\n			<div class=\"span2\">\n				<img ");
+  data.buffer.push("<!--\n	this will hold the about page of a school group\n	this handlebar already gets a school group\n	\n	Created October 3rd, 2013\n	@author: Doron Nachshon\n	@copyright: Nerdeez Ltd.\n	@version: 1.0\n-->\n\n<div class=\"schoolgroup schoolgroup-about\">\n	<div class=\"nerdeez-box wallabout schoolgroup-about\">\n		<div class=\"nerdeez-box-action wallabout-action schoolgroup-action\">\n			<div class=\"span2\">\n				<div class=\"avatar-box\">\n					<div class=\"avatar-action\">\n						<img ");
   hashContexts = {'src': depth0};
   hashTypes = {'src': "STRING"};
   options = {hash:{
     'src': ("model.getImageURL")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || depth0['bind-attr']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
-  data.buffer.push("></img>\n			</div>\n			<div class=\"span7\">\n				<div class=\"action-title\">\n					<h3>\n						");
+  data.buffer.push("></img>\n					</div>\n					<div class=\"avatar-footer\">\n						<h4> ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "model.title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(" </h4>\n					</div>\n				</div>\n			</div>\n			<div class=\"span7\">\n<!--				<div class=\"action-title\">\n						<h3>\n							");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "model.isCourse", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n						");
+  data.buffer.push("\n							");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "model.isFaculty", {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n						");
+  data.buffer.push("\n							");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "model.isUniversity", {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n					</h3>\n					<span>");
+  data.buffer.push("\n						</h3>\n						<span>");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "model.title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("</span>\n				</div>\n				<h5>\n					<p> \n						<span> Description: </span>\n						<span> ");
+  data.buffer.push("</span>\n					</div> -->\n				<h5>\n					<p> \n						<span> Description: </span>\n						<span> ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "model.description", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
@@ -1915,11 +1919,11 @@ function program15(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "model.num_files", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(" </span>\n					</p>\n				</h5>\n			</div>\n		</div>\n		<div class=\"nerdeez-box-footer wallabout-footer\">\n			<div class=\"footer-social\">\n				<ul class=\"like-status\">\n					<li><i class=\"icon-thumbs-down\"></i></li>\n					<li>Dislike:</li>\n					<li>.....</li>\n					<li><i class=\"vertical-line\"></i></li>\n					<li><i class=\"icon-thumbs-up\"></i></li>\n					<li>Like:</li>\n					<li>.....</li>\n				</ul>\n				<div class=\"fb\">\n					<a class=\"btn_2\" ");
+  data.buffer.push(" </span>\n					</p>\n				</h5>\n			</div>\n		</div>\n		<div class=\"nerdeez-box-footer wallabout-footer schoolgroup-footer\">\n			<div class=\"footer-social\">\n				<ul class=\"like-status\">\n					<li><i class=\"icon-thumbs-down\"></i></li>\n					<li>Dislike:</li>\n					<li>.....</li>\n					<li><i class=\"vertical-line\"></i></li>\n					<li><i class=\"icon-thumbs-up\"></i></li>\n					<li>Like:</li>\n					<li>.....</li>\n				</ul>\n				<!--<div class=\"fb\">\n					<a class=\"btn_2\" ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "share", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">Share on Facebook</a>\n				</div>\n			</div>\n		</div>\n	</div>\n</div>");
+  data.buffer.push(">Share on Facebook</a>\n				</div> -->\n				<div class=\"fb-share\">\n					<button class=\"btn btn-share\">\n						<ul>\n							<li><i class=\"icon-facebook-sign\"></i></li>\n							<li><span>Share</span></li>\n						</ul>\n					</button>\n				</div>\n			</div>\n		</div>\n	</div>\n</div>");
   return buffer;
   
 });

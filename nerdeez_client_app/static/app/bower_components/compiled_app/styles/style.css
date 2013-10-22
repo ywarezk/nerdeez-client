@@ -1314,98 +1314,148 @@ a.nerdeez-button {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000328}}
 .schoolgroup-about {
-  height: 500px;
+  height: 260px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000330}}
-.schoolgroup-about .schoolgroup-action {
-  height: 445px !important;
-  font-size: 18px;
+.schoolgroup-about .avatar-box {
+  border: solid 1px grey;
+  width: 85%;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000333}}
+.schoolgroup-about .avatar-box .avatar-footer {
+  background-color: #2D2D2D;
+  padding-bottom: 4px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000336}}
+.schoolgroup-about .avatar-box .avatar-footer h4 {
+  color: white;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000347}}
+.schoolgroup-about .schoolgroup-action {
+  height: 75% !important;
+  padding-top: 3% !important;
+  font-size: 18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000351}}
 .schoolgroup-about .schoolgroup-action .action-title {
   margin-bottom: 1.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000353}}
 .schoolgroup-about .schoolgroup-action .action-title h3 {
   display: inline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000357}}
 .schoolgroup-about .schoolgroup-action table {
   margin-bottom: 9px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000359}}
 .schoolgroup-about .schoolgroup-action table td:nth-of-type(2) {
   display: inline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000362}}
 .schoolgroup-about .schoolgroup-action table .rating {
   font-size: 16px;
   margin: 0;
   padding-left: 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000366}}
 .schoolgroup-about .schoolgroup-action table .rating ul {
   position: relative;
   top: 3px;
   height: auto;
   padding: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000376}}
+.schoolgroup-about .schoolgroup-footer ul {
+  padding-top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000380}}
+.schoolgroup-about .schoolgroup-footer .fb-share .btn-share {
+  background-color: #3B5998;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000382}}
+.schoolgroup-about .schoolgroup-footer .fb-share .btn-share i {
+  background-color: white;
+  color: #3b5998 !important;
+  display: inline-table;
+  font-size: 26px;
+  padding-top: 2px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000389}}
+.schoolgroup-about .schoolgroup-footer .fb-share .btn-share span {
+  color: white;
+  padding-left: 8px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000395}}
+.schoolgroup-about .schoolgroup-footer .fb-share .btn-share:focus {
+  background-color: #3b5998 !important;
+  background-image: -moz-linear-gradient(right bottom, #3b5998, #3b5998);
+  background-repeat: repeat-x;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003100}}
+.schoolgroup-about .schoolgroup-footer .fb-share .btn-share:hover, .schoolgroup-about .schoolgroup-footer .fb-share .btn-share:focus, .schoolgroup-about .schoolgroup-footer .fb-share .btn-share:active, .schoolgroup-about .schoolgroup-footer .fb-share .btn-share.active, .schoolgroup-about .schoolgroup-footer .fb-share .btn-share.disabled, .schoolgroup-about .schoolgroup-footer .fb-share .btn-share[disabled] {
+  background-color: #3B5998;
+}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003109}}
 .schoolgroup-files #new-hw .field.center {
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003111}}
 .schoolgroup-files #new-hw .field.center button.button {
   float: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003115}}
 .schoolgroup-files #new-hw .uploaded-files {
   margin-top: 10px;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003121}}
 .schoolgroup-files .table-controllers .button {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003127}}
 .schoolgroup-files .hw-table .table td:nth-of-type(2) {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003130}}
 .schoolgroup-files .hw-table .table td {
   min-width: 70px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003132}}
 .schoolgroup-files .hw-table .table td a {
   cursor: pointer;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003135}}
 .schoolgroup-files .hw-table .table td a i {
   font-size: 26px;
   position: relative;
   top: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003148}}
 .hw .table td {
   vertical-align: middle;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003150}}
 .hw .table td .badge {
   position: relative;
   top: 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003155}}
 .hw .table a.nerdeez-button {
   font-size: 26px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003157}}
 .hw .table a.nerdeez-button i.icon-flag {
   color: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003164}}
 .hw #flag-file textarea {
   height: 89px;
 }

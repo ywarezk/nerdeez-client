@@ -12,23 +12,30 @@
 	<div class="nerdeez-box wallabout schoolgroup-about">
 		<div class="nerdeez-box-action wallabout-action schoolgroup-action">
 			<div class="span2">
-				<img {{bind-attr src="model.getImageURL"}}></img>
+				<div class="avatar-box">
+					<div class="avatar-action">
+						<img {{bind-attr src="model.getImageURL"}}></img>
+					</div>
+					<div class="avatar-footer">
+						<h4> {{model.title}} </h4>
+					</div>
+				</div>
 			</div>
 			<div class="span7">
-				<div class="action-title">
-					<h3>
-						{{#if model.isCourse}}
-							Course Name:
-						{{/if}}
-						{{#if model.isFaculty}}
-							Faculty Name:
-						{{/if}}
-						{{#if model.isUniversity}}
-							University Name:
-						{{/if}}
-					</h3>
-					<span>{{model.title}}</span>
-				</div>
+<!--				<div class="action-title">
+						<h3>
+							{{#if model.isCourse}}
+								Course Name:
+							{{/if}}
+							{{#if model.isFaculty}}
+								Faculty Name:
+							{{/if}}
+							{{#if model.isUniversity}}
+								University Name:
+							{{/if}}
+						</h3>
+						<span>{{model.title}}</span>
+					</div> -->
 				<h5>
 					<p> 
 						<span> Description: </span>
@@ -82,7 +89,7 @@
 				</h5>
 			</div>
 		</div>
-		<div class="nerdeez-box-footer wallabout-footer">
+		<div class="nerdeez-box-footer wallabout-footer schoolgroup-footer">
 			<div class="footer-social">
 				<ul class="like-status">
 					<li><i class="icon-thumbs-down"></i></li>
@@ -93,8 +100,16 @@
 					<li>Like:</li>
 					<li>.....</li>
 				</ul>
-				<div class="fb">
+				<!--<div class="fb">
 					<a class="btn_2" {{action share}}>Share on Facebook</a>
+				</div> -->
+				<div class="fb-share">
+					<button class="btn btn-share">
+						<ul>
+							<li><i class="icon-facebook-sign"></i></li>
+							<li><span>Share</span></li>
+						</ul>
+					</button>
 				</div>
 			</div>
 		</div>
