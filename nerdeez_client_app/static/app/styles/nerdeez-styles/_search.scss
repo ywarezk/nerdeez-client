@@ -123,6 +123,7 @@
 		}
 		.hoveron { //hoverons are here for the hover design on the resultbox
 			.resultbox { //each result
+          			position: relative;
       			    height: 184px;
       			    margin-bottom: 30px;
       			    box-shadow: -5px 5px 4px 2px gray;
@@ -243,9 +244,10 @@
 	    			color: white;
 	    			text-decoration: none;
 	    		}
-    			bottom: 185px;
-				position: relative;
-    			height: 185px;
+    			bottom: -1px;
+        height: 185px;
+        position: absolute;
+        width: 100%;
 	    		.hoveron-main {
     	    			background-color: rgba(0, 0, 0, 0);
             height: 0;
