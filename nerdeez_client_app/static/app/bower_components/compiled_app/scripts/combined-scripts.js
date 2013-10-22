@@ -431,7 +431,7 @@ Nerdeez.LikeDislike = Ember.Mixin.create({
 
 //create the namespace if the namespace doesnt exist
 if (typeof window.Nerdeez === "undefined"){
-	var Nerdeez = Ember.Namespace.create();
+	var Nerdeez = window.Nerdeez = Ember.Namespace.create();
 }
 else{
 	var Nerdeez = window.Nerdeez;
@@ -706,6 +706,13 @@ Nerdeez.Status = Ember.Mixin.create({
 		this.set('isLoading', false);
 		this.set('statusMessage', message);
 	},
+	
+	/**
+	 * put the loading screen on
+	 */
+	loading: function(){
+		this.set('isLoading', true);
+	}
 });
 
 })();
@@ -2838,13 +2845,16 @@ Ember.Handlebars.registerBoundHelper('status', function(item, options) {
  * @param {Object} options inside the hash we have {isLoading: "true if need to show the loading"}
  * @return {Handlebars.SafeString}
  */
-Ember.Handlebars.registerBoundHelper('loading', function(item, options) {
-    var isLoading = options.hash.isLoading;
-    var html = '';
-    if(isLoading){
-        html = '<div class="loading"><i class="icon-spin icon-spinner"></i></div>';
-    }
-    return new Handlebars.SafeString(html);
+// Ember.Handlebars.registerBoundHelper('loading', function(item, options) {
+    // var isLoading = options.hash.isLoading;
+    // var html = '';
+    // if(isLoading){
+        // html = '<div class="loading"><i class="icon-spin icon-spinner"></i></div>';
+    // }
+    // return new Handlebars.SafeString(html);
+// });
+Ember.Handlebars.registerBoundHelper('loading', function() {
+    return new Ember.Handlebars.SafeString('<div class="loading"><i class="icon-refresh icon-spin"></i></div>');
 });
 
 /**
