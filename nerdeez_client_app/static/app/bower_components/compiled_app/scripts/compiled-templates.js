@@ -1919,7 +1919,7 @@ function program19(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "model.title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(" </h4>\n							</div>\n						</div>\n					</div>\n					<div class=\"span7\">\n		<!--				<div class=\"action-title\">\n								<h3>\n									");
+  data.buffer.push(" </h4>\n							</div>\n						</div>\n					</div>\n					<div class=\"span7\">\n					<!-- <div class=\"action-title\">\n								<h3>\n									");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "model.isCourse", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
@@ -1980,11 +1980,11 @@ function program19(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "model.num_files", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(" </span>\n							</p>\n						</h5>\n					</div>\n				</div>\n				<div class=\"nerdeez-box-footer wallabout-footer schoolgroup-footer\">\n					<div class=\"footer-social\">\n						<ul class=\"like-status\">\n							<li><i class=\"icon-thumbs-down\"></i></li>\n							<li>Dislike:</li>\n							<li>.....</li>\n							<li><i class=\"vertical-line\"></i></li>\n							<li><i class=\"icon-thumbs-up\"></i></li>\n							<li>Like:</li>\n							<li>.....</li>\n						</ul>\n\n						<a class=\"btn\" href=\"#\" ");
+  data.buffer.push(" </span>\n							</p>\n						</h5>\n					</div>\n				</div>\n				<div class=\"nerdeez-box-footer wallabout-footer schoolgroup-footer\">\n					<div class=\"span5 pull-right\">\n						<div class=\"footer-social\">\n							<ul class=\"like-status\">\n								<li><i class=\"icon-thumbs-down\"></i></li>\n								<li>Dislike:</li>\n								<li>.....</li>\n								<li><i class=\"vertical-line\"></i></li>\n								<li><i class=\"icon-thumbs-up\"></i></li>\n								<li>Like:</li>\n								<li>.....</li>\n								<li>\n									<a href=\"#\" ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "share", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n							<i class=\"icon-facebook-sign\"></i>\n							<span> Share </span>\n						</a>\n					</div>\n				</div>\n			</div>\n		</div>\n	</div>\n	<div class=\"row\">\n		<div class=\"span3\">\n			<table class=\"table table-bordered table-striped\">\n				<thead>\n					<tr>								\n						<th>Related Pages</th>								\n					</tr>\n				</thead>\n				<tbody>\n					<tr>\n						<td class=\"description\">\n							");
+  data.buffer.push(">\n										<i class=\"icon-facebook-sign\"></i>\n									</a>\n								</li>\n							</ul>\n						</div>\n					</div>\n				</div>\n			</div>\n		</div>\n	</div>\n	<div class=\"row\">\n		<div class=\"span3\">\n			<table class=\"table table-bordered table-striped\">\n				<thead>\n					<tr>								\n						<th>Related Pages</th>								\n					</tr>\n				</thead>\n				<tbody>\n					<tr>\n						<td class=\"description\">\n							");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(17, program17, data),contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};

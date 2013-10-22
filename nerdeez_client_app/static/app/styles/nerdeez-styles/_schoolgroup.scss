@@ -11,6 +11,7 @@
 
 
 .schoolgroup-wall{
+    color: #555555;
     font-size: 14px;
     li {
         float: left;
@@ -27,10 +28,13 @@
  
 .schoolgroup-about {
     margin-bottom: 0;
-    height: 400px;
+    height: 350px;
+    .row {
+        margin-top: 0 !important;
+    }
     .avatar-box {
         border: solid 1px grey;
-        width: 85%;
+        width: 70%;
         .avatar-footer {
             background-color: #2D2D2D;
             padding-bottom: 4px;
@@ -42,11 +46,13 @@
             }
         }
         .avatar-action {
-
+            img {
+                width: 100%;
+            }
         }
     }
     .schoolgroup-action {
-        height: 84% !important;
+        height: 284px !important;
         padding-top: 3% !important;
         font-size: 18px;
         .action-title {
@@ -74,45 +80,67 @@
         }
     }
     .schoolgroup-footer {
-        ul {
-            padding-top: 0;
-        }
-        a {
-            height: 69%;
-            width: 80px;
-            margin-left: 35px;
-            i {
-                float: left;
-                font-size: 21px;
-                padding-top: 5px;
-            }
-            span {
-                display: block;
-                padding-left: 25px;
-                padding-top: 2px;
-            }
-        }
-        .btn:focus {
-            background-color: #E6E6E6 !important;
-            background-image: none;
-        }
-    }
-    .table {
-        box-shadow: -5px 5px 4px 2px #808080;
-        .description {
-            background-color: #F9F9F9;
-            a {
-                color: black;
-                text-decoration: none;
-                i {
-                    color: #000000;
-                    font-size: 18px;
-                    padding-left: 5px;
-                    padding-right: 25px;
-                    position: relative;
-                    top: 3px;
+        .footer-social {
+            float: none;
+            width: auto !important;
+            padding-right: 40px;
+            ul {
+                height: 24px;
+                padding-top: 7px !important;
+                li:nth-of-type(8) {
+                    padding-top: 3px;
+                    a {
+                        color: #555555;
+                        margin-left: 35px;
+                        text-decoration: none;
+                        i {
+                            font-size: 22px;
+                            color: #333333;
+                        }
+                    }
+                    a:hover, a:focus, a:active {
+                        i {
+                            color: #000000;
+                        }
+                    }
                 }
             }
+        }
+    }
+}
+.table {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: -5px 5px 4px 2px #808080;
+    th {
+        padding-left: 25px !important;
+    }
+    td {
+        background-color: #F9F9F9 !important;
+        padding: 0 !important;
+        height: 45px;
+        a {
+            display: block;
+            color: #555555;
+            text-decoration: none;
+            padding-top: 11px;
+            padding-bottom: 12px;
+            padding-left: 20px;
+            padding-right: 20px;
+            i {
+                color: #454545;
+                font-size: 18px;
+                padding-left: 5px;
+                padding-right: 25px;
+                position: relative;
+                top: 3px;
+            }
+        }
+        a:focus {
+            background-color: #999999;
+        }
+        a:hover {
+            background-color: #EEEEEE;
         }
     }
 }
@@ -142,7 +170,8 @@
             }
             td{
                 min-width: 70px;
-                a{
+                a {
+                    color: #555555;
                     cursor: pointer;
                     text-decoration: none;
                     i{
@@ -158,14 +187,15 @@
 
 .hw{
     .table{
-        td{
+        td {
             vertical-align: middle;
             .badge{
                     position: relative;
                     top: 8px;
                 }
         }
-        a.nerdeez-button{
+        a.nerdeez-button {
+                color: #555555;
                 font-size: 26px;
                 i.icon-flag{
                     color: red;
@@ -173,8 +203,8 @@
                 
         }
     }
-    #flag-file{
-        textarea{
+    #flag-file {
+        textarea {
             height: 89px;
         }
     }
