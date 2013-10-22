@@ -393,7 +393,7 @@ function program9(depth0,data) {
   data.buffer.push("\n                                    <i class=\"icon-pencil\"></i>\n                                    Register\n                  ");
   }
 
-  data.buffer.push("<div id=\"topbar\">\n    \n	<div class=\"container\">\n		\n		<div id=\"top-nav\">\n			\n			<ul class=\"pull-right\">\n                ");
+  data.buffer.push("<div id=\"topbar\">\n    \n	<div class=\"container\">\n		\n		<div id=\"top-nav\">\n			\n			<!--<div class=\"pull-left fb-like\">\n				<fb:like href=\"https://developers.facebook.com/docs/plugins/\" width=\"200\" height=\"100\" colorscheme=\"light\" layout=\"standard\" action=\"like\" show_faces=\"true\" send=\"false\"></fb:like>\n			</div>-->\n			\n			<ul class=\"pull-right\">\n                ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "Nerdeez.auth.isLoggedIn", {hash:{},inverse:self.program(6, program6, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
