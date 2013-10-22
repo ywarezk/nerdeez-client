@@ -8,6 +8,140 @@
 	@version: 1.0
 -->
 
-<div class="schoolgroup-about">
-	<h1>About page {{title}}</h1>
+
+<div class="schoolgroup schoolgroup-about">
+	<div class="row">
+		<div class="span10">
+			<div class="nerdeez-box wallabout schoolgroup-about">
+				<div class="nerdeez-box-action wallabout-action schoolgroup-action">
+					<div class="span2">
+						<div class="avatar-box">
+							<div class="avatar-action">
+								<img {{bind-attr src="model.getImageURL"}}></img>
+							</div>
+							<div class="avatar-footer">
+								<h4> {{model.title}} </h4>
+							</div>
+						</div>
+					</div>
+					<div class="span7">
+					<!-- <div class="action-title">
+								<h3>
+									{{#if model.isCourse}}
+										Course Name:
+									{{/if}}
+									{{#if model.isFaculty}}
+										Faculty Name:
+									{{/if}}
+									{{#if model.isUniversity}}
+										University Name:
+									{{/if}}
+								</h3>
+								<span>{{model.title}}</span>
+							</div> -->
+						<h5>
+							<p> 
+								<span> Description: </span>
+								<span> {{model.description}} </span> 
+							</p>
+							<p>
+								<span> Type: </span>
+								{{#if isCourse}}
+								<span> Course </span>
+								{{/if}}
+								{{#if isFaculty}}
+								<span> Faculty </span>
+								{{/if}}
+								{{#if isUniversity}}
+								<span> University </span>
+								{{/if}}
+							</p>
+							{{#if model.isCourse}}
+								<p> 
+									<span> Faculty: </span> 
+									<span> {{model.parent.title}} </span>
+								</p>
+								<p> 
+									<span> University: </span>
+									<span> {{model.parent.parent.title}} </span>
+								</p>
+							{{/if}}
+
+							{{#if model.isFaculty}}
+								<p> <span> University: </span>
+									<span> {{model.parent.title}} </span>
+								</p>
+							{{/if}}
+
+							<div class="about-grade">
+								<table>
+									<tr>
+										<td> <h5> Grade: </h5> </td>
+										<td> {{getRating model.grade 5}} </td>
+									</tr>
+								</table>
+							</div>
+							<p> 
+								<span> No. of Users: </span>
+								<span> {{model.num_users}} </span>
+							</p>
+							<p>
+								<span> No. of Files: </span>
+								<span> {{model.num_files}} </span>
+							</p>
+						</h5>
+					</div>
+				</div>
+				<div class="nerdeez-box-footer wallabout-footer schoolgroup-footer">
+					<div class="span5 pull-right">
+						<div class="footer-social">
+							<ul class="like-status">
+								<li><i class="icon-thumbs-down"></i></li>
+								<li>Dislike:</li>
+								<li>.....</li>
+								<li><i class="vertical-line"></i></li>
+								<li><i class="icon-thumbs-up"></i></li>
+								<li>Like:</li>
+								<li>.....</li>
+								<li>
+									<a href="#" {{action share}}>
+										<i class="icon-facebook-sign"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span3">
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>								
+						<th>Related Pages</th>								
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="description">
+							{{#link-to "schoolgroup.wall" this}}
+								<i class="icon-comments"></i>
+								{{model.title}}'s wall
+							{{/link-to}}
+						</td>
+					</tr>
+					<tr>
+						<td class="description">
+							{{#link-to "hws.index" this}}
+								<i class="icon-file"></i>
+								{{model.title}}'s h.w page
+							{{/link-to}}
+						</td>
+					</tr>		
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>

@@ -7,88 +7,15 @@
  * @author: Doron Nachshon
  */
  
+
+
+
 .schoolgroup-wall{
+    color: #555555;
     font-size: 14px;
     li {
         float: left;
     }
-    .wall-main { 
-        .main-action { //action pane
-            .pic-content {
-                float: left;
-                padding-right: 15px;
-                .nerdeez-action-image {
-                    background-size: 85px 80px;
-                }
-                i {
-                    display: block;
-                    height: 80px;
-                    width: 84px;
-                    float: left;
-                }
-            }
-            .text-content {
-                .result-title {
-                    font-size: 18px;
-                    padding-bottom: 10px;
-                    h3 {
-                        display: inline;
-                    }
-                }
-                .result-description {
-                    h5 {
-                        display: inline;
-                    }
-                }
-            }
-        }
-        .main-footer { //footer pane
-            .main-share {
-                float: right;
-                width: 500px;
-                ul {
-                    list-style: none;
-                    margin: 0;
-                    height: 20px;
-                    padding-top: 9px;
-                    float: left;
-                    i {
-                        color: #454545;
-                    }
-                }
-                .like-status {
-                    width: 300px;
-                    font-size: 16px;
-                    .icon-thumbs-up, .icon-thumbs-down {
-                        padding-right: 3px;
-                    }
-                    .vertical-line {
-                        position: relative;
-                        bottom: 2px;
-                        border-style: solid;
-                        border-width: thin;
-                        margin-left: 35px;
-                        margin-right: 35px;
-                        font-size: 11px;
-                    }
-                }
-            }
-            .entry-info {
-                width: 300px;
-            }
-            .iconproperties {
-                font-size: 20px;
-                padding-right: 5px;
-                .icon-user {
-                    padding-top: 1px;
-                }
-                .icon-file-text {
-                    padding-top: 2px;
-                }
-            }
-        }
-    }
-
     .wall-comments {
         height: auto !important;
         background-color: white;
@@ -99,8 +26,123 @@
     }
  }
  
-.schoolgroup-about{
-  
+.schoolgroup-about {
+    margin-bottom: 0;
+    height: 350px;
+    .row {
+        margin-top: 0 !important;
+    }
+    .avatar-box {
+        border: solid 1px grey;
+        width: 70%;
+        .avatar-footer {
+            background-color: #2D2D2D;
+            padding-bottom: 4px;
+            h4 {
+                color: white;
+                margin: 0;
+                text-align: center;
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+            }
+        }
+        .avatar-action {
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .schoolgroup-action {
+        height: 284px !important;
+        padding-top: 3% !important;
+        font-size: 18px;
+        .action-title {
+            margin-bottom: 1.5em;
+            h3 {
+                display: inline;
+            }
+        }
+        table {
+            margin-bottom: 9px;
+            td:nth-of-type(2) {
+                display: inline;
+            }
+            .rating {
+            font-size: 16px;
+            margin: 0;
+            padding-left: 8px;
+                ul {
+                    position: relative;
+                    top: 3px;
+                    height: auto;
+                    padding: 0;
+                }
+            }
+        }
+    }
+    .schoolgroup-footer {
+        .footer-social {
+            float: none;
+            width: auto !important;
+            padding-right: 40px;
+            ul {
+                height: 24px;
+                padding-top: 7px !important;
+                li:nth-of-type(8) {
+                    padding-top: 3px;
+                    a {
+                        color: #555555;
+                        margin-left: 35px;
+                        text-decoration: none;
+                        i {
+                            font-size: 22px;
+                            color: #333333;
+                        }
+                    }
+                    a:hover, a:focus, a:active {
+                        i {
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.table {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: -5px 5px 4px 2px #808080;
+    th {
+        padding-left: 25px !important;
+    }
+    td {
+        background-color: #F9F9F9 !important;
+        padding: 0 !important;
+        height: 45px;
+        a {
+            display: block;
+            color: #555555;
+            text-decoration: none;
+            padding-top: 11px;
+            padding-bottom: 12px;
+            padding-left: 20px;
+            padding-right: 20px;
+            i {
+                color: #454545;
+                font-size: 18px;
+                padding-left: 5px;
+                padding-right: 25px;
+                position: relative;
+                top: 3px;
+            }
+        }
+        a:focus {
+            background-color: #999999;
+        }
+        a:hover {
+            background-color: #EEEEEE;
+        }
+    }
 }
 
 .schoolgroup-files{
@@ -128,7 +170,8 @@
             }
             td{
                 min-width: 70px;
-                a{
+                a {
+                    color: #555555;
                     cursor: pointer;
                     text-decoration: none;
                     i{
@@ -187,7 +230,8 @@
                 }
             }
         }
-        a.nerdeez-button{
+        a.nerdeez-button {
+                color: #555555;
                 font-size: 19px;
                 i.icon-flag{
                     color: red;
@@ -205,8 +249,8 @@
             word-wrap: break-word;
         }
     }
-    #flag-file{
-        textarea{
+    #flag-file {
+        textarea {
             height: 89px;
         }
     }

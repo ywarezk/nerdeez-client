@@ -1,7 +1,7 @@
 # Django settings for nerdeez_client_app project.
 import os
 
-DEBUG = os.environ.get('NERDEEZ_DEBUG', 'FALSE') == 'TRUE'
+DEBUG = os.environ.get('NERDEEZ_DEBUG', 'TRUE') == 'TRUE'
 TEMPLATE_DEBUG = DEBUG
 COMPRESS_ENABLED = not DEBUG
 ADMINS = (
@@ -167,7 +167,8 @@ if 'NERDEEZ_ENV_DEBUG' in os.environ:
 else:
     DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-SERVER_URL = os.getenv('SERVER_URL', 'https://nerdeez-server-dev.herokuapp.com')
+#SERVER_URL = os.getenv('SERVER_URL', 'https://nerdeez-server-dev.herokuapp.com')
+SERVER_URL = os.getenv('SERVER_URL', 'http://192.168.0.100:8001')
 
 FACEBOOK_APP_ID = os.getenv('FACEBOOK_APP_ID', '410003599108568')
 
