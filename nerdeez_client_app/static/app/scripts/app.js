@@ -102,6 +102,7 @@ require('scripts/controllers/login-controller');
 require('scripts/controllers/register-controller');
 require('scripts/controllers/contact-controller');
 require('scripts/controllers/wall-controller');
+require('scripts/controllers/about-controller');
 require('scripts/controllers/change-password-controller');
 require('scripts/controllers/forget-password-controller');
 require('scripts/controllers/reset-password-controller');

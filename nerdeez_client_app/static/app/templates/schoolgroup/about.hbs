@@ -100,18 +100,20 @@
 					<li>Like:</li>
 					<li>.....</li>
 				</ul>
-				<!--<div class="fb">
-					<a class="btn_2" {{action share}}>Share on Facebook</a>
-				</div> -->
-				<div class="fb-share">
-					<button class="btn btn-share">
-						<ul>
-							<li><i class="icon-facebook-sign"></i></li>
-							<li><span>Share</span></li>
-						</ul>
-					</button>
-				</div>
+
+				<a class="btn" href="#" {{action share}}>
+					<i class="icon-facebook-sign"></i>
+					<span> Share </span>
+				</a>
 			</div>
 		</div>
+	</div>
+	<div class="navigation-box">
+		{{#link-to schoolgroup.wall this}}
+			<div class="btn">Go to Wall</a>
+		{{/link-to}}
+		{{#link-to hws.index this}}
+			<div class="btn">Go to H.W.</a>
+		{{/link-to}}
 	</div>
 </div>

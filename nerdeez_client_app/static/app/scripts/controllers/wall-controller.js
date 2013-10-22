@@ -6,7 +6,7 @@
 * @version: 1.0
 */
 
-Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.fbShare, {
+Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share, {
 
 	/**
 	* Init facebook's share function from the Mixin

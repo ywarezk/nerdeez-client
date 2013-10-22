@@ -533,12 +533,12 @@ Nerdeez.Singleton = Ember.Mixin.create({
 **/
 
 /**
-  @class Nerdeez.fbShare
+  @class Nerdeez.Share
   @extends Ember.Mixin
   @namespace Nerdeez
   @module Nerdeez
 **/
-Nerdeez.fbShare = Ember.Mixin.create({
+Nerdeez.Share = Ember.Mixin.create({
 
   /**
   * The UI dialog to invoke.
@@ -1728,7 +1728,7 @@ Nerdeez.ContactController = Ember.Controller.extend({
 * @version: 1.0
 */
 
-Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.fbShare, {
+Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share, {
 
 	/**
 	* Init facebook's share function from the Mixin
@@ -1740,6 +1740,21 @@ Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.fbShare, {
 	}
 
 });
+
+})();
+
+(function() {
+
+/**
+ * The controller for the about page
+ * 
+ * Created October 21st, 2013
+ * @author: Doron Nachshon
+ * @version: 1.0
+ * @copyright nerdeez Ltd.
+ */
+
+Nerdeez.SchoolgroupAboutController = Ember.Controller.extend(Nerdeez.Share);
 
 })();
 
