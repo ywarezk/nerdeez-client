@@ -90,9 +90,6 @@ ul.nav.nav-pills li {
         height: 20px;
         padding-top: 9px;
         float: left;
-        i {
-            color: #454545;
-        }
     }
     /**
     * default values for the box action pane
@@ -101,8 +98,6 @@ ul.nav.nav-pills li {
         height: 95px;
         background-color: white;
         padding-top: 20px;
-        padding-left: 15px;
-        padding-right: 15px;
         border: 1px solid gray;
         border-bottom: 0;
     }
@@ -115,6 +110,89 @@ ul.nav.nav-pills li {
         padding-left: 15px;
         border: 1px solid gray;
         border-top: 0;
+    }
+}
+
+/**
+* default values for the wall and the about header boxes
+*/
+.nerdeez-box.wallabout {
+    font-size: 14px;
+    li {
+        float: left;
+    }
+    .wallabout-action { //action pane
+        .pic-content {
+            float: left;
+            padding-right: 15px;
+            .nerdeez-action-image {
+                background-size: 85px 80px;
+            }
+            i {
+                display: block;
+                height: 80px;
+                width: 84px;
+                float: left;
+            }
+        }
+        .text-content {
+            font-size: 18px;
+            padding-bottom: 10px;
+            h3 {
+                display: inline;
+            }
+            h5 {
+                display: inline;
+                }
+        }
+    }
+    .wallabout-footer { //footer pane
+        .footer-social {
+            float: right;
+            width: 500px;
+            ul {
+                list-style: none;
+                margin: 0;
+                height: 20px;
+                padding-top: 9px;
+                float: left;
+                i {
+                    color: #454545;
+                }
+            }
+            .like-status {
+                width: 300px;
+                font-size: 16px;
+                i {
+                    color: #454545;
+                }
+                .icon-thumbs-up, .icon-thumbs-down {
+                    padding-right: 3px;
+                }
+                .vertical-line {
+                    position: relative;
+                    bottom: 2px;
+                    border-style: solid;
+                    border-width: thin;
+                    margin-left: 35px;
+                    margin-right: 35px;
+                    font-size: 11px;
+                }
+            }
+        }
+        .entry-info {
+            width: 300px;
+        }
+        .iconproperties {
+            font-size: 20px;
+            padding-right: 5px;
+            .icon-user {
+                padding-top: 1px;
+            }
+            .icon-file-text {
+                padding-top: 2px;
+            }
+        }
     }
 }
 

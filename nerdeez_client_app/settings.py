@@ -1,7 +1,7 @@
 # Django settings for nerdeez_client_app project.
 import os
 
-DEBUG = os.environ.get('NERDEEZ_DEBUG', 'FALSE') == 'TRUE'
+DEBUG = os.environ.get('NERDEEZ_DEBUG', 'TRUE') == 'TRUE'
 TEMPLATE_DEBUG = DEBUG
 COMPRESS_ENABLED = not DEBUG
 ADMINS = (

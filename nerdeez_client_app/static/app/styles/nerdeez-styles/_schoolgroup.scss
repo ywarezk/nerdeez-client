@@ -8,84 +8,6 @@
  */
  
 
-.schoolgroup {
-    .nerdeez-box {
-        .nerdeez-box-action {
-            .pic-content {
-                float: left;
-                padding-right: 15px;
-                .nerdeez-action-image {
-                    background-size: 85px 80px;
-                }
-                i {
-                    display: block;
-                    height: 80px;
-                    width: 84px;
-                    float: left;
-                }
-            }
-            .text-content {
-                .result-title {
-                    font-size: 18px;
-                    padding-bottom: 10px;
-                    h3 {
-                        display: inline;
-                    }
-                }
-                .result-description {
-                    h5 {
-                        display: inline;
-                    }
-                }
-            }
-        }
-        .nerdeez-box-footer {
-            .footer-social {
-                float: right;
-                width: 500px;
-                ul {
-                    list-style: none;
-                    margin: 0;
-                    height: 20px;
-                    padding-top: 9px;
-                    float: left;
-                    i {
-                        color: #454545;
-                    }
-                }
-                .like-status {
-                    width: 300px;
-                    font-size: 16px;
-                    .icon-thumbs-up, .icon-thumbs-down {
-                        padding-right: 3px;
-                    }
-                    .vertical-line {
-                        position: relative;
-                        bottom: 2px;
-                        border-style: solid;
-                        border-width: thin;
-                        margin-left: 35px;
-                        margin-right: 35px;
-                        font-size: 11px;
-                    }
-                }
-            }
-            .entry-info {
-                width: 300px;
-            }
-            .iconproperties {
-                font-size: 20px;
-                padding-right: 5px;
-                .icon-user {
-                    padding-top: 1px;
-                }
-                .icon-file-text {
-                    padding-top: 2px;
-                }
-            }
-        }
-    }
-}
 
 
 .schoolgroup-wall{
@@ -93,83 +15,6 @@
     li {
         float: left;
     }
-    .wall-main { 
-        .main-action { //action pane
-            .pic-content {
-                float: left;
-                padding-right: 15px;
-                .nerdeez-action-image {
-                    background-size: 85px 80px;
-                }
-                i {
-                    display: block;
-                    height: 80px;
-                    width: 84px;
-                    float: left;
-                }
-            }
-            .text-content {
-                .result-title {
-                    font-size: 18px;
-                    padding-bottom: 10px;
-                    h3 {
-                        display: inline;
-                    }
-                }
-                .result-description {
-                    h5 {
-                        display: inline;
-                    }
-                }
-            }
-        }
-        .main-footer { //footer pane
-            .footer-social {
-                float: right;
-                width: 500px;
-                ul {
-                    list-style: none;
-                    margin: 0;
-                    height: 20px;
-                    padding-top: 9px;
-                    float: left;
-                    i {
-                        color: #454545;
-                    }
-                }
-                .like-status {
-                    width: 300px;
-                    font-size: 16px;
-                    .icon-thumbs-up, .icon-thumbs-down {
-                        padding-right: 3px;
-                    }
-                    .vertical-line {
-                        position: relative;
-                        bottom: 2px;
-                        border-style: solid;
-                        border-width: thin;
-                        margin-left: 35px;
-                        margin-right: 35px;
-                        font-size: 11px;
-                    }
-                }
-            }
-            .entry-info {
-                width: 300px;
-            }
-            .iconproperties {
-                font-size: 20px;
-                padding-right: 5px;
-                .icon-user {
-                    padding-top: 1px;
-                }
-                .icon-file-text {
-                    padding-top: 2px;
-                }
-            }
-        }
-    }
-
     .wall-comments {
         height: auto !important;
         background-color: white;
@@ -181,7 +26,34 @@
  }
  
 .schoolgroup-about{
-  
+    height: 500px;
+    .schoolgroup-action {
+        height: 445px !important;
+        font-size: 18px;
+        .action-title {
+            margin-bottom: 1.5em;
+            h3 {
+                display: inline;
+            }
+        }
+        table {
+            margin-bottom: 9px;
+            td:nth-of-type(2) {
+                display: inline;
+            }
+            .rating {
+            font-size: 16px;
+            margin: 0;
+            padding-left: 8px;
+                ul {
+                    position: relative;
+                    top: 3px;
+                    height: auto;
+                    padding: 0;
+                }
+            }
+        }
+    }
 }
 
 .schoolgroup-files{

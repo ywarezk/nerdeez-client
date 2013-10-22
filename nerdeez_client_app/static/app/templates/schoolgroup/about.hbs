@@ -9,15 +9,13 @@
 -->
 
 <div class="schoolgroup schoolgroup-about">
-	<div class="nerdeez-box">
-		<div class="nerdeez-box-action">
-			<div class="pic-content">
-				<div {{bind-attr class="model.getIconClass"}}>
-					<i class="schoolgroup-img"></i>
-				</div>
+	<div class="nerdeez-box wallabout schoolgroup-about">
+		<div class="nerdeez-box-action wallabout-action schoolgroup-action">
+			<div class="span2">
+				<img {{bind-attr src="model.getImageURL"}}></img>
 			</div>
-			<div class="text-content">
-				<div class="result-title">
+			<div class="span7">
+				<div class="action-title">
 					<h3>
 						{{#if model.isCourse}}
 							Course Name:
@@ -31,13 +29,60 @@
 					</h3>
 					<span>{{model.title}}</span>
 				</div>
-				<div class="result-description">
-					<h5> Description: </h5>
-					<span>{{model.description}}</span>
-				</div>
+				<h5>
+					<p> 
+						<span> Description: </span>
+						<span> {{model.description}} </span> 
+					</p>
+					<p>
+						<span> Type: </span>
+						{{#if isCourse}}
+						<span> Course </span>
+						{{/if}}
+						{{#if isFaculty}}
+						<span> Faculty </span>
+						{{/if}}
+						{{#if isUniversity}}
+						<span> University </span>
+						{{/if}}
+					</p>
+					{{#if model.isCourse}}
+						<p> 
+							<span> Faculty: </span> 
+							<span> {{model.parent.title}} </span>
+						</p>
+						<p> 
+							<span> University: </span>
+							<span> {{model.parent.parent.title}} </span>
+						</p>
+					{{/if}}
+
+					{{#if model.isFaculty}}
+						<p> <span> University: </span>
+							<span> {{model.parent.title}} </span>
+						</p>
+					{{/if}}
+
+					<div class="about-grade">
+						<table>
+							<tr>
+								<td> <h5> Grade: </h5> </td>
+								<td> {{getRating model.grade 5}} </td>
+							</tr>
+						</table>
+					</div>
+					<p> 
+						<span> No. of Users: </span>
+						<span> {{model.num_users}} </span>
+					</p>
+					<p>
+						<span> No. of Files: </span>
+						<span> {{model.num_files}} </span>
+					</p>
+				</h5>
 			</div>
 		</div>
-		<div class="nerdeez-box-footer">
+		<div class="nerdeez-box-footer wallabout-footer">
 			<div class="footer-social">
 				<ul class="like-status">
 					<li><i class="icon-thumbs-down"></i></li>

@@ -140,7 +140,7 @@ window.fbAsyncInit = function() {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {return;}
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    js.src = "//connect.facebook.net/en_US/all.js";
     fjs.parentNode.insertBefore(js, fjs);
     
 }(document, 'script', 'facebook-jssdk'));
@@ -957,6 +957,7 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 	dislike: DS.attr('number'),
 	num_users: DS.attr('number'),
 	num_files: DS.attr('number'),
+	image: DS.attr('string'),
 	
 	getIconClass: function() {
 		a = this.get("school_type");
@@ -987,6 +988,28 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 		else
 			return false;
 	}.property("school_type"),
+
+	getImageURL: function() {
+		var count = this.get('school_type');
+		var depthString = "";
+		while (count<4) {
+			if (this.get(depthString + ".image"))
+				return this.get(depthString + ".image");
+			else {
+				depthString += ".parent";
+				count++;
+			}
+		}
+		if (this.get('isCourse')) {
+			return STATIC_URL + "img/course-pic.png";
+		}
+		if (this.get('isFaculty')) {
+			return STATIC_URL + "img/Faculty-pic.png";
+		}
+		if (this.get('isUniversity')) {
+			return STATIC_URL + "img/University-pic.png";
+		}
+	}.property("school_type")
 });
 
 

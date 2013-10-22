@@ -5,17 +5,17 @@
 	@author: Doron Nachshon
 	@copyright: nerdeez.com
 	@version: 1.0
--->_
+-->
 
-<div class="wall-main nerdeez-box">
-	<div class="main-action nerdeez-box-action">
+<div class="nerdeez-box wallabout">
+	<div class="nerdeez-box-action wallabout-action">
 		<div class="pic-content">
 			<div {{bind-attr class="model.getIconClass"}}>
 				<i class="schoolgroup-img"></i>
 			</div>
 		</div>
 		<div class="text-content">
-			<div class="result-title">
+			<div class="result-line">
 				<h3>
 					{{#if model.isCourse}}
 						Course Name:
@@ -29,13 +29,13 @@
 				</h3>
 				<span>{{model.title}}</span>
 			</div>
-			<div class="result-description">
+			<div class="result-line">
 				<h5> Description: </h5>
 				<span>{{model.description}}</span>
 			</div>
 		</div>
 	</div>
-	<div class="main-footer nerdeez-box-footer">
+	<div class="nerdeez-box-footer wallabout-footer">
 		<div class="footer-social">
 			<ul class="like-status">
 				<li><i class="icon-thumbs-down"></i></li>
