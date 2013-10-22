@@ -40,7 +40,7 @@ Nerdeez.Auth = Ember.Object.extend({
 	 */
 	isLoggedIn: function(){
 		return this.get('apiKey') != null && this.get('username') != null && this.get('id') != null;
-	}.property('apiKey', 'username'),
+	}.property('apiKey', 'username', 'id'),
 });
 Nerdeez.Auth.reopenClass(Nerdeez.Singleton);
 Nerdeez.set('auth', Nerdeez.Auth.current());

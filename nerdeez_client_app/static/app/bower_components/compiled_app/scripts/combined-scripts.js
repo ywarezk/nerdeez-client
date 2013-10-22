@@ -117,8 +117,15 @@ window.fbAsyncInit = function() {
 		        	{
 			        	success: function(json){
 			        	    var auth = Nerdeez.Auth.current();
-			        		auth.set('isLoggedIn', json['is_logged_in']);
-			        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+			        		// auth.set('isLoggedIn', json['is_logged_in']);
+			        		// Nerdeez.set('isLoggedIn', json['is_logged_in']);
+			        		auth.set('apiKey', json['api_key']);
+						auth.set('username', json['username']);
+						adapter.set('apiKey', json['api_key']);
+						adapter.set('username',json['username']);
+						auth.set('userProfile',Nerdeez.Userprofile.find(json.user_profile.id));
+						auth.set('id',json.user_profile.id);
+						Nerdeez.set('auth', auth);
 			        	},
 			        	error: function(json){
 			        		console.log('error login to facebook');
@@ -1180,7 +1187,7 @@ Nerdeez.Auth = Ember.Object.extend({
 	 */
 	isLoggedIn: function(){
 		return this.get('apiKey') != null && this.get('username') != null && this.get('id') != null;
-	}.property('apiKey', 'username'),
+	}.property('apiKey', 'username', 'id'),
 });
 Nerdeez.Auth.reopenClass(Nerdeez.Singleton);
 Nerdeez.set('auth', Nerdeez.Auth.current());
@@ -3087,6 +3094,7 @@ Nerdeez.LogoutRoute = Ember.Route.extend({
 	    $.removeCookie('username');
 	    $.removeCookie('apiKey');
 	    $.removeCookie('id');
+	    FB.logout();
         this.transitionTo('index');
     }
 });

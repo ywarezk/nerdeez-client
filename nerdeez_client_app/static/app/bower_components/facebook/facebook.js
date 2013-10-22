@@ -32,8 +32,15 @@ window.fbAsyncInit = function() {
 		        	{
 			        	success: function(json){
 			        	    var auth = Nerdeez.Auth.current();
-			        		auth.set('isLoggedIn', json['is_logged_in']);
-			        		Nerdeez.set('isLoggedIn', json['is_logged_in']);
+			        		// auth.set('isLoggedIn', json['is_logged_in']);
+			        		// Nerdeez.set('isLoggedIn', json['is_logged_in']);
+			        		auth.set('apiKey', json['api_key']);
+						auth.set('username', json['username']);
+						adapter.set('apiKey', json['api_key']);
+						adapter.set('username',json['username']);
+						auth.set('userProfile',Nerdeez.Userprofile.find(json.user_profile.id));
+						auth.set('id',json.user_profile.id);
+						Nerdeez.set('auth', auth);
 			        	},
 			        	error: function(json){
 			        		console.log('error login to facebook');

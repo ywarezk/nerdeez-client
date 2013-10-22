@@ -114,6 +114,7 @@ Nerdeez.LogoutRoute = Ember.Route.extend({
 	    $.removeCookie('username');
 	    $.removeCookie('apiKey');
 	    $.removeCookie('id');
+	    FB.logout();
         this.transitionTo('index');
     }
 });
