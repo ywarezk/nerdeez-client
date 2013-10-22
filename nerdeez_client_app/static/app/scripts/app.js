@@ -115,6 +115,25 @@ require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
 
 //routes
 require('scripts/routes/nerdeez-routes');
+require('scripts/routes/add-schoolgroup-course');
+require('scripts/routes/add-schoolgroup-course-route');
+require('scripts/routes/add-schoolgroup-faculty-route');
+require('scripts/routes/add-schoolgroup-uni-route');
+require('scripts/routes/application-route');
+require('scripts/routes/change-password-route');
+require('scripts/routes/flatpages-route');
+require('scripts/routes/hws-hw-route');
+require('scripts/routes/hws-route');
+require('scripts/routes/index-route');
+require('scripts/routes/loading-route');
+require('scripts/routes/logout-route');
+require('scripts/routes/reset-password-route');
+require('scripts/routes/schoolgroup-about-route');
+require('scripts/routes/schoolgroup-route');
+require('scripts/routes/schoolgroup-wall-route');
+require('scripts/routes/search-route');
+require('scripts/routes/underconstruction-route');
+require('scripts/routes/verify-email-route');
 
 
 

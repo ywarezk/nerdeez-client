@@ -3085,131 +3085,176 @@ Nerdeez.LoginRequired = Nerdeez.NerdeezRoute.extend({
     // }
 });
 
-Nerdeez.LogoutRoute = Ember.Route.extend({
-    redirect: function(){
-	    var auth = Nerdeez.Auth.current();
-	    auth.set('username', null);
-	    auth.set('apiKey', null);
-	    auth.set('id', null);
-	    $.removeCookie('username');
-	    $.removeCookie('apiKey');
-	    $.removeCookie('id');
-	    FB.logout();
-        this.transitionTo('index');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+})();
+
+(function() {
+
+/**
+ * the route for adding a course
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.AddSchoolGroupCourseRoute = Nerdeez.NerdeezRoute.extend({
+    setupController: function(controller, model){
+        this.controllerFor('add_school_group').set('schoolType', Nerdeez.SCHOOLGROUP_TYPE[0].id);
     }
 });
 
-Nerdeez.ChangePasswordRoute = Nerdeez.LoginRequired.extend({});
+})();
 
-Nerdeez.ResetPasswordRoute = Nerdeez.NerdeezRoute.extend({
-	
-	/**
-	 * will grab the params from the url and set them in the controller 
-	 */
-	setupController: function(controller, model){
-		controller.set('email', this.getURLParameter('email'));
-		controller.set('hash',this.getURLParameter('hash'));
-	}
-});
-
-Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
-	enter: function(){
-		
-		var xthis = this;
-		
-		//get the params from twitter if exists
-		var oauthToken = this.getURLParameter('oauth_token');
-		var oauthVerifier = 	this.getURLParameter('oauth_verifier');
-		
-		//if got message from twitter then get busy login
-		if (oauthToken !== 'null' && oauthVerifier !== 'null'){
-			var adapter = Nerdeez.Adapter.current();
-			adapter.ajax(
-				SERVER_URL + '/api/v1/utilities/twitter-login-callback/',
-				'POST',
-				{
-					success: function(json){
-						// var auth = Nerdeez.Auth.current();
-			        		// auth.set('isLoggedIn', json['is_logged_in']);
-			        		// Nerdeez.set('isLoggedIn', json['is_logged_in']);
-			        		xthis.controllerFor('login').commonLogin(json);
-					},
-					error: function(json){
-						console.log('twitter callback error');
-					},
-					data: {
-						oauth_verifier: oauthVerifier,
-						oauth_token: oauthToken
-					}
-				}
-			);
-		}
-	},
-	
-	// model: function(){
-		// if(Nerdeez.get('auth.isLoggedIn')){
-			// return Nerdeez.Userprofile.find(Nerdeez.get('auth.id'));
-		// }
-	// },
-// 	
-	// setupController: function(controller, model){
-		// var auth = Nerdeez.Auth.current();
-		// auth.set('userProfile',model);
-	// },
-// 	
-	// actions: {
-		// error: function(status){
-			// console.log('ERROR');
-		// }
-	// }
-	
-});
-
-Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
-	enter: function(){
-		var masthead = Ember.A();
-		masthead.addObject({route: 'index', model: null, title: 'Home'});
-		Nerdeez.set('masthead', masthead);
-	},
-	
-	model: function(){
-		return Nerdeez.Schoolgroup.find({
-			school_type: 3,
-			image__isnull: false,
-			limit: 10,
-			page: 'search'
-		});
-	},
-	
-	setupController: function(controller, model){
-		this._super(controller, model);
-		var files = Nerdeez.File.find({limit: 1});
-		files.one('didLoad', function(){
-			controller.set('numFiles', files.get('content.totalCount'));	
-		});
-	}
-});
-
+(function() {
 
 /**
- * the route for the university search, grab the initial data
+ * the route for adding a faculty
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
  */
-Nerdeez.SearchRoute = Ember.Route.extend({
-	enter: function(){
-		var masthead = Ember.A();
-		masthead.addObject({route: 'index', model: null, title: 'Home'});
-		masthead.addObject({route: 'search', model: null, title: 'Search'});
-		Nerdeez.set('masthead', masthead);
-	},
-	
-	model: function(param){
-		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title', page: 'search'});
-	},
-	
-	serialize: function(model) {
-		  return {search_param: '#'};
-	},
+
+Nerdeez.AddSchoolGroupFacultyRoute = Nerdeez.NerdeezRoute.extend({
+    setupController: function(controller, model){
+        this.controllerFor('add_school_group').set('schoolType', Nerdeez.SCHOOLGROUP_TYPE[1].id);
+    }
 });
+
+})();
+
+(function() {
+
+/**
+ * the route for adding a university
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.AddSchoolGroupUniRoute = Nerdeez.NerdeezRoute.extend({
+    setupController: function(controller, model){
+        this.controllerFor('add_school_group').set('schoolType', Nerdeez.SCHOOLGROUP_TYPE[2].id);
+    }
+});
+
+})();
+
+(function() {
+
+/**
+ * the route for the main app
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.ApplicationRoute = Nerdeez.NerdeezRoute.extend({
+    enter: function(){
+        
+        var xthis = this;
+        
+        //get the params from twitter if exists
+        var oauthToken = this.getURLParameter('oauth_token');
+        var oauthVerifier =     this.getURLParameter('oauth_verifier');
+        
+        //if got message from twitter then get busy login
+        if (oauthToken !== 'null' && oauthVerifier !== 'null'){
+            var adapter = Nerdeez.Adapter.current();
+            adapter.ajax(
+                SERVER_URL + '/api/v1/utilities/twitter-login-callback/',
+                'POST',
+                {
+                    success: function(json){
+                        // var auth = Nerdeez.Auth.current();
+                            // auth.set('isLoggedIn', json['is_logged_in']);
+                            // Nerdeez.set('isLoggedIn', json['is_logged_in']);
+                            xthis.controllerFor('login').commonLogin(json);
+                    },
+                    error: function(json){
+                        console.log('twitter callback error');
+                    },
+                    data: {
+                        oauth_verifier: oauthVerifier,
+                        oauth_token: oauthToken
+                    }
+                }
+            );
+        }
+    },
+    
+    
+});
+
+})();
+
+(function() {
+
+/**
+ * the route for the change password
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.ChangePasswordRoute = Nerdeez.LoginRequired.extend({});
+
+})();
+
+(function() {
+
+/**
+ * the routes for all the flat pages
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 2.0
+ * @copyright: Nerdeez
+ */
 
 /**
  * all the flat pages will extend this route
@@ -3269,28 +3314,213 @@ Nerdeez.TermsRoute = Nerdeez.FlatPageRoute.extend({
 	}
 });
 
-/**
- * all the under construction pages will extend this
- */
-Nerdeez.UnderConstructionRoute = Ember.Route.extend({
-	
-    renderTemplate: function() {
-        this.render('underConstruction');
-    }
-});
+})();
 
-Nerdeez.DonateRoute = Nerdeez.UnderConstructionRoute.extend({
-	enter: function(){
-		var masthead = Ember.A();
-		masthead.addObject({route: 'index', model: null, title: 'Home'});
-		masthead.addObject({route: 'donate', model: null, title: 'Buy T-Shirts'});
-		Nerdeez.set('masthead', masthead);
+(function() {
+
+/**
+ * the route for a single h.w page
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 2.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.HwsHwRoute = Nerdeez.LoginRequired.extend({
+	
+    model: function(param){
+        var model = Nerdeez.Hw.find(param.hwId);
+        this.redirectIfNeeded(model);
+        return model;
+    },
+    
+    setupController: function(controller, model){
+	    	controller.set('content', model);
+	    	this.populateMastheadSchoolgroupRoutes(model.get('school_group'));
+		var masthead = Nerdeez.get('masthead');
+		masthead.addObject({route: 'hws.index', model: model.get('school_group'), title: "H.W's"});
+		masthead.addObject({route: 'hws.hw', model: model, title: model.get('title')});
 	},
 });
 
+})();
+
+(function() {
+
 /**
- * the route to a course page
+ * the route for the schoolgroup/##/hws page
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 2.0
+ * @copyright: Nerdeez
  */
+
+Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
+	enter: function(){
+		this.populateMastheadSchoolgroupRoutes(this.modelFor('schoolgroup'));
+		var masthead = Nerdeez.get('masthead');
+		masthead.addObject({route: 'hws.index', model: this.modelFor('schoolgroup'), title: "H.W's"});
+	},
+	
+    model: function(){
+		this.redirectIfNeeded(this.modelFor('schoolgroup'));
+        return Nerdeez.Hw.find({school_group__id: this.modelFor('schoolgroup').get('id')});
+    },
+    setupController: function(controller, model){
+	    controller.set('content', model);
+	    	controller.set('schoolGroup', this.modelFor('schoolgroup'));
+    }
+});
+
+})();
+
+(function() {
+
+/**
+ * the route for the homepage
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
+    enter: function(){
+        var masthead = Ember.A();
+        masthead.addObject({route: 'index', model: null, title: 'Home'});
+        Nerdeez.set('masthead', masthead);
+    },
+    
+    model: function(){
+        return Nerdeez.Schoolgroup.find({
+            school_type: 3,
+            image__isnull: false,
+            limit: 10,
+            page: 'search'
+        });
+    },
+    
+    setupController: function(controller, model){
+        this._super(controller, model);
+        var files = Nerdeez.File.find({limit: 1});
+        files.one('didLoad', function(){
+            controller.set('numFiles', files.get('content.totalCount'));    
+        });
+    }
+});
+
+})();
+
+(function() {
+
+/**
+ * the route for the loading screen
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.LoadingRoute = Nerdeez.NerdeezRoute.extend({});
+
+})();
+
+(function() {
+
+/**
+ * the route for logining out
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.LogoutRoute = Ember.Route.extend({
+    redirect: function(){
+        var auth = Nerdeez.Auth.current();
+        auth.set('username', null);
+        auth.set('apiKey', null);
+        auth.set('id', null);
+        $.removeCookie('username');
+        $.removeCookie('apiKey');
+        $.removeCookie('id');
+        FB.logout();
+        this.transitionTo('index');
+    }
+});
+
+
+
+
+
+})();
+
+(function() {
+
+/**
+ * the route for the reset password page
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.ResetPasswordRoute = Nerdeez.NerdeezRoute.extend({
+    
+    /**
+     * will grab the params from the url and set them in the controller 
+     */
+    setupController: function(controller, model){
+        controller.set('email', this.getURLParameter('email'));
+        controller.set('hash',this.getURLParameter('hash'));
+    }
+});
+
+})();
+
+(function() {
+
+/**
+ * the route for the school gorup about page
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+
+
+Nerdeez.SchoolgroupAboutRoute = Nerdeez.LoginRequired.extend({
+	enter: function(){
+		this.populateMastheadSchoolgroupRoutes(this.modelFor('schoolgroup'));
+		var masthead = Nerdeez.get('masthead');
+		masthead.addObject({route: 'schoolgroup.about', model: this.modelFor('schoolgroup'), title: 'About'});
+	},
+	
+    model: function(){
+        return this.modelFor('schoolgroup');
+    }
+});
+
+})();
+
+(function() {
+
+/**
+ * the route for the schoolgroup
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 2.0
+ * @copyright: Nerdeez
+ */
+
 Nerdeez.SchoolgroupRoute = Nerdeez.NerdeezRoute.extend({
 	
     model: function(param){
@@ -3322,6 +3552,20 @@ Nerdeez.SchoolgroupRoute = Nerdeez.NerdeezRoute.extend({
     }
 });
 
+})();
+
+(function() {
+
+/**
+ * the route for a schoolgroup wall page
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 2.0
+ * @copyright: Nerdeez
+ * 
+ */
+
 /**
  * the route to a course wall page
  */
@@ -3337,105 +3581,83 @@ Nerdeez.SchoolgroupWallRoute = Nerdeez.NerdeezRoute.extend({
     }
 });
 
-/**
- * the route to a course files page
- */
-Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
-	enter: function(){
-		this.populateMastheadSchoolgroupRoutes(this.modelFor('schoolgroup'));
-		var masthead = Nerdeez.get('masthead');
-		masthead.addObject({route: 'hws.index', model: this.modelFor('schoolgroup'), title: "H.W's"});
-	},
-	
-    model: function(){
-		this.redirectIfNeeded(this.modelFor('schoolgroup'));
-        return Nerdeez.Hw.find({school_group__id: this.modelFor('schoolgroup').get('id')});
-    },
-    setupController: function(controller, model){
-	    controller.set('content', model);
-	    	controller.set('schoolGroup', this.modelFor('schoolgroup'));
-    }
-});
+})();
+
+(function() {
 
 /**
- * the route to a single hw page
+ * the route for the search page
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 2.0
+ * @copyright: Nerdeez
  */
-Nerdeez.HwsHwRoute = Nerdeez.LoginRequired.extend({
-	
-    model: function(param){
-        var model = Nerdeez.Hw.find(param.hwId);
-        this.redirectIfNeeded(model);
-        return model;
-    },
-    
-    setupController: function(controller, model){
-	    	controller.set('content', model);
-	    	this.populateMastheadSchoolgroupRoutes(model.get('school_group'));
-		var masthead = Nerdeez.get('masthead');
-		masthead.addObject({route: 'hws.index', model: model.get('school_group'), title: "H.W's"});
-		masthead.addObject({route: 'hws.hw', model: model, title: model.get('title')});
-	},
-});
 
 /**
- * the route to a course about page
+ * the route for the university search, grab the initial data
  */
-Nerdeez.SchoolgroupAboutRoute = Nerdeez.LoginRequired.extend({
-	enter: function(){
-		this.populateMastheadSchoolgroupRoutes(this.modelFor('schoolgroup'));
-		var masthead = Nerdeez.get('masthead');
-		masthead.addObject({route: 'schoolgroup.about', model: this.modelFor('schoolgroup'), title: 'About'});
-	},
-	
-    model: function(){
-        return this.modelFor('schoolgroup');
-    }
-});
-
-/**
- * the route for the add school group page
- */
-Nerdeez.AddSchoolGroupRoute = Nerdeez.NerdeezRoute.extend({
+Nerdeez.SearchRoute = Ember.Route.extend({
 	enter: function(){
 		var masthead = Ember.A();
 		masthead.addObject({route: 'index', model: null, title: 'Home'});
-		masthead.addObject({route: 'addSchoolGroup', model: null, title: 'Add Uni/Faculty/Course'});
+		masthead.addObject({route: 'search', model: null, title: 'Search'});
 		Nerdeez.set('masthead', masthead);
 	},
 	
 	model: function(param){
-		
-		//find the id of the university
-		var universityId = 0;
-		for(var i=0; i < Nerdeez.SCHOOLGROUP_TYPE.length; i++){
-			if(Nerdeez.SCHOOLGROUP_TYPE[i].title === 'University'){
-				universityId = Nerdeez.SCHOOLGROUP_TYPE[i].id;
-			}
-		}
-		
-		//return all the universities
-		return Nerdeez.Schoolgroup.find({school_type: universityId});
+		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title', page: 'search'});
 	},
 	
+	serialize: function(model) {
+		  return {search_param: '#'};
+	},
 });
 
-Nerdeez.AddSchoolGroupCourseRoute = Nerdeez.NerdeezRoute.extend({
-	setupController: function(controller, model){
-		this.controllerFor('add_school_group').set('schoolType', Nerdeez.SCHOOLGROUP_TYPE[0].id);
-	}
+})();
+
+(function() {
+
+/**
+ * the routes for all the pages that are under construciton
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 2.0
+ * @copyright: Nerdeez
+ */
+
+/**
+ * all the under construction pages will extend this
+ */
+Nerdeez.UnderConstructionRoute = Ember.Route.extend({
+	
+    renderTemplate: function() {
+        this.render('underConstruction');
+    }
 });
 
-Nerdeez.AddSchoolGroupFacultyRoute = Nerdeez.NerdeezRoute.extend({
-	setupController: function(controller, model){
-		this.controllerFor('add_school_group').set('schoolType', Nerdeez.SCHOOLGROUP_TYPE[1].id);
-	}
+Nerdeez.DonateRoute = Nerdeez.UnderConstructionRoute.extend({
+	enter: function(){
+		var masthead = Ember.A();
+		masthead.addObject({route: 'index', model: null, title: 'Home'});
+		masthead.addObject({route: 'donate', model: null, title: 'Buy T-Shirts'});
+		Nerdeez.set('masthead', masthead);
+	},
 });
 
-Nerdeez.AddSchoolGroupUniRoute = Nerdeez.NerdeezRoute.extend({
-	setupController: function(controller, model){
-		this.controllerFor('add_school_group').set('schoolType', Nerdeez.SCHOOLGROUP_TYPE[2].id);
-	}
-});
+})();
+
+(function() {
+
+/**
+ * the route for email verification after registration
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
 
 /**
  * when the user clicks the mail verification link this will lead to this url
@@ -3456,19 +3678,19 @@ Nerdeez.VerifyEmailRoute = Nerdeez.NerdeezRoute.extend({
         var adapter = this.get('store.adapter');
         return adapter.ajax(
             SERVER_URL + '/api/v1/utilities/verify-email/',
-	        	'POST',
-	        	{
-		        	success: function(json){
-		        	    
-		        	},
-		        	error: function(json){
-		        	    
-		        	},
-		        	data:{
-		        		email: email,
-		        		hash: hash
-		        	}
-	        	}
+                'POST',
+                {
+                    success: function(json){
+                        
+                    },
+                    error: function(json){
+                        
+                    },
+                    data:{
+                        email: email,
+                        hash: hash
+                    }
+                }
         );
         
     },
@@ -3484,22 +3706,19 @@ Nerdeez.VerifyEmailRoute = Nerdeez.NerdeezRoute.extend({
     },
     
     actions: {
-	    	
-	    	/**
-	    	 * when the user fails to activate the account
-		 * @param {Object} reason
-	    	 */
-	    	error: function(reason){
-		    	this.transitionTo('register');
-		    	var registerController = this.controllerFor('register');
-		    	registerController.set('isError', true);
-		    	registerController.set('message', 'Account activation failed');
-	    	}
+            
+            /**
+             * when the user fails to activate the account
+         * @param {Object} reason
+             */
+            error: function(reason){
+                this.transitionTo('register');
+                var registerController = this.controllerFor('register');
+                registerController.set('isError', true);
+                registerController.set('message', 'Account activation failed');
+            }
     }
 });
-
-Nerdeez.LoadingRoute = Nerdeez.NerdeezRoute.extend({});
-
 
 })();
 
