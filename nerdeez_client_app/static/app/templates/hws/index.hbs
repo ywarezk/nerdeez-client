@@ -11,7 +11,9 @@
 	
 	<!-- the upper part with the details -->
 	<div class="row">
-		{{partial "schoolgroup-short-description"}}
+		{{#with schoolGroup as model}}
+		{{partial wall-header}}
+		{{/with}}
 	</div>
 	<!-- end of upper part -->
 	

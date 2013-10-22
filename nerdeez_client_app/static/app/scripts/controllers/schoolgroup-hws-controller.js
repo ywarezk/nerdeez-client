@@ -7,7 +7,7 @@
  * @copyright: Nerdeez Ltd.
  */
 
-Nerdeez.HwsIndexController = Ember.ObjectController.extend({
+Nerdeez.HwsIndexController = Ember.ObjectController.extend(Nerdeez.LikeDislike,{
 	/**
 	 * holds the title of a new hw
 	 * @type {String}
