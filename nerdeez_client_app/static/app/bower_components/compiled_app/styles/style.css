@@ -1018,6 +1018,11 @@ a.nerdeez-button {
 .search .results .hoveron:hover .blurred-img {
   display: block !important;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_search\.scss}line{font-family:\00003344}}
+.search .pagination {
+  text-align: center;
+  font-size: 30px;
+}
 
 /**
  * styles define for the falt pages: about, terms, privacy ... 

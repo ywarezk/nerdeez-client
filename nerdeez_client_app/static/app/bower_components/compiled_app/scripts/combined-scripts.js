@@ -1064,6 +1064,13 @@ Nerdeez.FbCommentComponent = Ember.Component.extend({
 
 (function() {
 
+//require('scripts/components/pagination-component');
+
+
+})();
+
+(function() {
+
 /**
  * holds the model for the schoolgroups
  * 
@@ -1358,6 +1365,12 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 	* @type {boolean}
 	*/
 	isLoading: false,
+	
+	/**
+	 * will be binded to the pagination component extra params
+	 * @type {Object}
+	 */
+	extraParams: {'page': 'search', 'order_by': 'title' },
 
 	/**
 	 * triggers when the users is using the search bar / filter / sort by
@@ -1375,7 +1388,8 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 	 		searchmsg['order_by'] = this.get('sortBy');
 	 	if (this.get('filterBy') !== null)
 	 		searchmsg['school_type'] = this.get('filterBy');
-
+        
+        xthis.set('extraParams', searchmsg);
 	 	var srch = Nerdeez.Schoolgroup.find(searchmsg);
 
 		this.set('content', srch);
