@@ -7,7 +7,7 @@
  * @copyright: Nerdeez Ltd.
  */
 
-Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,Nerdeez.LikeDislike,{
+Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,Nerdeez.LikeDislike,Nerdeez.Share,{
 	/**
 	 * will hold the flag message input from the flag modal
 	 * @type {String}
@@ -63,8 +63,12 @@ Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,Nerdeez.L
 		/**
 		 * when the user clicks to share with facebook
 		 */
-		fbShare: function(){
-			//TODO
+		fbShare: function(recordToShare){
+			this.set('shareInit', function(){
+				this.set('shareLink', recordToShare.get('file'));
+				this.set('shareName', recordToShare.get('title'));
+			});
+			this.send('share');
 		},
 		
 		/**

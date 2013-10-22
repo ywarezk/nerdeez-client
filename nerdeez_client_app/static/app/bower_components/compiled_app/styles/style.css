@@ -415,6 +415,17 @@ a.nerdeez-button {
   display: block;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003391}}
+.nerdeez-tooltip {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003396}}
+.nerdeez-button.nerdeez-tooltip {
+  display: block;
+}
+
 /**
 * holds the styles of the header
 * @copyright: nerdeez.com Ltd.
@@ -1340,23 +1351,70 @@ a.nerdeez-button {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003147}}
+.hw .facebook-comments .fb-comments {
+  display: block;
+  width: 100% !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003150}}
+.hw .facebook-comments .fb-comments span {
+  width: 100% !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003152}}
+.hw .facebook-comments .fb-comments span iframe {
+  width: 100% !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003158}}
+.hw .table {
+  table-layout: fixed;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003160}}
 .hw .table td {
   vertical-align: middle;
+  font-size: 13px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003163}}
 .hw .table td .badge {
   position: relative;
   top: 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003154}}
-.hw .table a.nerdeez-button {
-  font-size: 26px;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003169}}
+.hw .table td .actions-table td {
+  border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003172}}
+.hw .table td .actions-table td .single-action a {
+  max-width: 25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003178}}
+.hw .table td .rating {
+  font-size: 15px;
+  width: auto !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003183}}
+.hw .table td .rating ul li i {
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003190}}
+.hw .table a.nerdeez-button {
+  font-size: 19px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003192}}
 .hw .table a.nerdeez-button i.icon-flag {
   color: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003163}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003197}}
+.hw .table a {
+  font-size: 13px;
+  cursor: pointer;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003202}}
+.hw .table td:first-child {
+  max-width: 50px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_schoolgroup\.scss}line{font-family:\00003209}}
 .hw #flag-file textarea {
   height: 89px;
 }

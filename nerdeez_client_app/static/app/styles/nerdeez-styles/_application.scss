@@ -388,3 +388,11 @@ a.nerdeez-button{
 }
 
 
+.nerdeez-tooltip{
+    -webkit-backface-visibility: hidden;
+    -webkit-transform:translate3d(0,0,0);
+}
+
+.nerdeez-button.nerdeez-tooltip{
+    display: block;
+}

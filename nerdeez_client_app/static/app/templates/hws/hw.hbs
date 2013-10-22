@@ -19,7 +19,8 @@
 	<div class="row">
 		
 		<!-- will hold the comments -->
-		<div class="span5">
+		<div class="span5 facebook-comments">
+			{{fb-comment}}
 		</div>
 		<!-- end comments -->
 		
@@ -65,28 +66,16 @@
 										File name
 									</th>
 									<th>
-										Size
-									</th>
-									<th>
-										Like
-									</th>
-									<th>
-										DisLike
+										Size (MB)
 									</th>
 									<th>
 										Grade
 									</th>
 									<th>
-										Share
-									</th>
-									<th>
 										Date
 									</th>
 									<th>
-										Download
-									</th>
-									<th>
-										Flag
+										Actions
 									</th>
 								</tr>
 							</thead>
@@ -94,50 +83,73 @@
 								{{#each files}}
 									<tr>
 										<td>
-											{{title}}
-										</td>
-										<td class="center">
-											{{getSize}}MB
-										</td>
-										<td class="center">
-											<a class="nerdeez-button" {{action "incLike" this}}>
-												<i class="icon-thumbs-up-alt">
-												</i>
+											<a class="nerdeez-tooltip" data-toggle="tooltip" data-placement="right" title="Download file: {{unbound title}}" {{action "downloadFile" this}}>
+												{{title}}
 											</a>
-											<span class="badge">
-											{{like}}
-											</span>
 										</td>
 										<td class="center">
-											<a class="nerdeez-button" {{action "incDislike" this}}>
-												<i class="icon-thumbs-down-alt">
-												</i>
-											</a>
-											<span class="badge">
-											{{dislike}}
-											</span>
+											{{getSize}}
 										</td>
 										<td class="center">
 											{{getRating grade 5}}
-										</td>
-										<td class="center">
-											<a class="nerdeez-button" {{action "fbShare"}}>
-												<i class="icon-facebook-sign">
-												</i>
-											</a>
 										</td>
 										<td>
 											{{getCreationDate}}
 										</td>
 										<td class="center">
-											<a class="nerdeez-button" {{action "downloadFile" this}}>
-												<i class="icon-download"></i>
-											</a>								
-										</td>
-										<td class="center">
-											<a class="nerdeez-button" {{action "flagFile" this target="view"}}>
-												<i class="icon-flag"></i>
-											</a>								
+											<table class="actions-table">
+												<tr>
+													<td>
+														<div class="single-action">
+															<a data-container="body" class="nerdeez-button nerdeez-tooltip" data-placement="right" data-toggle="tooltip" title="Like" {{action "incLike" this}}>
+																<i class="icon-thumbs-up-alt">
+																</i>
+															</a>
+															<span class="badge">
+															{{like}}
+															</span>
+														</div>
+													</td>
+													<td>
+														<div class="single-action">
+															<a class="nerdeez-button nerdeez-tooltip" data-container="body" data-placement="right" data-toggle="tooltip" title="Dislike" {{action "incDislike" this}}>
+															<i class="icon-thumbs-down-alt">
+															</i>
+															</a>
+															<span class="badge">
+															{{dislike}}
+															</span>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="single-action">
+															<a class="nerdeez-button nerdeez-tooltip" data-toggle="tooltip" data-placement="right" title="Share on facebook" {{action "fbShare" this}}>
+																<i class="icon-facebook-sign">
+																</i>
+															</a>
+														</div>
+													</td>
+													<td>
+														<div class="single-action">
+															<a class="nerdeez-button nerdeez-tooltip" data-toggle="tooltip" data-placement="right" title="Download" {{action "downloadFile" this}}>
+																<i class="icon-download"></i>
+															</a>		
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td colspan="2">
+														<div class="single-action">
+															<a class="nerdeez-button nerdeez-tooltip" data-toggle="tooltip" data-placement="right" title="Flag as violation" {{action "flagFile" this target="view"}}>
+																<i class="icon-flag"></i>
+															</a>	
+														</div>
+													</td>
+												</tr>
+											</table>
+											
 										</td>
 									</tr>
 								{{/each}}

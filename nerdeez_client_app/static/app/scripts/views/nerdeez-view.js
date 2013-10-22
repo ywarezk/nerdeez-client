@@ -28,6 +28,8 @@ Ember.View.reopen({
         
         filepicker.setKey(FILEPICKER_API_KEY);
         
+        $('.nerdeez-tooltip').tooltip();
+        
     },
     
     // willDestroyElement: function(){

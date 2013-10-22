@@ -1146,7 +1146,7 @@ function program5(depth0,data) {
 function program7(depth0,data) {
   
   var buffer = '', stack1, hashTypes, hashContexts;
-  data.buffer.push("\n						<table class=\"table table-bordered table-striped table-highlight\">\n							<thead>\n								<tr>\n									<th>\n										File name\n									</th>\n									<th>\n										Size\n									</th>\n									<th>\n										Like\n									</th>\n									<th>\n										DisLike\n									</th>\n									<th>\n										Grade\n									</th>\n									<th>\n										Share\n									</th>\n									<th>\n										Date\n									</th>\n									<th>\n										Download\n									</th>\n									<th>\n										Flag\n									</th>\n								</tr>\n							</thead>\n							<tbody>\n								");
+  data.buffer.push("\n						<table class=\"table table-bordered table-striped table-highlight\">\n							<thead>\n								<tr>\n									<th>\n										File name\n									</th>\n									<th>\n										Size (MB)\n									</th>\n									<th>\n										Grade\n									</th>\n									<th>\n										Date\n									</th>\n									<th>\n										Actions\n									</th>\n								</tr>\n							</thead>\n							<tbody>\n								");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "files", {hash:{},inverse:self.noop,fn:self.program(8, program8, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
@@ -1157,54 +1157,62 @@ function program7(depth0,data) {
 function program8(depth0,data) {
   
   var buffer = '', stack1, hashTypes, hashContexts, options;
-  data.buffer.push("\n									<tr>\n										<td>\n											");
+  data.buffer.push("\n									<tr>\n										<td>\n											<a class=\"nerdeez-tooltip\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Download file: ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\" ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "downloadFile", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n												");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n										</td>\n										<td class=\"center\">\n											");
+  data.buffer.push("\n											</a>\n										</td>\n										<td class=\"center\">\n											");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "getSize", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("MB\n										</td>\n										<td class=\"center\">\n											<a class=\"nerdeez-button\" ");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "incLike", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n												<i class=\"icon-thumbs-up-alt\">\n												</i>\n											</a>\n											<span class=\"badge\">\n											");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "like", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n											</span>\n										</td>\n										<td class=\"center\">\n											<a class=\"nerdeez-button\" ");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "incDislike", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n												<i class=\"icon-thumbs-down-alt\">\n												</i>\n											</a>\n											<span class=\"badge\">\n											");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "dislike", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n											</span>\n										</td>\n										<td class=\"center\">\n											");
+  data.buffer.push("\n										</td>\n										<td class=\"center\">\n											");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0,depth0],types:["ID","INTEGER"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.getRating || depth0.getRating),stack1 ? stack1.call(depth0, "grade", 5, options) : helperMissing.call(depth0, "getRating", "grade", 5, options))));
-  data.buffer.push("\n										</td>\n										<td class=\"center\">\n											<a class=\"nerdeez-button\" ");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "fbShare", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n												<i class=\"icon-facebook-sign\">\n												</i>\n											</a>\n										</td>\n										<td>\n											");
+  data.buffer.push("\n										</td>\n										<td>\n											");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "getCreationDate", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n										</td>\n										<td class=\"center\">\n											<a class=\"nerdeez-button\" ");
+  data.buffer.push("\n										</td>\n										<td class=\"center\">\n											<table class=\"actions-table\">\n												<tr>\n													<td>\n														<div class=\"single-action\">\n															<a data-container=\"body\" class=\"nerdeez-button nerdeez-tooltip\" data-placement=\"right\" data-toggle=\"tooltip\" title=\"Like\" ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "incLike", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n																<i class=\"icon-thumbs-up-alt\">\n																</i>\n															</a>\n															<span class=\"badge\">\n															");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "like", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n															</span>\n														</div>\n													</td>\n													<td>\n														<div class=\"single-action\">\n															<a class=\"nerdeez-button nerdeez-tooltip\" data-container=\"body\" data-placement=\"right\" data-toggle=\"tooltip\" title=\"Dislike\" ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "incDislike", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n															<i class=\"icon-thumbs-down-alt\">\n															</i>\n															</a>\n															<span class=\"badge\">\n															");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "dislike", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n															</span>\n														</div>\n													</td>\n												</tr>\n												<tr>\n													<td>\n														<div class=\"single-action\">\n															<a class=\"nerdeez-button nerdeez-tooltip\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Share on facebook\" ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "fbShare", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n																<i class=\"icon-facebook-sign\">\n																</i>\n															</a>\n														</div>\n													</td>\n													<td>\n														<div class=\"single-action\">\n															<a class=\"nerdeez-button nerdeez-tooltip\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Download\" ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "downloadFile", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n												<i class=\"icon-download\"></i>\n											</a>								\n										</td>\n										<td class=\"center\">\n											<a class=\"nerdeez-button\" ");
+  data.buffer.push(">\n																<i class=\"icon-download\"></i>\n															</a>		\n														</div>\n													</td>\n												</tr>\n												<tr>\n													<td colspan=\"2\">\n														<div class=\"single-action\">\n															<a class=\"nerdeez-button nerdeez-tooltip\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Flag as violation\" ");
   hashContexts = {'target': depth0};
   hashTypes = {'target': "STRING"};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "flagFile", "", {hash:{
     'target': ("view")
   },contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n												<i class=\"icon-flag\"></i>\n											</a>								\n										</td>\n									</tr>\n								");
+  data.buffer.push(">\n																<i class=\"icon-flag\"></i>\n															</a>	\n														</div>\n													</td>\n												</tr>\n											</table>\n											\n										</td>\n									</tr>\n								");
   return buffer;
   }
 
@@ -1220,7 +1228,11 @@ function program12(depth0,data) {
   data.buffer.push(" Terms ");
   }
 
-  data.buffer.push("<!--\n	handle bar file for a single h.w page\n	\n	Created October 14th, 2013\n	@author: Yariv Katz\n	@version: 1.0\n	@copyright: Nerdeez Ltd. \n-->\n\n<div class=\"hw\">\n	\n	<!-- the upper part with the details -->\n	<div class=\"row\">\n		\n	</div>\n	<!-- end upper part -->\n	\n	<!-- The part that contains the files/comments -->\n	<div class=\"row\">\n		\n		<!-- will hold the comments -->\n		<div class=\"span5\">\n		</div>\n		<!-- end comments -->\n		\n		<!-- will hold the files table -->\n		<div class=\"span5\">\n			\n			<!-- will hold the controlls section -->\n			<div class=\"row\">\n				<div class=\"span5\">\n					<div class=\"single-button pull-left\">\n						<button class=\"button btn btn-primary btn-large\" ");
+  data.buffer.push("<!--\n	handle bar file for a single h.w page\n	\n	Created October 14th, 2013\n	@author: Yariv Katz\n	@version: 1.0\n	@copyright: Nerdeez Ltd. \n-->\n\n<div class=\"hw\">\n	\n	<!-- the upper part with the details -->\n	<div class=\"row\">\n		\n	</div>\n	<!-- end upper part -->\n	\n	<!-- The part that contains the files/comments -->\n	<div class=\"row\">\n		\n		<!-- will hold the comments -->\n		<div class=\"span5 facebook-comments\">\n			");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "fb-comment", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n		</div>\n		<!-- end comments -->\n		\n		<!-- will hold the files table -->\n		<div class=\"span5\">\n			\n			<!-- will hold the controlls section -->\n			<div class=\"row\">\n				<div class=\"span5\">\n					<div class=\"single-button pull-left\">\n						<button class=\"button btn btn-primary btn-large\" ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "uploadFiles", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));

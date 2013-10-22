@@ -143,20 +143,66 @@
 }
 
 .hw{
+    .facebook-comments{
+        .fb-comments{
+            display: block;
+            width: 100% !important;
+            span{
+                width: 100% !important;
+                iframe{
+                    width: 100% !important;
+                }
+            }
+        }
+    }
     .table{
+        table-layout: fixed;
         td{
             vertical-align: middle;
+            font-size: 13px;
             .badge{
                     position: relative;
                     top: 8px;
                 }
+                
+            .actions-table{
+                td{
+                    border: none;
+                    .single-action{
+                        a{
+                            max-width: 25px;
+                        }
+                    }
+                }
+            }
+            .rating{
+                font-size: 15px;
+                width: auto !important;
+                ul{
+                    li{
+                        i{
+                            padding: 0;
+                        }
+                    }
+                }
+            }
         }
         a.nerdeez-button{
-                font-size: 26px;
+                font-size: 19px;
                 i.icon-flag{
                     color: red;
                 }
                 
+        }
+        a{
+            font-size: 13px;
+            cursor: pointer;
+            display: block;
+        }
+        td:first-child{
+            max-width: 50px;
+            white-space: normal;
+            word-wrap: break-word;
         }
     }
     #flag-file{
