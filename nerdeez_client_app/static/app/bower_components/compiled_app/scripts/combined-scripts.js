@@ -1471,7 +1471,7 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 		this.set('content', srch);
 		srch.one('didLoad', function() {
 			xthis.set('isLoading', false);
-			xthis.set('resultNum', xthis.get('content.content.length'));
+			xthis.set('resultNum', this.get('content.totalCount'));
 			$('.result-num').show();
 		});
 		}.observes('searchQuery', 'sortBy', 'filterBy'),
