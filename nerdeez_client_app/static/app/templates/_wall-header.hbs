@@ -38,13 +38,27 @@
 	<div class="main-footer nerdeez-box-footer">
 		<div class="main-share">
 			<ul class="like-status">
-				<li><i class="icon-thumbs-down"></i></li>
-				<li>Dislike:</li>
-				<li>.....</li>
+				<li>
+					<a {{action "incDislike" model}} >
+						<i class="icon-thumbs-down"></i>
+					</a>
+				</li>
+				<li>
+					<span class="alert alert-danger">
+					{{model.dislike}}
+					</span>
+				</li>
 				<li><i class="vertical-line"></i></li>
-				<li><i class="icon-thumbs-up"></i></li>
-				<li>Like:</li>
-				<li>.....</li>
+				<li>
+					<a {{action "incLike" model}} >
+						<i class="icon-thumbs-up"></i>
+					</a>
+				</li>
+				<li>
+					<span class="alert alert-success">
+					{{model.like}}
+					</span>
+				</li>
 			</ul>
 			<div class="fb">
 				<a class="btn_2" {{action share}}>Share on Facebook</a>

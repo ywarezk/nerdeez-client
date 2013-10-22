@@ -72,7 +72,7 @@ Nerdeez.LikeDislike = Ember.Mixin.create({
 		/**
 		 * when the user press the dislike on a resource
 		 */
-		decLike: function(record){
+		incDislike: function(record){
 			var likes = record.get('like');
 			var dislikes = record.get('dislike');
 			if (likes == null || dislikes == null) return;

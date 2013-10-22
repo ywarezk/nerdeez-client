@@ -353,7 +353,7 @@ Nerdeez.LikeDislike = Ember.Mixin.create({
 		/**
 		 * when the user press the dislike on a resource
 		 */
-		decLike: function(record){
+		incDislike: function(record){
 			var likes = record.get('like');
 			var dislikes = record.get('dislike');
 			if (likes == null || dislikes == null) return;
@@ -1819,7 +1819,7 @@ Nerdeez.ContactController = Ember.Controller.extend({
 * @version: 1.0
 */
 
-Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.fbShare, {
+Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.fbShare, Nerdeez.LikeDislike,{
 
 	/**
 	* Init facebook's share function from the Mixin
