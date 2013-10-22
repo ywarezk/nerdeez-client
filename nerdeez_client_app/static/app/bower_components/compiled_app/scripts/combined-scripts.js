@@ -1251,6 +1251,10 @@ Nerdeez.Hw = Nerdeez.NerdeezModel.extend({
 	files: DS.hasMany('Nerdeez.File'),
 	like: DS.attr('number'),
 	dislike: DS.attr('number'),
+	
+	getIconClass: function(){
+	    return 'icon-edit';
+	}.property()
 });
 
 
@@ -4702,7 +4706,6 @@ Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
             });
             this.mappings.set( 'Nerdeez.Hw', { 
                 files: { embedded: 'load' },
-                school_group: { embedded: 'load' },
             });
             // this.mappings.set( 'Nerdeez.File', { 
                 // hw: { embedded: 'load' }

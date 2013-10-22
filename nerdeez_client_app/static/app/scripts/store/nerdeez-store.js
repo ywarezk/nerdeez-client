@@ -54,7 +54,6 @@ Nerdeez.Adapter = Nerdeez.DjangoTastypieAdapter.extend({
             });
             this.mappings.set( 'Nerdeez.Hw', { 
                 files: { embedded: 'load' },
-                school_group: { embedded: 'load' },
             });
             // this.mappings.set( 'Nerdeez.File', { 
                 // hw: { embedded: 'load' }

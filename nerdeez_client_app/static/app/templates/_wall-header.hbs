@@ -19,12 +19,16 @@
 				<h3>
 					{{#if model.isCourse}}
 						Course Name:
-					{{/if}}
-					{{#if model.isFaculty}}
-						Faculty Name:
-					{{/if}}
-					{{#if model.isUniversity}}
-						University Name:
+					{{else}}
+						{{#if model.isFaculty}}
+							Faculty Name:
+						{{else}}
+							{{#if model.isUniversity}}
+								University Name:
+							{{else}}
+								Title:
+							{{/if}}		
+						{{/if}}	
 					{{/if}}
 				</h3>
 				<span>{{model.title}}</span>
