@@ -7,7 +7,7 @@
  * @copyright: Nerdeez Ltd.
  */
 
-Nerdeez.HwsIndexController = Ember.ObjectController.extend(Nerdeez.LikeDislike,{
+Nerdeez.HwsIndexController = Ember.ObjectController.extend(Nerdeez.LikeDislike,Nerdeez.Share,{
 	/**
 	 * holds the title of a new hw
 	 * @type {String}
@@ -152,10 +152,13 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend(Nerdeez.LikeDislike,{
 		/**
 		 * when the user clicks the fb share will use doron's mixins
 		 */
-		fbShare: function(e){
-			//TODO
-			console.log('fb share');
-			return false;
+		fbShare: function(recordToShare){
+			this.set('shareInit', function(){
+				this.set('shareLink', window.location.origin + '/#/schoolgroup/' + this.get('schoolGroup.id') + '/hws/hw/' + recordToShare.get('id') + '/');
+				this.set('shareName', recordToShare.get('title'));
+				this.set('shareDescription', recordToShare.get('description'));
+			});
+			this.send('share');
 		}
 	}
 });

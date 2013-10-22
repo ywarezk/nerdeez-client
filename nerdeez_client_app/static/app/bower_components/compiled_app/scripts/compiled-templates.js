@@ -1363,7 +1363,7 @@ function program12(depth0,data) {
   data.buffer.push("\n								</td>\n								<td class=\"center\">\n									<a ");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "fbShare", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "fbShare", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push(">\n										<i class=\"icon-facebook-sign\">\n										</i>\n									</a>\n								</td>\n								<td>\n									");
   hashTypes = {};
   hashContexts = {};

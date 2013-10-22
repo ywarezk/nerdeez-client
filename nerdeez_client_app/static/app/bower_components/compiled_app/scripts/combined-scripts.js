@@ -546,42 +546,42 @@ Nerdeez.Share = Ember.Mixin.create({
   * @public
   * @type {string}
   */
-  method: 'feed',
+  shareMethod: 'feed',
   /**
   * the dialog title
   * @property
   * @public
   * @type {string}
   */
-  name: 'Nerdeez',
+  shareName: 'Nerdeez',
   /**
   * dialog caption
   * @property
   * @public
   * @type {string}
   */
-  caption: 'Nerdeez - Doing homework together',
+  shareCaption: 'Nerdeez - Doing homework together',
   /**
   * dialog description
   * @property
   * @public
   * @type {string}
   */
-  description: "",
+  shareDescription: "",
   /**
   * dialog link
   * @property
   * @public
   * @type {string}
   */
-  link: window.location.href,
+  shareLink: window.location.href,
   /**
   * dialog image
   * @property
   * @public
   * @type {string}
   */
-  picture: 'https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo.png',
+  sharePicture: 'https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo.png',
 
   /**
     Init function, empty by default.
@@ -605,18 +605,18 @@ Nerdeez.Share = Ember.Mixin.create({
       var xthis = this;
       FB.ui(
       {
-        method: xthis.get('method'),
-        name: xthis.get('name'),
-        caption: xthis.get('caption'),
-        description: xthis.get('description'),
-        link: xthis.get('link'),
-        picture: xthis.get('picture')
+        method: xthis.get('shareMethod'),
+        name: xthis.get('shareName'),
+        caption: xthis.get('shareCaption'),
+        description: xthis.get('shareDescription'),
+        link: xthis.get('shareLink'),
+        picture: xthis.get('sharePicture')
       },
         function(response) {
           if (response && response.post_id) {
-              alert('Post was published.');
+              //alert('Post was published.');
           } else {
-              alert('Post was not published.');
+              //alert('Post was not published.');
           }
         }
       );
@@ -1819,15 +1819,15 @@ Nerdeez.ContactController = Ember.Controller.extend({
 * @version: 1.0
 */
 
-Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.fbShare, Nerdeez.LikeDislike,{
+Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share, Nerdeez.LikeDislike,{
 
 	/**
 	* Init facebook's share function from the Mixin
 	**/
 
 	shareInit: function(){
-		this.set('name', this.get('content.title'));
-		this.set('description', this.get('content.description'));
+		this.set('shareName', this.get('content.title'));
+		this.set('shareDescription', this.get('content.description'));
 	}
 
 });
@@ -2347,7 +2347,7 @@ Nerdeez.AddSchoolGroupCourseController = Ember.ArrayController.extend({
  * @copyright: Nerdeez Ltd.
  */
 
-Nerdeez.HwsIndexController = Ember.ObjectController.extend(Nerdeez.LikeDislike,{
+Nerdeez.HwsIndexController = Ember.ObjectController.extend(Nerdeez.LikeDislike,Nerdeez.Share,{
 	/**
 	 * holds the title of a new hw
 	 * @type {String}
@@ -2492,10 +2492,13 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend(Nerdeez.LikeDislike,{
 		/**
 		 * when the user clicks the fb share will use doron's mixins
 		 */
-		fbShare: function(e){
-			//TODO
-			console.log('fb share');
-			return false;
+		fbShare: function(recordToShare){
+			this.set('shareInit', function(){
+				this.set('shareLink', window.location.origin + '/#/schoolgroup/' + this.get('schoolGroup.id') + '/hws/hw/' + recordToShare.get('id') + '/');
+				this.set('shareName', recordToShare.get('title'));
+				this.set('shareDescription', recordToShare.get('description'));
+			});
+			this.send('share');
 		}
 	}
 });

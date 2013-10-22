@@ -6,15 +6,15 @@
 * @version: 1.0
 */
 
-Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.fbShare, Nerdeez.LikeDislike,{
+Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share, Nerdeez.LikeDislike,{
 
 	/**
 	* Init facebook's share function from the Mixin
 	**/
 
 	shareInit: function(){
-		this.set('name', this.get('content.title'));
-		this.set('description', this.get('content.description'));
+		this.set('shareName', this.get('content.title'));
+		this.set('shareDescription', this.get('content.description'));
 	}
 
 });
