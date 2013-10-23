@@ -96,17 +96,28 @@
 					<div class="span5 pull-right">
 						<div class="footer-social">
 							<ul class="like-status">
-								<li><i class="icon-thumbs-down"></i></li>
-								<li>Dislike:</li>
-								<li>.....</li>
-								<li><i class="vertical-line"></i></li>
-								<li><i class="icon-thumbs-up"></i></li>
-								<li>Like:</li>
-								<li>.....</li>
 								<li>
-									<a href="#" {{action share}}>
-										<i class="icon-facebook-sign"></i>
+									<a {{action "incDislike" model}} >
+										<i class="icon-thumbs-down"></i>
 									</a>
+									<span class="badge badge-tertiary">
+									{{model.dislike}}
+									</span>
+								</li>
+								<li><i class="vertical-line"></i></li>
+								<li>
+									<a {{action "incLike" model}} >
+										<i class="icon-thumbs-up"></i>
+									</a>
+									<span class="badge badge-primary">
+									{{model.like}}
+									</span>
+								</li>
+								<li><i class="vertical-line"></i></li>
+								<li>
+									<div class="fb">
+										<a class="btn_2" {{action share}}>Share on Facebook</a>
+									</div>
 								</li>
 							</ul>
 						</div>

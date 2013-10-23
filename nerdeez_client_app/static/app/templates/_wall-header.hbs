@@ -46,9 +46,7 @@
 					<a {{action "incDislike" model}} >
 						<i class="icon-thumbs-down"></i>
 					</a>
-				</li>
-				<li>
-					<span class="alert alert-danger">
+					<span class="badge badge-tertiary">
 					{{model.dislike}}
 					</span>
 				</li>
@@ -57,16 +55,18 @@
 					<a {{action "incLike" model}} >
 						<i class="icon-thumbs-up"></i>
 					</a>
-				</li>
-				<li>
-					<span class="alert alert-success">
+					<span class="badge badge-primary">
 					{{model.like}}
 					</span>
 				</li>
+				<li><i class="vertical-line"></i></li>
+				<li>
+					<div class="fb">
+						<a class="btn_2" {{action share}}>Share on Facebook</a>
+					</div>
+				</li>
 			</ul>
-			<div class="fb">
-				<a class="btn_2" {{action share}}>Share on Facebook</a>
-			</div>
+			
 		</div>
 	</div>
 </div>

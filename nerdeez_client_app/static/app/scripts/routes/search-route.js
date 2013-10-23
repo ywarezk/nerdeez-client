@@ -22,6 +22,11 @@ Nerdeez.SearchRoute = Ember.Route.extend({
 		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title', page: 'search'});
 	},
 	
+	setupController: function(controller, model){
+	    this._super(controller, model);
+	    controller.set('resultNum', model.get('content.totalCount'));
+	},
+	
 	serialize: function(model) {
 		  return {search_param: '#'};
 	},

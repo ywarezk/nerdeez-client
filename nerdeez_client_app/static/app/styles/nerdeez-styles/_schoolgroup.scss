@@ -104,46 +104,52 @@
                         }
                     }
                 }
+                .fb{
+                    margin-right: 0 !important;
+                }
             }
         }
     }
-}
-.table {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    box-shadow: -5px 5px 4px 2px #808080;
-    th {
-        padding-left: 25px !important;
-    }
-    td {
-        background-color: #F9F9F9 !important;
-        padding: 0 !important;
-        height: 45px;
-        a {
-            display: block;
-            color: #555555;
-            text-decoration: none;
-            padding-top: 11px;
-            padding-bottom: 12px;
-            padding-left: 20px;
-            padding-right: 20px;
-            i {
-                color: #454545;
-                font-size: 18px;
-                padding-left: 5px;
-                padding-right: 25px;
-                position: relative;
-                top: 3px;
+    
+    .table {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        box-shadow: -5px 5px 4px 2px #808080;
+        th {
+            padding-left: 25px !important;
+        }
+        td {
+            background-color: #F9F9F9 !important;
+            padding: 0 !important;
+            height: 45px;
+            a {
+                display: block;
+                color: #555555;
+                text-decoration: none;
+                padding-top: 11px;
+                padding-bottom: 12px;
+                padding-left: 20px;
+                padding-right: 20px;
+                i {
+                    color: #454545;
+                    font-size: 18px;
+                    padding-left: 5px;
+                    padding-right: 25px;
+                    position: relative;
+                    top: 3px;
+                }
+            }
+            a:focus {
+                background-color: #999999;
+            }
+            a:hover {
+                background-color: #EEEEEE;
             }
         }
-        a:focus {
-            background-color: #999999;
-        }
-        a:hover {
-            background-color: #EEEEEE;
-        }
     }
+    
 }
+
 
 .schoolgroup-files{
     #new-hw{
@@ -171,7 +177,7 @@
             td{
                 min-width: 70px;
                 a {
-                    color: #555555;
+                    //color: #555555;
                     cursor: pointer;
                     text-decoration: none;
                     i{
@@ -186,6 +192,18 @@
 }
 
 .hw{
+    .nerdeez-box.wallabout{
+        .pic-content{
+            height: 80px;
+            width: 96px;
+            .icon-edit{
+                font-size: 88px;
+                position: relative;
+                top: 36px;
+            }
+        }
+    }
+    
     .facebook-comments{
         .fb-comments{
             display: block;

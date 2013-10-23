@@ -147,7 +147,7 @@ window.fbAsyncInit = function() {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {return;}
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    js.src = "//connect.facebook.net/en_US/all.js";
     fjs.parentNode.insertBefore(js, fjs);
     
 }(document, 'script', 'facebook-jssdk'));
@@ -1208,6 +1208,28 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 		else
 			return false;
 	}.property("school_type"),
+
+	getImageURL: function() {
+		var count = this.get('school_type');
+		var depthString = "";
+		while (count<4) {
+			if (this.get(depthString + ".image"))
+				return this.get(depthString + ".image");
+			else {
+				depthString += ".parent";
+				count++;
+			}
+		}
+		if (this.get('isCourse')) {
+			return STATIC_URL + "img/course-pic.png";
+		}
+		if (this.get('isFaculty')) {
+			return STATIC_URL + "img/Faculty-pic.png";
+		}
+		if (this.get('isUniversity')) {
+			return STATIC_URL + "img/University-pic.png";
+		}
+	}.property("school_type")
 });
 
 
@@ -1955,6 +1977,31 @@ Nerdeez.SchoolgroupWallController = Ember.Controller.extend(Nerdeez.Share, Nerde
 		this.set('shareDescription', this.get('content.description'));
 	}
 
+});
+
+
+})();
+
+(function() {
+
+/**
+ * The controller for the about page
+ * 
+ * Created October 21st, 2013
+ * @author: Doron Nachshon
+ * @version: 1.0
+ * @copyright nerdeez Ltd.
+ */
+
+Nerdeez.SchoolgroupAboutController = Ember.Controller.extend(Nerdeez.Share, Nerdeez.LikeDislike,{
+    /**
+    * Init facebook's share function from the Mixin
+    **/
+
+    shareInit: function(){
+        this.set('shareName', this.get('content.title'));
+        this.set('shareDescription', this.get('content.description'));
+    }
 });
 
 })();
@@ -3716,6 +3763,11 @@ Nerdeez.SearchRoute = Ember.Route.extend({
 	
 	model: function(param){
 		return Nerdeez.Schoolgroup.find({limit: 20, order_by: 'title', page: 'search'});
+	},
+	
+	setupController: function(controller, model){
+	    this._super(controller, model);
+	    controller.set('resultNum', model.get('content.totalCount'));
 	},
 	
 	serialize: function(model) {

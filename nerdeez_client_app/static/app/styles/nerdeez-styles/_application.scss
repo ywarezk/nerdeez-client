@@ -55,7 +55,7 @@ ul.nav.nav-pills li {
  *   top margins between rows and elements
  */
 .top-buffer{
-    margin-top: 20px;
+    margin-top: 20px !important;
 }
 
 /**
@@ -82,7 +82,7 @@ ul.nav.nav-pills li {
 .nerdeez-box {
     height: 150px;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 8;
     box-shadow: -5px 5px 4px 2px gray;
     ul {
         list-style: none;
@@ -122,6 +122,7 @@ ul.nav.nav-pills li {
         float: left;
     }
     .wallabout-action { //action pane
+        padding-left: 20px;
         .pic-content {
             float: left;
             padding-right: 15px;
@@ -155,16 +156,30 @@ ul.nav.nav-pills li {
                 margin: 0;
                 height: 20px;
                 padding-top: 9px;
-                float: left;
-                i {
-                    color: #454545;
+                float: right;
+                i.icon-thumbs-down{
+                   //color: red; 
+                }
+                i.icon-thumbs-up{
+                   //color: green; 
+                }
+                i:hover{
+                    color: #888888;
+                }
+                a{
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+                .fb{
+                    margin-right: 31px;
+                    position: relative;
+                    top: -7px;
                 }
             }
             .like-status {
-                width: 300px;
                 font-size: 16px;
                 i {
-                    color: #454545;
+                    //color: #454545;
                 }
                 .icon-thumbs-up, .icon-thumbs-down {
                     padding-right: 3px;
@@ -473,4 +488,8 @@ a.nerdeez-button{
 
 .nerdeez-button.nerdeez-tooltip{
     display: block;
+}
+
+#content .row{
+    margin-top: 0;
 }
