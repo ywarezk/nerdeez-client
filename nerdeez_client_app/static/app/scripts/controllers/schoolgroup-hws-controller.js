@@ -127,7 +127,7 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend(Nerdeez.LikeDislike,N
 						file.set('size', item.size);
 						file.set('hw', hw);
 						file.transaction.commit();
-    						//hw.get('files').addObject(file);
+    						hw.get('files').addObject(file);
                         //hw.transaction.commit();
 						
 					})
