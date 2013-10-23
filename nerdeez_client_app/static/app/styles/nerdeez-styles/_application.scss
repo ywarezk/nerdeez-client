@@ -253,8 +253,9 @@ input.nerdeez-search{
 }
 
 .nerdeez-inputs{
-    height: 41px !important;
+    height: 100% !important;
     width: 100% !important;
+    @include box-sizing(border-box);
     color: #555555;
 }
 
