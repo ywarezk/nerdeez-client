@@ -125,10 +125,10 @@
 		<div id="carousel-data" class="hidden">
 			{{#each controller}}
 				{{modZeroExcludeFirst this controller.content mod="4" html='</ul></div><div class="item"><ul class="tumbnails clearfix">'}}
-				  {{isFirst this controller.content html='<div class="item active"><ul class="tumbnails clearfix">'}}
+				  {{isFirst this controller.content html='<div class="item active fix-height"><ul class="tumbnails clearfix fix-height">'}}
 					  <li class="">
 						  	<div class="thumbnail" align="center">
-						  		<div class="image-wrapper">
+						  		<div class="image-wrapper fix-height">
 						  			{{#link-to "schoolgroup.about" this}}
 									<img {{bindAttr src="image"}}>
 									{{/link-to}}

@@ -1572,10 +1572,10 @@ function program2(depth0,data) {
   hashContexts = {'html': depth0};
   hashTypes = {'html': "STRING"};
   options = {hash:{
-    'html': ("<div class=\"item active\"><ul class=\"tumbnails clearfix\">")
+    'html': ("<div class=\"item active fix-height\"><ul class=\"tumbnails clearfix fix-height\">")
   },contexts:[depth0,depth0],types:["ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.isFirst || depth0.isFirst),stack1 ? stack1.call(depth0, "", "controller.content", options) : helperMissing.call(depth0, "isFirst", "", "controller.content", options))));
-  data.buffer.push("\n					  <li class=\"\">\n						  	<div class=\"thumbnail\" align=\"center\">\n						  		<div class=\"image-wrapper\">\n						  			");
+  data.buffer.push("\n					  <li class=\"\">\n						  	<div class=\"thumbnail\" align=\"center\">\n						  		<div class=\"image-wrapper fix-height\">\n						  			");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
