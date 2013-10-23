@@ -36,7 +36,7 @@ Nerdeez.AboutRoute = Nerdeez.FlatPageRoute.extend({
 /**
  * route to privacy page
  */
-Nerdeez.PrivacyRoute = Nerdeez.FlatPageRoute.extend({
+Nerdeez.PrivacyRoute = Nerdeez.NerdeezRoute.extend({
 	enter: function(){
 		var masthead = Ember.A();
 		masthead.addObject({route: 'index', model: null, title: 'Home'});
@@ -44,15 +44,15 @@ Nerdeez.PrivacyRoute = Nerdeez.FlatPageRoute.extend({
 		Nerdeez.set('masthead', masthead);
 	},
 	
-	model: function(param){
-		return Nerdeez.Flatpage.find({'title' : 'privacy'});
-	}
+	// model: function(param){
+		// return Nerdeez.Flatpage.find({'title' : 'privacy'});
+	// }
 });
 
 /**
  * route to terms page
  */
-Nerdeez.TermsRoute = Nerdeez.FlatPageRoute.extend({
+Nerdeez.TermsRoute = Nerdeez.NerdeezRoute.extend({
 	enter: function(){
 		var masthead = Ember.A();
 		masthead.addObject({route: 'index', model: null, title: 'Home'});
@@ -60,7 +60,7 @@ Nerdeez.TermsRoute = Nerdeez.FlatPageRoute.extend({
 		Nerdeez.set('masthead', masthead);
 	},
 	
-	model: function(param){
-		return Nerdeez.Flatpage.find({'title': 'terms'});
-	}
+	// model: function(param){
+		// return Nerdeez.Flatpage.find({'title': 'terms'});
+	// }
 });
