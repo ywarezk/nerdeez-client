@@ -1133,10 +1133,10 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 			return STATIC_URL + "img/course-pic.png";
 		}
 		if (this.get('isFaculty')) {
-			return STATIC_URL + "img/Faculty-pic.png";
+			return STATIC_URL + "img/faculty-pic.png";
 		}
 		if (this.get('isUniversity')) {
-			return STATIC_URL + "img/University-pic.png";
+			return STATIC_URL + "img/university-pic.png";
 		}
 	}.property("school_type")
 });

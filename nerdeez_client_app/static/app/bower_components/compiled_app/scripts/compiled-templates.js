@@ -2319,12 +2319,8 @@ function program5(depth0,data) {
 
 function program7(depth0,data) {
   
-  var buffer = '', stack1, stack2, hashTypes, hashContexts, options;
-  data.buffer.push("\n							<li >\n								<div class=\"hoveron\" >\n									<div class=\"span5 resultbox\" ");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "clickResult", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n										<div class=\"result-action\">\n											<div class=\"pic-container\">\n												<div ");
+  var buffer = '', stack1, stack2, hashContexts, hashTypes, options;
+  data.buffer.push("\n							<li >\n								<div class=\"hoveron\" >\n									<div class=\"span5 resultbox\">\n										<div class=\"result-action\">\n											<div class=\"pic-container\">\n												<div ");
   hashContexts = {'class': depth0};
   hashTypes = {'class': "STRING"};
   options = {hash:{
@@ -2387,7 +2383,11 @@ function program7(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "num_files", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("</h5>\n												</li>\n											</ul>\n										</div>\n										<div class=\"hoveron-toggle\">\n											<div class=\"hoveron-main\">\n												");
+  data.buffer.push("</h5>\n												</li>\n											</ul>\n										</div>\n										<div class=\"hoveron-toggle\" ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "clickResult", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n											<div class=\"hoveron-main\">\n												");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(22, program22, data),contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
@@ -2476,7 +2476,7 @@ function program24(depth0,data) {
     'optionLabelPath': ("content.title"),
     'valueBinding': ("filterBy")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n							<div class=\"select-icon\">\n								<i class=\"icon-sort\"></i>\n							</div>\n						</div>\n					</div>\n				</div>\n			</div>\n			\n			<div class=\"row\">\n				<div class=\"span7\">\n					<form class=\"form-search nerdeez-inputs\">\n						");
+  data.buffer.push("\n							<div class=\"select-icon\">\n								<i class=\"icon-sort\"></i>\n							</div>\n						</div>\n					</div>\n				</div>\n			</div>\n			\n			<div class=\"row\">\n				<div class=\"span7\">\n					<div class=\"nerdeez-inputs\">\n						");
   hashContexts = {'class': depth0,'valueBinding': depth0,'placeholder': depth0};
   hashTypes = {'class': "STRING",'valueBinding': "STRING",'placeholder': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
@@ -2489,7 +2489,7 @@ function program24(depth0,data) {
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "isLoading", {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n					</form>\n				</div>\n				<div class=\"span3\">\n					<div class=\"sortby pull-right\">\n						<h5>Sort By</h5>\n						<div class=\"dropdown\">\n							<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\"> \n								");
+  data.buffer.push("\n					</div>\n				</div>\n				<div class=\"span3\">\n					<div class=\"sortby pull-right\">\n						<h5>Sort By</h5>\n						<div class=\"dropdown\">\n							<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\"> \n								");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "controller.sortName", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
