@@ -2638,9 +2638,13 @@ Nerdeez.HwsIndexController = Ember.ObjectController.extend(Nerdeez.LikeDislike,N
 						file.set('file', item.file);
 						file.set('size', item.size);
 						file.set('hw', hw);
-						file.transaction.commit();						
+						file.transaction.commit();
+    						//hw.get('files').addObject(file);
+                        //hw.transaction.commit();
+						
 					})
 					xthis.set('isNewHwLoading', false);
+					hw.reload();
 					onSuccess();
 				}
 				else{
@@ -3613,7 +3617,13 @@ Nerdeez.LogoutRoute = Ember.Route.extend({
         $.removeCookie('username');
         $.removeCookie('apiKey');
         $.removeCookie('id');
-        FB.logout();
+        try{
+            FB.logout();    
+        }
+        catch(e){
+            console.log('didt find fb');
+        }
+        
         this.transitionTo('index');
     }
 });

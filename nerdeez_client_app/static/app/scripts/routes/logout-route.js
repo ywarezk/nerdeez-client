@@ -16,7 +16,13 @@ Nerdeez.LogoutRoute = Ember.Route.extend({
         $.removeCookie('username');
         $.removeCookie('apiKey');
         $.removeCookie('id');
-        FB.logout();
+        try{
+            FB.logout();    
+        }
+        catch(e){
+            console.log('didt find fb');
+        }
+        
         this.transitionTo('index');
     }
 });
