@@ -19,7 +19,13 @@ Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
         return Nerdeez.Hw.find({school_group__id: this.modelFor('schoolgroup').get('id')});
     },
     setupController: function(controller, model){
+        if (model == null)this.redirectIfNeeded(this.modelFor('schoolgroup'));
 	    controller.set('content', model);
 	    	controller.set('schoolGroup', this.modelFor('schoolgroup'));
+    },
+    actions: {
+        error: function(temp1, temp2){
+            console.log('ERRoR');
+        }
     }
 });

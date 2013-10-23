@@ -100,6 +100,8 @@ Nerdeez.LoginRequired = Nerdeez.NerdeezRoute.extend({
 	        	this.transitionTo('login');
         }
 	},
+	
+	
     // redirect: function(){
         // this.redirectIfNeeded(this.model());
     // }
