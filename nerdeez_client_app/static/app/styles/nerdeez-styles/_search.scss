@@ -58,10 +58,12 @@
 		border-right: 0;
 		.search-query {
 			border-radius: 0;
-			height: 100%;
+			height: auto;
 			width: 100%;
 			padding-right: 30px;
 			font-size: 16px;
+			padding-top: 9px;
+			padding-bottom: 9px;
 		}
 		.icon-search, .loading { //search icon and loading ball
 			float: right;
