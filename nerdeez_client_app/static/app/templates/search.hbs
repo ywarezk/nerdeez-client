@@ -10,7 +10,6 @@ version: 1.0
 -->
 
 <div class="search">
-	
 	<!-- begin upper controllers -->
 	<div class="row">
 		<div class="span10">
@@ -77,7 +76,6 @@ version: 1.0
 	<!-- begin results -->
 	<div class="row">
 		<div class="span10">
-			
 			<div class="row">
 				<div class="span10">
 					<div class="result-num">
@@ -88,108 +86,105 @@ version: 1.0
 			</div>
 			
 			<div class="row">
-					
-					<ol class="results">
-						{{#each controller}}
-							<li >
-								<div class="hoveron" >
-									<div class="span5 resultbox">
-										<div class="result-action">
-											<div class="pic-container">
-												<div {{bind-attr class="getIconClass"}}>
-													<i class="standard-img"></i>
-													<i class="blurred-img"></i>
-												</div>
+				<ol class="results">
+					{{#each controller}}
+						<li >
+							<div class="hoveron" >
+								<div class="span5 resultbox">
+									<div class="result-action">
+										<div class="pic-container">
+											<div class="desc-icon">
+												<img {{bind-attr src="getImage"}} />
 											</div>
-											<div class="result-text">
-												<h5>
-													{{#if isCourse}}
-														Course Name:
-													{{/if}}
-													{{#if isFaculty}}
-														Faculty Name:
-													{{/if}}
-													{{#if isUniversity}}
-														University Name:
-													{{/if}}
-												</h5>
-												<span>{{title}}</span>
-											</div>
-											<div class="result-text">
-													<h5> Description: </h5>
-													<span>{{description}}</span>
-											</div>
-											<div class="result-text">
-												<h5> 
-													{{#if isCourse}}
-														Faculty:
-													{{/if}}
-													{{#if isFaculty}}
-														University:
-													{{/if}}
-												</h5>
-												<span>
-													{{#unless isUniversity}}
-														{{parent.title}}
-													{{/unless}}
-												</span>
-											</div>
-											<div class="result-text">
+										</div>
+										<div class="result-text">
+											<h5>
 												{{#if isCourse}}
-													<h5> University: </h5>
-													<span>{{parent.parent.title}}</span>
+													Course Name:
 												{{/if}}
-											</div>
+												{{#if isFaculty}}
+													Faculty Name:
+												{{/if}}
+												{{#if isUniversity}}
+													University Name:
+												{{/if}}
+											</h5>
+											<span>{{title}}</span>
 										</div>
-										<div class="result-footer">
-											<ul class="entry-info">
-												<li>
-													{{getRating grade 5}}	
-												</li>
-												<li>
-													<i class="icon-user"></i>
-													<h5>Users: {{num_users}}</h5>
-												</li>
-												<li>
-													<i class="icon-file-text"></i>
-													<h5>Files: {{num_files}}</h5>
-												</li>
-											</ul>
+										<div class="result-text">
+												<h5> Description: </h5>
+												<span>{{description}}</span>
 										</div>
-										<div class="hoveron-toggle" {{action "clickResult" this}}>
-											<div class="hoveron-main">
-												{{#link-to "schoolgroup.wall" this}}
-												<div class="hoveron-block hoveron-wall">
-													<div class="block-icon wall-icon">
-														<i class="icon-comments"></i>
-													</div>
-													<div class="block-text wall-text">
-														<h3>Wall</h3>
-													</div>
-												</div>
-												{{/link-to}}
-												{{#link-to "hws.index" this}}
-												<div class="hoveron-block hoveron-files">
-													<div class="block-icon files-icon">
-														<i class="icon-file"></i>
-													</div>
-													<div class="block-text files-text">
-														<h3>H.W's</h3>
-													</div>
-												</div>
-												{{/link-to}}
-											</div>
-											<div class="hoveron-blur"></div>
+										<div class="result-text">
+											<h5> 
+												{{#if isCourse}}
+													Faculty:
+												{{/if}}
+												{{#if isFaculty}}
+													University:
+												{{/if}}
+											</h5>
+											<span>
+												{{#unless isUniversity}}
+													{{parent.title}}
+												{{/unless}}
+											</span>
+										</div>
+										<div class="result-text">
+											{{#if isCourse}}
+												<h5> University: </h5>
+												<span>{{parent.parent.title}}</span>
+											{{/if}}
 										</div>
 									</div>
+									<div class="result-footer">
+										<ul class="entry-info">
+											<li>
+												{{getRating grade 5}}	
+											</li>
+											<li>
+												<i class="icon-user"></i>
+												<h5>Users: {{num_users}}</h5>
+											</li>
+											<li>
+												<i class="icon-file-text"></i>
+												<h5>Files: {{num_files}}</h5>
+											</li>
+										</ul>
+									</div>
+									<div class="hoveron-toggle" {{action "clickResult" this}}>
+										<div class="hoveron-main">
+											{{#link-to "schoolgroup.wall" this}}
+											<div class="hoveron-block hoveron-wall">
+												<div class="block-icon wall-icon">
+													<i class="icon-comments"></i>
+												</div>
+												<div class="block-text wall-text">
+													<h3>Wall</h3>
+												</div>
+											</div>
+											{{/link-to}}
+											{{#link-to "hws.index" this}}
+											<div class="hoveron-block hoveron-files">
+												<div class="block-icon files-icon">
+													<i class="icon-file"></i>
+												</div>
+												<div class="block-text files-text">
+													<h3>H.W's</h3>
+												</div>
+											</div>
+											{{/link-to}}
+										</div>
+										<div class="hoveron-blur"></div>
+									</div>
 								</div>
-							</li>
-						{{/each}}
-					</ol>
-					{{nerdeez-pagination paginationController=this paginationExtraParams=extraParams paginationPage=page paginationTotalResult=resultNum}}
+							</div>
+						</li>
+					{{/each}}
+				</ol>
+				{{nerdeez-pagination paginationController=this paginationExtraParams=extraParams paginationPage=page paginationTotalResult=resultNum}}
 			</div>
 		</div>
 	</div>
 	<!-- end results-->
-	
 </div>

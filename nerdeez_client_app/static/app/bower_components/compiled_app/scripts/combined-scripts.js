@@ -1118,6 +1118,18 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 			return false;
 	}.property("school_type"),
 
+	getImage: function() {
+		if (this.get('isCourse')) {
+			return STATIC_URL + "img/course-pic.png";
+		}
+		if (this.get('isFaculty')) {
+			return STATIC_URL + "img/faculty-pic.png";
+		}
+		if (this.get('isUniversity')) {
+			return STATIC_URL + "img/university-pic.png";
+		}
+	}.property("school_type"),
+
 	getImageURL: function() {
 		var count = this.get('school_type');
 		var depthString = "";
@@ -1129,15 +1141,7 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 				count++;
 			}
 		}
-		if (this.get('isCourse')) {
-			return STATIC_URL + "img/course-pic.png";
-		}
-		if (this.get('isFaculty')) {
-			return STATIC_URL + "img/faculty-pic.png";
-		}
-		if (this.get('isUniversity')) {
-			return STATIC_URL + "img/university-pic.png";
-		}
+		return this.get('getImage');
 	}.property("school_type")
 });
 

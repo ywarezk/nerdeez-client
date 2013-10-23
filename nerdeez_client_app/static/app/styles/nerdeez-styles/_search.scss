@@ -124,61 +124,34 @@
 			float: left;
 		.hoveron { //hoverons are here for the hover design on the resultbox
 			.resultbox { //each result
-          			position: relative;
-      			    height: 184px;
-      			    margin-bottom: 30px;
-      			    box-shadow: -5px 5px 4px 2px gray;
-      			    .result-action { //action pane
-          			    	height: 120px;
-          			    	background-color: white;
-          			    	padding-top: 24px;
-          			    	padding-left: 15px;
-          			    	padding-right: 15px;
-          			    	border: 1px solid gray;
-          			    	border-bottom: 0;
-        				    .pic-container {
-            				    	float: left;
-            				    	padding-right: 15px;
-        				    }
-        				    .result-text {
-            				    	display: table;
-        				    }
-        				    i {
-            				    	display: block;
-            				    	height: 95px;
-            				    	width: 100px;
-            				    	float: left;
-            				}
-        				    .faculty-icon {
-            				    	.standard-img {
-              				    		display: block;
-              				    		background-image: image-url("faculty-pic.png");
-            				    	}
-        				    	.blurred-img {
-          				    		display: none;
-          				    		background-image: image-url("faculty-pic-blurred.png");
-        				    	}
-    				    }
-    				    .course-icon {
-        				    	.standard-img {
-          				    		display: block;
-          				    		background-image: image-url("course-pic.png");
-        				    	}
-        				    	.blurred-img {
-          				    		display: none;
-          				    		background-image: image-url("course-pic-blurred.png");
-        				    	}
-    				    }
-    				    .university-icon {
-        				    	.standard-img {
-          				    		display: block;
-          				    		background-image: image-url("university-pic.png");
-        				    	}
-      					    .blurred-img {
-          					    	display: none;
-          					    	background-image: image-url("university-pic-blurred.png");
-      					    }
-    				   }
+      			position: relative;
+  			    height: 184px;
+  			    margin-bottom: 30px;
+  			    box-shadow: -5px 5px 4px 2px gray;
+  			    .result-action { //action pane
+  			    	height: 120px;
+  			    	background-color: white;
+  			    	padding-top: 24px;
+  			    	padding-left: 15px;
+  			    	padding-right: 15px;
+  			    	border: 1px solid gray;
+  			    	border-bottom: 0;
+				    .pic-container {
+    				    	float: left;
+    				    	padding-right: 15px;
+				    }
+				    .result-text {
+    				    	display: table;
+				    }
+				    i {
+    				    	display: block;
+    				    	height: 95px;
+    				    	width: 100px;
+    				    	float: left;
+    				}
+    				.desc-icon {
+    					display: block;
+    				}
 				}
 				.result-footer { //footer pane
     					height: 40px;
@@ -320,27 +293,25 @@
 					}
 				}
 				.hoveron-blur {
-					background: gray;
 				    height: 185px;
 				    opacity: 0.5;
 				    z-index: 10;
+				    background: gray;
 				}
 			}
 		}
 	}
 		li:hover {
 			.resultbox {
-				color: transparent !important;
-   				text-shadow: 0 0 5px rgba(0,0,0,0.5) !important;
-			}
+				.result-text, li, .pic-container {
+					opacity: 0.2;
+   				}
+   			}
+   			li:nth-of-type(1) {
+   				opacity: 0.5 !important;
+   			}
 			.hoveron-toggle {
 				display:block !important;
-			}
-			.standard-img {
-				display: none !important;
-			}
-			.blurred-img {
-				display: block !important;
 			}
 		}
 	}
