@@ -1387,7 +1387,7 @@ Nerdeez.Hw = Nerdeez.NerdeezModel.extend({
 Nerdeez.File = Nerdeez.NerdeezModel.extend({
 	title: DS.attr('string'),
 	grade: DS.attr('number'),
-	//hw: DS.belongsTo('Nerdeez.Hw'),
+	hw: DS.belongsTo('Nerdeez.Hw'),
 	file: DS.attr('string'),
 	size: DS.attr('number'),
 	like: DS.attr('number'),
