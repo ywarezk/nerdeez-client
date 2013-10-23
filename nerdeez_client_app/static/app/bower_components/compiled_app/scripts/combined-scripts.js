@@ -1547,7 +1547,7 @@ Nerdeez.SearchController = Ember.ArrayController.extend({
 */
 
 var Nerdeez = window.Nerdeez;
-Nerdeez.LoginController = Ember.Controller.extend({
+Nerdeez.LoginController = Ember.Controller.extend(Nerdeez.Status, {
 	
 	/**
 	 * if redirecting with model it will hold the model
@@ -1559,7 +1559,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
 	 * will redirect the user to the path specified in the property
 	 * @type {String} 
 	 */
-	redirect: 'index',
+	redirect: null,
     
     /**
      * holds the user input for the email
@@ -1579,29 +1579,6 @@ Nerdeez.LoginController = Ember.Controller.extend({
      */
     isRememberMe: false,
     
-    /**
-     * if true will show the error box
-     * @type {Boolean}
-     */
-    isError: false,
-    
-    /**
-     * if true will show the success box with the message
-     * @type {Boolean}
-     */
-    isSuccess: false,
-    
-    /**
-     * a string containing a message displayed to the user
-     * @type {String}
-     */
-    message: null,
-    
-    /**
-     * should i display the loading sign
-     * @type {Boolean}
-     */
-    isLoading: false,
     
     /**
      * function that is common for all the logins
@@ -1624,9 +1601,13 @@ Nerdeez.LoginController = Ember.Controller.extend({
     		$.cookie('username', json['username'], { expires: expires, path: '/' });
     		$.cookie('apiKey', json['api_key'], { expires: expires, path: '/' });
     		$.cookie('id', json['user_profile'].id, { expires: expires, path: '/' });
-    		this.set('isLoading', false);
-    		this.transitionToRoute(this.get('redirect'), this.get('redirectModel'));
-    		
+    		this.success('Successfully logged in');
+    		if (this.get('redirect') == null){
+             this.transitionToRoute('search');
+    		}
+    		else{
+        		this.transitionToRoute(this.get('redirect'), this.get('redirectModel'));    
+    		}
     },
     
     actions: {
@@ -1646,7 +1627,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
             var isRememberMe = this.get('isRememberMe');
             
             //loading
-            this.set('isLoading', true);
+            this.loading();
             
             //make the ajax request
             var adapter = this.get('store.adapter');
@@ -1660,10 +1641,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
 			        	},
 			        	error: function(json){
 			        		var message = $.parseJSON(json.responseText).message;
-			        	    xthis.set('isError', true);
-			        	    xthis.set('isSuccess', false);
-			        	    xthis.set('message', message);
-			        	    xthis.set('isLoading', false);
+			        	    xthis.error(message);
 			        	},
 			        	data:{
 			        		email: email,
@@ -1686,9 +1664,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
 	            	'POST',
 	            	{
 	            		success: function(json){
-	            			xthis.set('isLoading', false);
-	            			xthis.set('isSuccess', true);
-	            			xthis.set('message', 'Please authorize the app with your twitter account');
+	            			xthis.success('Please authorize the app with your twitter account');
 	            			var win=window.open(json['auth_url'], '_blank');
 						win.focus();
 	            		},
@@ -1721,8 +1697,7 @@ Nerdeez.LoginController = Ember.Controller.extend({
 					        	    xthis.commonLogin(json);
 					        	},
 					        	error: function(json){
-					        		xthis.set('isError', true);
-					        		xthis.set('message', 'Failed to login via facebook');
+					        		xthis.error('Failed to login via facebook');
 					        	},
 					        	data:{
 					        		access_token: response.authResponse.accessToken,
