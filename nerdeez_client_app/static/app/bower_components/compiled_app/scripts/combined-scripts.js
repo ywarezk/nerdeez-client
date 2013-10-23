@@ -3212,8 +3212,7 @@ Nerdeez.LoginRequired = Nerdeez.NerdeezRoute.extend({
         if(!isLoggedIn){
 	        	
 	        	var loginController = this.controllerFor('login');
-	        	loginController.set('isError', true);
-	        	loginController.set('message', 'You must be logged in to access this page');
+	        	loginController.error('You must be logged in to access this page');
 	        	loginController.set('redirect', this.routeName);
 	        	loginController.set('redirectModel', model);
 	        	this.transitionTo('login');
