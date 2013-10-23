@@ -438,7 +438,7 @@ Nerdeez.LikeDislike = Ember.Mixin.create({
 
 //create the namespace if the namespace doesnt exist
 if (typeof window.Nerdeez === "undefined"){
-	var Nerdeez = Ember.Namespace.create();
+	var Nerdeez = window.Nerdeez = Ember.Namespace.create();
 }
 else{
 	var Nerdeez = window.Nerdeez;
@@ -553,42 +553,42 @@ Nerdeez.Share = Ember.Mixin.create({
   * @public
   * @type {string}
   */
-  method: 'feed',
+  shareMethod: 'feed',
   /**
   * the dialog title
   * @property
   * @public
   * @type {string}
   */
-  name: 'Nerdeez',
+  shareName: 'Nerdeez',
   /**
   * dialog caption
   * @property
   * @public
   * @type {string}
   */
-  caption: 'Nerdeez - Doing homework together',
+  shareCaption: 'Nerdeez - Doing homework together',
   /**
   * dialog description
   * @property
   * @public
   * @type {string}
   */
-  description: "",
+  shareDescription: "",
   /**
   * dialog link
   * @property
   * @public
   * @type {string}
   */
-  link: window.location.href,
+  shareLink: window.location.href,
   /**
   * dialog image
   * @property
   * @public
   * @type {string}
   */
-  picture: 'https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo.png',
+  sharePicture: 'https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo.png',
 
   /**
     Init function, empty by default.
@@ -612,23 +612,114 @@ Nerdeez.Share = Ember.Mixin.create({
       var xthis = this;
       FB.ui(
       {
-        method: xthis.get('method'),
-        name: xthis.get('name'),
-        caption: xthis.get('caption'),
-        description: xthis.get('description'),
-        link: xthis.get('link'),
-        picture: xthis.get('picture')
+        method: xthis.get('shareMethod'),
+        name: xthis.get('shareName'),
+        caption: xthis.get('shareCaption'),
+        description: xthis.get('shareDescription'),
+        link: xthis.get('shareLink'),
+        picture: xthis.get('sharePicture')
       },
         function(response) {
           if (response && response.post_id) {
-              alert('Post was published.');
+              //alert('Post was published.');
           } else {
-              alert('Post was not published.');
+              //alert('Post was not published.');
           }
         }
       );
     }
   }
+});
+
+/**
+ This mixin allows for controllers to pass status messages and loading
+
+ 
+ Example Usage (default values):
+
+ ''''javascript
+
+ App.myController = Ember.Controller.extend(Nerdeez.Status,{ ... });
+
+ ''''handlebars
+
+ {{#if isSuccess}}
+	 ...
+	 {{statusMessage}}
+ {{/if}}
+ 
+ {{#if isError}}
+	 ...
+	 {{statusMessage}}
+ {{/if}}
+ 
+ {{#if isLoading}}
+	 ...
+ {{/if}}
+
+ ''''
+
+**/
+
+/**
+  @class Nerdeez.Share
+  @extends Ember.Mixin
+  @namespace Nerdeez
+  @module Nerdeez
+**/
+Nerdeez.Status = Ember.Mixin.create({
+	/**
+	 * if set to true will display the success alert
+	 * @type {Boolean}
+	 */
+	isSuccess: false,
+	
+	/**
+	 * if set to true will display the danger alert
+	 * @type {Boolean}
+	 */
+	isError: false,
+	
+	/**
+	 * if set to true will display the loading screen
+	 * @type {Boolean}
+	 */
+	isLoading: false,
+	
+	/**
+	 * will display a message in the alerts
+	 * @type {String}
+	 */
+	statusMessage: null,
+	
+	/**
+	 * will display an error
+	 * @param {String} message - the message to display
+	 */
+	error: function(message){
+		this.set('isError', true);
+		this.set('isSuccess', false);
+		this.set('isLoading', false);
+		this.set('statusMessage', message);
+	},
+	
+	/**
+	 * will display an success
+	 * @param {String} message - the message to display
+	 */
+	success: function(message){
+		this.set('isError', false);
+		this.set('isSuccess', true);
+		this.set('isLoading', false);
+		this.set('statusMessage', message);
+	},
+	
+	/**
+	 * put the loading screen on
+	 */
+	loading: function(){
+		this.set('isLoading', true);
+	}
 });
 
 })();
@@ -2906,13 +2997,16 @@ Ember.Handlebars.registerBoundHelper('status', function(item, options) {
  * @param {Object} options inside the hash we have {isLoading: "true if need to show the loading"}
  * @return {Handlebars.SafeString}
  */
-Ember.Handlebars.registerBoundHelper('loading', function(item, options) {
-    var isLoading = options.hash.isLoading;
-    var html = '';
-    if(isLoading){
-        html = '<div class="loading"><i class="icon-spin icon-spinner"></i></div>';
-    }
-    return new Handlebars.SafeString(html);
+// Ember.Handlebars.registerBoundHelper('loading', function(item, options) {
+    // var isLoading = options.hash.isLoading;
+    // var html = '';
+    // if(isLoading){
+        // html = '<div class="loading"><i class="icon-spin icon-spinner"></i></div>';
+    // }
+    // return new Handlebars.SafeString(html);
+// });
+Ember.Handlebars.registerBoundHelper('loading', function() {
+    return new Ember.Handlebars.SafeString('<div class="loading"><i class="icon-refresh icon-spin"></i></div>');
 });
 
 /**
@@ -4172,7 +4266,7 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
     ajax: function (url, type, hash) {
     	
 		// if the api key and username are set then append them to url	    	
-        if(this.get('apiKey') != null && this.get('username') != null && type.toLowerCase() == "get"){
+        if(this.get('apiKey') != null && this.get('username') != null && (type.toLowerCase() == "get" || type.toLowerCase() == "delete")){
             var api_key = this.get('apiKey');
             var username = this.get('username');
             var url = url + '?username=' + username + '&api_key=' + api_key;
@@ -4181,8 +4275,10 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
         //if its post put request then prepare the data
         pass_data = hash.data;
         if (type.toLowerCase() == "post" || type.toLowerCase() == "put"){
+        	if(this.get('username') != null && this.get('apiKey') != null){
 	        	hash.data['username'] = this.get('username');
 	        	hash.data['api_key'] = this.get('apiKey');
+	        }
             pass_data = JSON.stringify(hash.data);
         }
         
@@ -4398,7 +4494,8 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
 	        success: function(json) {
 	                xthis.didFindAll(store, type, json);
 	                
-	        }
+	        },
+	        error: DS.rejectionHandler
 	    });
 	},
 
@@ -4419,7 +4516,8 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
             data: data,
             success: function(json) {
                     xthis.didFindQuery(store, type, json, recordArray);
-            }
+            },
+            error: DS.rejectionHandler
         });
     },
     
@@ -4437,7 +4535,8 @@ Nerdeez.DjangoTastypieAdapter = DS.RESTAdapter.extend({
         this.ajax(this.buildURL(root, id), "GET", {
             success: function(json) {
                     xthis.didFindRecord(store, type, json, id);
-            }
+            },
+            error: DS.rejectionHandler
         });
     },
     
@@ -4682,7 +4781,13 @@ Nerdeez.Wormhole = Ember.Object.extend({
             deferred.reject(data.data.textStatus, data.errorThrown);
             //alert('Communication error');
             this.alwaysFunction[data.requestId]();
-            this.failFunction[data.requestId]({status: data.data.jqXHR.status, responseText: data.data.jqXHR.responseText});
+            try{
+	            this.failFunction[data.requestId]({status: data.data.jqXHR.status, responseText: data.data.jqXHR.responseText});	
+            }
+            catch(e){
+	            console.log('wormhole failed to run the failed funciton');
+            }
+            
         }
         this.alwaysFunction[data.requestId]();
     }
