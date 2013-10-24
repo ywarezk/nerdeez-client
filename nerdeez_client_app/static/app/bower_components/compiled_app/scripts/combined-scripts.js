@@ -3853,8 +3853,7 @@ Nerdeez.VerifyEmailRoute = Nerdeez.NerdeezRoute.extend({
     setupController: function(controller, model){
         this.transitionTo('login');
         var loginController = this.controllerFor('login');
-        loginController.set('isSuccess', true);
-        loginController.set('message', model.message);
+        loginController.success(model.message);
     },
     
     actions: {
