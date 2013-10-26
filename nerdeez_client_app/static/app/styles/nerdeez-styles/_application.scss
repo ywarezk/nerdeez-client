@@ -509,3 +509,9 @@ a.nerdeez-button{
         margin-bottom: 20px;
     }
 }
+
+.padding-right {
+  @include box-sizing(border-box);
+  padding-right: 20px;
+}
+

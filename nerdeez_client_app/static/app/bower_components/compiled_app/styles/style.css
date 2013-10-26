@@ -550,6 +550,14 @@ a.nerdeez-button {
   margin-bottom: 20px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_application\.scss}line{font-family:\00003513}}
+.padding-right {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+
 /**
 * holds the styles of the header
 * @copyright: nerdeez.com Ltd.
@@ -1003,14 +1011,15 @@ a.nerdeez-button {
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000312}}
 .add_school_group .account-container {
+  margin: 0 auto;
   width: 514px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000316}}
 .add_school_group .account-container .faqList.faq-list li {
   display: none;
   margin: 0 auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000319}}
 .add_school_group .account-container .faqList.faq-list li .description {
   clear: both;
   display: table;
@@ -1018,67 +1027,67 @@ a.nerdeez-button {
   margin: 0 auto;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000326}}
 .add_school_group .account-container .faqList.faq-list li .actions {
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000328}}
 .add_school_group .account-container .faqList.faq-list li .actions a.btn {
   float: none;
   clear: both;
   margin-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000333}}
 .add_school_group .account-container .faqList.faq-list li .actions a.btn:nth-of-type(1) {
   margin-left: 0 !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000336}}
 .add_school_group .account-container .faqList.faq-list li .actions label {
   text-align: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000341}}
 .add_school_group .account-container .faqList.faq-list li .actions.type button:nth-of-type(1) {
   margin-right: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000344}}
 .add_school_group .account-container .faqList.faq-list li .actions.type button:nth-of-type(2) {
   margin-right: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000349}}
 .add_school_group .account-container .faqList.faq-list li .actions2 {
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000351}}
 .add_school_group .account-container .faqList.faq-list li .actions2 button {
   margin-top: 0px;
   float: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000353}}
 .add_school_group .account-container .faqList.faq-list li .actions2 button i.icon-plus {
   position: relative;
   top: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000358}}
 .add_school_group .account-container .faqList.faq-list li .loading {
   position: relative;
   top: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000362}}
 .add_school_group .account-container .faqList.faq-list li .next {
   position: relative;
   top: 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000365}}
 .add_school_group .account-container .faqList.faq-list li .alert {
   position: relative;
   top: 25px;
   margin-top: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000369}}
 .add_school_group .account-container .faqList.faq-list #faq-1 {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_add-schoolgroup\.scss}line{font-family:\0000373}}
 .add_school_group .account-container .faqList.faq-list #faq-3-course-faculty-uni .next {
   top: 6px !important;
 }
@@ -1705,7 +1714,7 @@ a.nerdeez-button {
   margin-bottom: 20px;
   margin-top: 0 !important;
   padding: 20px;
-  width: 100%;
+  /*width: 100%;*/
   padding-right: 0px;
   padding-left: 0px;
 }
@@ -1713,58 +1722,76 @@ a.nerdeez-button {
 .homepage .quickstart.account-container {
   height: 473px;
   margin-left: 30px !important;
+  border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000324}}
 .homepage .quickstart.account-container .padding-left {
   padding-left: 20px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000328}}
 .homepage .quickstart.account-container .button {
   margin-top: 0;
   float: right;
   height: 41px;
   width: 88%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000333}}
 .homepage .quickstart.account-container .button i.icon-search {
   bottom: 0;
   float: left;
-  left: 8px;
+  left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000340}}
 .homepage .quickstart.account-container .form-search input[type="text"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000345}}
 .homepage .quickstart.account-container .uni-buttons ol {
   list-style: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000347}}
 .homepage .quickstart.account-container .uni-buttons ol li {
   width: 25%;
   float: left;
   height: 170px;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000354}}
 .homepage .quickstart.account-container .uni-buttons ol li .single-uni .avatar .thumbnail {
+  position: relative;
   height: 140px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000357}}
 .homepage .quickstart.account-container .uni-buttons ol li .single-uni .avatar .thumbnail img {
   height: 146px;
   max-width: 100%;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000361}}
+.homepage .quickstart.account-container .uni-buttons ol li .single-uni .avatar .thumbnail span {
+  position: absolute;
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000365}}
+.homepage .quickstart.account-container .uni-buttons ol li .single-uni .avatar .thumbnail .num-users {
+  top: 1px;
+  opacity: 0.8;
+  position: absolute;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000368}}
+.homepage .quickstart.account-container .uni-buttons ol li .single-uni .avatar .thumbnail .num-files {
+  position: absolute;
+  top: 22px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000373}}
 .homepage .quickstart.account-container .uni-buttons ol li .single-uni .title {
   border-bottom: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000375}}
 .homepage .quickstart.account-container .uni-buttons ol li .single-uni .title h3 {
   font-size: 23px;
   width: 100%;
@@ -1774,119 +1801,129 @@ a.nerdeez-button {
   padding: 13px;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000386}}
 .homepage .quickstart.account-container .uni-buttons ol li:hover .thumbnail {
   background-color: #CCCCCC;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000393}}
 .homepage .donation {
   height: 456px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000396}}
 .homepage .donation .explain h2 {
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003101}}
 .homepage .donation .images .thumbnail {
   width: 30%;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003109}}
 .homepage .donation .actions {
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003111}}
 .homepage .donation .actions .button {
   float: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003116}}
 .homepage .uni-carousel {
   height: 228px;
   margin-bottom: 20px;
   width: 100%;
   margin-top: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003117}}
 .homepage .uni-carousel h3 {
   padding-left: 20px;
   margin-top: 20px;
   color: #555555;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003125}}
 .homepage .uni-carousel .carousel .carousel-inner {
   height: 130px;
   margin: 14px auto 0;
   width: 93%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003129}}
 .homepage .uni-carousel .carousel .carousel-inner .tumbnails.clearfix {
   width: 100%;
   list-style: none outside none;
   margin-left: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003131}}
 .homepage .uni-carousel .carousel .carousel-inner .tumbnails.clearfix li {
   width: 22%;
   float: left;
   height: 100%;
   margin-left: 4%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003136}}
 .homepage .uni-carousel .carousel .carousel-inner .tumbnails.clearfix li .thumbnail {
   height: 92%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003139}}
+.homepage .uni-carousel .carousel .carousel-inner .tumbnails.clearfix li .thumbnail .image-wrapper .uni-title {
+  -moz-box-sizing: border-box;
+  font-size: 20px;
+  opacity: 0.81;
+  padding: 10px;
+  position: relative;
+  top: -29px;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003148}}
 .homepage .uni-carousel .carousel .carousel-inner .tumbnails.clearfix li .thumbnail .image-wrapper img {
   height: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003154}}
 .homepage .uni-carousel .carousel .carousel-inner .tumbnails.clearfix li:nth-of-type(1) {
   margin-left: 0 !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003159}}
 .homepage .uni-carousel .carousel .carousel-control {
   margin-top: -7px;
   background: none;
   border: none;
   color: #AAAAAA;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003160}}
 .homepage .uni-carousel .carousel .carousel-control i {
   font-size: 29px;
   position: relative;
   top: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003171}}
 .homepage .uni-carousel .carousel .carousel-control:hover {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003153}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003174}}
 .homepage .uni-carousel .carousel .left.carousel-control {
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003177}}
 .homepage .uni-carousel .carousel .right.carousel-control {
   right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003182}}
 .homepage .diagram {
   margin-top: 159px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003163}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003184}}
 .homepage .diagram .diagram-wrapper {
   height: 313px;
   margin: 23px auto 0;
   width: 611px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003189}}
 .homepage .diagram .upper-small-baloons {
   height: 225px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003191}}
 .homepage .diagram .upper-small-baloons .single-diagram {
   width: 131px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003173}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003194}}
 .homepage .diagram .upper-small-baloons .diagram-circle {
   height: 115px;
   width: 115px;
@@ -1902,88 +1939,88 @@ a.nerdeez-button {
   -moz-box-shadow: #222222 2px 2px 10px;
   box-shadow: #222222 2px 2px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003178}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003199}}
 .homepage .diagram .upper-small-baloons .explain {
   font-size: 30px;
   font-family: 'Sue Ellen Francisco', cursive;
   line-height: 41px;
   white-space: nowrap;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003185}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003206}}
 .homepage .diagram .upper-small-baloons .step1 .explain {
   left: -103px;
   position: relative;
   top: -55px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003190}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003211}}
 .homepage .diagram .upper-small-baloons .step1 .cool-arrow {
   left: -68px;
   position: relative;
   top: -44px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003196}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003217}}
 .homepage .diagram .upper-small-baloons .step1 .diagram-circle img {
   left: -14px;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003202}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003223}}
 .homepage .diagram .upper-small-baloons .arrow1 {
   left: -10px;
   position: relative;
   top: 11px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003207}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003228}}
 .homepage .diagram .upper-small-baloons .arrow2 {
   left: 19px;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003232}}
 .homepage .diagram .upper-small-baloons .step2 {
   position: relative;
   top: -120px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003215}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003236}}
 .homepage .diagram .upper-small-baloons .step2 .diagram-circle img {
   position: relative;
   top: 27px;
   left: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003242}}
 .homepage .diagram .upper-small-baloons .step2 .explain {
   left: -55px;
   position: relative;
   top: -30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003226}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003247}}
 .homepage .diagram .upper-small-baloons .step2 .cool-arrow {
   left: 62px;
   position: relative;
   top: -34px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003232}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003253}}
 .homepage .diagram .upper-small-baloons .step3 {
   left: 10px;
   position: relative;
   top: -78px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003237}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003258}}
 .homepage .diagram .upper-small-baloons .step3 .diagram-circle img {
   left: 21px;
   position: relative;
   top: 33px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003243}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003264}}
 .homepage .diagram .upper-small-baloons .step3 .explain {
   left: 114px;
   position: relative;
   top: -5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003248}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003269}}
 .homepage .diagram .upper-small-baloons .step3 .cool-arrow {
   left: 65px;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003275}}
 .homepage .diagram .bottom-site-logo {
   color: #FFFFFF;
   height: 200px;
@@ -1997,7 +2034,7 @@ a.nerdeez-button {
   top: -112px;
   left: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003266}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003287}}
 .homepage .diagram .bottom-site-logo span {
   display: block;
   font-size: 25px;
@@ -2007,13 +2044,13 @@ a.nerdeez-button {
   position: relative;
   top: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003275}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003296}}
 .homepage .diagram .bottom-site-logo img {
   left: 0;
   position: absolute;
   top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003282}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\00003303}}
 .homepage .fix-height {
   height: 100% !important;
 }

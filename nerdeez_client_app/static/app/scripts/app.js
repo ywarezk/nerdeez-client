@@ -48,27 +48,6 @@ var readyFunction = function(temp1, temp2, temp3){
 	auth.set('userProfile',Nerdeez.Userprofile.find($.cookie('id')));
 	auth.set('id',$.cookie('id'));
 	Nerdeez.set('auth', auth);
-	
-	
-	
-	// adapter.ajax(
-        // SERVER_URL + '/api/v1/utilities/is-login/',
-        	// 'POST',
-        	// {
-	        	// success: function(json){
-	        		// Nerdeez.get('auth').set('isLoggedIn',json['is_logged_in']);
-	        		// //var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
-	        		// //userProfile.set('data', {school_groups: json['user_profile'].school_groups})
-	        		// //var school_groups = userProfile.get('school_groups');
-	        		// //var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
-	        		// Nerdeez.get('auth').set('user_profile',Nerdeez.Userprofile.find(json['user_profile'].id));
-	        	// },
-	        	// error: function(json){
-	        		// Nerdeez.get('auth').set('isLoggedIn',false);
-	        	// },
-	        	// data:{}
-        	// }    
-    // );
 }
 Nerdeez.set('ready', readyFunction);
 
@@ -114,14 +93,14 @@ require('scripts/controllers/schoolgroup-hws-controller');
 require('scripts/controllers/schoolgroup-hws-hw-controller');
 require('scripts/controllers/index-controller');
 require('scripts/controllers/quickstart/quickstart-controller');
-//require('scripts/controllers/quickstart/faculty-controller');
+require('scripts/controllers/quickstart/faculty-controller');
 require('scripts/controllers/index-controller');
 require('scripts/nerdeez-ember/handlebars_helpers');
 require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
 
 //routes
 require('scripts/routes/nerdeez-routes');
-require('scripts/routes/add-schoolgroup-course');
+require('scripts/routes/add-schoolgroup-route');
 require('scripts/routes/add-schoolgroup-course-route');
 require('scripts/routes/add-schoolgroup-faculty-route');
 require('scripts/routes/add-schoolgroup-uni-route');

@@ -1,8 +1,8 @@
 <!-- begin results -->
-	{{#if courses}}
+	{{#if controller}}
 		<div class="row top-buffer search-result">
 			<ol class="results">
-				{{#each courses}}
+				{{#each controller}}
 					{{#search-result schoolgroup=this}}
 						{{partial "search-hover"}}
 					{{/search-result}}
@@ -10,7 +10,6 @@
 			</ol>
 		</div>
 	{{else}}
-		{{#unless isLoading}}
 		<div class="row top-buffer no-results">
 			<div class="span10">
 				<div class="alert alert-info">
@@ -23,6 +22,5 @@
 				</div>
 			</div>
 		</div>
-		{{/unless}}
 	{{/if}}
 	<!-- end results -->

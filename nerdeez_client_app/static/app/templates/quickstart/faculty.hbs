@@ -5,9 +5,8 @@
 			<ol class="results">
 				{{#each controller}}
 					{{#search-result schoolgroup=this}}
-						<a {{action "gotoCourse" this class="linkto-choosecourse"}} >
-							
-						</a>
+						{{#link-to 'quickstart.course' this class="linkto-choosecourse"}} 
+						{{/link-to}}
 					{{/search-result}}
 				{{/each}}
 			</ol>

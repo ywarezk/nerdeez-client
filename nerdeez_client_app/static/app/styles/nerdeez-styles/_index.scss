@@ -13,13 +13,14 @@
         margin-bottom: 20px;
         margin-top: 0 !important;
         padding: 20px;
-        width: 100%;
+        /*width: 100%;*/
         padding-right: 0px; 
         padding-left: 0px;
     }
     .quickstart.account-container{
         height: 473px;         
         margin-left: 30px !important; 
+        border:none;
         .padding-left{
             padding-left: 20px;
             @include box-sizing(border-box);
@@ -32,7 +33,7 @@
             i.icon-search{
                 bottom: 0;
                 float: left;
-                left: 8px;
+                left: 0;
             }
         }
         .form-search{
@@ -51,10 +52,21 @@
                     .single-uni{
                         .avatar{
                             .thumbnail{
+                                position: relative;
                                 height: 140px;
                                 img{
                                     height: 146px;
                                     max-width: 100%;
+                                }
+                                span{
+                                    position: absolute;
+                                    left: 0;
+                                }
+                                .num-users{
+                                    top: 1px; opacity: 0.8; position: absolute;
+                                }
+                                .num-files{
+                                    position: absolute; top: 22px;
                                 }
                             }
                         }
@@ -124,6 +136,15 @@
                         .thumbnail{
                             height: 92%;
                             .image-wrapper{
+                                .uni-title{
+                                    -moz-box-sizing: border-box;
+                                    font-size: 20px;
+                                    opacity: 0.81;
+                                    padding: 10px;
+                                    position: relative;
+                                    top: -29px;
+                                    width: 100%;
+                                }
                                 img{
                                     height: 100%;
                                 }

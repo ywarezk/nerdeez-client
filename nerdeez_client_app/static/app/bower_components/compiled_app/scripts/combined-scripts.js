@@ -50,27 +50,6 @@ var readyFunction = function(temp1, temp2, temp3){
 	auth.set('userProfile',Nerdeez.Userprofile.find($.cookie('id')));
 	auth.set('id',$.cookie('id'));
 	Nerdeez.set('auth', auth);
-	
-	
-	
-	// adapter.ajax(
-        // SERVER_URL + '/api/v1/utilities/is-login/',
-        	// 'POST',
-        	// {
-	        	// success: function(json){
-	        		// Nerdeez.get('auth').set('isLoggedIn',json['is_logged_in']);
-	        		// //var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
-	        		// //userProfile.set('data', {school_groups: json['user_profile'].school_groups})
-	        		// //var school_groups = userProfile.get('school_groups');
-	        		// //var userProfile = Nerdeez.Userprofile.createRecord(json['user_profile']);
-	        		// Nerdeez.get('auth').set('user_profile',Nerdeez.Userprofile.find(json['user_profile'].id));
-	        	// },
-	        	// error: function(json){
-	        		// Nerdeez.get('auth').set('isLoggedIn',false);
-	        	// },
-	        	// data:{}
-        	// }    
-    // );
 }
 Nerdeez.set('ready', readyFunction);
 
@@ -2849,7 +2828,14 @@ Nerdeez.QuickstartController = Ember.ObjectController.extend(Nerdeez.Status,{});
 
 (function() {
 
-//require('scripts/controllers/quickstart/faculty-controller');
+Nerdeez.QuickstartFacultyController = Ember.ArrayController.extend({
+    actions: {
+        gotoCourse: function(faculty){
+            this.transitionToRoute('quickstart.course', Nerdeez.Schoolgroup.find({parent__id: faculty.get('id')}));
+        }
+    }
+});
+
 
 
 })();
@@ -3208,7 +3194,7 @@ Nerdeez.Router.map(function () {
     })
     this.resource('quickstart',{path: '/quickstart/:uniId'}, function(){
        this.route('faculty');
-       this.route('course', {path: '/course/:facultyId'}); 
+       this.route('course'); 
     });
 });
 
@@ -3312,6 +3298,46 @@ Nerdeez.LoginRequired = Nerdeez.NerdeezRoute.extend({
 
 
 
+
+})();
+
+(function() {
+
+/**
+ * the route for the add school group page
+ * 
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
+ * @version: 1.0
+ * @copyright: Nerdeez
+ */
+
+/**
+ * the route for the add school group page
+ */
+Nerdeez.AddSchoolGroupRoute = Nerdeez.NerdeezRoute.extend({
+    enter: function(){
+        var masthead = Ember.A();
+        masthead.addObject({route: 'index', model: null, title: 'Home'});
+        masthead.addObject({route: 'addSchoolGroup', model: null, title: 'Add Uni/Faculty/Course'});
+        Nerdeez.set('masthead', masthead);
+    },
+    
+    model: function(param){
+        
+        //find the id of the university
+        var universityId = 0;
+        for(var i=0; i < Nerdeez.SCHOOLGROUP_TYPE.length; i++){
+            if(Nerdeez.SCHOOLGROUP_TYPE[i].title === 'University'){
+                universityId = Nerdeez.SCHOOLGROUP_TYPE[i].id;
+            }
+        }
+        
+        //return all the universities
+        return Nerdeez.Schoolgroup.find({school_type: universityId});
+    },
+    
+});
 
 })();
 
@@ -3596,10 +3622,11 @@ Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
     
     setupController: function(controller, model){
         this._super(controller, model);
-        var files = Nerdeez.File.find({limit: 1});
-        files.one('didLoad', function(){
-            controller.set('numFiles', files.get('content.totalCount'));    
-        });
+        var totalFiles = 0;
+        model.forEach(function(item, index, enumerable){
+            totalFiles+=item.get('num_files');
+        })
+        controller.set('numFiles', totalFiles);
     }
 });
 
@@ -3973,18 +4000,14 @@ Nerdeez.QuickstartFacultyRoute = Nerdeez.NerdeezRoute.extend({
 
 Nerdeez.QuickstartCourseRoute = Nerdeez.NerdeezRoute.extend({
     model: function(param){
-        return Nerdeez.Schoolgroup.find({parent__id: param.facultyId});
+        return Nerdeez.Schoolgroup.find({parent__id: this.modelFor('quickstart').get('id')});
     },
     setupController: function(controller, model){
         this._super(controller, model);
         this.controllerFor('quickstart').set('chooseTitle', 'Course');
         this.controllerFor('quickstart').set('faculty', model.objectAt(0).get('parent'));
-        
-    },
-    
-    serialize: function(model){
-        return {facultyId: model.get('id')}
     }
+    
 });
 
 

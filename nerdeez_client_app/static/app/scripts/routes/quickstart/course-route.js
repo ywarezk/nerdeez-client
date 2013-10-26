@@ -9,16 +9,12 @@
 
 Nerdeez.QuickstartCourseRoute = Nerdeez.NerdeezRoute.extend({
     model: function(param){
-        return Nerdeez.Schoolgroup.find({parent__id: param.facultyId});
+        return Nerdeez.Schoolgroup.find({parent__id: this.modelFor('quickstart').get('id')});
     },
     setupController: function(controller, model){
         this._super(controller, model);
         this.controllerFor('quickstart').set('chooseTitle', 'Course');
         this.controllerFor('quickstart').set('faculty', model.objectAt(0).get('parent'));
-        
-    },
-    
-    serialize: function(model){
-        return {facultyId: model.get('id')}
     }
+    
 });

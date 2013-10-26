@@ -23,9 +23,10 @@ Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
     
     setupController: function(controller, model){
         this._super(controller, model);
-        var files = Nerdeez.File.find({limit: 1});
-        files.one('didLoad', function(){
-            controller.set('numFiles', files.get('content.totalCount'));    
-        });
+        var totalFiles = 0;
+        model.forEach(function(item, index, enumerable){
+            totalFiles+=item.get('num_files');
+        })
+        controller.set('numFiles', totalFiles);
     }
 });

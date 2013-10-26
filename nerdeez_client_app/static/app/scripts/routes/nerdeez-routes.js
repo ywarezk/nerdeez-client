@@ -43,7 +43,7 @@ Nerdeez.Router.map(function () {
     })
     this.resource('quickstart',{path: '/quickstart/:uniId'}, function(){
        this.route('faculty');
-       this.route('course', {path: '/course/:facultyId'}); 
+       this.route('course'); 
     });
 });
 
