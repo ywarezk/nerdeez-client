@@ -3506,7 +3506,7 @@ Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
 	
     model: function(){
 		this.redirectIfNeeded(this.modelFor('schoolgroup'));
-        return Nerdeez.Hw.find({school_group__id: this.modelFor('schoolgroup').get('id')});
+        return Nerdeez.Hw.find({school_group__id: this.modelFor('schoolgroup').get('id'), limit: 0});
     },
     setupController: function(controller, model){
         if (model == null)this.redirectIfNeeded(this.modelFor('schoolgroup'));
