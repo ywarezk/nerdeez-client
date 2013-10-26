@@ -1,0 +1,34 @@
+<!--
+	the partial for the search result hover affect
+	
+	Created October 25th, 2013
+	@author: Yariv Katz
+	@version: 1.02
+	@copyright: Nerdeez
+-->
+
+<div class="hoveron-toggle">
+	<div class="hoveron-main">
+		{{#link-to "schoolgroup.wall" this}}
+		<div class="hoveron-block hoveron-wall">
+			<div class="block-icon wall-icon">
+				<i class="icon-comments"></i>
+			</div>
+			<div class="block-text wall-text">
+				<h3>Wall</h3>
+			</div>
+		</div>
+		{{/link-to}}
+		{{#link-to "hws.index" this}}
+		<div class="hoveron-block hoveron-files">
+			<div class="block-icon files-icon">
+				<i class="icon-file"></i>
+			</div>
+			<div class="block-text files-text">
+				<h3>H.W's</h3>
+			</div>
+		</div>
+		{{/link-to}}
+	</div>
+	<div class="hoveron-blur"></div>
+</div>

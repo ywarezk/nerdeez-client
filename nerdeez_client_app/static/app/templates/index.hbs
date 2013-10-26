@@ -10,11 +10,11 @@
 <div class="homepage">
 	
 	<!-- begin quickstart -->
-	<div class="row quickstart account-container login stacked">
-		<div class="span10 search">
-			<div class="row">
-				<form class="form-search nerdeez-inputs">
-					<div class="padding-left">
+	<div class="row">
+		<div class="span10 search quickstart account-container login stacked">
+			<form class="form-search nerdeez-inputs">
+				<div class="row">
+					<div class="span10 padding-left">
 						<h3>
 							Quick Start 
 						</h3>
@@ -22,26 +22,65 @@
 							Type your course number
 						</p>
 					</div>
+				</div>
+				<div class="row">
+					<div class="span8 padding-left">
+					{{
+						view
+						Ember.TextField
+						valueBinding="quickStart"
+						class="search-query"
+						placeholder="Ex. 234122"
+					}}
+					</div>
+					<div class="span2">
+						<button class="button btn btn-primary btn-large" {{action "submitSearch"}}>
+							<i class="icon-search"></i>
+							Search
+						</button>
+					</div>
+				</div>
+					
+				{{#if controller}}
 					<div class="row">
-						<div class="span8 padding-left">
-						{{
-							view
-							Ember.TextField
-							valueBinding="quickStart"
-							class="search-query"
-							placeholder="Ex. 234122"
-						}}
-						<i class="icon-search"></i>
-						</div>
-						<div class="span2">
-							<button class="button btn btn-primary btn-large" {{action "submitSearch"}}>
-								<i class="icon-search"></i>
-								Search
-							</button>
+						<div class="span10 padding-left">
+							<h3>
+								OR 
+							</h3>
+							<p>
+								Click on your university
+							</p>
 						</div>
 					</div>
-				</form>
-			</div>
+						
+					<div class="row uni-buttons">
+						<div class="span10">
+							<ol>
+								{{#each controller}}
+									<li>
+										<div class="single-uni" {{action "uniClicked" this}}>
+											<div class="avatar">
+												<div class="thumbnail">
+													{{#if image}}
+													<img {{bindAttr src="image"}} />
+													{{else}}
+													<img src="{{unbound view.staticUrl}}img/university-pic.png" />
+													{{/if}}
+												</div>
+											</div>
+											<div class="title">
+												<h3 class="label label-secondary">
+													{{title}}
+												</h3>
+											</div>
+										</div>
+									</li>
+								{{/each}}			
+							</ol>
+						</div>
+					</div>
+				{{/if}}
+			</form>
 		</div>
 	</div>
 	<!-- end quickstart -->

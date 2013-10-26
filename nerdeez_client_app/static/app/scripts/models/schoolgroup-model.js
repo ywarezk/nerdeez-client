@@ -64,7 +64,7 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 		}
 	}.property("school_type"),
 
-	getImageURL: function() {
+	getImageUrl: function() {
 		var count = this.get('school_type');
 		var depthString = "";
 		while (count<4) {

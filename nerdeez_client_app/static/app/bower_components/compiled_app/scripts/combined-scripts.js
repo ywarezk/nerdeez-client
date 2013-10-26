@@ -1155,6 +1155,19 @@ Nerdeez.NerdeezPaginationComponent = Ember.Component.extend({
 
 (function() {
 
+Nerdeez.SearchResultComponent = Ember.Component.extend({
+    actions: {
+        gotoCourse: function(faculty){
+            this.transitionToRoute('quickstart.course', Nerdeez.Schoolgroup.find({parent__id: faculty.get('id')}));
+        }
+    }
+});
+
+
+})();
+
+(function() {
+
 /**
  * holds the model for the schoolgroups
  * 
@@ -1221,7 +1234,7 @@ Nerdeez.Schoolgroup = DS.Model.extend({
 		}
 	}.property("school_type"),
 
-	getImageURL: function() {
+	getImageUrl: function() {
 		var count = this.get('school_type');
 		var depthString = "";
 		while (count<4) {
@@ -2792,6 +2805,9 @@ Nerdeez.IndexController = Ember.ArrayController.extend({
 	
 	
 	actions: {
+	    /**
+	     * when the user submits the search
+	     */
 		submitSearch: function(){
 			var searchController = this.get('controllers.search');
 			searchController.set('searchQuery', this.get('quickStart'));
@@ -2800,10 +2816,40 @@ Nerdeez.IndexController = Ember.ArrayController.extend({
 				page: 'search',
 				search: this.get('quickStart')
 			}));	
+		},
+		
+		/**
+		 * when the user clicks on a university
+		 */
+		uniClicked: function(uni){
+		    this.transitionToRoute('quickstart.faculty', uni);
 		}
 	}
 	
 });
+
+
+})();
+
+(function() {
+
+/**
+ * the controller for the choose course page
+ * 
+ * Created October 25th, 2013
+ * @author :Yariv Katz
+ * @version: 1.02
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.QuickstartController = Ember.ObjectController.extend(Nerdeez.Status,{});
+
+
+})();
+
+(function() {
+
+//require('scripts/controllers/quickstart/faculty-controller');
 
 
 })();
@@ -3137,6 +3183,8 @@ Nerdeez.Router.map(function () {
 	this.route('terms');
 	this.route('privacy');
 	this.route('donate');
+	this.route('chooseFaculty', {path: '/choose-faculty/:uni_id'});
+	this.route('chooseCourse', {path: '/choose-course/:faculty_id'});
     this.resource('schoolgroup', { path: '/schoolgroup/:schoolgroup_id' }, function(){
         this.route('wall');
         //this.route('hws');
@@ -3158,6 +3206,10 @@ Nerdeez.Router.map(function () {
 	    	this.route('faculty');
 	    	this.route('uni');
     })
+    this.resource('quickstart',{path: '/quickstart/:uniId'}, function(){
+       this.route('faculty');
+       this.route('course', {path: '/course/:facultyId'}); 
+    });
 });
 
 /**
@@ -3538,8 +3590,6 @@ Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
     model: function(){
         return Nerdeez.Schoolgroup.find({
             school_type: 3,
-            image__isnull: false,
-            limit: 10,
             page: 'search'
         });
     },
@@ -3874,6 +3924,94 @@ Nerdeez.VerifyEmailRoute = Nerdeez.NerdeezRoute.extend({
 })();
 
 (function() {
+
+/**
+ * the route for the choose faculty screen
+ * 
+ * Created October 24th, 2013
+ * @author: Yariv Katz
+ * @version: 1.02
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.QuickstartFacultyRoute = Nerdeez.NerdeezRoute.extend({
+    model: function(param){
+        return Nerdeez.Schoolgroup.find({parent__id: this.modelFor('quickstart').get('id')});
+    },
+    
+    setupController: function(controller, model){
+        this._super(controller, model);
+        //var faculties = Nerdeez.Schoolgroup.find({parent__id: model.get('id')});
+        //this.controllerFor('quickstart').loading();
+        this.controllerFor('quickstart').set('chooseTitle', 'Faculty');
+        //controller.set('test', true);
+        // var xthis = this;
+        // faculties.one('didLoad', function(){
+            // controller.set('faculties', faculties);
+            // xthis.controllerFor('quickstart').success();
+            // controller.set('isLoading', false);    
+        // });
+        
+    }
+    
+   
+});
+
+
+})();
+
+(function() {
+
+/**
+ * the route for the choose course page
+ * 
+ * Created October 25th, 2013
+ * @author: Yariv Katz
+ * @version: 1.02
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.QuickstartCourseRoute = Nerdeez.NerdeezRoute.extend({
+    model: function(param){
+        return Nerdeez.Schoolgroup.find({parent__id: param.facultyId});
+    },
+    setupController: function(controller, model){
+        this._super(controller, model);
+        this.controllerFor('quickstart').set('chooseTitle', 'Course');
+        this.controllerFor('quickstart').set('faculty', model.objectAt(0).get('parent'));
+        
+    },
+    
+    serialize: function(model){
+        return {facultyId: model.get('id')}
+    }
+});
+
+
+})();
+
+(function() {
+
+
+
+Nerdeez.QuickstartRoute = Nerdeez.NerdeezRoute.extend({
+    model: function(param){
+        return Nerdeez.Schoolgroup.find(param.uniId);
+    },
+    
+     serialize: function(model){
+        return {uniId: model.get('id')};
+    }
+});
+
+
+})();
+
+(function() {
+
+//require('scripts/routes/choose-course-route');
+
+
 
 //store
 

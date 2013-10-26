@@ -92,6 +92,7 @@ require('scripts/models/nerdeez-model');
 require('scripts/views/schoolgroup-files-view');
 require('scripts/components/fb-comment-component');
 require('scripts/components/pagination-component');
+require('scripts/components/search-result-component');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/models/auth-model');
@@ -111,6 +112,9 @@ require('scripts/controllers/reset-password-controller');
 require('scripts/controllers/add-schoolgroup-controller');
 require('scripts/controllers/schoolgroup-hws-controller');
 require('scripts/controllers/schoolgroup-hws-hw-controller');
+require('scripts/controllers/index-controller');
+require('scripts/controllers/quickstart/quickstart-controller');
+//require('scripts/controllers/quickstart/faculty-controller');
 require('scripts/controllers/index-controller');
 require('scripts/nerdeez-ember/handlebars_helpers');
 require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
@@ -136,6 +140,10 @@ require('scripts/routes/schoolgroup-wall-route');
 require('scripts/routes/search-route');
 require('scripts/routes/underconstruction-route');
 require('scripts/routes/verify-email-route');
+require('scripts/routes/quickstart/faculty-route');
+require('scripts/routes/quickstart/course-route');
+require('scripts/routes/quickstart/quickstart-route');
+//require('scripts/routes/choose-course-route');
 
 
 

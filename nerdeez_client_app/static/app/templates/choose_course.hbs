@@ -1,0 +1,72 @@
+<!--
+	the handle bars for the choose your course page
+	
+	Created October 25th, 2013
+	@author: Yariv Katz
+	@version: 1.02
+	@copyright: Nerdeez 
+-->
+
+<div class="choose-course choose-faculty">
+	
+	<!-- begin faculty explain -->
+	<div class="row top-buffer">
+		<div class="span10">
+			{{#with controller as model}}
+			{{partial "wall-header"}}
+			{{/with}}
+		</div>
+	</div>
+	<!-- end faculty explain -->
+	
+	<!-- begin explain -->
+	<div class="row explain">
+		<div class="span10 account-container login stacked top-buffer">
+			<h3>
+				Choose your Course
+			</h3>
+			<p>
+				Pick your course from the list below
+			</p>
+		</div>
+	</div>
+	<!-- end explain -->
+	
+	<!-- begin results -->
+	{{#if courses}}
+		<div class="row top-buffer search-result">
+			<ol class="results">
+				{{#each courses}}
+					{{#search-result schoolgroup=this}}
+						{{partial "search-hover"}}
+					{{/search-result}}
+				{{/each}}
+			</ol>
+		</div>
+	{{else}}
+		{{#unless isLoading}}
+		<div class="row top-buffer no-results">
+			<div class="span10">
+				<div class="alert alert-info">
+					<h3>
+						No courses found, Open your course by clicking the button bellow.
+					</h3>
+					{{#link-to "addSchoolGroup.course" class="button btn btn-primary btn-large"}}
+					Open new faculty
+					{{/link-to}}
+				</div>
+			</div>
+		</div>
+		{{/unless}}
+	{{/if}}
+	<!-- end results -->
+	
+	{{#if isLoading}}
+		<div class="row top-buffer">
+			<div class="span10">
+				{{loading}}
+			</div>
+		</div>
+	{{/if}}
+	
+</div>

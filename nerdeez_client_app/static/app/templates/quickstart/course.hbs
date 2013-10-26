@@ -1,0 +1,28 @@
+<!-- begin results -->
+	{{#if courses}}
+		<div class="row top-buffer search-result">
+			<ol class="results">
+				{{#each courses}}
+					{{#search-result schoolgroup=this}}
+						{{partial "search-hover"}}
+					{{/search-result}}
+				{{/each}}
+			</ol>
+		</div>
+	{{else}}
+		{{#unless isLoading}}
+		<div class="row top-buffer no-results">
+			<div class="span10">
+				<div class="alert alert-info">
+					<h3>
+						No courses found, Open your course by clicking the button bellow.
+					</h3>
+					{{#link-to "addSchoolGroup.course" class="button btn btn-primary btn-large"}}
+					Open new faculty
+					{{/link-to}}
+				</div>
+			</div>
+		</div>
+		{{/unless}}
+	{{/if}}
+	<!-- end results -->

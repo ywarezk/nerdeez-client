@@ -18,6 +18,9 @@ Nerdeez.IndexController = Ember.ArrayController.extend({
 	
 	
 	actions: {
+	    /**
+	     * when the user submits the search
+	     */
 		submitSearch: function(){
 			var searchController = this.get('controllers.search');
 			searchController.set('searchQuery', this.get('quickStart'));
@@ -26,6 +29,13 @@ Nerdeez.IndexController = Ember.ArrayController.extend({
 				page: 'search',
 				search: this.get('quickStart')
 			}));	
+		},
+		
+		/**
+		 * when the user clicks on a university
+		 */
+		uniClicked: function(uni){
+		    this.transitionToRoute('quickstart.faculty', uni);
 		}
 	}
 	

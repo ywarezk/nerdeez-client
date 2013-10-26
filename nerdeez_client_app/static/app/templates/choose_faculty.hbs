@@ -1,0 +1,72 @@
+<!--
+	The handlebars for the choosing faculty
+	
+	Created October 25th, 2013
+	@author: Yariv Katz
+	@version: 1.02
+	@copyright: Nerdeez 
+-->
+
+
+<div class="choose-faculty">
+	
+	<!-- begin uni explain -->
+	<div class="row">
+		<div class="span10">
+			{{partial "wall-header"}}
+		</div>
+	</div>
+	<!-- end uni explain -->
+	
+	<!-- begin explain -->
+	<div class="row explain">
+		<div class="span10 account-container login stacked top-buffer">
+			<h3>
+				Choose your faculty
+			</h3>
+			<p>
+				Pick your faculty from the list below
+			</p>
+		</div>
+	</div>
+	<!-- end explain -->
+	
+	<!-- begin results -->
+	{{#if faculties}}
+		<div class="row top-buffer search-result">
+			<ol class="results">
+				{{#each faculties}}
+					{{#search-result schoolgroup=this}}
+						{{#link-to "chooseCourse" this class="linkto-choosecourse"}}
+						{{/link-to}}
+					{{/search-result}}
+				{{/each}}
+			</ol>
+		</div>
+	{{else}}
+		{{#unless isLoading}}
+		<div class="row top-buffer no-results">
+			<div class="span10">
+				<div class="alert alert-info">
+					<h3>
+						No faculties found, Open your faculty by clicking the button bellow.
+					</h3>
+					{{#link-to "addSchoolGroup.faculty" class="button btn btn-primary btn-large"}}
+					Open new faculty
+					{{/link-to}}
+				</div>
+			</div>
+		</div>
+		{{/unless}}
+	{{/if}}
+	<!-- end results -->
+	
+	{{#if isLoading}}
+		<div class="row top-buffer">
+			<div class="span10">
+				{{loading}}
+			</div>
+		</div>
+	{{/if}}
+	
+</div>

@@ -126,6 +126,8 @@ ul.nav.nav-pills li {
         .pic-content {
             float: left;
             padding-right: 15px;
+            width: 84px;
+            height: 80px;
             .nerdeez-action-image {
                 background-size: 85px 80px;
             }
@@ -134,6 +136,10 @@ ul.nav.nav-pills li {
                 height: 80px;
                 width: 84px;
                 float: left;
+            }
+            img{
+                width: 84px;
+                max-height: 80px;
             }
         }
         .text-content {
@@ -493,4 +499,13 @@ a.nerdeez-button{
 
 #content .row{
     margin-top: 0;
+}
+
+
+.nerdeez-form{
+    .account-container{
+        width: 380px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
 }

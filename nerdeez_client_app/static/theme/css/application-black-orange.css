@@ -1050,9 +1050,9 @@ body.login {
   background: url(../img/signin/login-bg.png);
 }
 .account-container {
-  width: 380px;
+  /*width: 380px;*/
   display: block;
-  margin: 85px auto 0 auto;
+  /*margin: 85px auto 0 auto;*/
   background: #f9f9f9;
   border: 1px solid #d5d5d5;
   -webkit-border-radius: 4px;

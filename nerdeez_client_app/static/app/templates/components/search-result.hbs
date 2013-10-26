@@ -1,0 +1,77 @@
+<!--
+	component for the search page single result box
+	
+	Created October 25th, 2013
+	@author: Yariv Katz
+	@version: 1.02
+	@copyright: Nerdeez 
+-->
+
+<li >
+	<div class="hoveron" >
+		<div class="span5 resultbox">
+			<div class="result-action">
+				<div class="pic-container">
+					<div class="desc-icon">
+						<img {{bind-attr src="schoolgroup.getImageUrl"}} />
+					</div>
+				</div>
+				<div class="result-text">
+					<h5>
+						{{#if schoolgroup.isCourse}}
+							Course Name:
+						{{/if}}
+						{{#if schoolgroup.isFaculty}}
+							Faculty Name:
+						{{/if}}
+						{{#if schoolgroup.isUniversity}}
+							University Name:
+						{{/if}}
+					</h5>
+					<span>{{schoolgroup.title}}</span>
+				</div>
+				<div class="result-text">
+						<h5> Description: </h5>
+						<span>{{schoolgroup.description}}</span>
+				</div>
+				<div class="result-text">
+					<h5> 
+						{{#if schoolgroup.isCourse}}
+							Faculty:
+						{{/if}}
+						{{#if schoolgroup.isFaculty}}
+							University:
+						{{/if}}
+					</h5>
+					<span>
+						{{#unless schoolgroup.isUniversity}}
+							{{schoolgroup.parent.title}}
+						{{/unless}}
+					</span>
+				</div>
+				<div class="result-text">
+					{{#if schoolgroup.isCourse}}
+						<h5> University: </h5>
+						<span>{{schoolgroup.parent.parent.title}}</span>
+					{{/if}}
+				</div>
+			</div>
+			<div class="result-footer">
+				<ul class="entry-info">
+					<li>
+						{{schoolgroup.getRating grade 5}}	
+					</li>
+					<li>
+						<i class="icon-user"></i>
+						<h5>Users: {{schoolgroup.num_users}}</h5>
+					</li>
+					<li>
+						<i class="icon-file-text"></i>
+						<h5>Files: {{schoolgroup.num_files}}</h5>
+					</li>
+				</ul>
+			</div>
+			{{yield}}
+		</div>
+	</div>
+</li>

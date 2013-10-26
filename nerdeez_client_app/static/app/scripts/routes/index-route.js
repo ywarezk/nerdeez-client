@@ -17,8 +17,6 @@ Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
     model: function(){
         return Nerdeez.Schoolgroup.find({
             school_type: 3,
-            image__isnull: false,
-            limit: 10,
             page: 'search'
         });
     },

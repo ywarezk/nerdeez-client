@@ -1,0 +1,45 @@
+/**
+ * the style sheet for the choose faculty screen
+ * 
+ * Created October 25th, 2013
+ * @author: Yariv Katz
+ * @version: 1.02
+ * @copyright: Nerdeez
+ */
+
+.choose-faculty{
+   .explain{
+       h3,p{
+           padding-left: 20px;
+       }
+   }
+   .search-result{
+       li{
+           cursor: pointer;
+           .linkto-choosecourse{
+               display: block;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                width: 100%;
+           }
+       }
+   }
+   .no-results{
+       .alert{
+           text-align: center;
+           width: -moz-fit-content; margin-top: 0px; margin-right: auto; margin-left: auto;
+           h3{
+               margin-bottom: 0;
+           }
+           a{
+               float: none;
+                margin: 0 auto;
+           }
+       }
+   }
+   .loading{
+       text-align: center;
+       font-size: 28px;
+   }   
+}

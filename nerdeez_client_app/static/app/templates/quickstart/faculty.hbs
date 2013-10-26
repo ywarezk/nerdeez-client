@@ -1,0 +1,28 @@
+
+
+{{#if controller}}
+		<div class="row top-buffer search-result">
+			<ol class="results">
+				{{#each controller}}
+					{{#search-result schoolgroup=this}}
+						<a {{action "gotoCourse" this class="linkto-choosecourse"}} >
+							
+						</a>
+					{{/search-result}}
+				{{/each}}
+			</ol>
+		</div>
+{{else}}
+	<div class="row top-buffer no-results">
+		<div class="span10">
+			<div class="alert alert-info">
+				<h3>
+					No faculties found, Open your faculty by clicking the button bellow.
+				</h3>
+				{{#link-to "addSchoolGroup.faculty" class="button btn btn-primary btn-large"}}
+				Open new faculty
+				{{/link-to}}
+			</div>
+		</div>
+	</div>
+{{/if}}

@@ -18,6 +18,8 @@ Nerdeez.Router.map(function () {
 	this.route('terms');
 	this.route('privacy');
 	this.route('donate');
+	this.route('chooseFaculty', {path: '/choose-faculty/:uni_id'});
+	this.route('chooseCourse', {path: '/choose-course/:faculty_id'});
     this.resource('schoolgroup', { path: '/schoolgroup/:schoolgroup_id' }, function(){
         this.route('wall');
         //this.route('hws');
@@ -39,6 +41,10 @@ Nerdeez.Router.map(function () {
 	    	this.route('faculty');
 	    	this.route('uni');
     })
+    this.resource('quickstart',{path: '/quickstart/:uniId'}, function(){
+       this.route('faculty');
+       this.route('course', {path: '/course/:facultyId'}); 
+    });
 });
 
 /**
