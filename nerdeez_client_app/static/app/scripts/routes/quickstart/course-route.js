@@ -14,7 +14,7 @@ Nerdeez.QuickstartCourseRoute = Nerdeez.NerdeezRoute.extend({
     setupController: function(controller, model){
         this._super(controller, model);
         this.controllerFor('quickstart').set('chooseTitle', 'Course');
-        this.controllerFor('quickstart').set('faculty', model.objectAt(0).get('parent'));
+        this.controllerFor('quickstart').set('faculty', this.modelFor('quickstart'));
     }
     
 });

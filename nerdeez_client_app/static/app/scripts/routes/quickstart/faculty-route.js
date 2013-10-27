@@ -14,16 +14,7 @@ Nerdeez.QuickstartFacultyRoute = Nerdeez.NerdeezRoute.extend({
     
     setupController: function(controller, model){
         this._super(controller, model);
-        //var faculties = Nerdeez.Schoolgroup.find({parent__id: model.get('id')});
-        //this.controllerFor('quickstart').loading();
         this.controllerFor('quickstart').set('chooseTitle', 'Faculty');
-        //controller.set('test', true);
-        // var xthis = this;
-        // faculties.one('didLoad', function(){
-            // controller.set('faculties', faculties);
-            // xthis.controllerFor('quickstart').success();
-            // controller.set('isLoading', false);    
-        // });
         
     }
     

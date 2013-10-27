@@ -3968,16 +3968,7 @@ Nerdeez.QuickstartFacultyRoute = Nerdeez.NerdeezRoute.extend({
     
     setupController: function(controller, model){
         this._super(controller, model);
-        //var faculties = Nerdeez.Schoolgroup.find({parent__id: model.get('id')});
-        //this.controllerFor('quickstart').loading();
         this.controllerFor('quickstart').set('chooseTitle', 'Faculty');
-        //controller.set('test', true);
-        // var xthis = this;
-        // faculties.one('didLoad', function(){
-            // controller.set('faculties', faculties);
-            // xthis.controllerFor('quickstart').success();
-            // controller.set('isLoading', false);    
-        // });
         
     }
     
@@ -4005,7 +3996,7 @@ Nerdeez.QuickstartCourseRoute = Nerdeez.NerdeezRoute.extend({
     setupController: function(controller, model){
         this._super(controller, model);
         this.controllerFor('quickstart').set('chooseTitle', 'Course');
-        this.controllerFor('quickstart').set('faculty', model.objectAt(0).get('parent'));
+        this.controllerFor('quickstart').set('faculty', this.modelFor('quickstart'));
     }
     
 });
