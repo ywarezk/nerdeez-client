@@ -1720,7 +1720,6 @@ a.nerdeez-button {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000320}}
 .homepage .quickstart.account-container {
-  height: 473px;
   margin-left: 30px !important;
   border: none;
 }
@@ -1758,7 +1757,7 @@ a.nerdeez-button {
 .homepage .quickstart.account-container .uni-buttons ol li {
   width: 25%;
   float: left;
-  height: 170px;
+  height: 193px;
   cursor: pointer;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_index\.scss}line{font-family:\0000354}}

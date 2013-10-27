@@ -1931,15 +1931,7 @@ function program2(depth0,data) {
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "image", {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n													<span class=\"num-files label label-secondary pull-right\">\n														<i class=\"icon-file\">\n															\n														</i>\n														Num Files: #");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "num_files", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n													</span>\n													<span class=\"num-users label label-secondary pull-left\">\n														<i class=\"icon-user\">\n															\n														</i>\n														Num Users: #");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "num_users", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n													</span>\n												</div>\n											</div>\n											<div class=\"title\">\n												<h3 class=\"label label-secondary\">\n													");
+  data.buffer.push("\n												</div>\n											</div>\n											<div class=\"title\">\n												<h3 class=\"label label-secondary\">\n													");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
