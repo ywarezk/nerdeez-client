@@ -2081,3 +2081,17 @@ a.nerdeez-button {
   margin-top: 24px;
   margin-bottom: 20px;
 }
+
+/**
+ * stylesheet for the forget password window
+ * 
+ * Created October 28th, 2013
+ * @author: Yariv Katz
+ * @version: 1.03
+ * @copyright: Nerdeez
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_forget-password\.scss}line{font-family:\0000311}}
+.forget_password .account-container {
+  width: 456px;
+  margin: 0px auto;
+}

@@ -7,36 +7,14 @@
  * @copyright: nerdeez Ltd.
  */
 
-Nerdeez.ForgetPasswordController = Ember.Controller.extend({
+Nerdeez.ForgetPasswordController = Ember.Controller.extend(Nerdeez.Status, {
 	/**
 	 * form param will hold the user's email
 	 * @type {String}
 	 */
 	email: null,
 	
-	/**
-	 * will determine if the loading thingie is displayed
-	 * @type {Boolean}
-	 */
-	isLoading: false,
 	
-	/**
-	 * will determine if the success box is displayed
-	 * @type {Boolean}
-	 */
-	isSuccess: false,
-	
-	/**
-	 * will determine if the error box is displayed
-	 * @type {Boolean}
-	 */
-	isError: false,
-	
-	/**
-	 * will determine the messages in the boxes
-	 * @type {String}
-	 */
-	message: false,
 	
 	actions: {
 		
@@ -51,7 +29,7 @@ Nerdeez.ForgetPasswordController = Ember.Controller.extend({
 			var email = this.get('email');
 			
 			//loading screen
-			this.set('isLoading', true);
+			this.loading();
 			
 			//send the request to the server
 			var adapter = Nerdeez.Adapter.current();
@@ -61,17 +39,11 @@ Nerdeez.ForgetPasswordController = Ember.Controller.extend({
 				'POST',
 				{
 					success: function(json){
-						xthis.set('isSuccess', true);
-			        	    xthis.set('isError', false);
-			        	    xthis.set('message', json['message']);
-			        	    xthis.set('isLoading', false);
+			        	    xthis.success(json['message']);
 					},
 					error: function(json){
 						var message = $.parseJSON(json.responseText).message;
-			        	    xthis.set('isError', true);
-			        	    xthis.set('isSuccess', false);
-			        	    xthis.set('message', message);
-			        	    xthis.set('isLoading', false);
+			        	    xthis.error(message);
 					},
 					data: {
 						email: email

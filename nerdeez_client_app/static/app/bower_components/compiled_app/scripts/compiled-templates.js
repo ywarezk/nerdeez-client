@@ -1488,7 +1488,7 @@ function program3(depth0,data) {
   data.buffer.push("\n        <div class=\"alert alert-danger\">\n          ");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "message", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "statusMessage", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n        </div>\n    ");
   return buffer;
   }
@@ -1499,18 +1499,19 @@ function program5(depth0,data) {
   data.buffer.push("\n        <div class=\"alert alert-success\">\n          ");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "message", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "statusMessage", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n        </div>\n    ");
   return buffer;
   }
 
   data.buffer.push("<!--\n	Handlebar for the forget password window\n	\n	Created September 26th, 2013\n	@author: Yariv Katz\n	@copyright: nerdeez.com\n	@version: 1.0\n-->\n\n<div class=\"contact forget_password\">\n    <div class=\"account-container register stacked\">\n	\n    	<div class=\"content clearfix\">\n    		\n    		<form class=\"js-validation\" >\n    		\n    			<h1>Forgot your password?</h1>		\n    			\n    			<div class=\"login-fields\">\n    				\n    				<p>Write the email address of your nerdeez account. Mail will be sent with a link to set your password</p>\n    				\n    				<div class=\"field\">\n    					<label>Email</label>\n						");
-  hashContexts = {'valueBinding': depth0,'class': depth0,'required': depth0};
-  hashTypes = {'valueBinding': "STRING",'class': "STRING",'required': "STRING"};
+  hashContexts = {'valueBinding': depth0,'class': depth0,'required': depth0,'placeholder': depth0};
+  hashTypes = {'valueBinding': "STRING",'class': "STRING",'required': "STRING",'placeholder': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
     'valueBinding': ("email"),
     'class': ("validate[required,custom[email]] nerdeez-inputs"),
-    'required': ("true")
+    'required': ("true"),
+    'placeholder': ("Ex. johndue@gmail.com")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n    				</div> <!-- /field -->\n    				\n    				\n    			</div> <!-- /login-fields -->\n    			\n    			<div class=\"login-actions\">\n    				\n    									\n    				<button class=\"button btn btn-primary btn-large\" ");
   hashTypes = {};
