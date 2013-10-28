@@ -1,0 +1,114 @@
+/**
+ * 	stylesheet for the welcome page
+ * 
+ * Created October 28th, 2013
+ * @author: Doron Nachshon
+ * @version: 1.0
+ * @copyright: Nerdeez Ltd.
+ * background (orange hue) #FBD192
+ */
+
+.welcome {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	.welcome-top-container {
+		position: relative;
+		height: 40%;
+		width: 100%;
+		.welcome-top-color {
+			position: absolute;
+			background-color: #FBD192;
+			opacity: 0.55;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+		}
+		.welcome-top-box {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			.btn {
+ 				height: 45px;
+ 				width: 225px;
+ 				font-size: 17px;
+ 				background-image: none;
+ 				@include background-image(linear-gradient(#f9b550, #F9BC61));
+ 			}
+ 			.btn:hover {
+
+ 			}
+		}
+	}
+	.welcome-buffer-container {
+		position: relative;
+		height: 10%;
+		width: 100%;
+		.welcome-buffer-color {
+			position: absolute;
+			background-color: #E0E0E0;
+			opacity: 0.55;
+			height:100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+		}
+		.welcome-buffer-box {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+		}
+	}
+	.welcome-bottom-container {
+		position: relative;
+		height: 55%;
+		width: 100%;
+		.welcome-bottom-color {
+			position: absolute;
+			background-color: #c7c7c7;
+			opacity: 0.55;
+			height:100%;
+			width: 100%;
+			top: 0;
+			left: 0;		
+		}
+		.welcome-bottom-box {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+		}
+	}
+ 	.welcome-title {
+ 		h1 {
+ 			font-size: 60px;
+    		letter-spacing: -2px;
+    		text-shadow: 4px 3px 0 #FFFFFF, 9px 8px 0 rgba(0, 0, 0, 0.15);
+ 		}
+ 		p {
+ 			font-weight: lighter;
+    		letter-spacing: -1px;
+    		font-size: 29px;
+    		margin-top: 35px;
+    		margin-left: 35px;
+ 		}
+ 	}
+	.sign {
+		margin-top: 70px !important;
+ 		.signin {
+ 			color: #4e4e4e;
+    		font-size: 14px;
+		    line-height: 19px;
+		    margin-top: 16px;
+		    margin-left: 72px;
+ 		}	
+ 	}
+}
