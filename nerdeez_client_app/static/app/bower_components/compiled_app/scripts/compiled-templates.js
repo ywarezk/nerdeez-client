@@ -1923,7 +1923,11 @@ function program1(depth0,data) {
 function program2(depth0,data) {
   
   var buffer = '', stack1, hashTypes, hashContexts;
-  data.buffer.push("\n								<li>\n									<div class=\"uni-button\">\n										\n										<div class=\"pull-left\">\n											");
+  data.buffer.push("\n								<li ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "uniClicked", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n									<div class=\"uni-button\">\n										\n										<div class=\"pull-left\">\n											");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "image", {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
