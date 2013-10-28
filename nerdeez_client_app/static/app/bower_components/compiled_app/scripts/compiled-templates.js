@@ -1917,49 +1917,45 @@ function program1(depth0,data) {
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "controller", {hash:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("			\n							</ol>\n						</div>\n					</div>\n				");
+  data.buffer.push("\n							</ol>\n						</div>\n					</div>\n				");
   return buffer;
   }
 function program2(depth0,data) {
   
   var buffer = '', stack1, hashTypes, hashContexts;
-  data.buffer.push("\n									<li>\n										<div class=\"single-uni\" ");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "uniClicked", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n											<div class=\"avatar\">\n												<div class=\"thumbnail\">\n													");
+  data.buffer.push("\n								<li>\n									<div class=\"uni-button\">\n										\n										<div class=\"pull-left\">\n											");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "image", {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n												</div>\n											</div>\n											<div class=\"title\">\n												<h3 class=\"label label-secondary\">\n													");
+  data.buffer.push("\n										</div>\n										<div class=\"pull-left details\">\n											<p>\n												<strong>University name:</strong>\n												");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n												</h3>\n											</div>\n										</div>\n									</li>\n								");
+  data.buffer.push("\n												\n											</p>\n										</div>\n									</div>\n								</li>\n								");
   return buffer;
   }
 function program3(depth0,data) {
   
   var buffer = '', hashContexts, hashTypes;
-  data.buffer.push("\n													<img ");
+  data.buffer.push("\n												<img ");
   hashContexts = {'src': depth0};
   hashTypes = {'src': "STRING"};
   data.buffer.push(escapeExpression(helpers.bindAttr.call(depth0, {hash:{
     'src': ("image")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(" />\n													");
+  data.buffer.push(" />\n											");
   return buffer;
   }
 
 function program5(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n													<img src=\"");
+  data.buffer.push("\n												<img src=\"");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/university-pic.png\" />\n													");
+  data.buffer.push("img/university-pic.png\" />\n											");
   return buffer;
   }
 
@@ -2074,43 +2070,7 @@ function program14(depth0,data) {
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "controller", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n			</form>\n		</div>\n	</div>\n	<!-- end quickstart -->\n	\n	<!-- begin diagram -->\n	<div class=\"row diagram\">\n		<div class=\"span10\">\n			<div class=\"diagram-wrapper\">\n				<div class=\"upper-small-baloons\">\n					<div class=\"single-diagram pull-left step1\">\n						<div class=\"explain\">\n							<span>\n								Problem solving your H.W?\n							</span>\n							<br/>\n							<span class=\"pull-right\">\n								Share your solution\n							</span>\n						</div>\n						<div class=\"cool-arrow pull-left\">\n							<img src=\"");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/arrow-left.png\" />\n						</div>\n						<div class=\"diagram-circle\" style=\"\">\n						    <img src=\"");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/question-nerd.png\" />\n						</div>\n					</div>\n					<div class=\"baloon-arrow pull-left arrow1\">\n						<img src=\"");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/connecting-arrow-left.png\" />\n					</div>\n					<div class=\"single-diagram pull-left step2\">\n						<div class=\"explain\">\n							<span>\n								Invite your friends!\n							</span>\n							<br/>\n							<span >\n								Together rate, comment & upload solutions.\n							</span>\n						</div>\n						<div class=\"cool-arrow pull-left\">\n							<img src=\"");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/arrow-top.png\" />\n						</div>\n						<div class=\"diagram-circle\" style=\"\">\n						    <img src=\"");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/nerds-chatting.png\" />\n						</div>\n					</div>\n					<div class=\"baloon-arrow pull-left arrow2\">\n						<img src=\"");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/connecting-arrow-right.png\" />\n					</div>\n					<div class=\"single-diagram pull-left step3\">\n						<div class=\"explain\">\n							<span>\n								Learn & Solve. \n							</span>\n							<br/>\n							<span>\n								Together with your friends, <br/> learn and solve your H.W\n							</span>\n						</div>\n						<div class=\"cool-arrow pull-right\">\n							<img src=\"");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/arrow-right.png\"/>\n						</div>\n						<div class=\"diagram-circle\" style=\"\">\n						    <img src=\"");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/nerd-solving.png\" />\n						</div>\n					</div>\n				</div>\n				<div class=\"bottom-site-logo\">\n					<img src=\"");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/moto-baloon.png\" />\n					<span>Nerdeez <br/> Doing H.W Together</span>\n				</div>\n			</div>\n		</div>\n	</div>\n	<!-- end diagram -->\n	\n	\n	\n	<!-- begin carousel -->\n	");
+  data.buffer.push("\n			</form>\n		</div>\n	</div>\n	<!-- end quickstart -->\n	\n	\n	\n	<!-- begin carousel -->\n	");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "controller", {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});

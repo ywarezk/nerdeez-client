@@ -57,25 +57,26 @@
 						<div class="span10 padding-right">
 							<ol>
 								{{#each controller}}
-									<li>
-										<div class="single-uni" {{action "uniClicked" this}}>
-											<div class="avatar">
-												<div class="thumbnail">
-													{{#if image}}
-													<img {{bindAttr src="image"}} />
-													{{else}}
-													<img src="{{unbound view.staticUrl}}img/university-pic.png" />
-													{{/if}}
-												</div>
-											</div>
-											<div class="title">
-												<h3 class="label label-secondary">
-													{{title}}
-												</h3>
-											</div>
+								<li>
+									<div class="uni-button">
+										
+										<div class="pull-left">
+											{{#if image}}
+												<img {{bindAttr src="image"}} />
+											{{else}}
+												<img src="{{unbound view.staticUrl}}img/university-pic.png" />
+											{{/if}}
 										</div>
-									</li>
-								{{/each}}			
+										<div class="pull-left details">
+											<p>
+												<strong>University name:</strong>
+												{{title}}
+												
+											</p>
+										</div>
+									</div>
+								</li>
+								{{/each}}
 							</ol>
 						</div>
 					</div>
@@ -84,78 +85,6 @@
 		</div>
 	</div>
 	<!-- end quickstart -->
-	
-	<!-- begin diagram -->
-	<div class="row diagram">
-		<div class="span10">
-			<div class="diagram-wrapper">
-				<div class="upper-small-baloons">
-					<div class="single-diagram pull-left step1">
-						<div class="explain">
-							<span>
-								Problem solving your H.W?
-							</span>
-							<br/>
-							<span class="pull-right">
-								Share your solution
-							</span>
-						</div>
-						<div class="cool-arrow pull-left">
-							<img src="{{unbound view.staticUrl}}img/arrow-left.png" />
-						</div>
-						<div class="diagram-circle" style="">
-						    <img src="{{unbound view.staticUrl}}img/question-nerd.png" />
-						</div>
-					</div>
-					<div class="baloon-arrow pull-left arrow1">
-						<img src="{{unbound view.staticUrl}}img/connecting-arrow-left.png" />
-					</div>
-					<div class="single-diagram pull-left step2">
-						<div class="explain">
-							<span>
-								Invite your friends!
-							</span>
-							<br/>
-							<span >
-								Together rate, comment & upload solutions.
-							</span>
-						</div>
-						<div class="cool-arrow pull-left">
-							<img src="{{unbound view.staticUrl}}img/arrow-top.png" />
-						</div>
-						<div class="diagram-circle" style="">
-						    <img src="{{unbound view.staticUrl}}img/nerds-chatting.png" />
-						</div>
-					</div>
-					<div class="baloon-arrow pull-left arrow2">
-						<img src="{{unbound view.staticUrl}}img/connecting-arrow-right.png" />
-					</div>
-					<div class="single-diagram pull-left step3">
-						<div class="explain">
-							<span>
-								Learn & Solve. 
-							</span>
-							<br/>
-							<span>
-								Together with your friends, <br/> learn and solve your H.W
-							</span>
-						</div>
-						<div class="cool-arrow pull-right">
-							<img src="{{unbound view.staticUrl}}img/arrow-right.png"/>
-						</div>
-						<div class="diagram-circle" style="">
-						    <img src="{{unbound view.staticUrl}}img/nerd-solving.png" />
-						</div>
-					</div>
-				</div>
-				<div class="bottom-site-logo">
-					<img src="{{unbound view.staticUrl}}img/moto-baloon.png" />
-					<span>Nerdeez <br/> Doing H.W Together</span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end diagram -->
 	
 	
 	

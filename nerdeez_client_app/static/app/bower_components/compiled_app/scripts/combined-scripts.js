@@ -3588,7 +3588,8 @@ Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
     model: function(){
         return Nerdeez.Schoolgroup.find({
             school_type: 3,
-            page: 'search'
+            page: 'search',
+            order_by: 'users'
         });
     },
     
