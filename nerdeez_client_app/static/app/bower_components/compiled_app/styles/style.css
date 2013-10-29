@@ -1693,14 +1693,43 @@ a.nerdeez-button {
   width: 100%;
   z-index: 1000;
   overflow: auto;
+  font-size: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000321}}
+.welcome p, .welcome a {
+  font-size: 20px;
+  font-weight: lighter;
+  line-height: 25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000326}}
+.welcome .btn {
+  background-image: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f69a0f), color-stop(100%, #ec9109));
+  background-image: -webkit-linear-gradient(#f69a0f, #ec9109);
+  background-image: -moz-linear-gradient(#f69a0f, #ec9109);
+  background-image: -o-linear-gradient(#f69a0f, #ec9109);
+  background-image: linear-gradient(#f69a0f, #ec9109);
+  border: 1px solid black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000331}}
+.welcome .btn:hover {
+  background-color: #EC9109;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000334}}
+.welcome .btn:focus {
+  background-image: none !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000337}}
+.welcome .popover {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000340}}
 .welcome .welcome-top-container {
   position: relative;
-  height: 42%;
+  height: 460px;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000344}}
 .welcome .welcome-top-container .welcome-top-color {
   position: absolute;
   background-color: #FBD192;
@@ -1710,7 +1739,7 @@ a.nerdeez-button {
   top: 0;
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000353}}
 .welcome .welcome-top-container .welcome-top-box {
   position: absolute;
   top: 0;
@@ -1718,52 +1747,59 @@ a.nerdeez-button {
   height: 100%;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000339}}
-.welcome .welcome-top-container .welcome-top-box .btn {
-  height: 45px;
-  width: 225px;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000360}}
+.welcome .welcome-top-container .welcome-top-box .welcome-title h1 {
+  font-size: 75px;
+  letter-spacing: -2px;
+  text-shadow: 4px 3px 0 white, 9px 8px 0 rgba(0, 0, 0, 0.15);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000365}}
+.welcome .welcome-top-container .welcome-top-box .welcome-title p {
+  font-size: 37px;
+  margin-top: 55px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000370}}
+.welcome .welcome-top-container .welcome-top-box .sign {
+  margin-top: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000372}}
+.welcome .welcome-top-container .welcome-top-box .sign .btn {
+  height: 55px;
+  width: 285px;
+  font-size: 19px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000378}}
+.welcome .welcome-top-container .welcome-top-box .sign .signin {
+  color: #4E4E4E;
   font-size: 17px;
-  background-image: none;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f69a0f), color-stop(100%, #ec9109));
-  background-image: -webkit-linear-gradient(#f69a0f, #ec9109);
-  background-image: -moz-linear-gradient(#f69a0f, #ec9109);
-  background-image: -o-linear-gradient(#f69a0f, #ec9109);
-  background-image: linear-gradient(#f69a0f, #ec9109);
-  border: 1px solid black;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000347}}
-.welcome .welcome-top-container .welcome-top-box .btn:hover {
-  background-color: #EC9109;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000350}}
-.welcome .welcome-top-container .welcome-top-box .btn:focus {
-  background-image: none !important;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000353}}
-.welcome .welcome-top-container .welcome-top-box .signin {
-  color: #4e4e4e;
-  font-size: 15px;
   line-height: 17px;
-  margin-top: 15px;
-  margin-left: 71px;
+  margin-top: 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000385}}
+.welcome .welcome-top-container .welcome-top-box .guest {
+  margin-top: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000390}}
 .welcome .welcome-buffer-container {
   position: relative;
-  height: 8%;
+  height: 55px;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000394}}
 .welcome .welcome-buffer-container .welcome-buffer-color {
   position: absolute;
-  background-color: #E0E0E0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fbd192), color-stop(100%, #fffaf4));
+  background-image: -webkit-linear-gradient(#fbd192, #fffaf4);
+  background-image: -moz-linear-gradient(#fbd192, #fffaf4);
+  background-image: -o-linear-gradient(#fbd192, #fffaf4);
+  background-image: linear-gradient(#fbd192, #fffaf4);
   opacity: 0.55;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\00003103}}
 .welcome .welcome-buffer-container .welcome-buffer-box {
   position: absolute;
   height: 100%;
@@ -1771,47 +1807,50 @@ a.nerdeez-button {
   top: 0;
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\00003110}}
+.welcome .welcome-buffer-container .welcome-buffer-box .signup p {
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 30px;
+  text-decoration: underline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\00003119}}
 .welcome .welcome-bottom-container {
   position: relative;
-  height: 100%;
+  height: auto;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\00003123}}
 .welcome .welcome-bottom-container .welcome-bottom-color {
   position: absolute;
   background-color: white;
-  opacity: 0.4;
-  height: 100%;
+  opacity: 0.45;
+  height: 1100px;
   width: 100%;
   top: 0;
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\00003132}}
 .welcome .welcome-bottom-container .welcome-bottom-box {
   position: absolute;
-  height: 100%;
+  height: auto;
   width: 100%;
   top: 0;
   left: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\00003102}}
-.welcome .welcome-bottom-container .welcome-bottom-box .top-buffer {
-  margin-top: 30px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\00003108}}
-.welcome .welcome-title h1 {
-  font-size: 60px;
-  letter-spacing: -2px;
-  text-shadow: 4px 3px 0 white, 9px 8px 0 rgba(0, 0, 0, 0.15);
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\00003113}}
-.welcome .welcome-title p {
-  font-weight: lighter;
   letter-spacing: -1px;
-  font-size: 29px;
-  margin-top: 35px;
-  margin-left: 35px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\00003139}}
+.welcome .welcome-bottom-container .welcome-bottom-box .top-buffer {
+  margin-top: 80px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\00003142}}
+.welcome .welcome-bottom-container .welcome-bottom-box .popover-box {
+  position: relative;
+  height: 130px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_welcome\.scss}line{font-family:\00003146}}
+.welcome .welcome-bottom-container .welcome-bottom-box .nerd-img {
+  margin-top: 25px;
 }
 
 /**

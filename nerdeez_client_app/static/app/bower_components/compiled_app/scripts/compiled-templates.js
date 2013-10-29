@@ -3016,7 +3016,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   
-  data.buffer.push("\n								<button class=\"btn btn-secondary\"> Sign up </button>\n								");
+  data.buffer.push("\n									<button class=\"btn btn-secondary\"> Sign up </button>\n									");
   }
 
 function program3(depth0,data) {
@@ -3025,55 +3025,59 @@ function program3(depth0,data) {
   data.buffer.push(" Sign in ");
   }
 
-  data.buffer.push("\n\n<div class=\"welcome\">\n	<div class=\"welcome-top-container\">\n		<div class=\"welcome-top-color\">\n		</div>\n		<div class=\"welcome-top-box\">\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"span12\">\n						<div class=\"row\">\n						<!--<div class=\"logo\">\n							<img src=\"");
+function program5(depth0,data) {
+  
+  
+  data.buffer.push(" Enter as guest ");
+  }
+
+  data.buffer.push("\n\n<div class=\"welcome\">\n	<div class=\"welcome-top-container\">\n		<div class=\"welcome-top-color\">\n		</div>\n		<div class=\"welcome-top-box\">\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"span12\">\n						<div class=\"row\">\n							<div class=\"span12 welcome-title top-buffer\">\n								<div class=\"row\">\n									<div class=\"span10 top-buffer\">\n										<div class=\"text-center\">\n											<h1>Homework made easy</h1>\n											<p>Find and share homework, all in one place</p>\n										</div>\n									</div>\n									<div class=\"span2 pull-right top-buffer\">\n										<img src=\"");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/nerd-solving-large.png\" />\n						</div>-->\n							<div class=\"span12 welcome-title top-buffer\">\n								<div class=\"row\">\n									<div class=\"span9 offset1 top-buffer\">\n										<h1>Homework made easy</h1>\n										<p>Find and share homework, all in one place</p>\n									</div>\n									<div class=\"span2 pull-right top-buffer\">\n										<img src=\"");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/nerd-solving-large.png\" />\n										<!--<img src=\"https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo.png\" />-->\n									</div>\n								</div>\n							</div>\n						</div>\n						<div class=\"row\">\n							<div class=\"span9 offset3\">\n								");
+  data.buffer.push("img/nerd-solving-large.png\" />\n									</div>\n								</div>\n							</div>\n						</div>\n						<div class=\"row\">\n							<div class=\"span10\">\n								<div class=\"sign text-center\">\n									");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "register", options) : helperMissing.call(depth0, "link-to", "register", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n								<div class=\"signin\">\n									<p>\n										Or ");
+  data.buffer.push("\n									<div class=\"signin\">\n										<p>\n											Or ");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "login", options) : helperMissing.call(depth0, "link-to", "login", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n									</p>\n								</div>\n							</div>\n						</div>\n					</div>\n				</div>\n			</div>\n		</div>\n	</div>\n	<div class=\"welcome-buffer-container\">\n		<div class=\"welcome-buffer-color\">\n		</div>\n		<div class=\"welcome-buffer-box\">\n		</div>\n	</div>\n	<div class=\"welcome-bottom-container\">\n		<div class=\"welcome-bottom-color\">\n		</div>\n		<div class=\"welcome-bottom-box\">\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"span4\">\n				\n						<h3>Why you should sign up</h3>\n				\n						<table class=\"table table-bordered table-striped\">\n									\n							<thead><tr>								\n								<th>Features</th>\n								<th>Sign up</th>								\n							</tr></thead>\n							\n								<tbody><tr>\n										<td class=\"description\"> Full access to a growing database, with ");
+  data.buffer.push("\n										</p>\n									</div>\n								</div>\n							</div>\n							<div class=\"span2\">\n								<div class=\"guest\">\n									<p> Want to just check out the website? </p>\n									");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "index", options) : helperMissing.call(depth0, "link-to", "index", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n								</div>\n							</div>\n						</div>\n					</div>\n				</div>\n			</div>\n		</div>\n	</div>\n	<div class=\"welcome-buffer-container\">\n		<div class=\"welcome-buffer-color\">\n		</div>\n		<div class=\"welcome-buffer-box\">\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"span10\">\n						<div class=\"signup text-center\">\n							<p> Sign up and get </p>\n						</div>\n					</div>\n				</div>\n			</div>\n		</div>\n	</div>\n	<div class=\"welcome-bottom-container\">\n		<div class=\"welcome-bottom-color\">\n		</div>\n		<div class=\"welcome-bottom-box\">\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"span12 top-buffer\">\n						<div class=\"span4 offset2 popover-box\">\n							<div class=\"popover left\">\n								<div class=\"arrow\"></div>\n								<div class=\"popover-content\">\n									<p>Full access to a constantly growing database, currently with ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "numFiles", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(" files</td>\n										<td class=\"value\"><span><i class=\"icon-check\"></i></span></td>\n									</tr>\n									<tr>\n										<td class=\"description\">Upload and download as much course material as you want, with no capacity limitation</td>\n										<td class=\"value\"><span><i class=\"icon-check\"></i></span></td>\n									</tr>\n									<tr>\n										<td class=\"description\">Upload straight from Dropbox, Google Drive, or SkyDrive with just a few easy clicks</td>\n										<td class=\"value\"><span><i class=\"icon-check\"></i></span></td>\n									</tr>\n								\n								</tbody>\n						</table>\n					</div>\n				</div>\n				<div class=\"row\">\n					<div class=\"span12 top-buffer\">\n						<div class=\"span4 offset2\">\n							<h3>Full access to a constantly growing database, currently with ");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "numFiles", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(" files</h3>\n						</div>\n						<div class=\"span4\">\n							<img src=\"");
+  data.buffer.push(" files</p>\n								</div>\n							</div>\n						</div>\n						<div class=\"span4\">\n							<div class=\"nerd-img\">\n								<img src=\"");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/nerd-solving-large.png\" />\n						</div>\n					</div>\n				</div>\n				<div class=\"row\">\n					<div class=\"span12 top-buffer\">\n						<div class=\"span2 offset2\">\n							<img src=\"");
+  data.buffer.push("img/nerd-large.png\" />\n							</div>\n						</div>\n					</div>\n				</div>\n				<div class=\"row\">\n					<div class=\"span12 top-buffer\">\n						<div class=\"span2 offset2\">\n							<div class=\"nerd-img\">\n								<img src=\"");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/nerd-solving-large.png\" />\n						</div>\n						<div class=\"span4\">\n							<h3>No capacity limits, upload as much course material as you want</h3>\n						</div>\n					</div>\n				</div>\n				<div class=\"row\">\n					<div class=\"span12 top-buffer\">\n						<div class=\"span4 offset2\">\n							<h3>Download freely from any course you'd like</h3>\n						</div>\n						<div class=\"span4\">\n							<img src=\"");
+  data.buffer.push("img/nerd-large.png\" />\n							</div>\n						</div>\n						<div class=\"span4 popover-box\">\n							<div class=\"popover right\">\n								<div class=\"arrow\"></div>\n								<div class=\"popover-content\">\n									<p>No capacity limits, upload as much course material as you want</p>\n								</div>\n							</div>\n							<div class=\"clearfix\"></div>\n						</div>\n					</div>\n				</div>\n				<div class=\"row\">\n					<div class=\"span12 top-buffer\">\n						<div class=\"span4 offset2 popover-box\">\n							<div class=\"popover left\">\n								<div class=\"arrow\"></div>\n								<div class=\"popover-content\">\n									<p>Download freely from any course you'd like, anywhere on the website</p>\n								</div>\n							</div>\n							<div class=\"clearfix\"></div>\n						</div>\n						<div class=\"span4\">\n							<div class=\"nerd-img\">\n								<img src=\"");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/nerd-solving-large.png\" />\n						</div>\n					</div>\n				</div>\n				<div class=\"row\">\n					<div class=\"span12 top-buffer\">\n						<div class=\"span2 offset2\">\n							<img src=\"");
+  data.buffer.push("img/nerd-large.png\" />\n							</div>\n						</div>\n					</div>\n				</div>\n				<div class=\"row\">\n					<div class=\"span12 top-buffer\">\n						<div class=\"span2 offset2\">\n							<div class=\"nerd-img\">\n								<img src=\"");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/nerd-solving-large.png\" />\n						</div>\n						<div class=\"span4\">\n							<h3> You can now easily upload files from almost any cloud applications, including Dropbox, Gmail, Skydrive and more</h3>\n						</div>\n					</div>\n				</div>\n				<div class=\"row\">\n					<div class=\"span12 top-buffer\">\n						<div class=\"span4 offset2\">\n							<h3> Invite you friends to check your homework, comment, share</h3>\n						</div>\n						<div class=\"span4\">\n							<img src=\"");
+  data.buffer.push("img/nerd-large.png\" />\n							</div>\n						</div>\n						<div class=\"span4 popover-box\">\n							<div class=\"popover right\">\n								<div class=\"arrow\"></div>\n								<div class=\"popover-content\">\n									<p> Easily upload cloud content. We support Dropbox, Skydrive, Gmail and more </p>\n								</div>\n							</div>\n							<div class=\"clearfix\"></div>\n						</div>\n					</div>\n				</div>\n				<div class=\"row\">\n					<div class=\"span12 top-buffer\">\n						<div class=\"span4 offset2 popover-box\">\n							<div class=\"popover left\">\n								<div class=\"arrow\"></div>\n								<div class=\"popover-content\">\n									<p> Invite you friends to check out your homework, comment and share </p>\n								</div>\n							</div>\n							<div class=\"clearfix\"></div>\n						</div>\n						<div class=\"span4\">\n							<div class=\"nerd-img\">\n								<img src=\"");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/nerd-solving-large.png\" />\n						</div>\n					</div>\n				</div>\n			</div>\n		</div>\n	</div>\n</div>");
+  data.buffer.push("img/nerd-large.png\" />\n							</div>\n						</div>\n					</div>\n				</div>\n			</div>\n		</div>\n	</div>\n</div>");
   return buffer;
   
 });

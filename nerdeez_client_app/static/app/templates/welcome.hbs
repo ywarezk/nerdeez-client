@@ -9,31 +9,37 @@
 				<div class="row">
 					<div class="span12">
 						<div class="row">
-						<!--<div class="logo">
-							<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
-						</div>-->
 							<div class="span12 welcome-title top-buffer">
 								<div class="row">
-									<div class="span9 offset1 top-buffer">
-										<h1>Homework made easy</h1>
-										<p>Find and share homework, all in one place</p>
+									<div class="span10 top-buffer">
+										<div class="text-center">
+											<h1>Homework made easy</h1>
+											<p>Find and share homework, all in one place</p>
+										</div>
 									</div>
 									<div class="span2 pull-right top-buffer">
 										<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
-										<!--<img src="https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo.png" />-->
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
-							<div class="span9 offset3">
-								{{#link-to 'register'}}
-								<button class="btn btn-secondary"> Sign up </button>
-								{{/link-to}}
-								<div class="signin">
-									<p>
-										Or {{#link-to "login"}} Sign in {{/link-to}}
-									</p>
+							<div class="span10">
+								<div class="sign text-center">
+									{{#link-to 'register'}}
+									<button class="btn btn-secondary"> Sign up </button>
+									{{/link-to}}
+									<div class="signin">
+										<p>
+											Or {{#link-to "login"}} Sign in {{/link-to}}
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="span2">
+								<div class="guest">
+									<p> Want to just check out the website? </p>
+									{{#link-to "index"}} Enter as guest {{/link-to}}
 								</div>
 							</div>
 						</div>
@@ -46,6 +52,15 @@
 		<div class="welcome-buffer-color">
 		</div>
 		<div class="welcome-buffer-box">
+			<div class="container">
+				<div class="row">
+					<div class="span10">
+						<div class="signup text-center">
+							<p> Sign up and get </p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="welcome-bottom-container">
@@ -54,81 +69,91 @@
 		<div class="welcome-bottom-box">
 			<div class="container">
 				<div class="row">
-					<div class="span4">
-				
-						<h3>Why you should sign up</h3>
-				
-						<table class="table table-bordered table-striped">
-									
-							<thead><tr>								
-								<th>Features</th>
-								<th>Sign up</th>								
-							</tr></thead>
-							
-								<tbody><tr>
-										<td class="description"> Full access to a growing database, with {{numFiles}} files</td>
-										<td class="value"><span><i class="icon-check"></i></span></td>
-									</tr>
-									<tr>
-										<td class="description">Upload and download as much course material as you want, with no capacity limitation</td>
-										<td class="value"><span><i class="icon-check"></i></span></td>
-									</tr>
-									<tr>
-										<td class="description">Upload straight from Dropbox, Google Drive, or SkyDrive with just a few easy clicks</td>
-										<td class="value"><span><i class="icon-check"></i></span></td>
-									</tr>
-								
-								</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="row">
 					<div class="span12 top-buffer">
-						<div class="span4 offset2">
-							<h3>Full access to a constantly growing database, currently with {{numFiles}} files</h3>
+						<div class="span4 offset2 popover-box">
+							<div class="popover left">
+								<div class="arrow"></div>
+								<div class="popover-content">
+									<p>Full access to a constantly growing database, currently with {{numFiles}} files</p>
+								</div>
+							</div>
 						</div>
 						<div class="span4">
-							<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
+							<div class="nerd-img">
+								<img src="{{unbound view.staticUrl}}img/nerd-large.png" />
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="span12 top-buffer">
 						<div class="span2 offset2">
-							<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
+							<div class="nerd-img">
+								<img src="{{unbound view.staticUrl}}img/nerd-large.png" />
+							</div>
 						</div>
-						<div class="span4">
-							<h3>No capacity limits, upload as much course material as you want</h3>
+						<div class="span4 popover-box">
+							<div class="popover right">
+								<div class="arrow"></div>
+								<div class="popover-content">
+									<p>No capacity limits, upload as much course material as you want</p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="span12 top-buffer">
-						<div class="span4 offset2">
-							<h3>Download freely from any course you'd like</h3>
+						<div class="span4 offset2 popover-box">
+							<div class="popover left">
+								<div class="arrow"></div>
+								<div class="popover-content">
+									<p>Download freely from any course you'd like, anywhere on the website</p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
 						</div>
 						<div class="span4">
-							<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
+							<div class="nerd-img">
+								<img src="{{unbound view.staticUrl}}img/nerd-large.png" />
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="span12 top-buffer">
 						<div class="span2 offset2">
-							<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
+							<div class="nerd-img">
+								<img src="{{unbound view.staticUrl}}img/nerd-large.png" />
+							</div>
 						</div>
-						<div class="span4">
-							<h3> You can now easily upload files from almost any cloud applications, including Dropbox, Gmail, Skydrive and more</h3>
+						<div class="span4 popover-box">
+							<div class="popover right">
+								<div class="arrow"></div>
+								<div class="popover-content">
+									<p> Easily upload cloud content. We support Dropbox, Skydrive, Gmail and more </p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="span12 top-buffer">
-						<div class="span4 offset2">
-							<h3> Invite you friends to check your homework, comment, share</h3>
+						<div class="span4 offset2 popover-box">
+							<div class="popover left">
+								<div class="arrow"></div>
+								<div class="popover-content">
+									<p> Invite you friends to check out your homework, comment and share </p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
 						</div>
 						<div class="span4">
-							<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
+							<div class="nerd-img">
+								<img src="{{unbound view.staticUrl}}img/nerd-large.png" />
+							</div>
 						</div>
 					</div>
 				</div>
