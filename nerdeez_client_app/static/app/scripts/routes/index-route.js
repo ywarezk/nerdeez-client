@@ -22,7 +22,7 @@ Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
         })
         controller.set('numFiles', totalFiles);
     },
-    redirectIfNeeded: function(model){
+    enter: function(){
         isLoggedIn = Nerdeez.get('auth.isLoggedIn');
         if(isLoggedIn){
             this.transitionTo('homepage');
