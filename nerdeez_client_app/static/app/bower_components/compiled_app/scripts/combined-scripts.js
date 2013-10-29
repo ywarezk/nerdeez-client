@@ -930,7 +930,7 @@ Nerdeez.HwsHwView = Ember.View.extend({
  * @copyright: Nerdeez
  */
 
-Nerdeez.IndexView = Ember.View.extend({
+Nerdeez.HomepageView = Ember.View.extend({
 	didInsertElement: function(){
 		this._super();
 		var stringOfHtml = $('#carousel-data').html();
@@ -1599,7 +1599,7 @@ Nerdeez.LoginController = Ember.Controller.extend(Nerdeez.Status, {
     		$.cookie('id', json['user_profile'].id, { expires: expires, path: '/' });
     		this.success('Successfully logged in');
     		if (this.get('redirect') == null){
-             this.transitionToRoute('search');
+             this.transitionToRoute('homepage');
     		}
     		else{
         		this.transitionToRoute(this.get('redirect'), this.get('redirectModel'));    
@@ -2745,7 +2745,7 @@ Nerdeez.HwsHwController = Ember.ObjectController.extend(Nerdeez.Status,Nerdeez.L
  * @copyright: Nerdeez
  */
 
-Nerdeez.IndexController = Ember.ArrayController.extend({
+Nerdeez.HomepageController = Ember.ArrayController.extend({
 	needs: ['search'],
 	
 	/**
@@ -3136,7 +3136,7 @@ var Ember = window.Ember;
  * define the routes urls here
  */
 Nerdeez.Router.map(function () {
-    this.route('welcome');
+    this.route('homepage');
 	this.route('search', {path: '/search/:search_param'});
 	this.route('about');
 	this.route('terms');
@@ -3285,7 +3285,7 @@ Nerdeez.LoginRequired = Nerdeez.NerdeezRoute.extend({
  * @copyright: Nerdeez
  */
 
-Nerdeez.WelcomeRoute = Nerdeez.NerdeezRoute.extend({
+Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
 	model: function(){
         return Nerdeez.Schoolgroup.find({
             school_type: 3,
@@ -3299,7 +3299,13 @@ Nerdeez.WelcomeRoute = Nerdeez.NerdeezRoute.extend({
             totalFiles+=item.get('num_files');
         })
         controller.set('numFiles', totalFiles);
-    }
+    },
+    redirectIfNeeded: function(model){
+        isLoggedIn = Nerdeez.get('auth.isLoggedIn');
+        if(isLoggedIn){
+            this.transitionTo('homepage');
+        }
+    },
 });
 
 })();
@@ -3609,10 +3615,10 @@ Nerdeez.HwsIndexRoute = Nerdeez.LoginRequired.extend({
  * @copyright: Nerdeez
  */
 
-Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
+Nerdeez.HomepageRoute = Nerdeez.NerdeezRoute.extend({
     enter: function(){
         var masthead = Ember.A();
-        masthead.addObject({route: 'index', model: null, title: 'Home'});
+        masthead.addObject({route: 'homepage', model: null, title: 'Home'});
         Nerdeez.set('masthead', masthead);
     },
     

@@ -1,19 +1,27 @@
 /**
- * the route for the welcome page
+ * the route for the homepage
  * 
- * Created October 28nd, 2013
- * @author: Doron Nachshon
+ * Created October 22nd, 2013
+ * @author: Yariv Katz
  * @version: 1.0
  * @copyright: Nerdeez
  */
 
-Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
-	model: function(){
+Nerdeez.HomepageRoute = Nerdeez.NerdeezRoute.extend({
+    enter: function(){
+        var masthead = Ember.A();
+        masthead.addObject({route: 'homepage', model: null, title: 'Home'});
+        Nerdeez.set('masthead', masthead);
+    },
+    
+    model: function(){
         return Nerdeez.Schoolgroup.find({
             school_type: 3,
-            page: 'search'
+            page: 'search',
+            order_by: 'users'
         });
     },
+    
     setupController: function(controller, model){
         this._super(controller, model);
         var totalFiles = 0;
@@ -21,11 +29,5 @@ Nerdeez.IndexRoute = Nerdeez.NerdeezRoute.extend({
             totalFiles+=item.get('num_files');
         })
         controller.set('numFiles', totalFiles);
-    },
-    redirectIfNeeded: function(model){
-        isLoggedIn = Nerdeez.get('auth.isLoggedIn');
-        if(isLoggedIn){
-            this.transitionTo('homepage');
-        }
-    },
+    }
 });

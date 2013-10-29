@@ -63,7 +63,7 @@ Nerdeez.LoginController = Ember.Controller.extend(Nerdeez.Status, {
     		$.cookie('id', json['user_profile'].id, { expires: expires, path: '/' });
     		this.success('Successfully logged in');
     		if (this.get('redirect') == null){
-             this.transitionToRoute('search');
+             this.transitionToRoute('homepage');
     		}
     		else{
         		this.transitionToRoute(this.get('redirect'), this.get('redirectModel'));    

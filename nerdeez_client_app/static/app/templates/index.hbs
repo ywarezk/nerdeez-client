@@ -1,174 +1,163 @@
-<!--
-	application homepage is defined here
-	
-	Created October 20th, 2013
-	@author: Yariv Katz
-	@version: 2.0
-	@copyright: Nerdeez 
--->
 
-<div class="homepage">
-	
-	<!-- begin quickstart -->
-	<div class="row">
-		<div class="span10 search quickstart account-container login stacked">
-			<form class="form-search nerdeez-inputs">
+
+<div class="welcome">
+	<div class="welcome-top-container">
+		<div class="welcome-top-color">
+		</div>
+		<div class="welcome-top-box">
+			<div class="container">
 				<div class="row">
-					<div class="span10 padding-left">
-						<h3>
-							Quick Start 
-						</h3>
-						<p>
-							Type your course number
-						</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="span8 padding-left">
-					{{
-						view
-						Ember.TextField
-						valueBinding="quickStart"
-						class="search-query"
-						placeholder="Ex. 234122"
-					}}
-					</div>
-					<div class="span2 padding-right">
-						<button class="button btn btn-primary btn-large" {{action "submitSearch"}}>
-							<i class="icon-search"></i>
-							Search
-						</button>
-					</div>
-				</div>
-					
-				{{#if controller}}
-					<div class="row">
-						<div class="span10 padding-left">
-							<h3>
-								OR 
-							</h3>
-							<p>
-								Click on your university
-							</p>
-						</div>
-					</div>
-						
-					<div class="row uni-buttons">
-						<div class="span10 padding-right">
-							<ol>
-								{{#each controller}}
-								<li {{action "uniClicked" this}}>
-									<div class="uni-button">
-										
-										<div class="pull-left">
-											{{#if image}}
-												<img {{bindAttr src="image"}} />
-											{{else}}
-												<img src="{{unbound view.staticUrl}}img/university-pic.png" />
-											{{/if}}
-										</div>
-										<div class="pull-left details">
-											<p>
-												<strong>University name:</strong>
-												{{title}}
-												
-											</p>
+					<div class="span12">
+						<div class="row">
+							<div class="span12 welcome-title top-buffer">
+								<div class="row">
+									<div class="span10 top-buffer">
+										<div class="text-center">
+											<h1>Homework made easy</h1>
+											<p>Find and share homework, all in one place</p>
 										</div>
 									</div>
-								</li>
-								{{/each}}
-							</ol>
+									<div class="span2 pull-right top-buffer">
+										<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="span10">
+								<div class="sign text-center">
+									{{#link-to 'register'}}
+									<button class="btn btn-secondary"> Sign up </button>
+									{{/link-to}}
+									<div class="signin">
+										<p>
+											Or {{#link-to "login"}} Sign in {{/link-to}}
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="span2">
+								<div class="guest">
+									<p> Want to just check out the website? </p>
+									{{#link-to "homepage"}} Enter as guest {{/link-to}}
+								</div>
+							</div>
 						</div>
 					</div>
-				{{/if}}
-			</form>
+				</div>
+			</div>
 		</div>
 	</div>
-	<!-- end quickstart -->
-	
-	
-	
-	<!-- begin carousel -->
-	{{#if controller}}
-		<div id="carousel-data" class="hidden">
-			{{#each controller}}
-				{{modZeroExcludeFirst this controller.content mod="4" html='</ul></div><div class="item"><ul class="tumbnails clearfix">'}}
-				  {{isFirst this controller.content html='<div class="item active fix-height"><ul class="tumbnails clearfix fix-height">'}}
-					  <li class="">
-						  	<div class="thumbnail" align="center">
-						  		<div class="image-wrapper fix-height">
-						  			{{#link-to "schoolgroup.about" this}}
-						  			{{#if image}}
-										<img {{bindAttr src="image"}}>
-									{{else}}
-										<img src="{{unbound view.staticUrl}}img/university-pic.png" />
-										<span class="uni-title label label-secondary">{{title}}</span>
-									{{/if}}
-									{{/link-to}}
-						        	</div>
-			                </div>
-					  </li>
-				  {{isLast this controller.content html="</ul></div>"}}
-			{{/each}}
+	<div class="welcome-buffer-container">
+		<div class="welcome-buffer-color">
 		</div>
-		<div class="row">
-			<div class="span10">
-				<div class="uni-carousel account-container login stacked">
-					<h3 style="">People from these Universities already uploaded <span class="label label-success">{{numFiles}}</span> files</h3>
-					<div class="">
-						<div id="carousel-example-generic" class="carousel slide">
-						
-						  <!-- Wrapper for slides -->
-						  <div class="carousel-inner">
-						  	
-						  </div>
-						
-						  <!-- Controls -->
-						  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-							    <i class="icon-chevron-left">
-							    	
-							    </i>
-						  </a>
-						  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-							    <i class="icon-chevron-right">
-							    	
-							    </i>
-						  </a>
+		<div class="welcome-buffer-box">
+			<div class="container">
+				<div class="row">
+					<div class="span10">
+						<div class="signup text-center">
+							<p> Sign up and get </p>
 						</div>
-			
 					</div>
 				</div>
 			</div>
 		</div>
-	{{/if}}
-	<!-- end carousel -->
-	
-	<!-- begin donation -->
-	<!--<div class="row donation ">
-		<div class="span10 account-container login stacked">
-			<div class="explain">
-				<h2>
-					Support development by  buying a nerdeez T-Shirt
-				</h2>
-			</div>
-			<div class="images">
-				<div class="thumbnail">
-					<img src="{{unbound view.staticUrl}}img/t-shirt.jpeg" />
+	</div>
+	<div class="welcome-bottom-container">
+		<div class="welcome-bottom-color">
+		</div>
+		<div class="welcome-bottom-box">
+			<div class="container">
+				<div class="row">
+					<div class="span12 top-buffer">
+						<div class="span4 offset2 popover-box">
+							<div class="popover left">
+								<div class="arrow"></div>
+								<div class="popover-content">
+									<p>Full access to a constantly growing database, currently with {{numFiles}} files</p>
+								</div>
+							</div>
+						</div>
+						<div class="span4">
+							<div class="nerd-img">
+								<img src="{{unbound view.staticUrl}}img/nerd-large.png" />
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="thumbnail">
-					<img src="{{unbound view.staticUrl}}img/t-shirt.jpeg" />
+				<div class="row">
+					<div class="span12 top-buffer">
+						<div class="span2 offset2">
+							<div class="nerd-img">
+								<img src="{{unbound view.staticUrl}}img/nerd-large.png" />
+							</div>
+						</div>
+						<div class="span4 popover-box">
+							<div class="popover right">
+								<div class="arrow"></div>
+								<div class="popover-content">
+									<p>No capacity limits, upload as much course material as you want</p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
 				</div>
-				<div class="thumbnail">
-					<img src="{{unbound view.staticUrl}}img/t-shirt.jpeg" />
+				<div class="row">
+					<div class="span12 top-buffer">
+						<div class="span4 offset2 popover-box">
+							<div class="popover left">
+								<div class="arrow"></div>
+								<div class="popover-content">
+									<p>Download freely from any course you'd like, anywhere on the website</p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="span4">
+							<div class="nerd-img">
+								<img src="{{unbound view.staticUrl}}img/nerd-large.png" />
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="actions">
-				{{#link-to "donate" class="button btn btn-primary btn-large"}}
-				Donate
-				{{/link-to}}
+				<div class="row">
+					<div class="span12 top-buffer">
+						<div class="span2 offset2">
+							<div class="nerd-img">
+								<img src="{{unbound view.staticUrl}}img/nerd-large.png" />
+							</div>
+						</div>
+						<div class="span4 popover-box">
+							<div class="popover right">
+								<div class="arrow"></div>
+								<div class="popover-content">
+									<p> Easily upload cloud content. We support Dropbox, Skydrive, Gmail and more </p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span12 top-buffer">
+						<div class="span4 offset2 popover-box">
+							<div class="popover left">
+								<div class="arrow"></div>
+								<div class="popover-content">
+									<p> Invite you friends to check out your homework, comment and share </p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="span4">
+							<div class="nerd-img">
+								<img src="{{unbound view.staticUrl}}img/nerd-large.png" />
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>-->
-	<!-- end donation -->
-	
+	</div>
 </div>
