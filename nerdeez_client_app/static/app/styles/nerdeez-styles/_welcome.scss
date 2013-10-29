@@ -9,14 +9,17 @@
  */
 
 .welcome {
+	@include background (image-url('/static/theme/img/signin/login-bg.png'));
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
+	z-index: 1000;
+	overflow: auto;
 	.welcome-top-container {
 		position: relative;
-		height: 40%;
+		height: 42%;
 		width: 100%;
 		.welcome-top-color {
 			position: absolute;
@@ -38,16 +41,27 @@
  				width: 225px;
  				font-size: 17px;
  				background-image: none;
- 				@include background-image(linear-gradient(#f9b550, #F9BC61));
+ 				@include background-image(linear-gradient(#F69A0F, #EC9109));
+ 				border: 1px solid black;
  			}
  			.btn:hover {
-
+ 				background-color: #EC9109;
  			}
+ 			.btn:focus {
+ 				background-image: none !important;
+ 			}
+ 			.signin {
+	 			color: #4e4e4e;
+	    		font-size: 15px;
+			    line-height: 17px;
+			    margin-top: 15px;
+			    margin-left: 71px;
+ 			}	
 		}
 	}
 	.welcome-buffer-container {
 		position: relative;
-		height: 10%;
+		height: 8%;
 		width: 100%;
 		.welcome-buffer-color {
 			position: absolute;
@@ -68,12 +82,12 @@
 	}
 	.welcome-bottom-container {
 		position: relative;
-		height: 55%;
+		height: 100%;
 		width: 100%;
 		.welcome-bottom-color {
 			position: absolute;
-			background-color: #c7c7c7;
-			opacity: 0.55;
+			background-color: white;
+			opacity: 0.4;
 			height:100%;
 			width: 100%;
 			top: 0;
@@ -85,6 +99,9 @@
 			width: 100%;
 			top: 0;
 			left: 0;
+			.top-buffer {
+				margin-top: 30px;
+			}
 		}
 	}
  	.welcome-title {
@@ -100,15 +117,5 @@
     		margin-top: 35px;
     		margin-left: 35px;
  		}
- 	}
-	.sign {
-		margin-top: 70px !important;
- 		.signin {
- 			color: #4e4e4e;
-    		font-size: 14px;
-		    line-height: 19px;
-		    margin-top: 16px;
-		    margin-left: 72px;
- 		}	
  	}
 }

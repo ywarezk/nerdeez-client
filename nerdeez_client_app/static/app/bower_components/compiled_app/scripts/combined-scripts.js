@@ -951,32 +951,6 @@ Nerdeez.IndexView = Ember.View.extend({
 (function() {
 
 /**
- * the view for the welcome page
- * 
- * Created Septemeber 28th, 2013
- * @copyright: Nerdeez Ltd.
- * @version: 1.0
- * @author: Yariv Katz
- * 
- */
-
-Nerdeez.WelcomeView = Ember.View.extend({
-	didInsertElement: function() {
-		$('#topbar').hide();
-		$('#header').hide();
-		$('#masthead').hide();
-		$('#main-nav').hide();
-		$('#left-sidebar-location').hide();
-		$('.push').hide();
-		$('#footer').hide();
-	}
-});
-
-})();
-
-(function() {
-
-/**
  * will hold abstract class for all the models in the app
  * and will hold common functions for all the models
  * 
@@ -2835,44 +2809,6 @@ Nerdeez.QuickstartFacultyController = Ember.ArrayController.extend({
 });
 
 
-
-})();
-
-(function() {
-
-/**
- * The controller for the welcome page
- * 
- * Created October 28st, 2013
- * @author: Doron Nachshon
- * @version: 1.0
- * @copyright nerdeez Ltd.
- */
-
-Nerdeez.WelcomeController = Ember.Controller.extend({
-	showElements: function() {
-		$('#topbar').toggle();
-		$('#header').toggle();
-		$('#masthead').toggle();
-		$('#main-nav').toggle();
-		$('#left-sidebar-location').toggle();
-		$('.push').toggle();
-		$('#footer').toggle();
-	},
-
-	actions: {
-
-		registerLink: function() {
-			this.showElements();
-			this.transitionToRoute('register');
-		},
-
-		loginLink: function () {
-			this.showElements();
-			this.transitionToRoute('login');
-		}
-	}
-});
 
 })();
 

@@ -27,7 +27,14 @@
 						</div>
 						<div class="row">
 							<div class="span9 offset3">
-								<button class="btn btn-secondary" {{action registerLink}}> Sign up </button>
+								{{#link-to 'register'}}
+								<button class="btn btn-secondary"> Sign up </button>
+								{{/link-to}}
+								<div class="signin">
+									<p>
+										Or {{#link-to "login"}} Sign in {{/link-to}}
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -46,29 +53,82 @@
 		</div>
 		<div class="welcome-bottom-box">
 			<div class="container">
-				<div class="sign">
-					<div class="row">
-						<div class="span5 offset1 top-buffer">
-							<h5>
-							<p>
-								<div class="signin">
-									Or {{#link-to "login"}} Sign in {{/link-to}}
-								</div>
-							</p>
-							<p>
-								and gain access to {{numFiles}} files in our system!
-							</p>
-							</h5>
+				<div class="row">
+					<div class="span4">
+				
+						<h3>Why you should sign up</h3>
+				
+						<table class="table table-bordered table-striped">
+									
+							<thead><tr>								
+								<th>Features</th>
+								<th>Sign up</th>								
+							</tr></thead>
+							
+								<tbody><tr>
+										<td class="description"> Full access to a growing database, with {{numFiles}} files</td>
+										<td class="value"><span><i class="icon-check"></i></span></td>
+									</tr>
+									<tr>
+										<td class="description">Upload and download as much course material as you want, with no capacity limitation</td>
+										<td class="value"><span><i class="icon-check"></i></span></td>
+									</tr>
+									<tr>
+										<td class="description">Upload straight from Dropbox, Google Drive, or SkyDrive with just a few easy clicks</td>
+										<td class="value"><span><i class="icon-check"></i></span></td>
+									</tr>
+								
+								</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span12 top-buffer">
+						<div class="span4 offset2">
+							<h3>Full access to a constantly growing database, currently with {{numFiles}} files</h3>
 						</div>
-						<div class="span5 offset1 top-buffer">
-							<h5>
-								<p>
-									Just want to take a look?
-								</p>
-								<div class="guest">
-									<a>Enter as guest</a>
-								</div>
-							</h5>
+						<div class="span4">
+							<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span12 top-buffer">
+						<div class="span2 offset2">
+							<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
+						</div>
+						<div class="span4">
+							<h3>No capacity limits, upload as much course material as you want</h3>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span12 top-buffer">
+						<div class="span4 offset2">
+							<h3>Download freely from any course you'd like</h3>
+						</div>
+						<div class="span4">
+							<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span12 top-buffer">
+						<div class="span2 offset2">
+							<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
+						</div>
+						<div class="span4">
+							<h3> You can now easily upload files from almost any cloud applications, including Dropbox, Gmail, Skydrive and more</h3>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span12 top-buffer">
+						<div class="span4 offset2">
+							<h3> Invite you friends to check your homework, comment, share</h3>
+						</div>
+						<div class="span4">
+							<img src="{{unbound view.staticUrl}}img/nerd-solving-large.png" />
 						</div>
 					</div>
 				</div>
