@@ -55,6 +55,7 @@ Nerdeez.set('ready', readyFunction);
 
 //vendor files
 require('bower_components/facebook/facebook');
+require('bower_components/facebook/google');
 require('bower_components/jquery-plugin/jquery.cookie');
 
 //mixins
@@ -72,6 +73,7 @@ require('scripts/views/schoolgroup-files-view');
 require('scripts/components/fb-comment-component');
 require('scripts/components/pagination-component');
 require('scripts/components/search-result-component');
+require('scripts/components/fb-like-component');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/models/auth-model');
