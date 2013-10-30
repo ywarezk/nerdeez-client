@@ -1230,7 +1230,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   
 
 
-  data.buffer.push("<!--\n	handle bar for the like component\n	\n	```handlebars\n	```\n	\n	you need to bind the paginationController to the controller you are changing the content for\n	and also paginationExtraParams should be binded if you want to query on extra things\n	\n	Created October 30th, 2013\n	@author: Doron Nachshon\n	@version: 1.0\n	@copyright: Nerdeez\n-->\n\n\n<div class=\"pull-left fb-like\">\n	<fb:like data-href=\"http://www.facebook.com/nerdeez\" data-width=\"200\" data-height=\"20\" colorscheme=\"dark\" layout=\"button_count\" action=\"like\" show_faces=\"false\" send=\"false\"></fb:like>\n</div>");
+  data.buffer.push("<!--\n	handle bar for the like component\n	\n	```handlebars\n	```\n	\n	you need to bind the paginationController to the controller you are changing the content for\n	and also paginationExtraParams should be binded if you want to query on extra things\n	\n	Created October 30th, 2013\n	@author: Doron Nachshon\n	@version: 1.0\n	@copyright: Nerdeez\n-->\n\n\n<div class=\"pull-left fb-like\">\n	<fb:like data-href=\"http://www.nerdeez.com\" data-width=\"200\" data-height=\"20\" colorscheme=\"dark\" layout=\"button_count\" action=\"like\" show_faces=\"false\" send=\"false\"></fb:like>\n</div>");
   
 });
 
