@@ -997,8 +997,9 @@ a.nerdeez-button {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_topbar\.scss}line{font-family:\0000312}}
 #topbar #top-nav .social-like {
   height: 5px !important;
+  width: 200px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_topbar\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_topbar\.scss}line{font-family:\0000318}}
 #topbar #top-nav ul li b.caret {
   position: relative;
   top: 8px;
