@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/Product" lang="en"> <!--html itemscope is part of google's schema.org markup -->
+<html itemscope itemtype="http://schema.org/CreativeWork" lang="en"> <!--html itemscope is part of google's schema.org markup -->
     <head prefix="og: http://ogp.me/ns#"> <!-- prefix is part of facebook's open graph markup -->
         <meta charset="utf-8">
         <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>-->
@@ -28,7 +28,6 @@
         <meta property="og:title" content="Nerdeez - Community College"> 
         <meta property="og:site_name" content="Nerdeez">
 
-        <meta itemprop="description" content="Nerdeez - Community College">
         <meta property="og:description" content="Nerdeez - Community College">
 
         <meta property="og:image" content="https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo-square.png">
@@ -42,11 +41,15 @@
         <meta property="og:image:height" content="61">
         
         <meta property="og:type"   content="website"> 
-        <meta property="fb:app_id" content='{{FACEBOOK_APP_ID}}' /> 
+        <meta property="fb:app_id" content='{{FACEBOOK_APP_ID}}'> 
         
         <!--Schema.org markup [google] -->
         <meta itemprop="name" content="Nerdeez">
+        <meta itemprop="url" href="http://www.nerdeez.com">
+        <meta itemprop="description" content="Nerdeez - Community College">
         <meta itemprop="image" content="https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo-square.png">
+        <meta itemprop="thumbnailUrl" content="https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo-square.png">
+        
         {% load compress %}
 		{% compress css %}
         
