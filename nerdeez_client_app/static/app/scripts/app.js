@@ -12,6 +12,14 @@ var Nerdeez = window.Nerdeez = Ember.Application.create({
     
 });
 
+
+/*
+* Enable the hashbang (#! in url)
+*/
+Nerdeez.Router.reopen({
+	location: 'hashbang'
+});
+
 /**
  * application constants
  */
@@ -51,12 +59,13 @@ var readyFunction = function(temp1, temp2, temp3){
 }
 Nerdeez.set('ready', readyFunction);
 
-
-
 //vendor files
 require('bower_components/facebook/facebook');
 require('bower_components/google/google');
 require('bower_components/jquery-plugin/jquery.cookie');
+
+//add url hashbang
+require('scripts/nerdeez-ember/ember-hashbang');
 
 //mixins
 require('scripts/mixins/like-mixin');
