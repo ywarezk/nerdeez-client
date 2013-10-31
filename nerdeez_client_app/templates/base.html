@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/Product"> <!--html itemscope is part of schema.org markup -->
-    <head>
+<html itemscope itemtype="http://schema.org/Product" lang="en"> <!--html itemscope is part of google's schema.org markup -->
+    <head prefix="og: http://ogp.me/ns#"> <!-- prefix is part of facebook's open graph markup -->
         <meta charset="utf-8">
         <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>-->
         <meta name="description" content="">
@@ -20,15 +20,33 @@
 
         <!-- Social plugins settings -->
         <!-- Open Graph markup [facebook] -->
-        <meta property="og:type"   content="website" /> 
+        <meta property="og:locale" content="en_US">
+        
+        <link rel="canonical" href="http://www.nerdeez.com">
+        <meta property="og:url" content="http://www.nerdeez.com">
+        
+        <meta property="og:title" content="Nerdeez - Community College"> 
+        <meta property="og:site_name" content="Nerdeez">
+
+        <meta itemprop="description" content="Nerdeez - Community College">
+        <meta property="og:description" content="Nerdeez - Community College">
+
+        <meta property="og:image" content="https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo-square.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="211">
+        <meta property="og:image:height" content="211">
+
+        <meta property="og:image" content="https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo-small.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="180">
+        <meta property="og:image:height" content="61">
+        
+        <meta property="og:type"   content="website"> 
         <meta property="fb:app_id" content='{{FACEBOOK_APP_ID}}' /> 
-        <meta property="og:url" content="http://www.nerdeez.com" /> 
-        <meta property="og:title" content="Nerdeez - Community College" /> 
+        
         <meta property="og:image" content="https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo-square.png" />
         <!--Schema.org markup [google] -->
-        <link rel="canonical" href="http://www.nerdeez.com" />
         <meta itemprop="name" content="Nerdeez">
-        <meta itemprop="description" content="Nerdeez - Community College">
         <meta itemprop="image" content="https://s3-eu-west-1.amazonaws.com/nerdeez-public/nerdeez-logo-square.png">
         {% load compress %}
 		{% compress css %}
