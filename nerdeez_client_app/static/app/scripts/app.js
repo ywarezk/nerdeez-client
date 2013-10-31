@@ -12,6 +12,11 @@ var Nerdeez = window.Nerdeez = Ember.Application.create({
     
 });
 
+//create hashbang urls
+Nerdeez.Router.reopen({
+     location: 'hashbang'
+})
+
 /**
  * application constants
  */
@@ -133,5 +138,6 @@ require('scripts/nerdeez-ember/tastypie_serializer');
 require('scripts/nerdeez-ember/tastypie_adapter');
 require('scripts/nerdeez-ember/porthole.min');
 require('scripts/nerdeez-ember/wormhole');
+require('scripts/nerdeez-ember/ember-hashbang');
 require('scripts/store/nerdeez-store');
 
