@@ -1,4 +1,5 @@
 Django==1.5.1
+Ghost.py==0.1b2
 distribute==0.6.31
 django-appconf==0.6
 django-compressor==1.3
