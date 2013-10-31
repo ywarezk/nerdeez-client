@@ -6,7 +6,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n                <img src=\"");
+  data.buffer.push("\n                    <img src=\"");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
@@ -365,7 +365,7 @@ function program6(depth0,data) {
 Ember.TEMPLATES["_topbar"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, hashTypes, hashContexts, self=this, helperMissing=helpers.helperMissing;
+  var buffer = '', stack1, hashTypes, hashContexts, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 function program1(depth0,data) {
   
@@ -427,7 +427,11 @@ function program9(depth0,data) {
   data.buffer.push("\n                                    <i class=\"icon-pencil\"></i>\n                                    Register\n                  ");
   }
 
-  data.buffer.push("<div id=\"topbar\">\n    \n	<div class=\"container\">\n		\n		<div id=\"top-nav\">\n			\n			<!--<div class=\"pull-left fb-like\">\n				<fb:like href=\"https://developers.facebook.com/docs/plugins/\" width=\"200\" height=\"100\" colorscheme=\"light\" layout=\"standard\" action=\"like\" show_faces=\"true\" send=\"false\"></fb:like>\n			</div>-->\n			\n			<ul class=\"pull-right\">\n                ");
+  data.buffer.push("<div id=\"topbar\">\n    \n	<div class=\"container\">\n		\n		<div id=\"top-nav\">\n			\n				");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "social-like", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n			\n			<ul class=\"pull-right\">\n                ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "Nerdeez.auth.isLoggedIn", {hash:{},inverse:self.program(6, program6, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
@@ -1351,6 +1355,16 @@ function program13(depth0,data) {
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "yield", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n		</div>\n	</div>\n</li>");
   return buffer;
+  
+});
+
+Ember.TEMPLATES["components/social-like"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  
+
+
+  data.buffer.push("<!--\n	handle bar for the like component\n	\n	```handlebars\n	```\n	\n	you need to bind the paginationController to the controller you are changing the content for\n	and also paginationExtraParams should be binded if you want to query on extra things\n	\n	Created October 30th, 2013\n	@author: Doron Nachshon\n	@version: 1.0\n	@copyright: Nerdeez\n-->\n\n<div class=\"row\">\n\n	<div class=\"social-like span3\">\n		<div class=\"pull-left fb-like\">\n			<fb:like data-href=\"http://www.nerdeez.com/\" data-width=\"200\" data-height=\"20\" colorscheme=\"dark\" layout=\"button_count\" action=\"like\" show_faces=\"false\" send=\"false\"></fb:like>\n		</div>\n		<div class=\"pull-right google-like\">\n			<div class=\"g-plusone\" data-href=\"http://www.nerdeez.com\" data-size=\"medium\" data-annotation=\"bubble\" ></div>\n		</div>\n	</div>\n</div>");
   
 });
 

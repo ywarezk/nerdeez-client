@@ -994,7 +994,11 @@ a.nerdeez-button {
  * @copyright: nerdeez
  * @version: 1.0
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_topbar\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_topbar\.scss}line{font-family:\0000312}}
+#topbar #top-nav .social-like {
+  height: 5px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ywarezk\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_topbar\.scss}line{font-family:\0000317}}
 #topbar #top-nav ul li b.caret {
   position: relative;
   top: 8px;
