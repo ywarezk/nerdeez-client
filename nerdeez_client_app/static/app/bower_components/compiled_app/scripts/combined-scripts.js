@@ -146,7 +146,7 @@ window.fbAsyncInit = function() {
  */
 
 window.___gcfg = {
-  lang: 'eng',
+  lang: 'en-US',
   parsetags: 'explicit'
 };
 
