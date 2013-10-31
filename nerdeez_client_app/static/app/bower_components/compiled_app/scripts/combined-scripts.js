@@ -135,6 +135,32 @@ window.fbAsyncInit = function() {
 
 (function() {
 
+/**
+ * this file will activate the google api
+ * 
+ * Created October 30th
+ * @author Doron Nachshon
+ * @copyright: nerdeez Ltd
+ * @version: 1.0
+ * 
+ */
+
+window.___gcfg = {
+  lang: 'en-US',
+  parsetags: 'explicit'
+};
+
+(function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+
+
+})();
+
+(function() {
+
 /*!
  * jQuery Cookie Plugin v1.4.0
  * https://github.com/carhartl/jquery-cookie
@@ -1142,6 +1168,31 @@ Nerdeez.SearchResultComponent = Ember.Component.extend({
     }
 });
 
+
+})();
+
+(function() {
+
+/**
+ * The View Component of the Facebook like plugin
+ * 
+ * Created October 30th, 2013
+ * @copyright: Nerdeez Ltd.
+ * @version: 1.0
+ * @author: Doron Nachshon
+ * 
+ */
+
+
+
+Nerdeez.SocialLikeComponent = Ember.Component.extend({
+	didInsertElement: function() {
+		Ember.run.scheduleOnce('afterRender', this, function(){
+      		FB.XFBML.parse();
+      		gapi.plusone.go();
+      	});
+	}
+});
 
 })();
 
