@@ -100,6 +100,7 @@ require('scripts/handlebars-helpers/nerdeez-handlebars-helpers');
 //routes
 require('scripts/routes/nerdeez-routes');
 require('scripts/routes/index-route');
+require('scripts/routes/welcome-route');
 require('scripts/routes/add-schoolgroup-route');
 require('scripts/routes/add-schoolgroup-course-route');
 require('scripts/routes/add-schoolgroup-faculty-route');

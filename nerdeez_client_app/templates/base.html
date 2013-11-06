@@ -20,15 +20,25 @@
         
         {% load compress %}
 		{% compress css %}
+
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/bootstrap.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/font-awesome.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/prettyPhoto.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/slider.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/flexslider.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/style.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/green.css">
+        <link rel="shortcut icon" href="{{STATIC_URL}}themes/new-theme/img/favicon/favicon.png">
         
-        <link rel="stylesheet" href="{{STATIC_URL}}theme/css/ui-lightness/jquery-ui-1.8.21.custom.css">  
-        <link rel="stylesheet" href="{{STATIC_URL}}theme/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{STATIC_URL}}theme/css/bootstrap-responsive.min.css">
+        <!-- <link rel="stylesheet" href="{{STATIC_URL}}themes/old-theme/css/ui-lightness/jquery-ui-1.8.21.custom.css">  
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/old-theme/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/old-theme/css/bootstrap-responsive.min.css">
         
-        <link rel="stylesheet" href="{{STATIC_URL}}theme/css/application-black-orange.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/old-theme/css/application-black-orange.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/old-theme/css/pages/dashboard.css"> -->
+
         <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/compiled_app/styles/style.css">
         
-        <link rel="stylesheet" href="{{STATIC_URL}}theme/css/pages/dashboard.css">
         <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/validation/validationEngine.jquery.css" type="text/css"/>
         {% endcompress %}
         <!--<script src="{{STATIC_URL}}app/bower_components/modernizr.min.js"></script>-->
@@ -86,11 +96,11 @@
         		
         		<div class="row">
         			
-        			<div class="span3">
+        			<div class="col-md-4">
         				&copy; 2013 <a href="http://company.nerdeez.com">Nerdeez Ltd.</a>, all rights reserved.
         			</div> <!-- /span6 -->
                     
-                    <div class="nerdeez-links span3 offset2">
+                    <div class="nerdeez-links col-md-3 col-md-offset-1">
                         <ul class="nav">
                             <li>    
                                 <a href="#/privacy">Privacy</a>
@@ -101,7 +111,7 @@
                         </ul>
                     </div>
         			
-        			<div class="span2 pull-right" id="builtby">
+        			<div class="col-md-2 pull-right" id="builtby">
         				<a href="http://company.nerdeez.com">Built by Nerdeez.</a>				
         			</div> <!-- /.span6 -->
         			
@@ -142,24 +152,36 @@
         <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
         <!-- endbuild -->
+
+        <!-- <script src="{{STATIC_URL}}themes/new-theme/js/jquery.js"></script> -->
+        <script src="{{STATIC_URL}}themes/new-theme/js/bootstrap.js"></script>
+        <script src="{{STATIC_URL}}themes/new-theme/js/jquery.isotope.js"></script>
+        <script src="{{STATIC_URL}}themes/new-theme/js/jquery.prettyPhoto.js"></script>
+        <script src="{{STATIC_URL}}themes/new-theme/js/jquery.cslider.js"></script>
+        <script src="{{STATIC_URL}}themes/new-theme/js/modernizr.custom.28468.js"></script>
+        <script src="{{STATIC_URL}}themes/new-theme/js/filter.js"></script>
+        <script src="{{STATIC_URL}}themes/new-theme/js/cycle.js"></script>
+        <script src="{{STATIC_URL}}themes/new-theme/js/jquery.flexslider-min.js"></script>
+        <script src="{{STATIC_URL}}themes/new-theme/js/easing.js"></script>
+        <script src="{{STATIC_URL}}themes/new-theme/js/custom.js"></script>
         
-        <script src="{{STATIC_URL}}theme/js/libs/jquery-ui-1.8.21.custom.min.js"></script>
-        <script src="{{STATIC_URL}}theme/js/libs/jquery.ui.touch-punch.min.js"></script>
+        <!-- <script src="{{STATIC_URL}}themes/old-theme/js/libs/jquery-ui-1.8.21.custom.min.js"></script>
+        <script src="{{STATIC_URL}}themes/old-theme/js/libs/jquery.ui.touch-punch.min.js"></script>
         
-        <script src="{{STATIC_URL}}theme/js/libs/bootstrap/bootstrap.min.js"></script>
+        <script src="{{STATIC_URL}}themes/old-theme/js/libs/bootstrap/bootstrap.min.js"></script>
         
-        <script src="{{STATIC_URL}}theme/js/Theme.js"></script>
-        <script src="{{STATIC_URL}}theme/js/Charts.js"></script>
+        <script src="{{STATIC_URL}}themes/old-theme/js/Theme.js"></script>
+        <script src="{{STATIC_URL}}themes/old-theme/js/Charts.js"></script>
         
-        <script src="{{STATIC_URL}}theme/js/plugins/excanvas/excanvas.min.js"></script>
-        <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.js"></script>
-        <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.pie.js"></script>
-        <!--<script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.orderBars.js"></script>-->
-        <!--<script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.tooltip.min.js"></script>-->
-        <script src="{{STATIC_URL}}theme/js/plugins/flot/jquery.flot.resize.js"></script>
+        <script src="{{STATIC_URL}}themes/old-theme/js/plugins/excanvas/excanvas.min.js"></script>
+        <script src="{{STATIC_URL}}themes/old-theme/js/plugins/flot/jquery.flot.js"></script>
+        <script src="{{STATIC_URL}}themes/old-theme/js/plugins/flot/jquery.flot.pie.js"></script> -->
+        <!--<script src="{{STATIC_URL}}themes/old-theme/js/plugins/flot/jquery.flot.orderBars.js"></script>-->
+        <!--<script src="{{STATIC_URL}}themes/old-theme/js/plugins/flot/jquery.flot.tooltip.min.js"></script>-->
+        <script src="{{STATIC_URL}}themes/old-theme/js/plugins/flot/jquery.flot.resize.js"></script>
         
-        <script src="{{STATIC_URL}}theme/js/demos/charts/line.js"></script>
-        <script src="{{STATIC_URL}}theme/js/demos/charts/donut.js"></script>
+        <script src="{{STATIC_URL}}themes/old-theme/js/demos/charts/line.js"></script>
+        <script src="{{STATIC_URL}}themes/old-theme/js/demos/charts/donut.js"></script>
         
         
         

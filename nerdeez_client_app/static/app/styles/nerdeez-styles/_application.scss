@@ -10,7 +10,8 @@ $nerdeezPink: #F54D70;
 html, body {
     height: 100%;
     /* unvisited link */
-    @include background (image-url('/static/theme/img/signin/login-bg.png'));
+    // @include background (image-url('/static/themes/old-theme/img/signin/login-bg.png'));
+    background-color: white;
 }
 
 #content{
@@ -48,7 +49,7 @@ ul.nav.nav-pills li {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -61px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto -55px; /* the bottom margin is the negative value of the footer's height */
 }
 
 /**

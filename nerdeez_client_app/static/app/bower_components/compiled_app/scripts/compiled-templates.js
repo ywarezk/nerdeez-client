@@ -33,13 +33,13 @@ function program7(depth0,data) {
   data.buffer.push("\n							<i class=\"icon-envelope\"></i>\n							Contact Us\n						");
   }
 
-  data.buffer.push("<!--\n\nHolds the html of the application header\nauthor: Yariv Katz\ncopyright: nerdeez.com\nversion: 1.0\n\n-->\n\n<div id=\"header\" class=\"_header\">\n	<div class=\"container\">\n		<div class=\"row\">\n            <div class=\"logo span2\">\n                ");
+  data.buffer.push("<!--\n\nHolds the html of the application header\nauthor: Yariv Katz\ncopyright: nerdeez.com\nversion: 1.0\n\n-->\n\n<div id=\"header\" class=\"_header\">\n	<div class=\"container\">\n		<div class=\"row\">\n            <div class=\"logo col-md-3\">\n                ");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "homepage", options) : helperMissing.call(depth0, "linkTo", "homepage", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n            </div>\n		\n	        <div class=\"span10 menu\">\n    		    <div class=\"nav-collapse\">\n    			    <ul class=\"nav pull-right\" id=\"main-nav\">\n    				    <li class=\"nav-icon home\">\n    					    ");
+  data.buffer.push("\n            </div>\n		\n	        <div class=\"col-md-9 menu\">\n    		    <div class=\"nav-collapse\">\n    			    <ul class=\"nav pull-right\" id=\"main-nav\">\n    				    <li class=\"nav-icon\">\n    					    ");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
@@ -842,7 +842,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "masthead", options) : helperMissing.call(depth0, "partial", "masthead", options))));
-  data.buffer.push("\n<div id=\"content\">\n    <div class=\"container\">\n        <div class=\"row\">\n	    	<div class=\"span2\" id=\"left-sidebar-location\">\n			    ");
+  data.buffer.push("\n<div id=\"content\">\n    <div class=\"container\">\n        <div class=\"row\">\n	    	<!--<div class=\"col-md-2\" id=\"left-sidebar-location\">\n			    ");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
@@ -852,7 +852,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "history-bar", options) : helperMissing.call(depth0, "partial", "history-bar", options))));
-  data.buffer.push("\n		    </div>\n		    <div class=\"span10\" id=\"main-outlet\">\n			    ");
+  data.buffer.push("\n		    </div>-->\n		    <div class=\"col-md-12\" id=\"main-outlet\">\n			    ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
@@ -2153,7 +2153,7 @@ function program5(depth0,data) {
   data.buffer.push(" Enter as guest ");
   }
 
-  data.buffer.push("\n\n<div class=\"welcome\">\n	<div class=\"welcome-top-container\">\n		<div class=\"welcome-top-color\">\n		</div>\n		<div class=\"welcome-top-box\">\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"span12\">\n						<div class=\"row\">\n							<div class=\"span12 welcome-title top-buffer\">\n								<div class=\"row\">\n									<div class=\"span10 top-buffer\">\n										<div class=\"text-center\">\n											<h1>Homework made easy</h1>\n											<p>Find and share homework, all in one place</p>\n										</div>\n									</div>\n									<div class=\"span2 pull-right top-buffer\">\n										<img src=\"");
+  data.buffer.push("\n\n<div class=\"landing-page\">\n	<div class=\"landing-page-top-container\">\n		<div class=\"landing-page-top-color\">\n		</div>\n		<div class=\"landing-page-top-box\">\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"span12\">\n						<div class=\"row\">\n							<div class=\"span12 landing-page-title top-buffer\">\n								<div class=\"row\">\n									<div class=\"span10 top-buffer\">\n										<div class=\"text-center\">\n											<h1>Homework made easy</h1>\n											<p>Find and share homework, all in one place</p>\n										</div>\n									</div>\n									<div class=\"span2 pull-right top-buffer\">\n										<img src=\"");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
@@ -2175,7 +2175,7 @@ function program5(depth0,data) {
   options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "homepage", options) : helperMissing.call(depth0, "link-to", "homepage", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n								</div>\n							</div>\n						</div>\n					</div>\n				</div>\n			</div>\n		</div>\n	</div>\n	<div class=\"welcome-buffer-container\">\n		<div class=\"welcome-buffer-color\">\n		</div>\n		<div class=\"welcome-buffer-box\">\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"span10\">\n						<div class=\"signup text-center\">\n							<p> Sign up and get </p>\n						</div>\n					</div>\n				</div>\n			</div>\n		</div>\n	</div>\n	<div class=\"welcome-bottom-container\">\n		<div class=\"welcome-bottom-color\">\n		</div>\n		<div class=\"welcome-bottom-box\">\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"span12 top-buffer\">\n						<div class=\"span4 offset2 popover-box\">\n							<div class=\"popover left\">\n								<div class=\"arrow\"></div>\n								<div class=\"popover-content\">\n									<p>Full access to a constantly growing database, currently with ");
+  data.buffer.push("\n								</div>\n							</div>\n						</div>\n					</div>\n				</div>\n			</div>\n		</div>\n	</div>\n	<div class=\"landing-page-buffer-container\">\n		<div class=\"landing-page-buffer-color\">\n		</div>\n		<div class=\"landing-page-buffer-box\">\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"span10\">\n						<div class=\"signup text-center\">\n							<p> Sign up and get </p>\n						</div>\n					</div>\n				</div>\n			</div>\n		</div>\n	</div>\n	<div class=\"landing-page-bottom-container\">\n		<div class=\"landing-page-bottom-color\">\n		</div>\n		<div class=\"landing-page-bottom-box\">\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"span12 top-buffer\">\n						<div class=\"span4 offset2 popover-box\">\n							<div class=\"popover left\">\n								<div class=\"arrow\"></div>\n								<div class=\"popover-content\">\n									<p>Full access to a constantly growing database, currently with ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "numFiles", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
@@ -3079,5 +3079,32 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 
 
   data.buffer.push("<!--\n	handlebar for the under construction page\n	\n	Created October 20th, 2013\n	@author: Yariv Katz\n	@version: 1.0\n	@copyright: Nerdeez Ltd\n-->\n\n<div class=\"under-construction account-container login stacked\">\n	<i class=\"icon-wrench\">\n	</i>\n	<br/>\n	<div class=\"explain\">\n		<span>\n			We are sorry but this page is under construction\n		</span>\n	</div>\n</div>");
+  
+});
+
+Ember.TEMPLATES["welcome"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data
+/**/) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, hashTypes, hashContexts, escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\n				<div class=\"col-md-3\">\n					<div class=\"f-block b-lblue\">\n						<h4>");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</h4>\n					</div>\n				</div>\n				");
+  return buffer;
+  }
+
+  data.buffer.push("<div class=\"welcome\">\n	<div class=\"container\">\n		<div class=\"row center\">\n			<div class=\"col-md-12\">\n				<h2> Welcome to Nerdeez </h2>\n				<h3> Let's get you to your classroom </h3>\n				<div class=\"bor\"></div>\n				<hr>\n			</div>\n		</div>\n		<div class=\"row\">\n			<div class=\"col-md-12\">\n				<div class=\"bor\"></div>\n				");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers.each.call(depth0, "controller", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n			</div>\n		</div>\n	</div>\n</div>");
+  return buffer;
   
 });

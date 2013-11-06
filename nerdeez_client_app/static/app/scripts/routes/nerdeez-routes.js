@@ -14,6 +14,7 @@ var Ember = window.Ember;
  */
 Nerdeez.Router.map(function () {
     this.route('homepage');
+    this.route('welcome');
 	this.route('search', {path: '/search/:search_param'});
 	this.route('about');
 	this.route('terms');

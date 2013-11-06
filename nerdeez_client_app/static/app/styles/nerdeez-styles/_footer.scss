@@ -6,13 +6,14 @@
 *
 */
 
-#footer{
-  //width: -moz-max-content !important;
+#footer {
+    height: 55px;
     .nerdeez-links{
         li{
             float: left;
             a{
                 color: white !important;
+                display: table-footer-group;
             }
             a:hover,a:focus{
                 background-color:transparent !important;
