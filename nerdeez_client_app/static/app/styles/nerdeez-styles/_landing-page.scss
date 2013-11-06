@@ -9,7 +9,8 @@
  */
 
 .landing-page {
-	@include background (image-url('/static/themes/old-theme/img/signin/login-bg.png'));
+	//@include background (image-url('/static/themes/old-theme/img/signin/login-bg.png'));
+	background-color: #FFFFFF;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -18,21 +19,14 @@
 	z-index: 1000;
 	overflow: auto;
 	font-size: 14px;
+	.btn {
+		height: 50px;
+		width: 250px;
+	}
 	p , a {
 		font-size: 20px;
     	font-weight: lighter;
     	line-height: 25px;
-	}
-	.btn {
-		background-image: none;
-		@include background-image(linear-gradient(#F69A0F, #EC9109));
-		border: 1px solid black;
-	}
-	.btn:hover {
-		background-color: #EC9109;
-	}
-	.btn:focus {
-		background-image: none !important;
 	}
 	.popover {
 		display: block;
