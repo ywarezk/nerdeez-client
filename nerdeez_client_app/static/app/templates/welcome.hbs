@@ -1,24 +1,28 @@
 <div class="welcome">
-	<div class="container">
-		<div class="row center">
-			<div class="col-md-12">
-				<h2> Welcome to Nerdeez </h2>
-				<h3> Let's get you to your classroom </h3>
-				<div class="bor"></div>
-				<hr>
+	<header>
+		<div class="container top-buffer">
+			<div class="row center">
+				<div class="col-md-12">
+					<h2> Welcome to Nerdeez </h2>
+					<h3> Let's get you to your classroom </h3>
+					<div class="bor"></div>
+					<hr>
+				</div>
 			</div>
 		</div>
+	</header>
+	<div class="container">
+		<div class="bor"></div>
 		<div class="row">
-			<div class="col-md-12">
-				<div class="bor"></div>
-				{{#each controller}}
+			{{#each controller}}
 				<div class="col-md-3">
-					<div class="f-block b-lblue">
-						<h4>{{title}}</h4>
+					<div class="f-block b-green">
+						{{#link-to "schoolgroup.about" this}}
+							<h4>{{title}}</h4>
+						{{/link-to}}
 					</div>
 				</div>
-				{{/each}}
-			</div>
+			{{/each}}
 		</div>
 	</div>
 </div>
