@@ -16,7 +16,9 @@
     header {
         background-color: #41BB19; 
         .logo {
-            padding: 17px 0 0 0;
+            padding: 0;
+            position: relative; 
+            top: 10px;
         }
         form {
             padding: 28px 0 10px 0;
@@ -37,8 +39,17 @@
         }       
     }
     .dropdown {
+        font-size: 20px;
+        padding-top: 35px;
         a {
             color: #FFFFFF;
+        }
+        .dropdown-menu {
+            margin-top: 12px;
+            a {
+                padding: 5px 0 5px 10px !important;
+                border: none;
+            }
         }
     }
 }

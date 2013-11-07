@@ -20,7 +20,9 @@
         {% load compress %}
 		{% compress css %}
 
-        <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/bootstrap.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+        <!-- <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/bootstrap.css"> -->
         <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/prettyPhoto.css">
         <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/slider.css">
         <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/flexslider.css">
@@ -136,7 +138,7 @@
         <!-- endbuild -->
 
         <!-- build:js scripts/plugins.js -->
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
+        <!--<script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
@@ -148,11 +150,11 @@
         <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>-->
         <!-- endbuild -->
 
         <!-- <script src="{{STATIC_URL}}themes/new-theme/js/jquery.js"></script> -->
-        <script src="{{STATIC_URL}}themes/new-theme/js/bootstrap.js"></script>
+        <script src="{{STATIC_URL}}app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="{{STATIC_URL}}themes/new-theme/js/jquery.isotope.js"></script>
         <script src="{{STATIC_URL}}themes/new-theme/js/jquery.prettyPhoto.js"></script>
         <script src="{{STATIC_URL}}themes/new-theme/js/jquery.cslider.js"></script>
