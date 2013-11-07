@@ -23,6 +23,12 @@ function program3(depth0,data) {
 
 function program5(depth0,data) {
   
+  
+  data.buffer.push(" Logout ");
+  }
+
+function program7(depth0,data) {
+  
   var buffer = '', hashTypes, hashContexts;
   data.buffer.push("\n                <img src=\"");
   hashTypes = {};
@@ -32,19 +38,19 @@ function program5(depth0,data) {
   return buffer;
   }
 
-function program7(depth0,data) {
+function program9(depth0,data) {
   
   
   data.buffer.push("\n    						<i class=\"icon-home\"></i>\n    						<span>Home</span>        					\n    					    ");
   }
 
-function program9(depth0,data) {
+function program11(depth0,data) {
   
   
   data.buffer.push("\n                            <i class=\"icon-info\"></i>\n                            About\n                         ");
   }
 
-function program11(depth0,data) {
+function program13(depth0,data) {
   
   
   data.buffer.push("\n							<i class=\"icon-envelope\"></i>\n							Contact Us\n						");
@@ -67,28 +73,34 @@ function program11(depth0,data) {
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "isLoading", {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n                        </div>\n                    </form>\n                </div>\n                <div class=\"col-md-2 col-sm-2 pull-right\">\n                    <div class=\"dropdown\">\n                        <a href=\"#\" class=\"dropdown-toggle\" id=\"dropdownMenu1\" data-toggle=\"dropdown\">\n                            <i class=\"fa fa-smile-o\"></i>\n                            John Doe\n                            <i class=\"fa fa-caret-down\"></i>\n                        </a>\n                        <ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"dropdownMenu1\">\n                            <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">Account</a></li>\n                            <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">Settings</a></li>\n                            <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">Privacy</a></li>\n                            <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">About</a></li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </header>\n</div>\n\n\n<!--<div id=\"header\" class=\"_header\">\n	<div class=\"container\">\n		<div class=\"row\">\n            <div class=\"logo col-md-3\">\n                ");
+  data.buffer.push("\n                        </div>\n                    </form>\n                </div>\n                <div class=\"col-md-2 col-sm-2 pull-right\">\n                    <div class=\"dropdown\">\n                        <a href=\"#\" class=\"dropdown-toggle\" id=\"dropdownMenu1\" data-toggle=\"dropdown\">\n                            <i class=\"fa fa-smile-o\"></i>\n                            John Doe\n                            <i class=\"fa fa-caret-down\"></i>\n                        </a>\n                        <ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"dropdownMenu1\">\n                            <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">Account</a></li>\n                            <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">Settings</a></li>\n                            <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">Privacy</a></li>\n                            <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">About</a></li>\n                            <li role=\"presentation\">");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "logout", options) : helperMissing.call(depth0, "link-to", "logout", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("</li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </header>\n</div>\n\n\n<!--<div id=\"header\" class=\"_header\">\n	<div class=\"container\">\n		<div class=\"row\">\n            <div class=\"logo col-md-3\">\n                ");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "homepage", options) : helperMissing.call(depth0, "linkTo", "homepage", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n            </div>\n		\n	        <div class=\"col-md-9 menu\">\n    		    <div class=\"nav-collapse\">\n    			    <ul class=\"nav pull-right\" id=\"main-nav\">\n    				    <li class=\"nav-icon\">\n    					    ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "homepage", options) : helperMissing.call(depth0, "linkTo", "homepage", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n	    			    	</li>\n    				\n    				    <li>\n        					");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "about", options) : helperMissing.call(depth0, "linkTo", "about", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n    				    </li>\n    				    \n    				    	<li>\n						");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "contact", options) : helperMissing.call(depth0, "linkTo", "contact", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n					</li>\n    				\n    			    </ul>\n    			\n    		    </div> \n            </div>\n        </div>\n        \n\n	</div> \n	\n</div>\n-->");
@@ -2160,19 +2172,19 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, hashContexts, hashTypes, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing;
 
 
-  data.buffer.push("\n<div class=\"landing-page\">\n	<header>\n		<div class=\"container top-buffer\">\n			<div class=\"row center\">\n				<div class=\"col-md-12\">\n					<h2> Homework Made Easy </h2>\n					<h3> Find and share homework, all in one place </h3>\n					<div class=\"bor\"></div>\n					<p>\n					<button class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#sign-up-modal\">\n						Sign up\n					</button>\n					</p>\n					<p>\n						or\n						<a href=\"#\" data-toggle=\"modal\" data-target=\"#log-in-modal\">\n							Log in\n						</a>\n					</p>\n					<div class=\"bor\"></div>\n					<hr>\n					<h5>Sign in using</h5>\n					<div class=\"bor\"></div>\n					<ul class=\"nav nav-pills\">\n						<li>\n							<i class=\"icon-twitter\" ");
+  data.buffer.push("\n<div class=\"landing-page\">\n	<header>\n		<div class=\"container top-buffer\">\n			<div class=\"row center\">\n				<div class=\"col-md-12\">\n					<h2> Homework Made Easy </h2>\n					<h3> Find and share homework, all in one place </h3>\n					<div class=\"bor\"></div>\n					<p>\n					<button class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#sign-up-modal\">\n						Sign up\n					</button>\n					</p>\n					<p>\n						or\n						<a href=\"#\" data-toggle=\"modal\" data-target=\"#log-in-modal\">\n							Log in\n						</a>\n					</p>\n					<div class=\"bor\"></div>\n					<hr>\n					<h5>Sign in using</h5>\n					<div class=\"bor\"></div>\n					<ul class=\"nav nav-pills\">\n						<li>\n							<i class=\"fa fa-twitter\" ");
   hashContexts = {'target': depth0};
   hashTypes = {'target': "STRING"};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "twitterLogin", {hash:{
     'target': ("controllers.login")
   },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("></i>\n						</li>\n						<li>\n							<i class=\"icon-facebook\" ");
+  data.buffer.push("></i>\n						</li>\n						<li>\n							<i class=\"fa fa-facebook\" ");
   hashContexts = {'target': depth0};
   hashTypes = {'target': "STRING"};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "fbLogin", {hash:{
     'target': ("controllers.login")
   },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("></i>\n						</li>\n					</ul>\n					<hr>\n				</div>\n			</div>\n		</div>\n	</header>\n	<div class=\"container\">\n		<div class=\"bor\"></div>\n		<div class=\"row\">\n			<div class=\"col-md-7 col-md-offset-3\">\n				<div class=\"service-icon red\">\n					<i class=\"icon-camera\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>We Design Websites</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n				</div>\n				<hr>\n				<div class=\"service-icon orange\">\n					<i class=\"icon-desktop\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>Our Designs are Responsive</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n				</div>\n				<hr>\n				<div class=\"service-icon lblue\">\n					<i class=\"icon-cloud\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>Everything in Cloud</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n					<hr>\n				</div>\n				<div class=\"service-icon purple\">\n					<i class=\"icon-user\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>Top Notch Support</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n				</div>\n				<br>\n				<div class=\"clearfix\"></div>\n			</div>\n		</div>\n	</div>\n</div>\n\n<!-- Sign up Modal -->\n<div class=\"modal fade\" id=\"sign-up-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\">\n		<div class=\"modal-content\">\n		    <div class=\"modal-header\">\n		        <h4 class=\"modal-title\" id=\"myModalLabel\" tabindex=\"1\">Sign up</h4>\n		    </div>\n			<div class=\"modal-body\">\n				");
+  data.buffer.push("></i>\n						</li>\n					</ul>\n					<hr>\n				</div>\n			</div>\n		</div>\n	</header>\n	<div class=\"container\">\n		<div class=\"bor\"></div>\n		<div class=\"row\">\n			<div class=\"col-md-7 col-md-offset-3\">\n				<div class=\"service-icon red\">\n					<i class=\"fa fa-camera\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>We Design Websites</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n				</div>\n				<hr>\n				<div class=\"service-icon orange\">\n					<i class=\"fa fa-desktop\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>Our Designs are Responsive</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n				</div>\n				<hr>\n				<div class=\"service-icon lblue\">\n					<i class=\"fa fa-cloud\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>Everything in Cloud</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n					<hr>\n				</div>\n				<div class=\"service-icon purple\">\n					<i class=\"fa fa-user\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>Top Notch Support</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n				</div>\n				<br>\n				<div class=\"clearfix\"></div>\n			</div>\n		</div>\n	</div>\n</div>\n\n<!-- Sign up Modal -->\n<div class=\"modal fade\" id=\"sign-up-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\">\n		<div class=\"modal-content\">\n		    <div class=\"modal-header\">\n		        <h4 class=\"modal-title\" id=\"myModalLabel\" tabindex=\"1\">Sign up</h4>\n		    </div>\n			<div class=\"modal-body\">\n				");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
