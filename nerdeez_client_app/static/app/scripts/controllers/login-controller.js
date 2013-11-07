@@ -63,10 +63,14 @@ Nerdeez.LoginController = Ember.Controller.extend(Nerdeez.Status, {
     		$.cookie('id', json['user_profile'].id, { expires: expires, path: '/' });
     		this.success('Successfully logged in');
     		if (this.get('redirect') == null){
-             this.transitionToRoute('homepage');
+                $('#log-in-modal').modal('hide');
+                $('#sign-up-modal').modal('hide');
+                this.transitionToRoute('homepage');
     		}
-    		else{
-        		this.transitionToRoute(this.get('redirect'), this.get('redirectModel'));    
+    		else {
+                $('#log-in-modal').modal('hide');
+                $('#sign-up-modal').modal('hide');
+        		this.transitionToRoute(this.get('redirect'), this.get('redirectModel'));
     		}
     },
     
@@ -124,6 +128,7 @@ Nerdeez.LoginController = Ember.Controller.extend(Nerdeez.Status, {
 	            	'POST',
 	            	{
 	            		success: function(json){
+                            $('#sign-up-modal').modal('hide');
 	            			xthis.success('Please authorize the app with your twitter account');
 	            			var win=window.open(json['auth_url'], '_blank');
 						win.focus();

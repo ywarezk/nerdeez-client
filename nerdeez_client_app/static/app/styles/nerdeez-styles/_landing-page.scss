@@ -19,10 +19,42 @@
 	z-index: 1000;
 	overflow: auto;
 	font-size: 14px;
+	ul.nav.nav-pills {
+		display: inline-table;
+    	float: none;
+    	li {
+    		margin: 0 15px;
+    		i {
+				color: #41BB19;
+				font-size: 28px;
+    		}
+    		i:hover, i:focus, i:active {
+    			color: #379E15;
+    			cursor: pointer;
+    		}
+		}
+	}
 	.btn {
 		height: 50px;
 		width: 250px;
 	}
+	.btn:nth-of-type(1) {
+		font-size: 19px;
+	}
+	a:nth-of-type(1) {
+		font-size: 17px;
+	}
+}
+.modal.fade {
+	.lrform {
+		background-color: white;
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+}
+
+/*
 	p , a {
 		font-size: 20px;
     	font-weight: lighter;
@@ -143,3 +175,5 @@
 		}
 	}
 }
+
+*/

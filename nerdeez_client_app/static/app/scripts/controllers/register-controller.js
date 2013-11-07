@@ -51,15 +51,12 @@ Nerdeez.RegisterController = Ember.Controller.extend({
      */
     message: null,
     
-    
-    
     actions: {
         
         /**
          * when the user clicks to register
          */
-        register: function(){
-            
+        register: function() {
             //js validation
             if (!$(".js-validation").validationEngine('validate')) return;
             
@@ -77,29 +74,29 @@ Nerdeez.RegisterController = Ember.Controller.extend({
             adapter = this.get('store.adapter');
             adapter.ajax(
                 SERVER_URL + '/api/v1/utilities/register/',
-		        	'POST',
-		        	{
-			        	success: function(json){
-			        	    xthis.set('isSuccess', true);
-			        	    xthis.set('isError', false);
-			        	    xthis.set('message', json['message']);
-			        	    xthis.set('isLoading', false);
-			        	},
-			        	error: function(json){
-			        	    var message = $.parseJSON(json.responseText).message;
-			        	    xthis.set('isError', true);
-			        	    xthis.set('isSuccess', false);
-			        	    xthis.set('message', message);
-			        	    xthis.set('isLoading', false);
-			        	},
-			        	data:{
-			        		email: email,
-			        		password: password
-			        	}
-		        	}    
-            );
-            
-        }
-        
+	        	'POST',
+	        	{
+		        	success: function(json) {
+		        	    xthis.set('isSuccess', true);
+		        	    xthis.set('isError', false);
+		        	    xthis.set('message', json['message']);
+		        	    xthis.set('isLoading', false);
+                        $('#sign-up-modal').modal('hide');
+                        $('#activation-modal').modal('show');
+		        	},
+		        	error: function(json) {
+		        	    var message = $.parseJSON(json.responseText).message;
+		        	    xthis.set('isError', true);
+		        	    xthis.set('isSuccess', false);
+		        	    xthis.set('message', message);
+		        	    xthis.set('isLoading', false);
+		        	},
+		        	data: {
+		        		email: email,
+		        		password: password
+		        	}
+	        	}    
+            );   
+        }       
     }
 });

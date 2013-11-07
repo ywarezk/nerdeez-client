@@ -79,6 +79,7 @@ require('scripts/models/user-profile-model');
 require('scripts/models/enroll-model');
 require('scripts/models/hw-model');
 require('scripts/models/file-model');
+require('scripts/controllers/index-controller');
 require('scripts/controllers/search-controller');
 require('scripts/controllers/login-controller');
 require('scripts/controllers/register-controller');

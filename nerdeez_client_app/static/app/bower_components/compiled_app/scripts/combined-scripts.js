@@ -1408,6 +1408,24 @@ Nerdeez.File = Nerdeez.NerdeezModel.extend({
 (function() {
 
 /**
+ * controller for the landing page
+ * 
+ * Created November 7th, 2013
+ * @author: Doron Nachshon
+ * @version: 2.0
+ * @copyright: Nerdeez
+ */
+
+Nerdeez.IndexController = Ember.Controller.extend({
+	needs: ['login']
+});
+
+
+})();
+
+(function() {
+
+/**
 * the controller for the search page
 *
 * @copyright: Nerdeez Ltd.
@@ -1599,10 +1617,14 @@ Nerdeez.LoginController = Ember.Controller.extend(Nerdeez.Status, {
     		$.cookie('id', json['user_profile'].id, { expires: expires, path: '/' });
     		this.success('Successfully logged in');
     		if (this.get('redirect') == null){
-             this.transitionToRoute('homepage');
+                $('#log-in-modal').modal('hide');
+                $('#sign-up-modal').modal('hide');
+                this.transitionToRoute('homepage');
     		}
-    		else{
-        		this.transitionToRoute(this.get('redirect'), this.get('redirectModel'));    
+    		else {
+                $('#log-in-modal').modal('hide');
+                $('#sign-up-modal').modal('hide');
+        		this.transitionToRoute(this.get('redirect'), this.get('redirectModel'));
     		}
     },
     
@@ -1660,6 +1682,7 @@ Nerdeez.LoginController = Ember.Controller.extend(Nerdeez.Status, {
 	            	'POST',
 	            	{
 	            		success: function(json){
+                            $('#sign-up-modal').modal('hide');
 	            			xthis.success('Please authorize the app with your twitter account');
 	            			var win=window.open(json['auth_url'], '_blank');
 						win.focus();
@@ -1767,15 +1790,12 @@ Nerdeez.RegisterController = Ember.Controller.extend({
      */
     message: null,
     
-    
-    
     actions: {
         
         /**
          * when the user clicks to register
          */
-        register: function(){
-            
+        register: function() {
             //js validation
             if (!$(".js-validation").validationEngine('validate')) return;
             
@@ -1793,33 +1813,32 @@ Nerdeez.RegisterController = Ember.Controller.extend({
             adapter = this.get('store.adapter');
             adapter.ajax(
                 SERVER_URL + '/api/v1/utilities/register/',
-		        	'POST',
-		        	{
-			        	success: function(json){
-			        	    xthis.set('isSuccess', true);
-			        	    xthis.set('isError', false);
-			        	    xthis.set('message', json['message']);
-			        	    xthis.set('isLoading', false);
-			        	},
-			        	error: function(json){
-			        	    var message = $.parseJSON(json.responseText).message;
-			        	    xthis.set('isError', true);
-			        	    xthis.set('isSuccess', false);
-			        	    xthis.set('message', message);
-			        	    xthis.set('isLoading', false);
-			        	},
-			        	data:{
-			        		email: email,
-			        		password: password
-			        	}
-		        	}    
-            );
-            
-        }
-        
+	        	'POST',
+	        	{
+		        	success: function(json) {
+		        	    xthis.set('isSuccess', true);
+		        	    xthis.set('isError', false);
+		        	    xthis.set('message', json['message']);
+		        	    xthis.set('isLoading', false);
+                        $('#sign-up-modal').modal('hide');
+                        $('#activation-modal').modal('show');
+		        	},
+		        	error: function(json) {
+		        	    var message = $.parseJSON(json.responseText).message;
+		        	    xthis.set('isError', true);
+		        	    xthis.set('isSuccess', false);
+		        	    xthis.set('message', message);
+		        	    xthis.set('isLoading', false);
+		        	},
+		        	data: {
+		        		email: email,
+		        		password: password
+		        	}
+	        	}    
+            );   
+        }       
     }
 });
-
 
 })();
 

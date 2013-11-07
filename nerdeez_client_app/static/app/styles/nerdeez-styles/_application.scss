@@ -18,6 +18,7 @@ html, body {
     margin-bottom: 1em !important;
 }
 
+/**
 ul.nav.nav-pills li {
     a:link {
         color: white;
@@ -40,6 +41,7 @@ ul.nav.nav-pills li {
         }
     }
 }
+*/
 
 .push {
     height: 55px;
@@ -221,6 +223,29 @@ ul.nav.nav-pills li {
         }
     }
 }
+
+/**
+* Theme-specific overrides
+**/
+
+/**
+* Theme - Metro Mania
+**/
+
+.btn-default:focus, .btn-default:active {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #DDDDDD;
+    color: #444444;
+    outline: none !important;
+}
+
+/**
+* Metro Mania GREEN theme
+**/
+a:focus {
+    color: #379E15;
+}
+
 
 /** 
 * default values for the faculty, course and university icons that will
@@ -461,13 +486,6 @@ pointer-events: none;
     position: relative;
     width: 150px;
 }*/
-
-.btn:focus{
-    background-color: #F7A01F !important;
-    /*background-image: linear-gradient(to bottom, #FFAD33, #EB8D00);*/
-    @include background-image(linear-gradient(right bottom, #FFAD33, #EB8D00));
-    background-repeat: repeat-x;
-}
 
 .table.table-bordered.table-striped.table-highlight{
     .rating{

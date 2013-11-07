@@ -7,10 +7,29 @@
 					<h2> Homework Made Easy </h2>
 					<h3> Find and share homework, all in one place </h3>
 					<div class="bor"></div>
-					<button class="btn btn-default">
+					<p>
+					<button class="btn btn-default" data-toggle="modal" data-target="#sign-up-modal">
 						Sign up
 					</button>
+					</p>
+					<p>
+						or
+						<a href="#" data-toggle="modal" data-target="#log-in-modal">
+							Log in
+						</a>
+					</p>
 					<div class="bor"></div>
+					<hr>
+					<h5>Sign in using</h5>
+					<div class="bor"></div>
+					<ul class="nav nav-pills">
+						<li>
+							<i class="icon-twitter" {{action "twitterLogin" target="controllers.login"}}></i>
+						</li>
+						<li>
+							<i class="icon-facebook" {{action "fbLogin" target="controllers.login"}}></i>
+						</li>
+					</ul>
 					<hr>
 				</div>
 			</div>
@@ -19,14 +38,7 @@
 	<div class="container">
 		<div class="bor"></div>
 		<div class="row">
-			<div class="col-md-3">
-				<h6 class="bold grey">SOME TAG</h6>
-				<h3>What We Do In Free Time?</h3>
-				<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>
-				<a href="#">
-				<hr>
-			</div>
-			<div class="col-md-7">
+			<div class="col-md-7 col-md-offset-3">
 				<div class="service-icon red">
 					<i class="icon-camera"></i>
 				</div>
@@ -64,3 +76,65 @@
 		</div>
 	</div>
 </div>
+
+<!-- Sign up Modal -->
+<div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		    <div class="modal-header">
+		        <h4 class="modal-title" id="myModalLabel" tabindex="1">Sign up</h4>
+		    </div>
+			<div class="modal-body">
+				{{render "register" register}}
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- Sign in Modal -->
+<div class="modal fade" id="log-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		    <div class="modal-header">
+		        <h4 class="modal-title" id="myModalLabel" tabindex="2">Log in</h4>
+		    </div>
+			<div class="modal-body">
+				{{render "login" login}}
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Activation Modal -->
+<div class="modal fade" id="activation-modal" tabindex="-1" rolde="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title" id="myModalLabel">Success!</h3>
+				<h4>  Now Activate Your Account </h4>
+			</div>
+			<div class="modal-body">
+				<h5> A verification mail was sent to your email address </h5>
+			</div>
+			<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Got it</button>
+      		</div>
+		</div> 
+	</div> 
+</div> 
+
+<!-- Twitter Activation Modal -->
+<div class="modal fade" id="twitter-activation-modal" tabindex="-1" rolde="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title" id="myModalLabel">Success!</h3>
+				<h4>  Please authorize the app with your twitter account, and then log in using your Twitter account </h4>
+			</div>
+			<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Got it</button>
+      		</div>
+		</div> 
+	</div> 
+</div> 

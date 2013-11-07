@@ -2,103 +2,100 @@
 
 Holds the html of the registration page
 
-author: Yariv Katz
+author: Doron Nachshon
 copyright: nerdeez.com
 version: 1.0
 
 -->
 
-<div class="register nerdeez-form">
-    <div class="account-container register stacked">
-    	
-    	<div class="content clearfix">
-    		
-    		<form class="js-validation">
-    		
-    			<h1>Create Your Account</h1>			
-    			
-    			<div class="login-social">
-    				<p>Sign in using social network:</p>
-    				
-    				<div class="twitter">
-    					<a {{action "twitterLogin" target="controllers.login"}} class="btn_1">Login with Twitter</a>				
-    				</div>
-    				
-    				<div class="fb">
-    					<a {{action "fbLogin" target="controllers.login"}} class="btn_2">Login with Facebook</a>				
-    				</div>
-    			</div>
-    			
-    			<div class="login-fields">
-    				
-    				<p>Create your free account:</p>
-    				
-    				<div class="field">
-    					<label for="email">Email Address:</label>
-    					<!--<input type="text" id="email" name="email" value="" placeholder="Email" class="login">-->
-    					{{
-    					view Ember.TextField
-    					valueBinding="email"
-    					class="validate[required,custom[email]] login nerdeez-inputs"
-    					placeholder="Email"
-    					required="true"
-    					}}
-    				</div> <!-- /field -->
-    				
-    				<div class="field">
-    					<label for="password">Password:</label>
-    					<!--<input type="password" id="password" name="password" value="" placeholder="Password" class="login">-->
-    					{{
-    					view Ember.TextField
-    					valueBinding="password"
-    					class="validate[required,minSize[5]] login nerdeez-inputs"
-    					placeholder="Password"
-    					required="true"
-    					type="password"
-    					name="password"
-    					id="password"
-    					}}
-    				</div> <!-- /field -->
-    				
-    				<div class="field">
-    					<label for="confirm_password">Confirm Password:</label>
-    					
-    					<!--<input type="password" id="confirm_password" name="confirm_password" value="" placeholder="Confirm Password" class="login">-->
-    					{{
-    					view Ember.TextField
-    					class="validate[required,equals[password]] login nerdeez-inputs"
-    					placeholder="Confirm password"
-    					required="true"
-    					type="password"
-    					}}
-    				</div> <!-- /field -->
-    				
-    			</div> <!-- /login-fields -->
-    			
-    			<div class="login-actions">
-    				
-    				<span class="login-checkbox">
-    					<!--<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4">-->
-    					{{
-        					view
-        					Ember.Checkbox 
-        					class="field login-checkbox validate[required]"
-        					tabindex="4"
-        					name="Field"
-        					id="Field"
-        				}}
-    					<label class="choice" for="Field">I have read and agree with the {{#linkTo "terms"}}Terms of Use.{{/linkTo}}</label>
-    				</span>
-    									
-    				<button class="button btn btn-primary btn-large" {{action "register"}}>Register</button>
-    				
-    			</div> <!-- .actions -->
-    			
-    		</form>
-    		
-    	</div> <!-- /content -->
-    	
-    	{{#if isLoading}}
+<div class="register">
+    <div class="lrform">
+        <div class="form">
+            <!-- Register form (not working)-->
+            <form class="form-horizontal js-validation">
+            <!-- Name -->
+                <div class="form-group">
+                    <label for="name" class="control-label col-md-3">Full Name</label>
+                    <div class="col-md-9">
+                        {{
+                            view Ember.TextField
+                            valueBinding="name"
+                            class="validate[required, custom[onlyLetterSp, minSize[2], maxSize[50]]] form-control"
+                            placeholder="Full Name"
+                            required="true"
+                            tabindex="3"
+                        }}
+                    </div>
+                </div>   
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email" class="control-label col-md-3">Email</label>
+                    <div class="col-md-9">
+                        {{
+                            view Ember.TextField
+                            valueBinding="email"
+                            class="validate[required,custom[email]] form-control"
+                            placeholder="Email"
+                            required="true"
+                            tabindex="4"
+                        }}
+                    </div>
+                </div>                                       
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password" class="control-label col-md-3">Password</label>
+                    <div class="col-md-9">
+                        {{
+                            view Ember.TextField
+                            valueBinding="password"
+                            class="validate[required,minSize[5]] form-control"
+                            placeholder="Password"
+                            required="true"
+                            type="password"
+                            name="password"
+                            id="password"
+                            tabindex="5"
+                        }}
+                    </div>
+                </div>
+                <!-- Checkbox -->
+                <div class="form-group">
+                    <div class="col-md-9 col-md-offset-3">
+                        <label class="checkbox-inline">
+                            {{
+                                view
+                                Ember.Checkbox 
+                                class="field login-checkbox validate[required]"
+                                tabindex="6"
+                                name="Field"
+                                id="inlineCheckbox1"
+                            }}
+                            I have read and agree with the {{#linkTo "terms"}}Terms of Use.{{/linkTo}}
+                        </label>
+                    </div>
+                </div> 
+
+                <!-- Buttons -->
+                <div class="form-group">
+                <!-- Buttons -->
+                    <div class="col-md-9 col-md-offset-3"> 
+                        <button class="btn btn-default" tabindex="5" type="submit" {{action "register"}}>Sign up</button>
+                        <button class="btn btn-default" tabindex="6" type="button" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <div class="login-social">
+                    <p>Sign in using social network:</p>
+                    
+                    <div class="twitter">
+                        <a {{action "twitterLogin" target="controllers.login"}} class="btn_1">Login with Twitter</a>
+                    </div>               
+                    <div class="fb">
+                        <a {{action "fbLogin" target="controllers.login"}} class="btn_2">Login with Facebook</a>
+                    </div>
+                </div>
+            </form>
+        </div> 
+    {{#if isLoading}}
         {{loading}}
     {{/if}}
     
@@ -107,12 +104,5 @@ version: 1.0
           {{message}}
         </div>
     {{/if}}
-    
-    {{#if isSuccess}}
-        <div class="alert alert-success">
-          {{message}}
-        </div>
-    {{/if}}
-    	
     </div>
 </div>

@@ -1,13 +1,62 @@
 <!--
 
 Holds the html of the application header
-author: Yariv Katz
+author: Doron Nachshon
 copyright: nerdeez.com
 version: 1.0
 
 -->
 
+
+
 <div id="header" class="_header">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <div class="logo">
+                        <img src="{{unbound view.staticUrl}}img/logo.png">
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-6">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            {{
+                                view Ember.TextField
+                                class="form-control"
+                                valueBinding="searchQuery"
+                                placeholder="Search"
+                            }}
+                            {{#if isLoading}}
+                                {{loading}}
+                            {{else}}
+                                <i class="icon-search"></i>
+                            {{/if}}
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 col-sm-2">
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+                            <i class="fa fa-smile-o"></i>
+                            John Doe
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Settings</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Privacy</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+
+<!--<div id="header" class="_header">
 	<div class="container">
 		<div class="row">
             <div class="logo col-md-3">
@@ -42,11 +91,12 @@ version: 1.0
     				
     			    </ul>
     			
-    		    </div> <!-- /.nav-collapse -->
+    		    </div> 
             </div>
         </div>
         
 
-	</div> <!-- /.container -->
+	</div> 
 	
 </div>
+-->

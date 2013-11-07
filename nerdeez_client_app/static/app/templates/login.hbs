@@ -2,113 +2,76 @@
 
 Holds the html of the login page
 
-author: Yariv Katz
+author: Doron Nachshon
 copyright: nerdeez.com
 version: 1.0
 
 -->
 
-<div class="login nerdeez-form">
-    <div class="account-container login stacked">
-	
-    	<div class="content clearfix">
-    		
-    		<form class="js-validation" >
-    		
-    			<h1>Sign In</h1>		
-    			
-    			<div class="login-fields">
-    				
-    				<p>Sign in using your registered account:</p>
-    				
-    				<div class="field">
-    					<label for="username">Email:</label>
-    					<!--<input type="email" id="username" name="username" value="" placeholder="Username" class="login username-field nerdeez-inputs">-->
-    					{{
-    					view Ember.TextField
-    					valueBinding="email"
-    					class="validate[required,custom[email]] login username-field nerdeez-inputs"
-    					placeholder="Email"
-    					required="true"
-    					tabindex="1"
-    					}}
-    				</div> <!-- /field -->
-    				
-    				<div class="field">
-    					<label for="password">Password:</label>
-    					<!--<input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field nerdeez-inputs">-->
-    					{{
-    					view Ember.TextField
-    					valueBinding="password"
-    					class="validate[required,minSize[5]] login password-field nerdeez-inputs"
-    					placeholder="Password"
-    					required="true"
-    					type="password"
-    					tabindex="2"
-    					}}
-    				</div> <!-- /password -->
-    				
-    			</div> <!-- /login-fields -->
-    			
-    			<div class="login-actions">
-    				
-    				<span class="login-checkbox">
-    					<!--<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4">-->
-    					{{
-    					view
-    					Ember.Checkbox 
-    					checkedBinding="isRememberMe" 
-    					class="field login-checkbox"
-    					tabindex="3"
-    					}}
-    					<label class="choice" for="Field">Keep me signed in</label>
-    				</span>
-    									
-    				<button class="button btn btn-primary btn-large" {{action "login"}} tabindex="4">Sign In</button>
-    				
-    				<div class="forget-password">
-				    <p>
-					    {{#link-to 'forgetPassword'}}
-						    Forgot your password?
-					    {{/link-to}}
-				    </p>
-			    </div>
-    				
-    			</div> <!-- .actions -->
-    			
-    			<div class="login-social">
-    				<p>Sign in using social network:</p>
-    				
-    				<div class="twitter">
-    					<a {{action "twitterLogin"}} class="btn_1">Login with Twitter</a>
-    				</div>
-    				
-    				<div class="fb">
-    					<a  {{action "fbLogin"}} class="btn_2">Login with Facebook</a>
-    				</div>
-    			</div>
-    			
-    		</form>
-    		
-    	</div> <!-- /content -->
-    	
-    	{{#if isLoading}}
+<div class="lrform">
+    <div class="form">
+        <form class="form-horizontal js-validation">
+            <div class="form-group">
+                <label class="control-label col-md-3" for="email">Email</label>
+                <div class="col-md-9">
+                    {{
+                        view Ember.TextField
+                        valueBinding="email"
+                        class="validate[required,custom[email]] form-control"
+                        placeholder="Email"
+                        required="true"
+                        tabindex="7"
+                    }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3" for="password">Password</label>
+                <div class="col-md-9">
+                    {{
+                        view Ember.TextField
+                        valueBinding="password"
+                        class="validate[required,minSize[5]] form-control"
+                        placeholder="Password"
+                        required="true"
+                        type="password"
+                        tabindex="8"
+                    }}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-9 col-md-offset-3">
+                    <label class="checkbox-inline">
+                        {{
+                        view
+                        Ember.Checkbox 
+                        checkedBinding="isRememberMe" 
+                        tabindex="9"
+                        }}
+                        Remember me
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-9 col-md-offset-3">
+                    <button type="submit" class="btn btn-default" tabindex="10" {{action "login"}}>Login</button>
+                    <button type="button" class="btn btn-default" tabindex="11" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {{#if isLoading}}
         {{loading}}
     {{/if}}
     
     {{#if isError}}
         <div class="alert alert-danger">
-          {{statusMessage}}
+            {{statusMessage}}
         </div>
     {{/if}}
     
     {{#if isSuccess}}
         <div class="alert alert-success">
-          {{statusMessage}}
+            {{statusMessage}}
         </div>
     {{/if}}
-    
-	    
-    	
-    </div>
 </div>
