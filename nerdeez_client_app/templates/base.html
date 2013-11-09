@@ -20,28 +20,22 @@
         {% load compress %}
 		{% compress css %}
 
-        <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-        <!-- <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/bootstrap.css"> -->
+        <!--<link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">-->
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/bootstrap.css">
         <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/prettyPhoto.css">
         <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/slider.css">
         <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/flexslider.css">
-        <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/style.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/theme-style.css">
         <link rel="stylesheet" href="{{STATIC_URL}}themes/new-theme/style/orange.css">
         <link rel="shortcut icon" href="{{STATIC_URL}}themes/new-theme/img/favicon/favicon.png">
         
-        <!-- <link rel="stylesheet" href="{{STATIC_URL}}themes/old-theme/css/ui-lightness/jquery-ui-1.8.21.custom.css">  
-        <link rel="stylesheet" href="{{STATIC_URL}}themes/old-theme/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{STATIC_URL}}themes/old-theme/css/bootstrap-responsive.min.css">
-        
-        <link rel="stylesheet" href="{{STATIC_URL}}themes/old-theme/css/application-black-orange.css">
-        <link rel="stylesheet" href="{{STATIC_URL}}themes/old-theme/css/pages/dashboard.css"> -->
 
         <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/compiled_app/styles/style.css">
         
         <link rel="stylesheet" href="{{STATIC_URL}}app/bower_components/validation/validationEngine.jquery.css" type="text/css"/>
         {% endcompress %}
-        <!--<script src="{{STATIC_URL}}app/bower_components/modernizr.min.js"></script>-->
+
         <!-- endbuild -->
         
         <!--[if IE]>
@@ -123,7 +117,8 @@
 
         <!-- build:js scripts/components.js -->
         {% compress js %}
-        <script src="{{STATIC_URL}}app/bower_components/jquery/jquery.js"></script>
+        <script src="{{STATIC_URL}}themes/new-theme/js/jquery.js"></script>
+        <!--<script src="{{STATIC_URL}}app/bower_components/jquery/jquery.js"></script>-->
         <script src="{{STATIC_URL}}app/bower_components/handlebars/handlebars-1.0.0.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/ember/ember-1.0.0.js"></script>
         <script src="{{STATIC_URL}}app/bower_components/ember-data-shim/ember-data.js"></script>
@@ -137,24 +132,10 @@
         <script src="{{STATIC_URL}}app/bower_components/compiled_app/scripts/combined-scripts.js"></script>
         <!-- endbuild -->
 
-        <!-- build:js scripts/plugins.js -->
-        <!--<script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-modal.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-transition.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-button.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-popover.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>-->
-        <!-- endbuild -->
 
         <!-- <script src="{{STATIC_URL}}themes/new-theme/js/jquery.js"></script> -->
-        <script src="{{STATIC_URL}}app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!--<script src="{{STATIC_URL}}app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+        <script src="{{STATIC_URL}}themes/new-theme/js/bootstrap.js"></script>
         <script src="{{STATIC_URL}}themes/new-theme/js/jquery.isotope.js"></script>
         <script src="{{STATIC_URL}}themes/new-theme/js/jquery.prettyPhoto.js"></script>
         <script src="{{STATIC_URL}}themes/new-theme/js/jquery.cslider.js"></script>
@@ -163,44 +144,7 @@
         <script src="{{STATIC_URL}}themes/new-theme/js/cycle.js"></script>
         <script src="{{STATIC_URL}}themes/new-theme/js/jquery.flexslider-min.js"></script>
         <script src="{{STATIC_URL}}themes/new-theme/js/easing.js"></script>
-        <script src="{{STATIC_URL}}themes/new-theme/js/custom.js"></script>
-        
-        <!-- <script src="{{STATIC_URL}}themes/old-theme/js/libs/jquery-ui-1.8.21.custom.min.js"></script>
-        <script src="{{STATIC_URL}}themes/old-theme/js/libs/jquery.ui.touch-punch.min.js"></script>
-        
-        <script src="{{STATIC_URL}}themes/old-theme/js/libs/bootstrap/bootstrap.min.js"></script>
-        
-        <script src="{{STATIC_URL}}themes/old-theme/js/Theme.js"></script>
-        <script src="{{STATIC_URL}}themes/old-theme/js/Charts.js"></script>
-        
-        <script src="{{STATIC_URL}}themes/old-theme/js/plugins/excanvas/excanvas.min.js"></script>
-        <script src="{{STATIC_URL}}themes/old-theme/js/plugins/flot/jquery.flot.js"></script>
-        <script src="{{STATIC_URL}}themes/old-theme/js/plugins/flot/jquery.flot.pie.js"></script> -->
-        <!--<script src="{{STATIC_URL}}themes/old-theme/js/plugins/flot/jquery.flot.orderBars.js"></script>-->
-        <!--<script src="{{STATIC_URL}}themes/old-theme/js/plugins/flot/jquery.flot.tooltip.min.js"></script>-->
-        <script src="{{STATIC_URL}}themes/old-theme/js/plugins/flot/jquery.flot.resize.js"></script>
-        
-        <script src="{{STATIC_URL}}themes/old-theme/js/demos/charts/line.js"></script>
-        <script src="{{STATIC_URL}}themes/old-theme/js/demos/charts/donut.js"></script>
-        
-        
-        
-        <script>
-        
-        $(function () {
-            
-        	Theme.init ();
-        	
-        });
-        
-        </script>
-        
-        <!-- begin filepicker -->
-		<!--<script type="text/javascript">
-			(function(a){if(window.filepicker){return}var b=a.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===a.location.protocol?"https:":"http:")+"//api.filepicker.io/v1/filepicker.js";var c=a.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d={};d._queue=[];var e="pick,pickMultiple,pickAndStore,read,write,writeUrl,export,convert,store,storeUrl,remove,stat,setKey,constructWidget,makeDropPane".split(",");var f=function(a,b){return function(){b.push([a,arguments])}};for(var g=0;g<e.length;g++){d[e[g]]=f(e[g],d._queue)}window.filepicker=d})(document); 
-		</script>-->        
-		<!-- end filepicker -->
-		
+        <!-- <script src="{{STATIC_URL}}themes/new-theme/js/custom.js"></script> -->
 		
 		{% endcompress %}
 		<!-- jquery plugins -->

@@ -12,6 +12,10 @@ html, body {
     /* unvisited link */
     // @include background (image-url('/static/themes/old-theme/img/signin/login-bg.png'));
     background-color: white;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
 }
 
 #content{
@@ -244,6 +248,61 @@ ul.nav.nav-pills li {
 **/
 a:focus {
     color: #379E15;
+}
+
+/**
+* styling for f-block
+**/
+
+.f-block {
+    margin-bottom: 10px;
+    min-height: 180px;
+    padding: 25px 20px 40px;
+    i {
+        display: block;
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    h4{
+        color: #fff;
+    }
+
+    .f-block{
+        padding: 25px 20px 40px 20px;
+        margin-bottom: 10px;
+        min-height: 180px;
+    }
+
+    a, a:hover{
+        color: #fff;
+        text-decoration: none;
+    }
+
+    p{
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+/**
+* f-block with col-3 size
+**/
+.col-md-3 {
+    .f-block {
+        height: 135px;
+        margin-bottom: 10px;
+        width: 100%;
+        a {
+            text-decoration: none;
+            height: 100%;
+            width: 100%;
+            padding-top: 30px;
+            display: block;
+            h4 {
+                color: white;
+            }
+        }
+    }
 }
 
 

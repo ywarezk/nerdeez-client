@@ -878,7 +878,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "header", options) : helperMissing.call(depth0, "partial", "header", options))));
-  data.buffer.push("\n<div id=\"content\">\n    <div class=\"container\">\n        <div class=\"row\">\n	    	<!--<div class=\"col-md-2\" id=\"left-sidebar-location\">\n			    ");
+  data.buffer.push("\n<div class=\"content\" id=\"content\">\n    <div class=\"container\">\n        <div class=\"row\">\n	    	<!--<div class=\"col-md-2\" id=\"left-sidebar-location\">\n			    ");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
@@ -1749,7 +1749,7 @@ function program14(depth0,data) {
   data.buffer.push("\n				Donate\n				");
   }
 
-  data.buffer.push("<!--\n	application homepage is defined here\n	\n	Created October 20th, 2013\n	@author: Yariv Katz\n	@version: 2.0\n	@copyright: Nerdeez \n-->\n\n<div class=\"homepage\">\n	\n	<!-- begin quickstart -->\n	<div class=\"row\">\n		<div class=\"span10 search quickstart account-container login stacked\">\n			<form class=\"form-search nerdeez-inputs\">\n				<div class=\"row\">\n					<div class=\"span10 padding-left\">\n						<h3>\n							Quick Start \n						</h3>\n						<p>\n							Type your course number\n						</p>\n					</div>\n				</div>\n				<div class=\"row\">\n					<div class=\"span8 padding-left\">\n					");
+  data.buffer.push("<!--\n	application homepage is defined here\n	\n	Created October 20th, 2013\n	@author: Yariv Katz\n	@version: 2.0\n	@copyright: Nerdeez \n-->\n\n<div class=\"homepage\">\n	\n	<div class=\"row\">\n		<div class=\"span10 search quickstart account-container login stacked\">\n			<form class=\"form-search nerdeez-inputs\">\n				<div class=\"row\">\n					<div class=\"span10 padding-left\">\n						<h3>\n							Quick Start \n						</h3>\n						<p>\n							Type your course number\n						</p>\n					</div>\n				</div>\n				<div class=\"row\">\n					<div class=\"span8 padding-left\">\n					");
   hashContexts = {'valueBinding': depth0,'class': depth0,'placeholder': depth0};
   hashTypes = {'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
@@ -1803,7 +1803,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   
 
 
-  data.buffer.push("<!--\n	application homepage is defined here\n	\n	Created November 9th, 2013\n	@author: Doron Nachshon\n	@version: 2.0\n	@copyright: Nerdeez \n-->\n\n<div class=\"homepage\">");
+  data.buffer.push("<!--\n	application homepage is defined here\n	\n	Created November 9th, 2013\n	@author: Doron Nachshon\n	@version: 2.0\n	@copyright: Nerdeez \n-->\n\n<div class=\"homepage\">\n	<div class=\"bor\"></div>\n\n    <div class=\"bor\"></div>\n\n    <div class=\"row\">\n		<div class=\"col-md-4\">\n			<div class=\"f-block b-orange\">\n				<a href=\"#\">\n				<i class=\"fa fa-music\"></i>\n				</a>\n				<a href=\"#\">\n				<h4>Morbi Acfelis Ecmauris</h4>\n				</a>\n				<p>Suspendisse potenti. Morbi ac felis nec mauris imperdiet fermentum. Vivamus vel ultricies elit.</p>\n			</div>\n		</div>\n	</div>\n\n	<div class=\"bor\"></div>\n\n	<hr />\n</div>");
   
 });
 
@@ -3051,7 +3051,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1, stack2, hashTypes, hashContexts, options;
-  data.buffer.push("\n				<div class=\"col-md-3\">\n					<div class=\"f-block b-green\">\n						");
+  data.buffer.push("\n				<div class=\"col-md-3\">\n					<div class=\"f-block b-orange\">\n						");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
