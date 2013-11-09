@@ -1785,12 +1785,27 @@ a.nerdeez-button {
   font-size: 17px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000350}}
+.modal.fade .modal-header .close {
+  top: 5px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000354}}
 .modal.fade .lrform {
   background-color: white;
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000362}}
+#sign-up-modal .modal-header {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000364}}
+#sign-up-modal .modal-header i {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 /*

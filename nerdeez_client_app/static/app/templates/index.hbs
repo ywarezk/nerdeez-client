@@ -82,6 +82,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 		    <div class="modal-header">
+		        <button class="close" aria-hidden="true" data-dismiss="modal" type="button">×</button>
 		        <h4 class="modal-title" id="myModalLabel" tabindex="1">Sign up</h4>
 		    </div>
 			<div class="modal-body">
@@ -93,18 +94,23 @@
 
 
 <!-- Sign in Modal -->
-<div class="modal fade" id="log-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-		    <div class="modal-header">
-		        <h4 class="modal-title" id="myModalLabel" tabindex="2">Log in</h4>
-		    </div>
-			<div class="modal-body">
-				{{render "login" login}}
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<div class="row">
+	<div class="col-md-8">
+		<div class="modal fade" id="log-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+				    <div class="modal-header">
+				    	<button class="close" aria-hidden="true" data-dismiss="modal" type="button">×</button>
+				        <h4 class="modal-title" id="myModalLabel" tabindex="2">Log in</h4>
+				    </div>
+					<div class="modal-body">
+						{{render "login" login}}
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	</div>
+</div>
 
 <!-- Activation Modal -->
 <div class="modal fade" id="activation-modal" tabindex="-1" rolde="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

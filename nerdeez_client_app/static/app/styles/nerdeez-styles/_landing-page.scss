@@ -46,11 +46,26 @@
 	}
 }
 .modal.fade {
+	.modal-header {
+		.close {
+			top: 5px !important;
+		}
+	}
 	.lrform {
 		background-color: white;
 		margin: 0;
 		padding: 0;
 		border: 0;
+	}
+}
+#sign-up-modal {
+	.modal-header {
+		position: relative;
+		i {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
 	}
 }
 

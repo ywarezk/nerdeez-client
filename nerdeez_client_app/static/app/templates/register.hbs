@@ -16,7 +16,7 @@ version: 1.0
             <!-- Name -->
                 <div class="form-group">
                     <label for="name" class="control-label col-md-3">Full Name</label>
-                    <div class="col-md-9">
+                    <div class="col-md-6">
                         {{
                             view Ember.TextField
                             valueBinding="name"
@@ -30,7 +30,7 @@ version: 1.0
                 <!-- Email -->
                 <div class="form-group">
                     <label for="email" class="control-label col-md-3">Email</label>
-                    <div class="col-md-9">
+                    <div class="col-md-6">
                         {{
                             view Ember.TextField
                             valueBinding="email"
@@ -44,7 +44,7 @@ version: 1.0
                 <!-- Password -->
                 <div class="form-group">
                     <label for="password" class="control-label col-md-3">Password</label>
-                    <div class="col-md-9">
+                    <div class="col-md-6">
                         {{
                             view Ember.TextField
                             valueBinding="password"
@@ -60,7 +60,7 @@ version: 1.0
                 </div>
                 <!-- Checkbox -->
                 <div class="form-group">
-                    <div class="col-md-9 col-md-offset-3">
+                    <div class="col-md-6 col-md-offset-3">
                         <label class="checkbox-inline">
                             {{
                                 view
@@ -70,7 +70,7 @@ version: 1.0
                                 name="Field"
                                 id="inlineCheckbox1"
                             }}
-                            I have read and agree with the {{#linkTo "terms"}}Terms of Use.{{/linkTo}}
+                            I agree with the {{#linkTo "terms"}}Terms of Use.{{/linkTo}}
                         </label>
                     </div>
                 </div> 
@@ -78,19 +78,8 @@ version: 1.0
                 <!-- Buttons -->
                 <div class="form-group">
                 <!-- Buttons -->
-                    <div class="col-md-9 col-md-offset-3"> 
+                    <div class="col-md-6 col-md-offset-3"> 
                         <button class="btn btn-default" tabindex="5" type="submit" {{action "register"}}>Sign up</button>
-                        <button class="btn btn-default" tabindex="6" type="button" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-                <div class="login-social">
-                    <p>Sign in using social network:</p>
-                    
-                    <div class="twitter">
-                        <a {{action "twitterLogin" target="controllers.login"}} class="btn_1">Login with Twitter</a>
-                    </div>               
-                    <div class="fb">
-                        <a {{action "fbLogin" target="controllers.login"}} class="btn_2">Login with Facebook</a>
                     </div>
                 </div>
             </form>
