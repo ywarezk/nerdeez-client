@@ -251,42 +251,8 @@ a:focus {
 }
 
 /**
-* styling for f-block
-**/
-
-.f-block {
-    margin-bottom: 10px;
-    min-height: 180px;
-    padding: 25px 20px 40px;
-    i {
-        display: block;
-        font-size: 30px;
-        margin-bottom: 10px;
-    }
-    h4{
-        color: #fff;
-    }
-
-    .f-block{
-        padding: 25px 20px 40px 20px;
-        margin-bottom: 10px;
-        min-height: 180px;
-    }
-
-    a, a:hover{
-        color: #fff;
-        text-decoration: none;
-    }
-
-    p{
-        font-size: 14px;
-        line-height: 22px;
-    }
-}
-
-/**
 * f-block with col-3 size
-**/
+
 .col-md-3 {
     .f-block {
         height: 135px;
@@ -305,7 +271,7 @@ a:focus {
     }
 }
 
-
+**/
 /** 
 * default values for the faculty, course and university icons that will
 * typically appear on the left side of the action pane
