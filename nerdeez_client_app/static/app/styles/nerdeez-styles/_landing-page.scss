@@ -45,12 +45,56 @@
 		font-size: 17px;
 	}
 }
-.modal.fade {
+
+#sign-up-modal, #log-in-modal {
+	.modal-dialog {
+		width: 20%;
+	}
+	.modal-header {
+		padding: 15px 65px;
+		border: none;
+		h4 {
+			text-align: center;
+		}
+		.close {
+			left: 50px;
+    		top: -7px;
+		}
+	}
+	.modal-body {
+		padding: 15px 65px;
+		.loading {
+			i {
+				font-size: 20px;
+			}
+		}
+	}
 	.lrform {
 		background-color: white;
 		margin: 0;
 		padding: 0;
 		border: 0;
+		.form-group {
+			.form-control {
+				border-radius: 4px !important;
+			}
+			.btn.btn-default {
+				width: 100%;
+			}
+		}
+	}
+}
+
+#activation-modal, #twitter-activation-modal {
+	.modal-header {
+		padding: 15px 30px;
+		.close {
+			left: 20px;
+			top: -11px;
+		}
+	}
+	.modal-body {
+		padding: 5px 30px;
 	}
 }
 

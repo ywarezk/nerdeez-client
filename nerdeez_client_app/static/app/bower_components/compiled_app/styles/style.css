@@ -1785,12 +1785,60 @@ a.nerdeez-button {
   font-size: 17px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000349}}
-.modal.fade .lrform {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000350}}
+#sign-up-modal .modal-dialog, #log-in-modal .modal-dialog {
+  width: 20%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000353}}
+#sign-up-modal .modal-header, #log-in-modal .modal-header {
+  padding: 15px 65px;
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000356}}
+#sign-up-modal .modal-header h4, #log-in-modal .modal-header h4 {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000359}}
+#sign-up-modal .modal-header .close, #log-in-modal .modal-header .close {
+  left: 50px;
+  top: -7px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000364}}
+#sign-up-modal .modal-body, #log-in-modal .modal-body {
+  padding: 15px 65px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000367}}
+#sign-up-modal .modal-body .loading i, #log-in-modal .modal-body .loading i {
+  font-size: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000372}}
+#sign-up-modal .lrform, #log-in-modal .lrform {
   background-color: white;
   margin: 0;
   padding: 0;
   border: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000378}}
+#sign-up-modal .lrform .form-group .form-control, #log-in-modal .lrform .form-group .form-control {
+  border-radius: 4px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000381}}
+#sign-up-modal .lrform .form-group .btn.btn-default, #log-in-modal .lrform .form-group .btn.btn-default {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000389}}
+#activation-modal .modal-header, #twitter-activation-modal .modal-header {
+  padding: 15px 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000391}}
+#activation-modal .modal-header .close, #twitter-activation-modal .modal-header .close {
+  left: 20px;
+  top: -11px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_landing-page\.scss}line{font-family:\0000396}}
+#activation-modal .modal-body, #twitter-activation-modal .modal-body {
+  padding: 5px 30px;
 }
 
 /*

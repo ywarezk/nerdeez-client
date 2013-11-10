@@ -8,12 +8,11 @@ version: 1.0
 
 -->
 
-<div class="lrform">
-    <div class="form">
-        <form class="form-horizontal js-validation">
-            <div class="form-group">
-                <label class="control-label col-md-3" for="email">Email</label>
-                <div class="col-md-9">
+<div class="login">
+    <div class="lrform">
+        <div class="form">
+            <form class="form-horizontal js-validation">
+                <div class="form-group">
                     {{
                         view Ember.TextField
                         valueBinding="email"
@@ -23,10 +22,7 @@ version: 1.0
                         tabindex="7"
                     }}
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" for="password">Password</label>
-                <div class="col-md-9">
+                <div class="form-group">
                     {{
                         view Ember.TextField
                         valueBinding="password"
@@ -37,9 +33,7 @@ version: 1.0
                         tabindex="8"
                     }}
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-9 col-md-offset-3">
+                <div class="form-group">
                     <label class="checkbox-inline">
                         {{
                         view
@@ -50,28 +44,27 @@ version: 1.0
                         Remember me
                     </label>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-9 col-md-offset-3">
+                <div class="form-group">
                     <button type="submit" class="btn btn-default" tabindex="10" {{action "login"}}>Login</button>
-                    <button type="button" class="btn btn-default" tabindex="11" data-dismiss="modal">Close</button>
                 </div>
+            </form>
+        </div>
+        {{#if isLoading}}
+        <div class="center">
+            {{loading}}
+        </div>
+        {{/if}}
+        
+        {{#if isError}}
+            <div class="alert alert-danger">
+                {{statusMessage}}
             </div>
-        </form>
+        {{/if}}
+        
+        {{#if isSuccess}}
+            <div class="alert alert-success">
+                {{statusMessage}}
+            </div>
+        {{/if}}
     </div>
-    {{#if isLoading}}
-        {{loading}}
-    {{/if}}
-    
-    {{#if isError}}
-        <div class="alert alert-danger">
-            {{statusMessage}}
-        </div>
-    {{/if}}
-    
-    {{#if isSuccess}}
-        <div class="alert alert-success">
-            {{statusMessage}}
-        </div>
-    {{/if}}
 </div>

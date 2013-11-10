@@ -3092,7 +3092,7 @@ Ember.Handlebars.registerHelper('ifCond', function(v1, v2, options) {
  * @return {Handlebars.SafeString}
  */
 Ember.Handlebars.registerBoundHelper('loading', function() {
-    return new Ember.Handlebars.SafeString('<div class="loading"><i class="icon-refresh icon-spin"></i></div>');
+    return new Ember.Handlebars.SafeString('<div class="loading"><i class="fa fa-spinner fa-spin"></i></div>');
 });
 
 /**
@@ -3111,13 +3111,13 @@ Ember.Handlebars.registerBoundHelper('getRating', function(currRating, outOf, op
     var rating = currRating;
     for (var i=1; i<=outOf; i++) {
     	if (i<=currRating)
-    		html += '<li><i class="icon-star"></i></li>';
+    		html += '<li><i class="fa fa-star"></i></li>';
     	else if (rating % 1 !== 0){
-    		html += '<li><i class="icon-star-half-empty"></i></li>';
+    		html += '<li><i class="fa fa-star-half-empty"></i></li>';
     		rating = 0;
     	}
     	else
-    		html += '<li><i class="icon-star-empty"></i></li>';
+    		html += '<li><i class="fa fa-star-empty"></i></li>';
     }
     html +="</ul></div>";
     return new Handlebars.SafeString(html);
