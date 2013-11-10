@@ -2184,17 +2184,17 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "fbLogin", {hash:{
     'target': ("controllers.login")
   },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("></i>\n						</li>\n					</ul>\n					<hr>\n				</div>\n			</div>\n		</div>\n	</header>\n	<div class=\"container\">\n		<div class=\"bor\"></div>\n		<div class=\"row\">\n			<div class=\"col-md-7 col-md-offset-3\">\n				<div class=\"service-icon red\">\n					<i class=\"fa fa-camera\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>We Design Websites</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n				</div>\n				<hr>\n				<div class=\"service-icon orange\">\n					<i class=\"fa fa-desktop\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>Our Designs are Responsive</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n				</div>\n				<hr>\n				<div class=\"service-icon lblue\">\n					<i class=\"fa fa-cloud\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>Everything in Cloud</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n					<hr>\n				</div>\n				<div class=\"service-icon purple\">\n					<i class=\"fa fa-user\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>Top Notch Support</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n				</div>\n				<br>\n				<div class=\"clearfix\"></div>\n			</div>\n		</div>\n	</div>\n</div>\n\n<!-- Sign up Modal -->\n<div class=\"modal fade\" id=\"sign-up-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\">\n		<div class=\"modal-content\">\n		    <div class=\"modal-header\">\n		    	<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n		        <h4 class=\"modal-title\" id=\"myModalLabel\" tabindex=\"1\">Sign up</h4>\n		    </div>\n			<div class=\"modal-body\">\n				");
+  data.buffer.push("></i>\n						</li>\n					</ul>\n					<hr>\n				</div>\n			</div>\n		</div>\n	</header>\n	<div class=\"container\">\n		<div class=\"bor\"></div>\n		<div class=\"row\">\n			<div class=\"col-md-7 col-md-offset-3\">\n				<div class=\"service-icon red\">\n					<i class=\"fa fa-camera\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>We Design Websites</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n				</div>\n				<hr>\n				<div class=\"service-icon orange\">\n					<i class=\"fa fa-desktop\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>Our Designs are Responsive</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n				</div>\n				<hr>\n				<div class=\"service-icon lblue\">\n					<i class=\"fa fa-cloud\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>Everything in Cloud</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n					<hr>\n				</div>\n				<div class=\"service-icon purple\">\n					<i class=\"fa fa-user\"></i>\n				</div>\n				<div class=\"service-content\">\n					<h5>Top Notch Support</h5>\n					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>\n				</div>\n				<br>\n				<div class=\"clearfix\"></div>\n			</div>\n		</div>\n	</div>\n</div>\n\n<!-- Sign up Modal -->\n<div class=\"modal fade\" id=\"sign-up-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\">\n		<div class=\"modal-content\">\n		    <div class=\"modal-header\">\n		        <h4 class=\"modal-title\" id=\"myModalLabel\" tabindex=\"1\">Sign up</h4>\n		    </div>\n			<div class=\"modal-body\">\n				");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.render || depth0.render),stack1 ? stack1.call(depth0, "register", "register", options) : helperMissing.call(depth0, "render", "register", "register", options))));
-  data.buffer.push("\n			</div>\n		</div><!-- /.modal-content -->\n	</div><!-- /.modal-dialog -->\n</div><!-- /.modal -->\n\n\n<!-- Sign in Modal -->\n<div class=\"modal fade\" id=\"log-in-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\">\n		<div class=\"modal-content\">\n		    <div class=\"modal-header\">\n		        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n		        <h4 class=\"modal-title\" id=\"myModalLabel\" tabindex=\"2\">Log in</h4>\n		    </div>\n			<div class=\"modal-body\">\n				");
+  data.buffer.push("\n			</div>\n		</div><!-- /.modal-content -->\n	</div><!-- /.modal-dialog -->\n</div><!-- /.modal -->\n\n\n<!-- Sign in Modal -->\n<div class=\"modal fade\" id=\"log-in-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\">\n		<div class=\"modal-content\">\n		    <div class=\"modal-header\">\n		        <h4 class=\"modal-title\" id=\"myModalLabel\" tabindex=\"2\">Log in</h4>\n		    </div>\n			<div class=\"modal-body\">\n				");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.render || depth0.render),stack1 ? stack1.call(depth0, "login", "login", options) : helperMissing.call(depth0, "render", "login", "login", options))));
-  data.buffer.push("\n			</div>\n		</div><!-- /.modal-content -->\n	</div><!-- /.modal-dialog -->\n</div><!-- /.modal -->\n\n<!-- Activation Modal -->\n<div class=\"modal fade\" id=\"activation-modal\" tabindex=\"-1\" rolde=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\">\n		<div class=\"modal-content\">\n			<div class=\"modal-header center\">\n				<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n				<h4 class=\"modal-title\" id=\"myModalLabel\">Activation required</h4>\n			</div>\n			<div class=\"modal-body center\">\n				<h5> A verification form was sent to your email address </h5>\n			</div>\n		</div> \n	</div> \n</div> \n\n<!-- Twitter Activation Modal -->\n<div class=\"modal fade\" id=\"twitter-activation-modal\" tabindex=\"-1\" rolde=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\">\n		<div class=\"modal-content\">\n			<div class=\"modal-header center\">\n				<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n				<h4 class=\"modal-title\" id=\"myModalLabel\">Activation required</h4>\n			</div>\n			<div class=\"modal-body center\">\n				<h5>A new windows should open, please authorize us and then use your Twitter account to log in</h5>\n			</div>\n		</div> \n	</div> \n</div> \n");
+  data.buffer.push("\n			</div>\n		</div><!-- /.modal-content -->\n	</div><!-- /.modal-dialog -->\n</div><!-- /.modal -->\n\n<!-- Activation Modal -->\n<div class=\"modal fade\" id=\"activation-modal\" tabindex=\"-1\" rolde=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\">\n		<div class=\"modal-content\">\n			<div class=\"modal-header\">\n				<h3 class=\"modal-title\" id=\"myModalLabel\">Success!</h3>\n				<h4>  Now Activate Your Account </h4>\n			</div>\n			<div class=\"modal-body\">\n				<h5> A verification mail was sent to your email address </h5>\n			</div>\n			<div class=\"modal-footer\">\n        		<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Got it</button>\n      		</div>\n		</div> \n	</div> \n</div> \n\n<!-- Twitter Activation Modal -->\n<div class=\"modal fade\" id=\"twitter-activation-modal\" tabindex=\"-1\" rolde=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\">\n		<div class=\"modal-content\">\n			<div class=\"modal-header\">\n				<h3 class=\"modal-title\" id=\"myModalLabel\">Success!</h3>\n				<h4>  Please authorize the app with your twitter account, and then log in using your Twitter account </h4>\n			</div>\n			<div class=\"modal-footer\">\n        		<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Got it</button>\n      		</div>\n		</div> \n	</div> \n</div> ");
   return buffer;
   
 });
@@ -2219,37 +2219,37 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n        <div class=\"center\">\n            ");
+  data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "loading", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n        </div>\n        ");
+  data.buffer.push("\n    ");
   return buffer;
   }
 
 function program3(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n            <div class=\"alert alert-danger\">\n                ");
+  data.buffer.push("\n        <div class=\"alert alert-danger\">\n            ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "statusMessage", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n            </div>\n        ");
+  data.buffer.push("\n        </div>\n    ");
   return buffer;
   }
 
 function program5(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n            <div class=\"alert alert-success\">\n                ");
+  data.buffer.push("\n        <div class=\"alert alert-success\">\n            ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "statusMessage", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n            </div>\n        ");
+  data.buffer.push("\n        </div>\n    ");
   return buffer;
   }
 
-  data.buffer.push("<!--\n\nHolds the html of the login page\n\nauthor: Doron Nachshon\ncopyright: nerdeez.com\nversion: 1.0\n\n-->\n\n<div class=\"login\">\n    <div class=\"lrform\">\n        <div class=\"form\">\n            <form class=\"form-horizontal js-validation\">\n                <div class=\"form-group\">\n                    ");
+  data.buffer.push("<!--\n\nHolds the html of the login page\n\nauthor: Doron Nachshon\ncopyright: nerdeez.com\nversion: 1.0\n\n-->\n\n<div class=\"lrform\">\n    <div class=\"form\">\n        <form class=\"form-horizontal js-validation\">\n            <div class=\"form-group\">\n                <label class=\"control-label col-md-3\" for=\"email\">Email</label>\n                <div class=\"col-md-9\">\n                    ");
   hashContexts = {'valueBinding': depth0,'class': depth0,'placeholder': depth0,'required': depth0,'tabindex': depth0};
   hashTypes = {'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING",'required': "STRING",'tabindex': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
@@ -2259,7 +2259,7 @@ function program5(depth0,data) {
     'required': ("true"),
     'tabindex': ("7")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n                </div>\n                <div class=\"form-group\">\n                    ");
+  data.buffer.push("\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label class=\"control-label col-md-3\" for=\"password\">Password</label>\n                <div class=\"col-md-9\">\n                    ");
   hashContexts = {'valueBinding': depth0,'class': depth0,'placeholder': depth0,'required': depth0,'type': depth0,'tabindex': depth0};
   hashTypes = {'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING",'required': "STRING",'type': "STRING",'tabindex': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
@@ -2270,33 +2270,33 @@ function program5(depth0,data) {
     'type': ("password"),
     'tabindex': ("8")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n                </div>\n                <div class=\"form-group\">\n                    <label class=\"checkbox-inline\">\n                        ");
+  data.buffer.push("\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <div class=\"col-md-9 col-md-offset-3\">\n                    <label class=\"checkbox-inline\">\n                        ");
   hashContexts = {'checkedBinding': depth0,'tabindex': depth0};
   hashTypes = {'checkedBinding': "STRING",'tabindex': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Checkbox", {hash:{
     'checkedBinding': ("isRememberMe"),
     'tabindex': ("9")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n                        Remember me\n                    </label>\n                </div>\n                <div class=\"form-group\">\n                    <button type=\"submit\" class=\"btn btn-default\" tabindex=\"10\" ");
+  data.buffer.push("\n                        Remember me\n                    </label>\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <div class=\"col-md-9 col-md-offset-3\">\n                    <button type=\"submit\" class=\"btn btn-default\" tabindex=\"10\" ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "login", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">Login</button>\n                </div>\n            </form>\n        </div>\n        ");
+  data.buffer.push(">Login</button>\n                    <button type=\"button\" class=\"btn btn-default\" tabindex=\"11\" data-dismiss=\"modal\">Close</button>\n                </div>\n            </div>\n        </form>\n    </div>\n    ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "isLoading", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n        \n        ");
+  data.buffer.push("\n    \n    ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "isError", {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n        \n        ");
+  data.buffer.push("\n    \n    ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "isSuccess", {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n    </div>\n</div>");
+  data.buffer.push("\n</div>");
   return buffer;
   
 });
@@ -2521,26 +2521,26 @@ function program1(depth0,data) {
 function program3(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n                ");
+  data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "loading", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n            ");
+  data.buffer.push("\n    ");
   return buffer;
   }
 
 function program5(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n                <div class=\"alert alert-danger\">\n                  ");
+  data.buffer.push("\n        <div class=\"alert alert-danger\">\n          ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "message", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n                </div>\n            ");
+  data.buffer.push("\n        </div>\n    ");
   return buffer;
   }
 
-  data.buffer.push("<!--\n\nHolds the html of the registration page\n\nauthor: Doron Nachshon\ncopyright: nerdeez.com\nversion: 1.0\n\n-->\n\n<div class=\"register\">\n    <div class=\"lrform\">\n        <div class=\"form\">\n            <!-- Register form (not working)-->\n            <form class=\"form-horizontal js-validation\">\n            <!-- Name -->\n                <div class=\"form-group\">\n                    ");
+  data.buffer.push("<!--\n\nHolds the html of the registration page\n\nauthor: Doron Nachshon\ncopyright: nerdeez.com\nversion: 1.0\n\n-->\n\n<div class=\"register\">\n    <div class=\"lrform\">\n        <div class=\"form\">\n            <!-- Register form (not working)-->\n            <form class=\"form-horizontal js-validation\">\n            <!-- Name -->\n                <div class=\"form-group\">\n                    <label for=\"name\" class=\"control-label col-md-3\">Full Name</label>\n                    <div class=\"col-md-9\">\n                        ");
   hashContexts = {'valueBinding': depth0,'class': depth0,'placeholder': depth0,'required': depth0,'tabindex': depth0};
   hashTypes = {'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING",'required': "STRING",'tabindex': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
@@ -2550,7 +2550,7 @@ function program5(depth0,data) {
     'required': ("true"),
     'tabindex': ("3")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n                </div>   \n                <!-- Email -->\n                <div class=\"form-group\">\n                    ");
+  data.buffer.push("\n                    </div>\n                </div>   \n                <!-- Email -->\n                <div class=\"form-group\">\n                    <label for=\"email\" class=\"control-label col-md-3\">Email</label>\n                    <div class=\"col-md-9\">\n                        ");
   hashContexts = {'valueBinding': depth0,'class': depth0,'placeholder': depth0,'required': depth0,'tabindex': depth0};
   hashTypes = {'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING",'required': "STRING",'tabindex': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
@@ -2560,7 +2560,7 @@ function program5(depth0,data) {
     'required': ("true"),
     'tabindex': ("4")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n                </div>                                       \n                <!-- Password -->\n                <div class=\"form-group\">\n                    ");
+  data.buffer.push("\n                    </div>\n                </div>                                       \n                <!-- Password -->\n                <div class=\"form-group\">\n                    <label for=\"password\" class=\"control-label col-md-3\">Password</label>\n                    <div class=\"col-md-9\">\n                        ");
   hashContexts = {'valueBinding': depth0,'class': depth0,'placeholder': depth0,'required': depth0,'type': depth0,'name': depth0,'id': depth0,'tabindex': depth0};
   hashTypes = {'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING",'required': "STRING",'type': "STRING",'name': "STRING",'id': "STRING",'tabindex': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
@@ -2573,7 +2573,7 @@ function program5(depth0,data) {
     'id': ("password"),
     'tabindex': ("5")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n                </div>\n                <!-- Checkbox -->\n                <div class=\"form-group\">\n                        <label class=\"checkbox-inline\">\n                        ");
+  data.buffer.push("\n                    </div>\n                </div>\n                <!-- Checkbox -->\n                <div class=\"form-group\">\n                    <div class=\"col-md-9 col-md-offset-3\">\n                        <label class=\"checkbox-inline\">\n                            ");
   hashContexts = {'class': depth0,'tabindex': depth0,'name': depth0,'id': depth0};
   hashTypes = {'class': "STRING",'tabindex': "STRING",'name': "STRING",'id': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Checkbox", {hash:{
@@ -2582,27 +2582,39 @@ function program5(depth0,data) {
     'name': ("Field"),
     'id': ("inlineCheckbox1")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n                        I have read and agree with the ");
+  data.buffer.push("\n                            I have read and agree with the ");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "terms", options) : helperMissing.call(depth0, "linkTo", "terms", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n                        </label>\n                </div> \n\n                <!-- Buttons -->\n                <div class=\"form-group\">\n                <!-- Buttons -->\n                    <button class=\"btn btn-default\" tabindex=\"7\" type=\"submit\" ");
+  data.buffer.push("\n                        </label>\n                    </div>\n                </div> \n\n                <!-- Buttons -->\n                <div class=\"form-group\">\n                <!-- Buttons -->\n                    <div class=\"col-md-9 col-md-offset-3\"> \n                        <button class=\"btn btn-default\" tabindex=\"5\" type=\"submit\" ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "register", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">Sign up</button>\n                </div>\n            </form>\n        </div> \n        <div class=\"center\">\n            ");
+  data.buffer.push(">Sign up</button>\n                        <button class=\"btn btn-default\" tabindex=\"6\" type=\"button\" data-dismiss=\"modal\">Close</button>\n                    </div>\n                </div>\n                <div class=\"login-social\">\n                    <p>Sign in using social network:</p>\n                    \n                    <div class=\"twitter\">\n                        <a ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "twitterLogin", {hash:{
+    'target': ("controllers.login")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(" class=\"btn_1\">Login with Twitter</a>\n                    </div>               \n                    <div class=\"fb\">\n                        <a ");
+  hashContexts = {'target': depth0};
+  hashTypes = {'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "fbLogin", {hash:{
+    'target': ("controllers.login")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(" class=\"btn_2\">Login with Facebook</a>\n                    </div>\n                </div>\n            </form>\n        </div> \n    ");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "isLoading", {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n            \n            ");
+  data.buffer.push("\n    \n    ");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "isError", {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n        </div>\n    </div>\n</div>");
+  data.buffer.push("\n    </div>\n</div>");
   return buffer;
   
 });

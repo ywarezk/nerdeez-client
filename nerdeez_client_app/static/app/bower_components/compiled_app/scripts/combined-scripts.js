@@ -939,8 +939,17 @@ Nerdeez.HomepageView = Ember.View.extend({
 		var html = $(noScript);
 		html.find('THISISNOTASCRIPTREALLY').remove();
 		
-		
 		$('#carousel-example-generic .carousel-inner').html(html.html());
+
+		/*
+		* Taken from new-theme/custom.js
+		* Allows description hover on blocks
+		*/
+		$('ul.hover-block li').hover(function(){
+        $(this).find('.hover-content').animate({top:'-3px'},{queue:false,duration:500});
+      	}, function(){
+        $(this).find('.hover-content').animate({top:'125px'},{queue:false,duration:500});
+      });
 	
 	}
 });
