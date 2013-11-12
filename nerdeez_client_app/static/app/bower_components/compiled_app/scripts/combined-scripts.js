@@ -3166,6 +3166,7 @@ var Ember = window.Ember;
 Nerdeez.Router.map(function () {
     this.resource('homepage', function() {
         this.route('addCourse', {path: '/add-course'});
+        this.route('chooseFaculty', {path: '/choose-faculty'});
     });
     this.route('welcome');
 	this.route('search', {path: '/search/:search_param'});

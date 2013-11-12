@@ -233,7 +233,7 @@ ul.nav.nav-pills li {
 **/
 
 /**
-* Theme - Metro Mania
+* Theme tweaks - Metro Mania
 **/
 
 .btn-default:focus, .btn-default:active {
@@ -243,12 +243,19 @@ ul.nav.nav-pills li {
     outline: none !important;
 }
 
+.c-block {
+    .col {
+        width: 100%;
+    }
+}
 /**
 * Metro Mania GREEN theme
-**/
+
 a:focus {
     color: #379E15;
 }
+**/
+
 
 /**
 * f-block with col-3 size
