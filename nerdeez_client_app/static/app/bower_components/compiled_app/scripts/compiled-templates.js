@@ -1834,10 +1834,22 @@ Ember.TEMPLATES["homepage/add_course"] = Ember.Handlebars.template(function anon
 /**/) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
   
+  
+  data.buffer.push("\n            <!-- Link -->\n              <!-- Icon -->\n              <i class=\"icon-envelope-alt\"></i>\n              <!-- Text -->\n              Course 1\n          ");
+  }
 
-
-  data.buffer.push("<div class=\"add-course\">\n	<h1>Hello</h1>\n</div>");
+  data.buffer.push("\n\n<div class=\"add-course\">\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <div class=\"c-block\">\n          <!-- Left column with color background -->\n          <div class=\"col-l b-orange\">\n          ");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "homepage.addCourse", options) : helperMissing.call(depth0, "link-to", "homepage.addCourse", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n          </div>\n          <div class=\"col-r b-orange\">\n            <a href=\"aboutus.html\">\n              <i class=\"icon-user\"></i>\n              Course 2\n            </a>\n          </div>\n      </div>\n  </div>\n      <div class=\"col-md-4\">\n      	<div class=\"c-block\">\n        <!-- Left column with color background -->\n		<div class=\"col-l b-orange\">\n			<!-- Link -->\n			<a href=\"contactus.html\">\n			<!-- Icon -->\n			<i class=\"icon-envelope-alt\"></i>\n			<!-- Text -->\n			Course 3\n		</a>\n		</div>\n		<div class=\"col-r b-orange\">\n		<a href=\"aboutus.html\">\n		  <i class=\"icon-user\"></i>\n		  Course 4\n		</a>\n		</div>\n        <div class=\"clearfix\"></div>\n      </div>\n	    <div class=\"bor\"></div>\n    </div>\n  </div>\n</div>\n");
+  return buffer;
   
 });
 
@@ -1850,16 +1862,16 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   
-  data.buffer.push("\n              <!-- Icon -->\n              <i class=\"icon-envelope-alt\"></i>\n              <!-- Text -->\n              Faculty 1\n            ");
+  data.buffer.push("\n	            	<!-- Link -->\n	            	<!-- Icon -->\n	            	<i class=\"icon-envelope-alt\"></i>\n	              	<!-- Text -->\n	              		Faculty 1\n	          		");
   }
 
-  data.buffer.push("\n\n<div class=\"choose-faculty\">\n	<div class=\"color-blocks\">\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <div class=\"c-block\">\n          <!-- Left column with color background -->\n          <div class=\"col-l b-orange\">\n            <!-- Link -->\n            ");
+  data.buffer.push("\n\n<div class=\"choose-faculty\">\n	<div class=\"row\">\n  		<div class=\"col-md-2\">\n	        <div class=\"c-block\">\n	        	<!-- Left column with color background -->\n	        	<div class=\"col b-orange\">\n	        		");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "homepage.addCourse", options) : helperMissing.call(depth0, "link-to", "homepage.addCourse", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n          </div>\n          <div class=\"col-r b-orange\">\n            <a href=\"aboutus.html\">\n              <i class=\"icon-user\"></i>\n              Faculty 2\n            </a>\n          </div>\n        </div>\n        <div class=\"c-block\">\n          <!-- Left column with color background -->\n          <div class=\"col-l b-orange\">\n            <!-- Link -->\n            <a href=\"contactus.html\">\n              <!-- Icon -->\n              <i class=\"icon-envelope-alt\"></i>\n              <!-- Text -->\n              Faculty 3\n            </a>\n          </div>\n          <div class=\"col-r b-orange\">\n            <a href=\"aboutus.html\">\n              <i class=\"icon-user\"></i>\n              Faculty 4\n            </a>\n          </div>\n        </div>\n        <div class=\"clearfix\"></div>\n      </div>\n	    <div class=\"bor\"></div>\n    </div>\n  </div>\n</div>");
+  data.buffer.push("\n	            </div>\n	      	</div>\n	  	</div>\n	  	<div class=\"col-md-2\">\n	  		<div class=\"c-block\">\n          		<div class=\"col b-orange\">\n	            	<a href=\"aboutus.html\">\n	              		<i class=\"icon-user\"></i>\n		            	Faculty 2\n		            </a>\n	          	</div>\n	        </div>\n  		</div>\n  		<div class=\"col-md-2\">\n  			<div class=\"c-block\">\n    		<!-- Left column with color background -->\n				<div class=\"col b-orange\">\n				<!-- Link -->\n					<a href=\"contactus.html\">\n						<!-- Icon -->\n						<i class=\"icon-envelope-alt\"></i>\n						<!-- Text -->\n						Faculty 3\n					</a>\n				</div>\n			</div>\n		</div>\n		<div class=\"col-md-2\">\n			<div class=\"c-block\">\n				<div class=\"col b-orange\">\n					<a href=\"aboutus.html\">\n						<i class=\"icon-user\"></i>\n						Faculty 4\n					</a>\n				</div>\n			</div>\n		</div>\n	    <div class=\"clearfix\"></div>\n    </div>\n    <div class=\"bor\"></div>\n</div>");
   return buffer;
   
 });
