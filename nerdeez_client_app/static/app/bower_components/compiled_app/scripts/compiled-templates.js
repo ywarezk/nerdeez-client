@@ -304,6 +304,29 @@ function program6(depth0,data) {
   
 });
 
+Ember.TEMPLATES["_nav-bar"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data
+/**/) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  
+  data.buffer.push("Add course");
+  }
+
+  data.buffer.push("<!--\n\nHolds the html of the navigation bar\n\nauthor: Doron Nachshon\ncopyright: nerdeez.com\nversion: 1.0\n\n-->\n\n<div class=\"nav-bar\">\n	<label>My Courses</label>\n	<p>Linear Algebra 1</p>\n	<p>Calculus 1</p>\n	<p>Statistics</p>\n	<p>Chemistry 1</p>\n		");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "homepage.addCourse", options) : helperMissing.call(depth0, "link-to", "homepage.addCourse", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n	<div class=\"bor\"></div>\n	<label>Classmates</label>\n	<p>Yariv Katz</p>\n	<p>Doron Nachshon</p>\n\n</div>");
+  return buffer;
+  
+});
+
 Ember.TEMPLATES["_search-hover"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data
 /**/) {
 this.compilerInfo = [4,'>= 1.0.0'];
@@ -878,17 +901,12 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "header", options) : helperMissing.call(depth0, "partial", "header", options))));
-  data.buffer.push("\n<div class=\"content\" id=\"content\">\n    <div class=\"container\">\n        <div class=\"row\">\n	    	<!--<div class=\"col-md-2\" id=\"left-sidebar-location\">\n			    ");
+  data.buffer.push("\n<div class=\"content\" id=\"content\">\n    <div class=\"container\">\n        <div class=\"row\">\n        	<br>\n	    	<div class=\"col-md-2\" id=\"left-sidebar-location\">\n			    ");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "left-sidebar-application", options) : helperMissing.call(depth0, "partial", "left-sidebar-application", options))));
-  data.buffer.push("\n			    \n			    ");
-  hashTypes = {};
-  hashContexts = {};
-  options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "history-bar", options) : helperMissing.call(depth0, "partial", "history-bar", options))));
-  data.buffer.push("\n		    </div>-->\n		    <div class=\"col-md-12\" id=\"main-outlet\">\n			    ");
+  data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "nav-bar", options) : helperMissing.call(depth0, "partial", "nav-bar", options))));
+  data.buffer.push("\n		    </div>\n		    <div class=\"col-md-10\" id=\"main-outlet\">\n			    ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
@@ -1800,10 +1818,26 @@ Ember.TEMPLATES["homepage"] = Ember.Handlebars.template(function anonymous(Handl
 /**/) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', hashTypes, hashContexts, escapeExpression=this.escapeExpression;
+
+
+  data.buffer.push("<!--\n	application homepage is defined here\n	\n	Created November 9th, 2013\n	@author: Doron Nachshon\n	@version: 2.0\n	@copyright: Nerdeez \n-->\n\n<div class=\"homepage\">\n  <div class=\"color-blocks\">\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <div class=\"c-block\">\n          <!-- Left column with color background -->\n          <div class=\"col-l b-orange\">\n            <!-- Link -->\n            <a href=\"contactus.html\">\n              <!-- Icon -->\n              <i class=\"icon-envelope-alt\"></i>\n              <!-- Text -->\n              Contact\n            </a>\n          </div>\n          <div class=\"col-r b-orange\">\n            <a href=\"aboutus.html\">\n              <i class=\"icon-user\"></i>\n              About\n            </a>\n          </div>\n        </div>\n        <div class=\"clearfix\"></div>\n      </div>\n	    <div class=\"bor\"></div>\n    </div>\n  </div>\n  <hr />\n  <div class=\"row\">\n    <div class=\"col-md-10\">\n      <div class=\"bor\"></div>\n      ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n    </div>\n  </div>\n</div>");
+  return buffer;
+  
+});
+
+Ember.TEMPLATES["homepage/add_course"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data
+/**/) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   
 
 
-  data.buffer.push("<!--\n	application homepage is defined here\n	\n	Created November 9th, 2013\n	@author: Doron Nachshon\n	@version: 2.0\n	@copyright: Nerdeez \n-->\n\n<div class=\"homepage\">\n	<div class=\"bor\"></div>\n\n    <div class=\"bor\"></div>\n\n  <div class=\"color-blocks\">\n    <div class=\"row\">\n\n      <div class=\"col-md-4\">\n\n        <div class=\"c-block\">\n\n          <!-- Left column with color background -->\n          <div class=\"col-l b-orange\">\n            <!-- Link -->\n            <a href=\"contactus.html\">\n              <!-- Icon -->\n              <i class=\"icon-envelope-alt\"></i>\n              <!-- Text -->\n              Contact\n            </a>\n          </div>\n\n          <div class=\"col-r b-orange\">\n            <a href=\"aboutus.html\">\n              <i class=\"icon-user\"></i>\n              About\n            </a>\n          </div>\n\n        </div>\n\n        <div class=\"clearfix\"></div>\n\n      </div>\n\n	<div class=\"bor\"></div>\n\n	<hr />\n</div>");
+  data.buffer.push("\n\n<div class=\"add-course\">\n	<h1>HELLO</h1>\n</div>");
   
 });
 

@@ -651,7 +651,7 @@ a.nerdeez-button {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000347}}
 #header .dropdown .dropdown-menu {
-  margin-top: 12px;
+  margin-top: 21px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_header\.scss}line{font-family:\0000349}}
 #header .dropdown .dropdown-menu a {
@@ -2005,6 +2005,11 @@ a.nerdeez-button {
 .welcome header {
   height: 30%;
   width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/doron\/Documents\/workspace\/nerdeez-client\/nerdeez_client_app\/static\/app\/styles\/nerdeez-styles\/_nav-bar\.scss}line{font-family:\000033}}
+.nav-bar {
+  border-right: solid 1px #E6E6E6;
 }
 
 /**

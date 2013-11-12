@@ -13,7 +13,9 @@ var Ember = window.Ember;
  * define the routes urls here
  */
 Nerdeez.Router.map(function () {
-    this.route('homepage');
+    this.resource('homepage', function() {
+        this.route('addCourse', {path: '/add-course'});
+    });
     this.route('welcome');
 	this.route('search', {path: '/search/:search_param'});
 	this.route('about');
@@ -22,7 +24,7 @@ Nerdeez.Router.map(function () {
 	this.route('donate');
 	this.route('chooseFaculty', {path: '/choose-faculty/:uni_id'});
 	this.route('chooseCourse', {path: '/choose-course/:faculty_id'});
-    this.resource('schoolgroup', { path: '/schoolgroup/:schoolgroup_id' }, function(){
+    this.resource('schoolgroup', { path: '/schoolgroup/:schoolgroup_id'}, function(){
         this.route('wall');
         //this.route('hws');
         this.resource('hws', function(){
