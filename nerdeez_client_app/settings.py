@@ -100,6 +100,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'nerdeez_client_app.seo_middleware.SeoMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -173,3 +174,5 @@ SERVER_URL = os.getenv('SERVER_URL', 'https://nerdeez-server-dev.herokuapp.com')
 FACEBOOK_APP_ID = os.getenv('FACEBOOK_APP_ID', '410003599108568')
 
 FILEPICKER_API_KEY = os.getenv('FILEPICKER_API_KEY', 'AW6zvjfp0To670pL4pWBSz')
+
+NERDEEZ_SEO_SERVER_URL = os.getenv('NERDEEZ_SEO_SERVER_URL', 'http://spa-render-dev.herokuapp.com/')
