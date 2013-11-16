@@ -12,6 +12,11 @@ var Nerdeez = window.Nerdeez = Ember.Application.create({
     
 });
 
+//create hashbang urls
+Nerdeez.Router.reopen({
+     location: 'hashbang'
+})
+
 /**
  * application constants
  */
