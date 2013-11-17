@@ -1,5 +1,5 @@
 # import requests
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.conf import settings
 import subprocess
 
@@ -21,14 +21,14 @@ class SeoMiddleware(object):
             
             host = request.get_host()
             full_path = request.get_full_path()
-            url = settings.NERDEEZ_SEO_SERVER_URL + '?url=' + 'http://' + host + full_path
-#             text = subprocess.check_output([
-#                 'phantom/phantomjs-linux', 
-#                 'phantom/phantom-server.js', 
-#                 url
-#             ])
+            url = settings.NERDEEZ_SEO_SERVER_URL + request.get_full_path()
+            text = subprocess.check_output([
+                 'phantom/phantomjs-linux', 
+                 'phantom/phantom-server.js', 
+                 url
+            ])
             # response = requests.get(settings.FITBLOK_SEO_SERVER_URL + request.get_full_path())
-            return HttpResponseRedirect(url)
+            return HttpResponse(text)
  
         return None
 
