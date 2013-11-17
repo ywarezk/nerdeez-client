@@ -21,10 +21,7 @@ class SeoMiddleware(object):
             
             host = request.get_host()
             full_path = request.get_full_path()
-            noredirect = request.GET.get('noredirect', '0')
-            if noredirect == '1':
-                return None
-            url = settings.NERDEEZ_SEO_SERVER_URL + '?url=' + 'http://' + host + full_path + '%3Fnoredirect%3D1'
+            url = settings.NERDEEZ_SEO_SERVER_URL + '?url=' + 'http://' + host + full_path
 #             text = subprocess.check_output([
 #                 'phantom/phantomjs-linux', 
 #                 'phantom/phantom-server.js', 
