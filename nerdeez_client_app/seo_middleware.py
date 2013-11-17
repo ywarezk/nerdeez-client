@@ -16,15 +16,15 @@ class SeoMiddleware(object):
         bot_agent_list = ['google', 'bingbot', 'msn', 'yahoo', 'iaskspider', 'baiduspider']
 
         user_agent = (request.META.get('HTTP_USER_AGENT2', '') + request.META.get('HTTP_USER_AGENT', '')).lower()
-        #if any(bot_agent in user_agent for bot_agent in bot_agent_list):
-        if True:
+        if any(bot_agent in user_agent for bot_agent in bot_agent_list):
+        #if True:
             
             host = request.get_host()
             full_path = request.get_full_path()
             noredirect = request.GET.get('noredirect', '0')
             if noredirect == '1':
                 return None
-            url = settings.NERDEEZ_SEO_SERVER_URL + '?url=' + 'http://' + host + full_path + '?noredirect=1'
+            url = settings.NERDEEZ_SEO_SERVER_URL + '?url=' + 'http://' + host + full_path + '%3Fnoredirect%3D1'
 #             text = subprocess.check_output([
 #                 'phantom/phantomjs-linux', 
 #                 'phantom/phantom-server.js', 
