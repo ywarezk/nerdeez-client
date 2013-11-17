@@ -2976,7 +2976,7 @@ Ember.Handlebars.registerBoundHelper('modZeroExcludeFirst', function(item, array
  * @return {Handlebars.SafeString}
  */
 Ember.Handlebars.registerBoundHelper('isLast', function(item, array, options) {
-	if(item == array.objectAt(array.get('length') - 1) && array.get('isUpdating') == false){
+	if(item == array.objectAt(array.get('length') - 1)){
 		return new Ember.Handlebars.SafeString(options.hash.html);
 	}
 	return '';	
