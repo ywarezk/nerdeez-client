@@ -21,7 +21,7 @@ class SeoMiddleware(object):
             
 #             host = request.get_host()
 #             full_path = request.get_full_path()
-            url = settings.NERDEEZ_SEO_SERVER_URL + request.get_full_path()
+            url = settings.NERDEEZ_SEO_SERVER_URL + request.get_full_path().replace('_escaped_fragment_', '#!')
             text = subprocess.check_output([
                  'phantom/phantomjs-linux', 
                  'phantom/phantom-server.js', 
