@@ -16,8 +16,8 @@ class SeoMiddleware(object):
         bot_agent_list = ['google', 'bingbot', 'msn', 'yahoo', 'iaskspider', 'baiduspider']
 
         user_agent = (request.META.get('HTTP_USER_AGENT2', '') + request.META.get('HTTP_USER_AGENT', '')).lower()
-        if any(bot_agent in user_agent for bot_agent in bot_agent_list):
-        #if True:
+        #if any(bot_agent in user_agent for bot_agent in bot_agent_list):
+        if True:
             
 #             host = request.get_host()
 #             full_path = request.get_full_path()
