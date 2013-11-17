@@ -19,8 +19,8 @@ class SeoMiddleware(object):
         if any(bot_agent in user_agent for bot_agent in bot_agent_list):
         #if True:
             
-            host = request.get_host()
-            full_path = request.get_full_path()
+#             host = request.get_host()
+#             full_path = request.get_full_path()
             url = settings.NERDEEZ_SEO_SERVER_URL + request.get_full_path()
             text = subprocess.check_output([
                  'phantom/phantomjs-linux', 
