@@ -27,7 +27,7 @@ page.open(system.args[1], function () {});
 var checkComplete = function () {
   // We don't allow it to take longer than 5 seconds but
   // don't return until all requests are finished
-  if((new Date().getTime() - lastReceived > 300 && requestCount === responseCount) || new Date().getTime() - startTime > 10000) {
+  if((new Date().getTime() - lastReceived > 300 && requestCount === responseCount) || new Date().getTime() - startTime > 10000)  {
     clearInterval(checkCompleteInterval);
     console.log(page.content);
     phantom.exit();
@@ -35,3 +35,4 @@ var checkComplete = function () {
 }
 // Let us check to see if the page is finished rendering
 var checkCompleteInterval = setInterval(checkComplete, 1);
+

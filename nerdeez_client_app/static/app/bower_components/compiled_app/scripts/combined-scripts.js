@@ -2976,7 +2976,7 @@ Ember.Handlebars.registerBoundHelper('modZeroExcludeFirst', function(item, array
  * @return {Handlebars.SafeString}
  */
 Ember.Handlebars.registerBoundHelper('isLast', function(item, array, options) {
-	if(item == array.objectAt(array.get('length') - 1) && array.get('isUpdating') == false){
+	if(item == array.objectAt(array.get('length') - 1)){
 		return new Ember.Handlebars.SafeString(options.hash.html);
 	}
 	return '';	
@@ -3254,9 +3254,9 @@ Nerdeez.NerdeezRoute = Ember.Route.extend({
      * @param name String the name of the param to extract
      */
     getURLParameter: function(name){
-        return decodeURI(
+        return decodeURIComponent(decodeURI(
             (RegExp(name + '=' + '(.+?)(&|$)').exec(window.location.href)||[,null])[1]
-        );
+        ));
     },
     
     /**
@@ -3265,7 +3265,7 @@ Nerdeez.NerdeezRoute = Ember.Route.extend({
      */
     getUrlParamsAsDisctionary: function(){
 	    	var search = location.search.substring(1);
-	    	return JSON.parse('{"' + decodeURI(search.replace(/&/g, "\",\"").replace(/=/g,"\":\"")) + '"}');
+	    	return JSON.parse('{"' + decodeURIComponent(decodeURI(search.replace(/&/g, "\",\"").replace(/=/g,"\":\""))) + '"}');
     }
 });
 
@@ -4095,6 +4095,62 @@ Nerdeez.QuickstartRoute = Nerdeez.NerdeezRoute.extend({
 
 //store
 
+
+})();
+
+(function() {
+
+/**
+* Changes Ember's url hash (#) to hashbang (#!)
+* NOTE: To enable in the application, add the following code after app creation
+*
+* APP.Router.reopen({
+*     location: 'hashbang'
+* })
+* @copyright: nerdeez.com Ltd.
+* @version: 1.0
+**/
+
+
+(function() {
+
+var get = Ember.get, set = Ember.set;
+
+Ember.Location.registerImplementation('hashbang', Ember.HashLocation.extend({   
+
+    getURL: function() {
+        return get(this, 'location').hash.substr(2);
+    },
+
+    setURL: function(path) {
+        get(this, 'location').hash = "!"+path;
+        set(this, 'lastSetURL', "!"+path);
+    },
+
+    onUpdateURL: function(callback) {
+        var self = this;
+        var guid = Ember.guidFor(this);
+
+        Ember.$(window).bind('hashchange.ember-location-'+guid, function() {
+        Ember.run(function() {
+            var path = location.hash.substr(2);
+            if (get(self, 'lastSetURL') === path) { return; }
+
+            set(self, 'lastSetURL', null);
+
+            callback(location.hash.substr(2));
+        });
+        });
+    },
+
+    formatURL: function(url) {
+        return '#!'+url;
+    }
+
+    })
+);
+
+})();
 
 })();
 

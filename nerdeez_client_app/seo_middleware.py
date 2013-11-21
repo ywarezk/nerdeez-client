@@ -16,13 +16,16 @@ class SeoMiddleware(object):
         bot_agent_list = ['google', 'bingbot', 'msn', 'yahoo', 'iaskspider', 'baiduspider']
 
         user_agent = (request.META.get('HTTP_USER_AGENT2', '') + request.META.get('HTTP_USER_AGENT', '')).lower()
-        if True: #any(bot_agent in user_agent for bot_agent in bot_agent_list):
+        if any(bot_agent in user_agent for bot_agent in bot_agent_list):
+        #if True:
             
-            url = settings.NERDEEZ_SEO_SERVER_URL + request.get_full_path()
+#             host = request.get_host()
+#             full_path = request.get_full_path()
+            url = settings.NERDEEZ_SEO_SERVER_URL + request.get_full_path().replace('_escaped_fragment_', '#!')
             text = subprocess.check_output([
-                'phantom/phantomjs-linux', 
-                'phantom/phantom-server.js', 
-                url
+                 'phantom/phantomjs-linux', 
+                 'phantom/phantom-server.js', 
+                 url
             ])
             # response = requests.get(settings.FITBLOK_SEO_SERVER_URL + request.get_full_path())
             return HttpResponse(text)

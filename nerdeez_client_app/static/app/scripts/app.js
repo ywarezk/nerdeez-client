@@ -134,6 +134,7 @@ require('scripts/routes/quickstart/quickstart-route');
 
 
 //store
+require('scripts/nerdeez-ember/ember-hashbang');
 require('scripts/nerdeez-ember/tastypie_serializer');
 require('scripts/nerdeez-ember/tastypie_adapter');
 require('scripts/nerdeez-ember/porthole.min');

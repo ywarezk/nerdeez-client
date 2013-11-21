@@ -176,3 +176,4 @@ FACEBOOK_APP_ID = os.getenv('FACEBOOK_APP_ID', '410003599108568')
 FILEPICKER_API_KEY = os.getenv('FILEPICKER_API_KEY', 'AW6zvjfp0To670pL4pWBSz')
 
 NERDEEZ_SEO_SERVER_URL = os.getenv('NERDEEZ_SEO_SERVER_URL', 'http://www.nerdeez.com')
+NERDEEZ_SEO_SERVER_URL = os.getenv('NERDEEZ_SEO_SERVER_URL', 'http://spa-render-dev.herokuapp.com/')
