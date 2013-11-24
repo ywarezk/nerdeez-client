@@ -15,7 +15,9 @@ version: 1.0
             <div class="row">
                 <div class="col-md-4 col-sm-4">
                     <div class="logo">
-                        <img src="{{unbound view.staticUrl}}img/logo.png">
+                        {{#link-to "homepage"}}
+                            <img src="{{unbound view.staticUrl}}img/logo.png">
+                        {{/link-to}}
                     </div>
                 </div>
                 <div class="col-md-5 col-sm-6">
@@ -55,49 +57,3 @@ version: 1.0
         </div>
     </header>
 </div>
-
-
-<!--<div id="header" class="_header">
-	<div class="container">
-		<div class="row">
-            <div class="logo col-md-3">
-                {{#linkTo homepage}}
-                <img src="{{unbound view.staticUrl}}img/logo.png" />
-                {{/linkTo}}
-            </div>
-		
-	        <div class="col-md-9 menu">
-    		    <div class="nav-collapse">
-    			    <ul class="nav pull-right" id="main-nav">
-    				    <li class="nav-icon">
-    					    {{#linkTo 'homepage'}}
-    						<i class="icon-home"></i>
-    						<span>Home</span>        					
-    					    {{/linkTo}}
-	    			    	</li>
-    				
-    				    <li>
-        					{{#linkTo 'about'}}
-                            <i class="icon-info"></i>
-                            About
-                         {{/linkTo}}
-    				    </li>
-    				    
-    				    	<li>
-						{{#linkTo 'contact'}}
-							<i class="icon-envelope"></i>
-							Contact Us
-						{{/linkTo}}
-					</li>
-    				
-    			    </ul>
-    			
-    		    </div> 
-            </div>
-        </div>
-        
-
-	</div> 
-	
-</div>
--->

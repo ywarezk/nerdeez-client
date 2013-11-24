@@ -7,6 +7,17 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\n                            <img src=\"");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("img/logo.png\">\n                        ");
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
   data.buffer.push("\n                                ");
   hashTypes = {};
   hashContexts = {};
@@ -15,52 +26,25 @@ function program1(depth0,data) {
   return buffer;
   }
 
-function program3(depth0,data) {
+function program5(depth0,data) {
   
   
   data.buffer.push("\n                                <i class=\"icon-search\"></i>\n                            ");
   }
 
-function program5(depth0,data) {
+function program7(depth0,data) {
   
   
   data.buffer.push(" Logout ");
   }
 
-function program7(depth0,data) {
-  
-  var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n                <img src=\"");
+  data.buffer.push("<!--\n\nHolds the html of the application header\nauthor: Doron Nachshon\ncopyright: nerdeez.com\nversion: 1.0\n\n-->\n\n\n\n<div id=\"header\" class=\"_header\">\n    <header>\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-md-4 col-sm-4\">\n                    <div class=\"logo\">\n                        ");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/logo.png\" />\n                ");
-  return buffer;
-  }
-
-function program9(depth0,data) {
-  
-  
-  data.buffer.push("\n    						<i class=\"icon-home\"></i>\n    						<span>Home</span>        					\n    					    ");
-  }
-
-function program11(depth0,data) {
-  
-  
-  data.buffer.push("\n                            <i class=\"icon-info\"></i>\n                            About\n                         ");
-  }
-
-function program13(depth0,data) {
-  
-  
-  data.buffer.push("\n							<i class=\"icon-envelope\"></i>\n							Contact Us\n						");
-  }
-
-  data.buffer.push("<!--\n\nHolds the html of the application header\nauthor: Doron Nachshon\ncopyright: nerdeez.com\nversion: 1.0\n\n-->\n\n\n\n<div id=\"header\" class=\"_header\">\n    <header>\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-md-4 col-sm-4\">\n                    <div class=\"logo\">\n                        <img src=\"");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "view.staticUrl", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("img/logo.png\">\n                    </div>\n                </div>\n                <div class=\"col-md-5 col-sm-6\">\n                    <form class=\"form-inline\">\n                        <div class=\"form-group\">\n                            ");
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "homepage", options) : helperMissing.call(depth0, "link-to", "homepage", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n                    </div>\n                </div>\n                <div class=\"col-md-5 col-sm-6\">\n                    <form class=\"form-inline\">\n                        <div class=\"form-group\">\n                            ");
   hashContexts = {'class': depth0,'valueBinding': depth0,'placeholder': depth0};
   hashTypes = {'class': "STRING",'valueBinding': "STRING",'placeholder': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
@@ -71,39 +55,15 @@ function program13(depth0,data) {
   data.buffer.push("\n                            ");
   hashTypes = {};
   hashContexts = {};
-  stack1 = helpers['if'].call(depth0, "isLoading", {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  stack2 = helpers['if'].call(depth0, "isLoading", {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n                        </div>\n                    </form>\n                </div>\n                <div class=\"col-md-2 col-sm-2 pull-right\">\n                    <div class=\"dropdown\">\n                        <a href=\"#\" class=\"dropdown-toggle\" id=\"dropdownMenu1\" data-toggle=\"dropdown\">\n                            <i class=\"fa fa-smile-o\"></i>\n                            John Doe\n                            <i class=\"fa fa-caret-down\"></i>\n                        </a>\n                        <ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"dropdownMenu1\">\n                            <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">Account</a></li>\n                            <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">Settings</a></li>\n                            <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">Privacy</a></li>\n                            <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">About</a></li>\n                            <li role=\"presentation\">");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "logout", options) : helperMissing.call(depth0, "link-to", "logout", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("</li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </header>\n</div>\n\n\n<!--<div id=\"header\" class=\"_header\">\n	<div class=\"container\">\n		<div class=\"row\">\n            <div class=\"logo col-md-3\">\n                ");
-  hashTypes = {};
-  hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "homepage", options) : helperMissing.call(depth0, "linkTo", "homepage", options));
-  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n            </div>\n		\n	        <div class=\"col-md-9 menu\">\n    		    <div class=\"nav-collapse\">\n    			    <ul class=\"nav pull-right\" id=\"main-nav\">\n    				    <li class=\"nav-icon\">\n    					    ");
-  hashTypes = {};
-  hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "homepage", options) : helperMissing.call(depth0, "linkTo", "homepage", options));
-  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n	    			    	</li>\n    				\n    				    <li>\n        					");
-  hashTypes = {};
-  hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "about", options) : helperMissing.call(depth0, "linkTo", "about", options));
-  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n    				    </li>\n    				    \n    				    	<li>\n						");
-  hashTypes = {};
-  hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "contact", options) : helperMissing.call(depth0, "linkTo", "contact", options));
-  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n					</li>\n    				\n    			    </ul>\n    			\n    		    </div> \n            </div>\n        </div>\n        \n\n	</div> \n	\n</div>\n-->");
+  data.buffer.push("</li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </header>\n</div>");
   return buffer;
   
 });
