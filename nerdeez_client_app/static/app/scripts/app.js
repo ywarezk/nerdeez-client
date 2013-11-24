@@ -72,6 +72,7 @@ require('scripts/views/schoolgroup-files-view');
 require('scripts/components/fb-comment-component');
 require('scripts/components/pagination-component');
 require('scripts/components/search-result-component');
+require('scripts/components/metro-hover-component');
 require('scripts/models/schoolgroup-model');
 require('scripts/models/flatpage-model');
 require('scripts/models/auth-model');

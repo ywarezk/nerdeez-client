@@ -1273,6 +1273,17 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   
 });
 
+Ember.TEMPLATES["components/metro-hover"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data
+/**/) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  
+
+
+  data.buffer.push("<!--\n  handle bar for the hover block (metro theme) component\n  \n  Created November 14th, 2013\n  @author: Doron Nachshon\n  @version: 1.0\n  @copyright: Nerdeez\n-->\n\n<ul class=\"hover-block\">\n  <li>\n    <a href=\"#\">\n    <!-- Image -->\n      <div class=\"logo\">\n        <i class=\"fa fa-folder-o\"></i>\n      </div>\n      <!-- Content with background color Class -->\n      <div class=\"hover-content b-orange\" style=\"top: 125px;\">\n        <h6>Course 1</h6>\n        Course description <br> #files: 60 <br> #users: 70\n      </div>\n    </a>\n  </li>\n  <li>\n    <a href=\"#\">\n      <img alt=\"\" src=\"img/photos/tn_2.jpg\"> \n      <div class=\"hover-content b-red\" style=\"top: 125px;\">\n        <h6>Course 2</h6>\n        Course description <br> #files: 60 <br> #users: 70\n      </div>\n    </a>\n  </li>\n  <li>\n    <a href=\"#\">\n      <img alt=\"\" src=\"img/photos/tn_3.jpg\"> \n      <div class=\"hover-content b-purple\" style=\"top: 125px;\">\n        <h6>Course 3</h6>\n        Course description <br> #files: 60 <br> #users: 70\n      </div>\n    </a>\n  </li>\n  <li>\n    <a href=\"#\">\n      <img alt=\"\" src=\"img/photos/tn_4.jpg\"> \n      <div class=\"hover-content b-lblue\" style=\"top: 125px;\">\n        <h6>Course 4</h6>\n        Course description <br> #files: 60 <br> #users: 70\n      </div>\n    </a>\n  </li>            \n</ul>");
+  
+});
+
 Ember.TEMPLATES["components/nerdeez-pagination"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data
 /**/) {
 this.compilerInfo = [4,'>= 1.0.0'];
@@ -1834,21 +1845,14 @@ Ember.TEMPLATES["homepage/add_course"] = Ember.Handlebars.template(function anon
 /**/) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing;
+  var buffer = '', hashTypes, hashContexts, escapeExpression=this.escapeExpression;
 
-function program1(depth0,data) {
-  
-  
-  data.buffer.push("\n            <!-- Link -->\n              <!-- Icon -->\n              <i class=\"icon-envelope-alt\"></i>\n              <!-- Text -->\n              Course 1\n          ");
-  }
 
-  data.buffer.push("\n\n<div class=\"add-course\">\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <div class=\"c-block\">\n          <!-- Left column with color background -->\n          <div class=\"col-l b-orange\">\n          ");
+  data.buffer.push("\n\n<div class=\"add-course\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "homepage.addCourse", options) : helperMissing.call(depth0, "link-to", "homepage.addCourse", options));
-  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n          </div>\n          <div class=\"col-r b-orange\">\n            <a href=\"aboutus.html\">\n              <i class=\"icon-user\"></i>\n              Course 2\n            </a>\n          </div>\n      </div>\n  </div>\n      <div class=\"col-md-4\">\n      	<div class=\"c-block\">\n        <!-- Left column with color background -->\n		<div class=\"col-l b-orange\">\n			<!-- Link -->\n			<a href=\"contactus.html\">\n			<!-- Icon -->\n			<i class=\"icon-envelope-alt\"></i>\n			<!-- Text -->\n			Course 3\n		</a>\n		</div>\n		<div class=\"col-r b-orange\">\n		<a href=\"aboutus.html\">\n		  <i class=\"icon-user\"></i>\n		  Course 4\n		</a>\n		</div>\n        <div class=\"clearfix\"></div>\n      </div>\n	    <div class=\"bor\"></div>\n    </div>\n  </div>\n</div>\n");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "metro-hover", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n    </div>\n  </div>\n</div>\n");
   return buffer;
   
 });
@@ -1871,7 +1875,7 @@ function program1(depth0,data) {
   options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "homepage.addCourse", options) : helperMissing.call(depth0, "link-to", "homepage.addCourse", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n	            </div>\n	      	</div>\n	  	</div>\n	  	<div class=\"col-md-2\">\n	  		<div class=\"c-block\">\n          		<div class=\"col b-orange\">\n	            	<a href=\"aboutus.html\">\n	              		<i class=\"icon-user\"></i>\n		            	Faculty 2\n		            </a>\n	          	</div>\n	        </div>\n  		</div>\n  		<div class=\"col-md-2\">\n  			<div class=\"c-block\">\n    		<!-- Left column with color background -->\n				<div class=\"col b-orange\">\n				<!-- Link -->\n					<a href=\"contactus.html\">\n						<!-- Icon -->\n						<i class=\"icon-envelope-alt\"></i>\n						<!-- Text -->\n						Faculty 3\n					</a>\n				</div>\n			</div>\n		</div>\n		<div class=\"col-md-2\">\n			<div class=\"c-block\">\n				<div class=\"col b-orange\">\n					<a href=\"aboutus.html\">\n						<i class=\"icon-user\"></i>\n						Faculty 4\n					</a>\n				</div>\n			</div>\n		</div>\n	    <div class=\"clearfix\"></div>\n    </div>\n    <div class=\"bor\"></div>\n</div>");
+  data.buffer.push("\n	            </div>\n	      	</div>\n	  	</div>\n	  	<div class=\"col-md-2\">\n	  		<div class=\"c-block\">\n          		<div class=\"col b-orange\">\n	            	<a href=\"aboutus.html\">\n	              		<i class=\"icon-user\"></i>\n		            	Faculty 2\n		            </a>\n	          	</div>\n	        </div>\n  		</div>\n  		<div class=\"col-md-2\">\n  			<div class=\"c-block\">\n    		<!-- Left column with color background -->\n				<div class=\"col b-orange\">\n				<!-- Link -->\n					<a href=\"contactus.html\">\n						<!-- Icon -->\n						<i class=\"icon-envelope-alt\"></i>\n						<!-- Text -->\n						Faculty 3\n					</a>\n				</div>\n			</div>\n		</div>\n		<div class=\"col-md-2\">\n			<div class=\"c-block\">\n				<div class=\"col b-orange\">\n					<a href=\"aboutus.html\">\n						<i class=\"icon-user\"></i>\n						Faculty 4\n					</a>\n				</div>\n			</div>\n		</div>\n	    <div class=\"clearfix\"></div>\n    </div>\n    <div class=\"bor\"></div>\n</div>\n");
   return buffer;
   
 });
